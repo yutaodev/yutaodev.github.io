@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>江南小哥</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on 江南小哥</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>jiangnantechnology@foxmail.com (江南小哥)</managingEditor>
+    <webMaster>jiangnantechnology@foxmail.com (江南小哥)</webMaster>
+    <lastBuildDate>Thu, 25 Jul 2024 13:44:44 +0800</lastBuildDate>
+    
+        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Thu, 25 Jul 2024 13:44:44 +0800</pubDate>
+      <author>jiangnantechnology@foxmail.com (江南小哥)</author>
+      <guid>http://localhost:1313/about/</guid>
+      
+        <description>&lt;h1 id=&#34;个人介绍&#34;&gt;个人介绍&lt;/h1&gt;
+&lt;p&gt;个人网站：&lt;a href=&#34;https://www.jnsoft.us.kg/&#34;&gt;https://www.jnsoft.us.kg/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;目前定居&lt;strong&gt;上海&lt;/strong&gt;，&lt;code&gt;互联网金融科技从业者&lt;/code&gt;，在博客平台上记录和分享最新的科技互联网相关技术、金融知识、使用教程。欢迎你的关注和支持。&lt;/p&gt;
+&lt;h1 id=&#34;公众号&#34;&gt;公众号&lt;/h1&gt;
+&lt;h1 id=&#34;邮箱&#34;&gt;邮箱&lt;/h1&gt;
+&lt;p&gt;欢迎发送邮件进行交流合作：&lt;code&gt;jiangnantechnology@foxmail.com&lt;/code&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>从零搭建个人博客系统</title>
+      <link>http://localhost:1313/post/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Fri, 05 Jul 2024 09:23:49 +0800</pubDate>
+      <author>jiangnantechnology@foxmail.com (江南小哥)</author>
+      <guid>http://localhost:1313/post/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</guid>
+      
+        <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+&lt;p&gt;使用个人博客也有多年的时间，比如博客园。 博客对个人学习好处很多，能记录所思所感，便于技术积累。一直想折腾一个自己的博客，前后也试过几个都不理想。直到发现现在这个模式，现在把从零开始搭建个人博客的经验分享在这里。&lt;br&gt;
+分享地址：&lt;a href=&#34;https://jnsoft.us.kg/&#34;&gt;https://jnsoft.us.kg/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;搭建概览&#34;&gt;搭建概览&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;申请免费域名&lt;/li&gt;
+&lt;li&gt;使用Hugo博客框架&lt;/li&gt;
+&lt;li&gt;博客部署到Github Pages&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;具体操作&#34;&gt;具体操作&lt;/h2&gt;
+&lt;h3 id=&#34;申请免费域名&#34;&gt;申请免费域名&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;打开该网站&lt;a href=&#34;https://register.us.kg/&#34;&gt;https://register.us.kg/&lt;/a&gt;，并注册用户，注册名称既域名。&lt;/li&gt;
+&lt;li&gt;注册时提示输入美国身份信息，这里可以使用&lt;a href=&#34;https://www.shenfendaquan.com/&#34;&gt;https://www.shenfendaquan.com/&lt;/a&gt;。
+参考截图：&lt;img alt=&#34;图片&#34; src=&#34;http://localhost:1313/img/blog/%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;打开该网站&lt;a href=&#34;https://cloudflare.com/&#34;&gt;https://cloudflare.com/&lt;/a&gt;，并注册用户，然后点击左侧网站按钮，添加站点，将刚刚申请的域名添加，选择免费。&lt;/li&gt;
+&lt;li&gt;拷贝cloudflare分配的2个名称服务器地址，回填到&lt;a href=&#34;https://register.us.kg/&#34;&gt;https://register.us.kg/&lt;/a&gt;，NameServer1和NameServer2。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;使用hugo博客框架&#34;&gt;使用Hugo博客框架&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Hugo，也就是静态网站生成框架，构建了一套代码生成框架和各种可选的主题。通过hugo框架将Markdown语法编译成HTML文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Windows安装包管理器有choco、scoop、winget，这我使用choco。安装了该软件就等于安装了软件市场。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装Go软件包，打开CMD命令窗口，执行：&lt;code&gt;choco install go&lt;/code&gt;。安装完成后执行：&lt;code&gt;refreshenv&lt;/code&gt;刷新环境变量。然后查看go版本，执行：&lt;code&gt;go version&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装git，进入cmd命令窗口，执行：&lt;code&gt;choco install git&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装hugo，进入cmd命令窗口，执行：&lt;code&gt;choco install hugo-extended&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过cmd窗口进入指定目录，创建站点命令：&lt;code&gt;hugo new site jnsoft&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;cmd切换到jnsoft目录，安装主题，我使用Jane主题，&lt;code&gt;git clone &amp;lt;https://github.com/xianmin/hugo-theme-jane.git&amp;gt; --depth=1 themes/jane&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;进入jntech\themes\jane\exampleSite，复制config.toml文件内容，黏贴到根目录hugo.toml内。并将如下内容修改为自己的。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;baseURL = &amp;#34;http://localhost:1313/&amp;#34; # 博客部署网址
+title = &amp;#34;江南小哥&amp;#34; # 网站名称
+enableRobotsTXT = true # 是否支持Robots协议
+enableEmoji = true # 是否支持Emoji表情符号
+theme = &amp;#34;jane&amp;#34; # 选用jane主题
+defaultContentLanguage = &amp;#34;zh-cn&amp;#34;           # Default language to use
+[languages.zh-cn]
+languageCode = &amp;#34;zh-cn&amp;#34;
+
+[[menu.main]] # 配置菜单
+name = &amp;#34;主页&amp;#34;
+weight = 10
+identifier = &amp;#34;home&amp;#34;
+pageref = &amp;#34;/&amp;#34;
+[[menu.main]]
+name = &amp;#34;归档&amp;#34;
+weight = 20
+identifier = &amp;#34;archives&amp;#34;
+pageref = &amp;#34;/post/&amp;#34;
+[[menu.main]]
+name = &amp;#34;分类&amp;#34;
+weight = 30
+identifier = &amp;#34;categories&amp;#34;
+pageref = &amp;#34;/categories/&amp;#34;
+[[menu.main]]
+name = &amp;#34;标签&amp;#34;
+weight = 40
+identifier = &amp;#34;tags&amp;#34;
+pageref = &amp;#34;/tags/&amp;#34;
+[[menu.main]]
+name = &amp;#34;关于&amp;#34;
+weight = 50
+identifier = &amp;#34;about&amp;#34;
+pageref = &amp;#34;/about/&amp;#34;
+logoTitle = &amp;#34;江南小哥&amp;#34; # default: the title value    # 默认值: 上面设置的title值
+keywords = [&amp;#34;金融&amp;#34;,&amp;#34;编程&amp;#34;, &amp;#34;科技&amp;#34;]  # 关键字，应该是与搜索引擎搜索有关，博客内无展示
+description = &amp;#34;江南科技&amp;#34;  # 网页描述
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过cmd切换到jnsoft目录，执行：&lt;code&gt;hugo server&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;打开浏览器&lt;a href=&#34;http://localhost:1313/&#34;&gt;http://localhost:1313/&lt;/a&gt;即可访问本地博客。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建第一篇博客，在content\post目录下，新增文件：hugo new post/从零搭建个人博客系统.md&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;博客部署到github-pages&#34;&gt;博客部署到Github Pages&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;你要部署在GitHub Pages上，首先在GitHub上创建一个Repository，命名为：&lt;code&gt;{your_username}.github.io&lt;/code&gt;。比如我的Repo就叫 &lt;code&gt;yutaodev.github.io&lt;/code&gt;，并在Pages页面设置好刚申请的域名绑定。&lt;/li&gt;
+&lt;li&gt;现在我们有了Hugo个人站点，有了Github Pages，那么下一步就是把hugo博客发布到Github。这样我们才能在互联网的任何地方访问我们的博客。在我们本地的hugo根目录中执行hugo指令。会生成一个public文件夹，我们只需要把public的文件内容上传到github上刚才创建的Github仓库里面, 一分钟左右，就能正常查看博客内容。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;本博客最大优点，不花一分钱，完全免费，也不用关心博客运维，而且只要Github在你的博客就在，你就集中精力写博客就行。&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
