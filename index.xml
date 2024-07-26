@@ -51,7 +51,7 @@
 &lt;ol&gt;
 &lt;li&gt;打开该网站&lt;a href=&#34;https://register.us.kg/&#34;&gt;https://register.us.kg/&lt;/a&gt;，并注册用户，注册名称既域名。&lt;/li&gt;
 &lt;li&gt;注册时提示输入美国身份信息，这里可以使用&lt;a href=&#34;https://www.shenfendaquan.com/&#34;&gt;https://www.shenfendaquan.com/&lt;/a&gt;。
-参考截图：&lt;img alt=&#34;图片&#34; src=&#34;https://jnsoft.us.kg/img/blog/%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C.png&#34;&gt;&lt;/li&gt;
+参考截图：&lt;img alt=&#34;图片&#34; src=&#34;https://jnsoft.us.kg/image/blog/%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C.png&#34;&gt;&lt;/li&gt;
 &lt;li&gt;打开该网站&lt;a href=&#34;https://cloudflare.com/&#34;&gt;https://cloudflare.com/&lt;/a&gt;，并注册用户，然后点击左侧网站按钮，添加站点，将刚刚申请的域名添加，选择免费。&lt;/li&gt;
 &lt;li&gt;拷贝cloudflare分配的2个名称服务器地址，回填到&lt;a href=&#34;https://register.us.kg/&#34;&gt;https://register.us.kg/&lt;/a&gt;，NameServer1和NameServer2。&lt;/li&gt;
 &lt;/ol&gt;
@@ -131,7 +131,7 @@ description = &amp;#34;江南科技&amp;#34;  # 网页描述
 &lt;h3 id=&#34;博客部署到github-pages&#34;&gt;博客部署到Github Pages&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;你要部署在GitHub Pages上，首先在GitHub上创建一个Repository，命名为：&lt;code&gt;{your_username}.github.io&lt;/code&gt;。比如我的Repo就叫 &lt;code&gt;yutaodev.github.io&lt;/code&gt;，并在Pages页面设置好刚申请的域名绑定。&lt;/li&gt;
-&lt;li&gt;现在我们有了Hugo个人站点，有了Github Pages，那么下一步就是把hugo博客发布到Github。这样我们才能在互联网的任何地方访问我们的博客。在我们本地的hugo根目录中执行hugo指令。会生成一个public文件夹，我们只需要把public的文件内容上传到github上刚才创建的Github仓库里面, 一分钟左右，就能正常查看博客内容。&lt;/li&gt;
+&lt;li&gt;现在我们有了Hugo个人站点，有了Github Pages，那么下一步就是把hugo博客发布到Github。这样我们才能在互联网的任何地方访问我们的博客。在我们本地的hugo根目录中执行：&lt;code&gt;hugo&lt;/code&gt;指令。会生成一个public文件夹，我们只需要把public的文件内容上传到github上刚才创建的Github仓库里面, 一分钟左右，就能正常查看博客内容。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
 &lt;p&gt;本博客最大优点，不花一分钱，完全免费，也不用关心博客运维，而且只要Github在你的博客就在，你就集中精力写博客就行。&lt;/p&gt;</description>
