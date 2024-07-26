@@ -2,14 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://yutao.us.kg/about/</loc>
-    <lastmod>2024-07-25T13:44:44+08:00</lastmod>
+    <loc>https://yutao.us.kg/tags/baidu/</loc>
+    <lastmod>2024-07-26T16:54:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.us.kg/categories/</loc>
+    <lastmod>2024-07-26T16:54:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.us.kg/tags/goole/</loc>
+    <lastmod>2024-07-26T16:54:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.us.kg/post/</loc>
+    <lastmod>2024-07-26T16:54:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.us.kg/tags/</loc>
+    <lastmod>2024-07-26T16:54:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.us.kg/categories/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2024-07-26T16:54:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.us.kg/</loc>
+    <lastmod>2024-07-26T16:54:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.us.kg/post/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</loc>
+    <lastmod>2024-07-26T16:54:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.us.kg/about/</loc>
     <lastmod>2024-07-25T13:44:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -23,28 +72,7 @@
   </url>
   
   <url>
-    <loc>https://yutao.us.kg/categories/</loc>
-    <lastmod>2024-07-05T09:23:49+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://yutao.us.kg/tags/hugo/</loc>
-    <lastmod>2024-07-05T09:23:49+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.us.kg/post/</loc>
-    <lastmod>2024-07-05T09:23:49+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.us.kg/tags/</loc>
     <lastmod>2024-07-05T09:23:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -59,13 +87,6 @@
   
   <url>
     <loc>https://yutao.us.kg/post/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2024-07-05T09:23:49+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.us.kg/categories/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2024-07-05T09:23:49+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

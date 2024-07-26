@@ -8,10 +8,37 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (江南小哥)</managingEditor>
     <webMaster>yutao.z@qq.com (江南小哥)</webMaster>
-    <lastBuildDate>Thu, 25 Jul 2024 13:44:44 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jul 2024 16:54:27 +0800</lastBuildDate>
     
         <atom:link href="https://yutao.us.kg/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>让搜索引擎收录你的个人博客网站</title>
+      <link>https://yutao.us.kg/post/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Fri, 26 Jul 2024 16:54:27 +0800</pubDate>
+      <author>yutao.z@qq.com (江南小哥)</author>
+      <guid>https://yutao.us.kg/post/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
+      
+        <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+&lt;p&gt;到目前我们已经搭建好了个人博客，那如何让更多的人知道你的博客呢？这就不得不通过搜索引起了，如果谷歌、百度等搜索把你收录，这样曝光的机会就增加了。&lt;/p&gt;
+&lt;h2 id=&#34;搜索引擎市场份额&#34;&gt;搜索引擎市场份额&lt;/h2&gt;
+&lt;p&gt;先看看全球哪些搜索引起使用率最高，打开这个网站&lt;code&gt;https://gs.statcounter.com/&lt;/code&gt;，可以看到谷歌的市场份额最大。在中国百度的市场份额最大。
+&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.us.kg/image/blog/%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%B8%82%E5%9C%BA%E4%BB%BD%E9%A2%9D.png&#34;&gt;
+&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.us.kg/image/blog/%E7%99%BE%E5%BA%A6%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%B8%82%E5%9C%BA%E4%BB%BD%E9%A2%9D.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;谷歌收录&#34;&gt;谷歌收录&lt;/h2&gt;
+&lt;p&gt;打开谷歌收录网站，&lt;code&gt;https://search.google.com/&lt;/code&gt;，输入网站域名，点击机继续。
+&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.us.kg/image/blog/%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95.png&#34;&gt;
+添加谷歌收录验证
+&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.us.kg/image/blog/%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95%E9%AA%8C%E8%AF%81.png&#34;&gt;
+向谷歌添加站点地图
+&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.us.kg/image/blog/%E5%90%91%E8%B0%B7%E6%AD%8C%E6%B7%BB%E5%8A%A0%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE.png&#34;&gt;
+谷歌收录就完成了。&lt;/p&gt;
+&lt;h2 id=&#34;收录成功&#34;&gt;收录成功&lt;/h2&gt;
+&lt;p&gt;过一段时间后你可以通过搜索框输入site:xxx.com 或者进入Google Search Console来查看收录情况和流量情况。下图是因为刚刚添加，谷歌还在验证。根据经验，网站更新频繁、有人维护，被收录的速度就会快。
+&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.us.kg/image/blog/%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95%E6%88%90%E5%8A%9F.png&#34;&gt;&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>About</title>
