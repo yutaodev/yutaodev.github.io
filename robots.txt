@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://jnsoft.us.kg/sitemap.xml
+Sitemap: https://yutao.us.kg/sitemap.xml

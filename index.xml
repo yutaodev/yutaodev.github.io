@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>江南小哥</title>
-    <link>https://jnsoft.us.kg/</link>
+    <link>https://yutao.us.kg/</link>
     <description>Recent content on 江南小哥</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <managingEditor>jiangnantechnology@foxmail.com (江南小哥)</managingEditor>
-    <webMaster>jiangnantechnology@foxmail.com (江南小哥)</webMaster>
+    <managingEditor>yutao.z@qq.com (江南小哥)</managingEditor>
+    <webMaster>yutao.z@qq.com (江南小哥)</webMaster>
     <lastBuildDate>Thu, 25 Jul 2024 13:44:44 +0800</lastBuildDate>
     
-        <atom:link href="https://jnsoft.us.kg/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://yutao.us.kg/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>https://jnsoft.us.kg/about/</link>
+      <link>https://yutao.us.kg/about/</link>
       <pubDate>Thu, 25 Jul 2024 13:44:44 +0800</pubDate>
-      <author>jiangnantechnology@foxmail.com (江南小哥)</author>
-      <guid>https://jnsoft.us.kg/about/</guid>
+      <author>yutao.z@qq.com (江南小哥)</author>
+      <guid>https://yutao.us.kg/about/</guid>
       
         <description>&lt;h1 id=&#34;个人介绍&#34;&gt;个人介绍&lt;/h1&gt;
-&lt;p&gt;个人网站：&lt;a href=&#34;https://www.jnsoft.us.kg/&#34;&gt;https://www.jnsoft.us.kg/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;个人网站：&lt;a href=&#34;https://www.yutao.us.kg/&#34;&gt;https://www.yutao.us.kg/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;目前定居&lt;strong&gt;上海&lt;/strong&gt;，&lt;code&gt;互联网金融科技从业者&lt;/code&gt;，在博客平台上记录和分享最新的科技互联网相关技术、金融知识、使用教程。欢迎你的关注和支持。&lt;/p&gt;
 &lt;h1 id=&#34;公众号&#34;&gt;公众号&lt;/h1&gt;
 &lt;h1 id=&#34;邮箱&#34;&gt;邮箱&lt;/h1&gt;
-&lt;p&gt;欢迎发送邮件进行交流合作：&lt;code&gt;jiangnantechnology@foxmail.com&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;欢迎发送邮件进行交流合作：&lt;code&gt;yutao.z@qq.com&lt;/code&gt;&lt;/p&gt;
 </description>
       
     </item>
     
     <item>
       <title>从零搭建个人博客系统</title>
-      <link>https://jnsoft.us.kg/post/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</link>
+      <link>https://yutao.us.kg/post/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Fri, 05 Jul 2024 09:23:49 +0800</pubDate>
-      <author>jiangnantechnology@foxmail.com (江南小哥)</author>
-      <guid>https://jnsoft.us.kg/post/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</guid>
+      <author>yutao.z@qq.com (江南小哥)</author>
+      <guid>https://yutao.us.kg/post/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</guid>
       
         <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
 &lt;p&gt;使用个人博客也有多年的时间，比如博客园。 博客对个人学习好处很多，能记录所思所感，便于技术积累。一直想折腾一个自己的博客，前后也试过几个都不理想。直到发现现在这个模式，现在把从零开始搭建个人博客的经验分享在这里。&lt;br&gt;
-分享地址：&lt;a href=&#34;https://jnsoft.us.kg/&#34;&gt;https://jnsoft.us.kg/&lt;/a&gt;&lt;/p&gt;
+分享地址：&lt;a href=&#34;https://yutao.us.kg/&#34;&gt;https://yutao.us.kg/&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;搭建概览&#34;&gt;搭建概览&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;申请免费域名&lt;/li&gt;
@@ -51,7 +51,7 @@
 &lt;ol&gt;
 &lt;li&gt;打开该网站&lt;a href=&#34;https://register.us.kg/&#34;&gt;https://register.us.kg/&lt;/a&gt;，并注册用户，注册名称既域名。&lt;/li&gt;
 &lt;li&gt;注册时提示输入美国身份信息，这里可以使用&lt;a href=&#34;https://www.shenfendaquan.com/&#34;&gt;https://www.shenfendaquan.com/&lt;/a&gt;。
-参考截图：&lt;img alt=&#34;图片&#34; src=&#34;https://jnsoft.us.kg/image/blog/%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C.png&#34;&gt;&lt;/li&gt;
+参考截图：&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.us.kg/image/blog/%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C.png&#34;&gt;&lt;/li&gt;
 &lt;li&gt;打开该网站&lt;a href=&#34;https://cloudflare.com/&#34;&gt;https://cloudflare.com/&lt;/a&gt;，并注册用户，然后点击左侧网站按钮，添加站点，将刚刚申请的域名添加，选择免费。&lt;/li&gt;
 &lt;li&gt;拷贝cloudflare分配的2个名称服务器地址，回填到&lt;a href=&#34;https://register.us.kg/&#34;&gt;https://register.us.kg/&lt;/a&gt;，NameServer1和NameServer2。&lt;/li&gt;
 &lt;/ol&gt;

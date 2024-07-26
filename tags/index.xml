@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 江南小哥</title>
-    <link>https://jnsoft.us.kg/tags/</link>
+    <link>https://yutao.us.kg/tags/</link>
     <description>Recent content in Tags on 江南小哥</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <managingEditor>jiangnantechnology@foxmail.com (江南小哥)</managingEditor>
-    <webMaster>jiangnantechnology@foxmail.com (江南小哥)</webMaster>
+    <managingEditor>yutao.z@qq.com (江南小哥)</managingEditor>
+    <webMaster>yutao.z@qq.com (江南小哥)</webMaster>
     <lastBuildDate>Fri, 05 Jul 2024 09:23:49 +0800</lastBuildDate>
-    <atom:link href="https://jnsoft.us.kg/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yutao.us.kg/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog</title>
-      <link>https://jnsoft.us.kg/tags/blog/</link>
-      <pubDate>Fri, 05 Jul 2024 09:23:49 +0800</pubDate><author>jiangnantechnology@foxmail.com (江南小哥)</author>
-      <guid>https://jnsoft.us.kg/tags/blog/</guid>
+      <link>https://yutao.us.kg/tags/blog/</link>
+      <pubDate>Fri, 05 Jul 2024 09:23:49 +0800</pubDate><author>yutao.z@qq.com (江南小哥)</author>
+      <guid>https://yutao.us.kg/tags/blog/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>https://jnsoft.us.kg/tags/hugo/</link>
-      <pubDate>Fri, 05 Jul 2024 09:23:49 +0800</pubDate><author>jiangnantechnology@foxmail.com (江南小哥)</author>
-      <guid>https://jnsoft.us.kg/tags/hugo/</guid>
+      <link>https://yutao.us.kg/tags/hugo/</link>
+      <pubDate>Fri, 05 Jul 2024 09:23:49 +0800</pubDate><author>yutao.z@qq.com (江南小哥)</author>
+      <guid>https://yutao.us.kg/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>博客</title>
-      <link>https://jnsoft.us.kg/tags/%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Fri, 05 Jul 2024 09:23:49 +0800</pubDate><author>jiangnantechnology@foxmail.com (江南小哥)</author>
-      <guid>https://jnsoft.us.kg/tags/%E5%8D%9A%E5%AE%A2/</guid>
+      <link>https://yutao.us.kg/tags/%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Fri, 05 Jul 2024 09:23:49 +0800</pubDate><author>yutao.z@qq.com (江南小哥)</author>
+      <guid>https://yutao.us.kg/tags/%E5%8D%9A%E5%AE%A2/</guid>
       <description></description>
     </item>
   </channel>
