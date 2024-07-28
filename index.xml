@@ -62,7 +62,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;inputStudentData&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;students[i]);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这就把学生的信息保持起来了，后面你可能还想打印学生信息等等，这就得申明一个打印函数，然后再实现这个函数。这会你发现没有，C语言是怎样干活的？结构是结构、函数是函数，分开的，然后main里面根据你想的顺序一步一步干活的。这个时候C++现身了，C++说你的自定义结构、函数也是分开的，看着多乱？于是乎C++说，我把他们合起来，都放一块，起个名字叫类，像这样。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这就把学生的信息保持起来了，后面你可能还想打印学生信息等等，这就得声明一个打印函数，然后再实现这个函数。这会你发现没有，C语言是怎样干活的？结构是结构、函数是函数，分开的，然后main里面根据你想的顺序一步一步干活的。这个时候C++现身了，C++说你的自定义结构、函数是分开的，看着多乱？于是乎C++说，我把他们合起来，都放一块，起个名字叫类，像这样。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-C++&#34; data-lang=&#34;C++&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Student&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; number;
@@ -141,7 +141,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;到这，你发现有点不一样了，C++把属性和函数都放到类里面了，方法不再杂乱无章了，用的时候通过实例去调用了。就这么整合一下就牛逼了，没发现啥好处啊？不然不然，这个所谓的整合就是封装，同时还为继承、多态打下基础。C的时候都不在一块你咋继承，现在不一样了，只要你再定义一个类继承一个整合，就能把前面整合的继承下来，你的类里面就不用再写了，省事不？还有多态，咋回事呢？比如小鸟会叫，鸭子也会叫，都是叫，但声音不同，对吧，C的时候，谁叫你就调用谁的方法，main里面你的写两处，但有类之后，就能完成统一，在main里面统一使用接口类型，叫 = &amp;lt;传如鸟叫/传如鸭子叫&amp;gt;，你传入哪个叫，就能表现出那个叫，这就是多态。而Java又是借鉴了C++，优化了内存自动释放等，但核心思想基本与C++相同。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;到这，你发现有点不一样了，C++把属性和函数都放到类里面了，方法不再杂乱无章了，用的时候通过实例去调用了。就这么整合一下就牛逼了，没发现啥好处啊？不然不然，这个所谓的整合就是封装，同时还为继承、多态打下基础。C的时候都不在一块你咋继承，现在不一样了，只要你再定义一个类继承前面那个整合，就能把前面整合的内容继承下来，你现在的类就不用再写整合里面的东西了，因为继承后已经有了，省事不？还有多态，咋回事呢？比如小鸟会叫，鸭子也会叫，都是叫，但声音不同，对吧，C的时候，谁叫你就调用谁的方法，main里面你的写两处，但有类之后，就能完成统一，在main里面统一使用接口类型，&lt;code&gt;叫 接收叫 = (传入鸟叫或传入鸭子叫)&lt;/code&gt;，你传入哪个叫，就能表现出那个叫，这就是多态。而Java又是借鉴了C++，优化了内存自动释放等，但核心思想基本与C++相同。&lt;/p&gt;
 &lt;h3 id=&#34;面向对象思想模型&#34;&gt;面向对象思想模型&lt;/h3&gt;
 &lt;p&gt;你可能也听到这句话：”一切皆对象“，没错，在面向对象的世界中，一切皆对象。面向对象的世界，其实就是现实世界，不信你看你周围的一切，你眼睛所见到的每个物体都为对象。现在我们把现实世界与面向对象世界联系起来。假如你叫张三，是一名程序员，自然你周围的同事也是程序员，还有项目经理，领导，以及大家手里开发的系统等。那么我们就以为张三为中心，进行系统设计。首选张三与同事、领导、项目经理之间需要交流，自然就要赋予张三交流的能力，张三是程序员自然有写代码的能力，同时也要进行需求分析，自然也有需求分析的能力。到这里，我们就可以简单来设计张三这个类。&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt; classDiagram
@@ -182,7 +182,7 @@
         +立项()
         +项目调研()
     }
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面就可以理解为一个系统，里面有各种人，都是通过人这个类产生出来的，多么像现实社会，系统里面跑到都是人，人与人之间产生各种联系，如果把类理解为模版，当你放入张三就产生张三，放入李四就产生李四，这就是面向对象模型的本质。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面就可以理解为一个系统，里面有各种人，都是通过人这个类产生出来的，多么像现实社会，系统里面跑到都是人，人与人之间产生各种联系，如果把类理解为模版，当你放入张三就产生张三，放入李四就产生李四，这就是面向对象思想的本质。&lt;/p&gt;
 &lt;h3 id=&#34;模拟对象&#34;&gt;模拟对象&lt;/h3&gt;
 &lt;p&gt;以一本书来举例子，通过上面的学习，是不是就明白这句话的含义了。书，是不是就是类？没错，是的。只不过，书有很多种，比如科技书籍、文学书籍、小说等等，但都逃不过书这个类。同时他们又有一些共性，比如书名、出版商、价格等，还是通过UML来模拟一下。&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt; classDiagram
@@ -207,7 +207,7 @@
     }
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;书就是类，不同类别书籍继承了书这个类，又得到了新类，如果落实到具体哪本书，就是实例，是通过类new出来的。&lt;/p&gt;
 &lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
-&lt;p&gt;面向对象思想，将以前过程中用到的自定义结构体、函数等整合在一起，定义为类，再通过类这个模版就能产生无数个实例，不同类实例与实例之间、同类实例与实例之间这个交织，就产生了逻辑联系，如果再赋予业务逻辑，那么自然一个业务系统就通过面向对象思维方式设计出来了。当然一个庞大的系统还有其他框架等等，但单纯从面向对象角度，理解面向对象思维就是你能否设计出系统的关键因素。文章阐述了从过程到面向对象的由来，及具体分析了面向对象模型，希望对你有所帮助。&lt;/p&gt;</description>
+&lt;p&gt;面向对象思想，将以前过程中用到的自定义结构体、函数等整合在一起，定义为类，再通过类这个模版就能产生无数个实例，不同类实例与实例之间、同类实例与实例之间进行交织，就产生了逻辑联系，如果再赋予业务逻辑，那么自然一个业务系统就通过面向对象思维方式设计出来了。当然一个庞大的系统还有其他框架等等，但单纯从面向对象角度，理解面向对象思维就是你能否设计出系统的关键因素。文章阐述了从过程到面向对象的由来，及具体分析了面向对象思想模型，希望对你有所帮助。&lt;/p&gt;</description>
       
     </item>
     
