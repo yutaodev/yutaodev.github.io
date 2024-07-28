@@ -104,7 +104,7 @@
 &lt;p&gt;通过cmd窗口进入指定目录，创建站点命令：&lt;code&gt;hugo new site jnsoft&lt;/code&gt;。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;cmd切换到jnsoft目录，安装主题，我使用Jane主题，&lt;code&gt;git clone &amp;lt;https://github.com/xianmin/hugo-theme-jane.git&amp;gt; --depth=1 themes/jane&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;cmd切换到jnsoft目录，安装主题，我使用Jane主题，&lt;code&gt;git clone https://github.com/xianmin/hugo-theme-jane.git --depth=1 themes/jane&lt;/code&gt;。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;进入jntech\themes\jane\exampleSite，复制config.toml文件内容，黏贴到根目录hugo.toml内。并将如下内容修改为自己的。&lt;/p&gt;
