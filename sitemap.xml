@@ -3,7 +3,49 @@
   
   <url>
     <loc>https://yutao.us.kg/categories/</loc>
-    <lastmod>2024-08-01T20:55:18+08:00</lastmod>
+    <lastmod>2024-08-02T09:58:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.us.kg/tags/git/</loc>
+    <lastmod>2024-08-02T09:58:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.us.kg/post/git%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E7%A4%BA%E4%BE%8B/</loc>
+    <lastmod>2024-08-02T09:58:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.us.kg/post/</loc>
+    <lastmod>2024-08-02T09:58:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.us.kg/tags/</loc>
+    <lastmod>2024-08-02T09:58:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.us.kg/categories/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2024-08-02T09:58:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.us.kg/</loc>
+    <lastmod>2024-08-02T09:58:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -23,20 +65,6 @@
   </url>
   
   <url>
-    <loc>https://yutao.us.kg/post/</loc>
-    <lastmod>2024-08-01T20:55:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.us.kg/tags/</loc>
-    <lastmod>2024-08-01T20:55:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://yutao.us.kg/categories/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2024-08-01T20:55:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -44,21 +72,7 @@
   </url>
   
   <url>
-    <loc>https://yutao.us.kg/</loc>
-    <lastmod>2024-08-01T20:55:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://yutao.us.kg/tags/uml/</loc>
-    <lastmod>2024-07-29T16:36:02+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.us.kg/categories/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2024-07-29T16:36:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
