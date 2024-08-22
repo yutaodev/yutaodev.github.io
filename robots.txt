@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://yutao.us.kg/sitemap.xml
+Sitemap: https://yutao.org/sitemap.xml
