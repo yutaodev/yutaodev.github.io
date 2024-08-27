@@ -14,29 +14,130 @@
     
     
     <item>
-      <title>Git常用语法示例</title>
-      <link>https://yutao.org/post/git%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E7%A4%BA%E4%BE%8B/</link>
+      <title>一文学会Git常用语法</title>
+      <link>https://yutao.org/post/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9Agit%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</link>
       <pubDate>Fri, 02 Aug 2024 09:58:42 +0800</pubDate>
       <author>yutao.z@qq.com (江南小哥)</author>
-      <guid>https://yutao.org/post/git%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E7%A4%BA%E4%BE%8B/</guid>
+      <guid>https://yutao.org/post/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9Agit%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</guid>
       
         <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
 &lt;p&gt;可以说Git是任何一个程序员都逃不开的存在，在研发过程中，是否曾因对Git掌握不熟，而犯错误呢？本文适合使用过Git或稍微有基础者。来吧，让我们跟上这篇文章走上Git之旅。&lt;/p&gt;
 &lt;h2 id=&#34;文章概览&#34;&gt;文章概览&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Git原理&lt;/li&gt;
-&lt;li&gt;Git常用命令&lt;/li&gt;
-&lt;li&gt;分支管理&lt;/li&gt;
-&lt;li&gt;Git工具篇&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Git原理&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Git常用命令&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分支管理&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Git工具篇&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;git原理&#34;&gt;Git原理&lt;/h3&gt;
-&lt;p&gt;待更新&amp;hellip;这几天有点忙&lt;/p&gt;
-&lt;h3 id=&#34;git常用命令&#34;&gt;Git常用命令&lt;/h3&gt;
-&lt;p&gt;待更新&amp;hellip;这几天有点忙&lt;/p&gt;
-&lt;h3 id=&#34;分支管理策略&#34;&gt;分支管理策略&lt;/h3&gt;
-&lt;p&gt;待更新&amp;hellip;这几天有点忙&lt;/p&gt;
-&lt;h3 id=&#34;git工具篇&#34;&gt;Git工具篇&lt;/h3&gt;
-&lt;p&gt;待更新&amp;hellip;这几天有点忙&lt;/p&gt;</description>
+&lt;h3 id=&#34;1git原理&#34;&gt;1.Git原理&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;本地工作区&lt;/code&gt;、&lt;code&gt;本地暂存区&lt;/code&gt;、&lt;code&gt;本地仓库&lt;/code&gt;、&lt;code&gt;远程仓库&lt;/code&gt;之间数据流程图如下：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;graph LR
+    A(本地工作区)-.git add.-&amp;gt;B(本地暂存区)-.git commit.-&amp;gt;C(本地仓库)-.git push.-&amp;gt;D(远程仓库)
+    B(本地暂存区)-.git reset.-&amp;gt;A(本地工作区)
+    D(远程仓库)-.git fetch.-&amp;gt;C(本地仓库)
+    D(远程仓库)-.git pull.-&amp;gt;A(本地工作区)
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;本地工作区&lt;/code&gt;：本地保存代码的文件夹&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;本地暂存区&lt;/code&gt;：暂存区是一个文件，保存工作区中修改的文件名称&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;本地仓库&lt;/code&gt;：暂存区的改动提交到本地仓库，保存元数据和对象的数据库&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;远程仓库&lt;/code&gt;：远程代码仓库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2git常用命令&#34;&gt;2.Git常用命令&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git init &amp;lt;directoryName&amp;gt;&lt;/code&gt;：初始化本地工作目录，跟目录名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git config --list&lt;/code&gt;：列出所有配置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git config --global user.name yutao&lt;/code&gt;：配置提交人名称&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git config --global user.email yutao@example.com&lt;/code&gt;：配置提交人邮箱&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git clone &amp;lt;remoteBaseName&amp;gt;&lt;/code&gt;：克隆远程仓库到本地工作目录，跟远程仓库地址&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git fetch&lt;/code&gt;：从远程仓库获取最新代码到本地，不改变工作区或本地分支代码&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git fetch &amp;lt;remote&amp;gt;&lt;/code&gt;：抓取指定远程仓库&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git pull&lt;/code&gt;：不仅从远程仓库获取最新代码，而且还自动将这些更改合并到本地工作区或本地分支&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git pull --rebase &amp;lt;remote&amp;gt; &amp;lt;localbranchname&amp;gt;&lt;/code&gt;：拉取远程分支，但过滤合并提交（自动产生）、重复提交&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push &amp;lt;remote&amp;gt; &amp;lt;localBranceName&amp;gt;&lt;/code&gt;：推送本地分支到远程分支&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git push origin dev:test&lt;/code&gt;：将本地dev分支推送到远程test分支上&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git branch&lt;/code&gt;：查看本地分&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git branch -r&lt;/code&gt;：查看远程分支&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git branch -a&lt;/code&gt;：查看所有分支，包括本地和远程&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git branch &amp;lt;branchName&amp;gt;&lt;/code&gt;：创建新分支，比如当前在master分支，既基于当前master分支创建&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git branch -d &amp;lt;branchName&amp;gt;&lt;/code&gt;：删除本地分支&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout &amp;lt;branchName&amp;gt;&lt;/code&gt;：切换分支&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout -b &amp;lt;branchName&amp;gt;&lt;/code&gt;：创建并切换到新分支，比如当前在master分支，既基于当前master分支创建&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git add &amp;lt;fileName&amp;gt;&lt;/code&gt;：将工作目录修改文件添加到暂存区&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git reset&lt;/code&gt;：有3种模式，soft、mixed、hard，默认mixed模式。soft将撤回的代码存放到暂存区，mixed将撤回的代码放到工作区，hard彻底回退到某个版本，丢弃撤回的代码本地没有commit代码也将擦除。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git reset &amp;lt;fileName&amp;gt;&lt;/code&gt;：将暂存区文件撤销到工作区，撤销之前的git add操作&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git reset HEAD^&lt;/code&gt;：回退所有内容到上个版本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git reset HEAD^ &amp;lt;filename&amp;gt;&lt;/code&gt;：回退某个文件到上个版本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git reset &amp;lt;commitID&amp;gt;&lt;/code&gt;：回退到指定版本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git checkout --fileName&lt;/code&gt;：清除工作区的改动，回到跟版本库一样的状态&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash/git stash push&lt;/code&gt;：现在想要切换分支，但是还不想要提交之前的工作，所以贮藏修改，贮藏被推送到栈上，再看工作目录是干净的&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git status&lt;/code&gt;：检查当前文件状态，工作目录文件只有两种状态&lt;code&gt;已跟踪&lt;/code&gt;或&lt;code&gt;未跟踪&lt;/code&gt;，未跟踪表示未纳入git版本管理&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git commit -m &amp;lt;comments&amp;gt;&lt;/code&gt;：将暂存区改动提交到本地仓库&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git commit -a -m &amp;lt;comments&amp;gt;&lt;/code&gt;：提交之前不再需要 git add 文件， -a选项使本次提交包含了所有修改过的文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git commit --amend -m &amp;lt;comments&amp;gt;&lt;/code&gt;：将新修改的代码追加到前一次提交的commit中&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git commit --amend --no-edit&lt;/code&gt;：不更改前一次提交的备注信息情况下，追加新的修改到上一次commit中&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git rm --cached &amp;lt;fileName&amp;gt;&lt;/code&gt;：把文件从暂存区删除，但仍保留在工作目录中，且未被git跟踪&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rm fileName-&amp;gt;git rm &amp;lt;fileName&amp;gt;&lt;/code&gt;：把文件从工作目录中删除&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git mv &amp;lt;fileName&amp;gt; &amp;lt;newFileName&amp;gt;&lt;/code&gt;：修改工作区文件名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash&lt;/code&gt;：将工作目录的文件修改与暂存区未完成的修改保存到一个栈上，然后可以切换到其他分支，贮藏的改动任何时候都可重新应用这些改动&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash list&lt;/code&gt;：查看贮藏的东西&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash apply/pop&lt;/code&gt;：还原最近一次贮藏&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash apply stash@{2}&lt;/code&gt;：还原指定ID的贮藏&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash -u&lt;/code&gt;：贮藏未跟踪的文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git stash branch &amp;lt;branchName&amp;gt;&lt;/code&gt;：从贮藏创建分支&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git clean -n&lt;/code&gt;：n参数先看看会删掉哪些文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git clean -f&lt;/code&gt;：若参数clean.requireForce未改为false，则需要-f参数对未跟踪文件强制删除&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git clean -d&lt;/code&gt;:删除未跟踪的目录&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git log&lt;/code&gt;：查看git日志，最新提交在最上面&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git log --pretty=format:&amp;quot;%h - %an, %cn, %cd : %s&amp;quot;&lt;/code&gt;：格式化日志，%h提交的简写哈希值，%an作者名字，%cn提交者名字，%cd作者修订日期，%s提交说明&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git log --pretty=format:&amp;quot;%h %s&amp;quot; --graph&lt;/code&gt;:用ASCII字符串来形象地展示你的分支、合并历史&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git log --oneline --all --graph&lt;/code&gt;：查看git日志，每行只显示哈希值和提交说明&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git relog&lt;/code&gt;：引用日志，可以查看所有分支的所有操作记录，包括被删除的commit和reset操作&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git remote -v&lt;/code&gt;：查看所有远程仓库&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git remote add &amp;lt;shortname&amp;gt; &amp;lt;url&amp;gt;&lt;/code&gt;：添加一个新的远程Git仓库，同时指定一个方便的使用的简写&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git remote show &amp;lt;remote&amp;gt;&lt;/code&gt;：查看某一个远程仓库的更多信息&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git remote rename &amp;lt;a&amp;gt; &amp;lt;b&amp;gt;&lt;/code&gt;：远程仓库重命名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git remote remove &amp;lt;remote&amp;gt;&lt;/code&gt;：删除远程仓库，本地将看不到关联的远程仓库&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git merge &amp;lt;branchename&amp;gt;&lt;/code&gt;：git checkout master，然后执行git merge hotfix，既将hotfix分支代码合并到master&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git rebase &amp;lt;branchename&amp;gt;&lt;/code&gt;：变更分支的基线，比如master分支上点A，以A点创建feature分支，然后推进D、E两提交。此时master分支也推进B、C两个提交，此时要对feature进行rebase，则checkout到feature分支，执行git rebase master，就会把D、E两点提交连接到C点后面&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git reset &amp;lt;commitid&amp;gt; --hard&lt;/code&gt;：git relog查看commitid，撤销rebase操作&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git reset ORIG_HEAD&lt;/code&gt;：撤销刚刚rebase操作&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git rebase --continue&lt;/code&gt;：在rebase的过程中，可能会出现冲突conflict情况，git会停止rebase，解决冲突后git add更新内容到索引，无需执行git commit，只要执行本命令，git会继续rebase余下&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git rebase -i [startpoint] [endpoint]&lt;/code&gt;：合并多个commit为一个，startpoint为开区间既要找目标的前一个id，endpoint闭区间，假如有两行pick eaca5fe add a.txt， s 7fc6da4 add b.txt，保存退出，再继续修改合并备注&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git revert &amp;lt;commitid&amp;gt;&lt;/code&gt;：撤销提交，git revert用一个新的commit回滚之前的commit，HEAD继续前进，reset是把HEAD向后移动一下&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3分支管理策略&#34;&gt;3.分支管理策略&lt;/h3&gt;
+&lt;p&gt;分支管理策略目前有git flow、github flow、gitlabflow，在过去的开发经验中，个人觉得git flow更适合本地团队分支管理。git flow主要分支如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;master&lt;/code&gt;：主分支，主分支的每个版本都是质量稳定和功能齐全的发布版&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hotfix&lt;/code&gt;：紧急修复当前发布版本bug，从master分支创建，修复后合并回master、release、develop&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;release&lt;/code&gt;：准发布版本分支，从develop分支创建，仅对这个预发版本问题进行修复，修复后合并回develop&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;develop&lt;/code&gt;：基于主分支创建，用于日常开发，存放最新开发版本代码，当开发分支稳定后，可以发布release版&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;feature&lt;/code&gt;：基于develop分支创建，开发新模块，开发结束合并回develop分支&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4git工具篇&#34;&gt;4.Git工具篇&lt;/h3&gt;
+&lt;p&gt;常用的git图形工具如idea、sourcetree、git自带的gitk等。个人经验git bash、gitk最基础，在各种环境下都能使用。在合并代码冲突时可以配置一下第三方工具提供效率，比如p4merge，需要提前下载&lt;a href=&#34;https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge&#34;&gt;https://www.perforce.com/products/helix-core-apps/merge-diff-tool-p4merge&lt;/a&gt;，配置如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-2&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-2&#34;&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-3&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-3&#34;&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-4&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-4&#34;&gt;4&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-5&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-5&#34;&gt;5&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-6&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-6&#34;&gt;6&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config --global diff.tool p4merge
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config --global difftool.p4merge.cmd &amp;#34;&amp;#39;C:\Program Files\Perforce\p4merge.exe&amp;#39; $LOCAL $REMOTE&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config --global merge.tool p4merge
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config --global mergetool.p4merge.cmd &amp;#34;&amp;#39;C:\Program Files\Perforce\p4merge.exe&amp;#39; $PWD/$BASE $PWD/$REMOTE $PWD/$LOCAL $PWD/$MERGED&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config --global mergetool.p4merge.trustExitCode false
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git config --global mergetool.keepBackup false
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;Git作为代码管理工具，是程序员开发必备技能，掌握常用命令，大大提高开发效率。&lt;/p&gt;</description>
       
     </item>
     
