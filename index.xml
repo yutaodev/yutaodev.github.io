@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>江南小哥</title>
-    <link>http://localhost:1313/</link>
+    <link>https://yutao.org/</link>
     <description>Recent content on 江南小哥</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
@@ -10,15 +10,15 @@
     <webMaster>yutao.z@qq.com (江南小哥)</webMaster>
     <lastBuildDate>Fri, 02 Aug 2024 09:58:42 +0800</lastBuildDate>
     
-        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://yutao.org/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>一文学会Git常用语法</title>
-      <link>http://localhost:1313/post/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9Agit%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</link>
+      <link>https://yutao.org/post/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9Agit%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</link>
       <pubDate>Fri, 02 Aug 2024 09:58:42 +0800</pubDate>
       <author>yutao.z@qq.com (江南小哥)</author>
-      <guid>http://localhost:1313/post/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9Agit%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</guid>
+      <guid>https://yutao.org/post/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9Agit%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</guid>
       
         <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
 &lt;p&gt;可以说Git是任何一个程序员都逃不开的存在，在研发过程中，是否曾因对Git掌握不熟，而犯错误呢？本文适合使用过Git或稍微有基础者。来吧，让我们跟上这篇文章走上Git之旅。&lt;/p&gt;
@@ -143,10 +143,10 @@
     
     <item>
       <title>Markdown常用语法示例</title>
-      <link>http://localhost:1313/post/markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E7%A4%BA%E4%BE%8B/</link>
+      <link>https://yutao.org/post/markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E7%A4%BA%E4%BE%8B/</link>
       <pubDate>Thu, 01 Aug 2024 20:55:18 +0800</pubDate>
       <author>yutao.z@qq.com (江南小哥)</author>
-      <guid>http://localhost:1313/post/markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E7%A4%BA%E4%BE%8B/</guid>
+      <guid>https://yutao.org/post/markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E7%A4%BA%E4%BE%8B/</guid>
       
         <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
 &lt;p&gt;现在用Markdown写作已是必备技能，虽然Markdown语法不复杂，但有时也难免忘记，故本文根据官网整理常用语法形成示例，以为方便查阅。&lt;/p&gt;
@@ -213,7 +213,7 @@
 &lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;![图片](/image/blog/江南小哥.png)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;图片&#34; src=&#34;http://localhost:1313/image/blog/%E6%B1%9F%E5%8D%97%E5%B0%8F%E5%93%A5.png&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.org/image/blog/%E6%B1%9F%E5%8D%97%E5%B0%8F%E5%93%A5.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;图片链接&#34;&gt;图片链接&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -223,7 +223,7 @@
 &lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [![点击江南小哥图片](/image/blog/江南小哥.png)](https://www.yutao.us.kg)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://www.yutao.us.kg&#34;&gt;&lt;img alt=&#34;点击江南小哥图片&#34; src=&#34;http://localhost:1313/image/blog/%E6%B1%9F%E5%8D%97%E5%B0%8F%E5%93%A5.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://www.yutao.us.kg&#34;&gt;&lt;img alt=&#34;点击江南小哥图片&#34; src=&#34;https://yutao.org/image/blog/%E6%B1%9F%E5%8D%97%E5%B0%8F%E5%93%A5.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;插入列表&#34;&gt;插入列表&lt;/h2&gt;
 &lt;p&gt;无序列表&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
@@ -391,10 +391,10 @@ print(&amp;ldquo;Hello, world!&amp;rdquo;)&lt;br&gt;
     
     <item>
       <title>一文学会在Markdown中画UML图</title>
-      <link>http://localhost:1313/post/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9A%E5%9C%A8markdown%E4%B8%AD%E7%94%BBuml%E5%9B%BE/</link>
+      <link>https://yutao.org/post/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9A%E5%9C%A8markdown%E4%B8%AD%E7%94%BBuml%E5%9B%BE/</link>
       <pubDate>Mon, 29 Jul 2024 16:36:02 +0800</pubDate>
       <author>yutao.z@qq.com (江南小哥)</author>
-      <guid>http://localhost:1313/post/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9A%E5%9C%A8markdown%E4%B8%AD%E7%94%BBuml%E5%9B%BE/</guid>
+      <guid>https://yutao.org/post/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9A%E5%9C%A8markdown%E4%B8%AD%E7%94%BBuml%E5%9B%BE/</guid>
       
         <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
 &lt;p&gt;玩编程的小伙伴，基本都接触过UML，经常能看到别人PPT上面画的，那是特别漂亮。同时自己在程序设计分析需求时也需要画一画，目前大家用的比较多的就是MarkDown，于是就有了如何在MarkDown中画UML。通过图形化展示，能让系统抽象的、不易理解的逻辑，方便理解，看到UML后脑海里面有抓手。本文使用的MarkDown编辑工具为VSCode，插件为Markdown All in One。Mermaid（译为美人鱼）是一种以特定文字格式在MarkDown中生成各种图示的方法。它支持软件工程中常用的流程图、顺序图、类图、状态图。同时还支持项目管理中的甘特图等，可以说基本上你接触过的它都可以支持，本文以这4个图为例，来说明。&lt;/p&gt;
@@ -1727,10 +1727,10 @@ State3 --&amp;gt; [*]
     
     <item>
       <title>一文让你彻底理解面向对象编程思想</title>
-      <link>http://localhost:1313/post/%E4%B8%80%E6%96%87%E8%AE%A9%E4%BD%A0%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/</link>
+      <link>https://yutao.org/post/%E4%B8%80%E6%96%87%E8%AE%A9%E4%BD%A0%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/</link>
       <pubDate>Sun, 28 Jul 2024 15:35:12 +0800</pubDate>
       <author>yutao.z@qq.com (江南小哥)</author>
-      <guid>http://localhost:1313/post/%E4%B8%80%E6%96%87%E8%AE%A9%E4%BD%A0%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/</guid>
+      <guid>https://yutao.org/post/%E4%B8%80%E6%96%87%E8%AE%A9%E4%BD%A0%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/</guid>
       
         <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
 &lt;p&gt;可能还未上计算机课，有同学就听过面向对象这个词。然而老师课堂上讲过之后，貌似当时听明白了，但真做系统开发时大脑一片空白。甚至很多已经工作几年的程序员依然对面向对象这个事糊里糊涂。面向对象思想非常基础，甚至可以说如果不理解面向对象，那你就没有掌握编程密码。我想通过以下几个方面，让你理解面向对象。&lt;/p&gt;
@@ -2067,43 +2067,43 @@ State3 --&amp;gt; [*]
     
     <item>
       <title>让搜索引擎收录你的个人博客网站</title>
-      <link>http://localhost:1313/post/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
+      <link>https://yutao.org/post/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
       <pubDate>Fri, 26 Jul 2024 16:54:27 +0800</pubDate>
       <author>yutao.z@qq.com (江南小哥)</author>
-      <guid>http://localhost:1313/post/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
+      <guid>https://yutao.org/post/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
       
         <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
 &lt;p&gt;到目前我们已经搭建好了个人博客，那如何让更多的人知道你的博客呢？这就不得不通过搜索引擎了，如果谷歌、百度等搜索引擎把你收录，这样曝光的机会就增加了。&lt;/p&gt;
 &lt;h2 id=&#34;搜索引擎市场份额&#34;&gt;搜索引擎市场份额&lt;/h2&gt;
 &lt;p&gt;先看看全球哪些搜索引擎使用率最高，打开这个网站&lt;code&gt;https://gs.statcounter.com/&lt;/code&gt;，可以看到谷歌的市场份额最大。在中国百度的市场份额最大。
-&lt;img alt=&#34;图片&#34; src=&#34;http://localhost:1313/image/blog/%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%B8%82%E5%9C%BA%E4%BB%BD%E9%A2%9D.png&#34;&gt;
-&lt;img alt=&#34;图片&#34; src=&#34;http://localhost:1313/image/blog/%E7%99%BE%E5%BA%A6%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%B8%82%E5%9C%BA%E4%BB%BD%E9%A2%9D.png&#34;&gt;&lt;/p&gt;
+&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.org/image/blog/%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%B8%82%E5%9C%BA%E4%BB%BD%E9%A2%9D.png&#34;&gt;
+&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.org/image/blog/%E7%99%BE%E5%BA%A6%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E5%B8%82%E5%9C%BA%E4%BB%BD%E9%A2%9D.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;谷歌收录&#34;&gt;谷歌收录&lt;/h2&gt;
 &lt;p&gt;打开谷歌收录网站，&lt;code&gt;https://search.google.com/&lt;/code&gt;，输入网站域名，点击机继续。
-&lt;img alt=&#34;图片&#34; src=&#34;http://localhost:1313/image/blog/%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95.png&#34;&gt;
+&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.org/image/blog/%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95.png&#34;&gt;
 添加谷歌收录验证
-&lt;img alt=&#34;图片&#34; src=&#34;http://localhost:1313/image/blog/%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95%E9%AA%8C%E8%AF%81.png&#34;&gt;
+&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.org/image/blog/%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95%E9%AA%8C%E8%AF%81.png&#34;&gt;
 向谷歌添加站点地图
-&lt;img alt=&#34;图片&#34; src=&#34;http://localhost:1313/image/blog/%E5%90%91%E8%B0%B7%E6%AD%8C%E6%B7%BB%E5%8A%A0%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE.png&#34;&gt;
+&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.org/image/blog/%E5%90%91%E8%B0%B7%E6%AD%8C%E6%B7%BB%E5%8A%A0%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE.png&#34;&gt;
 谷歌收录就完成了。&lt;/p&gt;
 &lt;h2 id=&#34;收录成功&#34;&gt;收录成功&lt;/h2&gt;
 &lt;p&gt;过一段时间后你可以通过搜索框输入site:xxx.com 或者进入Google Search Console来查看收录情况和流量情况。下图是因为刚刚添加，谷歌还在验证。根据经验，网站更新频繁、有人维护，被收录的速度就会快。
-&lt;img alt=&#34;图片&#34; src=&#34;http://localhost:1313/image/blog/%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95%E6%88%90%E5%8A%9F.png&#34;&gt;&lt;/p&gt;</description>
+&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.org/image/blog/%E8%B0%B7%E6%AD%8C%E6%94%B6%E5%BD%95%E6%88%90%E5%8A%9F.png&#34;&gt;&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://yutao.org/about/</link>
       <pubDate>Thu, 25 Jul 2024 13:44:44 +0800</pubDate>
       <author>yutao.z@qq.com (江南小哥)</author>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://yutao.org/about/</guid>
       
         <description>&lt;h1 id=&#34;个人介绍&#34;&gt;个人介绍&lt;/h1&gt;
 &lt;p&gt;个人网站：&lt;a href=&#34;https://www.yutao.org/&#34;&gt;https://www.yutao.org/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;北方人，人在江南，心也在江南。目前定居&lt;strong&gt;上海&lt;/strong&gt;，&lt;code&gt;互联网金融科技从业者&lt;/code&gt;，在博客平台上记录和分享最新的&lt;code&gt;科技互联网相关技术&lt;/code&gt;、&lt;code&gt;金融知识&lt;/code&gt;、&lt;code&gt;使用教程&lt;/code&gt;。欢迎你的关注和支持。&lt;/p&gt;
 &lt;h1 id=&#34;微信公众号&#34;&gt;微信公众号&lt;/h1&gt;
-&lt;p&gt;&lt;img alt=&#34;图片&#34; src=&#34;http://localhost:1313/image/about/%E5%85%AC%E4%BC%97%E5%8F%B7.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.org/image/about/%E5%85%AC%E4%BC%97%E5%8F%B7.png&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;邮箱&#34;&gt;邮箱&lt;/h1&gt;
 &lt;p&gt;欢迎发送邮件进行交流合作：&lt;code&gt;yutao.z@qq.com&lt;/code&gt;&lt;/p&gt;
 </description>
@@ -2112,10 +2112,10 @@ State3 --&amp;gt; [*]
     
     <item>
       <title>从零搭建个人博客系统</title>
-      <link>http://localhost:1313/post/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</link>
+      <link>https://yutao.org/post/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Fri, 05 Jul 2024 09:23:49 +0800</pubDate>
       <author>yutao.z@qq.com (江南小哥)</author>
-      <guid>http://localhost:1313/post/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>https://yutao.org/post/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</guid>
       
         <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
 &lt;p&gt;使用个人博客也有多年的时间，比如博客园。 博客对个人学习好处很多，能记录所思所感，便于技术积累。一直想折腾一个自己的博客，前后也试过几个都不理想。直到发现现在这个模式：域名+github托管代码，现在把从零开始搭建个人博客的经验分享在这里。&lt;br&gt;
@@ -2131,7 +2131,7 @@ State3 --&amp;gt; [*]
 &lt;ol&gt;
 &lt;li&gt;打开该网站&lt;a href=&#34;https://register.us.kg/&#34;&gt;https://register.us.kg/&lt;/a&gt;，并注册用户，注册名称既域名。&lt;/li&gt;
 &lt;li&gt;注册时提示输入美国身份信息，这里可以使用&lt;a href=&#34;https://www.shenfendaquan.com/&#34;&gt;https://www.shenfendaquan.com/&lt;/a&gt;。
-参考截图：&lt;img alt=&#34;图片&#34; src=&#34;http://localhost:1313/image/blog/%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C.png&#34;&gt;&lt;/li&gt;
+参考截图：&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.org/image/blog/%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C.png&#34;&gt;&lt;/li&gt;
 &lt;li&gt;打开该网站&lt;a href=&#34;https://cloudflare.com/&#34;&gt;https://cloudflare.com/&lt;/a&gt;，并注册用户，然后点击左侧网站按钮，添加站点，将刚刚申请的域名添加，选择免费。&lt;/li&gt;
 &lt;li&gt;拷贝cloudflare分配的2个名称服务器地址，回填到&lt;a href=&#34;https://register.us.kg/&#34;&gt;https://register.us.kg/&lt;/a&gt;，NameServer1和NameServer2。&lt;/li&gt;
 &lt;/ol&gt;
