@@ -8,10 +8,223 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (江南小哥)</managingEditor>
     <webMaster>yutao.z@qq.com (江南小哥)</webMaster>
-    <lastBuildDate>Fri, 02 Aug 2024 09:58:42 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 23 Nov 2024 20:32:52 +0800</lastBuildDate>
     
         <atom:link href="https://yutao.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Maven解析让你从新手到高手</title>
+      <link>https://yutao.org/post/maven%E8%A7%A3%E6%9E%90%E8%AE%A9%E4%BD%A0%E4%BB%8E%E6%96%B0%E6%89%8B%E5%88%B0%E9%AB%98%E6%89%8B/</link>
+      <pubDate>Sat, 23 Nov 2024 20:32:52 +0800</pubDate>
+      <author>yutao.z@qq.com (江南小哥)</author>
+      <guid>https://yutao.org/post/maven%E8%A7%A3%E6%9E%90%E8%AE%A9%E4%BD%A0%E4%BB%8E%E6%96%B0%E6%89%8B%E5%88%B0%E9%AB%98%E6%89%8B/</guid>
+      
+        <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+&lt;p&gt;本文从实战角度出发，笔者多年经验总结，能让你快速理解Maven，知其然且知其所以然，全是干货，让我们开始吧。&lt;/p&gt;
+&lt;h2 id=&#34;文章概览&#34;&gt;文章概览&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Maven能做什么&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Maven自身配置&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Maven插件管理&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pom文件介绍&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Maven其他&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;1maven能做什么&#34;&gt;1.Maven能做什么&lt;/h3&gt;
+&lt;p&gt;Maven是一个软件项目管理工具，主要用于构建和管理项目，功能比较丰富。在这里笔者着重想告诉你，Maven主要干两件事：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Jar包依赖管理&lt;/strong&gt;
+在项目中使用第三方jar是再正常不过的一件事，大家也习以为常。没有maven之前项目使用jar需要我们手动下载，遇到jar依赖问题不得不继续下载直到把所有的jar包下载到项目中，这个过程是痛苦的也浪费程序员宝贵时间。但&lt;code&gt;Jason Van Zyl&lt;/code&gt;这位牛逼的程序员搞定了这件事，他开发的Maven工具可以帮你解决下载jar包，若遇到jar包依赖还能自动下载依赖的jar包，整个过程只需要程序员设定一下配置文件即可完成。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;提供标准目录结构&lt;/strong&gt;
+Maven能统一项目目录，这是怎么回事呢？在没有maven工具之前，每个项目的目录结构不同，比如A项目有3个文件夹，B项目有4个文件夹，在小范围内研发没有问题，一旦范围扩大就没有章法显得目录管理混乱。于是Maven就提供统一目录结构，告诉人们只要你用Maven就会是像下面这样结构。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;graph LR
+    subgraph 项目名称
+        direction TB
+        A(src)
+        B(target)
+        C(pom.xml)
+    end
+
+    subgraph 子目录
+        direction TB
+        D[main]
+        E[test]
+        F[java]
+        G[resources]
+        H[java]
+        I[resources]
+    end
+
+    A--&amp;gt;D
+    A--&amp;gt;E
+    D--&amp;gt;F
+    D--&amp;gt;G
+    E--&amp;gt;H
+    E--&amp;gt;I
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;2maven自身配置&#34;&gt;2.Maven自身配置&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;下载安装Maven&lt;/strong&gt;
+需要提前安装好JDK，然后&lt;a href=&#34;https://maven.apache.org/download.cgi&#34;&gt;官网&lt;/a&gt;下载需要的版本，注意Maven版本与JDK版本匹配，然后配置Maven环境变量&lt;code&gt;M2_HOME=安装路径&lt;/code&gt;，添加path变量&lt;code&gt;%M2_HOME%\bin&lt;/code&gt;，CMD窗口执行mvn -v验证。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;setting.xml文件&lt;/strong&gt;
+该文件有内有很多元素，每个元素代表不同含义，本文介绍比较常用的几个:
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;localRepository&amp;gt;&amp;lt;/localRepository&amp;gt;&lt;/code&gt;：指定下载来的jar包保存目录，默认位置&lt;code&gt;${user.home}/.m2/repository&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;servers&amp;gt;&amp;lt;/servers&amp;gt;&lt;/code&gt;：如果有私服，这里可以配置服务器认证信息，以便Maven能够访问和上传到指定的仓库&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;mirror&amp;gt;&amp;lt;/mirror&amp;gt;&lt;/code&gt;：jar包下载地址，一般国内配置阿里云镜像地址&lt;code&gt;http://maven.aliyun.com/nexus/coptent/groups/public&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;profiles&amp;gt;&amp;lt;/profiles&amp;gt;&lt;/code&gt;:定义一组配置集合，适应不同环境，比如开发、测试、生产，POM文件&lt;code&gt;&amp;lt;properties&amp;gt;&lt;/code&gt;元素引用该组配置，并激活其中一个。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;3maven插件管理&#34;&gt;3.Maven插件管理&lt;/h3&gt;
+&lt;p&gt;Maven是通过各种各样的插件管理项目的，Maven自身仅仅是一个框架，常用的插件比如有&lt;code&gt;clean&lt;/code&gt;、&lt;code&gt;compiler&lt;/code&gt;、&lt;code&gt;install&lt;/code&gt;、&lt;code&gt;jar&lt;/code&gt;、&lt;code&gt;war&lt;/code&gt;、&lt;code&gt;install&lt;/code&gt;等，这些插件也是由Apache提供，插件列表请查看&lt;a href=&#34;https://maven.apache.org/plugins/index.html&#34;&gt;官网&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;4pom文件介绍&#34;&gt;4.POM文件介绍&lt;/h3&gt;
+&lt;p&gt;POM.xml文件是project object model缩写，翻译过来叫项目对象模型，说人话就是用它来定义每个项目，该文件也是xml格式，每个元素代表不同含义，本文介绍常用几个：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;parent&amp;gt;&amp;lt;/parent&amp;gt;&lt;/code&gt;:这个元素定义当前模块的父项目的坐标（groupid、artifactid、version）。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;properties&amp;gt;&amp;lt;/properties&amp;gt;&lt;/code&gt;:用于定义项目使用的属性，比如JDK版本、项目版本、或者jar版本，该元素可以继承。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;dependencyManagement&amp;gt;&amp;lt;/dependencyManagement&amp;gt;&lt;/code&gt;:父项目声明依赖，能让所有子项目中引用依赖且不用显示列出版本号。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;dependencies&amp;gt;&amp;lt;/dependencies&amp;gt;&lt;/code&gt;:显示具体依赖，在父子项目中，该元素可以继承。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;profiles&amp;gt;&amp;lt;profile&amp;gt;&amp;lt;/profile&amp;gt;&amp;lt;/profiles&amp;gt;&lt;/code&gt;:定义不同的构建环境，比如开发、测试、生产环境。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;build&amp;gt;&amp;lt;plugins&amp;gt;&amp;lt;plugin&amp;gt;&amp;lt;/plugin&amp;gt;&amp;lt;/plugins&amp;gt;&amp;lt;/build&amp;gt;&lt;/code&gt;:项目中需要使用的使用的插件，该元素可以继承。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;build&amp;gt;&amp;lt;resources&amp;gt;&amp;gt;&amp;lt;resource&amp;gt;&amp;lt;/resource&amp;gt;&amp;lt;/resources&amp;gt;&amp;lt;/build&amp;gt;&lt;/code&gt;:构建项目中处理配置文件，比如将某个配置文件打包到指定项目路径。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;distributionManagement&amp;gt;&amp;lt;repository&amp;gt;&amp;lt;/&amp;lt;repository&amp;gt;&amp;gt;&amp;lt;/distributionManagement&amp;gt;&lt;/code&gt;:该元素将构建的结果比如jar、war发布到远程仓库，该元素可以配置远程仓库主仓库和快照仓库（id、name、url），与setting.xml中的servers元素对应。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;repositories&amp;gt;&amp;lt;repository&amp;gt;&amp;lt;/repository&amp;gt;&amp;lt;/repositories&amp;gt;&lt;/code&gt;:项目构建过程中需要访问的所有外部Maven仓库配置。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;pluginRepositories&amp;gt;&amp;lt;/pluginRepositories&amp;gt;&lt;/code&gt;:项目构建过程中可以从这个仓库下载插件，指定专门的插件仓库地址。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;5maven其他&#34;&gt;5.Maven其他&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Maven在大项目中管理多模块，模块与模块间存在三种关系：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;依赖&lt;/code&gt;：假设模块service-module依赖common-module，在pom文件中直接使用&lt;code&gt;&amp;lt;dependency&amp;gt;&lt;/code&gt;引用。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;继承&lt;/code&gt;：若模块与模块之间存在继承关系，则子模块在pom文件中直接使用&lt;code&gt;&amp;lt;parent&amp;gt;&lt;/code&gt;引用父坐标。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;聚合&lt;/code&gt;：聚合将多个子模块组织在一起，由父模块协调子模块构建，子模块有自己的业务逻辑，有单独的pom.xml文件，可以独立部署。先有一个聚合项目，父模块名称&lt;code&gt;aggregator-project&lt;/code&gt;，子模块名称&lt;code&gt;module-a&lt;/code&gt;，父子模块在同级目录下，当父模块进行构建时，会先进入上一级目录，在上一目录中搜素子目录。父POM文件&lt;code&gt;&amp;lt;modules&amp;gt;&lt;/code&gt;定义子模块，例如：&lt;code&gt;&amp;lt;module&amp;gt;../module-a&amp;lt;/module&amp;gt;&lt;/code&gt;，子模块POM文件&lt;code&gt;&amp;lt;parent&amp;gt;&lt;/code&gt;引用父模块，例如：&lt;code&gt;&amp;lt;parent&amp;gt;&amp;lt;relativePath&amp;gt;../aggregator-project/pom.xml&amp;lt;/relativePath&amp;gt;&amp;lt;/parent&amp;gt;&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-1&#34;&gt; 1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-2&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-2&#34;&gt; 2&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-3&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-3&#34;&gt; 3&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-4&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-4&#34;&gt; 4&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-5&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-5&#34;&gt; 5&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-6&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-6&#34;&gt; 6&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-7&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-7&#34;&gt; 7&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-8&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-8&#34;&gt; 8&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-9&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-9&#34;&gt; 9&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-10&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-10&#34;&gt;10&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-11&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-11&#34;&gt;11&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-12&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-12&#34;&gt;12&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-13&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-13&#34;&gt;13&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-14&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-14&#34;&gt;14&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-15&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-15&#34;&gt;15&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-16&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-16&#34;&gt;16&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-17&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-17&#34;&gt;17&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;聚合关系：父POM
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;&amp;lt;!-- aggregator-project/pom.xml --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;project&lt;/span&gt; &lt;span style=&#34;color:#4070a0&#34;&gt;xmlns=&lt;/span&gt;&lt;span style=&#34;color:#4070a0&#34;&gt;&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#4070a0&#34;&gt;xmlns:xsi=&lt;/span&gt;&lt;span style=&#34;color:#4070a0&#34;&gt;&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#4070a0&#34;&gt;xsi:schemaLocation=&lt;/span&gt;&lt;span style=&#34;color:#4070a0&#34;&gt;&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;modelVersion&amp;gt;&lt;/span&gt;4.0.0&lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/modelVersion&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.example&lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;aggregator-project&lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.0.0&lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;packaging&amp;gt;&lt;/span&gt;pom&lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/packaging&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;modules&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;module&amp;gt;&lt;/span&gt;../module-a&lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/module&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;module&amp;gt;&lt;/span&gt;../module-b&lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/module&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/modules&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/project&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-1&#34;&gt; 1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-2&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-2&#34;&gt; 2&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-3&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-3&#34;&gt; 3&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-4&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-4&#34;&gt; 4&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-5&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-5&#34;&gt; 5&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-6&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-6&#34;&gt; 6&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-7&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-7&#34;&gt; 7&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-8&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-8&#34;&gt; 8&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-9&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-9&#34;&gt; 9&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-10&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-10&#34;&gt;10&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-11&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-11&#34;&gt;11&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-12&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-12&#34;&gt;12&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-13&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-13&#34;&gt;13&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-14&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-14&#34;&gt;14&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-15&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-15&#34;&gt;15&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-16&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-16&#34;&gt;16&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-17&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-17&#34;&gt;17&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;聚合关系：子POM
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;&amp;lt;!-- module-a/pom.xml --&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;project&lt;/span&gt; &lt;span style=&#34;color:#4070a0&#34;&gt;xmlns=&lt;/span&gt;&lt;span style=&#34;color:#4070a0&#34;&gt;&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#4070a0&#34;&gt;xmlns:xsi=&lt;/span&gt;&lt;span style=&#34;color:#4070a0&#34;&gt;&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#4070a0&#34;&gt;xsi:schemaLocation=&lt;/span&gt;&lt;span style=&#34;color:#4070a0&#34;&gt;&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;modelVersion&amp;gt;&lt;/span&gt;4.0.0&lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/modelVersion&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;parent&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;com.example&lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;aggregator-project&lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;1.0.0&lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;         &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;relativePath&amp;gt;&lt;/span&gt;../aggregator-project/pom.xml&lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/relativePath&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/parent&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;module-a&lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#062873;font-weight:bold&#34;&gt;&amp;lt;/project&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Maven常用命令：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;mvn clean&lt;/strong&gt;：重新构建之前删除target目录及内容，清理旧的编译结果&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mvn compile&lt;/strong&gt;：将java源码编译成字节码&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mvn test&lt;/strong&gt;：执行单元测试&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mvn package&lt;/strong&gt;：打包项目，生成最终文件，如：jar、war&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mvn install&lt;/strong&gt;：将JAR文件安装到本地Maven仓库（通常位于 ~/.m2/repository 目录下），方便其他项目引用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mvn deploy&lt;/strong&gt;：将项目部署到远程仓库，通过pom.xml中的&lt;code&gt;&amp;lt;distributionManagement&amp;gt;&lt;/code&gt;，找到setting.xml中的&lt;code&gt;&amp;lt;servers&amp;gt;&lt;/code&gt;元素&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mvn clean install&lt;/strong&gt;：组合命令，先清理项目，然后编译、测试并安装到本地仓库&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mvn clean package&lt;/strong&gt;：组合命令，先清理项目，然后编译、测试并打包项目&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mvn test -DskipTests&lt;/strong&gt;：组合命令，跳过测试直接编译打包&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mvn dependency:tree&lt;/strong&gt;：组合命令，检查项目中使用的依赖关系及其版本&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mvn archetype:generate&lt;/strong&gt;：组合命令，根据当前项目，生成新的Maven模版，在创建新的项目时候使用自己自定义的模版&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Maven工具执行流：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;graph LR
+ A(远程仓库)
+ B(私服)
+ subgraph Maven
+     C(setting.xml)
+ end
+ 
+ subgraph 项目名称
+     D(pom.xml)
+ end
+ E(本机仓库)
+ A--&amp;gt;B
+ B--&amp;gt;C
+ C--&amp;gt;E
+ E--&amp;gt;D
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;Maven工具为目前项目构建使用率较高的工具，了解和掌握该工具能大大提高研发效率，请多多实践本文中的相关介绍。&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>一文学会Git常用语法</title>
@@ -397,19 +610,25 @@ print(&amp;ldquo;Hello, world!&amp;rdquo;)&lt;br&gt;
       <guid>https://yutao.org/post/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9A%E5%9C%A8markdown%E4%B8%AD%E7%94%BBuml%E5%9B%BE/</guid>
       
         <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
-&lt;p&gt;玩编程的小伙伴，基本都接触过UML，经常能看到别人PPT上面画的，那是特别漂亮。同时自己在程序设计分析需求时也需要画一画，目前大家用的比较多的就是MarkDown，于是就有了如何在MarkDown中画UML。通过图形化展示，能让系统抽象的、不易理解的逻辑，方便理解，看到UML后脑海里面有抓手。本文使用的MarkDown编辑工具为VSCode，插件为Markdown All in One。Mermaid（译为美人鱼）是一种以特定文字格式在MarkDown中生成各种图示的方法。它支持软件工程中常用的流程图、顺序图、类图、状态图。同时还支持项目管理中的甘特图等，可以说基本上你接触过的它都可以支持，本文以这4个图为例，来说明。&lt;/p&gt;
-&lt;h2 id=&#34;uml图形&#34;&gt;UML图形&lt;/h2&gt;
+&lt;p&gt;在编程和需求分析中，图形化的展示确实能够帮助更好地理解系统的逻辑和结构。使用 Mermaid 在 Markdown 中绘制图形是一个非常方便的方式。下面，我将通过六个不同的图类型来演示如何在 Markdown 中使用 Mermaid，请先在vscode安装Markdown All in One插件。&lt;/p&gt;
+&lt;h2 id=&#34;图形&#34;&gt;图形&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;UML流程图&lt;/li&gt;
-&lt;li&gt;UML时序图&lt;/li&gt;
-&lt;li&gt;UML类图&lt;/li&gt;
-&lt;li&gt;UML状态图&lt;/li&gt;
+&lt;li&gt;流程图&lt;/li&gt;
+&lt;li&gt;时序图&lt;/li&gt;
+&lt;li&gt;类图&lt;/li&gt;
+&lt;li&gt;状态图&lt;/li&gt;
+&lt;li&gt;Git 图&lt;/li&gt;
 &lt;li&gt;思维导图&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;uml流程图&#34;&gt;UML流程图&lt;/h3&gt;
-&lt;h4 id=&#34;流程图方向&#34;&gt;流程图方向&lt;/h4&gt;
-&lt;p&gt;TD/TB：从上至下 BT：从下至上 LR：从左至右 RL：从右至左&lt;/p&gt;
-&lt;h4 id=&#34;流程图节点&#34;&gt;流程图节点&lt;/h4&gt;
+&lt;h3 id=&#34;1-流程图&#34;&gt;1. 流程图&lt;/h3&gt;
+&lt;h4 id=&#34;1-流程图方向命令&#34;&gt;1. 流程图方向命令&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;TB：从上到下&lt;/li&gt;
+&lt;li&gt;BT：从下到上&lt;/li&gt;
+&lt;li&gt;LR：从左到右&lt;/li&gt;
+&lt;li&gt;RL：从右到左&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;2-流程图节点命令&#34;&gt;2. 流程图节点命令&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -491,7 +710,7 @@ print(&amp;ldquo;Hello, world!&amp;rdquo;)&lt;br&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;代码：&lt;/p&gt;
+&lt;p&gt;节点命令代码及效果：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-0-1&#34;&gt;1&lt;/a&gt;
@@ -514,7 +733,10 @@ print(&amp;ldquo;Hello, world!&amp;rdquo;)&lt;br&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    J{{六角形}} 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;graph TB
+&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;---
+    title: 示例
+---
+graph TB
     A(圆角矩形)
     B[矩形]
     C{菱形}
@@ -544,7 +766,10 @@ print(&amp;ldquo;Hello, world!&amp;rdquo;)&lt;br&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    G(((双重圆形)))
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;graph TB
+&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;---
+    title: 示例
+---
+graph TB
     A&amp;gt;非对称形] 
     B[/正向梯形\]
     C[\反向梯形/] 
@@ -552,7 +777,7 @@ print(&amp;ldquo;Hello, world!&amp;rdquo;)&lt;br&gt;
     E[/左倾平行四边形/]
     F[[子程序节点]]
     G(((双重圆形)))
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;节点间的连线&#34;&gt;节点间的连线&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;3-流程图连线命令&#34;&gt;3. 流程图连线命令&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -878,9 +1103,9 @@ print(&amp;ldquo;Hello, world!&amp;rdquo;)&lt;br&gt;
     D --&amp;gt;|异步通信| I
     E --&amp;gt;|异步通信| I
   end
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;uml时序图&#34;&gt;UML时序图&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;2-时序图&#34;&gt;2. 时序图&lt;/h3&gt;
 &lt;p&gt;时序图以时间为主线，是有生命线的动态视图，它显示了各个进程之间是如何运作的，以及他们的运行顺序。&lt;/p&gt;
-&lt;h4 id=&#34;顺序图四要素&#34;&gt;顺序图四要素&lt;/h4&gt;
+&lt;h4 id=&#34;1-顺序图四要素&#34;&gt;1. 顺序图四要素&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -907,7 +1132,7 @@ print(&amp;ldquo;Hello, world!&amp;rdquo;)&lt;br&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4 id=&#34;时序图连接样式&#34;&gt;时序图连接样式&lt;/h4&gt;
+&lt;h4 id=&#34;2-时序图连接样式&#34;&gt;2. 时序图连接样式&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -949,9 +1174,9 @@ print(&amp;ldquo;Hello, world!&amp;rdquo;)&lt;br&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h4 id=&#34;时序图消息格式&#34;&gt;时序图消息格式&lt;/h4&gt;
+&lt;h4 id=&#34;3-时序图消息格式&#34;&gt;3. 时序图消息格式&lt;/h4&gt;
 &lt;p&gt;[&lt;code&gt;对象1&lt;/code&gt;] [&lt;code&gt;箭头类型&lt;/code&gt;] [&lt;code&gt;对象2&lt;/code&gt;] : 消息内容&lt;/p&gt;
-&lt;h4 id=&#34;对象两种表示小人矩形&#34;&gt;对象两种表示小人/矩形&lt;/h4&gt;
+&lt;h4 id=&#34;4-对象两种表示小人矩形&#34;&gt;4. 对象两种表示小人/矩形&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-22-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-22-1&#34;&gt;1&lt;/a&gt;
@@ -970,7 +1195,7 @@ print(&amp;ldquo;Hello, world!&amp;rdquo;)&lt;br&gt;
     %%这行是注释
     actor A as 学生
     participant school B as 学校
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;对象别名&#34;&gt;对象别名&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;5-对象别名&#34;&gt;5. 对象别名&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-24-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-24-1&#34;&gt;1&lt;/a&gt;
@@ -989,7 +1214,7 @@ print(&amp;ldquo;Hello, world!&amp;rdquo;)&lt;br&gt;
     %%这行是注释
     participant A as 学生
     participant B as 老师
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;激活对象&#34;&gt;激活对象&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;6-激活对象&#34;&gt;6. 激活对象&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-26-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-26-1&#34;&gt;1&lt;/a&gt;
@@ -1017,7 +1242,7 @@ print(&amp;ldquo;Hello, world!&amp;rdquo;)&lt;br&gt;
     activate B
     B--&amp;gt;&amp;gt;A: 更新信息
     deactivate B
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;也可以用-号激活对象&#34;&gt;也可以用+/-号激活对象&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;7-也可以用-号激活对象&#34;&gt;7. 也可以用+/-号激活对象&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-28-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-28-1&#34;&gt;1&lt;/a&gt;
@@ -1039,7 +1264,7 @@ print(&amp;ldquo;Hello, world!&amp;rdquo;)&lt;br&gt;
     actor B as 老师
     A-)+B: 录入系统
     B--)-A: 更新信息
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;添加备注&#34;&gt;添加备注&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;8-添加备注&#34;&gt;8. 添加备注&lt;/h4&gt;
 &lt;p&gt;语法&lt;code&gt;Note [right of | left of | over][对象]:备注&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
@@ -1056,7 +1281,7 @@ print(&amp;ldquo;Hello, world!&amp;rdquo;)&lt;br&gt;
 &lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sequenceDiagram
 　　participant John
 　　Note left of John: Text in note
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;跨越两个对象的备注&#34;&gt;跨越两个对象的备注&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;9-跨越两个对象的备注&#34;&gt;9. 跨越两个对象的备注&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-32-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-32-1&#34;&gt;1&lt;/a&gt;
@@ -1072,7 +1297,7 @@ print(&amp;ldquo;Hello, world!&amp;rdquo;)&lt;br&gt;
 &lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;sequenceDiagram
     Alice-&amp;gt;&amp;gt;John:Hello John, how are you?
     Note over Alice,John:A typical interaction
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;循环&#34;&gt;循环&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;10-循环&#34;&gt;10. 循环&lt;/h4&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;loop 循环条件
 ... statements...
 end
@@ -1097,7 +1322,7 @@ end
 　　loop Reply every minute
 　　　　John--&amp;gt;&amp;gt;Alice:Great!
 　　end
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;选择alt&#34;&gt;选择ALT&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;11-选择alt&#34;&gt;11. 选择ALT&lt;/h4&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;推荐在没有else情况下使用opt
 alt/opt 选择描述
 ...statements...
@@ -1198,8 +1423,8 @@ end
     end
     李--)张: 打量着王五...
     张-&amp;gt;&amp;gt;王: 很好... 王五, 你怎么样?
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;uml类图&#34;&gt;UML类图&lt;/h3&gt;
-&lt;h4 id=&#34;类之间的关系&#34;&gt;类之间的关系&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;3-类图&#34;&gt;3. 类图&lt;/h3&gt;
+&lt;h4 id=&#34;1-类之间的关系&#34;&gt;1. 类之间的关系&lt;/h4&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1269,7 +1494,7 @@ end
     classK &amp;lt;.. classL:依赖
     classM &amp;lt;|.. classN:实现
     classO .. classP:连接(Dashed)
-&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;类定义成员&#34;&gt;类定义成员&lt;/h4&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;2-类定义成员&#34;&gt;2. 类定义成员&lt;/h4&gt;
 &lt;p&gt;属性：直接写属性名称，方法：方法名称后加()&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1404,7 +1629,7 @@ Square : +getDistanceMatrix() List~List~int~~
 &lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
 &lt;p&gt;方法返回类型，在方法后+空格+返回类型&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h4 id=&#34;多重性&#34;&gt;多重性&lt;/h4&gt;
+&lt;h4 id=&#34;3-多重性&#34;&gt;3. 多重性&lt;/h4&gt;
 &lt;p&gt;多重性（Multiplicity）是用来表示类与类之间的关系中，每个类的实例可以关联多少个另一个类的实例。它定义了一个对象与另一个对象之间的数量关系。多重性通常使用数字或符号表示，放在类之间的关联线的两端。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1572,7 +1797,7 @@ Department &amp;#34;1&amp;#34; --&amp;gt; &amp;#34;1..*&amp;#34; Employee
         +捕鱼()
         +下蛋()
     }
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;uml状态图&#34;&gt;UML状态图&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;4-状态图&#34;&gt;4. 状态图&lt;/h3&gt;
 &lt;p&gt;对象的所有可能状态以及由于各种事件的发生而引起的状态之间的转换。&lt;br&gt;
 构成状态图的要素：&lt;/p&gt;
 &lt;table&gt;
@@ -1676,8 +1901,7 @@ State1 --&amp;gt; join_state
 State2 --&amp;gt; join_state
 join_state --&amp;gt; State3
 State3 --&amp;gt; [*]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;思维导图&#34;&gt;思维导图&lt;/h3&gt;
-&lt;p&gt;排版根据文字对齐安排&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;5-git-图&#34;&gt;5. Git 图&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-57-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-57-1&#34;&gt; 1&lt;/a&gt;
@@ -1692,6 +1916,70 @@ State3 --&amp;gt; [*]
 &lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-57-10&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-57-10&#34;&gt;10&lt;/a&gt;
 &lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-57-11&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-57-11&#34;&gt;11&lt;/a&gt;
 &lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-57-12&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-57-12&#34;&gt;12&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-57-13&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-57-13&#34;&gt;13&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-57-14&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-57-14&#34;&gt;14&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-57-15&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-57-15&#34;&gt;15&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-57-16&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-57-16&#34;&gt;16&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-57-17&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-57-17&#34;&gt;17&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-57-18&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-57-18&#34;&gt;18&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gitGraph
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    commit id: &amp;#34;Initial Commit&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    branch featureA
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    checkout featureA
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    commit id: &amp;#34;Feature A Commit 1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    commit id: &amp;#34;Feature A Commit 2&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    checkout main
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    branch featureB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    checkout featureB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    commit id: &amp;#34;Feature B Commit 1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    commit id: &amp;#34;Feature B Commit 2&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    checkout main
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    merge featureA
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    commit id: &amp;#34;Merge Feature A into Main&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    merge featureB
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    commit id: &amp;#34;Merge Feature B into Main&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    conflict resolve
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    commit id: &amp;#34;Resolve Merge Conflict&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;---
+title: 示例
+---
+gitGraph
+    commit id: &amp;#34;Initial Commit&amp;#34;
+    branch featureA
+    checkout featureA
+    commit id: &amp;#34;Feature A Commit 1&amp;#34;
+    commit id: &amp;#34;Feature A Commit 2&amp;#34;
+    checkout main
+    branch featureB
+    checkout featureB
+    commit id: &amp;#34;Feature B Commit 1&amp;#34;
+    commit id: &amp;#34;Feature B Commit 2&amp;#34;
+    checkout main
+    merge featureA
+    commit id: &amp;#34;Merge Feature A into Main&amp;#34;
+    merge featureB
+    commit id: &amp;#34;Merge Feature B into Main&amp;#34;
+    commit id: &amp;#34;Resolve Merge Conflict&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;6-思维导图&#34;&gt;6. 思维导图&lt;/h3&gt;
+&lt;p&gt;导图的排版是根据文字对齐安排的&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-59-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-59-1&#34;&gt; 1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-59-2&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-59-2&#34;&gt; 2&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-59-3&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-59-3&#34;&gt; 3&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-59-4&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-59-4&#34;&gt; 4&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-59-5&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-59-5&#34;&gt; 5&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-59-6&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-59-6&#34;&gt; 6&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-59-7&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-59-7&#34;&gt; 7&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-59-8&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-59-8&#34;&gt; 8&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-59-9&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-59-9&#34;&gt; 9&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-59-10&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-59-10&#34;&gt;10&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-59-11&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-59-11&#34;&gt;11&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-59-12&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-59-12&#34;&gt;12&lt;/a&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mindmap
@@ -2100,8 +2388,8 @@ State3 --&amp;gt; [*]
       <guid>https://yutao.org/about/</guid>
       
         <description>&lt;h1 id=&#34;个人介绍&#34;&gt;个人介绍&lt;/h1&gt;
-&lt;p&gt;个人网站：&lt;a href=&#34;https://www.yutao.org/&#34;&gt;https://www.yutao.org/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;北方人，人在江南，心也在江南。目前定居&lt;strong&gt;上海&lt;/strong&gt;，&lt;code&gt;互联网金融科技从业者&lt;/code&gt;，在博客平台上记录和分享最新的&lt;code&gt;科技互联网相关技术&lt;/code&gt;、&lt;code&gt;金融知识&lt;/code&gt;、&lt;code&gt;使用教程&lt;/code&gt;。欢迎你的关注和支持。&lt;/p&gt;
+&lt;p&gt;个人网站：&lt;a href=&#34;https://yutao.org/&#34;&gt;https://yutao.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;北方人，身在江南心也在江南，目前定居&lt;strong&gt;上海&lt;/strong&gt;，&lt;code&gt;互联网金融科技从业者&lt;/code&gt;，在博客平台上记录和分享最新的&lt;code&gt;互联网相关技术&lt;/code&gt;、&lt;code&gt;金融科技知识&lt;/code&gt;、&lt;code&gt;编程经验&lt;/code&gt;，欢迎你的关注和支持。&lt;/p&gt;
 &lt;h1 id=&#34;微信公众号&#34;&gt;微信公众号&lt;/h1&gt;
 &lt;p&gt;&lt;img alt=&#34;图片&#34; src=&#34;https://yutao.org/image/about/%E5%85%AC%E4%BC%97%E5%8F%B7.png&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;邮箱&#34;&gt;邮箱&lt;/h1&gt;
