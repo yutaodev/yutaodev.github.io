@@ -201,12 +201,12 @@ C --&amp;gt; F
 &lt;p&gt;&lt;strong&gt;1.4 JComponent类&lt;/strong&gt;&lt;br&gt;
 JComponent类是所有轻量级组件的父类，所有继承JComponent的类都属于基本组件，它们只能依赖中间容器而存在。JComponent类主要九大大功能如下：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;graph LR
-    subgraph left[&amp;#34;:::yellow 上侧框 ::&amp;#34;]
+    subgraph left[&amp;#34;:::yellow 下侧框 ::&amp;#34;]
         direction TB
         left_content[&amp;#34;- 为残疾无障碍支持&amp;lt;br&amp;gt;- 指搓支持&amp;lt;br&amp;gt;- 双缓冲支持组件频繁改变&amp;lt;br&amp;gt;- 键绑定让按键似图标&amp;#34;]
     end
 
-    subgraph right[&amp;#34;:::yellow 下侧框 ::&amp;#34;]
+    subgraph right[&amp;#34;:::yellow 上侧框 ::&amp;#34;]
         direction TB
         right_content[&amp;#34;- Tool tips 提示功能&amp;lt;br&amp;gt;- 绘画边框功能&amp;lt;br&amp;gt;- 定制桌面功能&amp;lt;br&amp;gt;- 自定义属性&amp;lt;br&amp;gt;- 对布局功能的支持&amp;#34;]
     end
