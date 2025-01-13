@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>搭建个人博客系统x on 江南小哥</title>
+    <link>http://localhost:1313/categories/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9Fx/</link>
+    <description>Recent content in 搭建个人博客系统x on 江南小哥</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>yutao.z@qq.com (江南小哥)</managingEditor>
+    <webMaster>yutao.z@qq.com (江南小哥)</webMaster>
+    <lastBuildDate>Fri, 26 Jul 2024 16:54:27 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9Fx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>让搜索引擎收录你的个人博客网站</title>
+      <link>http://localhost:1313/post/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Fri, 26 Jul 2024 16:54:27 +0800</pubDate><author>yutao.z@qq.com (江南小哥)</author>
+      <guid>http://localhost:1313/post/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>从零搭建个人博客系统</title>
+      <link>http://localhost:1313/post/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Fri, 05 Jul 2024 09:23:49 +0800</pubDate><author>yutao.z@qq.com (江南小哥)</author>
+      <guid>http://localhost:1313/post/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

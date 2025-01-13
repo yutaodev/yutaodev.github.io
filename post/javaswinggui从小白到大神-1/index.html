@@ -81,7 +81,7 @@
   <meta itemprop="description" content="JavaSwingGUI从小白到大神">
   <meta itemprop="datePublished" content="2025-01-02T19:35:18+08:00">
   <meta itemprop="dateModified" content="2025-01-02T19:35:18+08:00">
-  <meta itemprop="wordCount" content="8547">
+  <meta itemprop="wordCount" content="9944">
   <meta itemprop="keywords" content="javaswing,GUI,swing">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="JavaSwingGUI从小白到大神-1">
@@ -330,12 +330,12 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 8547 字 -
-        预计阅读 18 分钟
+        约 9944 字 -
+        预计阅读 20 分钟
       </span>
 
     <div class="post-meta-category">
-        <a href="https://yutao.org/categories/%E7%BC%96%E7%A8%8B/"> 编程 </a>
+        <a href="https://yutao.org/categories/swing/"> Swing </a>
           
       </div>
 
@@ -368,60 +368,220 @@
 <h3 id="1java-swing组件基础">1.Java Swing组件基础</h3>
 <p><strong>1.1 Swing组件的层次</strong><br>
 这里简单介绍Swing组件的层次，实际有很多，不详细介绍，只是把主要层次列出来。</p>
-<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph TB
-A(Componet)
-B(Container)
-C(JComponent)
-D(Window)
-E(Jpanel)
-F(JTable)
-G(JTree)
-H(JTextArea)
-I(JTextField)
-J(JButton)
-K(Frame)
-L(Dialog)
-M(JFrame)
-N(JDialog)
-O(内容面板ContentPonent)
-Q(菜单条JMenuBar)
-R(基本组件)
-
-A --&gt; B
-B --&gt; C
-B --&gt; D
-C --&gt; E
-C --&gt; F
-C --&gt; G
-C --&gt; I
-C --&gt; H
-C --&gt; J
-D --&gt; K
-D --&gt; L
-K --&gt; M
-L --&gt; N
-M --&gt; O
-M --&gt; Q
-O --&gt; R
-</code></pre><p><strong>1.2 Swing组件的分类</strong><br>
-从功能上可以划分三种类型：顶层组件、中间组件、基本组件。</p>
-<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph TB
-A(Swing组件)
-B(顶层组件类)
-C(中间组件类)
-D(基本组件类)
-E(中间容器类)
-F(特殊中间组件类)
-
-A --&gt; B
-A --&gt; C
-A --&gt; D
-C --&gt; E
-C --&gt; F
-</code></pre><p>顶层组件是可以独立运行的，一般包括：JFrame、JDialog、JWindow、JApplet等。
-中间组件是可以充当载体，但不能独立运行的，一般包括：JPanel、JScrollPane、JTabbedPane、JToolBar等。
-特殊组件是一些特殊的中间组件，一般具有美化的样式，一般包括：JInternalFrame、JLayerPane、JRootPaned等。
-基本组件，就是实现人机交互的组件，一般包括：JLabel、JButton、JTextField、JTextArea等。</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-25">25</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-26">26</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>java.awt.Component
+</span></span><span style="display:flex;"><span>└── java.awt.Container
+</span></span><span style="display:flex;"><span>    ├── javax.swing.JComponent
+</span></span><span style="display:flex;"><span>    │   ├── 中间容器组件
+</span></span><span style="display:flex;"><span>    │   │   ├── JPanel
+</span></span><span style="display:flex;"><span>    │   │   ├── JScrollPane
+</span></span><span style="display:flex;"><span>    │   │   ├── JSplitPane
+</span></span><span style="display:flex;"><span>    │   │   ├── JTabbedPane
+</span></span><span style="display:flex;"><span>    │   │   ├── JToolBar
+</span></span><span style="display:flex;"><span>    │   │   ├── JLayeredPane
+</span></span><span style="display:flex;"><span>    │   │   ├── JDesktopPane
+</span></span><span style="display:flex;"><span>    │   │   └── JInternalFrame
+</span></span><span style="display:flex;"><span>    │   └── 普通组件
+</span></span><span style="display:flex;"><span>    │       ├── JButton
+</span></span><span style="display:flex;"><span>    │       ├── JCheckBox
+</span></span><span style="display:flex;"><span>    │       ├── JRadioButton
+</span></span><span style="display:flex;"><span>    │       ├── JTextField
+</span></span><span style="display:flex;"><span>    │       ├── JTable
+</span></span><span style="display:flex;"><span>    │       ├── JTree
+</span></span><span style="display:flex;"><span>    │       ├── JComboBox
+</span></span><span style="display:flex;"><span>    │       └── JProgressBar
+</span></span><span style="display:flex;"><span>    └── 顶级组件
+</span></span><span style="display:flex;"><span>        ├── JFrame
+</span></span><span style="display:flex;"><span>        ├── JDialog
+</span></span><span style="display:flex;"><span>        ├── JApplet
+</span></span><span style="display:flex;"><span>        └── JWindow
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>顶级组件列表：</strong></p>
+<ul>
+<li>
+<p>JFrame：窗口容器，通常用作主程序窗口。</p>
+</li>
+<li>
+<p>JDialog：对话框容器，用于显示模态或非模态对话框。</p>
+</li>
+<li>
+<p>JApplet：嵌入在浏览器中的小程序（已过时）。</p>
+</li>
+<li>
+<p>JWindow：没有标题栏和边框的窗口。</p>
+</li>
+<li>
+<p>特点：</p>
+<ul>
+<li>直接继承自 java.awt.Container（间接继承 Component）。</li>
+<li>每个顶级组件都有一个 JRootPane 作为其内容容器。</li>
+<li>不可以直接向顶级组件添加普通组件，需要通过 Content Pane 添加。</li>
+<li><code>每个顶层容器包含一个 JRootPane，它是顶层容器的根容器</code>。</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-7">7</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>JRootPane
+</span></span><span style="display:flex;"><span>  ├── Glass Pane
+</span></span><span style="display:flex;"><span>  ├── Layered Pane
+</span></span><span style="display:flex;"><span>  │   ├── JMenuBar
+</span></span><span style="display:flex;"><span>  │   └── Content Pane
+</span></span><span style="display:flex;"><span>  │       └── User Components
+</span></span><span style="display:flex;"><span>  └── (Optionally) Border and Decorations
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p><strong>中间容器列表：</strong></p>
+<ul>
+<li>JPanel：
+<ul>
+<li>用作面板容器，最常用的中间容器。</li>
+<li>通常与布局管理器配合使用。</li>
+</ul>
+</li>
+<li>JScrollPane：
+<ul>
+<li>滚动面板，用于支持内容的滚动显示。</li>
+<li>常用来包装大内容的组件，例如表格、列表或文本区域。</li>
+</ul>
+</li>
+<li>JSplitPane：
+<ul>
+<li>分割面板，用于将界面分为两个区域，可调整大小。</li>
+</ul>
+</li>
+<li>JTabbedPane：
+<ul>
+<li>卡片面板，用于在同一区域切换多个选项卡。</li>
+</ul>
+</li>
+<li>JToolBar：
+<ul>
+<li>工具栏，用于组织快捷操作按钮。</li>
+</ul>
+</li>
+<li>JLayeredPane：
+<ul>
+<li>层叠面板，用于管理组件的 Z 轴顺序（层次）。</li>
+</ul>
+</li>
+<li>JDesktopPane：
+<ul>
+<li>虚拟桌面容器，用于管理内部窗口（JInternalFrame）。</li>
+</ul>
+</li>
+<li>JInternalFrame：
+<ul>
+<li>内部窗口，通常嵌套在 JDesktopPane 中。</li>
+</ul>
+</li>
+<li>特点：
+<ul>
+<li>直接继承自 javax.swing.JComponent。</li>
+<li>主要用于分组和布局子组件。</li>
+</ul>
+</li>
+</ul>
+<p><strong>普通组件列表：</strong></p>
+<ul>
+<li>按钮类：
+<ul>
+<li>JButton：普通按钮。</li>
+<li>JCheckBox：复选框按钮。</li>
+<li>JRadioButton：单选按钮。</li>
+<li>JToggleButton：可切换的按钮。</li>
+</ul>
+</li>
+<li>文本类：
+<ul>
+<li>JLabel：文本标签，用于显示静态文本或图标。</li>
+<li>JTextField：单行文本输入框。</li>
+<li>JPasswordField：密码输入框。</li>
+<li>JTextArea：多行文本区域。</li>
+<li>JEditorPane：支持 HTML 和 RTF 的编辑器。</li>
+<li>JTextPane：支持富文本的多功能文本组件。</li>
+</ul>
+</li>
+<li>菜单类：
+<ul>
+<li>JMenuBar：菜单栏。</li>
+<li>JMenu：菜单。</li>
+<li>JMenuItem：菜单项。</li>
+<li>JCheckBoxMenuItem：带复选框的菜单项。</li>
+<li>JRadioButtonMenuItem：带单选按钮的菜单项。</li>
+</ul>
+</li>
+<li>选择类：
+<ul>
+<li>JComboBox：下拉列表框。</li>
+<li>JList：列表。</li>
+<li>JSpinner：数值选择器。</li>
+</ul>
+</li>
+<li>表格和树：
+<ul>
+<li>JTable：表格，用于显示二维数据。</li>
+<li>JTree：树，用于显示分层数据。</li>
+</ul>
+</li>
+<li>进度条和滑块：
+<ul>
+<li>JProgressBar：进度条。</li>
+<li>JSlider：滑块。</li>
+</ul>
+</li>
+<li>对话框类：
+<ul>
+<li>JOptionPane：标准对话框。</li>
+</ul>
+</li>
+<li>其他组件：
+<ul>
+<li>JSeparator：分隔符，用于在菜单或工具栏中分隔组件。</li>
+<li>JToolTip：工具提示。</li>
+<li>JViewport：视口，通常与 JScrollPane 配合使用。</li>
+</ul>
+</li>
+</ul>
 <p><strong>1.3 向顶层容器中添加内容面板和菜单</strong>
 <details>
   <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
@@ -899,7 +1059,9 @@ JComponent类是所有轻量级组件的父类，所有继承JComponent的类都
 </details>
 
 <p>3.2 <strong>FlowLayout布局管理器</strong><br>
-这个布局管理器的特点是按照控件加入的顺序从左到右排列，一行排满，再换下一行，另外如果有些按钮看不到，可以使用pack方法自动调整Frame的大小，代码展示。
+这个布局管理器的特点是按照控件加入的顺序从左到右排列，一行排满，再换下一行，另外如果有些按钮看不到，可以使用pack方法自动调整Frame的大小，代码展示。</p>
+<ul>
+<li>JFrame.pack() 是 Java Swing 中用于自动调整窗口大小的方法。调用该方法后，窗口的大小会调整到能够正好容纳其中所有组件及其首选大小的程度，并考虑到布局管理器设置的间距和边框。
 <details>
   <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
     代码FlowLayout布局管理器
@@ -1307,9 +1469,125 @@ JComponent类是所有轻量级组件的父类，所有继承JComponent的类都
 </div>
 </div>
 </details>
-</p>
-<p>3.4 <strong>GridBagLayout布局管理器</strong>
-这种布局管理器的特点是比较先进的，很人性化的布局管理器，在网格中提供类似坐标的方式，可以精确定位组件的位置，每个组件可以占一个网格，也可以一个组件占多个网格。在 GridBagLayout 布局中，网格的划分是虚拟的，只有在放置组件时，网格才会被显式创建。gridx：表示组件所在的<strong>列索引</strong>，从左到右，索引从 0 开始。gridy：表示组件所在的<strong>行索引</strong>，从上到下，索引从 0 开始。GridBagLayout 会根据所有组件的 weightx 或 weighty 值的比例来分配多余的空间。例如：如果两个组件的 weightx 分别是 1 和 2，当窗口宽度增加时，第一个组件将分配 1/3 的额外空间，第二个组件分配 2/3 的额外空间。anchor 的核心作用：控制组件在未填满的分配空间中的对齐位置，注意与 fill 配合：只有在 fill 不填充空间时（如 NONE）或组件未完全占用分配空间时，anchor 才会生效。
+</li>
+</ul>
+<p>3.4 <strong>GridBagLayout布局管理器</strong></p>
+<p>GridBagLayout布局管理器是Java Swing提供的一种布局管理器，它提供了一种灵活的方式来排列和定位组件。GridBagLayout布局管理器使用网格来定位组件，每个组件都被分配到一个或几个网格单元中，并使用网格行列来确定组件的位置。网格的划分是虚拟的，只有在放置组件时，网格才会被显式创建。GridBagLayout布局管理器提供了许多属性，如组件的权重、填充、 Insets、 Anchor 等，这些属性可以控制组件的位置和布局。</p>
+<ul>
+<li>gridx：表示组件所在的<strong>列索引</strong>，从左到右，索引从 0 开始。</li>
+<li>gridy：表示组件所在的<strong>行索引</strong>，从上到下，索引从 0 开始。</li>
+<li>weightx <strong>(水平拉伸权重)</strong>: 用于指定网格单元在水平和垂直方向上的 “拉伸权重”，如果两个组件的 weightx 分别是 1 和 2，那么它们将按照 1:2 的比例分配多余的水平空间。</li>
+<li>weighty <strong>(垂直拉伸权重)</strong>：用于指定网格单元在水平和垂直方向上的 “拉伸权重”，同理。</li>
+<li>gridwidth：控制组件在网格中的列跨度。</li>
+<li>gridheight：控制组件在网格中的行跨度。</li>
+<li>anchor 的核心作用：控制组件在未填满的分配空间中的对齐位置。注意与 fill 配合：只有在 fill 不填充空间时（如 NONE）或组件未完全占用分配空间时，anchor 才会生效。</li>
+</ul>
+<details>
+  <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    代码gridx、gridy、weightx、weighty、anchor
+    
+  </summary>
+  <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-25">25</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-26">26</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-27">27</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-28">28</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-29"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-29">29</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-30"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-30">30</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-31"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-31">31</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-32"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-32">32</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-33"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-33">33</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-34"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-34">34</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-35"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-35">35</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-36"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-36">36</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-37"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-37">37</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-38"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-38">38</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-39"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-39">39</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-40"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-40">40</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-41"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-41">41</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-42"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-42">42</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-43"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-43">43</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-44"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-44">44</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-45"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-45">45</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-46"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-46">46</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">GridBagLayoutWeightExample</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>JFrame<span style="color:#bbb"> </span>frame<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>JFrame(<span style="color:#4070a0">&#34;GridBagConstraints.weightx 和 weighty 示例&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>frame.<span style="color:#4070a0">setDefaultCloseOperation</span>(JFrame.<span style="color:#4070a0">EXIT_ON_CLOSE</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>frame.<span style="color:#4070a0">setSize</span>(400,<span style="color:#bbb"> </span>300);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 设置布局管理器</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>frame.<span style="color:#4070a0">setLayout</span>(<span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>java.<span style="color:#4070a0">awt</span>.<span style="color:#4070a0">GridBagLayout</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>GridBagConstraints<span style="color:#bbb"> </span>gbc<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>GridBagConstraints();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 添加第一个按钮</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>JButton<span style="color:#bbb"> </span>button1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>JButton(<span style="color:#4070a0">&#34;Button 1&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">gridx</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 第一列</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">gridy</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 第一行</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">weightx</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0.<span style="color:#4070a0">5</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 水平权重</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">weighty</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0.<span style="color:#4070a0">5</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 垂直权重</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">fill</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>GridBagConstraints.<span style="color:#4070a0">BOTH</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 填充水平和垂直空间</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>frame.<span style="color:#4070a0">add</span>(button1,<span style="color:#bbb"> </span>gbc);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 添加第二个按钮</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>JButton<span style="color:#bbb"> </span>button2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>JButton(<span style="color:#4070a0">&#34;Button 2&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">gridx</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>1;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 第二列</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">gridy</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 第一行</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">weightx</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>1.<span style="color:#4070a0">5</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 水平权重较大</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">weighty</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0.<span style="color:#4070a0">5</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 垂直权重</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>frame.<span style="color:#4070a0">add</span>(button2,<span style="color:#bbb"> </span>gbc);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 添加第三个按钮</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>JButton<span style="color:#bbb"> </span>button3<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>JButton(<span style="color:#4070a0">&#34;Button 3&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">gridx</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 第一列</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">gridy</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>1;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 第二行</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">weightx</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0.<span style="color:#4070a0">5</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 水平权重</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">weighty</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>1.<span style="color:#4070a0">0</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 垂直权重较大</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>frame.<span style="color:#4070a0">add</span>(button3,<span style="color:#bbb"> </span>gbc);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 添加第四个按钮</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>JButton<span style="color:#bbb"> </span>button4<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>JButton(<span style="color:#4070a0">&#34;Button 4&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">gridx</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>1;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 第二列</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">gridy</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>1;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 第二行</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">weightx</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>1.<span style="color:#4070a0">5</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 水平权重较大</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">weighty</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>1.<span style="color:#4070a0">0</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 垂直权重较大</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>frame.<span style="color:#4070a0">add</span>(button4,<span style="color:#bbb"> </span>gbc);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>frame.<span style="color:#4070a0">setVisible</span>(<span style="color:#007020;font-weight:bold">true</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+</details>
+
 <details>
   <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
     代码GridBagLayout布局管理器
@@ -1439,7 +1717,7 @@ JComponent类是所有轻量级组件的父类，所有继承JComponent的类都
 </div>
 </div>
 </details>
-</p>
+
 <p>3.5 <strong>CardLayout布局管理器</strong><br>
 这个布局管理器的特点是它将容器中的每一个组件当做一个卡片，一次仅有一个组件可见，并且可以动态的切换组件。代码示例如下：
 <details>
