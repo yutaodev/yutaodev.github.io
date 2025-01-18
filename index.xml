@@ -856,7 +856,7 @@
 &lt;h3 id=&#34;16-swing模型架构&#34;&gt;16. Swing模型架构&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Swing模型架构描述：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Swing 是基于 &lt;strong&gt;Model-View-Controller (MVC)&lt;/strong&gt; 架构设计的轻量级 GUI 框架，它将数据模型、显示和用户交互逻辑分离，使组件更加灵活和可扩展。以下是 Swing 模型架构的主要概念和重点内容：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1. Swing 的 MVC 模型&lt;/strong&gt;
+&lt;p&gt;&lt;strong&gt;1. Swing 的 MVC 模型&lt;/strong&gt;&lt;br&gt;
 Swing 中的大多数组件都基于一个简化的 MVC 模型，称为 &lt;strong&gt;“可分离的模型架构”&lt;/strong&gt;。以下是其核心组成部分：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -2206,7 +2206,6 @@ Swing 的 UI 更新需要在 &lt;strong&gt;事件分派线程 (EDT)&lt;/strong&g
 &lt;/div&gt;
 &lt;/details&gt;
 
-&lt;p&gt;&lt;strong&gt;总结&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -2229,7 +2228,7 @@ Swing 的 UI 更新需要在 &lt;strong&gt;事件分派线程 (EDT)&lt;/strong&g
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;选择合适的方法根据你的需求。如果需要简单的静态画面，用 &lt;code&gt;SplashScreen&lt;/code&gt;；如果需要交互或动画，用自定义的 &lt;code&gt;JWindow&lt;/code&gt;。&lt;/p&gt;
-&lt;ol start=&#34;8&#34;&gt;
+&lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;如何使用System Tray&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
