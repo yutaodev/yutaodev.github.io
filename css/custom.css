@@ -1,62 +1,33 @@
-/* 表格基本样式 */
+/* 美化表格 */
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
     font-size: 16px;
-    /* 可根据需要调整 */
-    line-height: 1.5;
-}
-
-/* 表头样式 */
-table th {
-    background-color: #4CAF50;
-    /* 表头背景色 */
-    color: white;
-    /* 表头文字颜色 */
-    padding: 12px 15px;
     text-align: left;
-    /* 文本左对齐 */
-    border-bottom: 2px solid #ddd;
-    /* 下边框 */
 }
 
-/* 单元格样式 */
-table td {
-    padding: 12px 15px;
+th,
+td {
+    padding: 10px;
     border: 1px solid #ddd;
-    /* 边框 */
 }
 
-/* 行高亮效果 */
-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-    /* 偶数行背景色 */
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
 }
 
-table tr:hover {
-    background-color: #e0f7fa;
-    /* 鼠标悬停效果 */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-/* 响应式表格 */
-@media screen and (max-width: 768px) {
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
+tr:hover {
+    background-color: #f1f1f1;
+}
 
-    table th,
-    table td {
-        display: block;
-        /* 使每个单元格在小屏幕上垂直排列 */
-        text-align: right;
-        /* 右对齐 */
-    }
-
-    table th {
-        text-align: left;
-        /* 表头左对齐 */
-    }
+table caption {
+    font-size: 1.5em;
+    margin: 10px 0;
+    font-weight: bold;
 }

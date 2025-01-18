@@ -81,7 +81,7 @@
   <meta itemprop="description" content="JavaSwingGUI从小白到大神">
   <meta itemprop="datePublished" content="2025-01-02T19:35:18+08:00">
   <meta itemprop="dateModified" content="2025-01-02T19:35:18+08:00">
-  <meta itemprop="wordCount" content="9944">
+  <meta itemprop="wordCount" content="9958">
   <meta itemprop="keywords" content="javaswing,GUI,swing">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="JavaSwingGUI从小白到大神-1">
@@ -330,7 +330,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 9944 字 -
+        约 9958 字 -
         预计阅读 20 分钟
       </span>
 
@@ -396,6 +396,8 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-24">24</a>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-25">25</a>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-26">26</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-27">27</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-28">28</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>java.awt.Component
@@ -409,6 +411,8 @@
 </span></span><span style="display:flex;"><span>    │   │   ├── JToolBar
 </span></span><span style="display:flex;"><span>    │   │   ├── JLayeredPane
 </span></span><span style="display:flex;"><span>    │   │   ├── JDesktopPane
+</span></span><span style="display:flex;"><span>    │   │   ├── JTable
+</span></span><span style="display:flex;"><span>    │   │   ├── JTree
 </span></span><span style="display:flex;"><span>    │   │   └── JInternalFrame
 </span></span><span style="display:flex;"><span>    │   └── 普通组件
 </span></span><span style="display:flex;"><span>    │       ├── JButton
@@ -1061,7 +1065,8 @@ JComponent类是所有轻量级组件的父类，所有继承JComponent的类都
 <p>3.2 <strong>FlowLayout布局管理器</strong><br>
 这个布局管理器的特点是按照控件加入的顺序从左到右排列，一行排满，再换下一行，另外如果有些按钮看不到，可以使用pack方法自动调整Frame的大小，代码展示。</p>
 <ul>
-<li>JFrame.pack() 是 Java Swing 中用于自动调整窗口大小的方法。调用该方法后，窗口的大小会调整到能够正好容纳其中所有组件及其首选大小的程度，并考虑到布局管理器设置的间距和边框。
+<li>JFrame.pack() 是 Java Swing 中用于自动调整窗口大小的方法。调用该方法后，窗口的大小会调整到能够正好容纳其中所有组件及其首选大小的程度，并考虑到布局管理器设置的间距和边框。</li>
+</ul>
 <details>
   <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
     代码FlowLayout布局管理器
@@ -1262,7 +1267,7 @@ JComponent类是所有轻量级组件的父类，所有继承JComponent的类都
 </div>
 </details>
 
-3.3 <strong>GridLayout布局管理器</strong><br>
+<p>3.3 <strong>GridLayout布局管理器</strong><br>
 这个布局管理器的特点像围棋盘，它将布局管理器划分为若干行乘若干列的网络区域，组件就位于网络区域中，代码展示。
 <details>
   <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
@@ -1469,8 +1474,7 @@ JComponent类是所有轻量级组件的父类，所有继承JComponent的类都
 </div>
 </div>
 </details>
-</li>
-</ul>
+</p>
 <p>3.4 <strong>GridBagLayout布局管理器</strong></p>
 <p>GridBagLayout布局管理器是Java Swing提供的一种布局管理器，它提供了一种灵活的方式来排列和定位组件。GridBagLayout布局管理器使用网格来定位组件，每个组件都被分配到一个或几个网格单元中，并使用网格行列来确定组件的位置。网格的划分是虚拟的，只有在放置组件时，网格才会被显式创建。GridBagLayout布局管理器提供了许多属性，如组件的权重、填充、 Insets、 Anchor 等，这些属性可以控制组件的位置和布局。</p>
 <ul>
