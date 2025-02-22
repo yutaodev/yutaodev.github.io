@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>
-          JavaSwingGUI从小白到大神-5 - 江南小哥
+          JavaSwingGUI从小白到大神-5 - 东北小哥
         </title>
     
 
@@ -28,7 +28,7 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="江南小哥" /><meta name="description" content="JavaSwingGUI从小白到大神" />
+<meta name="author" content="东北小哥" /><meta name="description" content="JavaSwingGUI从小白到大神" />
 <meta name="keywords" content="javaswing, GUI, swing" />
 
 
@@ -67,7 +67,7 @@
 
 
 <meta property="og:url" content="https://yutao.org/post/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-5/">
-  <meta property="og:site_name" content="江南小哥">
+  <meta property="og:site_name" content="东北小哥">
   <meta property="og:title" content="JavaSwingGUI从小白到大神-5">
   <meta property="og:description" content="JavaSwingGUI从小白到大神">
   <meta property="og:locale" content="zh_cn">
@@ -81,7 +81,7 @@
   <meta itemprop="description" content="JavaSwingGUI从小白到大神">
   <meta itemprop="datePublished" content="2025-01-17T21:16:15+08:00">
   <meta itemprop="dateModified" content="2025-01-17T21:16:15+08:00">
-  <meta itemprop="wordCount" content="7961">
+  <meta itemprop="wordCount" content="8242">
   <meta itemprop="keywords" content="javaswing,GUI,swing">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="JavaSwingGUI从小白到大神-5">
@@ -105,7 +105,7 @@
 
     <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">江南小哥</a>
+    <a href="/" class="logo">东北小哥</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -222,80 +222,79 @@
 
     <header id="header" class="header">
       <div class="logo-wrapper">
-  <a href="/" class="logo">
-    
-      江南小哥
-    
-  </a>
+    <a href="/%20/" class="logo">
+        
+        东北小哥
+        
+    </a>
 </div>
 
 <nav class="site-navbar">
-  <ul id="menu" class="menu">
-    
-    
-        <li class="menu-item">
+    <ul id="menu" class="menu">
         
-          
-          
+        
+        <li class="menu-item">
+            
+            
+            
             <a class="menu-item-link" href="https://yutao.org/">主页</a>
-          
+            
 
+            
+
+        </li>
         
-
-      </li>
-    
         <li class="menu-item">
-        
-          
-          
+            
+            
+            
             <a class="menu-item-link" href="https://yutao.org/post/">归档</a>
-          
+            
 
+            
+
+        </li>
         
-
-      </li>
-    
         <li class="menu-item">
-        
-          
-          
+            
+            
+            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
-          
+            
 
+            
+
+        </li>
         
-
-      </li>
-    
         <li class="menu-item">
-        
-          
-          
+            
+            
+            
             <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
-          
+            
 
+            
+
+        </li>
         
-
-      </li>
-    
         <li class="menu-item">
-        
-          
-          
+            
+            
+            
             <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
-          
+            
 
+            
+
+        </li>
         
 
-      </li>
-    
+        
+        
 
-    
-    
-
-    
-  </ul>
+        
+    </ul>
 </nav>
-
     </header>
 
     <div id="mobile-panel">
@@ -313,7 +312,7 @@
     by
       <a href="/about">
         <span class="post-meta-author-name">
-          江南小哥
+          东北小哥
         </span>
       </a>
     
@@ -330,8 +329,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 7961 字 -
-        预计阅读 16 分钟
+        约 8242 字 -
+        预计阅读 17 分钟
       </span>
 
     <div class="post-meta-category">
@@ -363,9 +362,10 @@
 <ol start="15">
 <li><strong>Swing与并发</strong></li>
 <li><strong>Swing模型架构</strong></li>
-<li><strong>Swing的气体特性</strong></li>
+<li><strong>Swing的其他特性</strong></li>
 </ol>
-<h3 id="15-swing与并发">15. Swing与并发</h3>
+<h2 id="15-swing与并发">15. Swing与并发</h2>
+<h3 id="1-swingutilities类介绍">1. SwingUtilities类介绍</h3>
 <p>先了解一下核心类<code>SwingUtilities</code> 是一个实用类，包含与 Swing GUI 相关的静态方法，以下是其三个常用方法及说明：</p>
 <p><strong><code>SwingUtilities</code> 类的 3 个常用方法</strong></p>
 <ol>
@@ -465,7 +465,7 @@
 </ul>
 </li>
 </ol>
-<p><strong><code>SwingWorker</code> 类的方法及说明</strong></p>
+<h3 id="2-wingworker类介绍">2. wingWorker类介绍</h3>
 <p><code>SwingWorker</code> 是一个抽象类，用于在后台线程中执行耗时任务，同时支持在事件分派线程中更新 GUI。</p>
 <p><strong>常用方法：</strong></p>
 <ol>
@@ -759,8 +759,8 @@
 </ul>
 </li>
 </ol>
-<p><strong><code>事件分派线程</code>（Event Dispatch Thread, 简称 EDT）</strong></p>
-<p>是 Swing 的核心线程之一，它专门负责处理事件队列中的任务，例如用户交互事件（鼠标点击、键盘输入等）、界面更新、绘制组件等。</p>
+<h3 id="3-事件分派线程">3. 事件分派线程</h3>
+<p><strong><code>事件分派线程</code>（Event Dispatch Thread, 简称 EDT）</strong> ，是 Swing 的核心线程之一，它专门负责处理事件队列中的任务，例如用户交互事件（鼠标点击、键盘输入等）、界面更新、绘制组件等。</p>
 <p><strong>事件分派线程的特点：</strong></p>
 <ol>
 <li><strong>唯一性</strong>：在运行时，应用程序中只有一个事件分派线程，它是单一的线程模型。</li>
@@ -1190,11 +1190,11 @@
 </div>
 </details>
 
-<h3 id="16-swing模型架构">16. Swing模型架构</h3>
+<h2 id="16-swing模型架构">16. Swing模型架构</h2>
 <p><strong>Swing模型架构描述：</strong></p>
 <p>Swing 是基于 <strong>Model-View-Controller (MVC)</strong> 架构设计的轻量级 GUI 框架，它将数据模型、显示和用户交互逻辑分离，使组件更加灵活和可扩展。以下是 Swing 模型架构的主要概念和重点内容：</p>
-<p><strong>1. Swing 的 MVC 模型</strong><br>
-Swing 中的大多数组件都基于一个简化的 MVC 模型，称为 <strong>“可分离的模型架构”</strong>。以下是其核心组成部分：</p>
+<h3 id="1-swing-的-mvc-模型">1. Swing 的 MVC 模型</h3>
+<p>Swing 中的大多数组件都基于一个简化的 MVC 模型，称为 <strong>“可分离的模型架构”</strong>。以下是其核心组成部分：</p>
 <ul>
 <li>
 <p><strong>Model（数据模型）</strong><br>
@@ -1222,7 +1222,7 @@ Swing 中的大多数组件都基于一个简化的 MVC 模型，称为 <strong>
 </ul>
 </li>
 </ul>
-<p><strong>2. Swing 的 MVC 特点</strong></p>
+<h3 id="2-swing-的-mvc-特点">2. Swing 的 MVC 特点</h3>
 <ul>
 <li>
 <p><strong>轻量级组件</strong><br>
@@ -1244,7 +1244,7 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 通过模型和渲染器，开发者可以轻松自定义组件的外观和行为。</p>
 </li>
 </ul>
-<p><strong>3. Swing 核心组件的模型架构</strong></p>
+<h3 id="3-swing-核心组件的模型架构">3. Swing 核心组件的模型架构</h3>
 <table>
 <thead>
 <tr>
@@ -1299,7 +1299,7 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 </tr>
 </tbody>
 </table>
-<p><strong>4. 重点内容学习</strong></p>
+<h3 id="4-重点内容学习">4. 重点内容学习</h3>
 <ol>
 <li><strong>数据模型</strong></li>
 </ol>
@@ -1437,19 +1437,12 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 </div>
 </details>
 
-<h3 id="17-swing的其他特性">17. Swing的其他特性</h3>
-<ol>
-<li><strong>如何边框、外边距、内边距</strong></li>
-</ol>
-<ul>
-<li>
-<p><strong>边框：</strong><br>
-并非所有组件都有默认边框。外边框通过 setBorder(Border border) 方法设置，所有继承自 JComponent 的组件均支持此方法。</p>
+<h2 id="17-swing的其他特性">17. Swing的其他特性</h2>
+<h3 id="1-边框设置">1. 边框设置</h3>
+<p>并非所有组件都有默认边框。外边框通过 setBorder(Border border) 方法设置，所有继承自 JComponent 的组件均支持此方法。</p>
 <ul>
 <li>有默认边框的组件：JTextField、JTextArea 通常有一个内置的边框。JScrollPane 也有默认的边框。</li>
 <li>没有默认边框的组件：JButton 和 JLabel 通常没有明显的边框。</li>
-</ul>
-</li>
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -1461,14 +1454,10 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>label.<span style="color:#4070a0">setBorder</span>(BorderFactory.<span style="color:#4070a0">createLineBorder</span>(Color.<span style="color:#4070a0">BLACK</span>,<span style="color:#bbb"> </span>2));<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 黑色边框，宽度为2像素</span><span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>
-<p><strong>外边距：</strong><br>
-外边距是指组件与组件之间的距离，它通常用于调整组件之间的间距。</p>
+</div><h3 id="2-外边距设置">2. 外边距设置</h3>
+<p>外边距是指组件与组件之间的距离，它通常用于调整组件之间的间距。</p>
 <ul>
 <li>外部间距（边框）： 通过 setBorder 设置边框内的间距。</li>
-</ul>
-</li>
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -1484,13 +1473,10 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>));<span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li><strong>内边距：</strong><br>
-对于某些组件（如按钮），内边距直接控制组件内容与其边框之间的距离，不同组件提供了不同的方法。
+</div><h3 id="3-内边距设置">3. 内边距设置</h3>
+<p>对于某些组件（如按钮），内边距直接控制组件内容与其边框之间的距离，不同组件提供了不同的方法。</p>
 <ul>
 <li>可以通过 setMargin 方法设置文字或内容与边界的距离。</li>
-</ul>
-</li>
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -1546,13 +1532,9 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 </tr>
 </tbody>
 </table>
+<h3 id="4-布局管理器">4. 布局管理器</h3>
 <ul>
-<li>
-<p><strong>布局管理器：</strong></p>
-</li>
-<li>
-<p>FlowLayout：通过构造函数或 setHgap 和 setVgap 方法设置组件之间的水平和垂直间距。</p>
-</li>
+<li>FlowLayout：通过构造函数或 setHgap 和 setVgap 方法设置组件之间的水平和垂直间距。</li>
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -1680,10 +1662,8 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 </div>
 </details>
 
-<ol start="2">
-<li><strong>如何在组件上使用HTML</strong><br>
-直接使用HTML语句来代替文本字符串即可。</li>
-</ol>
+<h3 id="5-如何在组件上使用html">5. 如何在组件上使用HTML</h3>
+<p>直接使用HTML语句来代替文本字符串即可。</p>
 <details>
   <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
     代码使用HTML语句
@@ -1738,10 +1718,8 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 </div>
 </details>
 
-<ol start="3">
-<li><strong>如何使用图标</strong>
-通过类ImageIcon来加载图片，并通过setIcon方法来设置按钮的图标。</li>
-</ol>
+<h3 id="6-设置按钮的图标">6. 设置按钮的图标</h3>
+<p>通过类ImageIcon来加载图片，并通过setIcon方法来设置按钮的图标。</p>
 <details>
   <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
     代码ImageIcon示例
@@ -1802,10 +1780,8 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 </div>
 </details>
 
-<ol start="4">
-<li><strong>获取焦点</strong><br>
-拿按钮举例，让按钮组件在窗口被激活时，理解获得动作焦点。</li>
-</ol>
+<h3 id="7-获取焦点">7. 获取焦点</h3>
+<p>拿按钮举例，让按钮组件在窗口被激活时，理解获得动作焦点。</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-1">1</a>
@@ -1814,10 +1790,8 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>JButton.<span style="color:#4070a0">requestFocusInWindow</span>();<span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="5">
-<li><strong>如何使用键绑定</strong><br>
-在Java Swing中，可以为按钮绑定快捷键，通过设置<strong>键盘助记符</strong>（Mnemonic）或<strong>键绑定</strong>（Key Bindings）来实现。以下是两种常见的方法：</li>
-</ol>
+</div><h3 id="8-如何使用键绑定">8. 如何使用键绑定</h3>
+<p>在Java Swing中，可以为按钮绑定快捷键，通过设置<strong>键盘助记符</strong>（Mnemonic）或<strong>键绑定</strong>（Key Bindings）来实现。以下是两种常见的方法：</p>
 <ul>
 <li>
 <ol>
@@ -1991,10 +1965,8 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 </ol>
 </li>
 </ul>
-<ol start="6">
-<li><strong>如何使用Modality</strong><br>
-在 Java Swing 中，<strong>Modality</strong> 是用来控制对话框（<code>JDialog</code>）的模式行为。它定义了对话框在显示时是否会阻塞父窗口或应用程序的其他部分。常见的 Modality 类型包括：</li>
-</ol>
+<h3 id="9-如何使用modality">9. 如何使用Modality</h3>
+<p>在 Java Swing 中，<strong>Modality</strong> 是用来控制对话框（<code>JDialog</code>）的模式行为。它定义了对话框在显示时是否会阻塞父窗口或应用程序的其他部分。常见的 Modality 类型包括：</p>
 <ul>
 <li><strong>模态对话框</strong>：阻塞父窗口。</li>
 <li><strong>非模态对话框</strong>：不阻塞父窗口。</li>
@@ -2188,10 +2160,8 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>});<span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="7">
-<li><strong>如何创建Splash Screen</strong><br>
-在 Java 中，<strong>Splash Screen</strong> 是指在应用程序启动时显示的一个初始屏幕，用于展示启动画面或加载信息。Java 提供了两种实现方式：</li>
-</ol>
+</div><h3 id="10-如何创建splash-screen">10. 如何创建Splash Screen</h3>
+<p>在 Java 中，<strong>Splash Screen</strong> 是指在应用程序启动时显示的一个初始屏幕，用于展示启动画面或加载信息。Java 提供了两种实现方式：</p>
 <ul>
 <li>
 <ol>
@@ -2565,9 +2535,7 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 </tbody>
 </table>
 <p>选择合适的方法根据你的需求。如果需要简单的静态画面，用 <code>SplashScreen</code>；如果需要交互或动画，用自定义的 <code>JWindow</code>。</p>
-<ol>
-<li><strong>如何使用System Tray</strong></li>
-</ol>
+<h3 id="11-如何使用system-tray">11. 如何使用System Tray</h3>
 <ul>
 <li><strong>检查系统是否支持托盘：</strong> SystemTray.isSupported()</li>
 <li><strong>获取 SystemTray 实例：</strong> SystemTray systemTray = SystemTray.getSystemTray()</li>
@@ -2661,6 +2629,90 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 </div>
 </details>
 
+<h3 id="12-对齐">12. 对齐</h3>
+<ul>
+<li>
+<ol>
+<li><strong><code>GridBagConstraints.anchor</code> 的作用</strong> ，用于控制组件在其布局区域（由 <code>gridwidth</code> 和 <code>gridheight</code> 定义的单元格）内的对齐方式。设置为 <code>EAST</code> 时，组件会紧贴区域的<strong>右侧</strong>。</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li><strong>常见对齐常量</strong></li>
+</ol>
+<ul>
+<li><code>GridBagConstraints.WEST</code> ➔ 左对齐</li>
+<li><code>GridBagConstraints.EAST</code> ➔ 右对齐</li>
+<li><code>GridBagConstraints.CENTER</code> ➔ 居中对齐（默认值）</li>
+<li><code>GridBagConstraints.NORTH</code> ➔ 顶部对齐</li>
+<li><code>GridBagConstraints.SOUTH</code> ➔ 底部对齐</li>
+</ul>
+</li>
+</ul>
+<details>
+  <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    代码对齐示例
+    
+  </summary>
+  <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-25">25</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">GridBagExample</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>JFrame<span style="color:#bbb"> </span>frame<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>JFrame(<span style="color:#4070a0">&#34;GridBagLayout 示例&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>frame.<span style="color:#4070a0">setLayout</span>(<span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>GridBagLayout());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>GridBagConstraints<span style="color:#bbb"> </span>gbc<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>GridBagConstraints();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 创建一个标签，右对齐</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>JLabel<span style="color:#bbb"> </span>label<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>JLabel(<span style="color:#4070a0">&#34;用户名：&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">anchor</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>GridBagConstraints.<span style="color:#4070a0">EAST</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 右对齐</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">gridx</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">gridy</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>frame.<span style="color:#4070a0">add</span>(label,<span style="color:#bbb"> </span>gbc);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 创建一个文本框，左对齐</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>JTextField<span style="color:#bbb"> </span>textField<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>JTextField(20);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">anchor</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>GridBagConstraints.<span style="color:#4070a0">WEST</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 左对齐</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">gridx</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>1;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>gbc.<span style="color:#4070a0">gridy</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>frame.<span style="color:#4070a0">add</span>(textField,<span style="color:#bbb"> </span>gbc);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>frame.<span style="color:#4070a0">pack</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>frame.<span style="color:#4070a0">setDefaultCloseOperation</span>(JFrame.<span style="color:#4070a0">EXIT_ON_CLOSE</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>frame.<span style="color:#4070a0">setVisible</span>(<span style="color:#007020;font-weight:bold">true</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+</details>
+
 <h2 id="总结">总结</h2>
 <p>本章重点，Swing与并发、Swing的其他特性，知识点比较杂，结合例子多练习。</p>
             </div>
@@ -2670,7 +2722,7 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">文章作者</span>
-    <span class="item-content">江南小哥</span>
+    <span class="item-content">东北小哥</span>
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
@@ -2719,6 +2771,19 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
                 
                 <nav class="post-nav">
                     
+                    <a class="prev" href="/post/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-6/">
+                        
+                        <i class="iconfont">
+                            <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+                        </i>
+                        <span class="prev-text nav-default">JavaSwingGUI从小白到大神-6</span>
+                        <span class="prev-text nav-mobile">上一篇</span>
+                    </a>
                     
                     <a class="next" href="/post/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-4/">
                         <span class="next-text nav-default">JavaSwingGUI从小白到大神-4</span>
@@ -2782,11 +2847,36 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
     <div class="toc-content custom-scrollbar">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#文章概览">文章概览</a>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#15-swing与并发">15. Swing与并发</a>
       <ul>
-        <li><a href="#15-swing与并发">15. Swing与并发</a></li>
-        <li><a href="#16-swing模型架构">16. Swing模型架构</a></li>
-        <li><a href="#17-swing的其他特性">17. Swing的其他特性</a></li>
+        <li><a href="#1-swingutilities类介绍">1. SwingUtilities类介绍</a></li>
+        <li><a href="#2-wingworker类介绍">2. wingWorker类介绍</a></li>
+        <li><a href="#3-事件分派线程">3. 事件分派线程</a></li>
+      </ul>
+    </li>
+    <li><a href="#16-swing模型架构">16. Swing模型架构</a>
+      <ul>
+        <li><a href="#1-swing-的-mvc-模型">1. Swing 的 MVC 模型</a></li>
+        <li><a href="#2-swing-的-mvc-特点">2. Swing 的 MVC 特点</a></li>
+        <li><a href="#3-swing-核心组件的模型架构">3. Swing 核心组件的模型架构</a></li>
+        <li><a href="#4-重点内容学习">4. 重点内容学习</a></li>
+      </ul>
+    </li>
+    <li><a href="#17-swing的其他特性">17. Swing的其他特性</a>
+      <ul>
+        <li><a href="#1-边框设置">1. 边框设置</a></li>
+        <li><a href="#2-外边距设置">2. 外边距设置</a></li>
+        <li><a href="#3-内边距设置">3. 内边距设置</a></li>
+        <li><a href="#4-布局管理器">4. 布局管理器</a></li>
+        <li><a href="#5-如何在组件上使用html">5. 如何在组件上使用HTML</a></li>
+        <li><a href="#6-设置按钮的图标">6. 设置按钮的图标</a></li>
+        <li><a href="#7-获取焦点">7. 获取焦点</a></li>
+        <li><a href="#8-如何使用键绑定">8. 如何使用键绑定</a></li>
+        <li><a href="#9-如何使用modality">9. 如何使用Modality</a></li>
+        <li><a href="#10-如何创建splash-screen">10. 如何创建Splash Screen</a></li>
+        <li><a href="#11-如何使用system-tray">11. 如何使用System Tray</a></li>
+        <li><a href="#12-对齐">12. 对齐</a></li>
       </ul>
     </li>
     <li><a href="#总结">总结</a></li>
@@ -2924,7 +3014,7 @@ Swing 的 UI 更新需要在 <strong>事件分派线程 (EDT)</strong> 上完成
 
       </i>
     </span><span class="author">
-        江南小哥
+        东北小哥
         
       </span></span>
 
