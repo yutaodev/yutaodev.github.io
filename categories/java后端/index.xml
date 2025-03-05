@@ -8,8 +8,15 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
     <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
-    <lastBuildDate>Tue, 04 Mar 2025 22:40:59 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Mar 2025 00:33:15 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/categories/java%E5%90%8E%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java后端-基础-泛型-15</title>
+      <link>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%B3%9B%E5%9E%8B-15/</link>
+      <pubDate>Wed, 05 Mar 2025 00:33:15 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <guid>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%B3%9B%E5%9E%8B-15/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Java后端-基础-常用工具类-14</title>
       <link>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB-14/</link>

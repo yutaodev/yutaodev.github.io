@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  itemscope
+  itemtype="http://schema.org/WebPage"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+          Java后端-基础-泛型-15 - 东北小哥
+        </title>
+    
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="东北小哥" /><meta name="description" content="Java后端从小白到大神修仙" />
+<meta name="keywords" content="java后端" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.128.1" />
+
+
+<link rel="canonical" href="https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%B3%9B%E5%9E%8B-15/" />
+
+
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.e826e860368147e5a6685e686355e4d7789023c18c9ea2e78b35f6786ce92736.css" integrity="sha256-6CboYDaBR&#43;WmaF5oY1Xk13iQI8GMnqLnizX2eGzpJzY=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+
+<meta property="og:url" content="https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%B3%9B%E5%9E%8B-15/">
+  <meta property="og:site_name" content="东北小哥">
+  <meta property="og:title" content="Java后端-基础-泛型-15">
+  <meta property="og:description" content="Java后端从小白到大神修仙">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-03-05T00:33:15+08:00">
+    <meta property="article:modified_time" content="2025-03-05T00:33:15+08:00">
+    <meta property="article:tag" content="Java后端">
+
+  <meta itemprop="name" content="Java后端-基础-泛型-15">
+  <meta itemprop="description" content="Java后端从小白到大神修仙">
+  <meta itemprop="datePublished" content="2025-03-05T00:33:15+08:00">
+  <meta itemprop="dateModified" content="2025-03-05T00:33:15+08:00">
+  <meta itemprop="wordCount" content="4168">
+  <meta itemprop="keywords" content="java后端">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Java后端-基础-泛型-15">
+  <meta name="twitter:description" content="Java后端从小白到大神修仙">
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+  </head>
+  <body>
+    <div id="back-to-top"></div>
+
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">东北小哥</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+    
+      
+
+
+
+
+
+
+  <link rel="stylesheet" href="/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+    
+
+    
+
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+    <a href="/%20/" class="logo">
+        
+        东北小哥
+        
+    </a>
+</div>
+
+<nav class="site-navbar">
+    <ul id="menu" class="menu">
+        
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/post/">归档</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+            
+
+            
+
+        </li>
+        
+
+        
+        
+
+        
+    </ul>
+</nav>
+    </header>
+
+    <div id="mobile-panel">
+      <main id="main" class="main bg-llight wallpaper">
+        <div class="content-wrapper">
+    <div id="content" class="content">
+        <article class="post">
+            
+            <header class="post-header">
+                <h1 class="post-title">Java后端-基础-泛型-15</h1>
+                
+
+                <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      <a href="/about">
+        <span class="post-meta-author-name">
+          东北小哥
+        </span>
+      </a>
+    
+  </div>
+
+  <div class="post-meta-time">
+    <time datetime="2025-03-05">
+      2025-03-05
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 4168 字 -
+        预计阅读 9 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="https://yutao.org/categories/java%E5%90%8E%E7%AB%AF/"> java后端 </a>
+          
+      </div>
+
+
+    
+    
+      <span id="busuanzi_container_page_pv">
+        | 阅读 <span id="busuanzi_value_page_pv"></span>
+      </span>
+    
+
+
+    
+    
+  </div>
+</div>
+
+            </header>
+
+            
+            <div class="post-content">
+                <h1 id="背景">背景</h1>
+<p>本文是《Java 后端从小白到大神》修仙系列<code>第十五篇</code>，正式进入<code>Java后端</code>世界，本篇文章主要聊<code>Java基础</code>。若想详细学习请点击<a href="https://yutao.org/post/java%E5%90%8E%E7%AB%AF%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E%E4%BF%AE%E4%BB%99-java%E5%9F%BA%E7%A1%80-1/">首篇博文</a>，我们开始把。</p>
+<h2 id="文章概览">文章概览</h2>
+<ol>
+<li>泛型</li>
+</ol>
+<h2 id="泛型">泛型</h2>
+<h3 id="1-泛型的概念">1. 泛型的概念</h3>
+<p>泛型（Generics）是 Java 5 引入的特性，允许在类、接口或方法中将<strong>类型定义为参数</strong>，从而在编译时提供更强的类型检查和代码复用能力。泛型的核心思想是<strong>将类型本身作为参数传递</strong>，接口或方法在定义时不指定具体类型，而是通过使用时的参数来动态确定类型。这种设计类似于函数参数，但传递的是<strong>数据类型</strong>而非值。</p>
+<h3 id="2-泛型的用法">2. 泛型的用法</h3>
+<h4 id="1-泛型类">1. 泛型类</h4>
+<p>在 Java 中，泛型类允许你在定义类时使用类型参数，从而创建可以处理不同类型数据的类。泛型类的类型参数通常在类名后面定义，这些类型参数可以在类的各个部分（如属性、方法参数、返回类型等）中使用。</p>
+<h5 id="1-泛型类型参数的位置">1. 泛型类型参数的位置</h5>
+<p>在 Java 中，泛型类型参数通常定义在类名后面，使用尖括号 &lt;&gt; 包围。这种语法使得编译器能够识别和处理泛型类型。</p>
+<h5 id="2-为什么泛型类型参数添加在类名后面">2. 为什么泛型类型参数添加在类名后面</h5>
+<ul>
+<li>明确类型参数的作用范围：将类型参数定义在类名后面，明确表示该类型参数在整个类中都有效。</li>
+<li>语法一致性：与泛型方法的定义方式保持一致，便于理解和使用。</li>
+<li>编译时类型检查：编译器可以基于泛型类型参数进行类型检查，确保类型安全。</li>
+</ul>
+<h5 id="3-类的属性为什么也是泛型类型">3. 类的属性为什么也是泛型类型</h5>
+<p>类的属性可以是泛型类型，因为泛型类型参数定义在类级别，可以在类的任何部分使用。属性使用泛型类型可以确保属性的类型与类的类型参数一致，从而实现类型安全。</p>
+<h5 id="4-泛型类的类型与属性类型的关系">4. 泛型类的类型与属性类型的关系</h5>
+<ul>
+<li>泛型类的类型参数：定义在类名后面，表示类可以处理的类型。</li>
+<li>属性类型：可以使用泛型类型参数，确保属性的类型与类的类型参数一致。</li>
+<li>类型安全：通过泛型类型参数，编译器可以在编译时进行类型检查，确保类型安全。</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-18">18</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Box&lt;T&gt;：T 是泛型类型参数，定义在类名 Box 后面</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Box</span><span style="color:#666">&lt;</span>T<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// private T content，类的属性 content 使用泛型类型 T，表示它可以存储任何类型的数据，具体类型在实例化 Box 类时确定</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">private</span><span style="color:#bbb"> </span>T<span style="color:#bbb"> </span>content;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">setContent</span>(T<span style="color:#bbb"> </span>content)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">this</span>.<span style="color:#4070a0">content</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>content;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span>T<span style="color:#bbb"> </span><span style="color:#06287e">getContent</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>content;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 使用示例</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Box<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>stringBox<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Box<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>stringBox.<span style="color:#4070a0">setContent</span>(<span style="color:#4070a0">&#34;Hello&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>value<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>stringBox.<span style="color:#4070a0">getContent</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 无需类型转换</span><span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="5-泛型类的其他用法">5. 泛型类的其他用法</h5>
+<ul>
+<li>方法参数和返回类型：泛型类型参数也可以用于方法的参数和返回类型。</li>
+<li>内部类：泛型类可以包含泛型内部类。</li>
+<li>继承：泛型类可以继承其他泛型类或实现泛型接口。</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-25">25</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-26">26</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-27">27</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-28">28</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Box</span><span style="color:#666">&lt;</span>T<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">private</span><span style="color:#bbb"> </span>T<span style="color:#bbb"> </span>content;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">setContent</span>(T<span style="color:#bbb"> </span>content)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">this</span>.<span style="color:#4070a0">content</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>content;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span>T<span style="color:#bbb"> </span><span style="color:#06287e">getContent</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>content;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 泛型方法</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#666">&lt;</span>U<span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">printContent</span>(U<span style="color:#bbb"> </span>additionalContent)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(content<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34; &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>additionalContent);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Main</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Box<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>stringBox<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Box<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>stringBox.<span style="color:#4070a0">setContent</span>(<span style="color:#4070a0">&#34;Hello&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>stringBox.<span style="color:#4070a0">printContent</span>(<span style="color:#4070a0">&#34;World&#34;</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: Hello World</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Box<span style="color:#666">&lt;</span>Integer<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>integerBox<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Box<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>integerBox.<span style="color:#4070a0">setContent</span>(42);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>integerBox.<span style="color:#4070a0">printContent</span>(100);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: 42 100</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2-泛型接口">2. 泛型接口</h4>
+<h5 id="1-泛型接口概述">1. 泛型接口概述</h5>
+<p>泛型接口（Generic Interface）是 Java 中的一种接口，允许在接口定义中使用类型参数。通过泛型接口，可以创建可以处理不同类型数据的接口，从而提高代码的灵活性和可重用性。</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">interface</span> <span style="color:#0e84b5;font-weight:bold">MyGenericInterface</span><span style="color:#666">&lt;</span>T<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">setValue</span>(T<span style="color:#bbb"> </span>value);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>T<span style="color:#bbb"> </span><span style="color:#06287e">getValue</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="2-实现泛型接口">2. 实现泛型接口</h5>
+<p>实现泛型接口时，可以选择在实现类中指定具体的类型参数，也可以在实现类中继续使用泛型类型参数。</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-13">13</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">MyGenericClass</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">implements</span><span style="color:#bbb"> </span>MyGenericInterface<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">private</span><span style="color:#bbb"> </span>String<span style="color:#bbb"> </span>value;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#555;font-weight:bold">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">setValue</span>(String<span style="color:#bbb"> </span>value)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">this</span>.<span style="color:#4070a0">value</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>value;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#555;font-weight:bold">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span>String<span style="color:#bbb"> </span><span style="color:#06287e">getValue</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>value;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="3-在实现类中继续使用泛型类型参数">3. 在实现类中继续使用泛型类型参数</h5>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-13">13</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">MyGenericClass</span><span style="color:#666">&lt;</span>T<span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">implements</span><span style="color:#bbb"> </span>MyGenericInterface<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">private</span><span style="color:#bbb"> </span>T<span style="color:#bbb"> </span>value;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#555;font-weight:bold">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">setValue</span>(T<span style="color:#bbb"> </span>value)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">this</span>.<span style="color:#4070a0">value</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>value;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#555;font-weight:bold">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span>T<span style="color:#bbb"> </span><span style="color:#06287e">getValue</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>value;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="4-使用泛型接口">4. 使用泛型接口</h5>
+<p>使用泛型接口时，可以创建实现类的实例，并调用接口中定义的方法。</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-13">13</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">GenericInterfaceExample</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 示例 1：在实现类中指定具体类型</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>MyGenericClass<span style="color:#bbb"> </span>stringClass<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>MyGenericClass();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>stringClass.<span style="color:#4070a0">setValue</span>(<span style="color:#4070a0">&#34;Hello, World!&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(stringClass.<span style="color:#4070a0">getValue</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: Hello, World!</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 示例 2：在实现类中继续使用泛型类型参数</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>MyGenericClass<span style="color:#666">&lt;</span>Integer<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>integerClass<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>MyGenericClass<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>integerClass.<span style="color:#4070a0">setValue</span>(42);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(integerClass.<span style="color:#4070a0">getValue</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: 42</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="5-内置泛型接口示例">5. 内置泛型接口示例</h5>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-23">23</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">BuiltInGenericInterfacesExample</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// Consumer 示例</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Consumer<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>printMessage<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>message<span style="color:#bbb"> </span><span style="color:#666">-&gt;</span><span style="color:#bbb"> </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(message);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>printMessage.<span style="color:#4070a0">accept</span>(<span style="color:#4070a0">&#34;Hello, World!&#34;</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: Hello, World!</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// Supplier 示例</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Supplier<span style="color:#666">&lt;</span>Integer<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>randomNumber<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>()<span style="color:#bbb"> </span><span style="color:#666">-&gt;</span><span style="color:#bbb"> </span>(<span style="color:#902000">int</span>)<span style="color:#bbb"> </span>(Math.<span style="color:#4070a0">random</span>()<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span>100);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;Random Number: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>randomNumber.<span style="color:#4070a0">get</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: Random Number: &lt;随机数&gt;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// Function 示例</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Function<span style="color:#666">&lt;</span>Integer,<span style="color:#bbb"> </span>Integer<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>square<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">-&gt;</span><span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span>x;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;Square of 5: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>square.<span style="color:#4070a0">apply</span>(5));<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: Square of 5: 25</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// Predicate 示例</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Predicate<span style="color:#666">&lt;</span>Integer<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>isEven<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">-&gt;</span><span style="color:#bbb"> </span>x<span style="color:#bbb"> </span><span style="color:#666">%</span><span style="color:#bbb"> </span>2<span style="color:#bbb"> </span><span style="color:#666">==</span><span style="color:#bbb"> </span>0;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;Is 4 even? &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>isEven.<span style="color:#4070a0">test</span>(4));<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: Is 4 even? true</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// BiFunction 示例</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>BiFunction<span style="color:#666">&lt;</span>Integer,<span style="color:#bbb"> </span>Integer,<span style="color:#bbb"> </span>Integer<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>add<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>(a,<span style="color:#bbb"> </span>b)<span style="color:#bbb"> </span><span style="color:#666">-&gt;</span><span style="color:#bbb"> </span>a<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>b;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;Sum of 3 and 5: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>add.<span style="color:#4070a0">apply</span>(3,<span style="color:#bbb"> </span>5));<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: Sum of 3 and 5: 8</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="3-泛型方法">3. 泛型方法</h4>
+<h5 id="1-泛型方法概述">1. 泛型方法概述</h5>
+<p>泛型方法（Generic Method）是指在方法声明中使用类型参数的方法。这些类型参数可以独立于类的类型参数，使得方法可以处理不同类型的数据，提高代码的灵活性和可重用性。在定义泛型方法时，<code>类型参数通常定义在方法的返回类型之前</code>，使用尖括号 &lt;&gt; 包围。这些类型参数可以在方法的参数列表和返回类型中使用。</p>
+<h5 id="2-泛型方法签名的基本结构">2. 泛型方法签名的基本结构</h5>
+<p>泛型方法的签名通常包括以下几个部分：</p>
+<ul>
+<li>类型参数部分：定义在方法的返回类型之前，使用尖括号 &lt;&gt; 包围。类型参数 <T> 必须定义在方法的返回类型之前，这是 Java 语法的规定。</li>
+<li>返回类型：可以是具体类型、泛型类型或 void。</li>
+<li>方法名：方法的名称。</li>
+<li>参数列表：方法的参数，可以包含具体类型或泛型类型。</li>
+<li>异常声明：方法可能抛出的异常（可选）。</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-7">7</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// &lt;T&gt;：定义了一个类型参数 T</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#666">&lt;</span>T<span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">printArray</span>(T<span style="color:#666">[]</span><span style="color:#bbb"> </span>array)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(T<span style="color:#bbb"> </span>element<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>array)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">print</span>(element<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34; &#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="3-为什么需要类型参数-t">3. 为什么需要类型参数 <T></h5>
+<p>即使方法的返回类型是 void，类型参数 <T> 仍然需要包含在方法签名中，原因如下：</p>
+<ul>
+<li>类型参数的作用范围：类型参数 <T> 定义了方法可以处理的泛型类型，这个类型参数可以在方法的参数列表、局部变量、异常声明等地方使用。</li>
+<li>编译时类型检查：通过类型参数，编译器可以在编译时进行类型检查，确保类型安全。</li>
+<li>代码复用：泛型方法可以处理多种类型的数据，提高代码的灵活性和可重用性。</li>
+</ul>
+<h5 id="4-使用泛型方法">4. 使用泛型方法</h5>
+<p>使用泛型方法时，可以显式地指定类型参数，也可以让编译器自动推断类型参数。</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-23">23</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">GenericMethodExample</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 定义一个泛型方法</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#666">&lt;</span>T<span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">printArray</span>(T<span style="color:#666">[]</span><span style="color:#bbb"> </span>array)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(T<span style="color:#bbb"> </span>element<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>array)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">print</span>(element<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34; &#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 使用泛型方法打印整数数组</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Integer<span style="color:#666">[]</span><span style="color:#bbb"> </span>intArray<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>{1,<span style="color:#bbb"> </span>2,<span style="color:#bbb"> </span>3,<span style="color:#bbb"> </span>4,<span style="color:#bbb"> </span>5};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>printArray(intArray);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: 1 2 3 4 5</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 使用泛型方法打印字符串数组</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>String<span style="color:#666">[]</span><span style="color:#bbb"> </span>stringArray<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>{<span style="color:#4070a0">&#34;Hello&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;World&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Java&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Generics&#34;</span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>printArray(stringArray);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: Hello World Java Generics</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 使用泛型方法打印双精度浮点数数组</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Double<span style="color:#666">[]</span><span style="color:#bbb"> </span>doubleArray<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>{1.<span style="color:#4070a0">1</span>,<span style="color:#bbb"> </span>2.<span style="color:#4070a0">2</span>,<span style="color:#bbb"> </span>3.<span style="color:#4070a0">3</span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>printArray(doubleArray);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: 1.1 2.2 3.3</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="5-显式指定类型参数">5. 显式指定类型参数</h5>
+<p>在某些情况下，你可能需要显式地指定类型参数，尤其是在编译器无法自动推断类型时。</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-19">19</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">GenericMethodExample</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 定义一个泛型方法</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#666">&lt;</span>T<span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">printArray</span>(T<span style="color:#666">[]</span><span style="color:#bbb"> </span>array)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(T<span style="color:#bbb"> </span>element<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>array)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">print</span>(element<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34; &#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 显式指定类型参数</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Integer<span style="color:#666">[]</span><span style="color:#bbb"> </span>intArray<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>{1,<span style="color:#bbb"> </span>2,<span style="color:#bbb"> </span>3,<span style="color:#bbb"> </span>4,<span style="color:#bbb"> </span>5};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>GenericMethodExample.<span style="color:#666">&lt;</span>Integer<span style="color:#666">&gt;</span>printArray(intArray);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: 1 2 3 4 5</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 显式指定类型参数</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>String<span style="color:#666">[]</span><span style="color:#bbb"> </span>stringArray<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>{<span style="color:#4070a0">&#34;Hello&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;World&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Java&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Generics&#34;</span>};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>GenericMethodExample.<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span>printArray(stringArray);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: Hello World Java Generics</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="6-内置泛型方法示例">6. 内置泛型方法示例</h5>
+<p>Arrays.sort(T[] a, Comparator&lt;? super T&gt; c)：对数组进行排序。</p>
+<ul>
+<li>方法签名：public static <T> void sort(T[] a, Comparator&lt;? super T&gt; c)</li>
+</ul>
+<p>Collections.max(Collection&lt;? extends T&gt; coll, Comparator&lt;? super T&gt; comp)：返回集合中的最大元素。</p>
+<ul>
+<li>方法签名：public static <T> T max(Collection&lt;? extends T&gt; coll, Comparator&lt;? super T&gt; comp)</li>
+</ul>
+<p>Collections.min(Collection&lt;? extends T&gt; coll, Comparator&lt;? super T&gt; comp)：返回集合中的最小元素。</p>
+<ul>
+<li>方法签名：public static <T> T min(Collection&lt;? extends T&gt; coll, Comparator&lt;? super T&gt; comp)</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-17">17</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">BuiltInGenericMethodsExample</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 使用 Arrays.sort 方法</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Integer<span style="color:#666">[]</span><span style="color:#bbb"> </span>intArray<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>{5,<span style="color:#bbb"> </span>3,<span style="color:#bbb"> </span>1,<span style="color:#bbb"> </span>4,<span style="color:#bbb"> </span>2};<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Arrays.<span style="color:#4070a0">sort</span>(intArray,<span style="color:#bbb"> </span>Comparator.<span style="color:#4070a0">naturalOrder</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;Sorted Array: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>Arrays.<span style="color:#4070a0">toString</span>(intArray));<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: Sorted Array: [1, 2, 3, 4, 5]</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 使用 Collections.max 方法</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>List<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>stringList<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Arrays.<span style="color:#4070a0">asList</span>(<span style="color:#4070a0">&#34;Apple&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Banana&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Cherry&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>String<span style="color:#bbb"> </span>maxString<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Collections.<span style="color:#4070a0">max</span>(stringList,<span style="color:#bbb"> </span>Comparator.<span style="color:#4070a0">naturalOrder</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;Max String: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>maxString);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: Max String: Cherry</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 使用 Collections.min 方法</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>String<span style="color:#bbb"> </span>minString<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Collections.<span style="color:#4070a0">min</span>(stringList,<span style="color:#bbb"> </span>Comparator.<span style="color:#4070a0">naturalOrder</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;Min String: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>minString);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: Min String: Apple</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="4-通配符-">4. 通配符 <code>?</code></h4>
+<p>在 Java 泛型中，通配符 ? 用于表示未知类型。通配符在泛型中提供了灵活性和类型安全。</p>
+<h5 id="1-通配符--的含义">1. 通配符 ? 的含义</h5>
+<p>无界通配符 ?：</p>
+<ul>
+<li>表示任何类型。</li>
+<li>适用于读取操作，但不能添加元素（除了 null）。</li>
+</ul>
+<p>有界通配符：</p>
+<ul>
+<li>上界通配符 ? extends T：表示 T 或 T 的子类型。</li>
+<li>下界通配符 ? super T：表示 T 或 T 的父类型。</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-25">25</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-26">26</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-27">27</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-28">28</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-29"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-29">29</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-30"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-30">30</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-31"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-31">31</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-32"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-32">32</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-33"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-33">33</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-34"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-34">34</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-35"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-35">35</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-36"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-36">36</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-37"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-37">37</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-38"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-38">38</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-39"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-39">39</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-40"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-40">40</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-41"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-41">41</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-42"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-42">42</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-43"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-43">43</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-44"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-44">44</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-45"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-45">45</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-46"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-46">46</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-47"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-47">47</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-48"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-48">48</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-49"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-49">49</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-50"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-50">50</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-51"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-51">51</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-52"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-52">52</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-53"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-53">53</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-54"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-54">54</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-55"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-55">55</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-56"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-56">56</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-57"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-57">57</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-58"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-58">58</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-59"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-59">59</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-60"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-60">60</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-61"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-61">61</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-62"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-62">62</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-63"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-63">63</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-64"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-64">64</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-65"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-65">65</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-66"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-66">66</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-67"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-67">67</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-68"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-68">68</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-69"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-69">69</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-70"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-70">70</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-71"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-71">71</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 使用无界通配符 ?，表示可以接受任何类型的列表，printList 方法可以处理 List&lt;Integer&gt; 和 List&lt;String&gt;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">UnboundedWildcardExample</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 打印列表中的所有元素</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">printList</span>(List<span style="color:#666">&lt;?&gt;</span><span style="color:#bbb"> </span>list)<span style="color:#bbb"> </span>{<span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(Object<span style="color:#bbb"> </span>element<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>list)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">print</span>(element<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34; &#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>List<span style="color:#666">&lt;</span>Integer<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>intList<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>ArrayList<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>intList.<span style="color:#4070a0">add</span>(1);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>intList.<span style="color:#4070a0">add</span>(2);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>intList.<span style="color:#4070a0">add</span>(3);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>List<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>stringList<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>ArrayList<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>stringList.<span style="color:#4070a0">add</span>(<span style="color:#4070a0">&#34;Hello&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>stringList.<span style="color:#4070a0">add</span>(<span style="color:#4070a0">&#34;World&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>printList(intList);<span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 输出: 1 2 3</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>printList(stringList);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: Hello World</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 上界通配符，表示可以接受 Number 或其子类型的列表，读取操作：使用无界通配符 ? 或上界通配符 ? extends T 进行读取操作</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">UpperBoundedWildcardExample</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 计算列表中所有元素的总和，假设元素是 Number 或其子类型</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">double</span><span style="color:#bbb"> </span><span style="color:#06287e">sumOfList</span>(List<span style="color:#666">&lt;?</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">extends</span><span style="color:#bbb"> </span>Number<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>list)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#902000">double</span><span style="color:#bbb"> </span>sum<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0.<span style="color:#4070a0">0</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(Number<span style="color:#bbb"> </span>num<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>list)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>sum<span style="color:#bbb"> </span><span style="color:#666">+=</span><span style="color:#bbb"> </span>num.<span style="color:#4070a0">doubleValue</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>sum;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>List<span style="color:#666">&lt;</span>Integer<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>intList<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>ArrayList<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>intList.<span style="color:#4070a0">add</span>(1);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>intList.<span style="color:#4070a0">add</span>(2);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>intList.<span style="color:#4070a0">add</span>(3);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>List<span style="color:#666">&lt;</span>Double<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>doubleList<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>ArrayList<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>doubleList.<span style="color:#4070a0">add</span>(1.<span style="color:#4070a0">1</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>doubleList.<span style="color:#4070a0">add</span>(2.<span style="color:#4070a0">2</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>doubleList.<span style="color:#4070a0">add</span>(3.<span style="color:#4070a0">3</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;Sum of intList: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>sumOfList(intList));<span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 输出: Sum of intList: 6.0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;Sum of doubleList: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>sumOfList(doubleList));<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: Sum of doubleList: 6.6</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 下界通配符，表示可以接受 Number 或其父类型的列表，写入操作：使用下界通配符 ? super T 进行写入操作</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">LowerBoundedWildcardExample</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 向列表中添加元素，假设列表中的元素是 Number 或其父类型</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">addNumbers</span>(List<span style="color:#666">&lt;?</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">super</span><span style="color:#bbb"> </span>Number<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>list)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>list.<span style="color:#4070a0">add</span>(1);<span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 可以添加 Integer</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>list.<span style="color:#4070a0">add</span>(1.<span style="color:#4070a0">1</span>);<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">// 可以添加 Double</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>list.<span style="color:#4070a0">add</span>(1L);<span style="color:#bbb">   </span><span style="color:#60a0b0;font-style:italic">// 可以添加 Long</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>List<span style="color:#666">&lt;</span>Number<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>numberList<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>ArrayList<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>addNumbers(numberList);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;numberList: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>numberList);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: numberList: [1, 1.1, 1]</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>List<span style="color:#666">&lt;</span>Object<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>objectList<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>ArrayList<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>addNumbers(objectList);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;objectList: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>objectList);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出: objectList: [1, 1.1, 1]</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-使用技巧">3. 使用技巧</h3>
+<ol>
+<li>
+<p><strong>类型参数限制</strong>：使用 <code>&lt;T extends Class/Interface&gt;</code> 约束类型范围。</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#666">&lt;</span>T<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">extends</span><span style="color:#bbb"> </span>Comparable<span style="color:#666">&lt;</span>T<span style="color:#666">&gt;&gt;</span><span style="color:#bbb"> </span>T<span style="color:#bbb"> </span><span style="color:#06287e">max</span>(T<span style="color:#bbb"> </span>a,<span style="color:#bbb"> </span>T<span style="color:#bbb"> </span>b)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>a.<span style="color:#4070a0">compareTo</span>(b)<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span>0<span style="color:#bbb"> </span><span style="color:#666">?</span><span style="color:#bbb"> </span>a<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>b;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>避免原生类型</strong>：始终使用泛型类型（如 <code>List&lt;String&gt;</code> 而非 <code>List</code>），避免类型安全问题。</p>
+</li>
+<li>
+<p><strong>PECS 原则</strong>（Producer-Extends, Consumer-Super）：</p>
+<ul>
+<li>当从集合读取数据（生产者）时，使用 <code>&lt;? extends T&gt;</code>，编译器知道集合中的元素至少是 T 类型或其子类型，因此可以安全地读取这些元素。</li>
+<li>当向集合写入数据（消费者）时，使用 <code>&lt;? super T&gt;</code>，编译器知道集合中的元素至少是 T 类型或其父类型，因此可以安全地向集合中添加 T 类型或其父类型的元素。</li>
+</ul>
+</li>
+<li>
+<p><strong>类型推断</strong>：利用编译器自动推断类型，简化代码。</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>List<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>list<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>ArrayList<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// Java 7+ 后可用空尖括号</span><span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><strong>泛型与静态方法</strong>：<code>静态方法不能使用类的类型参数</code>，需单独声明：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Box</span><span style="color:#666">&lt;</span>T<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#666">&lt;</span>U<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>U<span style="color:#bbb"> </span><span style="color:#06287e">staticMethod</span>(U<span style="color:#bbb"> </span>u)<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>u;<span style="color:#bbb"> </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="4-代码示例合集">4. 代码示例合集</h3>
+<h4 id="示例-1泛型类与方法">示例 1：泛型类与方法</h4>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-20">20</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 泛型类</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Pair</span><span style="color:#666">&lt;</span>T,<span style="color:#bbb"> </span>U<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">private</span><span style="color:#bbb"> </span>T<span style="color:#bbb"> </span>first;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">private</span><span style="color:#bbb"> </span>U<span style="color:#bbb"> </span>second;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#06287e">Pair</span>(T<span style="color:#bbb"> </span>first,<span style="color:#bbb"> </span>U<span style="color:#bbb"> </span>second)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">this</span>.<span style="color:#4070a0">first</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>first;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">this</span>.<span style="color:#4070a0">second</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>second;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 泛型方法</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#666">&lt;</span>V,<span style="color:#bbb"> </span>W<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>Pair<span style="color:#666">&lt;</span>V,<span style="color:#bbb"> </span>W<span style="color:#666">&gt;</span><span style="color:#bbb"> </span><span style="color:#06287e">create</span>(V<span style="color:#bbb"> </span>v,<span style="color:#bbb"> </span>W<span style="color:#bbb"> </span>w)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Pair<span style="color:#666">&lt;&gt;</span>(v,<span style="color:#bbb"> </span>w);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// Getter/Setter 省略</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 使用</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Pair<span style="color:#666">&lt;</span>String,<span style="color:#bbb"> </span>Integer<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>pair<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Pair.<span style="color:#4070a0">create</span>(<span style="color:#4070a0">&#34;Age&#34;</span>,<span style="color:#bbb"> </span>30);<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="示例-2通配符与集合">示例 2：通配符与集合</h4>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-8">8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-9">9</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 合并两个列表（生产者）</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">mergeLists</span>(List<span style="color:#666">&lt;?</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">extends</span><span style="color:#bbb"> </span>Number<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>src,<span style="color:#bbb"> </span>List<span style="color:#666">&lt;?</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">super</span><span style="color:#bbb"> </span>Number<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>dest)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>dest.<span style="color:#4070a0">addAll</span>(src);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 使用</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>List<span style="color:#666">&lt;</span>Integer<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>intList<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Arrays.<span style="color:#4070a0">asList</span>(1,<span style="color:#bbb"> </span>2);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>List<span style="color:#666">&lt;</span>Number<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>numberList<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>ArrayList<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>mergeLists(intList,<span style="color:#bbb"> </span>numberList);<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="5-注意事项">5. 注意事项</h3>
+<ul>
+<li><strong>类型擦除</strong>：泛型在编译后会被擦除（如 <code>List&lt;String&gt;</code> 变为 <code>List</code>），运行时无法获取类型参数。</li>
+<li><strong>不可实例化泛型</strong>：<code>new T()</code> 是非法的（可通过反射间接实现），这是因为泛型类型参数在编译时会被擦除（类型擦除），编译器无法确定具体的类型，因此无法实例化。</li>
+<li><strong>基本类型不支持</strong>：不能使用 <code>List&lt;int&gt;</code>，需用包装类 <code>List&lt;Integer&gt;</code>。</li>
+</ul>
+<h2 id="总结">总结</h2>
+<p>泛型通过类型参数化显著提升了代码的安全性和复用性。合理使用泛型类、泛型方法、通配符和类型限制，可以写出更灵活且健壮的代码。注意类型擦除的局限性和 PECS 原则，以最大化泛型的优势。</p>
+            </div>
+
+            
+            
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">东北小哥</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2025-03-05
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">MIT</span>
+  </p>
+</div>
+
+
+
+            
+            
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/image/ds/wechat-qr-code.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/image/ds/alipay-qr-code.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+
+            <footer class="post-footer">
+                <div class="post-tags">
+                    <a href="https://yutao.org/tags/java%E5%90%8E%E7%AB%AF/">java后端</a>
+                    
+                </div>
+
+
+                
+                <nav class="post-nav">
+                    
+                    
+                    <a class="next" href="/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB-14/">
+                        <span class="next-text nav-default">Java后端-基础-常用工具类-14</span>
+                        <span class="prev-text nav-mobile">下一篇</span>
+                        
+                        <i class="iconfont">
+                            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+                        </i>
+                    </a>
+                </nav>
+            </footer>
+        </article>
+
+        
+        
+
+
+        
+        
+
+  
+
+  
+  
+
+  
+  
+    <div class="post">
+  <script src="https://utteranc.es/client.js"
+        repo= "yutaodev/comments-for-yutaodev.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+
+    </div>
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#泛型">泛型</a>
+      <ul>
+        <li><a href="#1-泛型的概念">1. 泛型的概念</a></li>
+        <li><a href="#2-泛型的用法">2. 泛型的用法</a>
+          <ul>
+            <li><a href="#1-泛型类">1. 泛型类</a></li>
+            <li><a href="#2-泛型接口">2. 泛型接口</a></li>
+            <li><a href="#3-泛型方法">3. 泛型方法</a></li>
+            <li><a href="#4-通配符-">4. 通配符 <code>?</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#3-使用技巧">3. 使用技巧</a></li>
+        <li><a href="#4-代码示例合集">4. 代码示例合集</a>
+          <ul>
+            <li><a href="#示例-1泛型类与方法">示例 1：泛型类与方法</a></li>
+            <li><a href="#示例-2通配符与集合">示例 2：通配符与集合</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-注意事项">5. 注意事项</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
+    
+
+
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });  
+</script>
+<script>
+    
+    Array.from(document.getElementsByClassName("language-mermaid")).forEach(
+        (el) => {
+            el.parentElement.outerHTML = `<div class="mermaid">${el.innerHTML}</div>`;
+        }
+    );  
+</script>
+<style>
+     
+    .mermaid svg {
+        display: block;
+        margin: auto;
+    }
+</style>
+</div>
+
+      </main>
+
+      <footer id="footer" class="footer">
+        <div class="icon-links">
+  
+  
+    <a href="mailto:yutao.z@qq.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://space.bilibili.com/304380559" rel="me noopener" class="iconfont"
+      title="bilibili"  target="_blank"
+      >
+      <svg
+  class="icon" style="" viewBox="0 0 1024 1024" version="1.1" width="36"
+  height="36" id="svg8">
+  <path
+      style=""
+      d="M 744.60599,0.00486267 A 41.779915,41.779915 0 0 0 710.4184,18.673394 L 548.5048,255.32642 h -11.70046 a 41.779915,41.779915 0 0 0 -10.80295,-7.84928 L 235.66,97.084498 a 41.779915,41.779915 0 0 0 -20.07193,-4.960864 41.779915,41.779915 0 0 0 -18.3748,79.145436 L 359.4859,255.32642 H 128.16909 c -49.458302,0 -89.27932,39.82105 -89.27932,89.27932 v 508.65224 c 0,49.4583 39.821018,89.27934 89.27932,89.27934 h 19.48445 C 149.12802,984.5043 179.92773,1024 224.79179,1024 c 44.86407,0 75.66379,-39.4957 77.13826,-81.46268 H 719.98116 C 721.45559,984.5043 752.25533,1024 797.1194,1024 c 44.86406,0 75.6638,-39.4957 77.13824,-81.46268 h 21.57323 c 49.45831,0 89.27936,-39.82104 89.27936,-89.27934 V 344.60574 c 0,-49.45827 -39.82105,-89.27932 -89.27936,-89.27932 H 649.74567 L 779.38103,65.866924 A 41.779915,41.779915 0 0 0 744.60599,0.00486267 Z M 644.49108,418.70871 c 6.29985,0.21538 12.44451,2.01107 17.86888,5.22196 l 171.36218,98.10771 c 18.23417,10.21935 24.63334,33.34627 14.24614,51.48533 -10.38726,18.13909 -33.57344,24.32718 -51.61587,13.77296 L 624.9903,489.18895 c -15.21356,-8.41858 -22.66871,-26.1765 -18.03211,-42.93436 4.63664,-16.75784 20.15573,-28.14465 37.53289,-27.54588 z M 350.2006,432.31846 c 16.89952,0.0317 31.69582,11.33328 36.17844,27.62747 4.48262,16.2942 -2.44981,33.57765 -16.95507,42.24898 l -140.7157,86.91312 c -17.68528,11.18244 -41.09629,5.77692 -52.08912,-12.02686 -10.99282,-17.80373 -5.33855,-41.15658 12.58167,-51.95857 L 329.9002,438.2095 c 6.0643,-3.86439 13.10951,-5.90891 20.3004,-5.89104 z M 501.605,641.53985 c 3.75002,-0.15248 7.48645,0.53903 10.93349,2.0235 0.15842,0.0637 0.31618,0.12888 0.47325,0.19582 0.59328,0.27092 1.17574,0.56489 1.74609,0.88121 0.15868,0.0854 0.31643,0.17233 0.47325,0.2611 0.55694,0.32165 1.10131,0.66458 1.63185,1.02807 0.16455,0.1123 0.32777,0.2265 0.48956,0.34269 0.50382,0.36781 0.99371,0.75428 1.46868,1.15864 0.18724,0.15504 0.37218,0.31282 0.55484,0.47323 0.43271,0.38784 0.8518,0.79061 1.25653,1.20756 0.15449,0.16114 0.30679,0.32437 0.45693,0.48959 0.40798,0.44266 0.79989,0.89988 1.17494,1.37076 0.17799,0.22544 0.35205,0.45395 0.5222,0.68538 0.25932,0.34701 0.50964,0.70071 0.75064,1.06071 0.26712,0.39516 0.52286,0.79784 0.76699,1.20757 0.16907,0.29043 0.33231,0.58424 0.48957,0.88123 0.21836,0.41297 0.42513,0.83199 0.62009,1.25653 0.14836,0.32333 0.28983,0.64976 0.42429,0.97911 0.21319,0.51552 0.40915,1.03801 0.58747,1.5666 0.0677,0.19499 0.13296,0.39085 0.19582,0.58748 0.18652,0.60823 0.34984,1.22334 0.48957,1.84399 0.0397,0.16277 0.0779,0.32601 0.11423,0.48957 0.1436,0.69112 0.25788,1.38801 0.34269,2.08877 0.005,0.0381 0.0111,0.0761 0.0163,0.11424 0.0857,0.78056 0.13474,1.56471 0.14687,2.34988 0.005,0.0543 0.0111,0.10879 0.0163,0.1632 0,0 -0.008,1.12132 0,1.45234 0,0 -0.14697,17.84761 5.89102,34.12231 3.01902,8.13734 7.33278,15.10615 12.61433,19.61501 5.28157,4.50889 11.42894,7.62081 23.64572,7.62081 12.2168,0 18.36416,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.5953,-11.47767 12.6143,-19.61501 6.03799,-16.2747 5.89103,-34.12231 5.89103,-34.12231 -0.44885,-13.87045 10.45922,-25.46302 24.3311,-25.86506 13.87189,-0.40201 25.42828,10.53953 25.78348,24.41272 0,0 1.11929,25.7226 -9.00791,53.01927 -5.06359,13.64832 -13.1986,28.46036 -27.05631,40.29073 -13.85772,11.83039 -33.5454,19.63135 -56.20142,19.63135 -22.65603,0 -42.34371,-7.80096 -56.20141,-19.63135 -4.1801,-3.56856 -7.78733,-7.42433 -10.99878,-11.42303 -3.21235,4.00037 -6.81703,7.85309 -10.99876,11.42303 -13.85773,11.83039 -33.5454,19.63135 -56.20144,19.63135 -22.65601,0 -42.3437,-7.80096 -56.2014,-19.63135 -13.85775,-11.83037 -21.99272,-26.64241 -27.05632,-40.29073 -10.12725,-27.29667 -9.00789,-53.01928 -9.00789,-53.01927 0.20714,-13.83687 11.58744,-24.88848 25.42444,-24.69013 14.1263,0.19991 25.2971,12.0278 24.69011,26.14247 0,0 -0.14697,17.84761 5.89103,34.12231 3.01902,8.13734 7.31646,15.10615 12.598,19.61501 5.28155,4.50889 11.44526,7.62081 23.66203,7.62081 12.21681,0 18.36418,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.57899,-11.47767 12.598,-19.61501 5.76352,-15.53489 5.89112,-32.05691 5.89103,-33.56746 0.006,-0.37466 0.0111,-1.05336 0.0163,-1.20759 -0.0117,-0.74583 0.0105,-1.49177 0.0652,-2.23565 0.009,-0.15784 0.0204,-0.31561 0.0327,-0.47324 0.14204,-1.56859 0.43163,-3.12027 0.86487,-4.63449 0.0213,-0.0763 0.0433,-0.15244 0.0652,-0.22848 3.0335,-10.25748 12.24157,-17.46007 22.92769,-17.93417 z"
+      id="rect824"/>
+</svg>
+
+    </a>
+  
+    <a href="https://weibo.com/u/2557216280" rel="me noopener" class="iconfont"
+      title="weibo"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M385.714286 733.714286q12-19.428571 6.285714-39.428571t-25.714286-28.571429q-19.428571-8-41.714286-0.571429t-34.285714 26.285714q-12.571429 19.428571-7.428571 39.142857t24.571429 28.857143 42.571429 1.428571 35.714286-27.142857zm53.714286-69.142857q4.571429-7.428571 2-15.142857t-10-10.571429q-8-2.857143-16.285714 2.857143t-12.285714 10.571429q-9.714286 17.714286 7.428571 25.714286 8 2.857143 16.571429 2.857143t12.571429-10.571429zm99.428571 61.142857q-25.714286 58.285714-90.285714 85.714286t-128 6.857143q-61.142857-19.428571-84.285714-72.285714t3.714286-107.142857q26.857143-53.142857 86.571429-79.428571t120.285714-10.857143q63.428571 16.571429 90.571429 68.285714t1.428571 108.857143zm178.285714-91.428571q-5.142857-54.857143-50.857143-97.142857t-119.142857-62.285714-156.857143-12q-127.428571 13.142857-211.142857 80.857143t-75.714286 151.142857q5.142857 54.857143 50.857143 97.142857t119.142857 62.285714 156.857143 12q127.428571-13.142857 211.142857-80.857143t75.714286-151.142857zm176 2.285714q0 38.857143-21.142857 79.714286t-62.285714 78.285714-96.285714 67.142857-129.142857 47.428571-154.571429 17.714286-157.142857-19.142857-137.428571-53.142857-98-86.285714-37.142857-114q0-65.714286 39.714286-140t112.857143-147.428571q96.571429-96.571429 195.142857-134.857143t140.857143 4q37.142857 36.571429 11.428571 119.428571-2.285714 8-0.571429 11.428571t5.714286 4 8.285714 2.857143 7.714286-2l3.428571-1.142857q79.428571-33.714286 140.571429-33.714286t87.428571 34.857143q25.714286 36 0 101.714286-1.142857 7.428571-2.571429 11.428571t2.571429 7.142857 6.857143 4.285714 9.714286 3.428571q32.571429 10.285714 58.857143 26.857143t45.714286 46.571429 19.428571 66.571429zm-42.285714-356.571429q24 26.857143 31.142857 62t-3.714286 67.142857q-4.571429 13.142857-16.857143 19.428571t-25.428571 2.285714q-13.142857-4.571429-19.428571-16.857143t-2.285714-25.428571q11.428571-36-13.714286-63.428571t-61.142857-20q-13.714286 2.857143-25.714286-4.571429t-14.285714-21.142857q-2.857143-13.714286 4.571429-25.428571t21.142857-14.571429q34.285714-7.428571 68 3.142857t57.714286 37.428571zm103.428571-93.142857q49.714286 54.857143 64.285714 127.142857t-7.714286 138q-5.142857 15.428571-19.428571 22.857143t-29.714286 2.285714-22.857143-19.428571-2.857143-29.714286q16-46.857143 5.714286-98.285714t-45.714286-90.285714q-35.428571-39.428571-84.571429-54.571429t-98.857143-4.857143q-16 3.428571-29.714286-5.428571t-17.142857-24.857143 5.428571-29.428571 24.857143-16.857143q70.285714-14.857143 139.428571 6.571429t118.857143 76.857143z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.toutiao.com/c/user/token/MS4wLjABAAAA1TxeVNQbqL6Lg7CJRoNwNHYDpIB5qKGh24pQ0AvIjmfeczyo5zxipIgPtGJr-mUI/?source=m_redirect" rel="me noopener" class="iconfont"
+      title="toutiao"  target="_blank"
+      >
+      <svg t="1731818671552" class="icon" viewBox="0 0 1024 1024" version="1.1"
+    xmlns="http://www.w3.org/2000/svg" p-id="4390" width="32" height="32">
+    <path
+        d="M828.745763 0H195.254237C86.779661 0 0 86.779661 0 195.254237v633.491526c0 108.474576 86.779661 190.915254 195.254237 195.254237h633.491526c108.474576 0 190.915254-86.779661 195.254237-195.254237V195.254237c0-108.474576-86.779661-195.254237-195.254237-195.254237z m138.847457 828.745763c0 78.101695-60.745763 138.847458-138.847457 138.847457H195.254237c-78.101695 0-138.847458-60.745763-138.847457-138.847457V195.254237c0-78.101695 60.745763-138.847458 138.847457-138.847457h633.491526c78.101695 0 138.847458 60.745763 138.847457 138.847457v633.491526z"
+        fill="#525252" p-id="4391"></path>
+    <path
+        d="M0 221.288136v620.474576c0 4.338983 4.338983 8.677966 8.677966 13.016949l1015.322034-56.40678V182.237288c0-4.338983-4.338983-8.677966-8.677966-13.016949L0 221.288136z"
+        fill="#525252" p-id="4392"></path>
+    <path
+        d="M906.847458 581.423729v-47.728814l-151.864407 8.677966V520.677966h-69.423729v30.372881l-151.864407 8.677967V607.457627l151.864407-8.677966v108.474576l69.423729-8.677966v-108.474576l151.864407-8.677966z"
+        fill="#FFFFFF" p-id="4393"></path>
+    <path
+        d="M538.033898 490.305085v47.728813h47.728814l138.847457-69.423729 130.169492 47.728814H911.186441v-47.728814h-34.711865l-91.118644-26.033898 117.152543-60.745763V299.389831l-65.084746 4.338983-173.559322 8.677966-56.40678-30.372882-78.101695 117.152543 60.745763 21.694915 43.38983-60.745763 199.593221-8.677966v8.677966l-108.474577 56.40678-91.118644-34.711865-26.033898 47.728814 47.728814 21.694915-82.440678 43.389831-34.711865-4.338983z m334.101695 104.135593l-69.423729 8.677966 47.728814 91.118644 78.101695-8.677966-56.40678-91.118644z m-334.101695 108.474576H607.457627l47.728814-95.457627-69.423729 8.677966-47.728814 86.779661z m-169.220339-99.79661l56.40678 108.474576h82.440678l-60.745763-117.152542-78.101695 8.677966z m-78.101695-86.779661l-60.745762-78.101695-82.440678 8.677966 60.745762 69.423729h82.440678z m0-95.457627L229.966102 351.457627H147.525424l60.745762 78.101695 82.440678-8.677966z"
+        fill="#FFFFFF" p-id="4394"></path>
+    <path
+        d="M351.457627 585.762712l130.169492-8.677966v-47.728814l-91.118644 8.677966v-216.949152l-65.084746 8.677966v208.271186l-216.949153 13.016949v47.728814l147.525424-8.677966-60.745763 82.440678-82.440678 8.677966v47.728814l138.847458-8.677967 99.79661-134.508474z"
+        fill="#FFFFFF" p-id="4395"></path>
+</svg>
+    </a>
+
+
+<a href="https://yutao.org/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2017 -
+    2025
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        东北小哥
+        
+      </span></span>
+
+  
+  
+    <span id="busuanzi_container">
+      访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+  
+
+  
+</div>
+
+      </footer>
+
+      <div class="button__back-to-top">
+        <a href="#back-to-top">
+          <i class="iconfont">
+            
+            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+          </i>
+        </a>
+      </div>
+    </div>
+    
+<script type="text/javascript" src="/lib/jquery/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.30f749f8c1b862d61c396d6734034aad54e7f893eac4218ff03ffa687ad4cc13.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
