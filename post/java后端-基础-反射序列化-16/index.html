@@ -81,7 +81,7 @@
   <meta itemprop="description" content="Java后端从小白到大神修仙">
   <meta itemprop="datePublished" content="2025-03-05T19:16:30+08:00">
   <meta itemprop="dateModified" content="2025-03-05T19:16:30+08:00">
-  <meta itemprop="wordCount" content="1573">
+  <meta itemprop="wordCount" content="2235">
   <meta itemprop="keywords" content="java后端">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Java后端-基础-反射序列化-16">
@@ -329,8 +329,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 1573 字 -
-        预计阅读 4 分钟
+        约 2235 字 -
+        预计阅读 5 分钟
       </span>
 
     <div class="post-meta-category">
@@ -438,31 +438,29 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="3-调用方法">3. 调用方法</h4>
+<h5 id="1-methodinvoke-方法的基本用法">1. method.invoke() 方法的基本用法</h5>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-5">5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-6">6</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-7">7</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-8">8</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-9">9</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Class<span style="color:#666">&lt;?&gt;</span><span style="color:#bbb"> </span>clazz<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Math.<span style="color:#4070a0">class</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>Method<span style="color:#bbb"> </span>method<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>clazz.<span style="color:#4070a0">getDeclaredMethod</span>(<span style="color:#4070a0">&#34;sqrt&#34;</span>,<span style="color:#bbb"> </span><span style="color:#902000">double</span>.<span style="color:#4070a0">class</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>method.<span style="color:#4070a0">setAccessible</span>(<span style="color:#007020;font-weight:bold">true</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 允许访问私有方法</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#902000">double</span><span style="color:#bbb"> </span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>(Double)<span style="color:#bbb"> </span>method.<span style="color:#4070a0">invoke</span>(<span style="color:#007020;font-weight:bold">null</span>,<span style="color:#bbb"> </span>25.<span style="color:#4070a0">0</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(result);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出 5.0</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">catch</span><span style="color:#bbb"> </span>(Exception<span style="color:#bbb"> </span>e)<span style="color:#bbb"> </span>{<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>e.<span style="color:#4070a0">printStackTrace</span>();<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 方法签名</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span>Object<span style="color:#bbb"> </span><span style="color:#06287e">invoke</span>(Object<span style="color:#bbb"> </span>obj,<span style="color:#bbb"> </span>Object...<span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">throws</span><span style="color:#bbb"> </span>IllegalAccessException,<span style="color:#bbb"> </span>IllegalArgumentException,<span style="color:#bbb"> </span>InvocationTargetException<span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="4-操作字段">4. 操作字段</h4>
+</div><ul>
+<li>obj：要调用方法的对象实例。如果方法是静态的，可以传递 null。</li>
+<li>args：方法的参数，可以是零个或多个参数。</li>
+<li>返回值：方法的返回值，如果方法返回 void，则返回 null。</li>
+<li>异常：
+<ul>
+<li>IllegalAccessException：如果方法不可访问。</li>
+<li>IllegalArgumentException：如果参数不匹配。</li>
+<li>InvocationTargetException：如果被调用的方法抛出异常。</li>
+</ul>
+</li>
+</ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1"> 1</a>
@@ -482,6 +480,163 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-15">15</a>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-16">16</a>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-25">25</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-26">26</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-27">27</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-28">28</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-29"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-29">29</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-30"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-30">30</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-31"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-31">31</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-32"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-32">32</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-33"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-33">33</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-34"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-34">34</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-35"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-35">35</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-36"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-36">36</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-37"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-37">37</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-38"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-38">38</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-39"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-39">39</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-40"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-40">40</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-41"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-41">41</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-42"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-42">42</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-43"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-43">43</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-44"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-44">44</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-45"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-45">45</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-46"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-46">46</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-47"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-47">47</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-48"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-48">48</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-49"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-49">49</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-50"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-50">50</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-51"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-51">51</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-52"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-52">52</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-53"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-53">53</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-54"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-54">54</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-55"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-55">55</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-56"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-56">56</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-57"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-57">57</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-58"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-58">58</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-59"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-59">59</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-60"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-60">60</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-61"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-61">61</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-62"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-62">62</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-63"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-63">63</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-64"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-64">64</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-65"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-65">65</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-66"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-66">66</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-67"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-67">67</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-68"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-68">68</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-69"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-69">69</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-70"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-70">70</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-71"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-71">71</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-72"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-72">72</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-73"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-73">73</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-74"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-74">74</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-75"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-75">75</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 示例1：:</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Class<span style="color:#666">&lt;?&gt;</span><span style="color:#bbb"> </span>clazz<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Math.<span style="color:#4070a0">class</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// clazz.getDeclaredMethod(&#34;sqrt&#34;, double.class)：获取 clazz 类中名为 sqrt 且参数类型为 double 的方法。</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>Method<span style="color:#bbb"> </span>method<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>clazz.<span style="color:#4070a0">getDeclaredMethod</span>(<span style="color:#4070a0">&#34;sqrt&#34;</span>,<span style="color:#bbb"> </span><span style="color:#902000">double</span>.<span style="color:#4070a0">class</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>method.<span style="color:#4070a0">setAccessible</span>(<span style="color:#007020;font-weight:bold">true</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 允许访问私有方法</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// method.invoke(null, 25.0)：调用 method 方法，传递参数 25.0。</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 因为 sqrt 是 Math 类的静态方法，所以传递 null 作为第一个参数。</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// method.invoke 返回一个 Object 类型的对象，需要将其强制转换为 Double 类型。</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#902000">double</span><span style="color:#bbb"> </span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>(Double)<span style="color:#bbb"> </span>method.<span style="color:#4070a0">invoke</span>(<span style="color:#007020;font-weight:bold">null</span>,<span style="color:#bbb"> </span>25.<span style="color:#4070a0">0</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(result);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出 5.0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">catch</span><span style="color:#bbb"> </span>(Exception<span style="color:#bbb"> </span>e)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>e.<span style="color:#4070a0">printStackTrace</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 示例2：调用实例方法</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Person</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">private</span><span style="color:#bbb"> </span>String<span style="color:#bbb"> </span>name;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#06287e">Person</span>(String<span style="color:#bbb"> </span>name)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">this</span>.<span style="color:#4070a0">name</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>name;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">sayHello</span>(String<span style="color:#bbb"> </span>message)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(name<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34; says: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>message);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">ReflectionInstanceMethodExample</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#60a0b0;font-style:italic">// 创建 Person 对象</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>Person<span style="color:#bbb"> </span>person<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Person(<span style="color:#4070a0">&#34;Alice&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#60a0b0;font-style:italic">// 获取 Person 类的 Class 对象</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>Class<span style="color:#666">&lt;?&gt;</span><span style="color:#bbb"> </span>clazz<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>person.<span style="color:#4070a0">getClass</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#60a0b0;font-style:italic">// 获取名为 &#34;sayHello&#34; 且参数类型为 String 的方法</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>Method<span style="color:#bbb"> </span>method<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>clazz.<span style="color:#4070a0">getDeclaredMethod</span>(<span style="color:#4070a0">&#34;sayHello&#34;</span>,<span style="color:#bbb"> </span>String.<span style="color:#4070a0">class</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#60a0b0;font-style:italic">// 调用 sayHello 方法，传递参数 &#34;Hello, World!&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>method.<span style="color:#4070a0">invoke</span>(person,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Hello, World!&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">catch</span><span style="color:#bbb"> </span>(Exception<span style="color:#bbb"> </span>e)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>e.<span style="color:#4070a0">printStackTrace</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 示例 3：处理异常</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">ReflectionExceptionExample</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#60a0b0;font-style:italic">// 获取 Math 类的 Class 对象</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>Class<span style="color:#666">&lt;?&gt;</span><span style="color:#bbb"> </span>clazz<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Math.<span style="color:#4070a0">class</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#60a0b0;font-style:italic">// 获取名为 &#34;sqrt&#34; 且参数类型为 double 的方法</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>Method<span style="color:#bbb"> </span>method<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>clazz.<span style="color:#4070a0">getDeclaredMethod</span>(<span style="color:#4070a0">&#34;sqrt&#34;</span>,<span style="color:#bbb"> </span><span style="color:#902000">double</span>.<span style="color:#4070a0">class</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#60a0b0;font-style:italic">// 调用 Math.sqrt 方法，传递参数 25.0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>Object<span style="color:#bbb"> </span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>method.<span style="color:#4070a0">invoke</span>(<span style="color:#007020;font-weight:bold">null</span>,<span style="color:#bbb"> </span>25.<span style="color:#4070a0">0</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#60a0b0;font-style:italic">// 将结果强制转换为 Double 类型并打印</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#902000">double</span><span style="color:#bbb"> </span>sqrtResult<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>(Double)<span style="color:#bbb"> </span>result;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;Square root of 25.0 is: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>sqrtResult);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">catch</span><span style="color:#bbb"> </span>(NoSuchMethodException<span style="color:#bbb"> </span>e)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;Method not found: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>e.<span style="color:#4070a0">getMessage</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">catch</span><span style="color:#bbb"> </span>(IllegalAccessException<span style="color:#bbb"> </span>e)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;Illegal access: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>e.<span style="color:#4070a0">getMessage</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">catch</span><span style="color:#bbb"> </span>(InvocationTargetException<span style="color:#bbb"> </span>e)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;Invocation target exception: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>e.<span style="color:#4070a0">getMessage</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">catch</span><span style="color:#bbb"> </span>(Exception<span style="color:#bbb"> </span>e)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>e.<span style="color:#4070a0">printStackTrace</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="4-操作字段">4. 操作字段</h4>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-17">17</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Person</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -524,39 +679,39 @@
 <h4 id="1-基本序列化">1. 基本序列化</h4>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1"> 1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2"> 2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3"> 3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4"> 4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5"> 5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6"> 6</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7"> 7</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-8"> 8</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-9"> 9</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-10">10</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-11">11</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-12">12</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-13">13</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-14">14</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-15">15</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-16">16</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-17">17</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-18">18</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-19">19</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-20">20</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-21">21</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-22">22</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-23">23</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-24">24</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-25">25</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-26">26</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-27">27</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-28">28</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-29"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-29">29</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-30"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-30">30</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-31"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-31">31</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-32"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-32">32</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-33"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-33">33</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-25">25</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-26">26</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-27">27</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-28">28</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-29"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-29">29</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-30"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-30">30</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-31"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-31">31</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-32"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-32">32</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-33"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-33">33</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span><span style="color:#bbb"> </span><span style="color:#0e84b5;font-weight:bold">java.io.*</span>;<span style="color:#bbb">
@@ -598,19 +753,19 @@
 <p>通过实现 <code>writeObject</code> 和 <code>readObject</code> 方法控制序列化过程：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1"> 1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2"> 2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3"> 3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-4"> 4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-5"> 5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-6"> 6</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-7"> 7</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-8"> 8</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-9"> 9</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-10">10</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-11">11</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-12">12</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-13">13</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-13">13</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">CustomSerialization</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">implements</span><span style="color:#bbb"> </span>Serializable<span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -715,6 +870,19 @@
                 
                 <nav class="post-nav">
                     
+                    <a class="prev" href="/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%B3%A8%E8%A7%A3-17/">
+                        
+                        <i class="iconfont">
+                            <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+                        </i>
+                        <span class="prev-text nav-default">Java后端-基础-注解-17</span>
+                        <span class="prev-text nav-mobile">上一篇</span>
+                    </a>
                     
                     <a class="next" href="/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%B3%9B%E5%9E%8B-15/">
                         <span class="next-text nav-default">Java后端-基础-泛型-15</span>
