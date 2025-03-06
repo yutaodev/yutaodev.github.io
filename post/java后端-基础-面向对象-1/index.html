@@ -81,7 +81,7 @@
   <meta itemprop="description" content="Java后端从小白到大神修仙">
   <meta itemprop="datePublished" content="2025-02-22T21:31:32+08:00">
   <meta itemprop="dateModified" content="2025-02-22T21:31:32+08:00">
-  <meta itemprop="wordCount" content="4277">
+  <meta itemprop="wordCount" content="4381">
   <meta itemprop="keywords" content="java后端">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Java后端-基础-面向对象-1">
@@ -329,7 +329,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 4277 字 -
+        约 4381 字 -
         预计阅读 9 分钟
       </span>
 
@@ -1198,26 +1198,26 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 测试代码</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">ObserverPatternExample</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 创建具体主题</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 创建具体主题，创建 ConcreteSubject 实例 subject</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>ConcreteSubject<span style="color:#bbb"> </span>subject<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>ConcreteSubject();<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 创建具体观察者</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 创建具体观察者，创建 ConcreteObserver 实例 observer1、observer2 和 observer3</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Observer<span style="color:#bbb"> </span>observer1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>ConcreteObserver(<span style="color:#4070a0">&#34;Observer 1&#34;</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Observer<span style="color:#bbb"> </span>observer2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>ConcreteObserver(<span style="color:#4070a0">&#34;Observer 2&#34;</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Observer<span style="color:#bbb"> </span>observer3<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>ConcreteObserver(<span style="color:#4070a0">&#34;Observer 3&#34;</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 注册观察者</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 注册观察者，将观察者注册到主题中</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>subject.<span style="color:#4070a0">registerObserver</span>(observer1);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>subject.<span style="color:#4070a0">registerObserver</span>(observer2);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>subject.<span style="color:#4070a0">registerObserver</span>(observer3);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 改变主题状态</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 改变主题状态，改变主题状态为 &#34;State 1&#34;，所有观察者都会收到通知</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>subject.<span style="color:#4070a0">setState</span>(<span style="color:#4070a0">&#34;State 1&#34;</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 移除一个观察者</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 移除一个观察者，移除 observer2</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>subject.<span style="color:#4070a0">removeObserver</span>(observer2);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 再次改变主题状态</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 再次改变主题状态，再次改变主题状态为 &#34;State 2&#34;，只有 observer1 和 observer3 会收到通知</span><span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>subject.<span style="color:#4070a0">setState</span>(<span style="color:#4070a0">&#34;State 2&#34;</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
