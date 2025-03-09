@@ -3,48 +3,55 @@
   
   <url>
     <loc>https://yutao.org/categories/</loc>
-    <lastmod>2025-03-06T10:16:43+08:00</lastmod>
+    <lastmod>2025-03-08T23:57:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/tags/java%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2025-03-06T10:16:43+08:00</lastmod>
+    <lastmod>2025-03-08T23:57:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/categories/java%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2025-03-06T10:16:43+08:00</lastmod>
+    <lastmod>2025-03-08T23:57:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-18/</loc>
-    <lastmod>2025-03-06T10:16:43+08:00</lastmod>
+    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%8F%91%E9%82%AE%E4%BB%B6-19/</loc>
+    <lastmod>2025-03-08T23:57:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/post/</loc>
-    <lastmod>2025-03-06T10:16:43+08:00</lastmod>
+    <lastmod>2025-03-08T23:57:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/tags/</loc>
-    <lastmod>2025-03-06T10:16:43+08:00</lastmod>
+    <lastmod>2025-03-08T23:57:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/</loc>
+    <lastmod>2025-03-08T23:57:26+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-18/</loc>
     <lastmod>2025-03-06T10:16:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
