@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>归档 on 东北小哥</title>
+    <link>https://yutao.org/archives/</link>
+    <description>Recent content in 归档 on 东北小哥</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
+    <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
+    <atom:link href="https://yutao.org/archives/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

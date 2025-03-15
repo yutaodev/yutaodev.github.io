@@ -1,74 +1,15 @@
-/* 通用表格样式 */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    /* 移除表格单元格之间的空隙 */
-    margin: 20px 0;
-    /* 上下间距 */
-    background-color: transparent;
-    /* 透明背景，避免表格突出 */
+.posts .post-categories a {
+    color: #c45b6a;
+    /* 分类名称默认颜色 */
+    text-decoration: none;
 }
 
-/* 表头 */
-th {
-    text-align: left;
-    padding: 10px;
-    background-color: #f4f4f4;
-    /* 淡灰色背景 */
-    font-weight: bold;
+.posts .post-categories a:hover {
+    color: #c45b6a;
+    /* 悬停时颜色，保持不变 */
+    text-decoration: underline;
 }
 
-/* 表格数据 */
-td {
-    padding: 10px;
-    background-color: #fff;
-    /* 背景色为白色 */
-    border-bottom: 1px solid #ddd;
-    /* 细灰色下边框，区分行 */
-}
-
-/* 去掉表格外边框 */
-table,
-th,
-td {
-    border: none;
-    /* 不显示表格外框 */
-}
-
-/* 行的悬停效果 */
-tr:hover {
-    background-color: #f9f9f9;
-    /* 浅灰色背景，悬停时高亮 */
-}
-
-/* 最后一行的边框去除 */
-tr:last-child td {
-    border-bottom: none;
-}
-
-/* 当表格为空时，设置表格宽度 */
-table:empty {
-    width: 100%;
-}
-
-/* 可选：为表格添加轻微的阴影 */
-table {
-    box-shadow: none;
-    /* 取消阴影 */
-}
-
-/* 如果有需要表格内部的交替行色 */
-tr:nth-child(odd) {
-    background-color: #f9f9f9;
-    /* 奇数行使用淡灰色背景 */
-}
-
-tr:nth-child(even) {
-    background-color: #fff;
-    /* 偶数行使用白色背景 */
-}
-
-/* 可选：为表格头部文字添加简单的下划线 */
-th {
+.posts .post-content a:hover {
     text-decoration: underline;
 }

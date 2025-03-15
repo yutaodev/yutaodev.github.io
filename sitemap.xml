@@ -3,7 +3,56 @@
   
   <url>
     <loc>https://yutao.org/categories/</loc>
-    <lastmod>2025-03-08T23:57:26+08:00</lastmod>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/</loc>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/%E7%94%9F%E5%91%BD%E7%9A%84%E6%84%8F%E4%B9%89/</loc>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/categories/%E5%93%B2%E5%AD%A6/</loc>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/</loc>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB/</loc>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/tcm/</loc>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E7%9A%84%E4%BC%9F%E5%A4%A7%E4%B8%8E%E7%A5%9E%E5%A5%87/</loc>
+    <lastmod>2025-03-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -23,14 +72,7 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%8F%91%E9%82%AE%E4%BB%B6-19/</loc>
-    <lastmod>2025-03-08T23:57:26+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.org/post/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%8F%91%E9%82%AE%E4%BB%B6-19/</loc>
     <lastmod>2025-03-08T23:57:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -44,140 +86,140 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/</loc>
+    <loc>https://yutao.org/programming/</loc>
     <lastmod>2025-03-08T23:57:26+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-18/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-18/</loc>
     <lastmod>2025-03-06T10:16:43+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%B3%A8%E8%A7%A3-17/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%B3%A8%E8%A7%A3-17/</loc>
     <lastmod>2025-03-05T21:29:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%8F%8D%E5%B0%84%E5%BA%8F%E5%88%97%E5%8C%96-16/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%8F%8D%E5%B0%84%E5%BA%8F%E5%88%97%E5%8C%96-16/</loc>
     <lastmod>2025-03-05T19:16:30+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%B3%9B%E5%9E%8B-15/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%B3%9B%E5%9E%8B-15/</loc>
     <lastmod>2025-03-05T00:33:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB-14/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB-14/</loc>
     <lastmod>2025-03-04T22:40:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F-13/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F-13/</loc>
     <lastmod>2025-03-04T18:29:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86-12/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86-12/</loc>
     <lastmod>2025-03-04T18:18:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-juc-11/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-juc-11/</loc>
     <lastmod>2025-03-01T19:22:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-juc-10/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-juc-10/</loc>
     <lastmod>2025-03-01T00:05:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-io-9/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-io-9/</loc>
     <lastmod>2025-02-28T11:18:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-io-8/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-io-8/</loc>
     <lastmod>2025-02-27T19:02:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB-7/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB-7/</loc>
     <lastmod>2025-02-26T22:13:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E4%BF%AE%E9%A5%B0%E7%AC%A6-6/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E4%BF%AE%E9%A5%B0%E7%AC%A6-6/</loc>
     <lastmod>2025-02-26T22:01:13+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-5/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-5/</loc>
     <lastmod>2025-02-26T11:05:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-4/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-4/</loc>
     <lastmod>2025-02-25T10:17:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E8%BF%90%E7%AE%97%E7%AC%A6%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5-3/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E8%BF%90%E7%AE%97%E7%AC%A6%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5-3/</loc>
     <lastmod>2025-02-24T20:46:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%E5%8F%98%E9%87%8F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-2/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%E5%8F%98%E9%87%8F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-2/</loc>
     <lastmod>2025-02-23T20:26:06+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/</loc>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/</loc>
     <lastmod>2025-02-22T21:31:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-6/</loc>
+    <loc>https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-6/</loc>
     <lastmod>2025-01-19T07:47:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -198,35 +240,35 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/post/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-5/</loc>
+    <loc>https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-5/</loc>
     <lastmod>2025-01-17T21:16:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-4/</loc>
+    <loc>https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-4/</loc>
     <lastmod>2025-01-13T22:00:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-3/</loc>
+    <loc>https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-3/</loc>
     <lastmod>2025-01-08T21:04:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-2/</loc>
+    <loc>https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-2/</loc>
     <lastmod>2025-01-06T20:54:59+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/post/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-1/</loc>
+    <loc>https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-1/</loc>
     <lastmod>2025-01-02T19:35:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -240,7 +282,7 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/post/maven%E8%A7%A3%E6%9E%90%E8%AE%A9%E4%BD%A0%E4%BB%8E%E6%96%B0%E6%89%8B%E5%88%B0%E9%AB%98%E6%89%8B/</loc>
+    <loc>https://yutao.org/programming/maven%E8%A7%A3%E6%9E%90%E8%AE%A9%E4%BD%A0%E4%BB%8E%E6%96%B0%E6%89%8B%E5%88%B0%E9%AB%98%E6%89%8B/</loc>
     <lastmod>2024-11-23T20:32:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -261,7 +303,7 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/post/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9Agit%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</loc>
+    <loc>https://yutao.org/programming/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9Agit%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2024-08-02T09:58:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -275,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/post/markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E7%A4%BA%E4%BE%8B/</loc>
+    <loc>https://yutao.org/programming/markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E7%A4%BA%E4%BE%8B/</loc>
     <lastmod>2024-08-01T20:55:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -289,7 +331,7 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/post/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9A%E5%9C%A8markdown%E4%B8%AD%E7%94%BBuml%E5%9B%BE/</loc>
+    <loc>https://yutao.org/programming/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9A%E5%9C%A8markdown%E4%B8%AD%E7%94%BBuml%E5%9B%BE/</loc>
     <lastmod>2024-07-29T16:36:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -317,7 +359,7 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/post/%E4%B8%80%E6%96%87%E8%AE%A9%E4%BD%A0%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/</loc>
+    <loc>https://yutao.org/programming/%E4%B8%80%E6%96%87%E8%AE%A9%E4%BD%A0%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/</loc>
     <lastmod>2024-07-28T15:35:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -345,7 +387,7 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/post/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</loc>
+    <loc>https://yutao.org/programming/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</loc>
     <lastmod>2024-07-26T16:54:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -380,8 +422,14 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/post/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://yutao.org/programming/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2024-07-05T09:23:49+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/archives/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
