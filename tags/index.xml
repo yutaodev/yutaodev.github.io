@@ -8,8 +8,22 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
     <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
-    <lastBuildDate>Sat, 08 Mar 2025 23:57:26 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 15 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yutao.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>哲学</title>
+      <link>https://yutao.org/tags/%E5%93%B2%E5%AD%A6/</link>
+      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <guid>https://yutao.org/tags/%E5%93%B2%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>中医</title>
+      <link>https://yutao.org/tags/%E4%B8%AD%E5%8C%BB/</link>
+      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <guid>https://yutao.org/tags/%E4%B8%AD%E5%8C%BB/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Java后端</title>
       <link>https://yutao.org/tags/java%E5%90%8E%E7%AB%AF/</link>
