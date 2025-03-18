@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>中医 on 东北小哥</title>
-    <link>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB/</link>
+    <link>http://localhost:1313/categories/%E4%B8%AD%E5%8C%BB/</link>
     <description>Recent content in 中医 on 东北小哥</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
     <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
-    <lastBuildDate>Sat, 15 Mar 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://yutao.org/categories/%E4%B8%AD%E5%8C%BB/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Mar 2025 17:53:39 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E4%B8%AD%E5%8C%BB/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>中医的伟大与神奇：千年传承的生命智慧</title>
-      <link>https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E7%9A%84%E4%BC%9F%E5%A4%A7%E4%B8%8E%E7%A5%9E%E5%A5%87/</link>
-      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate><author>yutao.z@qq.com (东北小哥)</author>
-      <guid>https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E7%9A%84%E4%BC%9F%E5%A4%A7%E4%B8%8E%E7%A5%9E%E5%A5%87/</guid>
-      <description>引言 小时候，我曾听爷爷讲过一个故事：一位老人因长期咳嗽久治不愈，求助于一位老中医。老中医仅凭望闻问切，开出一剂草药方，三日后，老人咳嗽竟奇迹</description>
+      <title>中医基础 病因 6</title>
+      <link>http://localhost:1313/tcm/%E4%B8%AD%E5%8C%BB%E5%9F%BA%E7%A1%80-%E7%97%85%E5%9B%A0-6/</link>
+      <pubDate>Tue, 18 Mar 2025 17:53:39 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <guid>http://localhost:1313/tcm/%E4%B8%AD%E5%8C%BB%E5%9F%BA%E7%A1%80-%E7%97%85%E5%9B%A0-6/</guid>
+      <description>引言</description>
     </item>
   </channel>
 </rss>
