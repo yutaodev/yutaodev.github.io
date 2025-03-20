@@ -8,12 +8,19 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
     <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
-    <lastBuildDate>Wed, 19 Mar 2025 09:00:27 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 19 Mar 2025 17:44:08 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>中药</title>
+      <link>https://yutao.org/categories/%E4%B8%AD%E8%8D%AF/</link>
+      <pubDate>Wed, 19 Mar 2025 17:44:08 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <guid>https://yutao.org/categories/%E4%B8%AD%E8%8D%AF/</guid>
+      <description></description>
+    </item>
     <item>
       <title>中医诊断</title>
       <link>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E8%AF%8A%E6%96%AD/</link>
-      <pubDate>Wed, 19 Mar 2025 09:00:27 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Wed, 19 Mar 2025 10:07:14 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
       <guid>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E8%AF%8A%E6%96%AD/</guid>
       <description></description>
     </item>
