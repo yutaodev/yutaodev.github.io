@@ -8,8 +8,15 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
     <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
-    <lastBuildDate>Thu, 20 Mar 2025 22:01:52 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 21 Mar 2025 09:28:39 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/tcm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>方剂-方剂概览-1</title>
+      <link>https://yutao.org/tcm/%E6%96%B9%E5%89%82-%E6%96%B9%E5%89%82%E6%A6%82%E8%A7%88-1/</link>
+      <pubDate>Fri, 21 Mar 2025 09:28:39 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <guid>https://yutao.org/tcm/%E6%96%B9%E5%89%82-%E6%96%B9%E5%89%82%E6%A6%82%E8%A7%88-1/</guid>
+      <description>1. 方剂的起源 方剂起源于远古时期人类对药用植物的初步认知。单味药的使用，是方剂产生的基础。随着有意识利用单味药物治病，到认识到几味药物配合起来</description>
+    </item>
     <item>
       <title>中药-化痰止咳平喘药-16</title>
       <link>https://yutao.org/tcm/%E4%B8%AD%E8%8D%AF-%E5%8C%96%E7%97%B0%E6%AD%A2%E5%92%B3%E5%B9%B3%E5%96%98%E8%8D%AF-16/</link>
@@ -142,13 +149,6 @@
       <pubDate>Wed, 19 Mar 2025 08:14:08 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
       <guid>https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%9F%BA%E7%A1%80-%E7%97%85%E6%9C%BA-7/</guid>
       <description>引言 《紊问·至真要大论》首先提出“病机”一词，强调“谨候气宜，无失病机”，“谨守病机，各司其属”，并总结归纳出“病机十九条”，奠定了脏腑病机</description>
-    </item>
-    <item>
-      <title>中医基础-病因-6</title>
-      <link>https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%9F%BA%E7%A1%80-%E7%97%85%E5%9B%A0-6/</link>
-      <pubDate>Tue, 18 Mar 2025 17:53:39 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
-      <guid>https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%9F%BA%E7%A1%80-%E7%97%85%E5%9B%A0-6/</guid>
-      <description>引言 《黄帝内经》以病邪侵害人体部位的不同为分类依据，将病因分为阴和阳两大类，认为“风雨寒暑”等病因属阳，“饮食居处、阴阳喜怒”等病因属阴。汉</description>
     </item>
   </channel>
 </rss>
