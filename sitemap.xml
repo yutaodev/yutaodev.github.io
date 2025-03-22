@@ -3,48 +3,55 @@
   
   <url>
     <loc>https://yutao.org/categories/</loc>
-    <lastmod>2025-03-21T09:28:39+08:00</lastmod>
+    <lastmod>2025-03-21T21:22:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/tags/</loc>
-    <lastmod>2025-03-21T09:28:39+08:00</lastmod>
+    <lastmod>2025-03-21T21:22:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/</loc>
-    <lastmod>2025-03-21T09:28:39+08:00</lastmod>
+    <lastmod>2025-03-21T21:22:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/tags/%E6%96%B9%E5%89%82/</loc>
-    <lastmod>2025-03-21T09:28:39+08:00</lastmod>
+    <lastmod>2025-03-21T21:22:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/categories/%E6%96%B9%E5%89%82/</loc>
-    <lastmod>2025-03-21T09:28:39+08:00</lastmod>
+    <lastmod>2025-03-21T21:22:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/tcm/%E6%96%B9%E5%89%82-%E6%96%B9%E5%89%82%E6%A6%82%E8%A7%88-1/</loc>
-    <lastmod>2025-03-21T09:28:39+08:00</lastmod>
+    <loc>https://yutao.org/tcm/%E6%96%B9%E5%89%82-%E8%A7%A3%E8%A1%A8%E5%89%82-2/</loc>
+    <lastmod>2025-03-21T21:22:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/tcm/</loc>
+    <lastmod>2025-03-21T21:22:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/tcm/%E6%96%B9%E5%89%82-%E6%96%B9%E5%89%82%E6%A6%82%E8%A7%88-1/</loc>
     <lastmod>2025-03-21T09:28:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
