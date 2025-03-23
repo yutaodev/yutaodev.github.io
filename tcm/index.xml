@@ -8,8 +8,15 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
     <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
-    <lastBuildDate>Fri, 21 Mar 2025 21:22:52 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 22 Mar 2025 17:05:47 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/tcm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>方剂-泻下剂-3</title>
+      <link>https://yutao.org/tcm/%E6%96%B9%E5%89%82-%E6%B3%BB%E4%B8%8B%E5%89%82-3/</link>
+      <pubDate>Sat, 22 Mar 2025 17:05:47 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <guid>https://yutao.org/tcm/%E6%96%B9%E5%89%82-%E6%B3%BB%E4%B8%8B%E5%89%82-3/</guid>
+      <description>引言 凡以泻下药为主要组成，具有通导大便、泻下积滞、攻逐水饮等作用，以治疗里实证为主的方剂，统称为泻下剂。泻下剂适用于病变部位在肠胃，病因为实</description>
+    </item>
     <item>
       <title>方剂-解表剂-2</title>
       <link>https://yutao.org/tcm/%E6%96%B9%E5%89%82-%E8%A7%A3%E8%A1%A8%E5%89%82-2/</link>
@@ -142,13 +149,6 @@
       <pubDate>Wed, 19 Mar 2025 10:07:14 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
       <guid>https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E8%AF%8A%E6%96%AD-%E6%9C%9B%E8%AF%8A-2/</guid>
       <description>引言 望诊，是指医生通过视觉对人体的全身、局部及排出物等方面进行有目的的观察，以了解健康状况，测知病情的方法。望诊作为四诊之首，在诊法中必然占</description>
-    </item>
-    <item>
-      <title>中医诊断-诊断概览-1</title>
-      <link>https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E8%AF%8A%E6%96%AD-%E8%AF%8A%E6%96%AD%E6%A6%82%E8%A7%88-1/</link>
-      <pubDate>Wed, 19 Mar 2025 09:00:27 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
-      <guid>https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E8%AF%8A%E6%96%AD-%E8%AF%8A%E6%96%AD%E6%A6%82%E8%A7%88-1/</guid>
-      <description>引言 诊，即诊察了解；断，指分析判断。“诊断”就是通过对患者的询问、检查，以掌握病情资料，进而对患者的健康状态和病变本质进行辨识，并做出概括性</description>
     </item>
   </channel>
 </rss>
