@@ -8,8 +8,15 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
     <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
-    <lastBuildDate>Sun, 23 Mar 2025 16:25:50 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Mar 2025 21:13:40 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java后端</title>
+      <link>https://yutao.org/categories/java%E5%90%8E%E7%AB%AF/</link>
+      <pubDate>Mon, 24 Mar 2025 21:13:40 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <guid>https://yutao.org/categories/java%E5%90%8E%E7%AB%AF/</guid>
+      <description></description>
+    </item>
     <item>
       <title>哲学</title>
       <link>https://yutao.org/categories/%E5%93%B2%E5%AD%A6/</link>
@@ -43,13 +50,6 @@
       <link>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Wed, 19 Mar 2025 08:14:08 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
       <guid>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E5%9F%BA%E7%A1%80/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Java后端</title>
-      <link>https://yutao.org/categories/java%E5%90%8E%E7%AB%AF/</link>
-      <pubDate>Sat, 08 Mar 2025 23:57:26 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
-      <guid>https://yutao.org/categories/java%E5%90%8E%E7%AB%AF/</guid>
       <description></description>
     </item>
     <item>

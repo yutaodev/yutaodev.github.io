@@ -8,8 +8,15 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
     <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
-    <lastBuildDate>Sat, 08 Mar 2025 23:57:26 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Mar 2025 21:13:40 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java后端-基础-模块化编程-20</title>
+      <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-20/</link>
+      <pubDate>Mon, 24 Mar 2025 21:13:40 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-20/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列第二十篇，正式进入Java后端世界，本篇文章主要聊Java基础。若想详细学习请点击首篇博文，我</description>
+    </item>
     <item>
       <title>Java后端-基础-发邮件-19</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%8F%91%E9%82%AE%E4%BB%B6-19/</link>
@@ -141,13 +148,6 @@
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/</link>
       <pubDate>Sat, 22 Feb 2025 21:31:32 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>JavaSwingGUI从小白到大神-6</title>
-      <link>https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-6/</link>
-      <pubDate>Sun, 19 Jan 2025 07:47:36 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
-      <guid>https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-6/</guid>
       <description></description>
     </item>
   </channel>
