@@ -3,48 +3,55 @@
   
   <url>
     <loc>https://yutao.org/categories/</loc>
-    <lastmod>2025-03-24T21:13:40+08:00</lastmod>
+    <lastmod>2025-03-24T22:38:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/tags/java%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2025-03-24T21:13:40+08:00</lastmod>
+    <lastmod>2025-03-24T22:38:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/categories/java%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2025-03-24T21:13:40+08:00</lastmod>
+    <lastmod>2025-03-24T22:38:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-20/</loc>
-    <lastmod>2025-03-24T21:13:40+08:00</lastmod>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-java%E8%99%9A%E6%8B%9F%E6%9C%BA-21/</loc>
+    <lastmod>2025-03-24T22:38:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/tags/</loc>
-    <lastmod>2025-03-24T21:13:40+08:00</lastmod>
+    <lastmod>2025-03-24T22:38:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/programming/</loc>
-    <lastmod>2025-03-24T21:13:40+08:00</lastmod>
+    <lastmod>2025-03-24T22:38:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/</loc>
+    <lastmod>2025-03-24T22:38:42+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-20/</loc>
     <lastmod>2025-03-24T21:13:40+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

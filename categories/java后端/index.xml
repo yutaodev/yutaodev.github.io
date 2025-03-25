@@ -8,8 +8,15 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
     <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
-    <lastBuildDate>Mon, 24 Mar 2025 21:13:40 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Mar 2025 22:38:42 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/categories/java%E5%90%8E%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java后端-基础-Java虚拟机-21</title>
+      <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-java%E8%99%9A%E6%8B%9F%E6%9C%BA-21/</link>
+      <pubDate>Mon, 24 Mar 2025 22:38:42 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-java%E8%99%9A%E6%8B%9F%E6%9C%BA-21/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列第二十一篇，正式进入Java后端世界，本篇文章主要聊Java基础。若想详细学习请点击首篇博文，</description>
+    </item>
     <item>
       <title>Java后端-基础-模块化编程-20</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-20/</link>
@@ -141,13 +148,6 @@
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%E5%8F%98%E9%87%8F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-2/</link>
       <pubDate>Sun, 23 Feb 2025 20:26:06 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%E5%8F%98%E9%87%8F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-2/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Java后端-基础-面向对象-1</title>
-      <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/</link>
-      <pubDate>Sat, 22 Feb 2025 21:31:32 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
-      <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/</guid>
       <description></description>
     </item>
   </channel>
