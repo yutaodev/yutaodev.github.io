@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mermaid on 东北小哥</title>
+    <link>https://yutao.org/tags/mermaid/</link>
+    <description>Recent content in Mermaid on 东北小哥</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
+    <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
+    <lastBuildDate>Mon, 29 Jul 2024 16:36:02 +0800</lastBuildDate>
+    <atom:link href="https://yutao.org/tags/mermaid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown中使用Mermaid画图</title>
+      <link>https://yutao.org/programming/markdown%E4%B8%AD%E4%BD%BF%E7%94%A8mermaid%E7%94%BB%E5%9B%BE/</link>
+      <pubDate>Mon, 29 Jul 2024 16:36:02 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <guid>https://yutao.org/programming/markdown%E4%B8%AD%E4%BD%BF%E7%94%A8mermaid%E7%94%BB%E5%9B%BE/</guid>
+      <description>背景 在编程和需求分析中，图形化的展示确实能够帮助更好地理解系统的逻辑和结构。使用 Mermaid 在 Markdown 中绘制图形是一个非常方便的方式。下面，我将通过六个不同</description>
+    </item>
+  </channel>
+</rss>
