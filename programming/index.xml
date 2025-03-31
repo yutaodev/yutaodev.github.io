@@ -8,8 +8,15 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
     <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
-    <lastBuildDate>Tue, 25 Mar 2025 23:44:34 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 31 Mar 2025 21:39:17 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>将VisualStudioCode打造成专属IDE</title>
+      <link>https://yutao.org/programming/%E5%B0%86visualstudiocode%E6%89%93%E9%80%A0%E6%88%90%E4%B8%93%E5%B1%9Eide/</link>
+      <pubDate>Mon, 31 Mar 2025 21:39:17 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <guid>https://yutao.org/programming/%E5%B0%86visualstudiocode%E6%89%93%E9%80%A0%E6%88%90%E4%B8%93%E5%B1%9Eide/</guid>
+      <description>背景 不得不说，Visual Studio Code是一个非常优秀的编辑器，虽然不完美，但个人整体对比下来，感觉是很适合我。不管前端、后端、脚本以及各种语言</description>
+    </item>
     <item>
       <title>Java后端-基础-设计模式-22</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-22/</link>
@@ -141,13 +148,6 @@
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-4/</link>
       <pubDate>Tue, 25 Feb 2025 10:17:58 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-4/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Java后端-基础-运算符控制语句-3</title>
-      <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E8%BF%90%E7%AE%97%E7%AC%A6%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5-3/</link>
-      <pubDate>Mon, 24 Feb 2025 20:46:31 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
-      <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E8%BF%90%E7%AE%97%E7%AC%A6%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5-3/</guid>
       <description></description>
     </item>
   </channel>

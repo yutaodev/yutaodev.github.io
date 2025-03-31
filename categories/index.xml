@@ -8,12 +8,19 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
     <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
-    <lastBuildDate>Fri, 28 Mar 2025 22:40:56 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 31 Mar 2025 21:39:17 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>编程工具</title>
+      <link>https://yutao.org/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Mon, 31 Mar 2025 21:39:17 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <guid>https://yutao.org/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
     <item>
       <title>哲学</title>
       <link>https://yutao.org/categories/%E5%93%B2%E5%AD%A6/</link>
-      <pubDate>Fri, 28 Mar 2025 22:40:56 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Sat, 29 Mar 2025 08:55:53 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
       <guid>https://yutao.org/categories/%E5%93%B2%E5%AD%A6/</guid>
       <description></description>
     </item>
@@ -57,13 +64,6 @@
       <link>https://yutao.org/categories/swing/</link>
       <pubDate>Sun, 19 Jan 2025 07:47:36 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
       <guid>https://yutao.org/categories/swing/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>编程工具</title>
-      <link>https://yutao.org/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Sat, 23 Nov 2024 20:32:52 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
-      <guid>https://yutao.org/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     <item>

@@ -8,10 +8,1098 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
     <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
-    <lastBuildDate>Fri, 28 Mar 2025 22:40:56 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 31 Mar 2025 21:39:17 +0800</lastBuildDate>
     
         <atom:link href="https://yutao.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>将VisualStudioCode打造成专属IDE</title>
+      <link>https://yutao.org/programming/%E5%B0%86visualstudiocode%E6%89%93%E9%80%A0%E6%88%90%E4%B8%93%E5%B1%9Eide/</link>
+      <pubDate>Mon, 31 Mar 2025 21:39:17 +0800</pubDate>
+      <author>yutao.z@qq.com (东北小哥)</author>
+      <guid>https://yutao.org/programming/%E5%B0%86visualstudiocode%E6%89%93%E9%80%A0%E6%88%90%E4%B8%93%E5%B1%9Eide/</guid>
+      
+        <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;不得不说，Visual Studio Code是一个非常优秀的编辑器，虽然不完美，但个人整体对比下来，感觉是很适合我。不管前端、后端、脚本以及各种语言，VSCode都可以很好的支持。&lt;/p&gt;
+&lt;h3 id=&#34;1-修改vscode默认配置&#34;&gt;1. 修改VSCode默认配置&lt;/h3&gt;
+&lt;p&gt;（1）侧边滚动条颜色&lt;/p&gt;
+&lt;p&gt;管理-&amp;gt;设置-&amp;gt;输入workbench color -&amp;gt;Workbench: Color customizations -&amp;gt;点击在 settings,json 中编辑。可以根据个人喜欢修改颜色，我的是金色。从此以后侧边滑块，就不会再也找不到了。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-0-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-2&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-0-2&#34;&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-3&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-0-3&#34;&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-4&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-0-4&#34;&gt;4&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-5&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-0-5&#34;&gt;5&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;#34;workbench.colorCustomizations&amp;#34;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;#34;scrollbarSlider.background&amp;#34;: &amp;#34;#bba76d&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;#34;scrollbarSlider.hoverBackground&amp;#34;: &amp;#34;#cfb56a&amp;#34;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;#34;scrollbarSlider.activeBackground&amp;#34;: &amp;#34;#fbdd86&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;2-java开发环境配置&#34;&gt;2. Java开发环境配置&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;安装Java开发环境，并配置环境变量。&lt;/li&gt;
+&lt;li&gt;安装Java插件。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-1&#34;&gt; 1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-2&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-2&#34;&gt; 2&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-3&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-3&#34;&gt; 3&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-4&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-4&#34;&gt; 4&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-5&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-5&#34;&gt; 5&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-6&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-6&#34;&gt; 6&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-7&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-7&#34;&gt; 7&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-8&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-8&#34;&gt; 8&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-9&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-9&#34;&gt; 9&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-10&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-10&#34;&gt;10&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-11&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-11&#34;&gt;11&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-12&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-12&#34;&gt;12&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-13&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-13&#34;&gt;13&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-14&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-14&#34;&gt;14&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plaintext&#34; data-lang=&#34;plaintext&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Debugger for Java
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Extension Pack for Java
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Language Support for Java(TM) by Red Hat
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Lombok Annotations Support for VS Code
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Maven for Java
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Project Manager for Java
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Red Hat Dependency Analytics
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Spring Boot Dashboard
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Spring Boot Extension Pack
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Spring Boot Tools
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Spring Initializr Java Support
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Test Runner for Java
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Debug Visualizer
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;XML
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;在使用过程中，会遇到各位问题，修改配置，增加开发语言支持等，有变化再更新。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>千字文</title>
+      <link>https://yutao.org/philosophy/%E5%8D%83%E5%AD%97%E6%96%87/</link>
+      <pubDate>Sat, 29 Mar 2025 08:55:53 +0800</pubDate>
+      <author>yutao.z@qq.com (东北小哥)</author>
+      <guid>https://yutao.org/philosophy/%E5%8D%83%E5%AD%97%E6%96%87/</guid>
+      
+        <description>&lt;p&gt;&lt;strong&gt;作者&lt;/strong&gt;：周兴嗣（南北朝·梁）&lt;br&gt;
+&lt;strong&gt;年代&lt;/strong&gt;：约公元6世纪初（梁武帝时期）&lt;br&gt;
+&lt;strong&gt;历史背景&lt;/strong&gt;：周兴嗣奉梁武帝之命，必须使用王羲之书法中的1000个不重复汉字，这些字来自宫中收藏的《王羲之书千字》（现已失传）。周兴嗣通过重新编排字序，将零散单字串联成富有哲理的文章。一夜编成《千字文》，因用脑过度鬓发皆白。全文无一重复字（除「洁」字因简化重复），是古代蒙学经典。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;ruby&gt;天&lt;rt&gt;tiān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;地&lt;rt&gt;dì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;玄&lt;rt&gt;xuán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;黄&lt;rt&gt;huáng&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;宇&lt;rt&gt;yǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;宙&lt;rt&gt;zhòu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;洪&lt;rt&gt;hóng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;荒&lt;rt&gt;huāng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;日&lt;rt&gt;rì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;月&lt;rt&gt;yuè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;盈&lt;rt&gt;yíng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;昃&lt;rt&gt;zè&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;辰&lt;rt&gt;chén&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;宿&lt;rt&gt;xiù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;列&lt;rt&gt;liè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;张&lt;rt&gt;zhāng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;寒&lt;rt&gt;hán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;来&lt;rt&gt;lái&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;暑&lt;rt&gt;shǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;往&lt;rt&gt;wǎng&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;秋&lt;rt&gt;qiū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;收&lt;rt&gt;shōu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;冬&lt;rt&gt;dōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;藏&lt;rt&gt;cáng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;闰&lt;rt&gt;rùn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;余&lt;rt&gt;yú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;成&lt;rt&gt;chéng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;岁&lt;rt&gt;suì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;律&lt;rt&gt;lǜ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;吕&lt;rt&gt;lǚ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;调&lt;rt&gt;tiáo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;阳&lt;rt&gt;yáng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;云&lt;rt&gt;yún&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;腾&lt;rt&gt;téng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;致&lt;rt&gt;zhì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;雨&lt;rt&gt;yǔ&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;露&lt;rt&gt;lù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;结&lt;rt&gt;jié&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;为&lt;rt&gt;wéi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;霜&lt;rt&gt;shuāng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;金&lt;rt&gt;jīn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;生&lt;rt&gt;shēng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;丽&lt;rt&gt;lì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;水&lt;rt&gt;shuǐ&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;玉&lt;rt&gt;yù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;出&lt;rt&gt;chū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;昆&lt;rt&gt;kūn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;冈&lt;rt&gt;gāng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;剑&lt;rt&gt;jiàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;号&lt;rt&gt;hào&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;巨&lt;rt&gt;jù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;阙&lt;rt&gt;quē&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;珠&lt;rt&gt;zhū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;称&lt;rt&gt;chēng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;夜&lt;rt&gt;yè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;光&lt;rt&gt;guāng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;果&lt;rt&gt;guǒ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;珍&lt;rt&gt;zhēn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;李&lt;rt&gt;lǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;柰&lt;rt&gt;nài&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;菜&lt;rt&gt;cài&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;重&lt;rt&gt;zhòng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;芥&lt;rt&gt;jiè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;姜&lt;rt&gt;jiāng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;海&lt;rt&gt;hǎi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;咸&lt;rt&gt;xián&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;河&lt;rt&gt;hé&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;淡&lt;rt&gt;dàn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;鳞&lt;rt&gt;lín&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;潜&lt;rt&gt;qián&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;羽&lt;rt&gt;yǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;翔&lt;rt&gt;xiáng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;龙&lt;rt&gt;lóng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;师&lt;rt&gt;shī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;火&lt;rt&gt;huǒ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;帝&lt;rt&gt;dì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;鸟&lt;rt&gt;niǎo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;官&lt;rt&gt;guān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;人&lt;rt&gt;rén&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;皇&lt;rt&gt;huáng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;始&lt;rt&gt;shǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;制&lt;rt&gt;zhì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;文&lt;rt&gt;wén&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;字&lt;rt&gt;zì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;乃&lt;rt&gt;nǎi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;服&lt;rt&gt;fú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;衣&lt;rt&gt;yī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;裳&lt;rt&gt;cháng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;推&lt;rt&gt;tuī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;位&lt;rt&gt;wèi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;让&lt;rt&gt;ràng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;国&lt;rt&gt;guó&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;有&lt;rt&gt;yǒu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;虞&lt;rt&gt;yú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;陶&lt;rt&gt;táo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;唐&lt;rt&gt;táng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;吊&lt;rt&gt;diào&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;民&lt;rt&gt;mín&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;伐&lt;rt&gt;fá&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;罪&lt;rt&gt;zuì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;周&lt;rt&gt;zhōu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;发&lt;rt&gt;fā&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;殷&lt;rt&gt;yīn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;汤&lt;rt&gt;tāng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;坐&lt;rt&gt;zuò&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;朝&lt;rt&gt;cháo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;问&lt;rt&gt;wèn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;道&lt;rt&gt;dào&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;垂&lt;rt&gt;chuí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;拱&lt;rt&gt;gǒng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;平&lt;rt&gt;píng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;章&lt;rt&gt;zhāng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;爱&lt;rt&gt;ài&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;育&lt;rt&gt;yù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;黎&lt;rt&gt;lí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;首&lt;rt&gt;shǒu&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;臣&lt;rt&gt;chén&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;伏&lt;rt&gt;fú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;戎&lt;rt&gt;róng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;羌&lt;rt&gt;qiāng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;遐&lt;rt&gt;xiá&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;迩&lt;rt&gt;ěr&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;一&lt;rt&gt;yī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;体&lt;rt&gt;tǐ&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;率&lt;rt&gt;shuài&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;宾&lt;rt&gt;bīn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;归&lt;rt&gt;guī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;王&lt;rt&gt;wáng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;鸣&lt;rt&gt;míng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;凤&lt;rt&gt;fèng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;在&lt;rt&gt;zài&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;竹&lt;rt&gt;zhú&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;白&lt;rt&gt;bái&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;驹&lt;rt&gt;jū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;食&lt;rt&gt;shí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;场&lt;rt&gt;cháng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;化&lt;rt&gt;huà&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;被&lt;rt&gt;bèi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;草&lt;rt&gt;cǎo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;木&lt;rt&gt;mù&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;赖&lt;rt&gt;lài&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;及&lt;rt&gt;jí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;万&lt;rt&gt;wàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;方&lt;rt&gt;fāng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;盖&lt;rt&gt;gài&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;此&lt;rt&gt;cǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;身&lt;rt&gt;shēn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;发&lt;rt&gt;fà&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;四&lt;rt&gt;sì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;大&lt;rt&gt;dà&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;五&lt;rt&gt;wǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;常&lt;rt&gt;cháng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;恭&lt;rt&gt;gōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;惟&lt;rt&gt;wéi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;鞠&lt;rt&gt;jū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;养&lt;rt&gt;yǎng&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;岂&lt;rt&gt;qǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;敢&lt;rt&gt;gǎn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;毁&lt;rt&gt;huǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;伤&lt;rt&gt;shāng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;女&lt;rt&gt;nǚ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;慕&lt;rt&gt;mù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;贞&lt;rt&gt;zhēn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;洁&lt;rt&gt;jié&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;男&lt;rt&gt;nán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;效&lt;rt&gt;xiào&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;才&lt;rt&gt;cái&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;良&lt;rt&gt;liáng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;知&lt;rt&gt;zhī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;过&lt;rt&gt;guò&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;必&lt;rt&gt;bì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;改&lt;rt&gt;gǎi&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;得&lt;rt&gt;dé&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;能&lt;rt&gt;néng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;莫&lt;rt&gt;mò&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;忘&lt;rt&gt;wàng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;罔&lt;rt&gt;wǎng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;谈&lt;rt&gt;tán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;彼&lt;rt&gt;bǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;短&lt;rt&gt;duǎn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;靡&lt;rt&gt;mǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;恃&lt;rt&gt;shì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;己&lt;rt&gt;jǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;长&lt;rt&gt;cháng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;信&lt;rt&gt;xìn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;使&lt;rt&gt;shǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;可&lt;rt&gt;kě&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;覆&lt;rt&gt;fù&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;器&lt;rt&gt;qì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;欲&lt;rt&gt;yù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;难&lt;rt&gt;nán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;量&lt;rt&gt;liáng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;墨&lt;rt&gt;mò&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;悲&lt;rt&gt;bēi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;丝&lt;rt&gt;sī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;染&lt;rt&gt;rǎn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;诗&lt;rt&gt;shī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;赞&lt;rt&gt;zàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;羔&lt;rt&gt;gāo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;羊&lt;rt&gt;yáng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;景&lt;rt&gt;jǐng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;行&lt;rt&gt;xíng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;维&lt;rt&gt;wéi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;贤&lt;rt&gt;xián&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;克&lt;rt&gt;kè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;念&lt;rt&gt;niàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;作&lt;rt&gt;zuò&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;圣&lt;rt&gt;shèng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;德&lt;rt&gt;dé&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;建&lt;rt&gt;jiàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;名&lt;rt&gt;míng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;立&lt;rt&gt;lì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;形&lt;rt&gt;xíng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;端&lt;rt&gt;duān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;表&lt;rt&gt;biǎo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;正&lt;rt&gt;zhèng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;空&lt;rt&gt;kōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;谷&lt;rt&gt;gǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;传&lt;rt&gt;chuán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;声&lt;rt&gt;shēng&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;虚&lt;rt&gt;xū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;堂&lt;rt&gt;táng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;习&lt;rt&gt;xí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;听&lt;rt&gt;tīng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;祸&lt;rt&gt;huò&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;因&lt;rt&gt;yīn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;恶&lt;rt&gt;è&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;积&lt;rt&gt;jī&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;福&lt;rt&gt;fú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;缘&lt;rt&gt;yuán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;善&lt;rt&gt;shàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;庆&lt;rt&gt;qìng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;尺&lt;rt&gt;chǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;璧&lt;rt&gt;bì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;非&lt;rt&gt;fēi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;宝&lt;rt&gt;bǎo&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;寸&lt;rt&gt;cùn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;阴&lt;rt&gt;yīn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;是&lt;rt&gt;shì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;竞&lt;rt&gt;jìng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;资&lt;rt&gt;zī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;父&lt;rt&gt;fù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;事&lt;rt&gt;shì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;君&lt;rt&gt;jūn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;曰&lt;rt&gt;yuē&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;严&lt;rt&gt;yán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;与&lt;rt&gt;yǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;敬&lt;rt&gt;jìng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;孝&lt;rt&gt;xiào&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;当&lt;rt&gt;dāng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;竭&lt;rt&gt;jié&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;力&lt;rt&gt;lì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;忠&lt;rt&gt;zhōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;则&lt;rt&gt;zé&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;尽&lt;rt&gt;jìn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;命&lt;rt&gt;mìng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;临&lt;rt&gt;lín&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;深&lt;rt&gt;shēn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;履&lt;rt&gt;lǚ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;薄&lt;rt&gt;bó&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;夙&lt;rt&gt;sù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;兴&lt;rt&gt;xīng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;温&lt;rt&gt;wēn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;凊&lt;rt&gt;qìng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;似&lt;rt&gt;sì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;兰&lt;rt&gt;lán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;斯&lt;rt&gt;sī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;馨&lt;rt&gt;xīn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;如&lt;rt&gt;rú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;松&lt;rt&gt;sōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;之&lt;rt&gt;zhī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;盛&lt;rt&gt;shèng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;川&lt;rt&gt;chuān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;流&lt;rt&gt;liú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;不&lt;rt&gt;bù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;息&lt;rt&gt;xī&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;渊&lt;rt&gt;yuān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;澄&lt;rt&gt;chéng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;取&lt;rt&gt;qǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;映&lt;rt&gt;yìng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;容&lt;rt&gt;róng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;止&lt;rt&gt;zhǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;若&lt;rt&gt;ruò&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;思&lt;rt&gt;sī&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;言&lt;rt&gt;yán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;辞&lt;rt&gt;cí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;安&lt;rt&gt;ān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;定&lt;rt&gt;dìng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;笃&lt;rt&gt;dǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;初&lt;rt&gt;chū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;诚&lt;rt&gt;chéng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;美&lt;rt&gt;měi&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;慎&lt;rt&gt;shèn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;终&lt;rt&gt;zhōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;宜&lt;rt&gt;yí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;令&lt;rt&gt;lìng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;荣&lt;rt&gt;róng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;业&lt;rt&gt;yè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;所&lt;rt&gt;suǒ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;基&lt;rt&gt;jī&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;籍&lt;rt&gt;jí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;甚&lt;rt&gt;shèn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;无&lt;rt&gt;wú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;竟&lt;rt&gt;jìng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;学&lt;rt&gt;xué&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;优&lt;rt&gt;yōu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;登&lt;rt&gt;dēng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;仕&lt;rt&gt;shì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;摄&lt;rt&gt;shè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;职&lt;rt&gt;zhí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;从&lt;rt&gt;cóng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;政&lt;rt&gt;zhèng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;存&lt;rt&gt;cún&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;以&lt;rt&gt;yǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;甘&lt;rt&gt;gān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;棠&lt;rt&gt;táng&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;去&lt;rt&gt;qù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;而&lt;rt&gt;ér&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;益&lt;rt&gt;yì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;咏&lt;rt&gt;yǒng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;乐&lt;rt&gt;yuè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;殊&lt;rt&gt;shū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;贵&lt;rt&gt;guì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;贱&lt;rt&gt;jiàn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;礼&lt;rt&gt;lǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;别&lt;rt&gt;bié&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;尊&lt;rt&gt;zūn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;卑&lt;rt&gt;bēi&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;上&lt;rt&gt;shàng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;和&lt;rt&gt;hé&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;下&lt;rt&gt;xià&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;睦&lt;rt&gt;mù&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;夫&lt;rt&gt;fū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;唱&lt;rt&gt;chàng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;妇&lt;rt&gt;fù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;随&lt;rt&gt;suí&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;外&lt;rt&gt;wài&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;受&lt;rt&gt;shòu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;傅&lt;rt&gt;fù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;训&lt;rt&gt;xùn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;入&lt;rt&gt;rù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;奉&lt;rt&gt;fèng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;母&lt;rt&gt;mǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;仪&lt;rt&gt;yí&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;诸&lt;rt&gt;zhū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;姑&lt;rt&gt;gū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;伯&lt;rt&gt;bó&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;叔&lt;rt&gt;shū&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;犹&lt;rt&gt;yóu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;子&lt;rt&gt;zǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;比&lt;rt&gt;bǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;儿&lt;rt&gt;ér&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;孔&lt;rt&gt;kǒng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;怀&lt;rt&gt;huái&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;兄&lt;rt&gt;xiōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;弟&lt;rt&gt;dì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;同&lt;rt&gt;tóng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;气&lt;rt&gt;qì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;连&lt;rt&gt;lián&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;枝&lt;rt&gt;zhī&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;交&lt;rt&gt;jiāo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;友&lt;rt&gt;yǒu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;投&lt;rt&gt;tóu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;分&lt;rt&gt;fèn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;切&lt;rt&gt;qiē&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;磨&lt;rt&gt;mó&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;箴&lt;rt&gt;zhēn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;规&lt;rt&gt;guī&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;仁&lt;rt&gt;rén&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;慈&lt;rt&gt;cí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;隐&lt;rt&gt;yǐn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;恻&lt;rt&gt;cè&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;造&lt;rt&gt;zào&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;次&lt;rt&gt;cì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;弗&lt;rt&gt;fú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;离&lt;rt&gt;lí&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;节&lt;rt&gt;jié&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;义&lt;rt&gt;yì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;廉&lt;rt&gt;lián&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;退&lt;rt&gt;tuì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;颠&lt;rt&gt;diān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;沛&lt;rt&gt;pèi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;匪&lt;rt&gt;fěi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;亏&lt;rt&gt;kuī&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;性&lt;rt&gt;xìng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;静&lt;rt&gt;jìng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;情&lt;rt&gt;qíng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;逸&lt;rt&gt;yì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;心&lt;rt&gt;xīn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;动&lt;rt&gt;dòng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;神&lt;rt&gt;shén&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;疲&lt;rt&gt;pí&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;守&lt;rt&gt;shǒu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;真&lt;rt&gt;zhēn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;志&lt;rt&gt;zhì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;满&lt;rt&gt;mǎn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;逐&lt;rt&gt;zhú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;物&lt;rt&gt;wù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;意&lt;rt&gt;yì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;移&lt;rt&gt;yí&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;坚&lt;rt&gt;jiān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;持&lt;rt&gt;chí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;雅&lt;rt&gt;yǎ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;操&lt;rt&gt;cāo&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;好&lt;rt&gt;hào&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;爵&lt;rt&gt;jué&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;自&lt;rt&gt;zì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;縻&lt;rt&gt;mí&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;都&lt;rt&gt;dū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;邑&lt;rt&gt;yì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;华&lt;rt&gt;huá&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;夏&lt;rt&gt;xià&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;东&lt;rt&gt;dōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;西&lt;rt&gt;xī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;二&lt;rt&gt;èr&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;京&lt;rt&gt;jīng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;背&lt;rt&gt;bèi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;邙&lt;rt&gt;máng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;面&lt;rt&gt;miàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;洛&lt;rt&gt;luò&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;浮&lt;rt&gt;fú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;渭&lt;rt&gt;wèi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;据&lt;rt&gt;jù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;泾&lt;rt&gt;jīng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;宫&lt;rt&gt;gōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;殿&lt;rt&gt;diàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;盘&lt;rt&gt;pán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;郁&lt;rt&gt;yù&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;楼&lt;rt&gt;lóu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;观&lt;rt&gt;guàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;飞&lt;rt&gt;fēi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;惊&lt;rt&gt;jīng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;图&lt;rt&gt;tú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;写&lt;rt&gt;xiě&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;禽&lt;rt&gt;qín&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;兽&lt;rt&gt;shòu&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;画&lt;rt&gt;huà&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;彩&lt;rt&gt;cǎi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;仙&lt;rt&gt;xiān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;灵&lt;rt&gt;líng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;丙&lt;rt&gt;bǐng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;舍&lt;rt&gt;shè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;傍&lt;rt&gt;páng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;启&lt;rt&gt;qǐ&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;甲&lt;rt&gt;jiǎ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;帐&lt;rt&gt;zhàng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;对&lt;rt&gt;duì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;楹&lt;rt&gt;yíng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;肆&lt;rt&gt;sì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;筵&lt;rt&gt;yán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;设&lt;rt&gt;shè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;席&lt;rt&gt;xí&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;鼓&lt;rt&gt;gǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;瑟&lt;rt&gt;sè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;吹&lt;rt&gt;chuī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;笙&lt;rt&gt;shēng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;升&lt;rt&gt;shēng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;阶&lt;rt&gt;jiē&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;纳&lt;rt&gt;nà&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;陛&lt;rt&gt;bì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;弁&lt;rt&gt;biàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;转&lt;rt&gt;zhuàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;疑&lt;rt&gt;yí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;星&lt;rt&gt;xīng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;右&lt;rt&gt;yòu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;通&lt;rt&gt;tōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;广&lt;rt&gt;guǎng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;内&lt;rt&gt;nèi&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;左&lt;rt&gt;zuǒ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;达&lt;rt&gt;dá&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;承&lt;rt&gt;chéng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;明&lt;rt&gt;míng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;既&lt;rt&gt;jì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;集&lt;rt&gt;jí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;坟&lt;rt&gt;fén&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;典&lt;rt&gt;diǎn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;亦&lt;rt&gt;yì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;聚&lt;rt&gt;jù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;群&lt;rt&gt;qún&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;英&lt;rt&gt;yīng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;杜&lt;rt&gt;dù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;稿&lt;rt&gt;gǎo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;钟&lt;rt&gt;zhōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;隶&lt;rt&gt;lì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;漆&lt;rt&gt;qī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;书&lt;rt&gt;shū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;壁&lt;rt&gt;bì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;经&lt;rt&gt;jīng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;府&lt;rt&gt;fǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;罗&lt;rt&gt;luó&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;将&lt;rt&gt;jiàng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;相&lt;rt&gt;xiàng&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;路&lt;rt&gt;lù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;侠&lt;rt&gt;xiá&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;槐&lt;rt&gt;huái&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;卿&lt;rt&gt;qīng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;户&lt;rt&gt;hù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;封&lt;rt&gt;fēng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;八&lt;rt&gt;bā&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;县&lt;rt&gt;xiàn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;家&lt;rt&gt;jiā&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;给&lt;rt&gt;jǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;千&lt;rt&gt;qiān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;兵&lt;rt&gt;bīng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;高&lt;rt&gt;gāo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;冠&lt;rt&gt;guān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;陪&lt;rt&gt;péi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;辇&lt;rt&gt;niǎn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;驱&lt;rt&gt;qū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;毂&lt;rt&gt;gǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;振&lt;rt&gt;zhèn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;缨&lt;rt&gt;yīng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;世&lt;rt&gt;shì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;禄&lt;rt&gt;lù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;侈&lt;rt&gt;chǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;富&lt;rt&gt;fù&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;车&lt;rt&gt;jū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;驾&lt;rt&gt;jià&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;肥&lt;rt&gt;féi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;轻&lt;rt&gt;qīng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;策&lt;rt&gt;cè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;功&lt;rt&gt;gōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;茂&lt;rt&gt;mào&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;实&lt;rt&gt;shí&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;勒&lt;rt&gt;lè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;碑&lt;rt&gt;bēi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;刻&lt;rt&gt;kè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;铭&lt;rt&gt;míng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;磻&lt;rt&gt;pán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;溪&lt;rt&gt;xī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;伊&lt;rt&gt;yī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;尹&lt;rt&gt;yǐn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;佐&lt;rt&gt;zuǒ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;时&lt;rt&gt;shí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;阿&lt;rt&gt;ē&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;衡&lt;rt&gt;héng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;奄&lt;rt&gt;yǎn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;宅&lt;rt&gt;zhái&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;曲&lt;rt&gt;qū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;阜&lt;rt&gt;fù&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;微&lt;rt&gt;wēi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;旦&lt;rt&gt;dàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;孰&lt;rt&gt;shú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;营&lt;rt&gt;yíng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;桓&lt;rt&gt;huán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;公&lt;rt&gt;gōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;匡&lt;rt&gt;kuāng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;合&lt;rt&gt;hé&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;济&lt;rt&gt;jì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;弱&lt;rt&gt;ruò&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;扶&lt;rt&gt;fú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;倾&lt;rt&gt;qīng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;绮&lt;rt&gt;qǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;回&lt;rt&gt;huí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;汉&lt;rt&gt;hàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;惠&lt;rt&gt;huì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;说&lt;rt&gt;yuè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;感&lt;rt&gt;gǎn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;武&lt;rt&gt;wǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;丁&lt;rt&gt;dīng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;俊&lt;rt&gt;jùn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;乂&lt;rt&gt;yì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;密&lt;rt&gt;mì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;勿&lt;rt&gt;wù&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;多&lt;rt&gt;duō&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;士&lt;rt&gt;shì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;寔&lt;rt&gt;shí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;宁&lt;rt&gt;níng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;晋&lt;rt&gt;jìn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;楚&lt;rt&gt;chǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;更&lt;rt&gt;gēng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;霸&lt;rt&gt;bà&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;赵&lt;rt&gt;zhào&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;魏&lt;rt&gt;wèi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;困&lt;rt&gt;kùn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;横&lt;rt&gt;héng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;假&lt;rt&gt;jiǎ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;途&lt;rt&gt;tú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;灭&lt;rt&gt;miè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;虢&lt;rt&gt;guó&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;践&lt;rt&gt;jiàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;土&lt;rt&gt;tǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;会&lt;rt&gt;huì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;盟&lt;rt&gt;méng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;何&lt;rt&gt;hé&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;遵&lt;rt&gt;zūn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;约&lt;rt&gt;yuē&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;法&lt;rt&gt;fǎ&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;韩&lt;rt&gt;hán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;弊&lt;rt&gt;bì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;烦&lt;rt&gt;fán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;刑&lt;rt&gt;xíng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;起&lt;rt&gt;qǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;翦&lt;rt&gt;jiǎn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;颇&lt;rt&gt;pō&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;牧&lt;rt&gt;mù&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;用&lt;rt&gt;yòng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;军&lt;rt&gt;jūn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;最&lt;rt&gt;zuì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;精&lt;rt&gt;jīng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;宣&lt;rt&gt;xuān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;威&lt;rt&gt;wēi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;沙&lt;rt&gt;shā&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;漠&lt;rt&gt;mò&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;驰&lt;rt&gt;chí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;誉&lt;rt&gt;yù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;丹&lt;rt&gt;dān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;青&lt;rt&gt;qīng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;九&lt;rt&gt;jiǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;州&lt;rt&gt;zhōu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;禹&lt;rt&gt;yǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;迹&lt;rt&gt;jì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;百&lt;rt&gt;bǎi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;郡&lt;rt&gt;jùn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;秦&lt;rt&gt;qín&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;并&lt;rt&gt;bìng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;岳&lt;rt&gt;yuè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;宗&lt;rt&gt;zōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;泰&lt;rt&gt;tài&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;岱&lt;rt&gt;dài&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;禅&lt;rt&gt;shàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;主&lt;rt&gt;zhǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;云&lt;rt&gt;yún&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;亭&lt;rt&gt;tíng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;雁&lt;rt&gt;yàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;门&lt;rt&gt;mén&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;紫&lt;rt&gt;zǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;塞&lt;rt&gt;sài&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;鸡&lt;rt&gt;jī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;田&lt;rt&gt;tián&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;赤&lt;rt&gt;chì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;城&lt;rt&gt;chéng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;昆&lt;rt&gt;kūn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;池&lt;rt&gt;chí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;碣&lt;rt&gt;jié&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;石&lt;rt&gt;shí&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;钜&lt;rt&gt;jù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;野&lt;rt&gt;yě&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;洞&lt;rt&gt;dòng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;庭&lt;rt&gt;tíng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;旷&lt;rt&gt;kuàng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;远&lt;rt&gt;yuǎn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;绵&lt;rt&gt;mián&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;邈&lt;rt&gt;miǎo&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;岩&lt;rt&gt;yán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;岫&lt;rt&gt;xiù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;杳&lt;rt&gt;yǎo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;冥&lt;rt&gt;míng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;治&lt;rt&gt;zhì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;本&lt;rt&gt;běn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;于&lt;rt&gt;yú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;农&lt;rt&gt;nóng&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;务&lt;rt&gt;wù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;兹&lt;rt&gt;zī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;稼&lt;rt&gt;jià&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;穑&lt;rt&gt;sè&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;俶&lt;rt&gt;chù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;载&lt;rt&gt;zǎi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;南&lt;rt&gt;nán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;亩&lt;rt&gt;mǔ&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;我&lt;rt&gt;wǒ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;艺&lt;rt&gt;yì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;黍&lt;rt&gt;shǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;稷&lt;rt&gt;jì&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;税&lt;rt&gt;shuì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;熟&lt;rt&gt;shú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;贡&lt;rt&gt;gòng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;新&lt;rt&gt;xīn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;劝&lt;rt&gt;quàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;赏&lt;rt&gt;shǎng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;黜&lt;rt&gt;chù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;陟&lt;rt&gt;zhì&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;孟&lt;rt&gt;mèng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;轲&lt;rt&gt;kē&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;敦&lt;rt&gt;dūn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;素&lt;rt&gt;sù&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;史&lt;rt&gt;shǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;鱼&lt;rt&gt;yú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;秉&lt;rt&gt;bǐng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;直&lt;rt&gt;zhí&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;庶&lt;rt&gt;shù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;几&lt;rt&gt;jī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;中&lt;rt&gt;zhōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;庸&lt;rt&gt;yōng&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;劳&lt;rt&gt;láo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;谦&lt;rt&gt;qiān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;谨&lt;rt&gt;jǐn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;敕&lt;rt&gt;chì&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;聆&lt;rt&gt;líng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;音&lt;rt&gt;yīn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;察&lt;rt&gt;chá&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;理&lt;rt&gt;lǐ&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;鉴&lt;rt&gt;jiàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;貌&lt;rt&gt;mào&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;辨&lt;rt&gt;biàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;色&lt;rt&gt;sè&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;贻&lt;rt&gt;yí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;厥&lt;rt&gt;jué&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;嘉&lt;rt&gt;jiā&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;猷&lt;rt&gt;yóu&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;勉&lt;rt&gt;miǎn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;其&lt;rt&gt;qí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;祗&lt;rt&gt;zhī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;植&lt;rt&gt;zhí&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;省&lt;rt&gt;xǐng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;躬&lt;rt&gt;gōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;讥&lt;rt&gt;jī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;诫&lt;rt&gt;jiè&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;宠&lt;rt&gt;chǒng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;增&lt;rt&gt;zēng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;抗&lt;rt&gt;kàng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;极&lt;rt&gt;jí&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;殆&lt;rt&gt;dài&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;辱&lt;rt&gt;rǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;近&lt;rt&gt;jìn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;耻&lt;rt&gt;chǐ&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;林&lt;rt&gt;lín&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;皋&lt;rt&gt;gāo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;幸&lt;rt&gt;xìng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;即&lt;rt&gt;jí&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;两&lt;rt&gt;liǎng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;疏&lt;rt&gt;shū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;见&lt;rt&gt;jiàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;机&lt;rt&gt;jī&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;解&lt;rt&gt;jiě&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;组&lt;rt&gt;zǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;谁&lt;rt&gt;shuí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;逼&lt;rt&gt;bī&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;索&lt;rt&gt;suǒ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;居&lt;rt&gt;jū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;闲&lt;rt&gt;xián&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;处&lt;rt&gt;chǔ&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;沉&lt;rt&gt;chén&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;默&lt;rt&gt;mò&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;寂&lt;rt&gt;jì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;寥&lt;rt&gt;liáo&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;求&lt;rt&gt;qiú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;古&lt;rt&gt;gǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;寻&lt;rt&gt;xún&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;论&lt;rt&gt;lùn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;散&lt;rt&gt;sàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;虑&lt;rt&gt;lǜ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;逍&lt;rt&gt;xiāo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;遥&lt;rt&gt;yáo&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;欣&lt;rt&gt;xīn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;奏&lt;rt&gt;zòu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;累&lt;rt&gt;lěi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;遣&lt;rt&gt;qiǎn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;戚&lt;rt&gt;qī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;谢&lt;rt&gt;xiè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;欢&lt;rt&gt;huān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;招&lt;rt&gt;zhāo&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;渠&lt;rt&gt;qú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;荷&lt;rt&gt;hé&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;的&lt;rt&gt;dí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;历&lt;rt&gt;lì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;园&lt;rt&gt;yuán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;莽&lt;rt&gt;mǎng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;抽&lt;rt&gt;chōu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;条&lt;rt&gt;tiáo&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;枇&lt;rt&gt;pí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;杷&lt;rt&gt;pá&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;晚&lt;rt&gt;wǎn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;翠&lt;rt&gt;cuì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;梧&lt;rt&gt;wú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;桐&lt;rt&gt;tóng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;蚤&lt;rt&gt;zǎo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;凋&lt;rt&gt;diāo&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;陈&lt;rt&gt;chén&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;根&lt;rt&gt;gēn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;委&lt;rt&gt;wěi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;翳&lt;rt&gt;yì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;落&lt;rt&gt;luò&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;叶&lt;rt&gt;yè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;飘&lt;rt&gt;piāo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;摇&lt;rt&gt;yáo&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;游&lt;rt&gt;yóu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;鹍&lt;rt&gt;kūn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;独&lt;rt&gt;dú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;运&lt;rt&gt;yùn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;凌&lt;rt&gt;líng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;摩&lt;rt&gt;mó&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;绛&lt;rt&gt;jiàng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;霄&lt;rt&gt;xiāo&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;耽&lt;rt&gt;dān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;读&lt;rt&gt;dú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;玩&lt;rt&gt;wán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;市&lt;rt&gt;shì&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;寓&lt;rt&gt;yù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;目&lt;rt&gt;mù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;囊&lt;rt&gt;náng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;箱&lt;rt&gt;xiāng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;易&lt;rt&gt;yì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;輶&lt;rt&gt;yóu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;攸&lt;rt&gt;yōu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;畏&lt;rt&gt;wèi&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;属&lt;rt&gt;zhǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;耳&lt;rt&gt;ěr&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;垣&lt;rt&gt;yuán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;墙&lt;rt&gt;qiáng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;具&lt;rt&gt;jù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;膳&lt;rt&gt;shàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;餐&lt;rt&gt;cān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;饭&lt;rt&gt;fàn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;适&lt;rt&gt;shì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;口&lt;rt&gt;kǒu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;充&lt;rt&gt;chōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;肠&lt;rt&gt;cháng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;饱&lt;rt&gt;bǎo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;饫&lt;rt&gt;yù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;烹&lt;rt&gt;pēng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;宰&lt;rt&gt;zǎi&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;饥&lt;rt&gt;jī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;厌&lt;rt&gt;yàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;糟&lt;rt&gt;zāo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;糠&lt;rt&gt;kāng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;亲&lt;rt&gt;qīn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;戚&lt;rt&gt;qī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;故&lt;rt&gt;gù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;旧&lt;rt&gt;jiù&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;老&lt;rt&gt;lǎo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;少&lt;rt&gt;shào&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;异&lt;rt&gt;yì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;粮&lt;rt&gt;liáng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;妾&lt;rt&gt;qiè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;御&lt;rt&gt;yù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;绩&lt;rt&gt;jī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;纺&lt;rt&gt;fǎng&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;侍&lt;rt&gt;shì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;巾&lt;rt&gt;jīn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;帷&lt;rt&gt;wéi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;房&lt;rt&gt;fáng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;纨&lt;rt&gt;wán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;扇&lt;rt&gt;shàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;圆&lt;rt&gt;yuán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;洁&lt;rt&gt;jié&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;银&lt;rt&gt;yín&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;烛&lt;rt&gt;zhú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;炜&lt;rt&gt;wěi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;煌&lt;rt&gt;huáng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;昼&lt;rt&gt;zhòu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;眠&lt;rt&gt;mián&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;夕&lt;rt&gt;xī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;寐&lt;rt&gt;mèi&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;蓝&lt;rt&gt;lán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;笋&lt;rt&gt;sǔn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;象&lt;rt&gt;xiàng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;床&lt;rt&gt;chuáng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;弦&lt;rt&gt;xián&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;歌&lt;rt&gt;gē&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;酒&lt;rt&gt;jiǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;宴&lt;rt&gt;yàn&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;接&lt;rt&gt;jiē&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;杯&lt;rt&gt;bēi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;举&lt;rt&gt;jǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;觞&lt;rt&gt;shāng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;矫&lt;rt&gt;jiǎo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;手&lt;rt&gt;shǒu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;顿&lt;rt&gt;dùn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;足&lt;rt&gt;zú&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;悦&lt;rt&gt;yuè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;豫&lt;rt&gt;yù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;且&lt;rt&gt;qiě&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;康&lt;rt&gt;kāng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;嫡&lt;rt&gt;dí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;后&lt;rt&gt;hòu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;嗣&lt;rt&gt;sì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;续&lt;rt&gt;xù&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;祭&lt;rt&gt;jì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;祀&lt;rt&gt;sì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;烝&lt;rt&gt;zhēng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;尝&lt;rt&gt;cháng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;稽&lt;rt&gt;qǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;颡&lt;rt&gt;sǎng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;再&lt;rt&gt;zài&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;拜&lt;rt&gt;bài&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;悚&lt;rt&gt;sǒng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;惧&lt;rt&gt;jù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;恐&lt;rt&gt;kǒng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;惶&lt;rt&gt;huáng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;笺&lt;rt&gt;jiān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;牒&lt;rt&gt;dié&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;简&lt;rt&gt;jiǎn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;要&lt;rt&gt;yào&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;顾&lt;rt&gt;gù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;答&lt;rt&gt;dá&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;审&lt;rt&gt;shěn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;详&lt;rt&gt;xiáng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;骸&lt;rt&gt;hái&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;垢&lt;rt&gt;gòu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;想&lt;rt&gt;xiǎng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;浴&lt;rt&gt;yù&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;执&lt;rt&gt;zhí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;热&lt;rt&gt;rè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;愿&lt;rt&gt;yuàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;凉&lt;rt&gt;liáng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;驴&lt;rt&gt;lǘ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;骡&lt;rt&gt;luó&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;犊&lt;rt&gt;dú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;特&lt;rt&gt;tè&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;骇&lt;rt&gt;hài&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;跃&lt;rt&gt;yuè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;超&lt;rt&gt;chāo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;骧&lt;rt&gt;xiāng&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;诛&lt;rt&gt;zhū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;斩&lt;rt&gt;zhǎn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;贼&lt;rt&gt;zéi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;盗&lt;rt&gt;dào&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;捕&lt;rt&gt;bǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;获&lt;rt&gt;huò&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;叛&lt;rt&gt;pàn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;亡&lt;rt&gt;wáng&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;布&lt;rt&gt;bù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;射&lt;rt&gt;shè&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;僚&lt;rt&gt;liáo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;丸&lt;rt&gt;wán&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;嵇&lt;rt&gt;jī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;琴&lt;rt&gt;qín&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;阮&lt;rt&gt;ruǎn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;啸&lt;rt&gt;xiào&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;恬&lt;rt&gt;tián&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;笔&lt;rt&gt;bǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;伦&lt;rt&gt;lún&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;纸&lt;rt&gt;zhǐ&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;钧&lt;rt&gt;jūn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;巧&lt;rt&gt;qiǎo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;任&lt;rt&gt;rèn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;钓&lt;rt&gt;diào&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;释&lt;rt&gt;shì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;纷&lt;rt&gt;fēn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;利&lt;rt&gt;lì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;俗&lt;rt&gt;sú&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;并&lt;rt&gt;bìng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;皆&lt;rt&gt;jiē&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;佳&lt;rt&gt;jiā&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;妙&lt;rt&gt;miào&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;毛&lt;rt&gt;máo&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;施&lt;rt&gt;shī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;淑&lt;rt&gt;shū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;姿&lt;rt&gt;zī&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;工&lt;rt&gt;gōng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;颦&lt;rt&gt;pín&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;妍&lt;rt&gt;yán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;笑&lt;rt&gt;xiào&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;年&lt;rt&gt;nián&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;矢&lt;rt&gt;shǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;每&lt;rt&gt;měi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;催&lt;rt&gt;cuī&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;曦&lt;rt&gt;xī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;晖&lt;rt&gt;huī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;朗&lt;rt&gt;lǎng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;曜&lt;rt&gt;yào&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;璇&lt;rt&gt;xuán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;玑&lt;rt&gt;jī&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;悬&lt;rt&gt;xuán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;斡&lt;rt&gt;wò&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;晦&lt;rt&gt;huì&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;魄&lt;rt&gt;pò&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;环&lt;rt&gt;huán&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;照&lt;rt&gt;zhào&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;指&lt;rt&gt;zhǐ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;薪&lt;rt&gt;xīn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;修&lt;rt&gt;xiū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;祜&lt;rt&gt;hù&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;永&lt;rt&gt;yǒng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;绥&lt;rt&gt;suí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;吉&lt;rt&gt;jí&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;劭&lt;rt&gt;shào&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;矩&lt;rt&gt;jǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;步&lt;rt&gt;bù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;引&lt;rt&gt;yǐn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;领&lt;rt&gt;lǐng&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;俯&lt;rt&gt;fǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;仰&lt;rt&gt;yǎng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;廊&lt;rt&gt;láng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;庙&lt;rt&gt;miào&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;束&lt;rt&gt;shù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;带&lt;rt&gt;dài&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;矜&lt;rt&gt;jīn&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;庄&lt;rt&gt;zhuāng&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;徘&lt;rt&gt;pái&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;徊&lt;rt&gt;huái&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;瞻&lt;rt&gt;zhān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;眺&lt;rt&gt;tiào&lt;/rt&gt;&lt;/ruby&gt;。
+&lt;ruby&gt;孤&lt;rt&gt;gū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;陋&lt;rt&gt;lòu&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;寡&lt;rt&gt;guǎ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;闻&lt;rt&gt;wén&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;愚&lt;rt&gt;yú&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;蒙&lt;rt&gt;méng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;等&lt;rt&gt;děng&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;诮&lt;rt&gt;qiào&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;ruby&gt;谓&lt;rt&gt;wèi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;语&lt;rt&gt;yǔ&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;助&lt;rt&gt;zhù&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;者&lt;rt&gt;zhě&lt;/rt&gt;&lt;/ruby&gt;，
+&lt;ruby&gt;焉&lt;rt&gt;yān&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;哉&lt;rt&gt;zāi&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;乎&lt;rt&gt;hū&lt;/rt&gt;&lt;/ruby&gt;
+&lt;ruby&gt;也&lt;rt&gt;yě&lt;/rt&gt;&lt;/ruby&gt;。&lt;/p&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>表达</title>
@@ -12409,380 +13497,6 @@ Hello, Modular Java!&lt;/p&gt;
 苍朴燥湿消胀满，砂蔻温中止吐呕。&lt;br&gt;
 草果截疟除痰积，湿浊困脾此药除，&lt;br&gt;
 芳香醒脾是关键，湿去气行脾胃舒。&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>中药-祛风湿药-7</title>
-      <link>https://yutao.org/tcm/%E4%B8%AD%E8%8D%AF-%E7%A5%9B%E9%A3%8E%E6%B9%BF%E8%8D%AF-7/</link>
-      <pubDate>Thu, 20 Mar 2025 18:54:15 +0800</pubDate>
-      <author>yutao.z@qq.com (东北小哥)</author>
-      <guid>https://yutao.org/tcm/%E4%B8%AD%E8%8D%AF-%E7%A5%9B%E9%A3%8E%E6%B9%BF%E8%8D%AF-7/</guid>
-      
-        <description>&lt;h2 id=&#34;祛风湿药&#34;&gt;祛风湿药&lt;/h2&gt;
-&lt;h2 id=&#34;第一节-祛风湿散寒药&#34;&gt;第一节 祛风湿散寒药&lt;/h2&gt;
-&lt;h3 id=&#34;顺口溜&#34;&gt;顺口溜&lt;/h3&gt;
-&lt;p&gt;独活威灵通经络，川乌散寒木瓜和&lt;br&gt;
-蕲蛇搜风青藤走，徐长海风止痛多&lt;br&gt;
-路路通达寻骨痛，穿山伸筋解拘急&lt;br&gt;
-祛寒除湿痹痛脱，散寒诸药莫轻敌&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;药材详解&#34;&gt;药材详解&lt;/h3&gt;
-&lt;h4 id=&#34;处方名称独活&#34;&gt;【处方名称】独活&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;独活图片&#34;&gt;&lt;br&gt;
-【药性】辛、苦，微温。归肾、膀胱经&lt;br&gt;
-【功效】祛风除湿，通痹止痛&lt;br&gt;
-【产地】四川、湖北&lt;br&gt;
-【特点】专治下半身风湿痹痛&lt;br&gt;
-【记忆技巧】&amp;ldquo;独活下行通腰膝&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称威灵仙&#34;&gt;【处方名称】威灵仙&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;威灵仙图片&#34;&gt;&lt;br&gt;
-【药性】辛、咸，温。归膀胱经&lt;br&gt;
-【功效】祛风湿，通经络，消骨鲠&lt;br&gt;
-【产地】东北、华东&lt;br&gt;
-【特点】治鱼刺卡喉要药&lt;br&gt;
-【记忆技巧】&amp;ldquo;威灵仙，骨鲠消&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称川乌&#34;&gt;【处方名称】川乌&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;川乌图片&#34;&gt;&lt;br&gt;
-【药性】辛、苦，热；大毒。归心、肝、肾、脾经&lt;br&gt;
-【功效】祛风除湿，温经止痛&lt;br&gt;
-【产地】四川、陕西&lt;br&gt;
-【特点】需炮制减毒（制川乌）&lt;br&gt;
-【记忆技巧】&amp;ldquo;川乌似火驱寒湿&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称木瓜&#34;&gt;【处方名称】木瓜&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;木瓜图片&#34;&gt;&lt;br&gt;
-【药性】酸，温。归肝、脾经&lt;br&gt;
-【功效】舒筋活络，和胃化湿&lt;br&gt;
-【产地】安徽、湖北&lt;br&gt;
-【特点】治脚气水肿&lt;br&gt;
-【记忆技巧】&amp;ldquo;木瓜酸软化拘挛&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称乌梢蛇&#34;&gt;【处方名称】乌梢蛇&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;乌梢蛇图片&#34;&gt;&lt;br&gt;
-【药性】甘，平。归肝经&lt;br&gt;
-【功效】祛风通络，定惊止痉&lt;br&gt;
-【产地】浙江、江苏&lt;br&gt;
-【特点】蛇类药中平和之品&lt;br&gt;
-【记忆技巧】&amp;ldquo;乌蛇通络如游龙&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称蕲蛇&#34;&gt;【处方名称】蕲蛇&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;蕲蛇图片&#34;&gt;&lt;br&gt;
-【药性】甘、咸，温；有毒。归肝经&lt;br&gt;
-【功效】祛风通络，定惊止痉&lt;br&gt;
-【产地】湖北蕲春&lt;br&gt;
-【特点】&amp;ldquo;蕲春四宝&amp;quot;之一&lt;br&gt;
-【记忆技巧】&amp;ldquo;蕲蛇搜风透骨痛&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称青风藤&#34;&gt;【处方名称】青风藤&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;青风藤图片&#34;&gt;&lt;br&gt;
-【药性】苦、辛，平。归肝、脾经&lt;br&gt;
-【功效】祛风湿，通经络，利小便&lt;br&gt;
-【产地】江苏、安徽&lt;br&gt;
-【特点】治风湿流注&lt;br&gt;
-【记忆技巧】&amp;ldquo;青藤蜿蜒通经络&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称徐长卿&#34;&gt;【处方名称】徐长卿&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;徐长卿图片&#34;&gt;&lt;br&gt;
-【药性】辛，温。归肝、胃经&lt;br&gt;
-【功效】祛风除湿，止痛止痒&lt;br&gt;
-【产地】东北、华北&lt;br&gt;
-【特点】治风湿痹痛兼皮肤瘙痒&lt;br&gt;
-【记忆技巧】&amp;ldquo;徐长卿，止痛痒&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称海风藤&#34;&gt;【处方名称】海风藤&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;海风藤图片&#34;&gt;&lt;br&gt;
-【药性】辛、苦，微温。归肝经&lt;br&gt;
-【功效】祛风湿，通经络&lt;br&gt;
-【产地】福建、台湾&lt;br&gt;
-【特点】治关节屈伸不利&lt;br&gt;
-【记忆技巧】&amp;ldquo;海风藤，舒筋挛&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称伸筋草&#34;&gt;【处方名称】伸筋草&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;伸筋草图片&#34;&gt;&lt;br&gt;
-【药性】微苦、辛，温。归肝、脾、肾经&lt;br&gt;
-【功效】祛风除湿，舒筋活络&lt;br&gt;
-【产地】东北、西南&lt;br&gt;
-【特点】治筋脉拘急&lt;br&gt;
-【记忆技巧】&amp;ldquo;伸筋草，解拘急&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称路路通&#34;&gt;【处方名称】路路通&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;路路通图片&#34;&gt;&lt;br&gt;
-【药性】苦，平。归肝、肾经&lt;br&gt;
-【功效】祛风通络，利水通经&lt;br&gt;
-【产地】华东、华南&lt;br&gt;
-【特点】果实多孔通利&lt;br&gt;
-【记忆技巧】&amp;ldquo;路路通，孔孔通&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称寻骨风&#34;&gt;【处方名称】寻骨风&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;寻骨风图片&#34;&gt;&lt;br&gt;
-【药性】辛、苦，平。归肝经&lt;br&gt;
-【功效】祛风除湿，通络止痛&lt;br&gt;
-【产地】江苏、安徽&lt;br&gt;
-【特点】治风湿骨痛&lt;br&gt;
-【记忆技巧】&amp;ldquo;寻骨风，找痛源&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称穿山龙&#34;&gt;【处方名称】穿山龙&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;穿山龙图片&#34;&gt;&lt;br&gt;
-【药性】苦，微寒。归肝、肺经&lt;br&gt;
-【功效】祛风除湿，活血通络&lt;br&gt;
-【产地】东北、华北&lt;br&gt;
-【特点】治腰腿疼痛&lt;br&gt;
-【记忆技巧】&amp;ldquo;穿山龙，钻痛处&amp;rdquo;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;第二节-祛风湿热药&#34;&gt;第二节 祛风湿热药&lt;/h2&gt;
-&lt;h3 id=&#34;顺口溜-1&#34;&gt;顺口溜&lt;/h3&gt;
-&lt;p&gt;秦艽防己清湿热，豨莶络藤通经络&lt;br&gt;
-桑枝横走雷公毒，丝瓜老鹳祛风热&lt;br&gt;
-臭桐降压海桐皮，风湿热痹此节克&lt;br&gt;
-清热利湿需辨证，关节红肿方可撤&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;药材详解-1&#34;&gt;药材详解&lt;/h3&gt;
-&lt;h4 id=&#34;处方名称秦艽&#34;&gt;【处方名称】秦艽&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;秦艽图片&#34;&gt;&lt;br&gt;
-【药性】苦、辛，微寒。归胃、肝、胆经&lt;br&gt;
-【功效】祛风湿，清湿热，退虚热&lt;br&gt;
-【产地】甘肃、山西&lt;br&gt;
-【特点】治虚劳发热&lt;br&gt;
-【记忆技巧】&amp;ldquo;秦艽清虚如秋风&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称防己&#34;&gt;【处方名称】防己&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;防己图片&#34;&gt;&lt;br&gt;
-【药性】苦，寒。归膀胱、肺经&lt;br&gt;
-【功效】祛风止痛，利水消肿&lt;br&gt;
-【产地】浙江、安徽&lt;br&gt;
-【特点】治水肿脚气&lt;br&gt;
-【记忆技巧】&amp;ldquo;防己利水如开闸&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称豨莶草&#34;&gt;【处方名称】豨莶草&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;豨莶草图片&#34;&gt;&lt;br&gt;
-【药性】苦，寒。归肝、肾经&lt;br&gt;
-【功效】祛风湿，利关节，解毒&lt;br&gt;
-【产地】江苏、湖南&lt;br&gt;
-【特点】治中风偏瘫&lt;br&gt;
-【记忆技巧】&amp;ldquo;豨莶通络草如针&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称络石藤&#34;&gt;【处方名称】络石藤&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;络石藤图片&#34;&gt;&lt;br&gt;
-【药性】苦，微寒。归心、肝、肾经&lt;br&gt;
-【功效】祛风通络，凉血消肿&lt;br&gt;
-【产地】华东、华南&lt;br&gt;
-【特点】治喉痹肿痛&lt;br&gt;
-【记忆技巧】&amp;ldquo;络石攀援清痹&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称桑枝&#34;&gt;【处方名称】桑枝&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;桑枝图片&#34;&gt;&lt;br&gt;
-【药性】微苦，平。归肝经&lt;br&gt;
-【功效】祛风湿，利关节&lt;br&gt;
-【产地】全国广布&lt;br&gt;
-【特点】治上肢痹痛&lt;br&gt;
-【记忆技巧】&amp;ldquo;桑枝横走通臂膀&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称雷公藤&#34;&gt;【处方名称】雷公藤&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;雷公藤图片&#34;&gt;&lt;br&gt;
-【药性】苦、辛，凉；大毒。归肝、肾经&lt;br&gt;
-【功效】祛风除湿，活血通络&lt;br&gt;
-【产地】福建、浙江&lt;br&gt;
-【特点】严格控制剂量&lt;br&gt;
-【记忆技巧】&amp;ldquo;雷公毒猛慎用量&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称丝瓜络&#34;&gt;【处方名称】丝瓜络&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;丝瓜络图片&#34;&gt;&lt;br&gt;
-【药性】甘，平。归肺、胃、肝经&lt;br&gt;
-【功效】祛风通络，化痰解毒&lt;br&gt;
-【产地】全国广布&lt;br&gt;
-【特点】网状结构通经络&lt;br&gt;
-【记忆技巧】&amp;ldquo;丝瓜络，通脉络&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称老鹤草&#34;&gt;【处方名称】老鹤草&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;老鹳草图片&#34;&gt;&lt;br&gt;
-【药性】辛、苦，平。归肝、肾、脾经&lt;br&gt;
-【功效】祛风湿，通经络，止泻痢&lt;br&gt;
-【产地】东北、华北&lt;br&gt;
-【特点】治湿热泻痢&lt;br&gt;
-【记忆技巧】&amp;ldquo;老鹳止痢兼通络&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称臭梧桐&#34;&gt;【处方名称】臭梧桐&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;臭梧桐图片&#34;&gt;&lt;br&gt;
-【药性】辛、苦、甘，凉。归肝经&lt;br&gt;
-【功效】祛风湿，降血压&lt;br&gt;
-【产地】华东、华中&lt;br&gt;
-【特点】治高血压兼风湿&lt;br&gt;
-【记忆技巧】&amp;ldquo;梧桐叶臭降血压&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称海桐皮&#34;&gt;【处方名称】海桐皮&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;海桐皮图片&#34;&gt;&lt;br&gt;
-【药性】苦、辛，平。归肝、脾经&lt;br&gt;
-【功效】祛风湿，通络止痛&lt;br&gt;
-【产地】广东、福建&lt;br&gt;
-【特点】治疥癣瘙痒&lt;br&gt;
-【记忆技巧】&amp;ldquo;海桐皮，止痒痛&amp;rdquo;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;第三节-祛风湿强筋骨药&#34;&gt;第三节 祛风湿强筋骨药&lt;/h2&gt;
-&lt;h3 id=&#34;顺口溜-2&#34;&gt;顺口溜&lt;/h3&gt;
-&lt;p&gt;桑寄生补五加强，狗脊千年健骨方&lt;br&gt;
-雪莲温阳鹿衔草，风湿日久肝肾匡&lt;br&gt;
-强筋壮骨治痿痹，虚损劳伤此节良&lt;br&gt;
-久病入络需固本，标本兼治效彰彰&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;药材详解-2&#34;&gt;药材详解&lt;/h3&gt;
-&lt;h4 id=&#34;处方名称桑寄生&#34;&gt;【处方名称】桑寄生&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;桑寄生图片&#34;&gt;&lt;br&gt;
-【药性】苦、甘，平。归肝、肾经&lt;br&gt;
-【功效】祛风湿，补肝肾，强筋骨&lt;br&gt;
-【产地】广东、广西&lt;br&gt;
-【特点】安胎要药&lt;br&gt;
-【记忆技巧】&amp;ldquo;寄生补肾似藤缠&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称五加皮&#34;&gt;【处方名称】五加皮&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;五加皮图片&#34;&gt;&lt;br&gt;
-【药性】辛、苦，温。归肝、肾经&lt;br&gt;
-【功效】祛风湿，补肝肾，强筋骨&lt;br&gt;
-【产地】湖北、四川&lt;br&gt;
-【特点】&amp;ldquo;南五加&amp;quot;为正品&lt;br&gt;
-【记忆技巧】&amp;ldquo;五加强筋如钢骨&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称狗脊&#34;&gt;【处方名称】狗脊&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;狗脊图片&#34;&gt;&lt;br&gt;
-【药性】苦、甘，温。归肝、肾经&lt;br&gt;
-【功效】祛风湿，补肝肾，强腰膝&lt;br&gt;
-【产地】福建、云南&lt;br&gt;
-【特点】表面密被金黄绒毛&lt;br&gt;
-【记忆技巧】&amp;ldquo;狗脊金毛强腰肾&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&#34;千年健图片&#34;&gt;&lt;br&gt;
-【药性】苦、辛，温。归肝、肾经&lt;br&gt;
-【功效】祛风湿，强筋骨&lt;br&gt;
-【产地】云南、广西&lt;br&gt;
-【特点】治老人足膝无力&lt;br&gt;
-【记忆技巧】&amp;ldquo;千年健，壮筋骨&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称雪莲花&#34;&gt;【处方名称】雪莲花&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;雪莲花图片&#34;&gt;&lt;br&gt;
-【药性】甘、微苦，温。归肝、肾经&lt;br&gt;
-【功效】祛风湿，强筋骨，补肾阳&lt;br&gt;
-【产地】西藏、新疆&lt;br&gt;
-【特点】治寒湿痹痛兼阳痿&lt;br&gt;
-【记忆技巧】&amp;ldquo;雪莲傲寒补元阳&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称鹿衔草&#34;&gt;【处方名称】鹿衔草&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;鹿衔草图片&#34;&gt;&lt;br&gt;
-【药性】甘、苦，温。归肝、肾经&lt;br&gt;
-【功效】祛风湿，强筋骨，止血&lt;br&gt;
-【产地】东北、西南&lt;br&gt;
-【特点】治虚劳咳嗽&lt;br&gt;
-【记忆技巧】&amp;ldquo;鹿衔草，补虚劳&amp;rdquo;&lt;/p&gt;
-&lt;h2 id=&#34;结语&#34;&gt;结语&lt;/h2&gt;
-&lt;p&gt;章节对比记忆&lt;/p&gt;
-&lt;p&gt;祛风三法各千秋，散寒清热强骨优，&lt;br&gt;
-独活威灵驱阴寒，秦艽防己湿热收，&lt;br&gt;
-寄生五加补虚损，痹证日久选此筹。&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>中药-泻下药-6</title>
-      <link>https://yutao.org/tcm/%E4%B8%AD%E8%8D%AF-%E6%B3%BB%E4%B8%8B%E8%8D%AF-6/</link>
-      <pubDate>Thu, 20 Mar 2025 18:47:34 +0800</pubDate>
-      <author>yutao.z@qq.com (东北小哥)</author>
-      <guid>https://yutao.org/tcm/%E4%B8%AD%E8%8D%AF-%E6%B3%BB%E4%B8%8B%E8%8D%AF-6/</guid>
-      
-        <description>&lt;h2 id=&#34;泻下药&#34;&gt;泻下药&lt;/h2&gt;
-&lt;h2 id=&#34;第一节-攻下药&#34;&gt;第一节 攻下药&lt;/h2&gt;
-&lt;h3 id=&#34;顺口溜&#34;&gt;顺口溜&lt;/h3&gt;
-&lt;p&gt;大黄将军破积滞，芒硝软坚燥屎移&lt;br&gt;
-番叶芦荟通便速，攻下四将莫轻敌&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;药材详解&#34;&gt;药材详解&lt;/h3&gt;
-&lt;h4 id=&#34;处方名称大黄&#34;&gt;【处方名称】大黄&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;大黄图片&#34;&gt;&lt;br&gt;
-【药性】苦，寒。归脾、胃、大肠、肝、心包经&lt;br&gt;
-【功效】泻热通便，凉血解毒，逐瘀通经&lt;br&gt;
-【产地】四川、甘肃&lt;br&gt;
-【特点】&amp;ldquo;将军之药&amp;rdquo;，通下力峻&lt;br&gt;
-【记忆技巧】&amp;ldquo;大黄苦寒荡肠胃，瘀热积滞一扫空&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称芒硝&#34;&gt;【处方名称】芒硝&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;芒硝图片&#34;&gt;&lt;br&gt;
-【药性】咸、苦，寒。归胃、大肠经&lt;br&gt;
-【功效】软坚泻下，清热消肿&lt;br&gt;
-【产地】山西、内蒙古&lt;br&gt;
-【特点】&amp;ldquo;咸能软坚&amp;quot;代表药&lt;br&gt;
-【记忆技巧】&amp;ldquo;芒硝似雪化燥屎&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称番泻叶&#34;&gt;【处方名称】番泻叶&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;番泻叶图片&#34;&gt;&lt;br&gt;
-【药性】甘、苦，寒。归大肠经&lt;br&gt;
-【功效】泻热通便，行水消胀&lt;br&gt;
-【产地】印度、埃及&lt;br&gt;
-【特点】泡服速效通便&lt;br&gt;
-【记忆技巧】&amp;ldquo;番叶漂洋来，通便如泻洪&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称芦荟&#34;&gt;【处方名称】芦荟&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;芦荟图片&#34;&gt;&lt;br&gt;
-【药性】苦，寒。归肝、胃、大肠经&lt;br&gt;
-【功效】泻下通便，清肝杀虫&lt;br&gt;
-【产地】广东、云南&lt;br&gt;
-【特点】兼治小儿疳积&lt;br&gt;
-【记忆技巧】&amp;ldquo;芦荟凝胶清肝火&amp;rdquo;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;第二节-润下药&#34;&gt;第二节 润下药&lt;/h2&gt;
-&lt;h3 id=&#34;顺口溜-1&#34;&gt;顺口溜&lt;/h3&gt;
-&lt;p&gt;麻仁郁李松子仁，润肠好比油入尘&lt;br&gt;
-虚人老人便秘苦，润下三宝可回春&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;药材详解-1&#34;&gt;药材详解&lt;/h3&gt;
-&lt;h4 id=&#34;处方名称火麻仁&#34;&gt;【处方名称】火麻仁&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;火麻仁图片&#34;&gt;&lt;br&gt;
-【药性】甘，平。归脾、胃、大肠经&lt;br&gt;
-【功效】润肠通便，滋养补虚&lt;br&gt;
-【产地】东北、华北&lt;br&gt;
-【特点】&amp;ldquo;肠道润滑剂&amp;rdquo;&lt;br&gt;
-【记忆技巧】&amp;ldquo;火麻油润肠，虚秘最相当&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称郁李仁&#34;&gt;【处方名称】郁李仁&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;郁李仁图片&#34;&gt;&lt;br&gt;
-【药性】辛、苦、甘，平。归脾、大肠、小肠经&lt;br&gt;
-【功效】润燥滑肠，下气利水&lt;br&gt;
-【产地】河北、山东&lt;br&gt;
-【特点】兼治水肿胀满&lt;br&gt;
-【记忆技巧】&amp;ldquo;郁李仁，通二便&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称松子仁&#34;&gt;【处方名称】松子仁&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;松子仁图片&#34;&gt;&lt;br&gt;
-【药性】甘，温。归肺、肝、大肠经&lt;br&gt;
-【功效】润肠通便，润肺止咳&lt;br&gt;
-【产地】东北、西南&lt;br&gt;
-【特点】药食两用佳品&lt;br&gt;
-【记忆技巧】&amp;ldquo;松子香，润肺肠&amp;rdquo;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;第三节-峻下逐水药&#34;&gt;第三节 峻下逐水药&lt;/h2&gt;
-&lt;h3 id=&#34;顺口溜-2&#34;&gt;顺口溜&lt;/h3&gt;
-&lt;p&gt;甘遂大戟芫花猛，牵牛巴豆商陆凶&lt;br&gt;
-峻下逐水如雷霆，虚人忌用莫妄攻&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;药材详解-2&#34;&gt;药材详解&lt;/h3&gt;
-&lt;h4 id=&#34;处方名称甘遂&#34;&gt;【处方名称】甘遂&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;甘遂图片&#34;&gt;&lt;br&gt;
-【药性】苦，寒；有毒。归肺、肾、大肠经&lt;br&gt;
-【功效】泻水逐饮，消肿散结&lt;br&gt;
-【产地】陕西、山西&lt;br&gt;
-【特点】&amp;ldquo;舟车之剂&amp;quot;核心药&lt;br&gt;
-【记忆技巧】&amp;ldquo;甘遂攻逐如破竹，胸腹积水立消除&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称牵牛子&#34;&gt;【处方名称】牵牛子&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;牵牛子图片&#34;&gt;&lt;br&gt;
-【药性】苦，寒；有毒。归肺、肾、大肠经&lt;br&gt;
-【功效】泻下逐水，去积杀虫&lt;br&gt;
-【产地】辽宁、河北&lt;br&gt;
-【特点】黑白二丑分效力&lt;br&gt;
-【记忆技巧】&amp;ldquo;牵牛泻水如浪涌&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称巴豆&#34;&gt;【处方名称】巴豆&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;巴豆图片&#34;&gt;&lt;br&gt;
-【药性】辛，热；大毒。归胃、大肠经&lt;br&gt;
-【功效】峻下冷积，逐水退肿&lt;br&gt;
-【产地】四川、广西&lt;br&gt;
-【特点】&amp;ldquo;斩关夺门之将&amp;rdquo;&lt;br&gt;
-【记忆技巧】&amp;ldquo;巴豆热毒似火炮&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称京大戟&#34;&gt;【处方名称】京大戟&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;京大戟图片&#34;&gt;&lt;br&gt;
-【药性】苦，寒；有毒。归肺、脾、肾经&lt;br&gt;
-【功效】泻水逐饮，消肿散结&lt;br&gt;
-【产地】江苏、浙江&lt;br&gt;
-【特点】&amp;ldquo;十枣汤&amp;quot;君药&lt;br&gt;
-【记忆技巧】&amp;ldquo;大戟破坚如斧钺&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称芫花&#34;&gt;【处方名称】芫花&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;芫花图片&#34;&gt;&lt;br&gt;
-【药性】辛、苦，温；有毒。归肺、脾、肾经&lt;br&gt;
-【功效】泻水逐饮，祛痰止咳&lt;br&gt;
-【产地】安徽、湖北&lt;br&gt;
-【特点】&amp;ldquo;逐胸胁之水&amp;rdquo;&lt;br&gt;
-【记忆技巧】&amp;ldquo;芫花似雪逐痰饮&amp;rdquo;&lt;/p&gt;
-&lt;h4 id=&#34;处方名称商陆&#34;&gt;【处方名称】商陆&lt;/h4&gt;
-&lt;p&gt;&lt;img alt=&#34;商陆图片&#34;&gt;&lt;br&gt;
-【药性】苦，寒；有毒。归肺、脾、肾、大肠经&lt;br&gt;
-【功效】逐水消肿，通利二便&lt;br&gt;
-【产地】河南、陕西&lt;br&gt;
-【特点】根似人参需鉴别&lt;br&gt;
-【记忆技巧】&amp;ldquo;商陆消肿利二便&amp;rdquo;&lt;/p&gt;
-&lt;h2 id=&#34;结语&#34;&gt;结语&lt;/h2&gt;
-&lt;p&gt;章节对比记忆&lt;/p&gt;
-&lt;p&gt;攻下似猛虎，润下如甘露，&lt;br&gt;
-峻下若雷霆，三类力道殊。&lt;br&gt;
-大黄芒硝攻实热，麻仁松子润肠枯，&lt;br&gt;
-甘遂大戟逐水饮，辨证施治是准绳。&lt;/p&gt;
 </description>
       
     </item>
