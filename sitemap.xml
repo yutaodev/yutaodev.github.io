@@ -3,28 +3,63 @@
   
   <url>
     <loc>https://yutao.org/categories/</loc>
-    <lastmod>2025-04-02T10:26:13+08:00</lastmod>
+    <lastmod>2025-04-04T11:39:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/tags/</loc>
-    <lastmod>2025-04-02T10:26:13+08:00</lastmod>
+    <lastmod>2025-04-04T11:39:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/</loc>
-    <lastmod>2025-04-02T10:26:13+08:00</lastmod>
+    <lastmod>2025-04-04T11:39:02+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/tags/%E6%96%B9%E5%89%82/</loc>
+    <lastmod>2025-04-04T11:39:02+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/categories/%E6%96%B9%E5%89%82/</loc>
+    <lastmod>2025-04-04T11:39:02+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/tcm/%E6%96%B9%E5%89%82-%E6%B8%85%E7%83%AD%E5%89%82-5/</loc>
+    <lastmod>2025-04-04T11:39:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/tcm/</loc>
-    <lastmod>2025-04-02T10:26:13+08:00</lastmod>
+    <lastmod>2025-04-04T11:39:02+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/tcm/%E6%96%B9%E5%89%82-%E5%92%8C%E8%A7%A3%E5%89%82-4/</loc>
+    <lastmod>2025-04-03T19:58:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB/</loc>
+    <lastmod>2025-04-03T19:58:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -158,20 +193,6 @@
   <url>
     <loc>https://yutao.org/philosophy/%E4%BB%B7%E5%80%BC%E8%A7%82%E8%87%AA%E4%BF%A1/</loc>
     <lastmod>2025-03-23T16:25:50+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.org/tags/%E6%96%B9%E5%89%82/</loc>
-    <lastmod>2025-03-22T17:05:47+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.org/categories/%E6%96%B9%E5%89%82/</loc>
-    <lastmod>2025-03-22T17:05:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
