@@ -8,13 +8,20 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
     <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
-    <lastBuildDate>Mon, 31 Mar 2025 21:39:17 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 07 Apr 2025 07:22:21 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>安装brew工具</title>
+      <link>https://yutao.org/programming/%E5%AE%89%E8%A3%85brew%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Mon, 07 Apr 2025 07:22:21 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <guid>https://yutao.org/programming/%E5%AE%89%E8%A3%85brew%E5%B7%A5%E5%85%B7/</guid>
+      <description>背景 不管是windows还是linux，都有一些工具，帮助你安装一些软件，节省时间。brew就是其中一个工具，可以安装一些软件，比如pyth</description>
+    </item>
+    <item>
       <title>将VSCode打造成专属IDE</title>
-      <link>https://yutao.org/programming/%E5%B0%86visualstudiocode%E6%89%93%E9%80%A0%E6%88%90%E4%B8%93%E5%B1%9Eide/</link>
+      <link>https://yutao.org/programming/%E5%B0%86vscode%E6%89%93%E9%80%A0%E6%88%90%E4%B8%93%E5%B1%9Eide/</link>
       <pubDate>Mon, 31 Mar 2025 21:39:17 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
-      <guid>https://yutao.org/programming/%E5%B0%86visualstudiocode%E6%89%93%E9%80%A0%E6%88%90%E4%B8%93%E5%B1%9Eide/</guid>
+      <guid>https://yutao.org/programming/%E5%B0%86vscode%E6%89%93%E9%80%A0%E6%88%90%E4%B8%93%E5%B1%9Eide/</guid>
       <description>背景 不得不说，Visual Studio Code是一个非常优秀的编辑器，虽然不完美，但个人整体对比下来，感觉是很适合我。不管前端、后端、脚本以及各种语言</description>
     </item>
     <item>
@@ -141,13 +148,6 @@
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-5/</link>
       <pubDate>Wed, 26 Feb 2025 11:05:01 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-5/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Java后端-基础-数据结构-4</title>
-      <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-4/</link>
-      <pubDate>Tue, 25 Feb 2025 10:17:58 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
-      <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-4/</guid>
       <description></description>
     </item>
   </channel>

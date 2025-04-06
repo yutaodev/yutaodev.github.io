@@ -12,9 +12,9 @@
     <atom:link href="https://yutao.org/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>将VSCode打造成专属IDE</title>
-      <link>https://yutao.org/programming/%E5%B0%86visualstudiocode%E6%89%93%E9%80%A0%E6%88%90%E4%B8%93%E5%B1%9Eide/</link>
+      <link>https://yutao.org/programming/%E5%B0%86vscode%E6%89%93%E9%80%A0%E6%88%90%E4%B8%93%E5%B1%9Eide/</link>
       <pubDate>Mon, 31 Mar 2025 21:39:17 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
-      <guid>https://yutao.org/programming/%E5%B0%86visualstudiocode%E6%89%93%E9%80%A0%E6%88%90%E4%B8%93%E5%B1%9Eide/</guid>
+      <guid>https://yutao.org/programming/%E5%B0%86vscode%E6%89%93%E9%80%A0%E6%88%90%E4%B8%93%E5%B1%9Eide/</guid>
       <description>背景 不得不说，Visual Studio Code是一个非常优秀的编辑器，虽然不完美，但个人整体对比下来，感觉是很适合我。不管前端、后端、脚本以及各种语言</description>
     </item>
   </channel>
