@@ -84,7 +84,7 @@
   <meta itemprop="description" content="代码中的岐黄之道">
   <meta itemprop="datePublished" content="2024-08-02T09:58:42+08:00">
   <meta itemprop="dateModified" content="2024-08-02T09:58:42+08:00">
-  <meta itemprop="wordCount" content="3518">
+  <meta itemprop="wordCount" content="3541">
   <meta itemprop="keywords" content="git">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="一文学会Git常用语法">
@@ -386,7 +386,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 3518 字 -
+        约 3541 字 -
         预计阅读 8 分钟
       </span>
 
@@ -468,6 +468,7 @@
 <li><code>git status</code>：检查当前文件状态，工作目录文件只有两种状态<code>已跟踪</code>或<code>未跟踪</code>，未跟踪表示未纳入git版本管理</li>
 <li><code>git commit -m &lt;comments&gt;</code>：将暂存区改动提交到本地仓库</li>
 <li><code>git commit -a -m &lt;comments&gt;</code>：提交之前不再需要 git add 文件， -a选项使本次提交包含了所有修改过的文件</li>
+<li><code>git commit --amend</code>：修改最近一次提交的备注信息</li>
 <li><code>git commit --amend -m &lt;comments&gt;</code>：将新修改的代码追加到前一次提交的commit中</li>
 <li><code>git commit --amend --no-edit</code>：不更改前一次提交的备注信息情况下，追加新的修改到上一次commit中</li>
 <li><code>git rm --cached &lt;fileName&gt;</code>：把文件从暂存区删除，但仍保留在工作目录中，且未被git跟踪</li>
