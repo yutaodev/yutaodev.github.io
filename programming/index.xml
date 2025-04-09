@@ -1,152 +1,152 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>编程 on 东北小哥</title>
+    <title>编程 on 会写代码的小郎中</title>
     <link>https://yutao.org/programming/</link>
-    <description>Recent content in 编程 on 东北小哥</description>
+    <description>Recent content in 编程 on 会写代码的小郎中</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
-    <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
+    <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
+    <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
     <lastBuildDate>Mon, 07 Apr 2025 07:22:21 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>安装brew工具</title>
       <link>https://yutao.org/programming/%E5%AE%89%E8%A3%85brew%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Mon, 07 Apr 2025 07:22:21 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Mon, 07 Apr 2025 07:22:21 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/%E5%AE%89%E8%A3%85brew%E5%B7%A5%E5%85%B7/</guid>
       <description>背景 不管是windows还是linux，都有一些工具，帮助你安装一些软件，节省时间。brew就是其中一个工具，可以安装一些软件，比如pyth</description>
     </item>
     <item>
       <title>将VSCode打造成专属IDE</title>
       <link>https://yutao.org/programming/%E5%B0%86vscode%E6%89%93%E9%80%A0%E6%88%90%E4%B8%93%E5%B1%9Eide/</link>
-      <pubDate>Mon, 31 Mar 2025 21:39:17 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Mon, 31 Mar 2025 21:39:17 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/%E5%B0%86vscode%E6%89%93%E9%80%A0%E6%88%90%E4%B8%93%E5%B1%9Eide/</guid>
       <description>背景 不得不说，Visual Studio Code是一个非常优秀的编辑器，虽然不完美，但个人整体对比下来，感觉是很适合我。不管前端、后端、脚本以及各种语言</description>
     </item>
     <item>
       <title>Java后端-基础-设计模式-22</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-22/</link>
-      <pubDate>Tue, 25 Mar 2025 23:44:34 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Tue, 25 Mar 2025 23:44:34 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-22/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列第二十二篇，正式进入Java后端世界，本篇文章主要聊Java基础。若想详细学习请点击首篇博文，</description>
     </item>
     <item>
       <title>Java后端-基础-Java虚拟机-21</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-java%E8%99%9A%E6%8B%9F%E6%9C%BA-21/</link>
-      <pubDate>Mon, 24 Mar 2025 22:38:42 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Mon, 24 Mar 2025 22:38:42 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-java%E8%99%9A%E6%8B%9F%E6%9C%BA-21/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列第二十一篇，正式进入Java后端世界，本篇文章主要聊Java基础。若想详细学习请点击首篇博文，</description>
     </item>
     <item>
       <title>Java后端-基础-模块化编程-20</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-20/</link>
-      <pubDate>Mon, 24 Mar 2025 21:13:40 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Mon, 24 Mar 2025 21:13:40 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-20/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列第二十篇，正式进入Java后端世界，本篇文章主要聊Java基础。若想详细学习请点击首篇博文，我</description>
     </item>
     <item>
       <title>Java后端-基础-发邮件-19</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%8F%91%E9%82%AE%E4%BB%B6-19/</link>
-      <pubDate>Sat, 08 Mar 2025 23:57:26 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Sat, 08 Mar 2025 23:57:26 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%8F%91%E9%82%AE%E4%BB%B6-19/</guid>
       <description></description>
     </item>
     <item>
       <title>Java后端-基础-网络编程-18</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-18/</link>
-      <pubDate>Thu, 06 Mar 2025 10:16:43 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Thu, 06 Mar 2025 10:16:43 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-18/</guid>
       <description></description>
     </item>
     <item>
       <title>Java后端-基础-注解-17</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%B3%A8%E8%A7%A3-17/</link>
-      <pubDate>Wed, 05 Mar 2025 21:29:42 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Wed, 05 Mar 2025 21:29:42 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%B3%A8%E8%A7%A3-17/</guid>
       <description></description>
     </item>
     <item>
       <title>Java后端-基础-反射序列化-16</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%8F%8D%E5%B0%84%E5%BA%8F%E5%88%97%E5%8C%96-16/</link>
-      <pubDate>Wed, 05 Mar 2025 19:16:30 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Wed, 05 Mar 2025 19:16:30 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%8F%8D%E5%B0%84%E5%BA%8F%E5%88%97%E5%8C%96-16/</guid>
       <description></description>
     </item>
     <item>
       <title>Java后端-基础-泛型-15</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%B3%9B%E5%9E%8B-15/</link>
-      <pubDate>Wed, 05 Mar 2025 00:33:15 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Wed, 05 Mar 2025 00:33:15 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%B3%9B%E5%9E%8B-15/</guid>
       <description></description>
     </item>
     <item>
       <title>Java后端-基础-常用工具类-14</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB-14/</link>
-      <pubDate>Tue, 04 Mar 2025 22:40:59 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Tue, 04 Mar 2025 22:40:59 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E7%B1%BB-14/</guid>
       <description></description>
     </item>
     <item>
       <title>Java后端-基础-Lambda表达式-13</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F-13/</link>
-      <pubDate>Tue, 04 Mar 2025 18:29:41 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Tue, 04 Mar 2025 18:29:41 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F-13/</guid>
       <description></description>
     </item>
     <item>
       <title>Java后端-基础-异常处理-12</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86-12/</link>
-      <pubDate>Tue, 04 Mar 2025 18:18:47 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Tue, 04 Mar 2025 18:18:47 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86-12/</guid>
       <description></description>
     </item>
     <item>
       <title>Java后端-基础-JUC-11</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-juc-11/</link>
-      <pubDate>Sat, 01 Mar 2025 19:22:41 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Sat, 01 Mar 2025 19:22:41 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-juc-11/</guid>
       <description></description>
     </item>
     <item>
       <title>Java后端-基础-JUC-10</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-juc-10/</link>
-      <pubDate>Sat, 01 Mar 2025 00:05:34 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Sat, 01 Mar 2025 00:05:34 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-juc-10/</guid>
       <description></description>
     </item>
     <item>
       <title>Java后端-基础-IO-9</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-io-9/</link>
-      <pubDate>Fri, 28 Feb 2025 11:18:24 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Fri, 28 Feb 2025 11:18:24 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-io-9/</guid>
       <description></description>
     </item>
     <item>
       <title>Java后端-基础-IO-8</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-io-8/</link>
-      <pubDate>Thu, 27 Feb 2025 19:02:01 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Thu, 27 Feb 2025 19:02:01 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-io-8/</guid>
       <description></description>
     </item>
     <item>
       <title>Java后端-基础-常用基础类-7</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB-7/</link>
-      <pubDate>Wed, 26 Feb 2025 22:13:05 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Wed, 26 Feb 2025 22:13:05 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB-7/</guid>
       <description></description>
     </item>
     <item>
       <title>Java后端-基础-修饰符-6</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E4%BF%AE%E9%A5%B0%E7%AC%A6-6/</link>
-      <pubDate>Wed, 26 Feb 2025 22:01:13 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Wed, 26 Feb 2025 22:01:13 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E4%BF%AE%E9%A5%B0%E7%AC%A6-6/</guid>
       <description></description>
     </item>
     <item>
       <title>Java后端-基础-数据结构-5</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-5/</link>
-      <pubDate>Wed, 26 Feb 2025 11:05:01 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Wed, 26 Feb 2025 11:05:01 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-5/</guid>
       <description></description>
     </item>

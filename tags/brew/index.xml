@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Brew on 东北小哥</title>
+    <title>Brew on 会写代码的小郎中</title>
     <link>https://yutao.org/tags/brew/</link>
-    <description>Recent content in Brew on 东北小哥</description>
+    <description>Recent content in Brew on 会写代码的小郎中</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <managingEditor>yutao.z@qq.com (东北小哥)</managingEditor>
-    <webMaster>yutao.z@qq.com (东北小哥)</webMaster>
+    <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
+    <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
     <lastBuildDate>Mon, 07 Apr 2025 07:22:21 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/tags/brew/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>安装brew工具</title>
       <link>https://yutao.org/programming/%E5%AE%89%E8%A3%85brew%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Mon, 07 Apr 2025 07:22:21 +0800</pubDate><author>yutao.z@qq.com (东北小哥)</author>
+      <pubDate>Mon, 07 Apr 2025 07:22:21 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/%E5%AE%89%E8%A3%85brew%E5%B7%A5%E5%85%B7/</guid>
       <description>背景 不管是windows还是linux，都有一些工具，帮助你安装一些软件，节省时间。brew就是其中一个工具，可以安装一些软件，比如pyth</description>
     </item>
