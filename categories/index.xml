@@ -8,8 +8,15 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Mon, 07 Apr 2025 07:22:21 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 14 Apr 2025 22:09:54 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>方剂</title>
+      <link>https://yutao.org/categories/%E6%96%B9%E5%89%82/</link>
+      <pubDate>Mon, 14 Apr 2025 22:09:54 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/categories/%E6%96%B9%E5%89%82/</guid>
+      <description></description>
+    </item>
     <item>
       <title>编程工具</title>
       <link>https://yutao.org/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/</link>
@@ -22,13 +29,6 @@
       <link>https://yutao.org/categories/%E4%B8%AD%E8%8D%AF/</link>
       <pubDate>Sat, 05 Apr 2025 09:34:16 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/categories/%E4%B8%AD%E8%8D%AF/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>方剂</title>
-      <link>https://yutao.org/categories/%E6%96%B9%E5%89%82/</link>
-      <pubDate>Fri, 04 Apr 2025 11:39:02 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/categories/%E6%96%B9%E5%89%82/</guid>
       <description></description>
     </item>
     <item>
