@@ -6409,7 +6409,7 @@ AnnotationAwareAspectJAutoProxyCreator
 &lt;li&gt;&lt;a href=&#34;https://seata.io/&#34;&gt;&lt;strong&gt;Seata&lt;/strong&gt;&lt;/a&gt;：支持 AT/TCC/SAGA/XA 模式的分布式事务协调器，适合微服务架构&lt;/li&gt;
 &lt;li&gt;TCC 模式：将 Try/Confirm/Cancel 拆分成显式三步，业务侵入较强，但性能优秀&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;结语&#34;&gt;结语&lt;/h2&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
 &lt;p&gt;Spring框架必知必会，继续努力。&lt;/p&gt;
 </description>
       
