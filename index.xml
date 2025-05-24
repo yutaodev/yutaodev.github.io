@@ -6253,7 +6253,7 @@ AnnotationAwareAspectJAutoProxyCreator
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;36-分布式事务与多数据源支持&#34;&gt;3.6 分布式事务与多数据源支持&lt;/h4&gt;
+&lt;/div&gt;&lt;h4 id=&#34;37-分布式事务与多数据源支持&#34;&gt;3.7 分布式事务与多数据源支持&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;概述&lt;/strong&gt;：Spring 支持多数据源和 JTA 分布式事务（如 Atomikos、Narayana）。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;配置多个 DataSource Bean（每个对应不同数据库）&lt;/li&gt;
