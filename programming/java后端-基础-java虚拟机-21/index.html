@@ -67,6 +67,8 @@
 
 <link rel="stylesheet" href="https://yutao.org/css/custom.css">
 
+<link rel="stylesheet" href="https://yutao.org/css/copy-to-clipboard.css">
+
 
 <meta property="og:url" content="https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-java%E8%99%9A%E6%8B%9F%E6%9C%BA-21/">
   <meta property="og:site_name" content="会写代码的小郎中">
@@ -83,7 +85,7 @@
   <meta itemprop="description" content="Java后端从小白到大神修仙">
   <meta itemprop="datePublished" content="2025-03-24T22:38:42+08:00">
   <meta itemprop="dateModified" content="2025-03-24T22:38:42+08:00">
-  <meta itemprop="wordCount" content="13736">
+  <meta itemprop="wordCount" content="13757">
   <meta itemprop="keywords" content="java后端">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Java后端-基础-Java虚拟机-21">
@@ -117,6 +119,11 @@
       </script>
     
   
+
+
+
+
+
 
 
 
@@ -439,7 +446,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 13736 字 -
+        约 13757 字 -
         预计阅读 28 分钟
       </span>
 
@@ -1014,7 +1021,7 @@
 </table>
 <h2 id="2-jvm-内存区域与垃圾回收">2. JVM 内存区域与垃圾回收</h2>
 <h3 id="1-运行时数据区">1. 运行时数据区</h3>
-<h4 id="1-程序计数器pc-register">1. 程序计数器（PC Register）</h4>
+<h4 id="1-程序计数器">1. 程序计数器</h4>
 <ul>
 <li><strong>作用</strong>：存储<strong>当前线程</strong>执行的字节码指令地址（即下一条将要执行的指令）。</li>
 <li><strong>特点</strong>：
@@ -1054,7 +1061,7 @@
 <ul>
 <li><strong>PC 计数器</strong>会随着方法指令流动而变化，每行代码执行时，PC 计数器都会记录当前执行的位置。</li>
 </ul>
-<h4 id="2-java-虚拟机栈stack与栈帧结构">2. Java 虚拟机栈（Stack）与栈帧结构</h4>
+<h4 id="2-java-虚拟机栈与栈帧结构">2. Java 虚拟机栈与栈帧结构</h4>
 <ul>
 <li><strong>作用</strong>：存储<strong>方法调用</strong>时的局部变量、操作数栈、动态链接、方法返回地址等。</li>
 <li><strong>特点</strong>：
@@ -1097,7 +1104,7 @@
 <ul>
 <li>每次方法调用，都会创建新的<strong>栈帧</strong>，直到栈空间耗尽，抛出 <code>StackOverflowError</code>。</li>
 </ul>
-<h4 id="3-本地方法栈native-method-stack">3. 本地方法栈（Native Method Stack）</h4>
+<h4 id="3-本地方法栈">3. 本地方法栈</h4>
 <ul>
 <li><strong>作用</strong>：用于执行 <strong>Native 方法</strong>（C 语言实现的 JNI 方法）。</li>
 <li><strong>特点</strong>：
@@ -1141,15 +1148,15 @@
 <ul>
 <li><code>nativeMethod()</code> 运行在 <strong>Native 方法栈</strong>，而不是 Java 虚拟机栈。</li>
 </ul>
-<h4 id="4-堆heap的分代模型">4. 堆（Heap）的分代模型</h4>
+<h4 id="4-堆的分代模型">4. 堆的分代模型</h4>
 <h5 id="1概述"><strong>（1）概述</strong></h5>
 <ul>
-<li><strong>作用</strong>：存储<strong>所有对象</strong>（包括实例变量和数组）。</li>
+<li><strong>作用</strong>：存储所有对象实例，所有通过 new 关键字创建的对象实例（如 new Node(1)、new Teacher()），包括对象的实例变量（字段）。以及数组，例如 int[] arr = new int[10]中，new int[10] 是数组对象，存储在堆内存中，包含 10 个 int 类型的连续内存空间。</li>
 <li><strong>特点</strong>：
 <ul>
-<li><strong>线程共享</strong>，整个 JVM 只有<strong>一个堆</strong>。</li>
-<li>**垃圾回收（GC）**主要发生在堆上。</li>
-<li>采用<strong>分代管理</strong>，提高垃圾回收效率。</li>
+<li>线程共享，整个 JVM 只有一个堆。</li>
+<li>垃圾回收（GC）主要发生在堆上。</li>
+<li>采用分代管理，提高垃圾回收效率。</li>
 </ul>
 </li>
 </ul>
@@ -1202,13 +1209,13 @@
 <li>大量创建对象，会触发<strong>年轻代 GC</strong>（Minor GC）。</li>
 <li>如果对象存活足够久，会晋升到 <strong>老年代</strong>。</li>
 </ul>
-<h4 id="5-方法区method-area与元空间metaspace">5. 方法区（Method Area）与元空间（Metaspace）</h4>
+<h4 id="5-方法区与元空间">5. 方法区与元空间</h4>
 <ul>
-<li><strong>作用</strong>：存储 类的元数据（类名、修饰符、父类、接口、字段、方法等）、类的字节码、方法字节码、静态变量、运行时常量池、JIT编译后的代码、类加载信息。</li>
+<li><strong>作用</strong>：存储类的元数据（类名、修饰符、父类、接口、字段、方法等）、类的字节码、方法字节码、静态变量、运行时常量池、JIT编译后的代码、类加载信息。</li>
 <li><strong>特点</strong>：
 <ul>
 <li>JDK 8 之前：方法区在堆中，称为“永久代（PermGen）”。</li>
-<li>JDK 8 及以后：方法区使用本地内存（Metaspace），称为元空间，不受堆大小限制。</li>
+<li>JDK 8 及以后：逻辑上是堆的一部分，但物理上独立。方法区使用本地内存（Metaspace），称为元空间，不受堆大小限制。</li>
 </ul>
 </li>
 </ul>
@@ -1275,7 +1282,7 @@
 <ul>
 <li>这段代码不断创建新类，最终会导致 <code>OutOfMemoryError: Metaspace</code>。</li>
 </ul>
-<h4 id="6-常量池constant-pool与运行时常量池runtime-constant-pool">6. 常量池（Constant Pool）与运行时常量池（Runtime Constant Pool）</h4>
+<h4 id="6-常量池与运行时常量池">6. 常量池与运行时常量池</h4>
 <table>
 <thead>
 <tr>
@@ -3406,12 +3413,12 @@ Grandparent ClassLoader: null (Bootstrap 是 C++ 实现的)
       <ul>
         <li><a href="#1-运行时数据区">1. 运行时数据区</a>
           <ul>
-            <li><a href="#1-程序计数器pc-register">1. 程序计数器（PC Register）</a></li>
-            <li><a href="#2-java-虚拟机栈stack与栈帧结构">2. Java 虚拟机栈（Stack）与栈帧结构</a></li>
-            <li><a href="#3-本地方法栈native-method-stack">3. 本地方法栈（Native Method Stack）</a></li>
-            <li><a href="#4-堆heap的分代模型">4. 堆（Heap）的分代模型</a></li>
-            <li><a href="#5-方法区method-area与元空间metaspace">5. 方法区（Method Area）与元空间（Metaspace）</a></li>
-            <li><a href="#6-常量池constant-pool与运行时常量池runtime-constant-pool">6. 常量池（Constant Pool）与运行时常量池（Runtime Constant Pool）</a></li>
+            <li><a href="#1-程序计数器">1. 程序计数器</a></li>
+            <li><a href="#2-java-虚拟机栈与栈帧结构">2. Java 虚拟机栈与栈帧结构</a></li>
+            <li><a href="#3-本地方法栈">3. 本地方法栈</a></li>
+            <li><a href="#4-堆的分代模型">4. 堆的分代模型</a></li>
+            <li><a href="#5-方法区与元空间">5. 方法区与元空间</a></li>
+            <li><a href="#6-常量池与运行时常量池">6. 常量池与运行时常量池</a></li>
           </ul>
         </li>
         <li><a href="#2-垃圾回收gc">2. 垃圾回收（GC）</a>
@@ -3528,7 +3535,7 @@ Grandparent ClassLoader: null (Bootstrap 是 C++ 实现的)
 
       <footer id="footer" class="footer">
         <div class="icon-links">
-  
+    
   
     <a href="mailto:yutao.z@qq.com" rel="me noopener" class="iconfont"
       title="email" >
@@ -3602,45 +3609,44 @@ Grandparent ClassLoader: null (Bootstrap 是 C++ 实现的)
 </div>
 
 <div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
-  </span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+    </span>
+    <span class="division">|</span>
+    <span class="theme-info">
+        Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+    </span>
 
-  <span class="copyright-year">
-    &copy;
-    
-      2017 -
-    2025
-    <span class="heart">
-      
-      <i class="iconfont">
-        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+    <span class="copyright-year">
+        &copy;
+        
+        2017 -
+        2025
+        <span class="heart">
+            
+            <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   width="14" height="14">
   <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
    fill="#8a8a8a"></path>
 </svg>
 
-      </i>
-    </span><span class="author">
-        会写代码的小郎中
-        
-      </span></span>
+            </i>
+        </span><span class="author">
+            会写代码的小郎中
+            
+        </span></span>
 
-  
-  
+    
+    
     <span id="busuanzi_container">
-      访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+        访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
     </span>
-  
+    
 
-  
+    
 </div>
-
       </footer>
 
       <div class="button__back-to-top">
@@ -3698,6 +3704,8 @@ Grandparent ClassLoader: null (Bootstrap 是 C++ 实现的)
 
 
 
+
+  <script src="https://yutao.org/js/copy-to-clipboard.js"></script>
 
 
   </body>

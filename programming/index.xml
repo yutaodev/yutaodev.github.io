@@ -8,8 +8,22 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Mon, 07 Apr 2025 07:22:21 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 17 Apr 2025 22:51:50 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java框架-Spring框架-1</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-1/</link>
+      <pubDate>Thu, 17 Apr 2025 22:51:50 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-1/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之Spring框架第一篇。本篇文章主要聊Java框架，那么必然从Spr</description>
+    </item>
+    <item>
+      <title>Java后端-基础-常见数据结构与算法-23</title>
+      <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-23/</link>
+      <pubDate>Thu, 17 Apr 2025 22:16:01 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-23/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列第二十三篇，正式进入Java后端世界，本篇文章主要聊Java基础。若想详细学习请点击首篇博文，</description>
+    </item>
     <item>
       <title>安装brew工具</title>
       <link>https://yutao.org/programming/%E5%AE%89%E8%A3%85brew%E5%B7%A5%E5%85%B7/</link>
@@ -134,20 +148,6 @@
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB-7/</link>
       <pubDate>Wed, 26 Feb 2025 22:13:05 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB-7/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Java后端-基础-修饰符-6</title>
-      <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E4%BF%AE%E9%A5%B0%E7%AC%A6-6/</link>
-      <pubDate>Wed, 26 Feb 2025 22:01:13 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E4%BF%AE%E9%A5%B0%E7%AC%A6-6/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Java后端-基础-数据结构-5</title>
-      <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-5/</link>
-      <pubDate>Wed, 26 Feb 2025 11:05:01 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-5/</guid>
       <description></description>
     </item>
   </channel>

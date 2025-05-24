@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>十二地支 on 会写代码的小郎中</title>
+    <link>http://localhost:1313/tags/%E5%8D%81%E4%BA%8C%E5%9C%B0%E6%94%AF/</link>
+    <description>Recent content in 十二地支 on 会写代码的小郎中</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
+    <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
+    <lastBuildDate>Mon, 05 May 2025 19:01:17 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%8D%81%E4%BA%8C%E5%9C%B0%E6%94%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>中国十二地支探秘：时空密码与生命哲学</title>
+      <link>http://localhost:1313/philosophy/%E5%8D%81%E4%BA%8C%E5%9C%B0%E6%94%AF/</link>
+      <pubDate>Mon, 05 May 2025 19:01:17 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>http://localhost:1313/philosophy/%E5%8D%81%E4%BA%8C%E5%9C%B0%E6%94%AF/</guid>
+      <description>引言 在璀璨的中华文明长河中，十二地支如同时空坐标系的精密齿轮，将天文历法、生命哲学与人文智慧完美融合。这套传承三千余年的符号系统，至今仍在农</description>
+    </item>
+  </channel>
+</rss>
