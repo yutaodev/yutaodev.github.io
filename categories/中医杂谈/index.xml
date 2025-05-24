@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>哲学 on 会写代码的小郎中</title>
-    <link>https://yutao.org/philosophy/</link>
-    <description>Recent content in 哲学 on 会写代码的小郎中</description>
+    <title>中医杂谈 on 会写代码的小郎中</title>
+    <link>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E6%9D%82%E8%B0%88/</link>
+    <description>Recent content in 中医杂谈 on 会写代码的小郎中</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
     <lastBuildDate>Thu, 15 May 2025 17:17:57 +0800</lastBuildDate>
-    <atom:link href="https://yutao.org/philosophy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>中药性味分类与规律总结</title>
       <link>https://yutao.org/philosophy/%E4%B8%AD%E8%8D%AF%E6%80%A7%E5%91%B3%E5%88%86%E7%B1%BB%E4%B8%8E%E8%A7%84%E5%BE%8B%E6%80%BB%E7%BB%93/</link>
@@ -58,34 +58,6 @@
       <pubDate>Mon, 05 May 2025 19:01:17 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/philosophy/%E4%B8%AD%E5%9B%BD%E5%8D%81%E4%BA%8C%E5%9C%B0%E6%94%AF/</guid>
       <description>引言 在璀璨的中华文明长河中，十二地支如同时空坐标系的精密齿轮，将天文历法、生命哲学与人文智慧完美融合。这套传承三千余年的符号系统，至今仍在农</description>
-    </item>
-    <item>
-      <title>千字文：中国传统蒙学经典的千年智慧</title>
-      <link>https://yutao.org/philosophy/%E5%8D%83%E5%AD%97%E6%96%87/</link>
-      <pubDate>Sat, 29 Mar 2025 08:55:53 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/philosophy/%E5%8D%83%E5%AD%97%E6%96%87/</guid>
-      <description>一、文化定位：传统蒙学三大支柱之一 1.1 中国古代教育体系中的特殊地位 蒙学经典 成书年代 核心特点 历史地位 《三字经》 宋代 三字韵文，道德启蒙 &amp;ldquo</description>
-    </item>
-    <item>
-      <title>解构人格魅力：表达</title>
-      <link>https://yutao.org/philosophy/%E8%A1%A8%E8%BE%BE/</link>
-      <pubDate>Fri, 28 Mar 2025 22:40:56 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/philosophy/%E8%A1%A8%E8%BE%BE/</guid>
-      <description>引言：当&amp;quot;表达&amp;quot;成为照见灵魂的镜子 &amp;ldquo;人格魅力的本质是表达&amp;rdquo;——短视频刷到一位清华学子之口的论断，</description>
-    </item>
-    <item>
-      <title>价值观自信</title>
-      <link>https://yutao.org/philosophy/%E4%BB%B7%E5%80%BC%E8%A7%82%E8%87%AA%E4%BF%A1/</link>
-      <pubDate>Sun, 23 Mar 2025 16:25:50 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/philosophy/%E4%BB%B7%E5%80%BC%E8%A7%82%E8%87%AA%E4%BF%A1/</guid>
-      <description>我看短视频时，刷到曹德旺说企业家要有政治自信。这不禁让我想到，做人也要有价值观自信，只要价值观是正确的，就不应怀疑，而要坚定信念，勇往直前。</description>
-    </item>
-    <item>
-      <title>生命的意义：一个哲学的起点</title>
-      <link>https://yutao.org/philosophy/%E7%94%9F%E5%91%BD%E7%9A%84%E6%84%8F%E4%B9%89/</link>
-      <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/philosophy/%E7%94%9F%E5%91%BD%E7%9A%84%E6%84%8F%E4%B9%89/</guid>
-      <description>引言 你是否曾深夜独坐，凝视星空，思考这样一个问题：我的生命究竟有何意义？这是一个自人类文明诞生以来便萦绕心头的哲学命题。从古希腊的苏格拉底，</description>
     </item>
   </channel>
 </rss>
