@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gradle on 会写代码的小郎中</title>
+    <link>https://yutao.org/tags/gradle/</link>
+    <description>Recent content in Gradle on 会写代码的小郎中</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
+    <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
+    <lastBuildDate>Thu, 17 Apr 2025 23:20:06 +0800</lastBuildDate>
+    <atom:link href="https://yutao.org/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gradle解析让你从新手到高手</title>
+      <link>https://yutao.org/programming/gradle%E8%A7%A3%E6%9E%90%E8%AE%A9%E4%BD%A0%E4%BB%8E%E6%96%B0%E6%89%8B%E5%88%B0%E9%AB%98%E6%89%8B/</link>
+      <pubDate>Thu, 17 Apr 2025 23:20:06 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/gradle%E8%A7%A3%E6%9E%90%E8%AE%A9%E4%BD%A0%E4%BB%8E%E6%96%B0%E6%89%8B%E5%88%B0%E9%AB%98%E6%89%8B/</guid>
+      <description>Gradle 解析：让你从新手到高手 在 Java（以及其他 JVM 语言）的开发世界中，构建工具扮演着至关重要的角色。它们负责自动化编译、测试、打包、发布等一系列</description>
+    </item>
+  </channel>
+</rss>

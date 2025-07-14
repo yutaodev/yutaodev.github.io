@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>中医世界观 on 会写代码的小郎中</title>
+    <link>https://yutao.org/tags/%E4%B8%AD%E5%8C%BB%E4%B8%96%E7%95%8C%E8%A7%82/</link>
+    <description>Recent content in 中医世界观 on 会写代码的小郎中</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
+    <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
+    <lastBuildDate>Fri, 11 Jul 2025 09:23:41 +0800</lastBuildDate>
+    <atom:link href="https://yutao.org/tags/%E4%B8%AD%E5%8C%BB%E4%B8%96%E7%95%8C%E8%A7%82/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>八纲辨证和病位辨证的区别</title>
+      <link>https://yutao.org/philosophy/%E5%85%AB%E7%BA%B2%E8%BE%A8%E8%AF%81%E5%92%8C%E7%97%85%E4%BD%8D%E8%BE%A8%E8%AF%81%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Fri, 11 Jul 2025 09:23:41 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E5%85%AB%E7%BA%B2%E8%BE%A8%E8%AF%81%E5%92%8C%E7%97%85%E4%BD%8D%E8%BE%A8%E8%AF%81%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>本质区别 graph TD A[辨证体系] --&amp;gt; B[八纲辨证：定性] A --&amp;gt; C[病位辨证：定位] B --&amp;gt; B1[疾病性质] B --&amp;gt; B2[整体状态] B --&amp;gt; B3[治疗方向] C --&amp;gt; C1</description>
+    </item>
+    <item>
+      <title>如何形成自己的中医世界观</title>
+      <link>https://yutao.org/philosophy/%E5%A6%82%E4%BD%95%E5%BD%A2%E6%88%90%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AD%E5%8C%BB%E4%B8%96%E7%95%8C%E8%A7%82/</link>
+      <pubDate>Thu, 10 Jul 2025 07:07:34 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E5%A6%82%E4%BD%95%E5%BD%A2%E6%88%90%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AD%E5%8C%BB%E4%B8%96%E7%95%8C%E8%A7%82/</guid>
+      <description>为何需要中医世界观 学习中医最关键的突破点，在于建立自己的认知坐标体系。面对浩瀚的经典著作和纷繁的临床经验，初学者常陷入&amp;quot;盲人摸象&amp;</description>
+    </item>
+    <item>
+      <title>中医审美</title>
+      <link>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E5%AE%A1%E7%BE%8E/</link>
+      <pubDate>Fri, 04 Jul 2025 05:16:19 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E5%AE%A1%E7%BE%8E/</guid>
+      <description>政策背景与职业发展 最近在网上看到一段视频，评论中医审美的，我感觉说的很好，整理了一下，分享给大家。 国家政策正引导医疗体系向“简便效廉”（更简</description>
+    </item>
+    <item>
+      <title>中医六经传变</title>
+      <link>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E5%85%AD%E7%BB%8F%E4%BC%A0%E5%8F%98/</link>
+      <pubDate>Sun, 15 Jun 2025 07:24:20 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E5%85%AD%E7%BB%8F%E4%BC%A0%E5%8F%98/</guid>
+      <description>六经传变全景图 flowchart LR 太阳 --&amp;gt; 阳明 太阳 --&amp;gt; 少阳 阳明 --&amp;gt; 少阳 少阳 --&amp;gt; 太阴 太阴 --&amp;gt; 少阴 少阴 --&amp;gt; 厥阴 style 太阳 fill:#6f6,stroke:#333 style 阳明 fill:#ff6,stroke:#333 style 少阳 fill:#6ff,stroke:#333 style 太阴 fill:#f9f,stroke:#333 style 少阴 fill:#f96,stroke:#333 style 厥阴 fill:#f00,stroke:#333,color:white 三阳传变的核心</description>
+    </item>
+    <item>
+      <title>中药性味分类与规律总结</title>
+      <link>https://yutao.org/philosophy/%E4%B8%AD%E8%8D%AF%E6%80%A7%E5%91%B3%E5%88%86%E7%B1%BB%E4%B8%8E%E8%A7%84%E5%BE%8B%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Thu, 15 May 2025 17:17:57 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E4%B8%AD%E8%8D%AF%E6%80%A7%E5%91%B3%E5%88%86%E7%B1%BB%E4%B8%8E%E8%A7%84%E5%BE%8B%E6%80%BB%E7%BB%93/</guid>
+      <description>一、中药的性味分类 四气（药性）：寒、热、温、凉 五味（药味）：辛、甘、酸、苦、咸（传统核心五味） 特殊补充： 淡味（附于甘味） 涩味（附于酸味） 因此</description>
+    </item>
+    <item>
+      <title>中医功用与主治的区别</title>
+      <link>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E5%8A%9F%E7%94%A8%E4%B8%8E%E4%B8%BB%E6%B2%BB%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Wed, 07 May 2025 22:29:55 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E5%8A%9F%E7%94%A8%E4%B8%8E%E4%B8%BB%E6%B2%BB%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>一、核心概念解析 1.1 术语定义对照 术语 定义 侧重维度 表述形式 功用 药物或方剂的作用机制及功效 作用原理 动词短语（如活血化瘀） 主治 药物或方剂的具体适应症</description>
+    </item>
+    <item>
+      <title>中医证与症的区别</title>
+      <link>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%AF%81%E4%B8%8E%E8%AF%81%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Wed, 07 May 2025 09:07:16 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%AF%81%E4%B8%8E%E8%AF%81%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>引言：破解中医核心密码 在中医诊疗体系中，&amp;ldquo;证&amp;quot;与&amp;quot;症&amp;quot;犹如DNA双螺旋，共同构建起辨证论治的逻辑框</description>
+    </item>
+    <item>
+      <title>中医半表半里</title>
+      <link>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E5%8D%8A%E8%A1%A8%E5%8D%8A%E9%87%8C/</link>
+      <pubDate>Tue, 06 May 2025 10:12:42 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E5%8D%8A%E8%A1%A8%E5%8D%8A%E9%87%8C/</guid>
+      <description>在中医理论中，“半表半里”是一个明确的病位概念，指病邪既不完全在体表（太阳经、卫分），也未深入体内脏腑（阳明经、里证），而是处于表里之间的特</description>
+    </item>
+    <item>
+      <title>中医五运六气</title>
+      <link>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E4%BA%94%E8%BF%90%E5%85%AD%E6%B0%94/</link>
+      <pubDate>Mon, 05 May 2025 19:39:32 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E4%BA%94%E8%BF%90%E5%85%AD%E6%B0%94/</guid>
+      <description>引言：藏在黄历里的生命密码 翻开泛黄的《黄帝内经》，&amp;ldquo;五运六气&amp;quot;四个字跃然纸上。这套融合天文、气候、物候与病候的古老系统</description>
+    </item>
+    <item>
+      <title>中国十天干</title>
+      <link>https://yutao.org/philosophy/%E4%B8%AD%E5%9B%BD%E5%8D%81%E5%A4%A9%E5%B9%B2/</link>
+      <pubDate>Mon, 05 May 2025 19:29:03 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E4%B8%AD%E5%9B%BD%E5%8D%81%E5%A4%A9%E5%B9%B2/</guid>
+      <description>引言：刻在甲骨上的永恒轮回 当殷商贞人在龟甲兽骨上刻下&amp;quot;甲、乙、丙、丁…&amp;ldquo;的神秘符号时，他们或许未曾料到，这套源自星象观</description>
+    </item>
+    <item>
+      <title>中国十二地支</title>
+      <link>https://yutao.org/philosophy/%E4%B8%AD%E5%9B%BD%E5%8D%81%E4%BA%8C%E5%9C%B0%E6%94%AF/</link>
+      <pubDate>Mon, 05 May 2025 19:01:17 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E4%B8%AD%E5%9B%BD%E5%8D%81%E4%BA%8C%E5%9C%B0%E6%94%AF/</guid>
+      <description>引言 在璀璨的中华文明长河中，十二地支如同时空坐标系的精密齿轮，将天文历法、生命哲学与人文智慧完美融合。这套传承三千余年的符号系统，至今仍在农</description>
+    </item>
+  </channel>
+</rss>

@@ -3,48 +3,244 @@
   
   <url>
     <loc>https://yutao.org/categories/</loc>
-    <lastmod>2025-05-15T17:17:57+08:00</lastmod>
+    <lastmod>2025-07-11T23:12:25+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/tags/java%E6%A1%86%E6%9E%B6/</loc>
+    <lastmod>2025-07-11T23:12:25+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/categories/java%E6%A1%86%E6%9E%B6/</loc>
+    <lastmod>2025-07-11T23:12:25+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-6/</loc>
+    <lastmod>2025-07-11T23:12:25+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/tags/</loc>
-    <lastmod>2025-05-15T17:17:57+08:00</lastmod>
+    <lastmod>2025-07-11T23:12:25+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/programming/</loc>
+    <lastmod>2025-07-11T23:12:25+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/</loc>
-    <lastmod>2025-05-15T17:17:57+08:00</lastmod>
+    <lastmod>2025-07-11T23:12:25+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/%E5%85%AB%E7%BA%B2%E8%BE%A8%E8%AF%81%E5%92%8C%E7%97%85%E4%BD%8D%E8%BE%A8%E8%AF%81%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
+    <lastmod>2025-07-11T09:23:41+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/philosophy/</loc>
-    <lastmod>2025-05-15T17:17:57+08:00</lastmod>
+    <lastmod>2025-07-11T09:23:41+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/tags/%E4%B8%AD%E5%8C%BB%E4%B8%96%E7%95%8C%E8%A7%82/</loc>
+    <lastmod>2025-07-11T09:23:41+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E4%B8%96%E7%95%8C%E8%A7%82/</loc>
+    <lastmod>2025-07-11T09:23:41+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/%E5%A6%82%E4%BD%95%E5%BD%A2%E6%88%90%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AD%E5%8C%BB%E4%B8%96%E7%95%8C%E8%A7%82/</loc>
+    <lastmod>2025-07-10T07:07:34+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/tags/%E4%BA%BA%E7%94%9F%E6%99%BA%E6%85%A7/</loc>
+    <lastmod>2025-07-09T07:50:45+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/categories/%E5%93%B2%E5%AD%A6/</loc>
+    <lastmod>2025-07-09T07:50:45+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/%E5%A4%A9%E8%A6%81%E6%B8%A1%E4%BD%A0/</loc>
+    <lastmod>2025-07-09T07:50:45+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-5/</loc>
+    <lastmod>2025-07-07T23:11:08+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-4/</loc>
+    <lastmod>2025-07-05T21:53:18+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-3/</loc>
+    <lastmod>2025-07-04T21:51:54+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E5%AE%A1%E7%BE%8E/</loc>
+    <lastmod>2025-07-04T05:16:19+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-2/</loc>
+    <lastmod>2025-07-02T09:13:11+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E7%9C%8B%E4%BA%BA%E4%B8%8E%E4%BA%BA%E5%85%B3%E7%B3%BB/</loc>
+    <lastmod>2025-06-30T09:06:42+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E8%B0%88%E6%83%85%E5%8A%AB/</loc>
+    <lastmod>2025-06-25T16:09:14+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-1/</loc>
+    <lastmod>2025-06-20T22:51:50+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E8%B0%88%E4%BA%BA%E7%94%9F%E4%BD%8E%E8%B0%B7/</loc>
+    <lastmod>2025-06-20T08:37:31+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E5%85%AD%E7%BB%8F%E4%BC%A0%E5%8F%98/</loc>
+    <lastmod>2025-06-15T07:24:20+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E8%B0%88%E6%98%9F%E5%BA%A7/</loc>
+    <lastmod>2025-06-09T07:30:38+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E6%88%92%E8%89%B2/</loc>
+    <lastmod>2025-06-01T08:12:44+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/tags/vscode/</loc>
+    <lastmod>2025-05-24T11:32:12+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2025-05-24T11:32:12+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</loc>
+    <lastmod>2025-05-24T11:32:12+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/programming/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8vscode%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2025-05-24T11:32:12+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E5%A4%A7%E5%BD%BB%E5%A4%A7%E6%82%9F/</loc>
+    <lastmod>2025-05-20T08:10:38+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/%E9%81%93%E5%AE%B6%E5%A4%84%E4%B8%96%E5%93%B2%E5%AD%A6/</loc>
+    <lastmod>2025-05-19T08:54:13+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E8%B0%88%E7%94%B7%E4%BA%BA%E5%A5%B3%E4%BA%BA%E5%AE%B6%E5%BA%AD/</loc>
+    <lastmod>2025-05-16T08:44:48+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://yutao.org/philosophy/%E4%B8%AD%E8%8D%AF%E6%80%A7%E5%91%B3%E5%88%86%E7%B1%BB%E4%B8%8E%E8%A7%84%E5%BE%8B%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2025-05-15T17:17:57+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.org/tags/%E4%B8%AD%E5%8C%BB%E6%9D%82%E8%B0%88/</loc>
-    <lastmod>2025-05-15T17:17:57+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E6%9D%82%E8%B0%88/</loc>
     <lastmod>2025-05-15T17:17:57+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -72,13 +268,6 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/tags/%E5%93%B2%E5%AD%A6/</loc>
-    <lastmod>2025-05-05T19:39:32+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E4%BA%94%E8%BF%90%E5%85%AD%E6%B0%94/</loc>
     <lastmod>2025-05-05T19:39:32+08:00</lastmod>
     <changefreq>daily</changefreq>
@@ -100,29 +289,15 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/tags/java%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2025-04-17T22:51:50+08:00</lastmod>
+    <loc>https://yutao.org/tags/gradle/</loc>
+    <lastmod>2025-04-17T23:20:06+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/categories/java%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2025-04-17T22:51:50+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-1/</loc>
-    <lastmod>2025-04-17T22:51:50+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.org/programming/</loc>
-    <lastmod>2025-04-17T22:51:50+08:00</lastmod>
+    <loc>https://yutao.org/programming/gradle%E8%A7%A3%E6%9E%90%E8%AE%A9%E4%BD%A0%E4%BB%8E%E6%96%B0%E6%89%8B%E5%88%B0%E9%AB%98%E6%89%8B/</loc>
+    <lastmod>2025-04-17T23:20:06+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -213,13 +388,6 @@
   
   <url>
     <loc>https://yutao.org/programming/%E5%AE%89%E8%A3%85brew%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2025-04-07T07:22:21+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.org/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2025-04-07T07:22:21+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -317,13 +485,6 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB/</loc>
-    <lastmod>2025-04-03T19:58:07+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://yutao.org/tags/%E4%B8%AD%E5%8C%BB%E8%AF%8A%E6%96%AD/</loc>
     <lastmod>2025-04-02T10:26:13+08:00</lastmod>
     <changefreq>daily</changefreq>
@@ -345,13 +506,6 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/tags/vscode/</loc>
-    <lastmod>2025-03-31T21:39:17+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://yutao.org/programming/%E5%B0%86vscode%E6%89%93%E9%80%A0%E6%88%90%E4%B8%93%E5%B1%9Eide/</loc>
     <lastmod>2025-03-31T21:39:17+08:00</lastmod>
     <changefreq>daily</changefreq>
@@ -366,7 +520,7 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/categories/%E5%93%B2%E5%AD%A6/</loc>
+    <loc>https://yutao.org/tags/%E5%93%B2%E5%AD%A6/</loc>
     <lastmod>2025-03-29T08:55:53+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -912,14 +1066,7 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/tags/baidu/</loc>
-    <lastmod>2024-07-26T16:54:27+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.org/tags/google/</loc>
+    <loc>https://yutao.org/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2024-07-26T16:54:27+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -947,21 +1094,7 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/tags/blog/</loc>
-    <lastmod>2024-07-05T09:23:49+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://yutao.org/tags/hugo/</loc>
-    <lastmod>2024-07-05T09:23:49+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.org/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2024-07-05T09:23:49+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
