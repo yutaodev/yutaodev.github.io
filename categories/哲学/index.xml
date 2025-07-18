@@ -8,8 +8,22 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Wed, 09 Jul 2025 07:50:45 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 19 Jul 2025 06:18:45 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/categories/%E5%93%B2%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在迷茫与痛苦中寻找力量：一名程序员兼中医的读书之道</title>
+      <link>https://yutao.org/philosophy/%E4%B8%80%E5%90%8D%E7%A8%8B%E5%BA%8F%E5%91%98%E5%85%BC%E4%B8%AD%E5%8C%BB%E7%9A%84%E8%AF%BB%E4%B9%A6%E4%B9%8B%E9%81%93/</link>
+      <pubDate>Sat, 19 Jul 2025 06:18:45 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E4%B8%80%E5%90%8D%E7%A8%8B%E5%BA%8F%E5%91%98%E5%85%BC%E4%B8%AD%E5%8C%BB%E7%9A%84%E8%AF%BB%E4%B9%A6%E4%B9%8B%E9%81%93/</guid>
+      <description>导言： 既是程序员，也是中医，这两种身份都要求我踏上终身学习的旅程。写博客，便是我在这条路上刻下的足迹。然而，这条路并非坦途，代码的迷宫、方剂</description>
+    </item>
+    <item>
+      <title>从中医角度看投资</title>
+      <link>https://yutao.org/philosophy/%E4%BB%8E%E4%B8%AD%E5%8C%BB%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%8A%95%E8%B5%84/</link>
+      <pubDate>Tue, 15 Jul 2025 17:16:37 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E4%BB%8E%E4%B8%AD%E5%8C%BB%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%8A%95%E8%B5%84/</guid>
+      <description>一、选股如择友：察其气血，观其神韵 中医原理： 《黄帝内经》云：“望其形色，知其虚实”。选股当如中医望诊，需察三才： 品相（人品如股性） 正气内存：</description>
+    </item>
     <item>
       <title>中医哲学视角：天要渡你</title>
       <link>https://yutao.org/philosophy/%E5%A4%A9%E8%A6%81%E6%B8%A1%E4%BD%A0/</link>
@@ -23,6 +37,13 @@
       <pubDate>Mon, 30 Jun 2025 09:06:42 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E7%9C%8B%E4%BA%BA%E4%B8%8E%E4%BA%BA%E5%85%B3%E7%B3%BB/</guid>
       <description>人际关系医学指南 graph TD A[健康人际关系] --&amp;gt; B[心志调节] A --&amp;gt; C[行为准则] A --&amp;gt; D[能量管理] B --&amp;gt; B1[修心养性] B --&amp;gt; B2[放下执念] B --&amp;gt; B3[</description>
+    </item>
+    <item>
+      <title>从中医角度谈放弃</title>
+      <link>https://yutao.org/philosophy/%E4%BB%8E%E4%B8%AD%E5%8C%BB%E8%A7%92%E5%BA%A6%E8%B0%88%E6%94%BE%E5%BC%83/</link>
+      <pubDate>Fri, 27 Jun 2025 21:47:56 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E4%BB%8E%E4%B8%AD%E5%8C%BB%E8%A7%92%E5%BA%A6%E8%B0%88%E6%94%BE%E5%BC%83/</guid>
+      <description>核心启示： &amp;ldquo;身体是巨大的生命宝库，当你觉得撑不下去时，唤醒内在的精气神，往往能迎来命运的转机&amp;rdquo; 一、中医的&amp;quot;</description>
     </item>
     <item>
       <title>中医哲学解情劫：破执念的觉醒之路</title>
@@ -57,7 +78,7 @@
       <link>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E5%A4%A7%E5%BD%BB%E5%A4%A7%E6%82%9F/</link>
       <pubDate>Tue, 20 May 2025 08:10:38 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E5%A4%A7%E5%BD%BB%E5%A4%A7%E6%82%9F/</guid>
-      <description>先生，人到了什么时候才会大彻大悟？ 嗯，其实这个世界没有任何一句话能让你醍醐灌顶，大彻大悟。 真正能让你如梦初醒，看透人生的，是你自己刻骨铭心的</description>
+      <description>先生，人到了什么时候才会大彻大悟？ 嗯，其实这个世界没有任何一句话能让你醍醐灌顶，大彻大悟。 真正能让你如梦初醒，看透的人生，是你自己刻骨铭心的</description>
     </item>
     <item>
       <title>道家处世哲学</title>

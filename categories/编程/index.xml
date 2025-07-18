@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编程 on 会写代码的小郎中</title>
+    <link>http://localhost:1313/categories/%E7%BC%96%E7%A8%8B/</link>
+    <description>Recent content in 编程 on 会写代码的小郎中</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
+    <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
+    <lastBuildDate>Wed, 16 Jul 2025 11:44:15 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java框架-SpringBoot框架-6</title>
+      <link>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-6/</link>
+      <pubDate>Wed, 16 Jul 2025 11:44:15 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-6/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 SpringBoot 框架第三篇。SpringBoot框架 可以说是微服务的基石，很多复杂</description>
+    </item>
+  </channel>
+</rss>
