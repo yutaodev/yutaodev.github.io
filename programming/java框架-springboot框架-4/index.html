@@ -85,7 +85,7 @@
   <meta itemprop="description" content="Java后端从小白到大神修仙">
   <meta itemprop="datePublished" content="2025-07-16T11:42:25+08:00">
   <meta itemprop="dateModified" content="2025-07-16T11:42:25+08:00">
-  <meta itemprop="wordCount" content="801">
+  <meta itemprop="wordCount" content="974">
   <meta itemprop="keywords" content="java框架">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Java框架-SpringBoot框架-4">
@@ -425,7 +425,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 801 字 -
+        约 974 字 -
         预计阅读 2 分钟
       </span>
 
@@ -453,16 +453,16 @@
             
             <div class="post-content">
                 <h1 id="背景">背景</h1>
-<p>本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 <code>SpringBoot</code> 框架<code>第三篇</code>。<code>SpringBoot框架</code> 可以说是微服务的基石，很多复杂的系统几乎都是通过微服务构造而来，若想详细学习请点击<a href="https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-1/">首篇博文</a>开始，现在开始学习。</p>
+<p>本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 <code>SpringBoot</code> 框架<code>第四篇</code>。<code>SpringBoot框架</code> 可以说是微服务的基石，很多复杂的系统几乎都是通过微服务构造而来，若想详细学习请点击<a href="https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-1/">首篇博文</a>开始，现在开始学习。</p>
 <h2 id="文章概览">文章概览</h2>
 <ol>
-<li>全局异常处理与统一返回格式</li>
-<li>Spring Boot 中使用拦截器与过滤器</li>
-<li>Spring Boot 中的文件上传与下载</li>
-<li>Spring Boot 集成 Spring Security 入门</li>
-<li>Spring Boot 实现 AOP 切面编程</li>
+<li>Spring Boot 整合 Redis 缓存</li>
+<li>Spring Boot 中的定时任务 @Scheduled</li>
+<li>Spring Boot 集成 RabbitMQ 消息队列</li>
+<li>Spring Boot 异步编程 @Async 实现并发处理</li>
+<li>Spring Boot 集成 Nacos 配置中心</li>
 </ol>
-<h2 id="-第-16-篇spring-boot-整合-redis-缓存">⚙️ 第 16 篇：Spring Boot 整合 Redis 缓存</h2>
+<h2 id="1-spring-boot-整合-redis-缓存">1. Spring Boot 整合 Redis 缓存</h2>
 <h3 id="一添加依赖">一、添加依赖</h3>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -510,8 +510,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>value<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>redisTemplate.<span style="color:#4070a0">opsForValue</span>().<span style="color:#4070a0">get</span>(<span style="color:#4070a0">&#34;key&#34;</span>);<span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><hr>
-<h2 id="-第-17-篇spring-boot-中的定时任务-scheduled">⏰ 第 17 篇：Spring Boot 中的定时任务 @Scheduled</h2>
+</div><h2 id="2-spring-boot-中的定时任务-scheduled">2. Spring Boot 中的定时任务 @Scheduled</h2>
 <h3 id="一启用定时任务">一、启用定时任务</h3>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -555,8 +554,7 @@
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#555;font-weight:bold">@Scheduled</span>(cron<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;0 0/1 * * * ?&#34;</span>)<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 每分钟执行</span><span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><hr>
-<h2 id="-第-18-篇spring-boot-集成-rabbitmq-消息队列">📬 第 18 篇：Spring Boot 集成 RabbitMQ 消息队列</h2>
+</div><h2 id="3-spring-boot-集成-rabbitmq-消息队列">3. Spring Boot 集成 RabbitMQ 消息队列</h2>
 <h3 id="一添加依赖-1">一、添加依赖</h3>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -632,8 +630,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><hr>
-<h2 id="-第-19-篇spring-boot-异步编程-async-实现并发处理">🔄 第 19 篇：Spring Boot 异步编程 @Async 实现并发处理</h2>
+</div><h2 id="4-spring-boot-异步编程-async-实现并发处理">4. Spring Boot 异步编程 @Async 实现并发处理</h2>
 <h3 id="一启用异步处理">一、启用异步处理</h3>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -679,8 +676,7 @@
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>asyncService.<span style="color:#4070a0">runTask</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 会异步执行</span><span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><hr>
-<h2 id="-第-20-篇spring-boot-集成-nacos-配置中心">🔧 第 20 篇：Spring Boot 集成 Nacos 配置中心</h2>
+</div><h2 id="5-spring-boot-集成-nacos-配置中心">5. Spring Boot 集成 Nacos 配置中心</h2>
 <h3 id="一引入依赖">一、引入依赖</h3>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -748,9 +744,26 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><hr>
-<p>✅ <strong>接下来预告：</strong>
-第 21~25 篇将进入 Spring Boot 高级部署与微服务集成，例如：Docker 打包、Actuator、Spring Cloud 初探、服务注册与发现、OpenFeign 使用等。</p>
+</div><h2 id="6-综合上述内容练习">6. 综合上述内容练习</h2>
+<p>项目名称：任务调度与通知平台（Task Notification Platform），这是一个模拟企业日常使用的微型系统，主要用于处理“用户创建任务 → 系统缓存 → 异步分析 → 消息通知 → 配置动态更新”的完整业务链条。</p>
+<p>项目架构设计：</p>
+<pre tabindex="0"><code class="language-planttext" data-lang="planttext">task-platform/
+├── src/
+│   ├── main/
+│   │   ├── java/com/example/taskplatform/
+│   │   │   ├── controller/           // 控制层
+│   │   │   ├── service/              // 业务层
+│   │   │   ├── config/               // 配置类（Redis、RabbitMQ、Nacos、Async等）
+│   │   │   ├── entity/               // 实体类
+│   │   │   ├── dto/                  // 数据传输对象
+│   │   │   ├── listener/             // 消息监听器（RabbitMQ）
+│   │   │   ├── schedule/             // 定时任务模块
+│   │   │   └── TaskPlatformApplication.java
+│   ├── resources/
+│   │   ├── application.yml          // 引入 Nacos 配置
+│   │   └── bootstrap.yml            // nacos server 地址
+</code></pre><h2 id="总结">总结</h2>
+<p>SpringBoot 框架是微服务生态的基石，必知必会。</p>
 
             </div>
 
@@ -885,41 +898,43 @@
       <nav id="TableOfContents">
   <ul>
     <li><a href="#文章概览">文章概览</a></li>
-    <li><a href="#-第-16-篇spring-boot-整合-redis-缓存">⚙️ 第 16 篇：Spring Boot 整合 Redis 缓存</a>
+    <li><a href="#1-spring-boot-整合-redis-缓存">1. Spring Boot 整合 Redis 缓存</a>
       <ul>
         <li><a href="#一添加依赖">一、添加依赖</a></li>
         <li><a href="#二配置连接">二、配置连接</a></li>
         <li><a href="#三使用-redistemplate">三、使用 RedisTemplate</a></li>
       </ul>
     </li>
-    <li><a href="#-第-17-篇spring-boot-中的定时任务-scheduled">⏰ 第 17 篇：Spring Boot 中的定时任务 @Scheduled</a>
+    <li><a href="#2-spring-boot-中的定时任务-scheduled">2. Spring Boot 中的定时任务 @Scheduled</a>
       <ul>
         <li><a href="#一启用定时任务">一、启用定时任务</a></li>
         <li><a href="#二编写定时任务">二、编写定时任务</a></li>
         <li><a href="#三配置-cron-表达式">三、配置 cron 表达式</a></li>
       </ul>
     </li>
-    <li><a href="#-第-18-篇spring-boot-集成-rabbitmq-消息队列">📬 第 18 篇：Spring Boot 集成 RabbitMQ 消息队列</a>
+    <li><a href="#3-spring-boot-集成-rabbitmq-消息队列">3. Spring Boot 集成 RabbitMQ 消息队列</a>
       <ul>
         <li><a href="#一添加依赖-1">一、添加依赖</a></li>
         <li><a href="#二配置连接-1">二、配置连接</a></li>
         <li><a href="#三定义生产者消费者">三、定义生产者/消费者</a></li>
       </ul>
     </li>
-    <li><a href="#-第-19-篇spring-boot-异步编程-async-实现并发处理">🔄 第 19 篇：Spring Boot 异步编程 @Async 实现并发处理</a>
+    <li><a href="#4-spring-boot-异步编程-async-实现并发处理">4. Spring Boot 异步编程 @Async 实现并发处理</a>
       <ul>
         <li><a href="#一启用异步处理">一、启用异步处理</a></li>
         <li><a href="#二编写异步方法">二、编写异步方法</a></li>
         <li><a href="#三调用方式">三、调用方式</a></li>
       </ul>
     </li>
-    <li><a href="#-第-20-篇spring-boot-集成-nacos-配置中心">🔧 第 20 篇：Spring Boot 集成 Nacos 配置中心</a>
+    <li><a href="#5-spring-boot-集成-nacos-配置中心">5. Spring Boot 集成 Nacos 配置中心</a>
       <ul>
         <li><a href="#一引入依赖">一、引入依赖</a></li>
         <li><a href="#二配置-bootstrapyml">二、配置 bootstrap.yml</a></li>
         <li><a href="#三配置动态刷新">三、配置动态刷新</a></li>
       </ul>
     </li>
+    <li><a href="#6-综合上述内容练习">6. 综合上述内容练习</a></li>
+    <li><a href="#总结">总结</a></li>
   </ul>
 </nav>
     </div>
