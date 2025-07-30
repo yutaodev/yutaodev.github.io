@@ -8,8 +8,15 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Mon, 21 Jul 2025 08:04:58 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 26 Jul 2025 08:58:49 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/philosophy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>当记忆卡壳时：把“六神无主”变成“线索猎人”的顿悟</title>
+      <link>https://yutao.org/philosophy/%E8%AE%B0%E5%BF%86%E5%8D%A1%E9%A1%BF/</link>
+      <pubDate>Sat, 26 Jul 2025 08:58:49 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E8%AE%B0%E5%BF%86%E5%8D%A1%E9%A1%BF/</guid>
+      <description>今天清晨，在背诵方剂时，一个再普通不过的场景引发了我对学习（乃至做事）本质的深刻思考：当回忆失败，大脑一片空白、六神无主的那一刻，我们究竟该</description>
+    </item>
     <item>
       <title>中医视角看急功近利</title>
       <link>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E7%9C%8B%E6%80%A5%E5%8A%9F%E8%BF%91%E5%88%A9/</link>
@@ -142,13 +149,6 @@
       <pubDate>Wed, 07 May 2025 22:29:55 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E5%8A%9F%E7%94%A8%E4%B8%8E%E4%B8%BB%E6%B2%BB%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
       <description>一、核心概念解析 1.1 术语定义对照 术语 定义 侧重维度 表述形式 功用 药物或方剂的作用机制及功效 作用原理 动词短语（如活血化瘀） 主治 药物或方剂的具体适应症</description>
-    </item>
-    <item>
-      <title>中医证与症的区别</title>
-      <link>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%AF%81%E4%B8%8E%E8%AF%81%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
-      <pubDate>Wed, 07 May 2025 09:07:16 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%AF%81%E4%B8%8E%E8%AF%81%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
-      <description>引言：破解中医核心密码 在中医诊疗体系中，&amp;ldquo;证&amp;quot;与&amp;quot;症&amp;quot;犹如DNA双螺旋，共同构建起辨证论治的逻辑框</description>
     </item>
   </channel>
 </rss>

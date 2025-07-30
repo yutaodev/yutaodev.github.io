@@ -1,5 +1,10 @@
 [
     {
+      "title": "当记忆卡壳时：把“六神无主”变成“线索猎人”的顿悟",
+      "permalink": "https://yutao.org/philosophy/%E8%AE%B0%E5%BF%86%E5%8D%A1%E9%A1%BF/",
+      "summary": "今天清晨，在背诵方剂时，一个再普通不过的场景引发了我对学习（乃至做事）本质的深刻思考：当回忆失败，大脑一片空白、六神无主的那一刻，我们究竟该"
+    },
+    {
       "title": "中医视角看急功近利",
       "permalink": "https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E7%9C%8B%E6%80%A5%E5%8A%9F%E8%BF%91%E5%88%A9/",
       "summary": "急功近利伤肝血，博主悟道中医养生：认真有度，克欲养心 晨起顿悟两则，以中医为镜，照见修行本真 一、过犹不及：当“认真”异化为“急功近利” 中医视角"
@@ -10,9 +15,39 @@
       "summary": "导言： 既是程序员，也是中医，这两种身份都要求我踏上终身学习的旅程。写博客，便是我在这条路上刻下的足迹。然而，这条路并非坦途，代码的迷宫、方剂"
     },
     {
+      "title": "Java框架-SpringBoot框架-6",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-6/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 SpringBoot 框架第四篇。SpringBoot框架 可以说是微服务的基石，很多复杂"
+    },
+    {
+      "title": "Java框架-SpringBoot框架-5",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-5/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 SpringBoot 框架第五篇。SpringBoot框架 可以说是微服务的基石，很多复杂"
+    },
+    {
       "title": "从中医角度看投资",
       "permalink": "https://yutao.org/philosophy/%E4%BB%8E%E4%B8%AD%E5%8C%BB%E8%A7%92%E5%BA%A6%E7%9C%8B%E6%8A%95%E8%B5%84/",
       "summary": "一、选股如择友：察其气血，观其神韵 中医原理： 《黄帝内经》云：“望其形色，知其虚实”。选股当如中医望诊，需察三才： 品相（人品如股性） 正气内存："
+    },
+    {
+      "title": "Java框架-SpringBoot框架-4",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-4/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 SpringBoot 框架第四篇。SpringBoot框架 可以说是微服务的基石，很多复杂"
+    },
+    {
+      "title": "Java框架-SpringBoot框架-3",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-3/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 SpringBoot 框架第三篇。SpringBoot框架 可以说是微服务的基石，很多复杂"
+    },
+    {
+      "title": "Java框架-SpringBoot框架-2",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-2/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 SpringBoot 框架第二篇。SpringBoot框架 可以说是微服务的基石，很多复杂"
+    },
+    {
+      "title": "Java框架-SpringBoot框架-1",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-1/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 SpringBoot 框架第一篇。SpringBoot框架 可以说是微服务的基石，很多复杂"
     },
     {
       "title": "Java框架-Spring框架-6",

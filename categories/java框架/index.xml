@@ -8,8 +8,50 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Fri, 11 Jul 2025 23:12:25 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 17 Jul 2025 11:44:15 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/categories/java%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java框架-SpringBoot框架-6</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-6/</link>
+      <pubDate>Thu, 17 Jul 2025 11:44:15 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-6/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 SpringBoot 框架第四篇。SpringBoot框架 可以说是微服务的基石，很多复杂</description>
+    </item>
+    <item>
+      <title>Java框架-SpringBoot框架-5</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-5/</link>
+      <pubDate>Wed, 16 Jul 2025 11:43:24 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-5/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 SpringBoot 框架第五篇。SpringBoot框架 可以说是微服务的基石，很多复杂</description>
+    </item>
+    <item>
+      <title>Java框架-SpringBoot框架-4</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-4/</link>
+      <pubDate>Tue, 15 Jul 2025 11:42:25 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-4/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 SpringBoot 框架第四篇。SpringBoot框架 可以说是微服务的基石，很多复杂</description>
+    </item>
+    <item>
+      <title>Java框架-SpringBoot框架-3</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-3/</link>
+      <pubDate>Mon, 14 Jul 2025 11:21:01 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-3/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 SpringBoot 框架第三篇。SpringBoot框架 可以说是微服务的基石，很多复杂</description>
+    </item>
+    <item>
+      <title>Java框架-SpringBoot框架-2</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-2/</link>
+      <pubDate>Sun, 13 Jul 2025 22:04:28 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-2/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 SpringBoot 框架第二篇。SpringBoot框架 可以说是微服务的基石，很多复杂</description>
+    </item>
+    <item>
+      <title>Java框架-SpringBoot框架-1</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-1/</link>
+      <pubDate>Sat, 12 Jul 2025 17:38:07 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-1/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 SpringBoot 框架第一篇。SpringBoot框架 可以说是微服务的基石，很多复杂</description>
+    </item>
     <item>
       <title>Java框架-Spring框架-6</title>
       <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-6/</link>
