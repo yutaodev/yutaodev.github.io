@@ -8,14 +8,14 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Wed, 16 Jul 2025 11:44:15 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Jul 2025 07:19:16 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Java框架-SpringBoot框架-6</title>
-      <link>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-6/</link>
-      <pubDate>Wed, 16 Jul 2025 11:44:15 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-6/</guid>
-      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之 SpringBoot 框架第三篇。SpringBoot框架 可以说是微服务的基石，很多复杂</description>
+      <title>学习Token</title>
+      <link>http://localhost:1313/programming/%E5%AD%A6%E4%B9%A0token/</link>
+      <pubDate>Thu, 31 Jul 2025 07:19:16 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>http://localhost:1313/programming/%E5%AD%A6%E4%B9%A0token/</guid>
+      <description>好的，下面是一篇贴近实际开发场景的博文，系统性介绍 Token 的背景、作用、使用时机、再生成时机，并结合生产系统案例说明其机制： 探索 Token 的世界：原理、作</description>
     </item>
   </channel>
 </rss>

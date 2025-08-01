@@ -8,13 +8,34 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Sat, 26 Jul 2025 08:58:49 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 30 Jul 2025 07:22:07 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>人生智慧</title>
       <link>https://yutao.org/tags/%E4%BA%BA%E7%94%9F%E6%99%BA%E6%85%A7/</link>
-      <pubDate>Sat, 26 Jul 2025 08:58:49 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <pubDate>Wed, 30 Jul 2025 07:22:07 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/tags/%E4%BA%BA%E7%94%9F%E6%99%BA%E6%85%A7/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>编程杂谈</title>
+      <link>https://yutao.org/tags/%E7%BC%96%E7%A8%8B%E6%9D%82%E8%B0%88/</link>
+      <pubDate>Sun, 27 Jul 2025 07:19:16 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/tags/%E7%BC%96%E7%A8%8B%E6%9D%82%E8%B0%88/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jenkins</title>
+      <link>https://yutao.org/tags/jenkins/</link>
+      <pubDate>Wed, 23 Jul 2025 20:23:31 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://yutao.org/tags/docker/</link>
+      <pubDate>Tue, 22 Jul 2025 20:22:58 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/tags/docker/</guid>
       <description></description>
     </item>
     <item>
@@ -43,13 +64,6 @@
       <link>https://yutao.org/tags/vscode/</link>
       <pubDate>Sat, 24 May 2025 11:32:12 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/tags/vscode/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>开发环境</title>
-      <link>https://yutao.org/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
-      <pubDate>Sat, 24 May 2025 11:32:12 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
       <description></description>
     </item>
     <item>
@@ -134,20 +148,6 @@
       <link>https://yutao.org/tags/markdown/</link>
       <pubDate>Thu, 01 Aug 2024 20:55:18 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/tags/markdown/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Mermaid</title>
-      <link>https://yutao.org/tags/mermaid/</link>
-      <pubDate>Mon, 29 Jul 2024 16:36:02 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/tags/mermaid/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>画图</title>
-      <link>https://yutao.org/tags/%E7%94%BB%E5%9B%BE/</link>
-      <pubDate>Mon, 29 Jul 2024 16:36:02 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/tags/%E7%94%BB%E5%9B%BE/</guid>
       <description></description>
     </item>
   </channel>

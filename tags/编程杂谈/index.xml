@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编程杂谈 on 会写代码的小郎中</title>
+    <link>https://yutao.org/tags/%E7%BC%96%E7%A8%8B%E6%9D%82%E8%B0%88/</link>
+    <description>Recent content in 编程杂谈 on 会写代码的小郎中</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
+    <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
+    <lastBuildDate>Sun, 27 Jul 2025 07:19:16 +0800</lastBuildDate>
+    <atom:link href="https://yutao.org/tags/%E7%BC%96%E7%A8%8B%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一文搞懂Token</title>
+      <link>https://yutao.org/programming/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82token/</link>
+      <pubDate>Sun, 27 Jul 2025 07:19:16 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82token/</guid>
+      <description>背景 系统学习 Token 的背景、作用、使用时机、再生成时机，并结合生产系统案例说明其机制。 一、什么是 Token？ Token（令牌）是一种身份验证和授权</description>
+    </item>
+    <item>
+      <title>一文搞懂SpringDataJPA与JpaRepository</title>
+      <link>https://yutao.org/programming/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82springdatajpa%E4%B8%8Ejparepository/</link>
+      <pubDate>Fri, 25 Jul 2025 07:07:02 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82springdatajpa%E4%B8%8Ejparepository/</guid>
+      <description>背景 这是个非常实用的视角，掌握 Spring Data JPA、JpaRepository 概念以及方法命名规范。在使用 Spring Boot 构建微服务时，数据持久层的开发是日常任务</description>
+    </item>
+    <item>
+      <title>关于SpringBoot和Nacos配置文件优先级</title>
+      <link>https://yutao.org/programming/%E5%85%B3%E4%BA%8Espringboot%E5%92%8Cnacos%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BC%98%E5%85%88%E7%BA%A7/</link>
+      <pubDate>Thu, 24 Jul 2025 20:24:34 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/%E5%85%B3%E4%BA%8Espringboot%E5%92%8Cnacos%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BC%98%E5%85%88%E7%BA%A7/</guid>
+      <description>背景 本文整理一下微服务配置体系中最常见、也最容易混淆的部分：Spring Boot 配置文件优先级与Nacos 配置加载机制的配合问题。 下面是一个详细的</description>
+    </item>
+  </channel>
+</rss>

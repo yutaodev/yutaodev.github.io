@@ -85,7 +85,7 @@
   <meta itemprop="description" content="maven全面解析快速上手">
   <meta itemprop="datePublished" content="2024-11-23T20:32:52+08:00">
   <meta itemprop="dateModified" content="2024-11-23T20:32:52+08:00">
-  <meta itemprop="wordCount" content="4225">
+  <meta itemprop="wordCount" content="4304">
   <meta itemprop="keywords" content="maven">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Maven解析让你从新手到高手">
@@ -445,7 +445,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 4225 字 -
+        约 4304 字 -
         预计阅读 9 分钟
       </span>
 
@@ -1734,6 +1734,7 @@
 <h3 id="5-maven常用命令">5. Maven常用命令</h3>
 <ul>
 <li>mvn clean：重新构建之前删除target目录及内容，清理旧的编译结果</li>
+<li>mvn clean package -DskipTests：构建项目，跳过单元测试</li>
 <li>mvn compile：将java源码编译成字节码</li>
 <li>mvn test：执行单元测试</li>
 <li>mvn package：打包项目，生成最终文件，如：jar、war</li>
@@ -1744,6 +1745,8 @@
 <li>mvn test - DskipTests：组合命令，跳过测试直接编译打包</li>
 <li>mvn dependency:tree：组合命令，检查项目中使用的依赖关系及其版本</li>
 <li>mvn archetype:generate：组合命令，根据当前项目，生成新的Maven模版，在创建新的项目时候使用自己自定义的模版</li>
+<li>mvn dependency:tree -Dverbose：分析依赖</li>
+<li>mvn spring-boot:run -Dspring.profiles.active=dev：启动不同环境</li>
 </ul>
 <h3 id="6-maven工具执行流程">6. Maven工具执行流程</h3>
 <pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph LR

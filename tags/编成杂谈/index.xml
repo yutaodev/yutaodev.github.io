@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编成杂谈 on 会写代码的小郎中</title>
+    <link>http://localhost:1313/tags/%E7%BC%96%E6%88%90%E6%9D%82%E8%B0%88/</link>
+    <description>Recent content in 编成杂谈 on 会写代码的小郎中</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
+    <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
+    <lastBuildDate>Thu, 31 Jul 2025 07:19:16 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E7%BC%96%E6%88%90%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习Token</title>
+      <link>http://localhost:1313/programming/%E5%AD%A6%E4%B9%A0token/</link>
+      <pubDate>Thu, 31 Jul 2025 07:19:16 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>http://localhost:1313/programming/%E5%AD%A6%E4%B9%A0token/</guid>
+      <description>好的，下面是一篇贴近实际开发场景的博文，系统性介绍 Token 的背景、作用、使用时机、再生成时机，并结合生产系统案例说明其机制： 探索 Token 的世界：原理、作</description>
+    </item>
+  </channel>
+</rss>

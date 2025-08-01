@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on 会写代码的小郎中</title>
+    <link>https://yutao.org/tags/docker/</link>
+    <description>Recent content in Docker on 会写代码的小郎中</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
+    <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
+    <lastBuildDate>Tue, 22 Jul 2025 20:22:58 +0800</lastBuildDate>
+    <atom:link href="https://yutao.org/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安装docker</title>
+      <link>https://yutao.org/programming/%E5%AE%89%E8%A3%85docker/</link>
+      <pubDate>Tue, 22 Jul 2025 20:22:58 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/%E5%AE%89%E8%A3%85docker/</guid>
+      <description>背景 记录如何在本机 macOS（M1芯片）上安装 Docker，并通过 Docker 快速搭建 Redis + RabbitMQ + Nacos 开发环境。 1. 安装 Docker Desktop for Mac（Apple Silicon</description>
+    </item>
+  </channel>
+</rss>

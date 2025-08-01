@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bian&#39;c on 会写代码的小郎中</title>
+    <link>http://localhost:1313/tags/bianc/</link>
+    <description>Recent content in Bian&#39;c on 会写代码的小郎中</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
+    <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
+    <lastBuildDate>Thu, 31 Jul 2025 07:07:02 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/bianc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一文搞懂SpringDataJPA与JpaRepository区别</title>
+      <link>http://localhost:1313/programming/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82springdatajpa%E4%B8%8Ejparepository%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Thu, 31 Jul 2025 07:07:02 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>http://localhost:1313/programming/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82springdatajpa%E4%B8%8Ejparepository%E5%8C%BA%E5%88%AB/</guid>
+      <description>明白了，这是个非常实用的学习方向 👍。下面我为你生成一篇系统性且通俗易懂的博文，介绍 Spring Data JPA、JpaRepository 以及方法命名规范，便</description>
+    </item>
+  </channel>
+</rss>
