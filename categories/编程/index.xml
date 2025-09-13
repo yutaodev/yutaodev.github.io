@@ -8,14 +8,35 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Thu, 31 Jul 2025 07:19:16 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 Aug 2025 10:29:33 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>学习Token</title>
-      <link>http://localhost:1313/programming/%E5%AD%A6%E4%B9%A0token/</link>
-      <pubDate>Thu, 31 Jul 2025 07:19:16 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:1313/programming/%E5%AD%A6%E4%B9%A0token/</guid>
-      <description>好的，下面是一篇贴近实际开发场景的博文，系统性介绍 Token 的背景、作用、使用时机、再生成时机，并结合生产系统案例说明其机制： 探索 Token 的世界：原理、作</description>
+      <title>Java框架 SpringCloud框架 12</title>
+      <link>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-12/</link>
+      <pubDate>Sun, 03 Aug 2025 10:29:33 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-12/</guid>
+      <description>Spring Cloud 架构设计模式与企业实战落地 微服务之间调用的分层与解耦策略（API模块） 服务拆分与聚合：以业务为中心 vs 技术为中心 技术架构演进：从单体到 Serverless +</description>
+    </item>
+    <item>
+      <title>Java框架 SpringCloud框架 11</title>
+      <link>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-11/</link>
+      <pubDate>Sun, 03 Aug 2025 10:29:21 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-11/</guid>
+      <description>多环境 + 多集群部署实战（dev/test/prod） Nacos 命名空间与环境隔离策略设计 多环境配置文件管理方案（DataId 命名规范） Jenkins 中实现多环境</description>
+    </item>
+    <item>
+      <title>Java框架 SpringCloud框架 10</title>
+      <link>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-10/</link>
+      <pubDate>Sun, 03 Aug 2025 10:29:07 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-10/</guid>
+      <description>微服务 DevOps 实战：Jenkins + Docker + docker-compose 多模块微服务项目构建策略（Maven + CI/CD） 编写 Jenkinsfile + 通过 Gitee 自动触发构建 构建 Docker 镜像并推送私有仓库 使用</description>
+    </item>
+    <item>
+      <title>Java框架 SpringCloud框架 9</title>
+      <link>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-9/</link>
+      <pubDate>Sat, 02 Aug 2025 10:28:52 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-9/</guid>
+      <description>消息驱动通信机制：RabbitMQ + Spring Cloud Stream 消息队列通信场景与对比（MQTT, Kafka, RabbitMQ） Spring Cloud Stream 核心概念与 Binder 模型 定义生产者与消费者通道</description>
     </item>
   </channel>
 </rss>

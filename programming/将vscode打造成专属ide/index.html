@@ -85,7 +85,7 @@
   <meta itemprop="description" content="将VSCode打造成专属IDE">
   <meta itemprop="datePublished" content="2025-03-31T21:39:17+08:00">
   <meta itemprop="dateModified" content="2025-03-31T21:39:17+08:00">
-  <meta itemprop="wordCount" content="1005">
+  <meta itemprop="wordCount" content="1022">
   <meta itemprop="keywords" content="vscode">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="将VSCode打造成专属IDE">
@@ -445,7 +445,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 1005 字 -
+        约 1022 字 -
         预计阅读 3 分钟
       </span>
 
@@ -475,7 +475,7 @@
                 <h2 id="背景">背景</h2>
 <p>不得不说，Visual Studio Code是一个非常优秀的编辑器，虽然不完美，但个人整体对比下来，感觉是很适合我。不管前端、后端、脚本以及各种语言，VSCode都可以很好的支持。</p>
 <h3 id="1-修改vscode默认配置">1. 修改VSCode默认配置</h3>
-<h4 id="1-侧边滚动条颜色">1. 侧边滚动条颜色</h4>
+<h4 id="1-侧边滚动条颜色查找高亮颜色">1. 侧边滚动条颜色&amp;查找高亮颜色</h4>
 <p>管理-&gt;设置-&gt;输入workbench color -&gt;Workbench: Color customizations -&gt;点击在 settings,json 中编辑。可以根据个人喜欢修改颜色，我的是金色。从此以后侧边滑块，就不会再也找不到了。</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -484,12 +484,16 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3">3</a>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4">4</a>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-7">7</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>    &#34;workbench.colorCustomizations&#34;: {
 </span></span><span style="display:flex;"><span>        &#34;scrollbarSlider.background&#34;: &#34;#bba76d&#34;,
 </span></span><span style="display:flex;"><span>        &#34;scrollbarSlider.hoverBackground&#34;: &#34;#cfb56a&#34;,
-</span></span><span style="display:flex;"><span>        &#34;scrollbarSlider.activeBackground&#34;: &#34;#fbdd86&#34;
+</span></span><span style="display:flex;"><span>        &#34;scrollbarSlider.activeBackground&#34;: &#34;#fbdd86&#34;,
+</span></span><span style="display:flex;"><span>        &#34;editor.findMatchBackground&#34;: &#34;#7bff009c&#34;,
+</span></span><span style="display:flex;"><span>        &#34;editor.findMatchHighlightBackground&#34;: &#34;#bba76d&#34;&#34;
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></td></tr></table>
 </div>
@@ -742,7 +746,7 @@
       <ul>
         <li><a href="#1-修改vscode默认配置">1. 修改VSCode默认配置</a>
           <ul>
-            <li><a href="#1-侧边滚动条颜色">1. 侧边滚动条颜色</a></li>
+            <li><a href="#1-侧边滚动条颜色查找高亮颜色">1. 侧边滚动条颜色&amp;查找高亮颜色</a></li>
             <li><a href="#2-自动导入包">2. 自动导入包</a></li>
             <li><a href="#3-快捷键">3. 快捷键</a></li>
           </ul>

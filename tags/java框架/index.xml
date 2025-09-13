@@ -8,8 +8,92 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Thu, 17 Jul 2025 11:44:15 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 Aug 2025 10:29:33 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/tags/java%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java框架-SpringCloud框架-12</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-12/</link>
+      <pubDate>Sun, 03 Aug 2025 10:29:33 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-12/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第十二篇。Spring Cloud 是构建微服务架构的基石，拥有</description>
+    </item>
+    <item>
+      <title>Java框架-SpringCloud框架-11</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-11/</link>
+      <pubDate>Sun, 03 Aug 2025 10:29:21 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-11/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第十一篇。Spring Cloud 是构建微服务架构的基石，拥有</description>
+    </item>
+    <item>
+      <title>Java框架-SpringCloud框架-10</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-10/</link>
+      <pubDate>Sun, 03 Aug 2025 10:29:07 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-10/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第十篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
+    </item>
+    <item>
+      <title>Java框架-SpringCloud框架-9</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-9/</link>
+      <pubDate>Sat, 02 Aug 2025 10:28:52 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-9/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第九篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
+    </item>
+    <item>
+      <title>Java框架-SpringCloud框架-8</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-8/</link>
+      <pubDate>Sat, 02 Aug 2025 10:28:39 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-8/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第八篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
+    </item>
+    <item>
+      <title>Java框架-SpringCloud框架-7</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-7/</link>
+      <pubDate>Sat, 02 Aug 2025 10:28:24 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-7/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第七篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
+    </item>
+    <item>
+      <title>Java框架-SpringCloud框架-6</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-6/</link>
+      <pubDate>Fri, 01 Aug 2025 10:28:12 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-6/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第六篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
+    </item>
+    <item>
+      <title>Java框架-SpringCloud框架-5</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-5/</link>
+      <pubDate>Fri, 01 Aug 2025 10:27:59 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-5/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第五篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
+    </item>
+    <item>
+      <title>Java框架-SpringCloud框架-4</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-4/</link>
+      <pubDate>Fri, 01 Aug 2025 10:27:38 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-4/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第四篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
+    </item>
+    <item>
+      <title>Java框架-SpringCloud框架-3</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-3/</link>
+      <pubDate>Thu, 31 Jul 2025 10:23:14 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-3/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第三篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
+    </item>
+    <item>
+      <title>Java框架-SpringCloud框架-2</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-2/</link>
+      <pubDate>Thu, 31 Jul 2025 10:23:10 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-2/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第二篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
+    </item>
+    <item>
+      <title>Java框架-SpringCloud框架-1</title>
+      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-1/</link>
+      <pubDate>Thu, 31 Jul 2025 10:22:57 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-1/</guid>
+      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第一篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
+    </item>
     <item>
       <title>Java框架-SpringBoot框架-6</title>
       <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springboot%E6%A1%86%E6%9E%B6-6/</link>
@@ -65,34 +149,6 @@
       <pubDate>Mon, 07 Jul 2025 23:11:08 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-5/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之Spring框架第五篇。本篇文章主要聊Java框架，那么必然从Spr</description>
-    </item>
-    <item>
-      <title>Java框架-Spring框架-4</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-4/</link>
-      <pubDate>Sat, 05 Jul 2025 21:53:18 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-4/</guid>
-      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之Spring框架第四篇。本篇文章主要聊Java框架，那么必然从Spr</description>
-    </item>
-    <item>
-      <title>Java框架-Spring框架-3</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-3/</link>
-      <pubDate>Fri, 04 Jul 2025 21:51:54 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-3/</guid>
-      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之Spring框架第三篇。本篇文章主要聊Java框架，那么必然从Spr</description>
-    </item>
-    <item>
-      <title>Java框架-Spring框架-2</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-2/</link>
-      <pubDate>Wed, 02 Jul 2025 09:13:11 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-2/</guid>
-      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之Spring框架第二篇。本篇文章主要聊Java框架，那么必然从Spr</description>
-    </item>
-    <item>
-      <title>Java框架-Spring框架-1</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-1/</link>
-      <pubDate>Fri, 20 Jun 2025 22:51:50 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-spring%E6%A1%86%E6%9E%B6-1/</guid>
-      <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Java框架之Spring框架第一篇。本篇文章主要聊Java框架，那么必然从Spr</description>
     </item>
   </channel>
 </rss>

@@ -1,5 +1,110 @@
 [
     {
+      "title": "极致重复",
+      "permalink": "https://yutao.org/philosophy/%E6%9E%81%E8%87%B4%E9%87%8D%E5%A4%8D/",
+      "summary": "极致重复 兄弟们，今天看到一段话，主题是描述重复在学习中的重要作用，觉得非常好，分享给大家。 咱们聊一个特别朴实却又无比核心的话题 重复 极致的重复"
+    },
+    {
+      "title": "知命赋",
+      "permalink": "https://yutao.org/philosophy/%E7%9F%A5%E5%91%BD%E8%B5%8B/",
+      "summary": "知命赋 《知命赋》是梁之永在作品《穷通刍论》中创作的人生哲理短文，通过对天地、世事、生命的思考，传达出顺应自然、淡泊名利的人生态度。个人感觉写"
+    },
+    {
+      "title": "人生四十",
+      "permalink": "https://yutao.org/philosophy/%E4%BA%BA%E7%94%9F%E5%9B%9B%E5%8D%81/",
+      "summary": "人生四十 人生四十的一些感受，随便记录下来，分享给大家。 步入 40 岁，我意外触摸到了人生的另一重境界 —— 开启了 “第二次生命” 的大门。不再是年轻时的"
+    },
+    {
+      "title": "Java后端-中间件-Kafka-3",
+      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-3/",
+      "summary": "Kafka与微服务架构集成 1.0 事件驱动架构（EDA）设计 1.1 微服务通信模式 同步调用：REST/gRPC（适用于强依赖场景） 异步通信：Kafka事"
+    },
+    {
+      "title": "Java后端-中间件-Kafka-2",
+      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-2/",
+      "summary": "Kafka高级特性与企业级实践 1. 幂等性与事务机制 1.1 生产者幂等性 配置enable.idempotence=true（默认false），Kafk"
+    },
+    {
+      "title": "Java后端-中间件-Kafka-1",
+      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-1/",
+      "summary": "Kafka核心架构与底层原理 1. 什么是 Kafka Kafka 是一个分布式消息队列系统，最初由 LinkedIn 开发，现已成为 Apache 顶级项目。Kafka 的核心特性包括： 高吞吐量：每秒"
+    },
+    {
+      "title": "人生三大原则",
+      "permalink": "https://yutao.org/philosophy/%E4%BB%8E%E9%87%91%E8%9E%8D%E6%9E%B6%E6%9E%84%E5%B8%88%E5%88%B0%E4%B8%AD%E5%8C%BB%E5%AD%A6%E5%BE%92%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E4%B8%89%E5%A4%A7%E7%94%9F%E5%AD%98%E7%AE%97%E6%B3%95/",
+      "summary": "引言 从金融系统架构师到中医学徒，一个程序员自悟的人生三大生存算法。 一、关于「人性原则」 人性防火墙法则 永远保留20%的「人生机密」，任何人不能"
+    },
+    {
+      "title": "当成功近在咫尺，为何反成枷锁？",
+      "permalink": "https://yutao.org/philosophy/%E4%B8%B4%E9%97%A8%E4%B8%80%E8%84%9A%E7%9A%84%E8%BF%B7%E5%A4%B1/",
+      "summary": "1. 成功前的悖论：越是接近，越是沉重 你曾以为自己能放下，可当金钱入账、目标触手可及时，心跳加速，手心出汗，内心翻涌着占有欲和恐惧——“这是我的"
+    },
+    {
+      "title": "从中医角度思考天道",
+      "permalink": "https://yutao.org/philosophy/%E4%BB%8E%E4%B8%AD%E5%8C%BB%E8%A7%92%E5%BA%A6%E6%80%9D%E8%80%83%E5%A4%A9%E9%81%93/",
+      "summary": "本文是写给自己的\u0026quot;天道修行警示录\u0026quot;，当感到困惑迷茫时，当言行偏离正道时，当需要自我校正时，请重读这些基本准则。 天道戒律与"
+    },
+    {
+      "title": "Java框架-SpringCloud框架-12",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-12/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第十二篇。Spring Cloud 是构建微服务架构的基石，拥有"
+    },
+    {
+      "title": "Java框架-SpringCloud框架-11",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-11/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第十一篇。Spring Cloud 是构建微服务架构的基石，拥有"
+    },
+    {
+      "title": "Java框架-SpringCloud框架-10",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-10/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第十篇。Spring Cloud 是构建微服务架构的基石，拥有完"
+    },
+    {
+      "title": "Java框架-SpringCloud框架-9",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-9/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第九篇。Spring Cloud 是构建微服务架构的基石，拥有完"
+    },
+    {
+      "title": "Java框架-SpringCloud框架-8",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-8/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第八篇。Spring Cloud 是构建微服务架构的基石，拥有完"
+    },
+    {
+      "title": "Java框架-SpringCloud框架-7",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-7/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第七篇。Spring Cloud 是构建微服务架构的基石，拥有完"
+    },
+    {
+      "title": "Java框架-SpringCloud框架-6",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-6/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第六篇。Spring Cloud 是构建微服务架构的基石，拥有完"
+    },
+    {
+      "title": "Java框架-SpringCloud框架-5",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-5/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第五篇。Spring Cloud 是构建微服务架构的基石，拥有完"
+    },
+    {
+      "title": "Java框架-SpringCloud框架-4",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-4/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第四篇。Spring Cloud 是构建微服务架构的基石，拥有完"
+    },
+    {
+      "title": "Java框架-SpringCloud框架-3",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-3/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第三篇。Spring Cloud 是构建微服务架构的基石，拥有完"
+    },
+    {
+      "title": "Java框架-SpringCloud框架-2",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-2/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第二篇。Spring Cloud 是构建微服务架构的基石，拥有完"
+    },
+    {
+      "title": "Java框架-SpringCloud框架-1",
+      "permalink": "https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-1/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第一篇。Spring Cloud 是构建微服务架构的基石，拥有完"
+    },
+    {
       "title": "从中医视角看入世不入局",
       "permalink": "https://yutao.org/philosophy/%E4%BB%8E%E4%B8%AD%E5%8C%BB%E8%A7%86%E8%A7%92%E7%9C%8B%E5%85%A5%E4%B8%96%E4%B8%8D%E5%85%A5%E5%B1%80/",
       "summary": "引言： 深陷困境，方悟“局”之凶险。回望来路，多少窘迫皆因“入了他人的局”？真正的强大，非避世隐居，而是如中医所言：“正气存内，邪不可干”——"
@@ -215,9 +320,9 @@
       "summary": "在中医理论中，“半表半里”是一个明确的病位概念，指病邪既不完全在体表（太阳经、卫分），也未深入体内脏腑（阳明经、里证），而是处于表里之间的特"
     },
     {
-      "title": "中医五运六气",
+      "title": "中医五运六气：从入门到掌握推演规则",
       "permalink": "https://yutao.org/philosophy/%E4%B8%AD%E5%8C%BB%E4%BA%94%E8%BF%90%E5%85%AD%E6%B0%94/",
-      "summary": "引言：藏在黄历里的生命密码 翻开泛黄的《黄帝内经》，\u0026ldquo;五运六气\u0026quot;四个字跃然纸上。这套融合天文、气候、物候与病候的古老系统"
+      "summary": "引言：五运六气的本质与价值 五运六气是中医理论中最高级的\u0026quot;气象医学\u0026quot;系统，源于《黄帝内经》七篇大论（特别是《天元纪大论》《"
     },
     {
       "title": "中国十天干",
