@@ -8,14 +8,63 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Thu, 14 Sep 2017 09:09:26 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 21 Sep 2017 14:00:10 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/tags/plsql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PL/SQL每日一题</title>
+      <link>https://yutao.org/programming/plsql%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</link>
+      <pubDate>Thu, 21 Sep 2017 14:00:10 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/plsql%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/</guid>
+      <description>PL/SQL每日一题 PL/SQL每日一题(一) 以下标识符哪些有效、哪些无效？为什么？ a. my_variable2 b. my-variable2 c. my^variable d. MyVariable e. my_variable_for_many_many_of_usages f. 123myvariable g. &amp;ldquo;123myvariable&amp;rdquo; 各变量的有效性及原因说明 a. 有</description>
+    </item>
+    <item>
+      <title>Oracle-PL/SQL用户指南与参考-7</title>
+      <link>https://yutao.org/programming/oracle-plsql%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%E4%B8%8E%E5%8F%82%E8%80%83-7/</link>
+      <pubDate>Wed, 20 Sep 2017 11:29:31 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/oracle-plsql%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%E4%B8%8E%E5%8F%82%E8%80%83-7/</guid>
+      <description>第五章 PL/SQL集合与记录 PL/SQL集合与记录 一、什么是集合 集合就是相同类型的元素的有序合集。它是一个通用的概念，其中包含了列表、数组和</description>
+    </item>
+    <item>
+      <title>Oracle-PL/SQL用户指南与参考-6</title>
+      <link>https://yutao.org/programming/oracle-plsql%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%E4%B8%8E%E5%8F%82%E8%80%83-6/</link>
+      <pubDate>Tue, 19 Sep 2017 10:33:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/oracle-plsql%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%E4%B8%8E%E5%8F%82%E8%80%83-6/</guid>
+      <description>第四章 PL/SQL的控制结构 PL/SQL的控制结构 一、PL/SQL控制结构一览 根据“计算机程序基本控制结构” 及结构定理（通常指结构化程序设计</description>
+    </item>
+    <item>
+      <title>Oracle-PL/SQL用户指南与参考-5</title>
+      <link>https://yutao.org/programming/oracle-plsql%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%E4%B8%8E%E5%8F%82%E8%80%83-5/</link>
+      <pubDate>Mon, 18 Sep 2017 16:09:56 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/oracle-plsql%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%E4%B8%8E%E5%8F%82%E8%80%83-5/</guid>
+      <description>第三章 PL/SQL基础（续） PL/SQL数据类型 一、预定义数据类型 Oracle 的数据类型可以分为四类，分别是 标量类型，复合类型，引用类型和LOB类型。</description>
+    </item>
+    <item>
+      <title>Oracle-PL/SQL用户指南与参考-4</title>
+      <link>https://yutao.org/programming/oracle-plsql%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%E4%B8%8E%E5%8F%82%E8%80%83-4/</link>
+      <pubDate>Sun, 17 Sep 2017 15:24:12 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/oracle-plsql%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%E4%B8%8E%E5%8F%82%E8%80%83-4/</guid>
+      <description>第三章 PL/SQL基础（续） PL/SQL基础 一、PL/SQL命名规范 同样的命名规约适用于所有的PL/SQL程序，规约涉及的内容包括常量、变量</description>
+    </item>
+    <item>
+      <title>Oracle-PL/SQL用户指南与参考-3</title>
+      <link>https://yutao.org/programming/oracle-plsql%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%E4%B8%8E%E5%8F%82%E8%80%83-3/</link>
+      <pubDate>Sat, 16 Sep 2017 23:42:13 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/oracle-plsql%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%E4%B8%8E%E5%8F%82%E8%80%83-3/</guid>
+      <description>第三章 PL/SQL基础 PL/SQL基础 一、字符集 在PL/SQL程序中，允许出现的字符集包括： 大小写字母(A-Z和a-z) 数字(0-9) 符号(</description>
+    </item>
+    <item>
+      <title>Oracle-PL/SQL用户指南与参考-2</title>
+      <link>https://yutao.org/programming/oracle-plsql%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%E4%B8%8E%E5%8F%82%E8%80%83-2/</link>
+      <pubDate>Fri, 15 Sep 2017 21:24:10 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/oracle-plsql%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%E4%B8%8E%E5%8F%82%E8%80%83-2/</guid>
+      <description>第二章 PL/SQL架构 一、PL/SQL引擎 PL/SQL 的编码和运行时系统是一项技术，而不是一个独立的产品。可以把这项技术想象成一个能够编译并运行PL/</description>
+    </item>
     <item>
       <title>Oracle-PL/SQL用户指南与参考-1</title>
       <link>https://yutao.org/programming/oracle-plsql%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%E4%B8%8E%E5%8F%82%E8%80%83-1/</link>
       <pubDate>Thu, 14 Sep 2017 09:09:26 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/oracle-plsql%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%E4%B8%8E%E5%8F%82%E8%80%83-1/</guid>
-      <description>第一章 PL/SQL概览 一、理解PL/SQL的主要特性 1. PL/SQL简介 理解PL/SQL的主要特性，了解PL/SQL最好的方法就是从简单的实例</description>
+      <description>第一章 PL/SQL概览 一、理解PL/SQL的主要特性 1. PL/SQL简介 理解 PL/SQL 的主要特性，了解 PL/SQL 最好的方法就是从简单的实例入手。下面的程序是用</description>
     </item>
   </channel>
 </rss>
