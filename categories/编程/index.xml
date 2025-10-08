@@ -2,41 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编程 on 会写代码的小郎中</title>
-    <link>http://localhost:1313/categories/%E7%BC%96%E7%A8%8B/</link>
+    <link>https://yutao.org/categories/%E7%BC%96%E7%A8%8B/</link>
     <description>Recent content in 编程 on 会写代码的小郎中</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Sun, 03 Aug 2025 10:29:33 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jan 2018 21:02:55 +0800</lastBuildDate>
+    <atom:link href="https://yutao.org/categories/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Java框架 SpringCloud框架 12</title>
-      <link>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-12/</link>
-      <pubDate>Sun, 03 Aug 2025 10:29:33 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-12/</guid>
-      <description>Spring Cloud 架构设计模式与企业实战落地 微服务之间调用的分层与解耦策略（API模块） 服务拆分与聚合：以业务为中心 vs 技术为中心 技术架构演进：从单体到 Serverless +</description>
+      <title>JSP报表系统</title>
+      <link>https://yutao.org/programming/jsp%E6%8A%A5%E8%A1%A8%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Mon, 01 Jan 2018 21:02:55 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/jsp%E6%8A%A5%E8%A1%A8%E7%B3%BB%E7%BB%9F/</guid>
+      <description>背景 模拟银行监管报送系统（JSP + AJAX + XML 模板 + MySQL 存储过程），报表数据存储在数据库中，报表模板存储在文件系统中。 1. 系统目录 1 2 3 4 5 6 7 8 9 10</description>
     </item>
     <item>
-      <title>Java框架 SpringCloud框架 11</title>
-      <link>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-11/</link>
-      <pubDate>Sun, 03 Aug 2025 10:29:21 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-11/</guid>
-      <description>多环境 + 多集群部署实战（dev/test/prod） Nacos 命名空间与环境隔离策略设计 多环境配置文件管理方案（DataId 命名规范） Jenkins 中实现多环境</description>
+      <title>SQL语句</title>
+      <link>https://yutao.org/programming/sql%E8%AF%AD%E5%8F%A5/</link>
+      <pubDate>Wed, 13 Sep 2017 20:30:00 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/sql%E8%AF%AD%E5%8F%A5/</guid>
+      <description>一、SQL 是什么？ SQL（Structured Query Language）结构化查询语言，用于与关系型数据库交互（如 MySQL、PostgreSQL</description>
     </item>
     <item>
-      <title>Java框架 SpringCloud框架 10</title>
-      <link>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-10/</link>
-      <pubDate>Sun, 03 Aug 2025 10:29:07 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-10/</guid>
-      <description>微服务 DevOps 实战：Jenkins + Docker + docker-compose 多模块微服务项目构建策略（Maven + CI/CD） 编写 Jenkinsfile + 通过 Gitee 自动触发构建 构建 Docker 镜像并推送私有仓库 使用</description>
-    </item>
-    <item>
-      <title>Java框架 SpringCloud框架 9</title>
-      <link>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-9/</link>
-      <pubDate>Sat, 02 Aug 2025 10:28:52 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:1313/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-9/</guid>
-      <description>消息驱动通信机制：RabbitMQ + Spring Cloud Stream 消息队列通信场景与对比（MQTT, Kafka, RabbitMQ） Spring Cloud Stream 核心概念与 Binder 模型 定义生产者与消费者通道</description>
+      <title>HTML语法</title>
+      <link>https://yutao.org/programming/html%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Tue, 12 Sep 2017 11:43:40 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/html%E8%AF%AD%E6%B3%95/</guid>
+      <description>一、HTML 基本语法元素的示例网页 通过完成一个网页学习非常直观，示例 HTML 文件，它包括： 文档结构：&amp;lt;!DOCTYPE html&amp;gt;, &amp;lt;html&amp;gt;, &amp;lt;head&amp;gt;, &amp;lt;body&amp;gt; 元信息：&amp;lt</description>
     </item>
   </channel>
 </rss>

@@ -790,6 +790,11 @@
       "summary": ""
     },
     {
+      "title": "JSP报表系统",
+      "permalink": "https://yutao.org/programming/jsp%E6%8A%A5%E8%A1%A8%E7%B3%BB%E7%BB%9F/",
+      "summary": "背景 模拟银行监管报送系统（JSP + AJAX + XML 模板 + MySQL 存储过程），报表数据存储在数据库中，报表模板存储在文件系统中。 1. 系统目录 1 2 3 4 5 6 7 8 9 10"
+    },
+    {
       "title": "PL/SQL每日一题",
       "permalink": "https://yutao.org/programming/plsql%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/",
       "summary": "PL/SQL每日一题 PL/SQL每日一题(一) 以下标识符哪些有效、哪些无效？为什么？ a. my_variable2 b. my-variable2 c. my^variable d. MyVariable e. my_variable_for_many_many_of_usages f. 123myvariable g. \u0026ldquo;123myvariable\u0026rdquo; 各变量的有效性及原因说明 a. 有"
@@ -828,6 +833,16 @@
       "title": "Oracle-PL/SQL用户指南与参考-1",
       "permalink": "https://yutao.org/programming/oracle-plsql%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97%E4%B8%8E%E5%8F%82%E8%80%83-1/",
       "summary": "第一章 PL/SQL概览 一、理解PL/SQL的主要特性 1. PL/SQL简介 理解 PL/SQL 的主要特性，了解 PL/SQL 最好的方法就是从简单的实例入手。下面的程序是用"
+    },
+    {
+      "title": "SQL语句",
+      "permalink": "https://yutao.org/programming/sql%E8%AF%AD%E5%8F%A5/",
+      "summary": "一、SQL 是什么？ SQL（Structured Query Language）结构化查询语言，用于与关系型数据库交互（如 MySQL、PostgreSQL"
+    },
+    {
+      "title": "HTML语法",
+      "permalink": "https://yutao.org/programming/html%E8%AF%AD%E6%B3%95/",
+      "summary": "一、HTML 基本语法元素的示例网页 通过完成一个网页学习非常直观，示例 HTML 文件，它包括： 文档结构：\u0026lt;!DOCTYPE html\u0026gt;, \u0026lt;html\u0026gt;, \u0026lt;head\u0026gt;, \u0026lt;body\u0026gt; 元信息：\u0026lt"
     },
     {
       "title": "饥饿",
