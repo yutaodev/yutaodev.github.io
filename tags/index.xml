@@ -8,12 +8,12 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Sat, 13 Sep 2025 10:14:58 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Oct 2025 19:39:43 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>人生智慧</title>
       <link>https://yutao.org/tags/%E4%BA%BA%E7%94%9F%E6%99%BA%E6%85%A7/</link>
-      <pubDate>Sat, 13 Sep 2025 10:14:58 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <pubDate>Sat, 25 Oct 2025 19:39:43 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/tags/%E4%BA%BA%E7%94%9F%E6%99%BA%E6%85%A7/</guid>
       <description></description>
     </item>
@@ -81,13 +81,6 @@
       <description></description>
     </item>
     <item>
-      <title>Java后端</title>
-      <link>https://yutao.org/tags/java%E5%90%8E%E7%AB%AF/</link>
-      <pubDate>Thu, 17 Apr 2025 22:16:01 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/tags/java%E5%90%8E%E7%AB%AF/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>方剂</title>
       <link>https://yutao.org/tags/%E6%96%B9%E5%89%82/</link>
       <pubDate>Tue, 15 Apr 2025 17:22:41 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
@@ -148,6 +141,13 @@
       <link>https://yutao.org/tags/git/</link>
       <pubDate>Fri, 02 Aug 2024 09:58:42 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Markdown</title>
+      <link>https://yutao.org/tags/markdown/</link>
+      <pubDate>Thu, 01 Aug 2024 20:55:18 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/tags/markdown/</guid>
       <description></description>
     </item>
   </channel>

@@ -1,5 +1,20 @@
 [
     {
+      "title": "记录性格蜕变与坚守",
+      "permalink": "https://yutao.org/philosophy/%E8%AE%B0%E5%BD%95%E6%80%A7%E6%A0%BC%E8%9C%95%E5%8F%98%E4%B8%8E%E5%9D%9A%E5%AE%88/",
+      "summary": "近日有三悟：一悟性格，照见柔韧的力量；二悟交流，回归倾听的本真；三悟生活，学会接纳的智慧。 一、我生命中不变的与已变的 深夜整理旧物，翻出学生时"
+    },
+    {
+      "title": "洗尽铅华",
+      "permalink": "https://yutao.org/philosophy/%E6%B4%97%E5%B0%BD%E9%93%85%E5%8D%8E/",
+      "summary": "洗尽铅华 人到四十，脑海里总会不时闪过一个词——洗尽铅华。 年轻时觉得这词有些遥远，如今才品出它的滋味。它说的不是褪去光鲜，而是洗掉身上那些经年"
+    },
+    {
+      "title": "从代码基础到心灵基石",
+      "permalink": "https://yutao.org/philosophy/%E4%BB%8E%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80%E5%88%B0%E5%BF%83%E7%81%B5%E5%9F%BA%E7%9F%B3/",
+      "summary": "近日思悟二则：从“编程之法”到“破相之心” 最近几日，于工作与生活中偶有所得，如静夜闻钟，清音绕梁。记录于此，既是梳理，亦是分享。 一、 编程之悟"
+    },
+    {
       "title": "努力一定会有答案",
       "permalink": "https://yutao.org/philosophy/%E5%8A%AA%E5%8A%9B%E4%B8%80%E5%AE%9A%E4%BC%9A%E6%9C%89%E7%AD%94%E6%A1%88/",
       "summary": "你努力过吗？ 且当努力了很久也看不见尽头时， 但仍然在努力，只是此时的努力已经变成一种习惯动作， 同时可能心中没有像开始那么期盼结果， 然而，突然某"
@@ -345,11 +360,6 @@
       "summary": "Gradle 解析：让你从新手到高手 在 Java（以及其他 JVM 语言）的开发世界中，构建工具扮演着至关重要的角色。它们负责自动化编译、测试、打包、发布等一系列"
     },
     {
-      "title": "Java后端-基础-常见数据结构与算法-23",
-      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-23/",
-      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列第二十三篇，正式进入Java后端世界，本篇文章主要聊Java基础。若想详细学习请点击首篇博文，"
-    },
-    {
       "title": "方剂-固涩剂-10",
       "permalink": "https://yutao.org/tcm/%E6%96%B9%E5%89%82-%E5%9B%BA%E6%B6%A9%E5%89%82-10/",
       "summary": "引言 凡以收敛固涩作用为主，用于治疗气、血、精、津耗散滑脱病证的方剂，统称为固涩剂。属 于 “十剂”中 “涩可去脱”范畴。固涩剂是为正气虚弱，气、血"
@@ -458,21 +468,6 @@
       "title": "中医诊断-闻诊-3",
       "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E8%AF%8A%E6%96%AD-%E9%97%BB%E8%AF%8A-3/",
       "summary": "引言 闻诊，是指医生通过听声音和嗅气味来诊察疾病的方法。颇受历代医家重视，素有“闻而知之谓之圣”的说法。”本博文是 《中医诊断》 博文系列的 第三篇"
-    },
-    {
-      "title": "Java后端-基础-设计模式-22",
-      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-22/",
-      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列第二十二篇，正式进入Java后端世界，本篇文章主要聊Java基础。若想详细学习请点击首篇博文，"
-    },
-    {
-      "title": "Java后端-基础-Java虚拟机-21",
-      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-java%E8%99%9A%E6%8B%9F%E6%9C%BA-21/",
-      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列第二十一篇，正式进入Java后端世界，本篇文章主要聊Java基础。若想详细学习请点击首篇博文，"
-    },
-    {
-      "title": "Java后端-基础-模块化编程-20",
-      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-20/",
-      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列第二十篇，正式进入Java后端世界，本篇文章主要聊Java基础。若想详细学习请点击首篇博文，我"
     },
     {
       "title": "价值观自信",
@@ -630,6 +625,96 @@
       "summary": "引言 小时候，我曾听爷爷讲过一个故事：一位老人因长期咳嗽久治不愈，求助于一位老中医。老中医仅凭望闻问切，开出一剂草药方，三日后，老人咳嗽竟奇迹"
     },
     {
+      "title": "JavaSwingGUI从小白到大神-6",
+      "permalink": "https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-6/",
+      "summary": ""
+    },
+    {
+      "title": "JavaSwingGUI从小白到大神-5",
+      "permalink": "https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-5/",
+      "summary": ""
+    },
+    {
+      "title": "JavaSwingGUI从小白到大神-4",
+      "permalink": "https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-4/",
+      "summary": ""
+    },
+    {
+      "title": "JavaSwingGUI从小白到大神-3",
+      "permalink": "https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-3/",
+      "summary": ""
+    },
+    {
+      "title": "JavaSwingGUI从小白到大神-2",
+      "permalink": "https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-2/",
+      "summary": ""
+    },
+    {
+      "title": "JavaSwingGUI从小白到大神-1",
+      "permalink": "https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-1/",
+      "summary": ""
+    },
+    {
+      "title": "Maven解析让你从新手到高手",
+      "permalink": "https://yutao.org/programming/maven%E8%A7%A3%E6%9E%90%E8%AE%A9%E4%BD%A0%E4%BB%8E%E6%96%B0%E6%89%8B%E5%88%B0%E9%AB%98%E6%89%8B/",
+      "summary": ""
+    },
+    {
+      "title": "一文学会Git常用语法",
+      "permalink": "https://yutao.org/programming/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9Agit%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/",
+      "summary": ""
+    },
+    {
+      "title": "Markdown常用语法示例",
+      "permalink": "https://yutao.org/programming/markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E7%A4%BA%E4%BE%8B/",
+      "summary": ""
+    },
+    {
+      "title": "Markdown中使用Mermaid画图",
+      "permalink": "https://yutao.org/programming/markdown%E4%B8%AD%E4%BD%BF%E7%94%A8mermaid%E7%94%BB%E5%9B%BE/",
+      "summary": "背景 在编程和需求分析中，图形化的展示确实能够帮助更好地理解系统的逻辑和结构。使用 Mermaid 在 Markdown 中绘制图形是一个非常方便的方式。下面，我将通过六个不同"
+    },
+    {
+      "title": "让搜索引擎收录你的个人博客网站",
+      "permalink": "https://yutao.org/programming/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/",
+      "summary": ""
+    },
+    {
+      "title": "从零搭建个人博客系统",
+      "permalink": "https://yutao.org/programming/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/",
+      "summary": ""
+    },
+    {
+      "title": "Java后端-JavaEE-Servlet深入理解与实战-2",
+      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-javaee-servlet%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E4%B8%8E%E5%AE%9E%E6%88%98-2/",
+      "summary": "背景 本文是《JavaEE 后端从小白到大神》修仙系列第二篇，正式进入JavaEE后端世界。若想详细学习请点击首篇博文，我们开始把。 第二篇：Se"
+    },
+    {
+      "title": "Java后端-JavaEE-概述与体系总览-1",
+      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-javaee-javaee%E6%A6%82%E8%BF%B0%E4%B8%8E%E4%BD%93%E7%B3%BB%E6%80%BB%E8%A7%88/",
+      "summary": "背景 本文是《JavaEE 后端从小白到大神》修仙系列第一篇，正式进入JavaEE后端世界，本篇文章主要聊JavaEE。若想详细学习请点击首篇博"
+    },
+    {
+      "title": "Java后端-基础-常见数据结构与算法-23",
+      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-23/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列第二十三篇，正式进入Java后端世界，本篇文章主要聊Java基础。若想详细学习请点击首篇博文，"
+    },
+    {
+      "title": "Java后端-基础-设计模式-22",
+      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-22/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列第二十二篇，正式进入Java后端世界，本篇文章主要聊Java基础。若想详细学习请点击首篇博文，"
+    },
+    {
+      "title": "Java后端-基础-Java虚拟机-21",
+      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-java%E8%99%9A%E6%8B%9F%E6%9C%BA-21/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列第二十一篇，正式进入Java后端世界，本篇文章主要聊Java基础。若想详细学习请点击首篇博文，"
+    },
+    {
+      "title": "Java后端-基础-模块化编程-20",
+      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E6%A8%A1%E5%9D%97%E5%8C%96%E7%BC%96%E7%A8%8B-20/",
+      "summary": "背景 本文是《Java 后端从小白到大神》修仙系列第二十篇，正式进入Java后端世界，本篇文章主要聊Java基础。若想详细学习请点击首篇博文，我"
+    },
+    {
       "title": "Java后端-基础-发邮件-19",
       "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%8F%91%E9%82%AE%E4%BB%B6-19/",
       "summary": ""
@@ -725,68 +810,8 @@
       "summary": ""
     },
     {
-      "title": "JavaSwingGUI从小白到大神-6",
-      "permalink": "https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-6/",
-      "summary": ""
-    },
-    {
-      "title": "JavaSwingGUI从小白到大神-5",
-      "permalink": "https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-5/",
-      "summary": ""
-    },
-    {
-      "title": "JavaSwingGUI从小白到大神-4",
-      "permalink": "https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-4/",
-      "summary": ""
-    },
-    {
-      "title": "JavaSwingGUI从小白到大神-3",
-      "permalink": "https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-3/",
-      "summary": ""
-    },
-    {
-      "title": "JavaSwingGUI从小白到大神-2",
-      "permalink": "https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-2/",
-      "summary": ""
-    },
-    {
-      "title": "JavaSwingGUI从小白到大神-1",
-      "permalink": "https://yutao.org/programming/javaswinggui%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E-1/",
-      "summary": ""
-    },
-    {
-      "title": "Maven解析让你从新手到高手",
-      "permalink": "https://yutao.org/programming/maven%E8%A7%A3%E6%9E%90%E8%AE%A9%E4%BD%A0%E4%BB%8E%E6%96%B0%E6%89%8B%E5%88%B0%E9%AB%98%E6%89%8B/",
-      "summary": ""
-    },
-    {
-      "title": "一文学会Git常用语法",
-      "permalink": "https://yutao.org/programming/%E4%B8%80%E6%96%87%E5%AD%A6%E4%BC%9Agit%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/",
-      "summary": ""
-    },
-    {
-      "title": "Markdown常用语法示例",
-      "permalink": "https://yutao.org/programming/markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%E7%A4%BA%E4%BE%8B/",
-      "summary": ""
-    },
-    {
-      "title": "Markdown中使用Mermaid画图",
-      "permalink": "https://yutao.org/programming/markdown%E4%B8%AD%E4%BD%BF%E7%94%A8mermaid%E7%94%BB%E5%9B%BE/",
-      "summary": "背景 在编程和需求分析中，图形化的展示确实能够帮助更好地理解系统的逻辑和结构。使用 Mermaid 在 Markdown 中绘制图形是一个非常方便的方式。下面，我将通过六个不同"
-    },
-    {
       "title": "Java后端-基础-面向对象-0",
       "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-0/",
-      "summary": ""
-    },
-    {
-      "title": "让搜索引擎收录你的个人博客网站",
-      "permalink": "https://yutao.org/programming/%E8%AE%A9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95%E4%BD%A0%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/",
-      "summary": ""
-    },
-    {
-      "title": "从零搭建个人博客系统",
-      "permalink": "https://yutao.org/programming/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/",
       "summary": ""
     },
     {
@@ -842,7 +867,7 @@
     {
       "title": "HTML语法",
       "permalink": "https://yutao.org/programming/html%E8%AF%AD%E6%B3%95/",
-      "summary": "一、HTML 基本语法元素的示例网页 通过完成一个网页学习非常直观，示例 HTML 文件，它包括： 文档结构：\u0026lt;!DOCTYPE html\u0026gt;, \u0026lt;html\u0026gt;, \u0026lt;head\u0026gt;, \u0026lt;body\u0026gt; 元信息：\u0026lt"
+      "summary": "一、HTML 基本语法 HTML（HyperText Markup Language，超文本标记语言） 是网页的基本组成部分，负责网页的结构和内容展示。HTML"
     },
     {
       "title": "饥饿",
