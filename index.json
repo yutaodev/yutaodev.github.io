@@ -1,5 +1,10 @@
 [
     {
+      "title": "人的品质才是最宝贵的",
+      "permalink": "https://yutao.org/philosophy/%E4%BA%BA%E7%9A%84%E5%93%81%E8%B4%A8%E6%89%8D%E6%98%AF%E6%9C%80%E5%AE%9D%E8%B4%B5%E7%9A%84/",
+      "summary": "在品质中我觉得真诚占第一位，真诚不是傻，是内在灵魂的纯净度，是一种理想的生命状态——用最真实的自我，去面对这个世界。 不伪装、不回避、不世故，"
+    },
+    {
       "title": "记录性格蜕变与坚守",
       "permalink": "https://yutao.org/philosophy/%E8%AE%B0%E5%BD%95%E6%80%A7%E6%A0%BC%E8%9C%95%E5%8F%98%E4%B8%8E%E5%9D%9A%E5%AE%88/",
       "summary": "近日有三悟：一悟性格，照见柔韧的力量；二悟交流，回归倾听的本真；三悟生活，学会接纳的智慧。 一、我生命中不变的与已变的 深夜整理旧物，翻出学生时"
@@ -685,14 +690,24 @@
       "summary": ""
     },
     {
+      "title": "Java后端-JavaEE-Servlet深入理解与实战-3",
+      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-javaee-servlet%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E4%B8%8E%E5%AE%9E%E6%88%98-3/",
+      "summary": "背景 本文是《JavaEE 后端从小白到大神》修仙系列第三篇，正式进入JavaEE后端世界。若想详细学习请点击首篇博文，我们开始把。 第三篇：JS"
+    },
+    {
       "title": "Java后端-JavaEE-Servlet深入理解与实战-2",
       "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-javaee-servlet%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E4%B8%8E%E5%AE%9E%E6%88%98-2/",
       "summary": "背景 本文是《JavaEE 后端从小白到大神》修仙系列第二篇，正式进入JavaEE后端世界。若想详细学习请点击首篇博文，我们开始把。 第二篇：Se"
     },
     {
       "title": "Java后端-JavaEE-概述与体系总览-1",
-      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-javaee-javaee%E6%A6%82%E8%BF%B0%E4%B8%8E%E4%BD%93%E7%B3%BB%E6%80%BB%E8%A7%88/",
+      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-javaee-javaee%E6%A6%82%E8%BF%B0%E4%B8%8E%E4%BD%93%E7%B3%BB%E6%80%BB%E8%A7%88-1/",
       "summary": "背景 本文是《JavaEE 后端从小白到大神》修仙系列第一篇，正式进入JavaEE后端世界，本篇文章主要聊JavaEE。若想详细学习请点击首篇博"
+    },
+    {
+      "title": "Java后端-单元测试-Mockito",
+      "permalink": "https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95-mockito/",
+      "summary": "背景 很多公司都要求开发人员写单元测试，且通过公司的代码扫描，符合测试规则才让提交代码，目前使用最多的就是Mockito了。Mockito 是一"
     },
     {
       "title": "Java后端-基础-常见数据结构与算法-23",

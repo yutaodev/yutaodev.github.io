@@ -21,13 +21,38 @@ document.addEventListener("DOMContentLoaded", function () {
             (item.summary && item.summary.toLowerCase().includes(keyword))
         );
 
+        console.log("搜索关键词:", keyword);
+        console.log("搜索结果数量:", results.length);
+
         if (results.length === 0) {
             resultsList.innerHTML = "<li>未找到相关文章</li>";
+        } else if (results.length <= 10) {
+            results.forEach(item => {
+                const li = document.createElement("li");
+                li.innerHTML = `<a href="${item.permalink}">${item.title}</a>`;
+                resultsList.appendChild(li);
+            });
         } else {
+            // 显示前10个结果
             results.slice(0, 10).forEach(item => {
                 const li = document.createElement("li");
                 li.innerHTML = `<a href="${item.permalink}">${item.title}</a>`;
                 resultsList.appendChild(li);
+            });
+            // 添加"更多..."选项
+            const moreLi = document.createElement("li");
+            moreLi.innerHTML = `<a href="#" id="show-more-results" style="color: red;">更多...</a>`;
+            resultsList.appendChild(moreLi);
+
+            // 点击"更多..."显示全部结果
+            document.getElementById("show-more-results").addEventListener("click", function (e) {
+                e.preventDefault();
+                resultsList.innerHTML = "";
+                results.forEach(item => {
+                    const li = document.createElement("li");
+                    li.innerHTML = `<a href="${item.permalink}">${item.title}</a>`;
+                    resultsList.appendChild(li);
+                });
             });
         }
     });
