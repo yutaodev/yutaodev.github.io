@@ -1479,21 +1479,14 @@
   </url>
   
   <url>
+    <loc>https://yutao.org/tags/java%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2018-06-02T21:31:32+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-0/</loc>
-    <lastmod>2018-06-01T15:35:12+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.org/tags/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/</loc>
-    <lastmod>2018-06-01T15:35:12+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.org/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
     <lastmod>2018-06-01T15:35:12+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

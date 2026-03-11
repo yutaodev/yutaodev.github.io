@@ -85,7 +85,7 @@
   <meta itemprop="description" content="Java后端从小白到大神修仙">
   <meta itemprop="datePublished" content="2018-06-03T20:26:06+08:00">
   <meta itemprop="dateModified" content="2018-06-03T20:26:06+08:00">
-  <meta itemprop="wordCount" content="1607">
+  <meta itemprop="wordCount" content="4830">
   <meta itemprop="keywords" content="java后端">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Java后端-基础-命名规范变量数据类型-2">
@@ -445,8 +445,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 1607 字 -
-        预计阅读 4 分钟
+        约 4830 字 -
+        预计阅读 10 分钟
       </span>
 
     <div class="post-meta-category">
@@ -472,14 +472,16 @@
             
             <div class="post-content">
                 <h1 id="背景">背景</h1>
-<p>本文是《Java 后端从小白到大神》修仙系列<code>第二篇</code>，正式进入<code>Java后端</code>世界，本篇文章主要聊<code>Java基础</code>。若想详细学习请点击<a href="https://yutao.org/post/java%E5%90%8E%E7%AB%AF%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E%E4%BF%AE%E4%BB%99-java%E5%9F%BA%E7%A1%80-1/">首篇博文</a>，我们开始把。</p>
-<h2 id="文章概览">文章概览</h2>
+<p>本文是《Java 后端从小白到大神》修仙系列<code>第二篇</code>，正式进入<code>Java后端</code>世界，本篇文章主要聊<code>Java基础</code>中的命名规范、变量和数据类型。若想详细学习请点击<a href="https://yutao.org/post/java%E5%90%8E%E7%AB%AF%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E%E4%BF%AE%E4%BB%99-java%E5%9F%BA%E7%A1%80-1/">首篇博文</a>。</p>
+<h2 id="章节概览">章节概览</h2>
 <ol>
 <li>命名规范</li>
 <li>变量</li>
 <li>数据类型</li>
 </ol>
 <h2 id="1-命名规范">1. 命名规范</h2>
+<p>命名规范是编写高质量Java代码的基础，良好的命名可以提高代码的可读性和可维护性。</p>
+<h3 id="1-基本命名规则">1. 基本命名规则</h3>
 <table>
 <thead>
 <tr>
@@ -490,29 +492,164 @@
 </thead>
 <tbody>
 <tr>
-<td>类名</td>
+<td><strong>类名</strong></td>
 <td>大驼峰，名词</td>
 <td><code>PaymentService</code></td>
 </tr>
 <tr>
-<td>方法名</td>
-<td>小驼峰，动词</td>
+<td><strong>方法名</strong></td>
+<td>小驼峰，动词开头</td>
 <td><code>calculateTotal()</code></td>
 </tr>
 <tr>
-<td>布尔方法</td>
-<td>is/has/can 开头</td>
-<td><code>isValid()</code></td>
+<td><strong>布尔方法</strong></td>
+<td>is/has/can 等前缀开头</td>
+<td><code>isValid()</code>, <code>hasPermission()</code></td>
 </tr>
 <tr>
-<td>常量</td>
+<td><strong>常量</strong></td>
 <td>全大写+下划线</td>
 <td><code>MAX_RETRY_COUNT</code></td>
 </tr>
+<tr>
+<td><strong>变量</strong></td>
+<td>小驼峰，有意义的名称</td>
+<td><code>userName</code>, <code>orderId</code></td>
+</tr>
+<tr>
+<td><strong>参数</strong></td>
+<td>小驼峰，简洁明了</td>
+<td><code>name</code>, <code>age</code></td>
+</tr>
+<tr>
+<td><strong>包名</strong></td>
+<td>小写，域名反转+模块名</td>
+<td><code>com.example.service</code></td>
+</tr>
+<tr>
+<td><strong>接口</strong></td>
+<td>大驼峰，形容词或名词</td>
+<td><code>Runnable</code>, <code>List</code></td>
+</tr>
+<tr>
+<td><strong>枚举</strong></td>
+<td>大驼峰，名词</td>
+<td><code>Day</code>, <code>Status</code></td>
+</tr>
 </tbody>
 </table>
+<h3 id="2-命名最佳实践">2. 命名最佳实践</h3>
+<p><strong>类名</strong>：</p>
+<ul>
+<li>使用名词或名词短语</li>
+<li>避免使用缩写，除非是广泛认可的缩写（如HTTP、XML）</li>
+<li>保持简洁明了</li>
+</ul>
+<p><strong>方法名</strong>：</p>
+<ul>
+<li>使用动词或动词短语</li>
+<li>布尔方法使用is/has/can等前缀</li>
+<li>行为动词：get、set、calculate、process</li>
+<li>状态动词：start、stop、initialize</li>
+</ul>
+<p><strong>变量名</strong>：</p>
+<ul>
+<li>使用有意义的名称，避免使用单字母变量（除了循环计数器）</li>
+<li>保持简洁，但不要过度缩写</li>
+<li>对于布尔变量，使用is/has等前缀</li>
+</ul>
+<p><strong>常量名</strong>：</p>
+<ul>
+<li>使用全大写字母和下划线</li>
+<li>表示常量的含义</li>
+<li>避免魔法数字，使用常量替代</li>
+</ul>
+<h3 id="3-命名示例">3. 命名示例</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-25">25</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-26">26</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-27">27</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-28">28</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-29"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-29">29</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 好的命名示例</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">UserService</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">private</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">final</span><span style="color:#bbb"> </span><span style="color:#902000">int</span><span style="color:#bbb"> </span>MAX_LOGIN_ATTEMPTS<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>3;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#902000">boolean</span><span style="color:#bbb"> </span><span style="color:#06287e">isValidUser</span>(String<span style="color:#bbb"> </span>userName,<span style="color:#bbb"> </span>String<span style="color:#bbb"> </span>password)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 方法实现</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">false</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span>User<span style="color:#bbb"> </span><span style="color:#06287e">getUserById</span>(<span style="color:#902000">long</span><span style="color:#bbb"> </span>userId)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 方法实现</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">null</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 不好的命名示例</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">user_service</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">private</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">final</span><span style="color:#bbb"> </span><span style="color:#902000">int</span><span style="color:#bbb"> </span>m<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>3;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#902000">boolean</span><span style="color:#bbb"> </span><span style="color:#06287e">check</span>(String<span style="color:#bbb"> </span>u,<span style="color:#bbb"> </span>String<span style="color:#bbb"> </span>p)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 方法实现</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">false</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span>User<span style="color:#bbb"> </span><span style="color:#06287e">get</span>(<span style="color:#902000">long</span><span style="color:#bbb"> </span>i)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 方法实现</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">null</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="4-命名规范的重要性">4. 命名规范的重要性</h3>
+<ul>
+<li><strong>提高可读性</strong>：清晰的命名使代码更容易理解</li>
+<li><strong>提高可维护性</strong>：良好的命名使代码更容易维护和修改</li>
+<li><strong>减少错误</strong>：明确的命名减少误解和错误</li>
+<li><strong>团队协作</strong>：统一的命名规范便于团队协作</li>
+<li><strong>代码质量</strong>：规范的命名是代码质量的重要指标</li>
+</ul>
+<h3 id="5-常见命名误区">5. 常见命名误区</h3>
+<ul>
+<li>使用无意义的变量名（如a、b、c）</li>
+<li>使用缩写过度的变量名（如usr、pwd）</li>
+<li>类名使用动词</li>
+<li>方法名使用名词</li>
+<li>常量使用小驼峰命名</li>
+<li>包名使用大写字母</li>
+</ul>
 <h2 id="2-变量">2. 变量</h2>
+<p>变量是Java程序中存储数据的基本单位，不同类型的变量有不同的作用域和生命周期。</p>
 <h3 id="1-局部变量local-variables">1. 局部变量（Local Variables）</h3>
+<p>局部变量是在方法、构造器或代码块内部声明的变量，仅在声明它的代码块内有效。</p>
 <ul>
 <li>
 <p><strong>声明位置</strong>：在方法、构造器或代码块内部声明。</p>
@@ -530,12 +667,12 @@
 <p><strong>示例</strong>：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-5">5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-6">6</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-6">6</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">calculate</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -548,7 +685,14 @@
 </div>
 </div></li>
 </ul>
+<p><strong>实际应用场景</strong>：</p>
+<ul>
+<li>方法内的临时计算</li>
+<li>循环计数器</li>
+<li>方法内的局部状态管理</li>
+</ul>
 <h3 id="2-实例变量instance-variables">2. 实例变量（Instance Variables）</h3>
+<p>实例变量是在类中声明的非静态变量，每个对象实例都有自己的副本。</p>
 <ul>
 <li>
 <p><strong>声明位置</strong>：在类中声明，但在任何方法、构造器或代码块之外。</p>
@@ -566,10 +710,10 @@
 <p><strong>示例</strong>：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-4">4</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4">4</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Person</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -580,7 +724,14 @@
 </div>
 </div></li>
 </ul>
+<p><strong>实际应用场景</strong>：</p>
+<ul>
+<li>存储对象的状态</li>
+<li>类的属性和字段</li>
+<li>需要在多个方法间共享的数据</li>
+</ul>
 <h3 id="3-类变量静态变量static-variables">3. 类变量（静态变量，Static Variables）</h3>
+<p>类变量是在类中使用 <code>static</code> 修饰的变量，所有对象实例共享同一个副本。</p>
 <ul>
 <li>
 <p><strong>声明位置</strong>：在类中声明，使用 <code>static</code> 修饰。</p>
@@ -592,15 +743,15 @@
 <p><strong>生命周期</strong>：类加载时初始化，程序结束时销毁。</p>
 </li>
 <li>
-<p><strong>默认值</strong>：与实例变量相同。</p>
+<p><strong>默认值</strong>：与实例变量相同。可修改，全局生效。</p>
 </li>
 <li>
 <p><strong>示例</strong>：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3">3</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3">3</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Counter</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -610,7 +761,14 @@
 </div>
 </div></li>
 </ul>
+<p><strong>实际应用场景</strong>：</p>
+<ul>
+<li>类级别的常量</li>
+<li>计数器和统计信息</li>
+<li>共享配置和资源</li>
+</ul>
 <h3 id="4-参数变量parameters">4. 参数变量（Parameters）</h3>
+<p>参数变量是方法或构造器参数列表中的变量，用于接收调用者传入的值。</p>
 <ul>
 <li>
 <p><strong>声明位置</strong>：方法或构造器的参数列表中。</p>
@@ -628,9 +786,9 @@
 <p><strong>示例</strong>：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3">3</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3">3</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">printMessage</span>(String<span style="color:#bbb"> </span>message)<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// message 是参数变量</span><span style="color:#bbb">
@@ -640,7 +798,14 @@
 </div>
 </div></li>
 </ul>
+<p><strong>实际应用场景</strong>：</p>
+<ul>
+<li>方法的输入参数</li>
+<li>构造器的初始化参数</li>
+<li>函数的自变量</li>
+</ul>
 <h3 id="5-final-变量">5. <code>final</code> 变量</h3>
+<p>final变量是一旦赋值后不可修改的变量，也称为常量。</p>
 <ul>
 <li><strong>特点</strong>：一旦赋值后不可修改（常量），引用类型则为内存地址不变（内部数据可变）。</li>
 <li><strong>适用场景</strong>：
@@ -651,17 +816,24 @@
 </ul>
 </li>
 </ul>
+<p><strong>实际应用场景</strong>：</p>
+<ul>
+<li>数学常量（如PI）</li>
+<li>配置参数（如最大重试次数）</li>
+<li>避免方法内部修改参数值</li>
+</ul>
 <h3 id="6-枚举变量enum">6. 枚举变量（Enum）</h3>
+<p>枚举是一种特殊的类，用于<strong>定义一组</strong>命名常量。</p>
 <ul>
 <li>
-<p><strong>特点</strong>：预定义一组命名常量。</p>
+<p><strong>特点</strong>：预定义一组命名常量，类型安全。</p>
 </li>
 <li>
 <p><strong>示例</strong>：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2">2</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2">2</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">enum</span><span style="color:#bbb"> </span>Day<span style="color:#bbb"> </span>{<span style="color:#bbb"> </span>MONDAY,<span style="color:#bbb"> </span>TUESDAY,<span style="color:#bbb"> </span>WEDNESDAY<span style="color:#bbb"> </span>}<span style="color:#bbb">
@@ -670,7 +842,14 @@
 </div>
 </div></li>
 </ul>
+<p><strong>实际应用场景</strong>：</p>
+<ul>
+<li>表示一组相关的常量（如星期、月份）</li>
+<li>状态码和错误码</li>
+<li>配置选项和类型</li>
+</ul>
 <h3 id="7-资源变量try-with-resources">7. 资源变量（Try-with-Resources）</h3>
+<p>资源变量是在 <code>try</code> 语句中声明的变量，会在 try 块执行完毕后自动关闭。</p>
 <ul>
 <li>
 <p><strong>特点</strong>：在 <code>try</code> 语句中声明，自动管理资源关闭。</p>
@@ -679,9 +858,9 @@
 <p><strong>示例</strong>：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3">3</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3">3</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">try</span><span style="color:#bbb"> </span>(BufferedReader<span style="color:#bbb"> </span>br<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>BufferedReader(<span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>FileReader(<span style="color:#4070a0">&#34;file.txt&#34;</span>)))<span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -690,6 +869,13 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
+</ul>
+<p><strong>实际应用场景</strong>：</p>
+<ul>
+<li>文件操作（文件读写）</li>
+<li>网络连接</li>
+<li>数据库连接</li>
+<li>其他需要关闭的资源</li>
 </ul>
 <h3 id="8-变量作用域对比表">8. 变量作用域对比表</h3>
 <table>
@@ -749,14 +935,14 @@
 <p>局部变量或参数变量可能与实例变量同名，此时使用 <code>this</code> 访问实例变量。</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-5">5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-6">6</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-7">7</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-8">8</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-8">8</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Example</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -779,9 +965,9 @@
 <p><strong>基本类型</strong>：自动转换（小范围→大范围）或强制转换。</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-3">3</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-3">3</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#902000">int</span><span style="color:#bbb"> </span>a<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>100;<span style="color:#bbb">
@@ -794,8 +980,8 @@
 <p><strong>引用类型</strong>：向上转型（安全）、向下转型（需类型检查）。</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-2">2</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-2">2</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Object<span style="color:#bbb"> </span>obj<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Hello&#34;</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 向上转型（String → Object）</span><span style="color:#bbb">
@@ -805,10 +991,31 @@
 </div></li>
 </ul>
 </li>
+<li>
+<p><strong>变量命名最佳实践</strong>：</p>
+<ul>
+<li>使用有意义的变量名</li>
+<li>遵循命名规范</li>
+<li>保持变量作用域尽可能小</li>
+<li>避免使用过多的全局变量</li>
+<li>合理使用final修饰符</li>
+</ul>
+</li>
+<li>
+<p><strong>内存管理</strong>：</p>
+<ul>
+<li>局部变量在方法执行完毕后会被回收</li>
+<li>实例变量在对象被垃圾回收时回收</li>
+<li>类变量在程序结束时回收</li>
+<li>资源变量会在try-with-resources块结束时自动关闭</li>
+</ul>
+</li>
 </ol>
 <h2 id="3-数据类型">3. 数据类型</h2>
+<p>Java的数据类型分为<strong>基本数据类型</strong>和<strong>引用数据类型</strong>，它们在存储方式和使用场景上有很大不同。</p>
 <h3 id="1-基本数据类型primitive-types">1. 基本数据类型（Primitive Types）</h3>
-<p>Java 的 <strong>8种基本数据类型</strong>，直接存储值：</p>
+<p>基本数据类型是Java中最基本的数据类型，直接存储值，不需要进行内存分配和垃圾回收。</p>
+<p>Java 的 <strong>8种基本数据类型</strong>：</p>
 <table>
 <thead>
 <tr>
@@ -816,6 +1023,7 @@
 <th>大小（位）</th>
 <th>默认值</th>
 <th>取值范围/描述</th>
+<th>实际应用场景</th>
 </tr>
 </thead>
 <tbody>
@@ -824,60 +1032,66 @@
 <td>8</td>
 <td>0</td>
 <td>-128 到 127</td>
+<td>字节数据、文件操作、网络传输</td>
 </tr>
 <tr>
 <td><code>short</code></td>
 <td>16</td>
 <td>0</td>
 <td>-32,768 到 32,767</td>
+<td>内存受限场景、小整数</td>
 </tr>
 <tr>
 <td><code>int</code></td>
 <td>32</td>
 <td>0</td>
 <td>-2³¹ 到 2³¹-1</td>
+<td>一般整数运算、计数器</td>
 </tr>
 <tr>
 <td><code>long</code></td>
 <td>64</td>
 <td>0L</td>
 <td>-2⁶³ 到 2⁶³-1</td>
+<td>大整数、时间戳、文件大小</td>
 </tr>
 <tr>
 <td><code>float</code></td>
 <td>32</td>
 <td>0.0f</td>
 <td>IEEE 754 单精度浮点数</td>
+<td>科学计算、图形处理</td>
 </tr>
 <tr>
 <td><code>double</code></td>
 <td>64</td>
 <td>0.0d</td>
 <td>IEEE 754 双精度浮点数</td>
+<td>一般浮点数运算、金融计算</td>
 </tr>
 <tr>
 <td><code>char</code></td>
 <td>16</td>
 <td>&lsquo;\u0000&rsquo;</td>
 <td>Unicode 字符（0 到 65,535）</td>
+<td>字符处理、文本操作</td>
 </tr>
 <tr>
 <td><code>boolean</code></td>
 <td>1（实际）</td>
 <td>false</td>
 <td><code>true</code> 或 <code>false</code></td>
+<td>条件判断、开关状态</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li><strong>示例</strong>：</li>
-</ul>
+<p><strong>示例</strong>：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-4">4</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-4">4</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#902000">int</span><span style="color:#bbb"> </span>age<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>30;<span style="color:#bbb">
@@ -886,14 +1100,22 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">boolean</span><span style="color:#bbb"> </span>isActive<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">true</span>;<span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="2-引用数据类型reference-types">2. 引用数据类型（Reference Types）</h3>
-<p>存储对象的引用（内存地址），包括以下类型：</p>
+</div><p><strong>使用建议</strong>：</p>
+<ul>
+<li>选择合适的数据类型以节省内存</li>
+<li>对于整数，优先使用 <code>int</code>，只有需要更大范围时才使用 <code>long</code></li>
+<li>对于浮点数，优先使用 <code>double</code>，除非有特殊需求才使用 <code>float</code></li>
+<li>避免在浮点数比较中使用 <code>==</code>，应使用 <code>Math.abs(a - b) &lt; DEFAULT_EPSILON</code>。一般double类型定义默认的精度阈值，DEFAULT_EPSILON = 1e-9，float 类型定义DEFAULT_EPSILON = 1e-6。</li>
+</ul>
+<h3 id="2-引用数据类型reference-types">2. 引用数据类型（Reference Types）</h3>
+<p>引用数据类型存储对象的引用（内存地址），而不是直接存储值。</p>
 <table>
 <thead>
 <tr>
 <th>类型</th>
 <th>描述</th>
 <th>示例</th>
+<th>实际应用场景</th>
 </tr>
 </thead>
 <tbody>
@@ -901,37 +1123,46 @@
 <td><strong>类类型</strong></td>
 <td>用户定义的类或Java内置类</td>
 <td><code>String</code>, <code>ArrayList</code></td>
+<td>封装数据和行为、面向对象编程</td>
 </tr>
 <tr>
 <td><strong>接口类型</strong></td>
 <td>用户定义的接口</td>
 <td><code>List</code>, <code>Runnable</code></td>
+<td>定义行为契约、实现多态</td>
 </tr>
 <tr>
 <td><strong>数组类型</strong></td>
 <td>基本类型或引用类型的数组</td>
 <td><code>int[]</code>, <code>String[][]</code></td>
+<td>存储多个相同类型的数据</td>
 </tr>
 <tr>
 <td><strong>枚举类型</strong></td>
 <td>使用 <code>enum</code> 定义的枚举</td>
 <td><code>enum Day { MON, TUE }</code></td>
+<td>表示一组相关的常量</td>
 </tr>
 <tr>
 <td><strong>Lambda表达式</strong></td>
 <td>函数式接口的实现</td>
 <td><code>Runnable r = () -&gt; {};</code></td>
+<td>函数式编程、简化代码</td>
+</tr>
+<tr>
+<td><strong>BigDecimal</strong></td>
+<td>BigDecimal 是 Java java.math 包下的类，专门用于高精度的十进制数值计算和表示，解决 float/double 浮点数因二进制存储导致的精度丢失问题（比如 0.1+0.2≠0.3）</td>
+<td><code>// 推荐创建方式（无精度丢失）BigDecimal a = new BigDecimal(&quot;0.1&quot;);BigDecimal b = BigDecimal.valueOf(0.2); // 等价于 new BigDecimal(&quot;0.2&quot;)</code></td>
+<td>金融 / 金额计算：比如订单金额、税费、转账金额（必须用 BigDecimal，禁止用浮点数）</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li><strong>示例</strong>：</li>
-</ul>
+<p><strong>示例</strong>：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-3">3</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-3">3</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String<span style="color:#bbb"> </span>name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Alice&#34;</span>;<span style="color:#bbb">
@@ -939,8 +1170,280 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">int</span><span style="color:#666">[]</span><span style="color:#bbb"> </span>scores<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>{90,<span style="color:#bbb"> </span>85,<span style="color:#bbb"> </span>88};<span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="总结">总结</h2>
-<p>Java基础，需要熟练掌握。</p>
+</div><p><strong>使用建议</strong>：</p>
+<ul>
+<li>优先使用接口类型作为变量类型，而不是具体实现类</li>
+<li>合理使用包装类（如 <code>Integer</code>、<code>Double</code>）处理 null 值</li>
+<li>注意引用类型的 null 检查，避免 NullPointerException</li>
+<li>使用 <code>instanceof</code> 进行类型检查，确保类型安全</li>
+</ul>
+<h3 id="3-基本类型与引用类型的区别">3. 基本类型与引用类型的区别</h3>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>基本数据类型</th>
+<th>引用数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存储方式</td>
+<td>直接存储值</td>
+<td>存储内存地址</td>
+</tr>
+<tr>
+<td>内存分配</td>
+<td>栈内存</td>
+<td>堆内存（引用在栈）</td>
+</tr>
+<tr>
+<td>默认值</td>
+<td>有默认值</td>
+<td>null</td>
+</tr>
+<tr>
+<td>传递方式</td>
+<td>值传递</td>
+<td>引用传递（地址传递）</td>
+</tr>
+<tr>
+<td>比较方式</td>
+<td><code>==</code> 比较值</td>
+<td><code>==</code> 比较地址，<code>equals()</code> 比较内容</td>
+</tr>
+<tr>
+<td>内存管理</td>
+<td>自动管理</td>
+<td>垃圾回收</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-包装类wrapper-classes">4. 包装类（Wrapper Classes）</h3>
+<p>Java为每种基本数据类型提供了对应的包装类，用于在需要对象的场景中使用。</p>
+<table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>包装类</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>byte</code></td>
+<td><code>Byte</code></td>
+<td><code>Byte b = 10;</code></td>
+</tr>
+<tr>
+<td><code>short</code></td>
+<td><code>Short</code></td>
+<td><code>Short s = 100;</code></td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td><code>Integer</code></td>
+<td><code>Integer i = 1000;</code></td>
+</tr>
+<tr>
+<td><code>long</code></td>
+<td><code>Long</code></td>
+<td><code>Long l = 10000L;</code></td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td><code>Float</code></td>
+<td><code>Float f = 3.14f;</code></td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td><code>Double</code></td>
+<td><code>Double d = 3.14159;</code></td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td><code>Character</code></td>
+<td><code>Character c = 'A';</code></td>
+</tr>
+<tr>
+<td><code>boolean</code></td>
+<td><code>Boolean</code></td>
+<td><code>Boolean b = true;</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>自动装箱与拆箱</strong>：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 自动装箱（基本类型 → 包装类）</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Integer<span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>100;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 等价于 Integer i = Integer.valueOf(100);</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 自动拆箱（包装类 → 基本类型）</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">int</span><span style="color:#bbb"> </span>j<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>i;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 等价于 int j = i.intValue();</span><span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>实际应用场景</strong>：</p>
+<ul>
+<li>集合类中存储基本类型（如 <code>List&lt;Integer&gt;</code>）</li>
+<li>泛型中使用（泛型不支持基本类型）</li>
+<li>需要 null 值的场景</li>
+<li>与数据库交互时的类型转换</li>
+</ul>
+<h3 id="5-类型转换">5. 类型转换</h3>
+<h4 id="基本类型转换">基本类型转换</h4>
+<p><strong>自动转换（隐式转换）</strong>：小范围 → 大范围</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#902000">byte</span><span style="color:#bbb"> </span>b<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>100;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">short</span><span style="color:#bbb"> </span>s<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>b;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">int</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>s;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">long</span><span style="color:#bbb"> </span>l<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>i;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">float</span><span style="color:#bbb"> </span>f<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>l;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">double</span><span style="color:#bbb"> </span>d<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>f;<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>强制转换（显式转换）</strong>：大范围 → 小范围（可能会丢失精度）</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#902000">double</span><span style="color:#bbb"> </span>d<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>10.<span style="color:#4070a0">99</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">int</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>(<span style="color:#902000">int</span>)<span style="color:#bbb"> </span>d;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 结果为 10，小数部分被截断</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">long</span><span style="color:#bbb"> </span>l<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>10000000000L;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">int</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>(<span style="color:#902000">int</span>)<span style="color:#bbb"> </span>l;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 可能会溢出</span><span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="引用类型转换">引用类型转换</h4>
+<p><strong>向上转型</strong>：子类 → 父类（安全，自动转换）</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String<span style="color:#bbb"> </span>str<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Hello&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Object<span style="color:#bbb"> </span>obj<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>str;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 向上转型</span><span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>向下转型</strong>：父类 → 子类（需要显式转换，可能抛出 ClassCastException）</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-7">7</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Object<span style="color:#bbb"> </span>obj<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Hello&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>str<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>(String)<span style="color:#bbb"> </span>obj;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 向下转型</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 安全的向下转型</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>(obj<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">instanceof</span><span style="color:#bbb"> </span>String)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>String<span style="color:#bbb"> </span>str2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>(String)<span style="color:#bbb"> </span>obj;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="6-数据类型最佳实践">6. 数据类型最佳实践</h3>
+<ol>
+<li>
+<p><strong>选择合适的数据类型</strong>：</p>
+<ul>
+<li>根据数据范围选择合适的整数类型</li>
+<li>根据精度需求选择合适的浮点数类型</li>
+<li>对于布尔值，使用 <code>boolean</code> 类型</li>
+</ul>
+</li>
+<li>
+<p><strong>避免不必要的装箱拆箱</strong>：</p>
+<ul>
+<li>在循环中避免频繁的装箱拆箱操作</li>
+<li>优先使用基本类型进行计算</li>
+</ul>
+</li>
+<li>
+<p><strong>注意浮点数精度问题</strong>：</p>
+<ul>
+<li>对于金融计算，考虑使用 <code>BigDecimal</code></li>
+<li>避免直接比较浮点数是否相等</li>
+</ul>
+</li>
+<li>
+<p><strong>合理使用包装类</strong>：</p>
+<ul>
+<li>在需要 null 值的场景使用包装类</li>
+<li>在集合和泛型中使用包装类</li>
+</ul>
+</li>
+<li>
+<p><strong>类型安全</strong>：</p>
+<ul>
+<li>使用 <code>instanceof</code> 进行类型检查</li>
+<li>避免不安全的类型转换</li>
+<li>合理使用泛型确保类型安全</li>
+</ul>
+</li>
+</ol>
+<h2 id="总结">总结</h2>
+<p>本文详细介绍了Java基础中的命名规范、变量和数据类型，这些是Java编程的基础要素，需要熟练掌握。</p>
+<ol>
+<li>
+<p><strong>命名规范</strong>：</p>
+<ul>
+<li>基本命名规则：类名、方法名、变量名、常量名等的命名规范</li>
+<li>命名最佳实践：使用有意义的名称，遵循大小写约定</li>
+<li>命名规范的重要性：提高代码可读性和可维护性</li>
+<li>常见命名误区：避免使用无意义的变量名和过度缩写</li>
+</ul>
+</li>
+<li>
+<p><strong>变量</strong>：</p>
+<ul>
+<li>局部变量：方法或代码块内的临时变量</li>
+<li>实例变量：对象的属性和状态</li>
+<li>类变量：类级别的静态变量</li>
+<li>参数变量：方法的输入参数</li>
+<li>final变量：不可修改的常量</li>
+<li>枚举变量：预定义的常量集合</li>
+<li>资源变量：自动管理的资源</li>
+</ul>
+</li>
+<li>
+<p><strong>数据类型</strong>：</p>
+<ul>
+<li>基本数据类型：8种基本类型及其特点</li>
+<li>引用数据类型：类、接口、数组、枚举、Lambda表达式</li>
+<li>基本类型与引用类型的区别：存储方式、内存分配、传递方式等</li>
+<li>包装类：基本类型的对象表示</li>
+<li>类型转换：自动转换和强制转换</li>
+<li>数据类型最佳实践：选择合适的类型，避免不必要的装箱拆箱</li>
+</ul>
+</li>
+</ol>
+<p>通过扎实掌握本文介绍的基础知识，你将为后续的Java学习和开发打下坚实的基础。记住，编程是一门实践的艺术，不断练习和积累经验是提高编程技能的关键。</p>
             </div>
 
             
@@ -1068,8 +1571,16 @@
     <div class="toc-content custom-scrollbar">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#文章概览">文章概览</a></li>
-    <li><a href="#1-命名规范">1. 命名规范</a></li>
+    <li><a href="#章节概览">章节概览</a></li>
+    <li><a href="#1-命名规范">1. 命名规范</a>
+      <ul>
+        <li><a href="#1-基本命名规则">1. 基本命名规则</a></li>
+        <li><a href="#2-命名最佳实践">2. 命名最佳实践</a></li>
+        <li><a href="#3-命名示例">3. 命名示例</a></li>
+        <li><a href="#4-命名规范的重要性">4. 命名规范的重要性</a></li>
+        <li><a href="#5-常见命名误区">5. 常见命名误区</a></li>
+      </ul>
+    </li>
     <li><a href="#2-变量">2. 变量</a>
       <ul>
         <li><a href="#1-局部变量local-variables">1. 局部变量（Local Variables）</a></li>
@@ -1087,6 +1598,15 @@
       <ul>
         <li><a href="#1-基本数据类型primitive-types">1. 基本数据类型（Primitive Types）</a></li>
         <li><a href="#2-引用数据类型reference-types">2. 引用数据类型（Reference Types）</a></li>
+        <li><a href="#3-基本类型与引用类型的区别">3. 基本类型与引用类型的区别</a></li>
+        <li><a href="#4-包装类wrapper-classes">4. 包装类（Wrapper Classes）</a></li>
+        <li><a href="#5-类型转换">5. 类型转换</a>
+          <ul>
+            <li><a href="#基本类型转换">基本类型转换</a></li>
+            <li><a href="#引用类型转换">引用类型转换</a></li>
+          </ul>
+        </li>
+        <li><a href="#6-数据类型最佳实践">6. 数据类型最佳实践</a></li>
       </ul>
     </li>
     <li><a href="#总结">总结</a></li>
