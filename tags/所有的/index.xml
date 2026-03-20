@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>所有的 on 会写代码的小郎中</title>
+    <link>http://localhost:1313/tags/%E6%89%80%E6%9C%89%E7%9A%84/</link>
+    <description>Recent content in 所有的 on 会写代码的小郎中</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
+    <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
+    <lastBuildDate>Fri, 20 Mar 2026 19:04:43 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E6%89%80%E6%9C%89%E7%9A%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>所有的病这是这样来的</title>
+      <link>http://localhost:1313/philosophy/%E6%89%80%E6%9C%89%E7%9A%84%E7%97%85%E8%BF%99%E6%98%AF%E8%BF%99%E6%A0%B7%E6%9D%A5%E7%9A%84/</link>
+      <pubDate>Fri, 20 Mar 2026 19:04:43 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>http://localhost:1313/philosophy/%E6%89%80%E6%9C%89%E7%9A%84%E7%97%85%E8%BF%99%E6%98%AF%E8%BF%99%E6%A0%B7%E6%9D%A5%E7%9A%84/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
