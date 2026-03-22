@@ -13,3 +13,8 @@
 .posts .post-content a:hover {
     text-decoration: underline;
 }
+
+.layout {
+    display: flex;
+    justify-content: center;
+}

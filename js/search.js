@@ -1,15 +1,47 @@
 // static/js/search.js
 
 document.addEventListener("DOMContentLoaded", function () {
+    const openSearchBtn = document.getElementById("openSearch");
+    const closeSearchBtn = document.getElementById("closeSearch");
+    const searchDialog = document.getElementById("searchDialog");
     const input = document.getElementById("search-input");
     const resultsList = document.getElementById("search-results");
 
     let indexData = [];
 
+    // 加载搜索数据
     fetch("/index.json")
         .then(res => res.json())
         .then(data => indexData = data);
 
+    // 打开搜索对话框
+    openSearchBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        searchDialog.style.display = "block";
+        // 聚焦到搜索输入框
+        setTimeout(() => {
+            input.focus();
+        }, 100);
+    });
+
+    // 关闭搜索对话框
+    closeSearchBtn.addEventListener("click", function () {
+        searchDialog.style.display = "none";
+        // 清空搜索内容
+        input.value = "";
+        resultsList.innerHTML = "";
+    });
+
+    // 点击对话框外部关闭
+    searchDialog.addEventListener("click", function (e) {
+        if (e.target === searchDialog) {
+            searchDialog.style.display = "none";
+            input.value = "";
+            resultsList.innerHTML = "";
+        }
+    });
+
+    // 搜索功能
     input.addEventListener("input", function () {
         const keyword = this.value.trim().toLowerCase();
         resultsList.innerHTML = "";
