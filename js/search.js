@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (openSearchBtnMobile) {
         openSearchBtnMobile.addEventListener("click", function (e) {
             e.preventDefault();
+            e.stopPropagation(); // 阻止事件冒泡，防止Slideout菜单关闭
             searchDialog.style.display = "block";
             // 聚焦到搜索输入框
             setTimeout(() => {
