@@ -2,6 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     const openSearchBtn = document.getElementById("openSearch");
+    const openSearchBtnMobile = document.getElementById("openSearchMobile");
     const closeSearchBtn = document.getElementById("closeSearch");
     const searchDialog = document.getElementById("searchDialog");
     const input = document.getElementById("search-input");
@@ -23,6 +24,18 @@ document.addEventListener("DOMContentLoaded", function () {
             input.focus();
         }, 100);
     });
+
+    // 手机版本打开搜索对话框
+    if (openSearchBtnMobile) {
+        openSearchBtnMobile.addEventListener("click", function (e) {
+            e.preventDefault();
+            searchDialog.style.display = "block";
+            // 聚焦到搜索输入框
+            setTimeout(() => {
+                input.focus();
+            }, 100);
+        });
+    }
 
     // 关闭搜索对话框
     closeSearchBtn.addEventListener("click", function () {
