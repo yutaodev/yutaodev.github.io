@@ -4,11 +4,11 @@
   itemscope
   itemtype="http://schema.org/WebPage"
 >
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>
-          Java后端-基础-常用基础类-7 - 会写代码的小郎中
+          Java后端-基础-常用基础类-8 - 会写代码的小郎中
         </title>
     
 
@@ -28,7 +28,7 @@
 
 <meta name="mobile-web-app-capable" content="yes">
 
-<meta name="author" content="会写代码的小郎中" /><meta name="description" content="Java后端从小白到大神修仙" />
+<meta name="author" content="会写代码的小郎中" /><meta name="description" content="深入理解Java常用基础类的使用方法和技术原理，包括String、Math、日期时间等类的详细说明和代码示例" />
 <meta name="keywords" content="java后端" />
 
 
@@ -40,56 +40,56 @@
 <meta name="generator" content="Hugo 0.128.2" />
 
 
-<link rel="canonical" href="https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB-7/" />
+<link rel="canonical" href="http://localhost:1313/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB-7/" />
 
 
 
 
 
-<link rel="icon" href="https://yutao.org/favicon.ico" />
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="https://yutao.org/sass/jane.min.e826e860368147e5a6685e686355e4d7789023c18c9ea2e78b35f6786ce92736.css" integrity="sha256-6CboYDaBR&#43;WmaF5oY1Xk13iQI8GMnqLnizX2eGzpJzY=" media="screen" crossorigin="anonymous">
+<link rel="icon" href="http://localhost:1313/favicon.ico" />
 
 
 
 
 
 
-<link rel="stylesheet" href="https://yutao.org/css/custom.css">
-
-<link rel="stylesheet" href="https://yutao.org/css/copy-to-clipboard.css">
 
 
-<meta property="og:url" content="https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB-7/">
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/sass/jane.min.e826e860368147e5a6685e686355e4d7789023c18c9ea2e78b35f6786ce92736.css" integrity="sha256-6CboYDaBR&#43;WmaF5oY1Xk13iQI8GMnqLnizX2eGzpJzY=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+<link rel="stylesheet" href="http://localhost:1313/css/copy-to-clipboard.css">
+
+
+<meta property="og:url" content="http://localhost:1313/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB-7/">
   <meta property="og:site_name" content="会写代码的小郎中">
-  <meta property="og:title" content="Java后端-基础-常用基础类-7">
-  <meta property="og:description" content="Java后端从小白到大神修仙">
+  <meta property="og:title" content="Java后端-基础-常用基础类-8">
+  <meta property="og:description" content="深入理解Java常用基础类的使用方法和技术原理，包括String、Math、日期时间等类的详细说明和代码示例">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="programming">
     <meta property="article:published_time" content="2018-06-08T22:13:05+08:00">
-    <meta property="article:modified_time" content="2018-06-08T22:13:05+08:00">
+    <meta property="article:modified_time" content="2026-03-22T10:00:00+08:00">
     <meta property="article:tag" content="Java后端">
 
-  <meta itemprop="name" content="Java后端-基础-常用基础类-7">
-  <meta itemprop="description" content="Java后端从小白到大神修仙">
+  <meta itemprop="name" content="Java后端-基础-常用基础类-8">
+  <meta itemprop="description" content="深入理解Java常用基础类的使用方法和技术原理，包括String、Math、日期时间等类的详细说明和代码示例">
   <meta itemprop="datePublished" content="2018-06-08T22:13:05+08:00">
-  <meta itemprop="dateModified" content="2018-06-08T22:13:05+08:00">
-  <meta itemprop="wordCount" content="991">
+  <meta itemprop="dateModified" content="2026-03-22T10:00:00+08:00">
+  <meta itemprop="wordCount" content="5495">
   <meta itemprop="keywords" content="java后端">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Java后端-基础-常用基础类-7">
-  <meta name="twitter:description" content="Java后端从小白到大神修仙">
+  <meta name="twitter:title" content="Java后端-基础-常用基础类-8">
+  <meta name="twitter:description" content="深入理解Java常用基础类的使用方法和技术原理，包括String、Math、日期时间等类的详细说明和代码示例">
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -99,26 +99,6 @@
   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
-
-
-  
-    
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZM2P746RY"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-HZM2P746RY');
-        }
-      </script>
-    
-  
 
 
 
@@ -134,7 +114,7 @@
 
     <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="https://yutao.org/" class="logo">会写代码的小郎中</a>
+    <a href="http://localhost:1313/" class="logo">会写代码的小郎中</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -148,56 +128,56 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+            <a class="menu-item-link" href="http://localhost:1313/">主页</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/programming/">编程</a>
+            <a class="menu-item-link" href="http://localhost:1313/programming/">编程</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/tcm/">中医</a>
+            <a class="menu-item-link" href="http://localhost:1313/tcm/">中医</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/philosophy/">哲学</a>
+            <a class="menu-item-link" href="http://localhost:1313/philosophy/">哲学</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
+            <a class="menu-item-link" href="http://localhost:1313/archives/">归档</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+            <a class="menu-item-link" href="http://localhost:1313/categories/">分类</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+            <a class="menu-item-link" href="http://localhost:1313/tags/">标签</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+            <a class="menu-item-link" href="http://localhost:1313/about/">关于</a>
           
         
       </li>
@@ -228,8 +208,8 @@
 
 
 
-  <link rel="stylesheet" href="https://yutao.org/lib/photoswipe/photoswipe.min.css" />
-  <link rel="stylesheet" href="https://yutao.org/lib/photoswipe/default-skin/default-skin.min.css" />
+  <link rel="stylesheet" href="http://localhost:1313/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="http://localhost:1313/lib/photoswipe/default-skin/default-skin.min.css" />
 
 
 
@@ -284,7 +264,7 @@
 
     <header id="header" class="header">
       <div class="logo-wrapper">
-    <a href="https://yutao.org/" class="logo">
+    <a href="http://localhost:1313/" class="logo">
         
         会写代码的小郎中
         
@@ -299,7 +279,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+            <a class="menu-item-link" href="http://localhost:1313/">主页</a>
             
 
             
@@ -310,7 +290,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/programming/">编程</a>
+            <a class="menu-item-link" href="http://localhost:1313/programming/">编程</a>
             
 
             
@@ -321,7 +301,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/tcm/">中医</a>
+            <a class="menu-item-link" href="http://localhost:1313/tcm/">中医</a>
             
 
             
@@ -332,7 +312,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/philosophy/">哲学</a>
+            <a class="menu-item-link" href="http://localhost:1313/philosophy/">哲学</a>
             
 
             
@@ -343,7 +323,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
+            <a class="menu-item-link" href="http://localhost:1313/archives/">归档</a>
             
 
             
@@ -354,7 +334,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+            <a class="menu-item-link" href="http://localhost:1313/categories/">分类</a>
             
 
             
@@ -365,7 +345,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+            <a class="menu-item-link" href="http://localhost:1313/tags/">标签</a>
             
 
             
@@ -376,7 +356,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+            <a class="menu-item-link" href="http://localhost:1313/about/">关于</a>
             
 
             
@@ -446,12 +426,12 @@
           "@type": "BlogPosting",
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/yutao.org\/programming\/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB-7\/"
+            "@id": "http:\/\/localhost:1313\/programming\/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E7%B1%BB-7\/"
           },
-          "headline": "Java后端-基础-常用基础类-7",
-          "description": "Java后端从小白到大神修仙",
+          "headline": "Java后端-基础-常用基础类-8",
+          "description": "深入理解Java常用基础类的使用方法和技术原理，包括String、Math、日期时间等类的详细说明和代码示例",
           "datePublished": "2018-06-08T22:13:05\u002b08:00",
-          "dateModified": "2018-06-08T22:13:05\u002b08:00",
+          "dateModified": "2026-03-22T10:00:00\u002b08:00",
           "author": {
             "@type": "Person",
             "name": "会写代码的小郎中"
@@ -461,7 +441,7 @@
             "name": "会写代码的小郎中",
             "logo": {
               "@type": "ImageObject",
-              "url": "https:\/\/yutao.org\/favicon.ico"
+              "url": "http:\/\/localhost:1313\/favicon.ico"
             }
           }
         }
@@ -472,13 +452,13 @@
         <article class="post">
             
             <header class="post-header">
-                <h1 class="post-title">Java后端-基础-常用基础类-7</h1>
+                <h1 class="post-title">Java后端-基础-常用基础类-8</h1>
                 
 
                 <div class="post-meta">
   <div class="post-meta-author">
     by
-      <a href="https://yutao.org/about">
+      <a href="http://localhost:1313/about">
         <span class="post-meta-author-name">
           会写代码的小郎中
         </span>
@@ -493,16 +473,21 @@
   </div>
 
   
+    <div class="post-meta-lastmod">
+      (上次更新:
+      2026-03-22)
+    </div>
+  
 
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 991 字 -
-        预计阅读 2 分钟
+        约 5495 字 -
+        预计阅读 11 分钟
       </span>
 
     <div class="post-meta-category">
-        <a href="https://yutao.org/categories/java%E5%90%8E%E7%AB%AF/"> java后端 </a>
+        <a href="http://localhost:1313/categories/java%E5%90%8E%E7%AB%AF/"> java后端 </a>
           
       </div>
 
@@ -524,240 +509,927 @@
             
             <div class="post-content">
                 <h1 id="背景">背景</h1>
-<p>本文是《Java 后端从小白到大神》修仙系列<code>第七篇</code>，正式进入<code>Java后端</code>世界，本篇文章主要聊<code>Java基础</code>。若想详细学习请点击<a href="https://yutao.org/post/java%E5%90%8E%E7%AB%AF%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E%E4%BF%AE%E4%BB%99-java%E5%9F%BA%E7%A1%80-1/">首篇博文</a>，我们开始把。</p>
+<p>本文是《Java 后端从小白到大神》修仙系列<code>第八篇</code>，正式进入<code>Java后端</code>世界，本篇文章主要聊<code>Java基础</code>中的<strong>常用基础类</strong>。Java提供了丰富的基础类库，这些类是我们日常开发中最常用的工具，掌握它们对于编写高效、优雅的Java代码至关重要。若想详细学习请点击<a href="https://yutao.org/post/java%E5%90%8E%E7%AB%AF%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E%E4%BF%AE%E4%BB%99-java%E5%9F%BA%E7%A1%80-1/">首篇博文</a>，我们开始吧。</p>
 <h2 id="文章概览">文章概览</h2>
 <ol>
-<li>常用基础类</li>
+<li>根类与基础工具类
+<ul>
+<li>Object 类</li>
+<li>Math 类</li>
+<li>Character 类</li>
+</ul>
+</li>
+<li>字符串相关类
+<ul>
+<li>String 类</li>
+<li>StringBuffer 类</li>
+<li>StringBuilder 类</li>
+</ul>
+</li>
+<li>数值相关类
+<ul>
+<li>Number 抽象类</li>
+<li>包装类（Integer, Double等）</li>
+</ul>
+</li>
+<li>日期时间类
+<ul>
+<li>java.time 包介绍</li>
+<li>常用日期时间类</li>
+</ul>
+</li>
+<li>输入输出类
+<ul>
+<li>Scanner 类</li>
+</ul>
+</li>
+<li>正则表达式
+<ul>
+<li>Pattern 与 Matcher 类</li>
+</ul>
+</li>
+<li>类之间的比较与最佳实践</li>
 </ol>
-<h3 id="1-常用基础类">1. 常用基础类</h3>
-<h4 id="1-object-类">1. <code>Object</code> 类</h4>
+<h2 id="1-根类与基础工具类">1. 根类与基础工具类</h2>
+<h3 id="11-object-类">1.1 Object 类</h3>
+<p><strong>作用</strong>：Object 是 Java 中所有类的超类，所有类都直接或间接继承自 Object。它提供了一些基础方法，是Java对象的通用行为定义。</p>
+<p><strong>核心方法</strong>：</p>
 <ul>
-<li>
-<p><strong>作用</strong>：所有类的超类，提供基础方法（如 <code>toString()</code>, <code>equals()</code>, <code>hashCode()</code>）。</p>
-</li>
-<li>
-<p><strong>常用方法</strong>：</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2">2</a>
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Object<span style="color:#bbb"> </span>obj<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Object();<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(obj.<span style="color:#4070a0">toString</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出类名@哈希码</span><span style="color:#bbb">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div></li>
+<li><code>toString()</code>：返回对象的字符串表示形式</li>
+<li><code>equals(Object obj)</code>：比较两个对象是否相等</li>
+<li><code>hashCode()</code>：返回对象的哈希码值</li>
+<li><code>getClass()</code>：返回对象的运行时类</li>
+<li><code>clone()</code>：创建并返回对象的副本</li>
+<li><code>finalize()</code>：对象被垃圾回收前调用的方法</li>
 </ul>
-<h4 id="2-number-与-math-类">2. <code>Number</code> 与 <code>Math</code> 类</h4>
+<p><strong>技术原理</strong>：</p>
 <ul>
-<li>
-<p><strong><code>Number</code></strong>：数值包装类的抽象父类（如 <code>Integer</code>, <code>Double</code>）。</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Integer<span style="color:#bbb"> </span>num<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Integer.<span style="color:#4070a0">valueOf</span>(<span style="color:#4070a0">&#34;100&#34;</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 字符串转整数</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(num.<span style="color:#4070a0">floatValue</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出 100.0</span><span style="color:#bbb">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p><strong><code>Math</code></strong>：提供数学运算方法。</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3">3</a>
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Math.<span style="color:#4070a0">max</span>(10,<span style="color:#bbb"> </span>20));<span style="color:#bbb">     </span><span style="color:#60a0b0;font-style:italic">// 输出 20</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Math.<span style="color:#4070a0">sqrt</span>(25));<span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 输出 5.0</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Math.<span style="color:#4070a0">round</span>(3.<span style="color:#4070a0">6</span>));<span style="color:#bbb">      </span><span style="color:#60a0b0;font-style:italic">// 输出 4</span><span style="color:#bbb">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div></li>
+<li>Object 类是 Java 类型系统的根，所有类都继承自它</li>
+<li>它提供了对象的基本行为，确保所有对象都具有这些方法</li>
+<li>子类可以重写这些方法以提供更具体的实现</li>
 </ul>
-<h4 id="3-string-类">3. <code>String</code> 类</h4>
-<ul>
-<li>
-<p><strong>作用</strong>：不可变字符序列，适用于字符串常量。</p>
-</li>
-<li>
-<p><strong>底层原理</strong>：基于 <code>final char[]</code> 存储数据，修改会生成新对象。</p>
-</li>
-<li>
-<p><strong>常用方法</strong>：</p>
+<p><strong>代码示例</strong>：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-4">4</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-25">25</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-26">26</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-27">27</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-28">28</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-29"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-29">29</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-30"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-30">30</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-31"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-31">31</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-32"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-32">32</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-33"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-33">33</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-34"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-34">34</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-35"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-35">35</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-36"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-36">36</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-37"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-37">37</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-38"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-38">38</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-39"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-39">39</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-40"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-40">40</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>String<span style="color:#bbb"> </span>str<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Hello&#34;</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(str.<span style="color:#4070a0">substring</span>(1,<span style="color:#bbb"> </span>3));<span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 输出 &#34;el&#34;</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(str.<span style="color:#4070a0">concat</span>(<span style="color:#4070a0">&#34; World&#34;</span>));<span style="color:#bbb">   </span><span style="color:#60a0b0;font-style:italic">// 输出 &#34;Hello World&#34;</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(str.<span style="color:#4070a0">replace</span>(<span style="color:#4070a0">&#34;H&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;h&#34;</span>));<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">// 输出 &#34;hello&#34;</span><span style="color:#bbb">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ul>
-<h4 id="4-stringbuffer-类">4. <code>StringBuffer</code> 类</h4>
-<ul>
-<li>
-<p><strong>作用</strong>：可变字符序列，线程安全（方法用 <code>synchronized</code> 修饰）。</p>
-</li>
-<li>
-<p><strong>底层原理</strong>：基于 <code>char[]</code> 动态扩容（默认容量16，扩容公式：<code>新容量 = 旧容量*2 + 2</code>）。</p>
-</li>
-<li>
-<p><strong>常用方法</strong>：</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5">5</a>
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>StringBuffer<span style="color:#bbb"> </span>sb<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>StringBuffer(<span style="color:#4070a0">&#34;Java&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>sb.<span style="color:#4070a0">append</span>(<span style="color:#4070a0">&#34;!&#34;</span>);<span style="color:#bbb">             </span><span style="color:#60a0b0;font-style:italic">// &#34;Java!&#34;</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>sb.<span style="color:#4070a0">insert</span>(4,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34; Core&#34;</span>);<span style="color:#bbb">      </span><span style="color:#60a0b0;font-style:italic">// &#34;Java Core!&#34;</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>sb.<span style="color:#4070a0">reverse</span>();<span style="color:#bbb">               </span><span style="color:#60a0b0;font-style:italic">// &#34;!eroC avaJ&#34;</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(sb);<span style="color:#bbb">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ul>
-<h4 id="5-stringbuilder-类">5. <code>StringBuilder</code> 类</h4>
-<ul>
-<li><strong>作用</strong>：可变字符序列，非线程安全（方法不加 <code>synchronized</code> 修饰）。</li>
-<li><strong>底层原理</strong>：：基于<code>char[]</code> 动态扩容（默认容量16，扩容公式：<code>新容量 = 旧容量*2 + 2</code>）。</li>
-<li><strong>常用方法</strong>：</li>
-</ul>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-5">5</a>
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>StringBuilder<span style="color:#bbb"> </span>sb<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>StringBuilder(<span style="color:#4070a0">&#34;Java&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>sb.<span style="color:#4070a0">append</span>(<span style="color:#4070a0">&#34;!&#34;</span>);<span style="color:#bbb">             </span><span style="color:#60a0b0;font-style:italic">// &#34;Java!&#34;</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>sb.<span style="color:#4070a0">insert</span>(4,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34; Core&#34;</span>);<span style="color:#bbb">      </span><span style="color:#60a0b0;font-style:italic">// &#34;Java Core!&#34;</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>sb.<span style="color:#4070a0">reverse</span>();<span style="color:#bbb">               </span><span style="color:#60a0b0;font-style:italic">// &#34;!eroC avaJ&#34;</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(sb);<span style="color:#bbb">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="6-正则表达式">6. 正则表达式</h4>
-<ul>
-<li>
-<p><strong>作用</strong>：字符串匹配、替换、分割。</p>
-</li>
-<li>
-<p><strong>核心类</strong>：<code>Pattern</code>, <code>Matcher</code>。</p>
-</li>
-<li>
-<p><strong>示例</strong>：</p>
-<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-5">5</a>
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Pattern<span style="color:#bbb"> </span>pattern<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Pattern.<span style="color:#4070a0">compile</span>(<span style="color:#4070a0">&#34;\\d+&#34;</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 匹配数字</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Matcher<span style="color:#bbb"> </span>matcher<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>pattern.<span style="color:#4070a0">matcher</span>(<span style="color:#4070a0">&#34;a1b23&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">while</span><span style="color:#bbb"> </span>(matcher.<span style="color:#4070a0">find</span>())<span style="color:#bbb"> </span>{<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(matcher.<span style="color:#4070a0">group</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出 1, 23</span><span style="color:#bbb">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// Object 类的基本使用</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Object<span style="color:#bbb"> </span>obj<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Object();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(obj.<span style="color:#4070a0">toString</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：java.lang.Object@哈希码</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(obj.<span style="color:#4070a0">getClass</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：class java.lang.Object</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 自定义类重写 Object 方法</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Person</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">private</span><span style="color:#bbb"> </span>String<span style="color:#bbb"> </span>name;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">private</span><span style="color:#bbb"> </span><span style="color:#902000">int</span><span style="color:#bbb"> </span>age;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#06287e">Person</span>(String<span style="color:#bbb"> </span>name,<span style="color:#bbb"> </span><span style="color:#902000">int</span><span style="color:#bbb"> </span>age)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">this</span>.<span style="color:#4070a0">name</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>name;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">this</span>.<span style="color:#4070a0">age</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>age;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#555;font-weight:bold">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span>String<span style="color:#bbb"> </span><span style="color:#06287e">toString</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Person{name=&#39;&#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>name<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;&#39;, age=&#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>age<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;}&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#555;font-weight:bold">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#902000">boolean</span><span style="color:#bbb"> </span><span style="color:#06287e">equals</span>(Object<span style="color:#bbb"> </span>o)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>(<span style="color:#007020;font-weight:bold">this</span><span style="color:#bbb"> </span><span style="color:#666">==</span><span style="color:#bbb"> </span>o)<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">true</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>(o<span style="color:#bbb"> </span><span style="color:#666">==</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">null</span><span style="color:#bbb"> </span><span style="color:#666">||</span><span style="color:#bbb"> </span>getClass()<span style="color:#bbb"> </span><span style="color:#666">!=</span><span style="color:#bbb"> </span>o.<span style="color:#4070a0">getClass</span>())<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">false</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Person<span style="color:#bbb"> </span>person<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>(Person)<span style="color:#bbb"> </span>o;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>age<span style="color:#bbb"> </span><span style="color:#666">==</span><span style="color:#bbb"> </span>person.<span style="color:#4070a0">age</span><span style="color:#bbb"> </span><span style="color:#666">&amp;&amp;</span><span style="color:#bbb"> </span>Objects.<span style="color:#4070a0">equals</span>(name,<span style="color:#bbb"> </span>person.<span style="color:#4070a0">name</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#555;font-weight:bold">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#902000">int</span><span style="color:#bbb"> </span><span style="color:#06287e">hashCode</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span>Objects.<span style="color:#4070a0">hash</span>(name,<span style="color:#bbb"> </span>age);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 使用自定义类</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Person<span style="color:#bbb"> </span>person1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Person(<span style="color:#4070a0">&#34;张三&#34;</span>,<span style="color:#bbb"> </span>20);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Person<span style="color:#bbb"> </span>person2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Person(<span style="color:#4070a0">&#34;张三&#34;</span>,<span style="color:#bbb"> </span>20);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(person1);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 调用 toString()</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(person1.<span style="color:#4070a0">equals</span>(person2));<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 调用 equals()</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(person1.<span style="color:#4070a0">hashCode</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 调用 hashCode()</span><span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-</ul>
-<h4 id="7-日期时间javatime">7. 日期时间（<code>java.time</code>）</h4>
+</div><h3 id="12-math-类">1.2 Math 类</h3>
+<p><strong>作用</strong>：Math 类提供了一系列静态数学方法，用于执行基本的数学运算。</p>
+<p><strong>核心方法</strong>：</p>
 <ul>
-<li>
-<p><strong>作用</strong>：处理日期、时间（线程安全，不可变）。</p>
-</li>
-<li>
-<p><strong>常用类</strong>：<code>LocalDate</code>, <code>LocalTime</code>, <code>LocalDateTime</code>。</p>
-</li>
-<li>
-<p><strong>示例</strong>：</p>
+<li>算术运算：<code>abs()</code>, <code>max()</code>, <code>min()</code>, <code>pow()</code>, <code>sqrt()</code></li>
+<li>三角函数：<code>sin()</code>, <code>cos()</code>, <code>tan()</code></li>
+<li>指数对数：<code>exp()</code>, <code>log()</code>, <code>log10()</code></li>
+<li>取整运算：<code>ceil()</code>, <code>floor()</code>, <code>round()</code></li>
+<li>随机数：<code>random()</code></li>
+</ul>
+<p><strong>技术原理</strong>：</p>
+<ul>
+<li>Math 类是一个 final 类，不能被继承</li>
+<li>所有方法都是静态的，不需要创建实例</li>
+<li>内部使用了高效的算法实现数学运算</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-3">3</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-15">15</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>LocalDate<span style="color:#bbb"> </span>date<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>LocalDate.<span style="color:#4070a0">now</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 当前日期</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>LocalDate<span style="color:#bbb"> </span>nextWeek<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>date.<span style="color:#4070a0">plusDays</span>(7);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(nextWeek);<span style="color:#bbb">     </span><span style="color:#60a0b0;font-style:italic">// 输出 7天后的日期</span><span style="color:#bbb">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 基本数学运算</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Math.<span style="color:#4070a0">abs</span>(<span style="color:#666">-</span>10));<span style="color:#bbb">      </span><span style="color:#60a0b0;font-style:italic">// 输出：10</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Math.<span style="color:#4070a0">max</span>(10,<span style="color:#bbb"> </span>20));<span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 输出：20</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Math.<span style="color:#4070a0">min</span>(10,<span style="color:#bbb"> </span>20));<span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 输出：10</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Math.<span style="color:#4070a0">pow</span>(2,<span style="color:#bbb"> </span>3));<span style="color:#bbb">      </span><span style="color:#60a0b0;font-style:italic">// 输出：8.0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Math.<span style="color:#4070a0">sqrt</span>(25));<span style="color:#bbb">       </span><span style="color:#60a0b0;font-style:italic">// 输出：5.0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 取整运算</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Math.<span style="color:#4070a0">ceil</span>(3.<span style="color:#4070a0">14</span>));<span style="color:#bbb">     </span><span style="color:#60a0b0;font-style:italic">// 输出：4.0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Math.<span style="color:#4070a0">floor</span>(3.<span style="color:#4070a0">99</span>));<span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 输出：3.0</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Math.<span style="color:#4070a0">round</span>(3.<span style="color:#4070a0">6</span>));<span style="color:#bbb">     </span><span style="color:#60a0b0;font-style:italic">// 输出：4</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 随机数</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Math.<span style="color:#4070a0">random</span>());<span style="color:#bbb">       </span><span style="color:#60a0b0;font-style:italic">// 输出：0.0-1.0之间的随机数</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>((<span style="color:#902000">int</span>)(Math.<span style="color:#4070a0">random</span>()<span style="color:#bbb"> </span><span style="color:#666">*</span><span style="color:#bbb"> </span>100));<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：0-99之间的随机整数</span><span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-</ul>
-<h4 id="8-scanner-类">8. <code>Scanner</code> 类</h4>
+</div><h3 id="13-character-类">1.3 Character 类</h3>
+<p><strong>作用</strong>：Character 类是 char 类型的包装类，提供了一系列用于处理字符的静态方法。</p>
+<p><strong>核心方法</strong>：</p>
 <ul>
-<li>
-<p><strong>作用</strong>：读取用户输入或文件内容。</p>
-</li>
-<li>
-<p><strong>示例</strong>：</p>
+<li>字符判断：<code>isLetter()</code>, <code>isDigit()</code>, <code>isWhitespace()</code>, <code>isUpperCase()</code>, <code>isLowerCase()</code></li>
+<li>字符转换：<code>toUpperCase()</code>, <code>toLowerCase()</code>, <code>toString()</code></li>
+</ul>
+<p><strong>技术原理</strong>：</p>
+<ul>
+<li>Character 类将 char 类型包装为对象，提供了更多的操作方法</li>
+<li>它是一个 final 类，不能被继承</li>
+<li>内部使用了缓存机制，对于常用字符（\u0000-\u007F）会缓存对应的 Character 对象</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-5">5</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-17">17</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Scanner<span style="color:#bbb"> </span>scanner<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Scanner(System.<span style="color:#4070a0">in</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">print</span>(<span style="color:#4070a0">&#34;输入姓名: &#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>scanner.<span style="color:#4070a0">nextLine</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 读取一行输入</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;你好, &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>name);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>scanner.<span style="color:#4070a0">close</span>();<span style="color:#bbb">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 字符判断</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">char</span><span style="color:#bbb"> </span>c1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;A&#39;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">char</span><span style="color:#bbb"> </span>c2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;5&#39;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">char</span><span style="color:#bbb"> </span>c3<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39; &#39;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Character.<span style="color:#4070a0">isLetter</span>(c1));<span style="color:#bbb">      </span><span style="color:#60a0b0;font-style:italic">// 输出：true</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Character.<span style="color:#4070a0">isDigit</span>(c2));<span style="color:#bbb">       </span><span style="color:#60a0b0;font-style:italic">// 输出：true</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Character.<span style="color:#4070a0">isWhitespace</span>(c3));<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">// 输出：true</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Character.<span style="color:#4070a0">isUpperCase</span>(c1));<span style="color:#bbb">   </span><span style="color:#60a0b0;font-style:italic">// 输出：true</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 字符转换</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Character.<span style="color:#4070a0">toLowerCase</span>(c1));<span style="color:#bbb">   </span><span style="color:#60a0b0;font-style:italic">// 输出：a</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Character.<span style="color:#4070a0">toUpperCase</span>(<span style="color:#4070a0">&#39;b&#39;</span>));<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：B</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 字符对象创建</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Character<span style="color:#bbb"> </span>ch1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;A&#39;</span>;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 自动装箱</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Character<span style="color:#bbb"> </span>ch2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Character.<span style="color:#4070a0">valueOf</span>(<span style="color:#4070a0">&#39;B&#39;</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 使用静态方法</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(ch1.<span style="color:#4070a0">toString</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：A</span><span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-</ul>
-<h4 id="9-character-类">9. <code>Character</code> 类</h4>
+</div><h2 id="2-字符串相关类">2. 字符串相关类</h2>
+<h3 id="21-string-类">2.1 String 类</h3>
+<p><strong>作用</strong>：String 类表示不可变的字符序列，是 Java 中最常用的类之一。</p>
+<p><strong>技术原理</strong>：</p>
 <ul>
-<li>
-<p><strong>作用</strong>：包装 <code>char</code> 类型，提供字符操作方法。</p>
-</li>
-<li>
-<p><strong>常用方法</strong>：</p>
+<li>底层基于 <code>final char[]</code> 数组存储数据</li>
+<li>不可变性：一旦创建，内容不可修改，修改操作会生成新的 String 对象</li>
+<li>字符串常量池：相同内容的字符串会共享同一个对象，提高内存利用率</li>
+</ul>
+<p><strong>核心方法</strong>：</p>
+<ul>
+<li>字符串操作：<code>length()</code>, <code>charAt()</code>, <code>substring()</code>, <code>concat()</code>, <code>replace()</code></li>
+<li>字符串判断：<code>equals()</code>, <code>equalsIgnoreCase()</code>, <code>contains()</code>, <code>startsWith()</code>, <code>endsWith()</code></li>
+<li>字符串转换：<code>toCharArray()</code>, <code>toLowerCase()</code>, <code>toUpperCase()</code>, <code>trim()</code></li>
+<li>字符串分割：<code>split()</code>, <code>join()</code></li>
+</ul>
+<p><strong>代码示例</strong>：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-3">3</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-25">25</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-26">26</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-27">27</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-28">28</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-29"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-29">29</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#902000">char</span><span style="color:#bbb"> </span>c<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#39;A&#39;</span>;<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Character.<span style="color:#4070a0">isLetter</span>(c));<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">// 输出 true</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Character.<span style="color:#4070a0">toLowerCase</span>(c));<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出 &#39;a&#39;</span><span style="color:#bbb">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 字符串创建</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>str1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Hello&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>str2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>String(<span style="color:#4070a0">&#34;Hello&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>str3<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>String.<span style="color:#4070a0">valueOf</span>(123);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 字符串操作</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(str1.<span style="color:#4070a0">length</span>());<span style="color:#bbb">                </span><span style="color:#60a0b0;font-style:italic">// 输出：5</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(str1.<span style="color:#4070a0">charAt</span>(0));<span style="color:#bbb">               </span><span style="color:#60a0b0;font-style:italic">// 输出：H</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(str1.<span style="color:#4070a0">substring</span>(1,<span style="color:#bbb"> </span>3));<span style="color:#bbb">         </span><span style="color:#60a0b0;font-style:italic">// 输出：el</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(str1.<span style="color:#4070a0">concat</span>(<span style="color:#4070a0">&#34; World&#34;</span>));<span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 输出：Hello World</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(str1.<span style="color:#4070a0">replace</span>(<span style="color:#4070a0">&#34;H&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;h&#34;</span>));<span style="color:#bbb">       </span><span style="color:#60a0b0;font-style:italic">// 输出：hello</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 字符串判断</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(str1.<span style="color:#4070a0">equals</span>(str2));<span style="color:#bbb">            </span><span style="color:#60a0b0;font-style:italic">// 输出：true</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(str1.<span style="color:#4070a0">equalsIgnoreCase</span>(<span style="color:#4070a0">&#34;HELLO&#34;</span>));<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：true</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(str1.<span style="color:#4070a0">contains</span>(<span style="color:#4070a0">&#34;ell&#34;</span>));<span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 输出：true</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(str1.<span style="color:#4070a0">startsWith</span>(<span style="color:#4070a0">&#34;He&#34;</span>));<span style="color:#bbb">       </span><span style="color:#60a0b0;font-style:italic">// 输出：true</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(str1.<span style="color:#4070a0">endsWith</span>(<span style="color:#4070a0">&#34;lo&#34;</span>));<span style="color:#bbb">         </span><span style="color:#60a0b0;font-style:italic">// 输出：true</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 字符串转换</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(str1.<span style="color:#4070a0">toLowerCase</span>());<span style="color:#bbb">           </span><span style="color:#60a0b0;font-style:italic">// 输出：hello</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(str1.<span style="color:#4070a0">toUpperCase</span>());<span style="color:#bbb">           </span><span style="color:#60a0b0;font-style:italic">// 输出：HELLO</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;  Hello  &#34;</span>.<span style="color:#4070a0">trim</span>());<span style="color:#bbb">          </span><span style="color:#60a0b0;font-style:italic">// 输出：Hello</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 字符串分割与拼接</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#666">[]</span><span style="color:#bbb"> </span>parts<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;a,b,c&#34;</span>.<span style="color:#4070a0">split</span>(<span style="color:#4070a0">&#34;,&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(parts<span style="color:#666">[</span>0<span style="color:#666">]</span>);<span style="color:#bbb">                     </span><span style="color:#60a0b0;font-style:italic">// 输出：a</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>joined<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>String.<span style="color:#4070a0">join</span>(<span style="color:#4070a0">&#34;-&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;a&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;b&#34;</span>,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;c&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(joined);<span style="color:#bbb">                       </span><span style="color:#60a0b0;font-style:italic">// 输出：a-b-c</span><span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div></li>
+</div><h3 id="22-stringbuffer-类">2.2 StringBuffer 类</h3>
+<p><strong>作用</strong>：StringBuffer 类表示可变的字符序列，线程安全，适用于多线程环境。</p>
+<p><strong>技术原理</strong>：</p>
+<ul>
+<li>底层基于 <code>char[]</code> 数组存储数据</li>
+<li>可变：修改操作直接修改内部数组，不会创建新对象</li>
+<li>线程安全：所有公共方法都使用 <code>synchronized</code> 修饰</li>
+<li>动态扩容：默认容量为16，当容量不足时会自动扩容（扩容公式：新容量 = 旧容量*2 + 2）</li>
 </ul>
-<h3 id="总结"><strong>总结</strong></h3>
+<p><strong>核心方法</strong>：</p>
+<ul>
+<li>字符串修改：<code>append()</code>, <code>insert()</code>, <code>delete()</code>, <code>replace()</code>, <code>reverse()</code></li>
+<li>其他方法：<code>length()</code>, <code>capacity()</code>, <code>toString()</code></li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-18">18</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// StringBuffer 创建</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>StringBuffer<span style="color:#bbb"> </span>sb<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>StringBuffer(<span style="color:#4070a0">&#34;Java&#34;</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 指定初始字符串</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>StringBuffer<span style="color:#bbb"> </span>sb2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>StringBuffer(32);<span style="color:#bbb">     </span><span style="color:#60a0b0;font-style:italic">// 指定初始容量</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 字符串修改</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(sb.<span style="color:#4070a0">append</span>(<span style="color:#4070a0">&#34;!&#34;</span>));<span style="color:#bbb">          </span><span style="color:#60a0b0;font-style:italic">// 输出：Java!</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(sb.<span style="color:#4070a0">insert</span>(4,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34; Core&#34;</span>));<span style="color:#bbb">   </span><span style="color:#60a0b0;font-style:italic">// 输出：Java Core!</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(sb.<span style="color:#4070a0">delete</span>(4,<span style="color:#bbb"> </span>9));<span style="color:#bbb">         </span><span style="color:#60a0b0;font-style:italic">// 输出：Java!</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(sb.<span style="color:#4070a0">replace</span>(0,<span style="color:#bbb"> </span>4,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Hello&#34;</span>));<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：Hello!</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(sb.<span style="color:#4070a0">reverse</span>());<span style="color:#bbb">            </span><span style="color:#60a0b0;font-style:italic">// 输出：!olleH</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 容量相关</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(sb.<span style="color:#4070a0">length</span>());<span style="color:#bbb">             </span><span style="color:#60a0b0;font-style:italic">// 输出：6</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(sb.<span style="color:#4070a0">capacity</span>());<span style="color:#bbb">           </span><span style="color:#60a0b0;font-style:italic">// 输出：16（默认容量）</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 转换为 String</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>sb.<span style="color:#4070a0">toString</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(result);<span style="color:#bbb">                   </span><span style="color:#60a0b0;font-style:italic">// 输出：!olleH</span><span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="23-stringbuilder-类">2.3 StringBuilder 类</h3>
+<p><strong>作用</strong>：StringBuilder 类表示可变的字符序列，非线程安全，适用于单线程环境。</p>
+<p><strong>技术原理</strong>：</p>
+<ul>
+<li>底层基于 <code>char[]</code> 数组存储数据（与 StringBuffer 相同）</li>
+<li>可变：修改操作直接修改内部数组，不会创建新对象（与 StringBuffer 相同）</li>
+<li>非线程安全：方法没有使用 <code>synchronized</code> 修饰，性能比 StringBuffer 更高</li>
+<li>动态扩容：默认容量为16，当容量不足时会自动扩容（扩容公式：新容量 = 旧容量*2 + 2）（与 StringBuffer 相同）</li>
+</ul>
+<p><strong>核心方法</strong>：</p>
+<ul>
+<li>与 StringBuffer 基本相同：<code>append()</code>, <code>insert()</code>, <code>delete()</code>, <code>replace()</code>, <code>reverse()</code> 等</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-11">11</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// StringBuilder 创建</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>StringBuilder<span style="color:#bbb"> </span>sb<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>StringBuilder(<span style="color:#4070a0">&#34;Java&#34;</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 指定初始字符串</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 字符串修改</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(sb.<span style="color:#4070a0">append</span>(<span style="color:#4070a0">&#34;!&#34;</span>));<span style="color:#bbb">          </span><span style="color:#60a0b0;font-style:italic">// 输出：Java!</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(sb.<span style="color:#4070a0">insert</span>(4,<span style="color:#bbb"> </span><span style="color:#4070a0">&#34; Core&#34;</span>));<span style="color:#bbb">   </span><span style="color:#60a0b0;font-style:italic">// 输出：Java Core!</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(sb.<span style="color:#4070a0">reverse</span>());<span style="color:#bbb">            </span><span style="color:#60a0b0;font-style:italic">// 输出：!eroC avaJ</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 转换为 String</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>result<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>sb.<span style="color:#4070a0">toString</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(result);<span style="color:#bbb">                   </span><span style="color:#60a0b0;font-style:italic">// 输出：!eroC avaJ</span><span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="24-字符串类的比较">2.4 字符串类的比较</h3>
 <table>
 <thead>
 <tr>
+<th><strong>特性</strong></th>
+<th><strong>String</strong></th>
+<th><strong>StringBuffer</strong></th>
+<th><strong>StringBuilder</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>可变性</td>
+<td>不可变</td>
+<td>可变</td>
+<td>可变</td>
+</tr>
+<tr>
+<td>线程安全</td>
+<td>安全（不可变）</td>
+<td>安全（synchronized）</td>
+<td>不安全</td>
+</tr>
+<tr>
+<td>性能</td>
+<td>频繁修改时性能差</td>
+<td>性能适中</td>
+<td>性能最好</td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>字符串常量、频繁读操作</td>
+<td>多线程环境下的字符串修改</td>
+<td>单线程环境下的字符串修改</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-数值相关类">3. 数值相关类</h2>
+<h3 id="31-number-抽象类">3.1 Number 抽象类</h3>
+<p><strong>作用</strong>：Number 是所有数值包装类的抽象父类，提供了将数值转换为不同基本类型的方法。</p>
+<p><strong>核心方法</strong>：</p>
+<ul>
+<li><code>byteValue()</code>, <code>shortValue()</code>, <code>intValue()</code>, <code>longValue()</code>, <code>floatValue()</code>, <code>doubleValue()</code></li>
+</ul>
+<p><strong>技术原理</strong>：</p>
+<ul>
+<li>Number 是一个抽象类，定义了数值类型的通用行为</li>
+<li>具体的数值包装类（如 Integer, Double 等）都继承自 Number</li>
+</ul>
+<h3 id="32-包装类">3.2 包装类</h3>
+<p><strong>作用</strong>：包装类将基本数据类型包装为对象，提供了更多的操作方法。</p>
+<p><strong>常用包装类</strong>：</p>
+<ul>
+<li><code>Integer</code>：int 的包装类</li>
+<li><code>Double</code>：double 的包装类</li>
+<li><code>Boolean</code>：boolean 的包装类</li>
+<li><code>Character</code>：char 的包装类</li>
+<li><code>Byte</code>：byte 的包装类</li>
+<li><code>Short</code>：short 的包装类</li>
+<li><code>Long</code>：long 的包装类</li>
+<li><code>Float</code>：float 的包装类</li>
+</ul>
+<p><strong>技术原理</strong>：</p>
+<ul>
+<li>包装类提供了自动装箱和自动拆箱功能，方便在基本类型和对象之间转换</li>
+<li>对于常用数值，包装类实现了缓存机制，提高性能</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-19">19</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 自动装箱与拆箱</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Integer<span style="color:#bbb"> </span>num1<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>100;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 自动装箱</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">int</span><span style="color:#bbb"> </span>num2<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>num1;<span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 自动拆箱</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 包装类的方法</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Integer.<span style="color:#4070a0">MAX_VALUE</span>);<span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 输出：2147483647</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Integer.<span style="color:#4070a0">MIN_VALUE</span>);<span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 输出：-2147483648</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Integer.<span style="color:#4070a0">parseInt</span>(<span style="color:#4070a0">&#34;123&#34;</span>));<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">// 输出：123</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Integer.<span style="color:#4070a0">valueOf</span>(<span style="color:#4070a0">&#34;456&#34;</span>));<span style="color:#bbb">   </span><span style="color:#60a0b0;font-style:italic">// 输出：456</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(Integer.<span style="color:#4070a0">toBinaryString</span>(10));<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：1010</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 缓存机制</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Integer<span style="color:#bbb"> </span>a<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>127;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Integer<span style="color:#bbb"> </span>b<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>127;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(a<span style="color:#bbb"> </span><span style="color:#666">==</span><span style="color:#bbb"> </span>b);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：true（缓存范围内）</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Integer<span style="color:#bbb"> </span>c<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>128;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Integer<span style="color:#bbb"> </span>d<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>128;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(c<span style="color:#bbb"> </span><span style="color:#666">==</span><span style="color:#bbb"> </span>d);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：false（超出缓存范围）</span><span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="4-日期时间类">4. 日期时间类</h2>
+<h3 id="41-javatime-包介绍">4.1 java.time 包介绍</h3>
+<p><strong>作用</strong>：java.time 包是 Java 8 引入的日期时间 API，提供了更强大、更灵活的日期时间处理功能。</p>
+<p><strong>核心特性</strong>：</p>
+<ul>
+<li>不可变性：所有类都是不可变的，线程安全</li>
+<li>清晰的 API 设计：不同的类表示不同的时间概念</li>
+<li>丰富的操作方法：支持日期时间的计算、格式化等操作</li>
+</ul>
+<h3 id="42-常用日期时间类">4.2 常用日期时间类</h3>
+<p><strong>LocalDate</strong>：表示日期（年、月、日）
+<strong>LocalTime</strong>：表示时间（时、分、秒、纳秒）
+<strong>LocalDateTime</strong>：表示日期和时间
+<strong>Instant</strong>：表示时间戳（从 1970-01-01T00:00:00Z 开始的秒数）
+<strong>Duration</strong>：表示时间间隔
+<strong>Period</strong>：表示日期间隔
+<strong>DateTimeFormatter</strong>：日期时间格式化</p>
+<p><strong>代码示例</strong>：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-25">25</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-26">26</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-27">27</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-28">28</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-29"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-29">29</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-30"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-30">30</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-31"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-31">31</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-32"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-32">32</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-33"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-33">33</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-34"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-34">34</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-35"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-35">35</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-36"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-36">36</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-37"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-37">37</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-38"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-38">38</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-39"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-39">39</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// LocalDate</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>LocalDate<span style="color:#bbb"> </span>date<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>LocalDate.<span style="color:#4070a0">now</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 当前日期</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(date);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：2026-03-22</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>LocalDate<span style="color:#bbb"> </span>birthday<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>LocalDate.<span style="color:#4070a0">of</span>(1990,<span style="color:#bbb"> </span>1,<span style="color:#bbb"> </span>1);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 指定日期</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(birthday);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：1990-01-01</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>LocalDate<span style="color:#bbb"> </span>nextWeek<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>date.<span style="color:#4070a0">plusWeeks</span>(1);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 一周后</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(nextWeek);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：2026-03-29</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// LocalTime</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>LocalTime<span style="color:#bbb"> </span>time<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>LocalTime.<span style="color:#4070a0">now</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 当前时间</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(time);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：10:30:45.123</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>LocalTime<span style="color:#bbb"> </span>meetingTime<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>LocalTime.<span style="color:#4070a0">of</span>(14,<span style="color:#bbb"> </span>30);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 指定时间</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(meetingTime);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：14:30</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// LocalDateTime</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>LocalDateTime<span style="color:#bbb"> </span>dateTime<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>LocalDateTime.<span style="color:#4070a0">now</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 当前日期时间</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(dateTime);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：2026-03-22T10:30:45.123</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 日期时间格式化</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>DateTimeFormatter<span style="color:#bbb"> </span>formatter<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>DateTimeFormatter.<span style="color:#4070a0">ofPattern</span>(<span style="color:#4070a0">&#34;yyyy-MM-dd HH:mm:ss&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>formattedDateTime<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>dateTime.<span style="color:#4070a0">format</span>(formatter);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(formattedDateTime);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：2026-03-22 10:30:45</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 解析日期时间字符串</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>LocalDateTime<span style="color:#bbb"> </span>parsedDateTime<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>LocalDateTime.<span style="color:#4070a0">parse</span>(<span style="color:#4070a0">&#34;2026-03-22 10:30:45&#34;</span>,<span style="color:#bbb"> </span>formatter);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(parsedDateTime);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：2026-03-22T10:30:45</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// Duration（时间间隔）</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Duration<span style="color:#bbb"> </span>duration<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Duration.<span style="color:#4070a0">between</span>(LocalTime.<span style="color:#4070a0">of</span>(10,<span style="color:#bbb"> </span>0),<span style="color:#bbb"> </span>LocalTime.<span style="color:#4070a0">of</span>(12,<span style="color:#bbb"> </span>30));<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(duration.<span style="color:#4070a0">toHours</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：2</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(duration.<span style="color:#4070a0">toMinutes</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：150</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// Period（日期间隔）</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Period<span style="color:#bbb"> </span>period<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Period.<span style="color:#4070a0">between</span>(LocalDate.<span style="color:#4070a0">of</span>(2026,<span style="color:#bbb"> </span>1,<span style="color:#bbb"> </span>1),<span style="color:#bbb"> </span>LocalDate.<span style="color:#4070a0">of</span>(2026,<span style="color:#bbb"> </span>3,<span style="color:#bbb"> </span>22));<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(period.<span style="color:#4070a0">getMonths</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：2</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(period.<span style="color:#4070a0">getDays</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：21</span><span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="5-输入输出类">5. 输入输出类</h2>
+<h3 id="51-scanner-类">5.1 Scanner 类</h3>
+<p><strong>作用</strong>：Scanner 类用于读取用户输入或文件内容，是处理输入的便捷工具。</p>
+<p><strong>技术原理</strong>：</p>
+<ul>
+<li>Scanner 可以从多种输入源读取数据，如 System.in、文件、字符串等</li>
+<li>它会将输入分解为标记（tokens），默认使用空白字符作为分隔符</li>
+<li>提供了多种方法来读取不同类型的数据</li>
+</ul>
+<p><strong>核心方法</strong>：</p>
+<ul>
+<li><code>next()</code>：读取下一个标记</li>
+<li><code>nextLine()</code>：读取一整行</li>
+<li><code>nextInt()</code>, <code>nextDouble()</code> 等：读取特定类型的数据</li>
+<li><code>hasNext()</code>：检查是否还有下一个标记</li>
+<li><code>close()</code>：关闭 Scanner</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-21">21</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 从控制台读取输入</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Scanner<span style="color:#bbb"> </span>scanner<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Scanner(System.<span style="color:#4070a0">in</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">print</span>(<span style="color:#4070a0">&#34;请输入姓名: &#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>name<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>scanner.<span style="color:#4070a0">nextLine</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">print</span>(<span style="color:#4070a0">&#34;请输入年龄: &#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#902000">int</span><span style="color:#bbb"> </span>age<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>scanner.<span style="color:#4070a0">nextInt</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;你好, &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>name<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;! 你今年&#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>age<span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;岁。&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 从字符串读取</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>input<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;Hello 123 3.14&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Scanner<span style="color:#bbb"> </span>stringScanner<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Scanner(input);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(stringScanner.<span style="color:#4070a0">next</span>());<span style="color:#bbb">     </span><span style="color:#60a0b0;font-style:italic">// 输出：Hello</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(stringScanner.<span style="color:#4070a0">nextInt</span>());<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">// 输出：123</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(stringScanner.<span style="color:#4070a0">nextDouble</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：3.14</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 关闭 Scanner</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>scanner.<span style="color:#4070a0">close</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>stringScanner.<span style="color:#4070a0">close</span>();<span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="6-正则表达式">6. 正则表达式</h2>
+<h3 id="61-pattern-与-matcher-类">6.1 Pattern 与 Matcher 类</h3>
+<p><strong>作用</strong>：Pattern 和 Matcher 类用于处理正则表达式，提供了强大的字符串匹配、替换和分割功能。</p>
+<p><strong>技术原理</strong>：</p>
+<ul>
+<li>Pattern 类表示编译后的正则表达式模式</li>
+<li>Matcher 类用于对输入字符串应用正则表达式模式</li>
+<li>正则表达式是一种用于匹配字符串的模式语言</li>
+</ul>
+<p><strong>核心方法</strong>：</p>
+<ul>
+<li>Pattern：<code>compile()</code>, <code>matcher()</code>, <code>split()</code></li>
+<li>Matcher：<code>find()</code>, <code>matches()</code>, <code>group()</code>, <code>replaceAll()</code>, <code>replaceFirst()</code></li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-25">25</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-26">26</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-27">27</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-28">28</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-29"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-29">29</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 编译正则表达式模式</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Pattern<span style="color:#bbb"> </span>pattern<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Pattern.<span style="color:#4070a0">compile</span>(<span style="color:#4070a0">&#34;\\d+&#34;</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 匹配一个或多个数字</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 创建 Matcher</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Matcher<span style="color:#bbb"> </span>matcher<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>pattern.<span style="color:#4070a0">matcher</span>(<span style="color:#4070a0">&#34;a1b23c456&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 查找所有匹配</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">while</span><span style="color:#bbb"> </span>(matcher.<span style="color:#4070a0">find</span>())<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;找到匹配: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>matcher.<span style="color:#4070a0">group</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;起始位置: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>matcher.<span style="color:#4070a0">start</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;结束位置: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>matcher.<span style="color:#4070a0">end</span>());<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 替换匹配</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>input<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#4070a0">&#34;a1b23c456&#34;</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>replaced<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>pattern.<span style="color:#4070a0">matcher</span>(input).<span style="color:#4070a0">replaceAll</span>(<span style="color:#4070a0">&#34;X&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;替换后: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>replaced);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：aXbXcX</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 分割字符串</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Pattern<span style="color:#bbb"> </span>splitPattern<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Pattern.<span style="color:#4070a0">compile</span>(<span style="color:#4070a0">&#34;,&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#666">[]</span><span style="color:#bbb"> </span>parts<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>splitPattern.<span style="color:#4070a0">split</span>(<span style="color:#4070a0">&#34;a,b,c,d&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(String<span style="color:#bbb"> </span>part<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>parts)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(part);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 完整匹配</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Pattern<span style="color:#bbb"> </span>fullPattern<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>Pattern.<span style="color:#4070a0">compile</span>(<span style="color:#4070a0">&#34;\\d{4}-\\d{2}-\\d{2}&#34;</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 日期格式</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Matcher<span style="color:#bbb"> </span>fullMatcher<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>fullPattern.<span style="color:#4070a0">matcher</span>(<span style="color:#4070a0">&#34;2026-03-22&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;完整匹配: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>fullMatcher.<span style="color:#4070a0">matches</span>());<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 输出：true</span><span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="7-类之间的比较与最佳实践">7. 类之间的比较与最佳实践</h2>
+<h3 id="71-字符串类的选择">7.1 字符串类的选择</h3>
+<table>
+<thead>
+<tr>
+<th><strong>场景</strong></th>
+<th><strong>推荐类</strong></th>
+<th><strong>理由</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字符串常量</td>
+<td>String</td>
+<td>不可变性，内存效率高</td>
+</tr>
+<tr>
+<td>频繁修改字符串（单线程）</td>
+<td>StringBuilder</td>
+<td>可变，性能最好</td>
+</tr>
+<tr>
+<td>频繁修改字符串（多线程）</td>
+<td>StringBuffer</td>
+<td>可变，线程安全</td>
+</tr>
+<tr>
+<td>字符串拼接</td>
+<td>StringBuilder</td>
+<td>性能优于 String 的 + 操作</td>
+</tr>
+</tbody>
+</table>
+<h3 id="72-日期时间类的选择">7.2 日期时间类的选择</h3>
+<table>
+<thead>
+<tr>
+<th><strong>场景</strong></th>
+<th><strong>推荐类</strong></th>
+<th><strong>理由</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仅日期</td>
+<td>LocalDate</td>
+<td>专注于日期处理</td>
+</tr>
+<tr>
+<td>仅时间</td>
+<td>LocalTime</td>
+<td>专注于时间处理</td>
+</tr>
+<tr>
+<td>日期和时间</td>
+<td>LocalDateTime</td>
+<td>同时处理日期和时间</td>
+</tr>
+<tr>
+<td>时间戳</td>
+<td>Instant</td>
+<td>高精度时间戳，适用于时间计算</td>
+</tr>
+<tr>
+<td>时间间隔</td>
+<td>Duration</td>
+<td>处理时间差</td>
+</tr>
+<tr>
+<td>日期间隔</td>
+<td>Period</td>
+<td>处理日期间隔</td>
+</tr>
+<tr>
+<td>日期时间格式化</td>
+<td>DateTimeFormatter</td>
+<td>灵活的格式化选项</td>
+</tr>
+</tbody>
+</table>
+<h3 id="73-数值处理的最佳实践">7.3 数值处理的最佳实践</h3>
+<ol>
+<li>
+<p><strong>包装类与基本类型</strong>：</p>
+<ul>
+<li>方法参数和局部变量使用基本类型（性能更好）</li>
+<li>集合中使用包装类（泛型要求）</li>
+<li>自动装箱和拆箱会影响性能，频繁操作时应注意</li>
+</ul>
+</li>
+<li>
+<p><strong>数值转换</strong>：</p>
+<ul>
+<li>使用包装类的 parseXxx() 方法进行字符串到数值的转换</li>
+<li>使用包装类的 valueOf() 方法创建包装对象（利用缓存）</li>
+</ul>
+</li>
+<li>
+<p><strong>数学运算</strong>：</p>
+<ul>
+<li>简单运算使用 Math 类的静态方法</li>
+<li>复杂运算考虑使用 BigDecimal（高精度）</li>
+</ul>
+</li>
+</ol>
+<h3 id="74-输入处理的最佳实践">7.4 输入处理的最佳实践</h3>
+<ol>
+<li>
+<p><strong>Scanner 的使用</strong>：</p>
+<ul>
+<li>使用 try-with-resources 确保 Scanner 正确关闭</li>
+<li>读取不同类型数据时注意输入顺序</li>
+<li>处理用户输入时要考虑异常情况</li>
+</ul>
+</li>
+<li>
+<p><strong>正则表达式的使用</strong>：</p>
+<ul>
+<li>复杂正则表达式应预编译为 Pattern 对象（提高性能）</li>
+<li>使用合理的正则表达式，避免过度复杂</li>
+<li>注意正则表达式的转义字符</li>
+</ul>
+</li>
+</ol>
+<h2 id="总结">总结</h2>
+<table>
+<thead>
+<tr>
+<th><strong>类别</strong></th>
 <th><strong>类名</strong></th>
 <th><strong>核心特性</strong></th>
 <th><strong>典型应用场景</strong></th>
@@ -765,38 +1437,106 @@
 </thead>
 <tbody>
 <tr>
-<td><code>String</code></td>
-<td>不可变性，内存安全</td>
+<td><strong>根类</strong></td>
+<td>Object</td>
+<td>所有类的超类</td>
+<td>提供对象的基本行为</td>
+</tr>
+<tr>
+<td><strong>工具类</strong></td>
+<td>Math</td>
+<td>静态数学方法</td>
+<td>数学计算</td>
+</tr>
+<tr>
+<td></td>
+<td>Character</td>
+<td>字符操作</td>
+<td>字符判断和转换</td>
+</tr>
+<tr>
+<td><strong>字符串</strong></td>
+<td>String</td>
+<td>不可变字符序列</td>
 <td>字符串常量、频繁读操作</td>
 </tr>
 <tr>
-<td><code>StringBuffer</code></td>
+<td></td>
+<td>StringBuffer</td>
 <td>可变，线程安全</td>
-<td>多线程字符串拼接</td>
+<td>多线程字符串修改</td>
 </tr>
 <tr>
-<td><code>Math</code></td>
-<td>静态数学工具方法</td>
-<td>数值计算</td>
+<td></td>
+<td>StringBuilder</td>
+<td>可变，非线程安全</td>
+<td>单线程字符串修改</td>
 </tr>
 <tr>
-<td><code>LocalDate</code></td>
-<td>不可变日期对象</td>
-<td>日期计算与格式化</td>
+<td><strong>数值</strong></td>
+<td>Integer, Double 等</td>
+<td>包装类</td>
+<td>基本类型的对象表示</td>
 </tr>
 <tr>
-<td><code>Pattern</code></td>
-<td>正则表达式预编译</td>
-<td>字符串匹配与替换</td>
+<td><strong>日期时间</strong></td>
+<td>LocalDate, LocalTime, LocalDateTime</td>
+<td>不可变，线程安全</td>
+<td>日期时间处理</td>
+</tr>
+<tr>
+<td><strong>输入</strong></td>
+<td>Scanner</td>
+<td>输入处理</td>
+<td>读取用户输入或文件内容</td>
+</tr>
+<tr>
+<td><strong>正则</strong></td>
+<td>Pattern, Matcher</td>
+<td>正则表达式处理</td>
+<td>字符串匹配、替换、分割</td>
 </tr>
 </tbody>
 </table>
-<p><strong>选择建议</strong>：</p>
+<p><strong>最佳实践总结</strong>：</p>
+<ol>
+<li>
+<p><strong>字符串处理</strong>：</p>
 <ul>
-<li>字符串频繁修改 → <code>StringBuffer</code>（线程安全）或 <code>StringBuilder</code>（非线程安全）。</li>
-<li>日期处理 → 优先使用 <code>java.time</code> 包下的类。</li>
-<li>输入处理 → <code>Scanner</code> 简化用户交互。</li>
+<li>优先使用 String 处理常量字符串</li>
+<li>频繁修改时使用 StringBuilder（单线程）或 StringBuffer（多线程）</li>
 </ul>
+</li>
+<li>
+<p><strong>日期时间</strong>：</p>
+<ul>
+<li>优先使用 java.time 包下的类</li>
+<li>根据需要选择合适的日期时间类</li>
+</ul>
+</li>
+<li>
+<p><strong>数值处理</strong>：</p>
+<ul>
+<li>合理使用基本类型和包装类</li>
+<li>注意包装类的缓存机制</li>
+</ul>
+</li>
+<li>
+<p><strong>输入输出</strong>：</p>
+<ul>
+<li>使用 Scanner 简化输入处理</li>
+<li>注意资源的正确关闭</li>
+</ul>
+</li>
+<li>
+<p><strong>正则表达式</strong>：</p>
+<ul>
+<li>复杂正则表达式预编译为 Pattern 对象</li>
+<li>合理使用正则表达式，避免过度复杂</li>
+</ul>
+</li>
+</ol>
+<p>通过掌握这些常用基础类的使用方法和技术原理，我们可以编写更加高效、优雅的Java代码。这些类是Java开发的基础，也是我们日常工作中最常用的工具，深入理解它们对于成为一名优秀的Java开发者至关重要。</p>
             </div>
 
             
@@ -809,7 +1549,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-      2018-06-08
+      2026-03-22
       
     </span>
   </p>
@@ -831,12 +1571,12 @@
     
     
       <label class="qr-code-image" for="reward">
-        <img class="image" src="https://yutao.org/image/ds/wechat-qr-code.jpg">
+        <img class="image" src="http://localhost:1313/image/ds/wechat-qr-code.jpg">
         <span>微信打赏</span>
       </label>
     
       <label class="qr-code-image" for="reward">
-        <img class="image" src="https://yutao.org/image/ds/alipay-qr-code.jpg">
+        <img class="image" src="http://localhost:1313/image/ds/alipay-qr-code.jpg">
         <span>支付宝打赏</span>
       </label>
   </div>
@@ -845,7 +1585,7 @@
 
             <footer class="post-footer">
                 <div class="post-tags">
-                    <a href="https://yutao.org/tags/java%E5%90%8E%E7%AB%AF/">java后端</a>
+                    <a href="http://localhost:1313/tags/java%E5%90%8E%E7%AB%AF/">java后端</a>
                     
                 </div>
 
@@ -853,7 +1593,7 @@
                 
                 <nav class="post-nav">
                     
-                    <a class="prev" href="https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-io-8/">
+                    <a class="prev" href="http://localhost:1313/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-io-8/">
                         
                         <i class="iconfont">
                             <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -867,8 +1607,8 @@
                         <span class="prev-text nav-mobile">上一篇</span>
                     </a>
                     
-                    <a class="next" href="https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E4%BF%AE%E9%A5%B0%E7%AC%A6-6/">
-                        <span class="next-text nav-default">Java后端-基础-修饰符-6</span>
+                    <a class="next" href="http://localhost:1313/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E4%BF%AE%E9%A5%B0%E7%AC%A6-6/">
+                        <span class="next-text nav-default">Java后端-基础-修饰符-7</span>
                         <span class="prev-text nav-mobile">下一篇</span>
                         
                         <i class="iconfont">
@@ -924,24 +1664,53 @@
     <div class="toc-content custom-scrollbar">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#文章概览">文章概览</a>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#1-根类与基础工具类">1. 根类与基础工具类</a>
       <ul>
-        <li><a href="#1-常用基础类">1. 常用基础类</a>
-          <ul>
-            <li><a href="#1-object-类">1. <code>Object</code> 类</a></li>
-            <li><a href="#2-number-与-math-类">2. <code>Number</code> 与 <code>Math</code> 类</a></li>
-            <li><a href="#3-string-类">3. <code>String</code> 类</a></li>
-            <li><a href="#4-stringbuffer-类">4. <code>StringBuffer</code> 类</a></li>
-            <li><a href="#5-stringbuilder-类">5. <code>StringBuilder</code> 类</a></li>
-            <li><a href="#6-正则表达式">6. 正则表达式</a></li>
-            <li><a href="#7-日期时间javatime">7. 日期时间（<code>java.time</code>）</a></li>
-            <li><a href="#8-scanner-类">8. <code>Scanner</code> 类</a></li>
-            <li><a href="#9-character-类">9. <code>Character</code> 类</a></li>
-          </ul>
-        </li>
-        <li><a href="#总结"><strong>总结</strong></a></li>
+        <li><a href="#11-object-类">1.1 Object 类</a></li>
+        <li><a href="#12-math-类">1.2 Math 类</a></li>
+        <li><a href="#13-character-类">1.3 Character 类</a></li>
       </ul>
     </li>
+    <li><a href="#2-字符串相关类">2. 字符串相关类</a>
+      <ul>
+        <li><a href="#21-string-类">2.1 String 类</a></li>
+        <li><a href="#22-stringbuffer-类">2.2 StringBuffer 类</a></li>
+        <li><a href="#23-stringbuilder-类">2.3 StringBuilder 类</a></li>
+        <li><a href="#24-字符串类的比较">2.4 字符串类的比较</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-数值相关类">3. 数值相关类</a>
+      <ul>
+        <li><a href="#31-number-抽象类">3.1 Number 抽象类</a></li>
+        <li><a href="#32-包装类">3.2 包装类</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-日期时间类">4. 日期时间类</a>
+      <ul>
+        <li><a href="#41-javatime-包介绍">4.1 java.time 包介绍</a></li>
+        <li><a href="#42-常用日期时间类">4.2 常用日期时间类</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-输入输出类">5. 输入输出类</a>
+      <ul>
+        <li><a href="#51-scanner-类">5.1 Scanner 类</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-正则表达式">6. 正则表达式</a>
+      <ul>
+        <li><a href="#61-pattern-与-matcher-类">6.1 Pattern 与 Matcher 类</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-类之间的比较与最佳实践">7. 类之间的比较与最佳实践</a>
+      <ul>
+        <li><a href="#71-字符串类的选择">7.1 字符串类的选择</a></li>
+        <li><a href="#72-日期时间类的选择">7.2 日期时间类的选择</a></li>
+        <li><a href="#73-数值处理的最佳实践">7.3 数值处理的最佳实践</a></li>
+        <li><a href="#74-输入处理的最佳实践">7.4 输入处理的最佳实践</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
   </ul>
 </nav>
     </div>
@@ -1038,7 +1807,7 @@
     </a>
 
 
-<a href="https://yutao.org/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1062,7 +1831,7 @@
     <span class="copyright-year">
         &copy;
         
-        2009 -
+        2013 -
         2026
         <span class="heart">
             
@@ -1109,13 +1878,13 @@
       </div>
     </div>
     
-<script type="text/javascript" src="https://yutao.org/lib/jquery/jquery-3.7.1.min.js"></script>
-  <script type="text/javascript" src="https://yutao.org/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:1313/lib/jquery/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="http://localhost:1313/lib/slideout/slideout-1.0.1.min.js"></script>
 
 
 
 
-<script type="text/javascript" src="https://yutao.org/js/main.54fc209990d2ffd16840055feb54ac66f05b31e000ac773fc8d9792e1b1a4246.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://localhost:1313/js/main.54fc209990d2ffd16840055feb54ac66f05b31e000ac773fc8d9792e1b1a4246.js" crossorigin="anonymous"></script>
 
 
 
@@ -1129,8 +1898,8 @@
 
 
   
-    <script type="text/javascript" src="https://yutao.org/lib/photoswipe/photoswipe.min.js"></script>
-    <script type="text/javascript" src="https://yutao.org/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
 
 
@@ -1150,9 +1919,9 @@
 
 
 
-  <script src="https://yutao.org/js/copy-to-clipboard.js"></script>
+  <script src="http://localhost:1313/js/copy-to-clipboard.js"></script>
 
-  <script src="https://yutao.org/js/search.js"></script>
+  <script src="http://localhost:1313/js/search.js"></script>
 
 
   </body>
