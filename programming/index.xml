@@ -2,152 +2,152 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编程 on 会写代码的小郎中</title>
-    <link>https://yutao.org/programming/</link>
+    <link>http://localhost:57940/programming/</link>
     <description>Recent content in 编程 on 会写代码的小郎中</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
     <lastBuildDate>Wed, 10 Sep 2025 15:53:53 +0800</lastBuildDate>
-    <atom:link href="https://yutao.org/programming/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:57940/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java后端-中间件-Kafka-3</title>
-      <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-3/</link>
+      <link>http://localhost:57940/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-3/</link>
       <pubDate>Wed, 10 Sep 2025 15:53:53 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-3/</guid>
+      <guid>http://localhost:57940/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-3/</guid>
       <description>Kafka与微服务架构集成 1.0 事件驱动架构（EDA）设计 1.1 微服务通信模式 同步调用：REST/gRPC（适用于强依赖场景） 异步通信：Kafka事</description>
     </item>
     <item>
       <title>Java后端-中间件-Kafka-2</title>
-      <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-2/</link>
+      <link>http://localhost:57940/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-2/</link>
       <pubDate>Tue, 09 Sep 2025 15:49:38 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-2/</guid>
+      <guid>http://localhost:57940/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-2/</guid>
       <description>Kafka高级特性与企业级实践 1. 幂等性与事务机制 1.1 生产者幂等性 配置enable.idempotence=true（默认false），Kafk</description>
     </item>
     <item>
       <title>Java后端-中间件-Kafka-1</title>
-      <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-1/</link>
+      <link>http://localhost:57940/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-1/</link>
       <pubDate>Mon, 08 Sep 2025 15:27:57 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-1/</guid>
+      <guid>http://localhost:57940/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-1/</guid>
       <description>Kafka核心架构与底层原理 1. 什么是 Kafka Kafka 是一个分布式消息队列系统，最初由 LinkedIn 开发，现已成为 Apache 顶级项目。Kafka 的核心特性包括： 高吞吐量：每秒</description>
     </item>
     <item>
       <title>Java框架-SpringCloud框架-12</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-12/</link>
+      <link>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-12/</link>
       <pubDate>Sun, 03 Aug 2025 10:29:33 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-12/</guid>
+      <guid>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-12/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第十二篇。Spring Cloud 是构建微服务架构的基石，拥有</description>
     </item>
     <item>
       <title>Java框架-SpringCloud框架-11</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-11/</link>
+      <link>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-11/</link>
       <pubDate>Sun, 03 Aug 2025 10:29:21 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-11/</guid>
+      <guid>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-11/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第十一篇。Spring Cloud 是构建微服务架构的基石，拥有</description>
     </item>
     <item>
       <title>Java框架-SpringCloud框架-10</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-10/</link>
+      <link>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-10/</link>
       <pubDate>Sun, 03 Aug 2025 10:29:07 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-10/</guid>
+      <guid>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-10/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第十篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
     </item>
     <item>
       <title>Java框架-SpringCloud框架-9</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-9/</link>
+      <link>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-9/</link>
       <pubDate>Sat, 02 Aug 2025 10:28:52 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-9/</guid>
+      <guid>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-9/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第九篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
     </item>
     <item>
       <title>Java框架-SpringCloud框架-8</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-8/</link>
+      <link>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-8/</link>
       <pubDate>Sat, 02 Aug 2025 10:28:39 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-8/</guid>
+      <guid>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-8/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第八篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
     </item>
     <item>
       <title>Java框架-SpringCloud框架-7</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-7/</link>
+      <link>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-7/</link>
       <pubDate>Sat, 02 Aug 2025 10:28:24 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-7/</guid>
+      <guid>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-7/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第七篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
     </item>
     <item>
       <title>Java框架-SpringCloud框架-6</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-6/</link>
+      <link>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-6/</link>
       <pubDate>Fri, 01 Aug 2025 10:28:12 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-6/</guid>
+      <guid>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-6/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第六篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
     </item>
     <item>
       <title>Java框架-SpringCloud框架-5</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-5/</link>
+      <link>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-5/</link>
       <pubDate>Fri, 01 Aug 2025 10:27:59 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-5/</guid>
+      <guid>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-5/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第五篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
     </item>
     <item>
       <title>Java框架-SpringCloud框架-4</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-4/</link>
+      <link>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-4/</link>
       <pubDate>Fri, 01 Aug 2025 10:27:38 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-4/</guid>
+      <guid>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-4/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第四篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
     </item>
     <item>
       <title>Java框架-SpringCloud框架-3</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-3/</link>
+      <link>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-3/</link>
       <pubDate>Thu, 31 Jul 2025 10:23:14 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-3/</guid>
+      <guid>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-3/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第三篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
     </item>
     <item>
       <title>Java框架-SpringCloud框架-2</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-2/</link>
+      <link>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-2/</link>
       <pubDate>Thu, 31 Jul 2025 10:23:10 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-2/</guid>
+      <guid>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-2/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第二篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
     </item>
     <item>
       <title>Java框架-SpringCloud框架-1</title>
-      <link>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-1/</link>
+      <link>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-1/</link>
       <pubDate>Thu, 31 Jul 2025 10:22:57 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-1/</guid>
+      <guid>http://localhost:57940/programming/java%E6%A1%86%E6%9E%B6-springcloud%E6%A1%86%E6%9E%B6-1/</guid>
       <description>背景 本文是《Java 后端从小白到大神》修仙系列之框架学习，Spring Cloud 微服务实战系列的 第一篇。Spring Cloud 是构建微服务架构的基石，拥有完</description>
     </item>
     <item>
       <title>一文搞懂Token</title>
-      <link>https://yutao.org/programming/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82token/</link>
+      <link>http://localhost:57940/programming/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82token/</link>
       <pubDate>Sun, 27 Jul 2025 07:19:16 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82token/</guid>
+      <guid>http://localhost:57940/programming/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82token/</guid>
       <description>背景 系统学习 Token 的背景、作用、使用时机、再生成时机，并结合生产系统案例说明其机制。 一、什么是 Token？ Token（令牌）是一种身份验证和授权</description>
     </item>
     <item>
       <title>一文搞懂SpringDataJPA与JpaRepository</title>
-      <link>https://yutao.org/programming/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82springdatajpa%E4%B8%8Ejparepository/</link>
+      <link>http://localhost:57940/programming/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82springdatajpa%E4%B8%8Ejparepository/</link>
       <pubDate>Fri, 25 Jul 2025 07:07:02 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82springdatajpa%E4%B8%8Ejparepository/</guid>
+      <guid>http://localhost:57940/programming/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82springdatajpa%E4%B8%8Ejparepository/</guid>
       <description>背景 这是个非常实用的视角，掌握 Spring Data JPA、JpaRepository 概念以及方法命名规范。在使用 Spring Boot 构建微服务时，数据持久层的开发是日常任务</description>
     </item>
     <item>
       <title>关于SpringBoot和Nacos配置文件优先级</title>
-      <link>https://yutao.org/programming/%E5%85%B3%E4%BA%8Espringboot%E5%92%8Cnacos%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BC%98%E5%85%88%E7%BA%A7/</link>
+      <link>http://localhost:57940/programming/%E5%85%B3%E4%BA%8Espringboot%E5%92%8Cnacos%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BC%98%E5%85%88%E7%BA%A7/</link>
       <pubDate>Thu, 24 Jul 2025 20:24:34 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/%E5%85%B3%E4%BA%8Espringboot%E5%92%8Cnacos%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BC%98%E5%85%88%E7%BA%A7/</guid>
+      <guid>http://localhost:57940/programming/%E5%85%B3%E4%BA%8Espringboot%E5%92%8Cnacos%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BC%98%E5%85%88%E7%BA%A7/</guid>
       <description>背景 本文整理一下微服务配置体系中最常见、也最容易混淆的部分：Spring Boot 配置文件优先级与Nacos 配置加载机制的配合问题。 下面是一个详细的</description>
     </item>
     <item>
       <title>安装jenkins</title>
-      <link>https://yutao.org/programming/%E5%AE%89%E8%A3%85jenkins/</link>
+      <link>http://localhost:57940/programming/%E5%AE%89%E8%A3%85jenkins/</link>
       <pubDate>Wed, 23 Jul 2025 20:23:31 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/%E5%AE%89%E8%A3%85jenkins/</guid>
+      <guid>http://localhost:57940/programming/%E5%AE%89%E8%A3%85jenkins/</guid>
       <description>背景 记录如何在本机 macOS（M1芯片）上安装 Jenkins Docker，并通过 Jenkins 设置 CI/CD，实现一键集成与部署。 1. 配置 Docker Compose 文件 compose 文件添加 jenkins 配置 1 2</description>
     </item>
     <item>
       <title>安装docker</title>
-      <link>https://yutao.org/programming/%E5%AE%89%E8%A3%85docker/</link>
+      <link>http://localhost:57940/programming/%E5%AE%89%E8%A3%85docker/</link>
       <pubDate>Tue, 22 Jul 2025 20:22:58 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/programming/%E5%AE%89%E8%A3%85docker/</guid>
+      <guid>http://localhost:57940/programming/%E5%AE%89%E8%A3%85docker/</guid>
       <description>背景 记录如何在本机 macOS（M1芯片）上安装 Docker，并通过 Docker 快速搭建 Redis + RabbitMQ + Nacos 开发环境。 1. 安装 Docker Desktop for Mac（Apple Silicon</description>
     </item>
   </channel>
