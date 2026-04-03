@@ -85,7 +85,7 @@
   <meta itemprop="description" content="Java后端从小白到大神修仙">
   <meta itemprop="datePublished" content="2018-06-13T18:18:47+08:00">
   <meta itemprop="dateModified" content="2018-06-13T18:18:47+08:00">
-  <meta itemprop="wordCount" content="3849">
+  <meta itemprop="wordCount" content="3988">
   <meta itemprop="keywords" content="java后端">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Java后端-基础-异常处理-12">
@@ -497,7 +497,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 3849 字 -
+        约 3988 字 -
         预计阅读 8 分钟
       </span>
 
@@ -571,20 +571,28 @@
 </ul>
 </li>
 <li>
-<p><strong>检查型异常（Checked Exception）</strong>：</p>
+<p><strong>检查型异常（Checked Exception）</strong>：<br>
+<strong>也叫：编译时异常</strong></p>
 <ul>
-<li>编译时检查，必须处理或声明</li>
-<li>如 <code>IOException</code>、<code>SQLException</code></li>
-<li>继承自 <code>Exception</code> 但不是 <code>RuntimeException</code> 的子类</li>
+<li><strong>什么时候出现</strong>：编译期就强制检查</li>
+<li><strong>必须做什么</strong>：必须 try-catch 或 throws 声明，否则编译不通过</li>
+<li><strong>典型例子</strong>：IOException、SQLException</li>
+<li><strong>继承关系</strong>：extends Exception</li>
+<li><strong>但不是 RuntimeException 的子类</strong></li>
 </ul>
+<p><strong>一句话记忆</strong>：编译器盯着你，<strong>不处理不让运行</strong>。</p>
 </li>
 <li>
-<p><strong>非检查型异常（Unchecked Exception）</strong>：</p>
+<p><strong>非检查型异常（Unchecked Exception）</strong>：<br>
+<strong>也叫：运行时异常</strong></p>
 <ul>
-<li>运行时异常，无需显式处理</li>
-<li>如 <code>NullPointerException</code>、<code>ArithmeticException</code></li>
-<li>继承自 <code>RuntimeException</code></li>
+<li><strong>什么时候出现</strong>：运行时才可能触发</li>
+<li><strong>必须做什么</strong>：<strong>不强制处理</strong>，代码可直接运行</li>
+<li><strong>典型例子</strong>：NullPointerException、ArrayIndexOutOfBoundsException</li>
+<li><strong>继承关系</strong>：extends RuntimeException</li>
 </ul>
+<p><strong>一句话记忆</strong>：
+编译器不管你，<strong>代码写错才炸</strong>。</p>
 </li>
 </ol>
 <h2 id="异常处理机制">异常处理机制</h2>
