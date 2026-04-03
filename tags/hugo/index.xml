@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on 会写代码的小郎中</title>
-    <link>http://localhost:57940/tags/hugo/</link>
+    <link>https://yutao.org/tags/hugo/</link>
     <description>Recent content in Hugo on 会写代码的小郎中</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
     <lastBuildDate>Fri, 05 Jul 2024 09:23:49 +0800</lastBuildDate>
-    <atom:link href="http://localhost:57940/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yutao.org/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>从零搭建个人博客系统</title>
-      <link>http://localhost:57940/programming/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</link>
+      <link>https://yutao.org/programming/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Fri, 05 Jul 2024 09:23:49 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/programming/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>https://yutao.org/programming/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</guid>
       <description></description>
     </item>
   </channel>

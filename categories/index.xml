@@ -2,117 +2,117 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 会写代码的小郎中</title>
-    <link>http://localhost:57940/categories/</link>
+    <link>https://yutao.org/categories/</link>
     <description>Recent content in Categories on 会写代码的小郎中</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
     <lastBuildDate>Wed, 19 Nov 2025 19:04:43 +0800</lastBuildDate>
-    <atom:link href="http://localhost:57940/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yutao.org/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>中医世界观</title>
-      <link>http://localhost:57940/categories/%E4%B8%AD%E5%8C%BB%E4%B8%96%E7%95%8C%E8%A7%82/</link>
+      <link>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E4%B8%96%E7%95%8C%E8%A7%82/</link>
       <pubDate>Wed, 19 Nov 2025 19:04:43 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/categories/%E4%B8%AD%E5%8C%BB%E4%B8%96%E7%95%8C%E8%A7%82/</guid>
+      <guid>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E4%B8%96%E7%95%8C%E8%A7%82/</guid>
       <description></description>
     </item>
     <item>
       <title>哲学</title>
-      <link>http://localhost:57940/categories/%E5%93%B2%E5%AD%A6/</link>
+      <link>https://yutao.org/categories/%E5%93%B2%E5%AD%A6/</link>
       <pubDate>Tue, 18 Nov 2025 18:32:25 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/categories/%E5%93%B2%E5%AD%A6/</guid>
+      <guid>https://yutao.org/categories/%E5%93%B2%E5%AD%A6/</guid>
       <description></description>
     </item>
     <item>
       <title>中间件</title>
-      <link>http://localhost:57940/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/</link>
+      <link>https://yutao.org/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/</link>
       <pubDate>Wed, 10 Sep 2025 15:53:53 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/</guid>
+      <guid>https://yutao.org/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/</guid>
       <description></description>
     </item>
     <item>
       <title>Java框架</title>
-      <link>http://localhost:57940/categories/java%E6%A1%86%E6%9E%B6/</link>
+      <link>https://yutao.org/categories/java%E6%A1%86%E6%9E%B6/</link>
       <pubDate>Sun, 03 Aug 2025 10:29:33 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/categories/java%E6%A1%86%E6%9E%B6/</guid>
+      <guid>https://yutao.org/categories/java%E6%A1%86%E6%9E%B6/</guid>
       <description></description>
     </item>
     <item>
       <title>编程杂谈</title>
-      <link>http://localhost:57940/categories/%E7%BC%96%E7%A8%8B%E6%9D%82%E8%B0%88/</link>
+      <link>https://yutao.org/categories/%E7%BC%96%E7%A8%8B%E6%9D%82%E8%B0%88/</link>
       <pubDate>Sun, 27 Jul 2025 07:19:16 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/categories/%E7%BC%96%E7%A8%8B%E6%9D%82%E8%B0%88/</guid>
+      <guid>https://yutao.org/categories/%E7%BC%96%E7%A8%8B%E6%9D%82%E8%B0%88/</guid>
       <description></description>
     </item>
     <item>
       <title>编程工具</title>
-      <link>http://localhost:57940/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/</link>
+      <link>https://yutao.org/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Wed, 23 Jul 2025 20:23:31 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/</guid>
+      <guid>https://yutao.org/categories/%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     <item>
       <title>方剂</title>
-      <link>http://localhost:57940/categories/%E6%96%B9%E5%89%82/</link>
+      <link>https://yutao.org/categories/%E6%96%B9%E5%89%82/</link>
       <pubDate>Tue, 15 Apr 2025 17:22:41 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/categories/%E6%96%B9%E5%89%82/</guid>
+      <guid>https://yutao.org/categories/%E6%96%B9%E5%89%82/</guid>
       <description></description>
     </item>
     <item>
       <title>中药</title>
-      <link>http://localhost:57940/categories/%E4%B8%AD%E8%8D%AF/</link>
+      <link>https://yutao.org/categories/%E4%B8%AD%E8%8D%AF/</link>
       <pubDate>Sat, 05 Apr 2025 09:34:16 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/categories/%E4%B8%AD%E8%8D%AF/</guid>
+      <guid>https://yutao.org/categories/%E4%B8%AD%E8%8D%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>中医诊断</title>
-      <link>http://localhost:57940/categories/%E4%B8%AD%E5%8C%BB%E8%AF%8A%E6%96%AD/</link>
+      <link>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E8%AF%8A%E6%96%AD/</link>
       <pubDate>Wed, 02 Apr 2025 10:26:13 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/categories/%E4%B8%AD%E5%8C%BB%E8%AF%8A%E6%96%AD/</guid>
+      <guid>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E8%AF%8A%E6%96%AD/</guid>
       <description></description>
     </item>
     <item>
       <title>中医基础</title>
-      <link>http://localhost:57940/categories/%E4%B8%AD%E5%8C%BB%E5%9F%BA%E7%A1%80/</link>
+      <link>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Wed, 19 Mar 2025 08:14:08 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/categories/%E4%B8%AD%E5%8C%BB%E5%9F%BA%E7%A1%80/</guid>
+      <guid>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E5%9F%BA%E7%A1%80/</guid>
       <description></description>
     </item>
     <item>
       <title>Swing</title>
-      <link>http://localhost:57940/categories/swing/</link>
+      <link>https://yutao.org/categories/swing/</link>
       <pubDate>Sun, 19 Jan 2025 07:47:36 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/categories/swing/</guid>
+      <guid>https://yutao.org/categories/swing/</guid>
       <description></description>
     </item>
     <item>
       <title>搭建个人博客系统</title>
-      <link>http://localhost:57940/categories/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</link>
+      <link>https://yutao.org/categories/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Fri, 26 Jul 2024 16:54:27 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/categories/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>https://yutao.org/categories/%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/</guid>
       <description></description>
     </item>
     <item>
       <title>Java后端</title>
-      <link>http://localhost:57940/categories/java%E5%90%8E%E7%AB%AF/</link>
+      <link>https://yutao.org/categories/java%E5%90%8E%E7%AB%AF/</link>
       <pubDate>Sat, 03 Oct 2020 18:34:37 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/categories/java%E5%90%8E%E7%AB%AF/</guid>
+      <guid>https://yutao.org/categories/java%E5%90%8E%E7%AB%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>编程</title>
-      <link>http://localhost:57940/categories/%E7%BC%96%E7%A8%8B/</link>
+      <link>https://yutao.org/categories/%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Mon, 01 Jan 2018 21:02:55 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/categories/%E7%BC%96%E7%A8%8B/</guid>
+      <guid>https://yutao.org/categories/%E7%BC%96%E7%A8%8B/</guid>
       <description></description>
     </item>
     <item>
       <title>Plsql</title>
-      <link>http://localhost:57940/categories/plsql/</link>
+      <link>https://yutao.org/categories/plsql/</link>
       <pubDate>Thu, 21 Sep 2017 14:00:10 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/categories/plsql/</guid>
+      <guid>https://yutao.org/categories/plsql/</guid>
       <description></description>
     </item>
   </channel>

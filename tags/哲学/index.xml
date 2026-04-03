@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>哲学 on 会写代码的小郎中</title>
-    <link>http://localhost:57940/tags/%E5%93%B2%E5%AD%A6/</link>
+    <link>https://yutao.org/tags/%E5%93%B2%E5%AD%A6/</link>
     <description>Recent content in 哲学 on 会写代码的小郎中</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
     <lastBuildDate>Sat, 29 Mar 2025 08:55:53 +0800</lastBuildDate>
-    <atom:link href="http://localhost:57940/tags/%E5%93%B2%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yutao.org/tags/%E5%93%B2%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>千字文：中国传统蒙学经典的千年智慧</title>
-      <link>http://localhost:57940/philosophy/%E5%8D%83%E5%AD%97%E6%96%87/</link>
+      <link>https://yutao.org/philosophy/%E5%8D%83%E5%AD%97%E6%96%87/</link>
       <pubDate>Sat, 29 Mar 2025 08:55:53 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/philosophy/%E5%8D%83%E5%AD%97%E6%96%87/</guid>
+      <guid>https://yutao.org/philosophy/%E5%8D%83%E5%AD%97%E6%96%87/</guid>
       <description>一、文化定位：传统蒙学三大支柱之一 1.1 中国古代教育体系中的特殊地位 蒙学经典 成书年代 核心特点 历史地位 《三字经》 宋代 三字韵文，道德启蒙 &amp;ldquo</description>
     </item>
     <item>
       <title>解构人格魅力：表达</title>
-      <link>http://localhost:57940/philosophy/%E8%A1%A8%E8%BE%BE/</link>
+      <link>https://yutao.org/philosophy/%E8%A1%A8%E8%BE%BE/</link>
       <pubDate>Fri, 28 Mar 2025 22:40:56 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/philosophy/%E8%A1%A8%E8%BE%BE/</guid>
+      <guid>https://yutao.org/philosophy/%E8%A1%A8%E8%BE%BE/</guid>
       <description>引言：当&amp;quot;表达&amp;quot;成为照见灵魂的镜子 &amp;ldquo;人格魅力的本质是表达&amp;rdquo;——短视频刷到一位清华学子之口的论断，</description>
     </item>
     <item>
       <title>生命的意义：一个哲学的起点</title>
-      <link>http://localhost:57940/philosophy/%E7%94%9F%E5%91%BD%E7%9A%84%E6%84%8F%E4%B9%89/</link>
+      <link>https://yutao.org/philosophy/%E7%94%9F%E5%91%BD%E7%9A%84%E6%84%8F%E4%B9%89/</link>
       <pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>http://localhost:57940/philosophy/%E7%94%9F%E5%91%BD%E7%9A%84%E6%84%8F%E4%B9%89/</guid>
+      <guid>https://yutao.org/philosophy/%E7%94%9F%E5%91%BD%E7%9A%84%E6%84%8F%E4%B9%89/</guid>
       <description>引言 你是否曾深夜独坐，凝视星空，思考这样一个问题：我的生命究竟有何意义？这是一个自人类文明诞生以来便萦绕心头的哲学命题。从古希腊的苏格拉底，</description>
     </item>
   </channel>

@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://localhost:57940/sitemap.xml
+Sitemap: https://yutao.org/sitemap.xml
