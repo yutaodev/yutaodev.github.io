@@ -85,7 +85,7 @@
   <meta itemprop="description" content="Java后端从小白到大神修仙">
   <meta itemprop="datePublished" content="2018-06-05T10:18:58+08:00">
   <meta itemprop="dateModified" content="2018-06-05T10:18:58+08:00">
-  <meta itemprop="wordCount" content="7578">
+  <meta itemprop="wordCount" content="8179">
   <meta itemprop="keywords" content="java后端">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Java后端-基础-数据结构-5">
@@ -497,8 +497,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 7578 字 -
-        预计阅读 16 分钟
+        约 8179 字 -
+        预计阅读 17 分钟
       </span>
 
     <div class="post-meta-category">
@@ -524,7 +524,7 @@
             
             <div class="post-content">
                 <h1 id="背景">背景</h1>
-<p>本文是《Java 后端从小白到大神》修仙系列<code>第五篇</code>，正式进入<code>Java后端</code>世界，本篇文章主要聊<code>Java基础</code>中的数据结构。若想详细学习请点击<a href="https://yutao.org/post/java%E5%90%8E%E7%AB%AF%E4%BB%8E%E5%B0%8F%E7%99%BD%E5%88%B0%E5%A4%A7%E7%A5%9E%E4%BF%AE%E4%BB%99-java%E5%9F%BA%E7%A1%80-1/">首篇博文</a>。</p>
+<p>本文是《Java 后端从小白到大神》修仙系列<code>第五篇</code>，正式进入<code>Java后端</code>世界，本篇文章主要聊<code>Java基础</code>中的数据结构。若想详细学习请点击<a href="https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-0/">首篇博文</a>，我们开始吧。</p>
 <h2 id="章节概览">章节概览</h2>
 <ol>
 <li>集合（Collection）</li>
@@ -626,22 +626,32 @@
 <li><strong>无序性</strong>：元素位置由哈希值决定，不保证插入顺序。</li>
 <li><strong>应用场景</strong>：<code>HashSet</code>（存元素）、<code>HashMap</code>（存键值对）均基于此结构，是 Java 集合中最常用的高效存储方案。</li>
 </ul>
-<h3 id="12-list-接口有序集合允许重复">1.2 List 接口（有序集合，允许重复）</h3>
-<p>List是有序的集合，允许存储重复元素，通过索引访问元素。</p>
+<h3 id="12-list-接口">1.2 List 接口</h3>
+<p>List 只是一个接口，不是真正存数据的结构。</p>
+<p>它只规定了一组规则：</p>
+<ul>
+<li>元素<strong>有顺序</strong>（放进去什么顺序，取出来什么顺序）</li>
+<li>可以<strong>重复</strong></li>
+<li>可以通过 <strong>下标（索引）</strong> 获取元素</li>
+</ul>
+<p>真正存数据的，是它的实现类：
+<strong>ArrayList、LinkedList</strong></p>
 <h4 id="121-arraylist基于动态数组的列表">1.2.1 ArrayList：基于动态数组的列表</h4>
-<p><strong>核心特性</strong>：</p>
+<p><strong>底层结构</strong></p>
+<p>动态数组 → 内存里一整块连续空间<br>
+就像：<strong>一排连续的座位</strong></p>
+<p><strong>优点</strong></p>
 <ul>
-<li><strong>底层实现</strong>：基于动态数组，元素连续存储在内存中</li>
-<li><strong>访问效率</strong>：随机访问速度快（时间复杂度O(1)）</li>
-<li><strong>增删效率</strong>：中间位置增删元素效率低（时间复杂度O(n)）</li>
-<li><strong>扩容机制</strong>：默认初始容量为10，当容量不足时自动扩容为原来的1.5倍</li>
+<li><strong>按下标找元素极快</strong> <code>get(i)</code> → O(1)</li>
+<li>遍历速度快</li>
 </ul>
-<p><strong>实际应用场景</strong>：</p>
+<p><strong>缺点</strong></p>
 <ul>
-<li>需要频繁随机访问元素的场景</li>
-<li>元素数量相对稳定，增删操作较少的场景</li>
-<li>存储基本类型或对象的列表</li>
+<li><strong>中间插入、删除慢</strong> → 后面所有元素都要移动</li>
+<li>满了要<strong>扩容</strong>（新开辟一块 1.5 倍大的空间，复制过去）</li>
 </ul>
+<p><strong>一句话总结</strong></p>
+<p>读多、改少、要快查 → 用 ArrayList</p>
 <p><strong>代码示例</strong>：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -673,52 +683,93 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-26">26</a>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-27">27</a>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-28">28</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-29"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-29">29</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-30"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-30">30</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-31"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-31">31</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-32"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-32">32</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-33"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-33">33</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-34"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-34">34</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-35"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-35">35</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-36"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-36">36</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-37"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-37">37</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-38"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-38">38</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-39"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-39">39</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-40"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-40">40</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-41"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-41">41</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 基本操作</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>List<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>arrayList<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>ArrayList<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>arrayList.<span style="color:#4070a0">add</span>(<span style="color:#4070a0">&#34;Java&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>arrayList.<span style="color:#4070a0">add</span>(<span style="color:#4070a0">&#34;Python&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>arrayList.<span style="color:#4070a0">add</span>(<span style="color:#4070a0">&#34;C++&#34;</span>);<span style="color:#bbb">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span><span style="color:#bbb"> </span><span style="color:#0e84b5;font-weight:bold">java.util.ArrayList</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">import</span><span style="color:#bbb"> </span><span style="color:#0e84b5;font-weight:bold">java.util.Iterator</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">import</span><span style="color:#bbb"> </span><span style="color:#0e84b5;font-weight:bold">java.util.List</span>;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 随机访问（高效）</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>first<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>arrayList.<span style="color:#4070a0">get</span>(0);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// O(1)</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">ArrayListDemo</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 遍历方式</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 1. 传统for循环（适合需要索引的场景）</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(<span style="color:#902000">int</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0;<span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">&lt;</span><span style="color:#bbb"> </span>arrayList.<span style="color:#4070a0">size</span>();<span style="color:#bbb"> </span>i<span style="color:#666">++</span>)<span style="color:#bbb"> </span>{<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(arrayList.<span style="color:#4070a0">get</span>(i));<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// ===================== 创建 ArrayList =====================</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>List<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>list<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>ArrayList<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 2. 增强for循环（简洁）</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(String<span style="color:#bbb"> </span>language<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>arrayList)<span style="color:#bbb"> </span>{<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(language);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 添加元素</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>list.<span style="color:#4070a0">add</span>(<span style="color:#4070a0">&#34;Java&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>list.<span style="color:#4070a0">add</span>(<span style="color:#4070a0">&#34;Python&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>list.<span style="color:#4070a0">add</span>(<span style="color:#4070a0">&#34;C++&#34;</span>);<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 3. 迭代器（支持在遍历中删除元素）</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Iterator<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>iterator<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>arrayList.<span style="color:#4070a0">iterator</span>();<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">while</span><span style="color:#bbb"> </span>(iterator.<span style="color:#4070a0">hasNext</span>())<span style="color:#bbb"> </span>{<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>String<span style="color:#bbb"> </span>element<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>iterator.<span style="color:#4070a0">next</span>();<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>(element.<span style="color:#4070a0">equals</span>(<span style="color:#4070a0">&#34;Python&#34;</span>))<span style="color:#bbb"> </span>{<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>iterator.<span style="color:#4070a0">remove</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 安全删除</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// ===================== 随机访问（最快） =====================</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>String<span style="color:#bbb"> </span>first<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>list.<span style="color:#4070a0">get</span>(0);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 按下标获取，O(1) 效率极高</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// ===================== 3 种遍历方式（精简版） =====================</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 1. 普通 for 循环：需要索引时使用</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(<span style="color:#902000">int</span><span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>0;<span style="color:#bbb"> </span>i<span style="color:#bbb"> </span><span style="color:#666">&lt;</span><span style="color:#bbb"> </span>list.<span style="color:#4070a0">size</span>();<span style="color:#bbb"> </span>i<span style="color:#666">++</span>)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(list.<span style="color:#4070a0">get</span>(i));<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 2. 增强 for 循环：最简洁、最常用</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">for</span><span style="color:#bbb"> </span>(String<span style="color:#bbb"> </span>lang<span style="color:#bbb"> </span>:<span style="color:#bbb"> </span>list)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(lang);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 3. 迭代器：遍历过程中【安全删除元素】唯一正确方式</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Iterator<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>iterator<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>list.<span style="color:#4070a0">iterator</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">while</span><span style="color:#bbb"> </span>(iterator.<span style="color:#4070a0">hasNext</span>())<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>String<span style="color:#bbb"> </span>element<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>iterator.<span style="color:#4070a0">next</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span><span style="color:#007020;font-weight:bold">if</span><span style="color:#bbb"> </span>(<span style="color:#4070a0">&#34;Python&#34;</span>.<span style="color:#4070a0">equals</span>(element))<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">                </span>iterator.<span style="color:#4070a0">remove</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 安全删除</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">            </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>}<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="122-linkedlist基于双向链表的列表">1.2.2 LinkedList：基于双向链表的列表</h4>
-<p><strong>核心特性</strong>：</p>
+<p>LinkedList 是 List 接口的实现类，底层是双向链表，真正存数据的结构。元素在内存中<strong>不连续</strong>，靠“指针”互相连接。</p>
+<p><strong>核心特性</strong></p>
 <ul>
-<li><strong>底层实现</strong>：基于双向链表，元素离散存储，通过指针连接</li>
-<li><strong>访问效率</strong>：随机访问速度慢（时间复杂度O(n)）</li>
-<li><strong>增删效率</strong>：头尾增删效率高（时间复杂度O(1)），中间增删也比ArrayList高效</li>
-<li><strong>额外功能</strong>：实现了Deque接口，可作为队列或栈使用</li>
+<li><strong>底层结构</strong>：双向链表，元素分散存储，前后互相指向</li>
+<li><strong>查找效率</strong>：<strong>随机查找慢</strong>（不能直接跳位置，必须从头/尾遍历）</li>
+<li><strong>增删效率</strong>：<strong>头尾增删极快</strong>，不用移动其他元素</li>
+<li><strong>中间增删</strong>：比 ArrayList 快（不用拷贝移动数组）</li>
+<li><strong>额外能力</strong>：实现了队列/栈接口，可直接当队列、栈使用</li>
 </ul>
-<p><strong>实际应用场景</strong>：</p>
-<ul>
-<li>需要频繁在头尾增删元素的场景</li>
-<li>实现队列、栈、双向队列等数据结构</li>
-<li>元素数量频繁变化的场景</li>
-</ul>
+<p><strong>优点</strong></p>
+<ol>
+<li><strong>头尾添加、删除非常快</strong>（addFirst、addLast、removeFirst）</li>
+<li><strong>不需要扩容</strong>，用多少存多少</li>
+<li>天然适合做<strong>队列、栈、双端队列</strong></li>
+</ol>
+<p><strong>缺点</strong></p>
+<ol>
+<li><strong>根据下标 get(i) 查找慢</strong></li>
+<li>占用内存比 ArrayList 多（要存前后指针）</li>
+</ol>
+<p><strong>最适合的场景</strong></p>
+<ol>
+<li><strong>频繁在头部/尾部添加/删除</strong></li>
+<li>需要用<strong>队列、栈</strong>结构</li>
+<li>元素数量经常变动、不怎么按下标查找</li>
+</ol>
+<p><strong>一句话总结</strong></p>
+<p>头尾增删多用 LinkedList，按下标查找多用 ArrayList。</p>
 <p><strong>代码示例</strong>：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -735,48 +786,109 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-11">11</a>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-12">12</a>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-25">25</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 基本操作</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>LinkedList<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>linkedList<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>LinkedList<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>linkedList.<span style="color:#4070a0">add</span>(<span style="color:#4070a0">&#34;First&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>linkedList.<span style="color:#4070a0">addLast</span>(<span style="color:#4070a0">&#34;Last&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>linkedList.<span style="color:#4070a0">addFirst</span>(<span style="color:#4070a0">&#34;Head&#34;</span>);<span style="color:#bbb">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span><span style="color:#bbb"> </span><span style="color:#0e84b5;font-weight:bold">java.util.LinkedList</span>;<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 作为队列使用</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>linkedList.<span style="color:#4070a0">offer</span>(<span style="color:#4070a0">&#34;Queue Element&#34;</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 入队</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>polled<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>linkedList.<span style="color:#4070a0">poll</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 出队</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">LinkedListDemo</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 创建 LinkedList</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>LinkedList<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>list<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>LinkedList<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#60a0b0;font-style:italic">// 作为栈使用</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>linkedList.<span style="color:#4070a0">push</span>(<span style="color:#4070a0">&#34;Stack Element&#34;</span>);<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 入栈</span><span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>String<span style="color:#bbb"> </span>popped<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>linkedList.<span style="color:#4070a0">pop</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 出栈</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 增删（头尾操作极快）</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>list.<span style="color:#4070a0">add</span>(<span style="color:#4070a0">&#34;Java&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>list.<span style="color:#4070a0">addFirst</span>(<span style="color:#4070a0">&#34;头部元素&#34;</span>);<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">// 头部添加</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>list.<span style="color:#4070a0">addLast</span>(<span style="color:#4070a0">&#34;尾部元素&#34;</span>);<span style="color:#bbb">   </span><span style="color:#60a0b0;font-style:italic">// 尾部添加</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 取元素（头尾最快，中间慢）</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>String<span style="color:#bbb"> </span>first<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>list.<span style="color:#4070a0">getFirst</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>String<span style="color:#bbb"> </span>last<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>list.<span style="color:#4070a0">getLast</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 当作 队列 使用</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>list.<span style="color:#4070a0">offer</span>(<span style="color:#4070a0">&#34;入队&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>String<span style="color:#bbb"> </span>out<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>list.<span style="color:#4070a0">poll</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 出队</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 当作 栈 使用</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>list.<span style="color:#4070a0">push</span>(<span style="color:#4070a0">&#34;入栈&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>String<span style="color:#bbb"> </span>pop<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>list.<span style="color:#4070a0">pop</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 出栈</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="123-vector线程安全的列表">1.2.3 Vector：线程安全的列表</h4>
-<p><strong>核心特性</strong>：</p>
+<p>Vector 是 <strong>古老版本的线程安全 ArrayList</strong>，也是 List 接口的实现类。</p>
+<p><strong>核心特性</strong></p>
 <ul>
-<li><strong>线程安全</strong>：所有方法都有synchronized修饰</li>
-<li><strong>性能</strong>：由于同步开销，性能比ArrayList差</li>
-<li><strong>底层实现</strong>：与ArrayList类似，基于动态数组</li>
+<li><strong>底层结构</strong>：和 ArrayList 一样，基于<strong>动态数组</strong></li>
+<li><strong>线程安全</strong>：方法都加了 <code>synchronized</code> 锁，多线程下不会乱</li>
+<li><strong>性能</strong>：因为要加锁解锁，<strong>比 ArrayList 慢很多</strong></li>
+<li><strong>扩容</strong>：满了默认扩容为<strong>原来的 2 倍</strong>（ArrayList 是 1.5 倍）</li>
 </ul>
-<p><strong>实际应用场景</strong>：</p>
+<p><strong>优点</strong></p>
 <ul>
-<li>多线程环境下需要线程安全的列表操作</li>
-<li>对性能要求不高的场景</li>
+<li>多线程环境下直接使用，不用自己加锁</li>
+<li>简单、稳定、JDK 自带</li>
 </ul>
-<p><strong>代码示例</strong>：</p>
+<p><strong>缺点</strong></p>
+<ul>
+<li><strong>并发性能差</strong>，高并发场景很慢</li>
+<li>基本已经被淘汰，现代开发很少用</li>
+</ul>
+<p><strong>实际应用场景</strong></p>
+<ul>
+<li><strong>老项目、遗留代码</strong>中还在使用</li>
+<li>简单多线程场景，对性能要求不高</li>
+<li>现在更推荐用 <code>CopyOnWriteArrayList</code> 替代</li>
+</ul>
+<p><strong>一句话总结</strong></p>
+<p>Vector = 线程安全但很慢的老式 ArrayList，现在基本不用。</p>
+<p>代码示例</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4">4</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-15">15</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Vector<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>vector<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Vector<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>vector.<span style="color:#4070a0">add</span>(<span style="color:#4070a0">&#34;Element&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>vector.<span style="color:#4070a0">add</span>(<span style="color:#4070a0">&#34;Another Element&#34;</span>);<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(vector.<span style="color:#4070a0">get</span>(0));<span style="color:#bbb">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">import</span><span style="color:#bbb"> </span><span style="color:#0e84b5;font-weight:bold">java.util.Vector</span>;<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">VectorDemo</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">static</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">main</span>(String<span style="color:#666">[]</span><span style="color:#bbb"> </span>args)<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 创建 Vector</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Vector<span style="color:#666">&lt;</span>String<span style="color:#666">&gt;</span><span style="color:#bbb"> </span>vector<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Vector<span style="color:#666">&lt;&gt;</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 添加元素</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>vector.<span style="color:#4070a0">add</span>(<span style="color:#4070a0">&#34;Java&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>vector.<span style="color:#4070a0">add</span>(<span style="color:#4070a0">&#34;Python&#34;</span>);<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#60a0b0;font-style:italic">// 获取元素</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(vector.<span style="color:#4070a0">get</span>(0));<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="124-list实现类对比">1.2.4 List实现类对比</h4>
@@ -2573,7 +2685,7 @@
             <li><a href="#111-核心底层数据结构哈希表hash-table">1.1.1 核心底层数据结构：哈希表（Hash Table）</a></li>
           </ul>
         </li>
-        <li><a href="#12-list-接口有序集合允许重复">1.2 List 接口（有序集合，允许重复）</a>
+        <li><a href="#12-list-接口">1.2 List 接口</a>
           <ul>
             <li><a href="#121-arraylist基于动态数组的列表">1.2.1 ArrayList：基于动态数组的列表</a></li>
             <li><a href="#122-linkedlist基于双向链表的列表">1.2.2 LinkedList：基于双向链表的列表</a></li>
