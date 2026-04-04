@@ -1262,13 +1262,6 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/about/</loc>
-    <lastmod>2024-07-25T13:44:44+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://yutao.org/tags/hugo/</loc>
     <lastmod>2024-07-05T09:23:49+08:00</lastmod>
     <changefreq>daily</changefreq>
@@ -1628,6 +1621,13 @@
   <url>
     <loc>https://yutao.org/programming/html%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2017-09-12T11:43:40+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/about/</loc>
+    <lastmod>2013-04-13T13:44:44+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
