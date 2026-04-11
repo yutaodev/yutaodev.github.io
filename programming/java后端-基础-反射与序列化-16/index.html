@@ -85,7 +85,7 @@
   <meta itemprop="description" content="Java反射与序列化深度解析：从核心原理到实战应用，包括反射机制、序列化机制、安全风险与最佳实践">
   <meta itemprop="datePublished" content="2018-06-17T19:16:30+08:00">
   <meta itemprop="dateModified" content="2018-06-17T19:16:30+08:00">
-  <meta itemprop="wordCount" content="8525">
+  <meta itemprop="wordCount" content="8255">
   <meta itemprop="keywords" content="java后端">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Java后端-基础-反射与序列化-16">
@@ -497,8 +497,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 8525 字 -
-        预计阅读 18 分钟
+        约 8255 字 -
+        预计阅读 17 分钟
       </span>
 
     <div class="post-meta-category">
@@ -531,7 +531,6 @@
 <li>反射机制详解</li>
 <li>序列化与反序列化</li>
 <li>反射与序列化的结合应用</li>
-<li>性能优化与安全注意事项</li>
 <li>代码示例与最佳实践</li>
 </ol>
 <h2 id="一反射机制详解">一、反射机制详解</h2>
@@ -948,15 +947,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>System.<span style="color:#4070a0">out</span>.<span style="color:#4070a0">println</span>(<span style="color:#4070a0">&#34;静态字段: &#34;</span><span style="color:#bbb"> </span><span style="color:#666">+</span><span style="color:#bbb"> </span>staticField.<span style="color:#4070a0">get</span>(<span style="color:#007020;font-weight:bold">null</span>));<span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="17-反射的应用场景">1.7 反射的应用场景</h3>
-<ol>
-<li><strong>框架开发</strong>：Spring 的依赖注入、MyBatis 的 ORM 映射</li>
-<li><strong>动态代理</strong>：AOP（面向切面编程）的实现</li>
-<li><strong>注解处理器</strong>：如 JUnit、Lombok 等</li>
-<li><strong>序列化/反序列化</strong>：JSON 库、对象持久化</li>
-<li><strong>动态配置</strong>：根据配置文件动态加载类</li>
-</ol>
-<h3 id="18-反射的性能优化">1.8 反射的性能优化</h3>
+</div><h3 id="17-反射的性能优化">1.7 反射的性能优化</h3>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-1"> 1</a>
@@ -1033,15 +1024,7 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="19-反射的安全注意事项">1.9 反射的安全注意事项</h3>
-<ol>
-<li><strong>访问权限</strong>：<code>setAccessible(true)</code> 会绕过访问权限检查，可能破坏封装性</li>
-<li><strong>性能开销</strong>：反射操作比直接调用慢 10-100 倍，避免在热点代码中使用</li>
-<li><strong>类型安全</strong>：反射调用可能导致运行时类型错误</li>
-<li><strong>安全管理器</strong>：在有安全管理器的环境中可能被限制</li>
-<li><strong>版本兼容性</strong>：依赖类的结构，类结构变化会导致反射代码失效</li>
-</ol>
-<h2 id="二序列化与反序列化">二、序列化与反序列化</h2>
+</div><h2 id="二序列化与反序列化">二、序列化与反序列化</h2>
 <h3 id="21-什么是序列化">2.1 什么是序列化？</h3>
 <p><strong>序列化</strong>是将对象转换为字节流的过程，用于：</p>
 <ul>
@@ -2937,9 +2920,7 @@ XML（JAXB 示例）</li>
         <li><a href="#14-创建对象实例">1.4 创建对象实例</a></li>
         <li><a href="#15-调用方法">1.5 调用方法</a></li>
         <li><a href="#16-操作字段">1.6 操作字段</a></li>
-        <li><a href="#17-反射的应用场景">1.7 反射的应用场景</a></li>
-        <li><a href="#18-反射的性能优化">1.8 反射的性能优化</a></li>
-        <li><a href="#19-反射的安全注意事项">1.9 反射的安全注意事项</a></li>
+        <li><a href="#17-反射的性能优化">1.7 反射的性能优化</a></li>
       </ul>
     </li>
     <li><a href="#二序列化与反序列化">二、序列化与反序列化</a>
