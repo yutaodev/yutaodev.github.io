@@ -1,3 +1,2 @@
 # 忽略Ds_Store
-
-image/.DS_Store
+.DS_Store
