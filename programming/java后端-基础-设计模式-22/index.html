@@ -4,11 +4,11 @@
   itemscope
   itemtype="http://schema.org/WebPage"
 >
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>
-          Java后端-基础-设计模式-22 - 会写代码的小郎中
+          Java后端-进阶-设计模式-22 - 会写代码的小郎中
         </title>
     
 
@@ -29,7 +29,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="会写代码的小郎中" /><meta name="description" content="Java后端从小白到大神修仙" />
-<meta name="keywords" content="java后端" />
+<meta name="keywords" content="java进阶" />
 
 
 
@@ -40,55 +40,55 @@
 <meta name="generator" content="Hugo 0.128.2" />
 
 
-<link rel="canonical" href="https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-22/" />
+<link rel="canonical" href="http://localhost:1313/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-22/" />
 
 
 
 
 
-<link rel="icon" href="https://yutao.org/favicon.ico" />
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="https://yutao.org/sass/jane.min.e826e860368147e5a6685e686355e4d7789023c18c9ea2e78b35f6786ce92736.css" integrity="sha256-6CboYDaBR&#43;WmaF5oY1Xk13iQI8GMnqLnizX2eGzpJzY=" media="screen" crossorigin="anonymous">
+<link rel="icon" href="http://localhost:1313/favicon.ico" />
 
 
 
 
 
 
-<link rel="stylesheet" href="https://yutao.org/css/custom.css">
-
-<link rel="stylesheet" href="https://yutao.org/css/copy-to-clipboard.css">
 
 
-<meta property="og:url" content="https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-22/">
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/sass/jane.min.e826e860368147e5a6685e686355e4d7789023c18c9ea2e78b35f6786ce92736.css" integrity="sha256-6CboYDaBR&#43;WmaF5oY1Xk13iQI8GMnqLnizX2eGzpJzY=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+<link rel="stylesheet" href="http://localhost:1313/css/copy-to-clipboard.css">
+
+
+<meta property="og:url" content="http://localhost:1313/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-22/">
   <meta property="og:site_name" content="会写代码的小郎中">
-  <meta property="og:title" content="Java后端-基础-设计模式-22">
+  <meta property="og:title" content="Java后端-进阶-设计模式-22">
   <meta property="og:description" content="Java后端从小白到大神修仙">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="programming">
-    <meta property="article:published_time" content="2018-06-23T23:44:34+08:00">
-    <meta property="article:modified_time" content="2018-06-23T23:44:34+08:00">
-    <meta property="article:tag" content="Java后端">
+    <meta property="article:published_time" content="2018-06-22T23:44:34+08:00">
+    <meta property="article:modified_time" content="2018-06-22T23:44:34+08:00">
+    <meta property="article:tag" content="Java进阶">
 
-  <meta itemprop="name" content="Java后端-基础-设计模式-22">
+  <meta itemprop="name" content="Java后端-进阶-设计模式-22">
   <meta itemprop="description" content="Java后端从小白到大神修仙">
-  <meta itemprop="datePublished" content="2018-06-23T23:44:34+08:00">
-  <meta itemprop="dateModified" content="2018-06-23T23:44:34+08:00">
+  <meta itemprop="datePublished" content="2018-06-22T23:44:34+08:00">
+  <meta itemprop="dateModified" content="2018-06-22T23:44:34+08:00">
   <meta itemprop="wordCount" content="22812">
-  <meta itemprop="keywords" content="java后端">
+  <meta itemprop="keywords" content="java进阶">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Java后端-基础-设计模式-22">
+  <meta name="twitter:title" content="Java后端-进阶-设计模式-22">
   <meta name="twitter:description" content="Java后端从小白到大神修仙">
 
 <!--[if lte IE 9]>
@@ -99,26 +99,6 @@
   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
-
-
-  
-    
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZM2P746RY"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-HZM2P746RY');
-        }
-      </script>
-    
-  
 
 
 
@@ -134,7 +114,7 @@
 
     <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="https://yutao.org/" class="logo">会写代码的小郎中</a>
+    <a href="http://localhost:1313/" class="logo">会写代码的小郎中</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -148,56 +128,56 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+            <a class="menu-item-link" href="http://localhost:1313/">主页</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/programming/">编程</a>
+            <a class="menu-item-link" href="http://localhost:1313/programming/">编程</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/tcm/">中医</a>
+            <a class="menu-item-link" href="http://localhost:1313/tcm/">中医</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/philosophy/">哲学</a>
+            <a class="menu-item-link" href="http://localhost:1313/philosophy/">哲学</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
+            <a class="menu-item-link" href="http://localhost:1313/archives/">归档</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+            <a class="menu-item-link" href="http://localhost:1313/categories/">分类</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+            <a class="menu-item-link" href="http://localhost:1313/tags/">标签</a>
           
         
       </li><li class="mobile-menu-item">
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+            <a class="menu-item-link" href="http://localhost:1313/about/">关于</a>
           
         
       </li>
@@ -228,8 +208,8 @@
 
 
 
-  <link rel="stylesheet" href="https://yutao.org/lib/photoswipe/photoswipe.min.css" />
-  <link rel="stylesheet" href="https://yutao.org/lib/photoswipe/default-skin/default-skin.min.css" />
+  <link rel="stylesheet" href="http://localhost:1313/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="http://localhost:1313/lib/photoswipe/default-skin/default-skin.min.css" />
 
 
 
@@ -284,7 +264,7 @@
 
     <header id="header" class="header">
       <div class="logo-wrapper">
-    <a href="https://yutao.org/" class="logo">
+    <a href="http://localhost:1313/" class="logo">
         
         会写代码的小郎中
         
@@ -299,7 +279,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+            <a class="menu-item-link" href="http://localhost:1313/">主页</a>
             
 
             
@@ -310,7 +290,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/programming/">编程</a>
+            <a class="menu-item-link" href="http://localhost:1313/programming/">编程</a>
             
 
             
@@ -321,7 +301,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/tcm/">中医</a>
+            <a class="menu-item-link" href="http://localhost:1313/tcm/">中医</a>
             
 
             
@@ -332,7 +312,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/philosophy/">哲学</a>
+            <a class="menu-item-link" href="http://localhost:1313/philosophy/">哲学</a>
             
 
             
@@ -343,7 +323,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
+            <a class="menu-item-link" href="http://localhost:1313/archives/">归档</a>
             
 
             
@@ -354,7 +334,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+            <a class="menu-item-link" href="http://localhost:1313/categories/">分类</a>
             
 
             
@@ -365,7 +345,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+            <a class="menu-item-link" href="http://localhost:1313/tags/">标签</a>
             
 
             
@@ -376,7 +356,7 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+            <a class="menu-item-link" href="http://localhost:1313/about/">关于</a>
             
 
             
@@ -446,12 +426,12 @@
           "@type": "BlogPosting",
           "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/yutao.org\/programming\/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-22\/"
+            "@id": "http:\/\/localhost:1313\/programming\/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-22\/"
           },
-          "headline": "Java后端-基础-设计模式-22",
+          "headline": "Java后端-进阶-设计模式-22",
           "description": "Java后端从小白到大神修仙",
-          "datePublished": "2018-06-23T23:44:34\u002b08:00",
-          "dateModified": "2018-06-23T23:44:34\u002b08:00",
+          "datePublished": "2018-06-22T23:44:34\u002b08:00",
+          "dateModified": "2018-06-22T23:44:34\u002b08:00",
           "author": {
             "@type": "Person",
             "name": "会写代码的小郎中"
@@ -461,7 +441,7 @@
             "name": "会写代码的小郎中",
             "logo": {
               "@type": "ImageObject",
-              "url": "https:\/\/yutao.org\/favicon.ico"
+              "url": "http:\/\/localhost:1313\/favicon.ico"
             }
           }
         }
@@ -472,13 +452,13 @@
         <article class="post">
             
             <header class="post-header">
-                <h1 class="post-title">Java后端-基础-设计模式-22</h1>
+                <h1 class="post-title">Java后端-进阶-设计模式-22</h1>
                 
 
                 <div class="post-meta">
   <div class="post-meta-author">
     by
-      <a href="https://yutao.org/about">
+      <a href="http://localhost:1313/about">
         <span class="post-meta-author-name">
           会写代码的小郎中
         </span>
@@ -487,8 +467,8 @@
   </div>
 
   <div class="post-meta-time">
-        <time datetime=" 2018-06-23">
-      2018-06-23
+        <time datetime=" 2018-06-22">
+      2018-06-22
     </time>
   </div>
 
@@ -502,7 +482,7 @@
       </span>
 
     <div class="post-meta-category">
-        <a href="https://yutao.org/categories/java%E5%90%8E%E7%AB%AF/"> java后端 </a>
+        <a href="http://localhost:1313/categories/java%E8%BF%9B%E9%98%B6/"> java进阶 </a>
           
       </div>
 
@@ -6688,7 +6668,7 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-      2018-06-23
+      2018-06-22
       
     </span>
   </p>
@@ -6710,12 +6690,12 @@
     
     
       <label class="qr-code-image" for="reward">
-        <img class="image" src="https://yutao.org/image/ds/wechat-qr-code.jpg">
+        <img class="image" src="http://localhost:1313/image/ds/wechat-qr-code.jpg">
         <span>微信打赏</span>
       </label>
     
       <label class="qr-code-image" for="reward">
-        <img class="image" src="https://yutao.org/image/ds/alipay-qr-code.jpg">
+        <img class="image" src="http://localhost:1313/image/ds/alipay-qr-code.jpg">
         <span>支付宝打赏</span>
       </label>
   </div>
@@ -6724,7 +6704,7 @@
 
             <footer class="post-footer">
                 <div class="post-tags">
-                    <a href="https://yutao.org/tags/java%E5%90%8E%E7%AB%AF/">java后端</a>
+                    <a href="http://localhost:1313/tags/java%E8%BF%9B%E9%98%B6/">java进阶</a>
                     
                 </div>
 
@@ -6732,7 +6712,7 @@
                 
                 <nav class="post-nav">
                     
-                    <a class="prev" href="https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-23/">
+                    <a class="prev" href="http://localhost:1313/programming/java%E5%90%8E%E7%AB%AF-%E8%BF%9B%E9%98%B6-java%E8%99%9A%E6%8B%9F%E6%9C%BA-21/">
                         
                         <i class="iconfont">
                             <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -6742,12 +6722,12 @@
 </svg>
 
                         </i>
-                        <span class="prev-text nav-default">Java后端-基础-常见数据结构与算法-23</span>
+                        <span class="prev-text nav-default">Java后端-进阶-Java虚拟机-21</span>
                         <span class="prev-text nav-mobile">上一篇</span>
                     </a>
                     
-                    <a class="next" href="https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E5%9F%BA%E7%A1%80-java%E8%99%9A%E6%8B%9F%E6%9C%BA-21/">
-                        <span class="next-text nav-default">Java后端-基础-Java虚拟机-21</span>
+                    <a class="next" href="http://localhost:1313/programming/java%E5%90%8E%E7%AB%AF-%E8%BF%9B%E9%98%B6-%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-21/">
+                        <span class="next-text nav-default">Java后端-进阶-常见数据结构与算法-21</span>
                         <span class="prev-text nav-mobile">下一篇</span>
                         
                         <i class="iconfont">
@@ -6936,7 +6916,7 @@
     </a>
 
 
-<a href="https://yutao.org/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
     class="iconfont" title="rss" target="_blank">
     <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -7007,13 +6987,13 @@
       </div>
     </div>
     
-<script type="text/javascript" src="https://yutao.org/lib/jquery/jquery-3.7.1.min.js"></script>
-  <script type="text/javascript" src="https://yutao.org/lib/slideout/slideout-1.0.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:1313/lib/jquery/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="http://localhost:1313/lib/slideout/slideout-1.0.1.min.js"></script>
 
 
 
 
-<script type="text/javascript" src="https://yutao.org/js/main.0812a6f15b5585e323289457bbef147ebb2e5111f2924b072bc6acf7eabe95b1.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://localhost:1313/js/main.0812a6f15b5585e323289457bbef147ebb2e5111f2924b072bc6acf7eabe95b1.js" crossorigin="anonymous"></script>
 
 
 
@@ -7027,8 +7007,8 @@
 
 
   
-    <script type="text/javascript" src="https://yutao.org/lib/photoswipe/photoswipe.min.js"></script>
-    <script type="text/javascript" src="https://yutao.org/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/lib/photoswipe/photoswipe-ui-default.min.js"></script>
   
 
 
@@ -7048,9 +7028,9 @@
 
 
 
-  <script src="https://yutao.org/js/copy-to-clipboard.js"></script>
+  <script src="http://localhost:1313/js/copy-to-clipboard.js"></script>
 
-  <script src="https://yutao.org/js/search.js"></script>
+  <script src="http://localhost:1313/js/search.js"></script>
 
 
   </body>
