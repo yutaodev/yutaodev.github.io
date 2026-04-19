@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,67 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#1-服务间通信的分层与解耦api模块">1. 服务间通信的分层与解耦（API模块）</a>
+      <ul>
+        <li><a href="#11-原因防止模块强耦合">1.1 原因：防止模块强耦合</a></li>
+        <li><a href="#12-解决方案引入独立-api-模块">1.2 解决方案：引入独立 <code>api</code> 模块</a></li>
+        <li><a href="#13-落地代码示例">1.3 落地代码示例</a>
+          <ul>
+            <li><a href="#user-api-模块">user-api 模块</a></li>
+            <li><a href="#task-service-模块引用">task-service 模块引用</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#2-服务拆分与聚合以业务为中心-vs-技术为中心">2. 服务拆分与聚合：以业务为中心 vs 技术为中心</a>
+      <ul>
+        <li><a href="#21-错误拆分方式按技术层拆分">2.1 错误拆分方式：按技术层拆分</a></li>
+        <li><a href="#22-推荐拆分方式按业务域拆分">2.2 推荐拆分方式：按业务域拆分</a></li>
+        <li><a href="#23-聚合场景网关--聚合服务--bff-层">2.3 聚合场景：网关 + 聚合服务 + BFF 层</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-技术架构演进从单体到-serverless--云原生趋势">3. 技术架构演进：从单体到 Serverless + 云原生趋势</a>
+      <ul>
+        <li><a href="#31-演进阶段">3.1 演进阶段</a></li>
+        <li><a href="#32-spring-cloud-如何适配">3.2 Spring Cloud 如何适配</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-统一平台中台建设思路用户中心--权限中心--日志中心">4. 统一平台中台建设思路：用户中心 / 权限中心 / 日志中心</a>
+      <ul>
+        <li><a href="#41-用户中心统一认证">4.1 用户中心（统一认证）</a></li>
+        <li><a href="#42-权限中心rbac-权限体系">4.2 权限中心（RBAC 权限体系）</a></li>
+        <li><a href="#43-日志中心统一日志采集">4.3 日志中心（统一日志采集）</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-架构师必备思维稳定性设计--可观测性--扩展性">5. 架构师必备思维：稳定性设计 + 可观测性 + 扩展性</a>
+      <ul>
+        <li><a href="#51-稳定性设计三板斧">5.1 稳定性设计：三板斧</a></li>
+        <li><a href="#52-可观测性设计三大支柱">5.2 可观测性设计：三大支柱</a></li>
+        <li><a href="#53-扩展性设计插件化--模块化">5.3 扩展性设计：插件化 &amp; 模块化</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-完整项目">6. 完整项目</a>
+      <ul>
+        <li><a href="#61-项目概述">6.1 项目概述</a></li>
+        <li><a href="#62-架构图">6.2 架构图</a></li>
+        <li><a href="#63-项目源码">6.3 项目源码</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -5156,66 +5199,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#文章概览">文章概览</a></li>
-    <li><a href="#1-服务间通信的分层与解耦api模块">1. 服务间通信的分层与解耦（API模块）</a>
-      <ul>
-        <li><a href="#11-原因防止模块强耦合">1.1 原因：防止模块强耦合</a></li>
-        <li><a href="#12-解决方案引入独立-api-模块">1.2 解决方案：引入独立 <code>api</code> 模块</a></li>
-        <li><a href="#13-落地代码示例">1.3 落地代码示例</a>
-          <ul>
-            <li><a href="#user-api-模块">user-api 模块</a></li>
-            <li><a href="#task-service-模块引用">task-service 模块引用</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#2-服务拆分与聚合以业务为中心-vs-技术为中心">2. 服务拆分与聚合：以业务为中心 vs 技术为中心</a>
-      <ul>
-        <li><a href="#21-错误拆分方式按技术层拆分">2.1 错误拆分方式：按技术层拆分</a></li>
-        <li><a href="#22-推荐拆分方式按业务域拆分">2.2 推荐拆分方式：按业务域拆分</a></li>
-        <li><a href="#23-聚合场景网关--聚合服务--bff-层">2.3 聚合场景：网关 + 聚合服务 + BFF 层</a></li>
-      </ul>
-    </li>
-    <li><a href="#3-技术架构演进从单体到-serverless--云原生趋势">3. 技术架构演进：从单体到 Serverless + 云原生趋势</a>
-      <ul>
-        <li><a href="#31-演进阶段">3.1 演进阶段</a></li>
-        <li><a href="#32-spring-cloud-如何适配">3.2 Spring Cloud 如何适配</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-统一平台中台建设思路用户中心--权限中心--日志中心">4. 统一平台中台建设思路：用户中心 / 权限中心 / 日志中心</a>
-      <ul>
-        <li><a href="#41-用户中心统一认证">4.1 用户中心（统一认证）</a></li>
-        <li><a href="#42-权限中心rbac-权限体系">4.2 权限中心（RBAC 权限体系）</a></li>
-        <li><a href="#43-日志中心统一日志采集">4.3 日志中心（统一日志采集）</a></li>
-      </ul>
-    </li>
-    <li><a href="#5-架构师必备思维稳定性设计--可观测性--扩展性">5. 架构师必备思维：稳定性设计 + 可观测性 + 扩展性</a>
-      <ul>
-        <li><a href="#51-稳定性设计三板斧">5.1 稳定性设计：三板斧</a></li>
-        <li><a href="#52-可观测性设计三大支柱">5.2 可观测性设计：三大支柱</a></li>
-        <li><a href="#53-扩展性设计插件化--模块化">5.3 扩展性设计：插件化 &amp; 模块化</a></li>
-      </ul>
-    </li>
-    <li><a href="#6-完整项目">6. 完整项目</a>
-      <ul>
-        <li><a href="#61-项目概述">6.1 项目概述</a></li>
-        <li><a href="#62-架构图">6.2 架构图</a></li>
-        <li><a href="#63-项目源码">6.3 项目源码</a></li>
-      </ul>
-    </li>
-    <li><a href="#总结">总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

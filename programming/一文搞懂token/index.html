@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,39 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#一什么是-token">一、什么是 Token？</a></li>
+    <li><a href="#二为什么需要-token">二、为什么需要 Token？</a></li>
+    <li><a href="#三常见的-token-实现方式">三、常见的 Token 实现方式</a>
+      <ul>
+        <li><a href="#1-jwtjson-web-token">1. JWT（JSON Web Token）</a></li>
+      </ul>
+    </li>
+    <li><a href="#四token-在生产系统中的应用场景">四、Token 在生产系统中的应用场景</a>
+      <ul>
+        <li><a href="#场景一用户登录淘宝微信知乎等">场景一：用户登录（淘宝、微信、知乎等）</a></li>
+        <li><a href="#场景二api-网关--微服务认证">场景二：API 网关 + 微服务认证</a></li>
+      </ul>
+    </li>
+    <li><a href="#五什么时候生成-token">五、什么时候生成 Token？</a></li>
+    <li><a href="#六什么时候需要重新生成-token">六、什么时候需要重新生成 Token？</a></li>
+    <li><a href="#七进阶机制refresh-token">七、进阶机制：Refresh Token</a></li>
+    <li><a href="#八真实系统参考">八、真实系统参考</a></li>
+    <li><a href="#九最佳实践总结">九、最佳实践总结</a></li>
+    <li><a href="#十结语">十、结语</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -830,38 +845,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#背景">背景</a></li>
-    <li><a href="#一什么是-token">一、什么是 Token？</a></li>
-    <li><a href="#二为什么需要-token">二、为什么需要 Token？</a></li>
-    <li><a href="#三常见的-token-实现方式">三、常见的 Token 实现方式</a>
-      <ul>
-        <li><a href="#1-jwtjson-web-token">1. JWT（JSON Web Token）</a></li>
-      </ul>
-    </li>
-    <li><a href="#四token-在生产系统中的应用场景">四、Token 在生产系统中的应用场景</a>
-      <ul>
-        <li><a href="#场景一用户登录淘宝微信知乎等">场景一：用户登录（淘宝、微信、知乎等）</a></li>
-        <li><a href="#场景二api-网关--微服务认证">场景二：API 网关 + 微服务认证</a></li>
-      </ul>
-    </li>
-    <li><a href="#五什么时候生成-token">五、什么时候生成 Token？</a></li>
-    <li><a href="#六什么时候需要重新生成-token">六、什么时候需要重新生成 Token？</a></li>
-    <li><a href="#七进阶机制refresh-token">七、进阶机制：Refresh Token</a></li>
-    <li><a href="#八真实系统参考">八、真实系统参考</a></li>
-    <li><a href="#九最佳实践总结">九、最佳实践总结</a></li>
-    <li><a href="#十结语">十、结语</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

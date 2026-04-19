@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,81 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#1-java-io-框架概述">1. Java IO 框架概述</a></li>
+    <li><a href="#2-io-模型分类">2. IO 模型分类</a>
+      <ul>
+        <li><a href="#21-bioblocking-io">2.1 BIO（Blocking I/O）</a></li>
+        <li><a href="#22-nionon-blocking-io">2.2 NIO（Non-blocking I/O）</a></li>
+        <li><a href="#23-aioasynchronous-io">2.3 AIO（Asynchronous I/O）</a></li>
+        <li><a href="#24-io模型对比总结">2.4 IO模型对比总结</a></li>
+        <li><a href="#3-流的方向">3. 流的方向</a>
+          <ul>
+            <li><a href="#1-输入流inputstreamreader">1. 输入流（InputStream/Reader）</a></li>
+            <li><a href="#2-输出流outputstreamwriter">2. 输出流（OutputStream/Writer）</a></li>
+          </ul>
+        </li>
+        <li><a href="#4-流的分类">4. 流的分类</a>
+          <ul>
+            <li><a href="#1-字节流byte-streams">1. 字节流（Byte Streams）</a></li>
+            <li><a href="#2-处理流processing-streams--decorator-streams">2. 处理流（Processing Streams / Decorator Streams）</a></li>
+          </ul>
+        </li>
+        <li><a href="#6-inputstream">6. InputStream</a>
+          <ul>
+            <li><a href="#1-fileinputstream">1. FileInputStream</a></li>
+            <li><a href="#2-bytearrayinputstream">2. ByteArrayInputStream</a></li>
+            <li><a href="#3-pipedinputstream">3. PipedInputStream</a></li>
+            <li><a href="#4-bufferedinputstream">4. BufferedInputStream</a></li>
+            <li><a href="#5-datainputstream">5. DataInputStream</a></li>
+            <li><a href="#6-pushbackinputstream">6. PushbackInputStream</a></li>
+            <li><a href="#7-objectinputstream">7. ObjectInputStream</a></li>
+          </ul>
+        </li>
+        <li><a href="#7-outputstream">7. OutputStream</a>
+          <ul>
+            <li><a href="#1-fileoutputstream">1. FileOutputStream</a></li>
+            <li><a href="#2-bytearrayoutputstream">2. ByteArrayOutputStream</a></li>
+            <li><a href="#3-pipedoutputstream">3. PipedOutputStream</a></li>
+            <li><a href="#4-bufferedoutputstream">4. BufferedOutputStream</a></li>
+            <li><a href="#5-dataoutputstream">5. DataOutputStream</a></li>
+            <li><a href="#6-objectoutputstream">6. ObjectOutputStream</a></li>
+          </ul>
+        </li>
+        <li><a href="#8-字符流readerwriter">8. 字符流（Reader/Writer）</a>
+          <ul>
+            <li><a href="#81-reader-系列">8.1 Reader 系列</a></li>
+            <li><a href="#82-writer-系列">8.2 Writer 系列</a></li>
+          </ul>
+        </li>
+        <li><a href="#9-节点流与处理流总结">9. 节点流与处理流总结</a></li>
+        <li><a href="#10-io-最佳实践">10. IO 最佳实践</a>
+          <ul>
+            <li><a href="#101-资源管理">10.1 资源管理</a></li>
+            <li><a href="#102-性能优化">10.2 性能优化</a></li>
+            <li><a href="#103-编码处理">10.3 编码处理</a></li>
+            <li><a href="#104-异常处理">10.4 异常处理</a></li>
+            <li><a href="#105-nio-与-nio2">10.5 NIO 与 NIO.2</a></li>
+            <li><a href="#106-常见陷阱与解决方案">10.6 常见陷阱与解决方案</a></li>
+          </ul>
+        </li>
+        <li><a href="#11-综合示例文件复制">11. 综合示例：文件复制</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -4948,80 +5005,6 @@ bos 水池（收到字节）
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#文章概览">文章概览</a></li>
-    <li><a href="#1-java-io-框架概述">1. Java IO 框架概述</a></li>
-    <li><a href="#2-io-模型分类">2. IO 模型分类</a>
-      <ul>
-        <li><a href="#21-bioblocking-io">2.1 BIO（Blocking I/O）</a></li>
-        <li><a href="#22-nionon-blocking-io">2.2 NIO（Non-blocking I/O）</a></li>
-        <li><a href="#23-aioasynchronous-io">2.3 AIO（Asynchronous I/O）</a></li>
-        <li><a href="#24-io模型对比总结">2.4 IO模型对比总结</a></li>
-        <li><a href="#3-流的方向">3. 流的方向</a>
-          <ul>
-            <li><a href="#1-输入流inputstreamreader">1. 输入流（InputStream/Reader）</a></li>
-            <li><a href="#2-输出流outputstreamwriter">2. 输出流（OutputStream/Writer）</a></li>
-          </ul>
-        </li>
-        <li><a href="#4-流的分类">4. 流的分类</a>
-          <ul>
-            <li><a href="#1-字节流byte-streams">1. 字节流（Byte Streams）</a></li>
-            <li><a href="#2-处理流processing-streams--decorator-streams">2. 处理流（Processing Streams / Decorator Streams）</a></li>
-          </ul>
-        </li>
-        <li><a href="#6-inputstream">6. InputStream</a>
-          <ul>
-            <li><a href="#1-fileinputstream">1. FileInputStream</a></li>
-            <li><a href="#2-bytearrayinputstream">2. ByteArrayInputStream</a></li>
-            <li><a href="#3-pipedinputstream">3. PipedInputStream</a></li>
-            <li><a href="#4-bufferedinputstream">4. BufferedInputStream</a></li>
-            <li><a href="#5-datainputstream">5. DataInputStream</a></li>
-            <li><a href="#6-pushbackinputstream">6. PushbackInputStream</a></li>
-            <li><a href="#7-objectinputstream">7. ObjectInputStream</a></li>
-          </ul>
-        </li>
-        <li><a href="#7-outputstream">7. OutputStream</a>
-          <ul>
-            <li><a href="#1-fileoutputstream">1. FileOutputStream</a></li>
-            <li><a href="#2-bytearrayoutputstream">2. ByteArrayOutputStream</a></li>
-            <li><a href="#3-pipedoutputstream">3. PipedOutputStream</a></li>
-            <li><a href="#4-bufferedoutputstream">4. BufferedOutputStream</a></li>
-            <li><a href="#5-dataoutputstream">5. DataOutputStream</a></li>
-            <li><a href="#6-objectoutputstream">6. ObjectOutputStream</a></li>
-          </ul>
-        </li>
-        <li><a href="#8-字符流readerwriter">8. 字符流（Reader/Writer）</a>
-          <ul>
-            <li><a href="#81-reader-系列">8.1 Reader 系列</a></li>
-            <li><a href="#82-writer-系列">8.2 Writer 系列</a></li>
-          </ul>
-        </li>
-        <li><a href="#9-节点流与处理流总结">9. 节点流与处理流总结</a></li>
-        <li><a href="#10-io-最佳实践">10. IO 最佳实践</a>
-          <ul>
-            <li><a href="#101-资源管理">10.1 资源管理</a></li>
-            <li><a href="#102-性能优化">10.2 性能优化</a></li>
-            <li><a href="#103-编码处理">10.3 编码处理</a></li>
-            <li><a href="#104-异常处理">10.4 异常处理</a></li>
-            <li><a href="#105-nio-与-nio2">10.5 NIO 与 NIO.2</a></li>
-            <li><a href="#106-常见陷阱与解决方案">10.6 常见陷阱与解决方案</a></li>
-          </ul>
-        </li>
-        <li><a href="#11-综合示例文件复制">11. 综合示例：文件复制</a></li>
-      </ul>
-    </li>
-    <li><a href="#总结">总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

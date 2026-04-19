@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,66 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#一java的面向对象思想">一、Java的面向对象思想</a>
+      <ul>
+        <li><a href="#1-用对象模拟现实世界">1. 用&quot;对象&quot;模拟现实世界</a></li>
+        <li><a href="#2-面向对象6大底层思维模型">2. 面向对象6大底层思维模型</a></li>
+        <li><a href="#3-面向对象的核心特性">3. 面向对象的核心特性</a>
+          <ul>
+            <li><a href="#31-封装保护自己">3.1 封装（保护自己）</a></li>
+            <li><a href="#32-继承复用父亲">3.2 继承（复用父亲）</a></li>
+            <li><a href="#33-多态灵活替换">3.3 多态（灵活替换）</a></li>
+            <li><a href="#34-抽象提取共性">3.4 抽象（提取共性）</a></li>
+            <li><a href="#35-接口定义契约">3.5 接口（定义契约）</a></li>
+          </ul>
+        </li>
+        <li><a href="#4-构造函数">4. 构造函数</a>
+          <ul>
+            <li><a href="#41-构造函数的基本作用">4.1 构造函数的基本作用</a></li>
+            <li><a href="#42-继承关系下的构造函数">4.2 继承关系下的构造函数</a></li>
+            <li><a href="#43-继承构造终极总结">4.3 继承构造终极总结</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#二面向对象的设计原则">二、面向对象的设计原则</a>
+      <ul>
+        <li><a href="#1-单一职责原则srp">1. 单一职责原则（SRP）</a></li>
+        <li><a href="#2-开闭原则ocp">2. 开闭原则（OCP）</a></li>
+        <li><a href="#3-里氏替换原则lsp">3. 里氏替换原则（LSP）</a></li>
+        <li><a href="#4-接口隔离原则isp">4. 接口隔离原则（ISP）</a></li>
+        <li><a href="#5-依赖倒置原则dip">5. 依赖倒置原则（DIP）</a></li>
+        <li><a href="#6-迪米特法则lod">6. 迪米特法则（LOD）</a></li>
+      </ul>
+    </li>
+    <li><a href="#三类之间如何交互">三、类之间如何交互</a>
+      <ul>
+        <li><a href="#1-直接依赖最简单但耦合高">1. 直接依赖（最简单，但耦合高）</a></li>
+        <li><a href="#2-接口调用解耦核心">2. 接口调用（解耦核心）</a></li>
+        <li><a href="#3-组合has---a最推荐的复用">3. 组合（has - a，最推荐的复用）</a></li>
+        <li><a href="#4-继承is---a父子关系">4. 继承（is - a，父子关系）</a></li>
+        <li><a href="#5-观察者事件通知一对多">5. 观察者（事件通知：一对多）</a></li>
+        <li><a href="#6-依赖注入di框架底层">6. 依赖注入（DI，框架底层）</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -1601,65 +1643,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#前言">前言</a></li>
-    <li><a href="#一java的面向对象思想">一、Java的面向对象思想</a>
-      <ul>
-        <li><a href="#1-用对象模拟现实世界">1. 用&quot;对象&quot;模拟现实世界</a></li>
-        <li><a href="#2-面向对象6大底层思维模型">2. 面向对象6大底层思维模型</a></li>
-        <li><a href="#3-面向对象的核心特性">3. 面向对象的核心特性</a>
-          <ul>
-            <li><a href="#31-封装保护自己">3.1 封装（保护自己）</a></li>
-            <li><a href="#32-继承复用父亲">3.2 继承（复用父亲）</a></li>
-            <li><a href="#33-多态灵活替换">3.3 多态（灵活替换）</a></li>
-            <li><a href="#34-抽象提取共性">3.4 抽象（提取共性）</a></li>
-            <li><a href="#35-接口定义契约">3.5 接口（定义契约）</a></li>
-          </ul>
-        </li>
-        <li><a href="#4-构造函数">4. 构造函数</a>
-          <ul>
-            <li><a href="#41-构造函数的基本作用">4.1 构造函数的基本作用</a></li>
-            <li><a href="#42-继承关系下的构造函数">4.2 继承关系下的构造函数</a></li>
-            <li><a href="#43-继承构造终极总结">4.3 继承构造终极总结</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#二面向对象的设计原则">二、面向对象的设计原则</a>
-      <ul>
-        <li><a href="#1-单一职责原则srp">1. 单一职责原则（SRP）</a></li>
-        <li><a href="#2-开闭原则ocp">2. 开闭原则（OCP）</a></li>
-        <li><a href="#3-里氏替换原则lsp">3. 里氏替换原则（LSP）</a></li>
-        <li><a href="#4-接口隔离原则isp">4. 接口隔离原则（ISP）</a></li>
-        <li><a href="#5-依赖倒置原则dip">5. 依赖倒置原则（DIP）</a></li>
-        <li><a href="#6-迪米特法则lod">6. 迪米特法则（LOD）</a></li>
-      </ul>
-    </li>
-    <li><a href="#三类之间如何交互">三、类之间如何交互</a>
-      <ul>
-        <li><a href="#1-直接依赖最简单但耦合高">1. 直接依赖（最简单，但耦合高）</a></li>
-        <li><a href="#2-接口调用解耦核心">2. 接口调用（解耦核心）</a></li>
-        <li><a href="#3-组合has---a最推荐的复用">3. 组合（has - a，最推荐的复用）</a></li>
-        <li><a href="#4-继承is---a父子关系">4. 继承（is - a，父子关系）</a></li>
-        <li><a href="#5-观察者事件通知一对多">5. 观察者（事件通知：一对多）</a></li>
-        <li><a href="#6-依赖注入di框架底层">6. 依赖注入（DI，框架底层）</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li><a href="#总结">总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

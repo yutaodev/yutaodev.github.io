@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,72 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#异常处理概述">异常处理概述</a>
+      <ul>
+        <li><a href="#什么是异常">什么是异常？</a></li>
+      </ul>
+    </li>
+    <li><a href="#异常体系结构">异常体系结构</a>
+      <ul>
+        <li><a href="#异常体系图">异常体系图</a></li>
+        <li><a href="#异常分类">异常分类</a></li>
+      </ul>
+    </li>
+    <li><a href="#异常处理机制">异常处理机制</a>
+      <ul>
+        <li><a href="#1-try-catch-块">1. try-catch 块</a></li>
+        <li><a href="#2-多个-catch-块">2. 多个 catch 块</a></li>
+        <li><a href="#3-finally-块">3. finally 块</a></li>
+        <li><a href="#4-throw-关键字">4. throw 关键字</a></li>
+        <li><a href="#5-throws-关键字">5. throws 关键字</a></li>
+        <li><a href="#6-try-with-resourcesjava-7">6. try-with-resources（Java 7+）</a></li>
+      </ul>
+    </li>
+    <li><a href="#异常处理最佳实践">异常处理最佳实践</a>
+      <ul>
+        <li><a href="#1-只捕获你能处理的异常">1. 只捕获你能处理的异常</a></li>
+        <li><a href="#2-合理使用异常类型">2. 合理使用异常类型</a></li>
+        <li><a href="#3-提供有意义的异常信息">3. 提供有意义的异常信息</a></li>
+        <li><a href="#4-避免在循环中抛出异常">4. 避免在循环中抛出异常</a></li>
+        <li><a href="#5-正确使用-finally-块">5. 正确使用 finally 块</a></li>
+      </ul>
+    </li>
+    <li><a href="#自定义异常">自定义异常</a>
+      <ul>
+        <li><a href="#1-自定义检查型异常">1. 自定义检查型异常</a></li>
+        <li><a href="#2-自定义非检查型异常">2. 自定义非检查型异常</a></li>
+        <li><a href="#3-自定义异常的最佳实践">3. 自定义异常的最佳实践</a></li>
+      </ul>
+    </li>
+    <li><a href="#异常处理性能考虑">异常处理性能考虑</a>
+      <ul>
+        <li><a href="#1-异常的性能影响">1. 异常的性能影响</a></li>
+        <li><a href="#2-性能优化建议">2. 性能优化建议</a></li>
+        <li><a href="#3-异常处理的性能优化">3. 异常处理的性能优化</a></li>
+      </ul>
+    </li>
+    <li><a href="#异常处理常见问题">异常处理常见问题</a>
+      <ul>
+        <li><a href="#1-空指针异常nullpointerexception">1. 空指针异常（NullPointerException）</a></li>
+        <li><a href="#2-数组越界异常arrayindexoutofboundsexception">2. 数组越界异常（ArrayIndexOutOfBoundsException）</a></li>
+        <li><a href="#3-类型转换异常classcastexception">3. 类型转换异常（ClassCastException）</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -1470,71 +1518,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#文章概览">文章概览</a></li>
-    <li><a href="#异常处理概述">异常处理概述</a>
-      <ul>
-        <li><a href="#什么是异常">什么是异常？</a></li>
-      </ul>
-    </li>
-    <li><a href="#异常体系结构">异常体系结构</a>
-      <ul>
-        <li><a href="#异常体系图">异常体系图</a></li>
-        <li><a href="#异常分类">异常分类</a></li>
-      </ul>
-    </li>
-    <li><a href="#异常处理机制">异常处理机制</a>
-      <ul>
-        <li><a href="#1-try-catch-块">1. try-catch 块</a></li>
-        <li><a href="#2-多个-catch-块">2. 多个 catch 块</a></li>
-        <li><a href="#3-finally-块">3. finally 块</a></li>
-        <li><a href="#4-throw-关键字">4. throw 关键字</a></li>
-        <li><a href="#5-throws-关键字">5. throws 关键字</a></li>
-        <li><a href="#6-try-with-resourcesjava-7">6. try-with-resources（Java 7+）</a></li>
-      </ul>
-    </li>
-    <li><a href="#异常处理最佳实践">异常处理最佳实践</a>
-      <ul>
-        <li><a href="#1-只捕获你能处理的异常">1. 只捕获你能处理的异常</a></li>
-        <li><a href="#2-合理使用异常类型">2. 合理使用异常类型</a></li>
-        <li><a href="#3-提供有意义的异常信息">3. 提供有意义的异常信息</a></li>
-        <li><a href="#4-避免在循环中抛出异常">4. 避免在循环中抛出异常</a></li>
-        <li><a href="#5-正确使用-finally-块">5. 正确使用 finally 块</a></li>
-      </ul>
-    </li>
-    <li><a href="#自定义异常">自定义异常</a>
-      <ul>
-        <li><a href="#1-自定义检查型异常">1. 自定义检查型异常</a></li>
-        <li><a href="#2-自定义非检查型异常">2. 自定义非检查型异常</a></li>
-        <li><a href="#3-自定义异常的最佳实践">3. 自定义异常的最佳实践</a></li>
-      </ul>
-    </li>
-    <li><a href="#异常处理性能考虑">异常处理性能考虑</a>
-      <ul>
-        <li><a href="#1-异常的性能影响">1. 异常的性能影响</a></li>
-        <li><a href="#2-性能优化建议">2. 性能优化建议</a></li>
-        <li><a href="#3-异常处理的性能优化">3. 异常处理的性能优化</a></li>
-      </ul>
-    </li>
-    <li><a href="#异常处理常见问题">异常处理常见问题</a>
-      <ul>
-        <li><a href="#1-空指针异常nullpointerexception">1. 空指针异常（NullPointerException）</a></li>
-        <li><a href="#2-数组越界异常arrayindexoutofboundsexception">2. 数组越界异常（ArrayIndexOutOfBoundsException）</a></li>
-        <li><a href="#3-类型转换异常classcastexception">3. 类型转换异常（ClassCastException）</a></li>
-      </ul>
-    </li>
-    <li><a href="#总结">总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,62 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-gradle-是什么为什么选择它">1. Gradle 是什么？为什么选择它？</a>
+      <ul>
+        <li><a href="#gradle-能干什么">Gradle 能干什么？</a></li>
+        <li><a href="#为什么选择-gradle">为什么选择 Gradle？</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-gradle-的获取与安装">2. Gradle 的获取与安装</a>
+      <ul>
+        <li><a href="#21-准备工作安装-jdk">2.1 准备工作：安装 JDK</a></li>
+        <li><a href="#22-下载-gradle">2.2 下载 Gradle</a></li>
+        <li><a href="#23-安装-gradle">2.3 安装 Gradle</a></li>
+        <li><a href="#24-验证安装">2.4 验证安装</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-gradle-的配置与核心文件">3. Gradle 的配置与核心文件</a>
+      <ul>
+        <li><a href="#31-buildgradle-或-buildgradlekts构建脚本的核心">3.1 <code>build.gradle</code> (或 <code>build.gradle.kts</code>)：构建脚本的核心</a></li>
+        <li><a href="#32-settingsgradle-或-settingsgradlekts多项目管理">3.2 <code>settings.gradle</code> (或 <code>settings.gradle.kts</code>)：多项目管理</a></li>
+        <li><a href="#33-gradleproperties项目属性">3.3 <code>gradle.properties</code>：项目属性</a></li>
+        <li><a href="#34-gradlew-和-gradlewbatgradle-wrapper">3.4 <code>gradlew</code> 和 <code>gradlew.bat</code>：Gradle Wrapper</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-gradle-dsl-领域特定语言-深入">4. Gradle DSL (领域特定语言) 深入</a>
+      <ul>
+        <li><a href="#41-groovy-dsl">4.1 Groovy DSL</a></li>
+        <li><a href="#42-kotlin-dsl">4.2 Kotlin DSL</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-gradle-的基本使用命令行操作">5. Gradle 的基本使用：命令行操作</a>
+      <ul>
+        <li><a href="#51-常用命令">5.1 常用命令</a></li>
+        <li><a href="#52-gradle-wrapper-的重要性">5.2 Gradle Wrapper 的重要性</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-多模块项目构建">6. 多模块项目构建</a>
+      <ul>
+        <li><a href="#61-目录结构">6.1 目录结构</a></li>
+        <li><a href="#62-根项目的-buildgradle">6.2 根项目的 <code>build.gradle</code></a></li>
+        <li><a href="#63-子模块的-buildgradle">6.3 子模块的 <code>build.gradle</code></a></li>
+        <li><a href="#64-执行多模块构建">6.4 执行多模块构建</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-结语">7. 结语</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -1333,61 +1371,6 @@ JVM:          1.X.X (Oracle Corporation X.X.X)
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#1-gradle-是什么为什么选择它">1. Gradle 是什么？为什么选择它？</a>
-      <ul>
-        <li><a href="#gradle-能干什么">Gradle 能干什么？</a></li>
-        <li><a href="#为什么选择-gradle">为什么选择 Gradle？</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-gradle-的获取与安装">2. Gradle 的获取与安装</a>
-      <ul>
-        <li><a href="#21-准备工作安装-jdk">2.1 准备工作：安装 JDK</a></li>
-        <li><a href="#22-下载-gradle">2.2 下载 Gradle</a></li>
-        <li><a href="#23-安装-gradle">2.3 安装 Gradle</a></li>
-        <li><a href="#24-验证安装">2.4 验证安装</a></li>
-      </ul>
-    </li>
-    <li><a href="#3-gradle-的配置与核心文件">3. Gradle 的配置与核心文件</a>
-      <ul>
-        <li><a href="#31-buildgradle-或-buildgradlekts构建脚本的核心">3.1 <code>build.gradle</code> (或 <code>build.gradle.kts</code>)：构建脚本的核心</a></li>
-        <li><a href="#32-settingsgradle-或-settingsgradlekts多项目管理">3.2 <code>settings.gradle</code> (或 <code>settings.gradle.kts</code>)：多项目管理</a></li>
-        <li><a href="#33-gradleproperties项目属性">3.3 <code>gradle.properties</code>：项目属性</a></li>
-        <li><a href="#34-gradlew-和-gradlewbatgradle-wrapper">3.4 <code>gradlew</code> 和 <code>gradlew.bat</code>：Gradle Wrapper</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-gradle-dsl-领域特定语言-深入">4. Gradle DSL (领域特定语言) 深入</a>
-      <ul>
-        <li><a href="#41-groovy-dsl">4.1 Groovy DSL</a></li>
-        <li><a href="#42-kotlin-dsl">4.2 Kotlin DSL</a></li>
-      </ul>
-    </li>
-    <li><a href="#5-gradle-的基本使用命令行操作">5. Gradle 的基本使用：命令行操作</a>
-      <ul>
-        <li><a href="#51-常用命令">5.1 常用命令</a></li>
-        <li><a href="#52-gradle-wrapper-的重要性">5.2 Gradle Wrapper 的重要性</a></li>
-      </ul>
-    </li>
-    <li><a href="#6-多模块项目构建">6. 多模块项目构建</a>
-      <ul>
-        <li><a href="#61-目录结构">6.1 目录结构</a></li>
-        <li><a href="#62-根项目的-buildgradle">6.2 根项目的 <code>build.gradle</code></a></li>
-        <li><a href="#63-子模块的-buildgradle">6.3 子模块的 <code>build.gradle</code></a></li>
-        <li><a href="#64-执行多模块构建">6.4 执行多模块构建</a></li>
-      </ul>
-    </li>
-    <li><a href="#7-结语">7. 结语</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

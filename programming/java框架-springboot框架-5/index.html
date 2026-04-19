@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,56 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#1-spring-boot-应用-docker-打包部署">1. Spring Boot 应用 Docker 打包部署</a>
+      <ul>
+        <li><a href="#一创建-dockerfile">一、创建 Dockerfile</a></li>
+        <li><a href="#二构建镜像并运行容器">二、构建镜像并运行容器</a></li>
+        <li><a href="#三验证运行情况">三、验证运行情况</a></li>
+        <li><a href="#四常用命令补充">四、常用命令补充</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-使用-spring-boot-actuator-监控应用状态">2. 使用 Spring Boot Actuator 监控应用状态</a>
+      <ul>
+        <li><a href="#一引入依赖">一、引入依赖</a></li>
+        <li><a href="#二配置开启端点">二、配置开启端点</a></li>
+        <li><a href="#三常用端点">三、常用端点</a></li>
+        <li><a href="#四添加代码">四、添加代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-spring-boot-整合-eureka-实现服务注册与发现">3. Spring Boot 整合 Eureka 实现服务注册与发现</a>
+      <ul>
+        <li><a href="#一创建-eureka-server">一、创建 Eureka Server</a></li>
+        <li><a href="#二注册客户端">二、注册客户端</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-使用-openfeign-实现微服务间调用">4. 使用 OpenFeign 实现微服务间调用</a>
+      <ul>
+        <li><a href="#一引入依赖-1">一、引入依赖</a></li>
+        <li><a href="#二开启-feign">二、开启 Feign</a></li>
+        <li><a href="#三定义-feign-接口">三、定义 Feign 接口</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-配置中心与服务发现结合使用实践">5. 配置中心与服务发现结合使用实践</a>
+      <ul>
+        <li><a href="#一将配置中心与注册中心合并如-nacos">一、将配置中心与注册中心合并（如 Nacos）</a></li>
+        <li><a href="#二服务调用整合-feign-与配置属性">二、服务调用整合 Feign 与配置属性</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -1510,55 +1542,6 @@ Spring 管理的所有 Bean 列表<br>
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#文章概览">文章概览</a></li>
-    <li><a href="#1-spring-boot-应用-docker-打包部署">1. Spring Boot 应用 Docker 打包部署</a>
-      <ul>
-        <li><a href="#一创建-dockerfile">一、创建 Dockerfile</a></li>
-        <li><a href="#二构建镜像并运行容器">二、构建镜像并运行容器</a></li>
-        <li><a href="#三验证运行情况">三、验证运行情况</a></li>
-        <li><a href="#四常用命令补充">四、常用命令补充</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-使用-spring-boot-actuator-监控应用状态">2. 使用 Spring Boot Actuator 监控应用状态</a>
-      <ul>
-        <li><a href="#一引入依赖">一、引入依赖</a></li>
-        <li><a href="#二配置开启端点">二、配置开启端点</a></li>
-        <li><a href="#三常用端点">三、常用端点</a></li>
-        <li><a href="#四添加代码">四、添加代码</a></li>
-      </ul>
-    </li>
-    <li><a href="#3-spring-boot-整合-eureka-实现服务注册与发现">3. Spring Boot 整合 Eureka 实现服务注册与发现</a>
-      <ul>
-        <li><a href="#一创建-eureka-server">一、创建 Eureka Server</a></li>
-        <li><a href="#二注册客户端">二、注册客户端</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-使用-openfeign-实现微服务间调用">4. 使用 OpenFeign 实现微服务间调用</a>
-      <ul>
-        <li><a href="#一引入依赖-1">一、引入依赖</a></li>
-        <li><a href="#二开启-feign">二、开启 Feign</a></li>
-        <li><a href="#三定义-feign-接口">三、定义 Feign 接口</a></li>
-      </ul>
-    </li>
-    <li><a href="#5-配置中心与服务发现结合使用实践">5. 配置中心与服务发现结合使用实践</a>
-      <ul>
-        <li><a href="#一将配置中心与注册中心合并如-nacos">一、将配置中心与注册中心合并（如 Nacos）</a></li>
-        <li><a href="#二服务调用整合-feign-与配置属性">二、服务调用整合 Feign 与配置属性</a></li>
-      </ul>
-    </li>
-    <li><a href="#总结">总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

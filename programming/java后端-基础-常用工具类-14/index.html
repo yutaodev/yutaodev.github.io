@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,82 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#一arrays-类">一、Arrays 类</a>
+      <ul>
+        <li><a href="#11-核心定位">1.1 核心定位</a></li>
+        <li><a href="#12-常用方法详解">1.2 常用方法详解</a></li>
+        <li><a href="#13-代码示例与原理分析">1.3 代码示例与原理分析</a></li>
+        <li><a href="#14-性能陷阱与最佳实践">1.4 性能陷阱与最佳实践</a></li>
+      </ul>
+    </li>
+    <li><a href="#二collections-类">二、Collections 类</a>
+      <ul>
+        <li><a href="#21-核心定位">2.1 核心定位</a></li>
+        <li><a href="#22-方法分类">2.2 方法分类</a></li>
+        <li><a href="#23-代码示例">2.3 代码示例</a></li>
+        <li><a href="#24-线程安全-vs-并发集合">2.4 线程安全 vs 并发集合</a></li>
+      </ul>
+    </li>
+    <li><a href="#三objects-类">三、Objects 类</a>
+      <ul>
+        <li><a href="#31-核心定位">3.1 核心定位</a></li>
+        <li><a href="#32-核心方法">3.2 核心方法</a></li>
+        <li><a href="#33-代码示例">3.3 代码示例</a></li>
+      </ul>
+    </li>
+    <li><a href="#四files-与-paths-类nio2">四、Files 与 Paths 类（NIO.2）</a>
+      <ul>
+        <li><a href="#41-核心定位">4.1 核心定位</a></li>
+        <li><a href="#42-核心方法对比">4.2 核心方法对比</a></li>
+        <li><a href="#43-代码示例">4.3 代码示例</a></li>
+        <li><a href="#44-异常处理与资源管理">4.4 异常处理与资源管理</a></li>
+      </ul>
+    </li>
+    <li><a href="#五math-类">五、Math 类</a>
+      <ul>
+        <li><a href="#51-核心定位">5.1 核心定位</a></li>
+        <li><a href="#52-方法分类">5.2 方法分类</a></li>
+        <li><a href="#53-代码示例">5.3 代码示例</a></li>
+      </ul>
+    </li>
+    <li><a href="#六stream-api">六、Stream API</a>
+      <ul>
+        <li><a href="#61-核心定位">6.1 核心定位</a></li>
+        <li><a href="#62-核心方法">6.2 核心方法</a></li>
+        <li><a href="#63-创建-stream">6.3. 创建 Stream</a></li>
+        <li><a href="#64-中间操作">6.4. 中间操作</a></li>
+        <li><a href="#65-终止操作">6.5 终止操作</a></li>
+        <li><a href="#65-性能陷阱与最佳实践">6.5 性能陷阱与最佳实践</a></li>
+      </ul>
+    </li>
+    <li><a href="#七stringutilsapache-commons-lang">七、StringUtils（Apache Commons Lang）</a>
+      <ul>
+        <li><a href="#71-核心定位">7.1 核心定位</a></li>
+        <li><a href="#72-与原生-java-对比">7.2 与原生 Java 对比</a></li>
+        <li><a href="#73-代码示例">7.3 代码示例</a></li>
+      </ul>
+    </li>
+    <li><a href="#八工具类选择速查表">八、工具类选择速查表</a></li>
+    <li><a href="#九总结">九、总结</a>
+      <ul>
+        <li><a href="#核心要点">核心要点</a></li>
+        <li><a href="#性能建议">性能建议</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -2873,81 +2931,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#文章概览">文章概览</a></li>
-    <li><a href="#一arrays-类">一、Arrays 类</a>
-      <ul>
-        <li><a href="#11-核心定位">1.1 核心定位</a></li>
-        <li><a href="#12-常用方法详解">1.2 常用方法详解</a></li>
-        <li><a href="#13-代码示例与原理分析">1.3 代码示例与原理分析</a></li>
-        <li><a href="#14-性能陷阱与最佳实践">1.4 性能陷阱与最佳实践</a></li>
-      </ul>
-    </li>
-    <li><a href="#二collections-类">二、Collections 类</a>
-      <ul>
-        <li><a href="#21-核心定位">2.1 核心定位</a></li>
-        <li><a href="#22-方法分类">2.2 方法分类</a></li>
-        <li><a href="#23-代码示例">2.3 代码示例</a></li>
-        <li><a href="#24-线程安全-vs-并发集合">2.4 线程安全 vs 并发集合</a></li>
-      </ul>
-    </li>
-    <li><a href="#三objects-类">三、Objects 类</a>
-      <ul>
-        <li><a href="#31-核心定位">3.1 核心定位</a></li>
-        <li><a href="#32-核心方法">3.2 核心方法</a></li>
-        <li><a href="#33-代码示例">3.3 代码示例</a></li>
-      </ul>
-    </li>
-    <li><a href="#四files-与-paths-类nio2">四、Files 与 Paths 类（NIO.2）</a>
-      <ul>
-        <li><a href="#41-核心定位">4.1 核心定位</a></li>
-        <li><a href="#42-核心方法对比">4.2 核心方法对比</a></li>
-        <li><a href="#43-代码示例">4.3 代码示例</a></li>
-        <li><a href="#44-异常处理与资源管理">4.4 异常处理与资源管理</a></li>
-      </ul>
-    </li>
-    <li><a href="#五math-类">五、Math 类</a>
-      <ul>
-        <li><a href="#51-核心定位">5.1 核心定位</a></li>
-        <li><a href="#52-方法分类">5.2 方法分类</a></li>
-        <li><a href="#53-代码示例">5.3 代码示例</a></li>
-      </ul>
-    </li>
-    <li><a href="#六stream-api">六、Stream API</a>
-      <ul>
-        <li><a href="#61-核心定位">6.1 核心定位</a></li>
-        <li><a href="#62-核心方法">6.2 核心方法</a></li>
-        <li><a href="#63-创建-stream">6.3. 创建 Stream</a></li>
-        <li><a href="#64-中间操作">6.4. 中间操作</a></li>
-        <li><a href="#65-终止操作">6.5 终止操作</a></li>
-        <li><a href="#65-性能陷阱与最佳实践">6.5 性能陷阱与最佳实践</a></li>
-      </ul>
-    </li>
-    <li><a href="#七stringutilsapache-commons-lang">七、StringUtils（Apache Commons Lang）</a>
-      <ul>
-        <li><a href="#71-核心定位">7.1 核心定位</a></li>
-        <li><a href="#72-与原生-java-对比">7.2 与原生 Java 对比</a></li>
-        <li><a href="#73-代码示例">7.3 代码示例</a></li>
-      </ul>
-    </li>
-    <li><a href="#八工具类选择速查表">八、工具类选择速查表</a></li>
-    <li><a href="#九总结">九、总结</a>
-      <ul>
-        <li><a href="#核心要点">核心要点</a></li>
-        <li><a href="#性能建议">性能建议</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

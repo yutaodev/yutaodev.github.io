@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,58 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#1-什么是-spring-boot为什么我们需要它">1. 什么是 Spring Boot？为什么我们需要它？</a>
+      <ul>
+        <li><a href="#一spring-的痛点">一、Spring 的痛点</a></li>
+        <li><a href="#二spring-boot-的目标">二、Spring Boot 的目标</a></li>
+        <li><a href="#三spring-vs-spring-boot">三、Spring vs Spring Boot</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-第一个-spring-boot-应用hello-world">2. 第一个 Spring Boot 应用：Hello World</a>
+      <ul>
+        <li><a href="#一创建项目方式">一、创建项目方式</a></li>
+        <li><a href="#二示例代码">二、示例代码</a></li>
+        <li><a href="#三添加-rest-controller">三、添加 REST Controller</a></li>
+        <li><a href="#四小结">四、小结</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-理解-spring-boot-项目结构与入口类">3. 理解 Spring Boot 项目结构与入口类</a>
+      <ul>
+        <li><a href="#一项目结构">一、项目结构</a></li>
+        <li><a href="#二springbootapplication-注解">二、@SpringBootApplication 注解</a></li>
+        <li><a href="#三主类位置建议">三、主类位置建议</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-spring-boot-配置文件详解properties-vs-yaml">4. Spring Boot 配置文件详解：properties vs yaml</a>
+      <ul>
+        <li><a href="#一applicationproperties-示例">一、application.properties 示例</a></li>
+        <li><a href="#二applicationyml-示例">二、application.yml 示例</a></li>
+        <li><a href="#三多环境配置">三、多环境配置</a></li>
+        <li><a href="#四value-注解注入配置值">四、@Value 注解注入配置值</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-构建-restful-apispring-boot--spring-mvc">5. 构建 RESTful API：Spring Boot + Spring MVC</a>
+      <ul>
+        <li><a href="#一controller-示例">一、Controller 示例</a></li>
+        <li><a href="#二请求参数注解说明">二、请求参数注解说明</a></li>
+        <li><a href="#三常见返回值封装类建议">三、常见返回值封装类建议</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -931,57 +965,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#文章概览">文章概览</a></li>
-    <li><a href="#1-什么是-spring-boot为什么我们需要它">1. 什么是 Spring Boot？为什么我们需要它？</a>
-      <ul>
-        <li><a href="#一spring-的痛点">一、Spring 的痛点</a></li>
-        <li><a href="#二spring-boot-的目标">二、Spring Boot 的目标</a></li>
-        <li><a href="#三spring-vs-spring-boot">三、Spring vs Spring Boot</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-第一个-spring-boot-应用hello-world">2. 第一个 Spring Boot 应用：Hello World</a>
-      <ul>
-        <li><a href="#一创建项目方式">一、创建项目方式</a></li>
-        <li><a href="#二示例代码">二、示例代码</a></li>
-        <li><a href="#三添加-rest-controller">三、添加 REST Controller</a></li>
-        <li><a href="#四小结">四、小结</a></li>
-      </ul>
-    </li>
-    <li><a href="#3-理解-spring-boot-项目结构与入口类">3. 理解 Spring Boot 项目结构与入口类</a>
-      <ul>
-        <li><a href="#一项目结构">一、项目结构</a></li>
-        <li><a href="#二springbootapplication-注解">二、@SpringBootApplication 注解</a></li>
-        <li><a href="#三主类位置建议">三、主类位置建议</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-spring-boot-配置文件详解properties-vs-yaml">4. Spring Boot 配置文件详解：properties vs yaml</a>
-      <ul>
-        <li><a href="#一applicationproperties-示例">一、application.properties 示例</a></li>
-        <li><a href="#二applicationyml-示例">二、application.yml 示例</a></li>
-        <li><a href="#三多环境配置">三、多环境配置</a></li>
-        <li><a href="#四value-注解注入配置值">四、@Value 注解注入配置值</a></li>
-      </ul>
-    </li>
-    <li><a href="#5-构建-restful-apispring-boot--spring-mvc">5. 构建 RESTful API：Spring Boot + Spring MVC</a>
-      <ul>
-        <li><a href="#一controller-示例">一、Controller 示例</a></li>
-        <li><a href="#二请求参数注解说明">二、请求参数注解说明</a></li>
-        <li><a href="#三常见返回值封装类建议">三、常见返回值封装类建议</a></li>
-      </ul>
-    </li>
-    <li><a href="#总结">总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

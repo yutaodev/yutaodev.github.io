@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,126 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#jvm">JVM</a></li>
+    <li><a href="#1-jvm-基础与架构">1. JVM 基础与架构</a>
+      <ul>
+        <li><a href="#1-jvm-概述">1. JVM 概述</a></li>
+        <li><a href="#2-jvm-内存模型jmm">2. JVM 内存模型（JMM）</a>
+          <ul>
+            <li><a href="#1-主内存与工作内存">1. 主内存与工作内存</a></li>
+            <li><a href="#2-内存间交互操作">2. 内存间交互操作</a></li>
+            <li><a href="#3-volatile-关键字与内存可见性">3. <code>volatile</code> 关键字与内存可见性</a></li>
+            <li><a href="#4-原子性可见性有序性">4. 原子性、可见性、有序性</a></li>
+            <li><a href="#5-jmm-的-happens-before-原则">5. JMM 的 <code>happens-before</code> 原则</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#2-jvm-内存区域与垃圾回收">2. JVM 内存区域与垃圾回收</a>
+      <ul>
+        <li><a href="#1-运行时数据区">1. 运行时数据区</a>
+          <ul>
+            <li><a href="#1-程序计数器">1. 程序计数器</a></li>
+            <li><a href="#2-java-虚拟机栈与栈帧结构">2. Java 虚拟机栈与栈帧结构</a></li>
+            <li><a href="#3-本地方法栈">3. 本地方法栈</a></li>
+            <li><a href="#4-堆的分代模型">4. 堆的分代模型</a></li>
+            <li><a href="#5-方法区与元空间">5. 方法区与元空间</a></li>
+            <li><a href="#6-常量池与运行时常量池">6. 常量池与运行时常量池</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-垃圾回收gc">2. 垃圾回收（GC）</a>
+          <ul>
+            <li><a href="#1-对象存活性判断">1. 对象存活性判断</a></li>
+            <li><a href="#2-gc-算法">2. GC 算法</a></li>
+            <li><a href="#3-分代收集理论与-gc-触发条件">3. 分代收集理论与 GC 触发条件</a></li>
+            <li><a href="#4-垃圾收集器对比">4. 垃圾收集器对比</a></li>
+            <li><a href="#5-gc-日志分析与调优参数">5. GC 日志分析与调优参数</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#3-类加载机制">3. 类加载机制</a>
+      <ul>
+        <li><a href="#1-类加载过程">1. 类加载过程</a>
+          <ul>
+            <li><a href="#1-类加载过程-1">1. 类加载过程</a></li>
+            <li><a href="#2-类加载器层次结构">2. 类加载器层次结构</a></li>
+            <li><a href="#3-双亲委派模型">3. 双亲委派模型</a></li>
+            <li><a href="#4-破坏双亲委派模型的场景">4. 破坏双亲委派模型的场景</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-字节码与执行引擎">2. 字节码与执行引擎</a>
+          <ul>
+            <li><a href="#1-class-文件结构">1. Class 文件结构</a></li>
+            <li><a href="#2-字节码指令集">2. 字节码指令集</a></li>
+            <li><a href="#3-解释器interpreter与-jit-编译器">3. 解释器（Interpreter）与 JIT 编译器</a></li>
+            <li><a href="#4-jit-优化技术">4. JIT 优化技术</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#4-jvm-性能调优">4. JVM 性能调优</a>
+      <ul>
+        <li><a href="#1-调优方法论">1. 调优方法论</a>
+          <ul>
+            <li><a href="#1-性能监控指标">1. 性能监控指标</a></li>
+            <li><a href="#2-常见性能问题定位">2. 常见性能问题定位</a></li>
+            <li><a href="#3-jvm-参数分类与调优">3. JVM 参数分类与调优</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-工具使用">2. 工具使用</a>
+          <ul>
+            <li><a href="#1-命令行工具">1. 命令行工具</a></li>
+            <li><a href="#2-图形化工具">2. 图形化工具</a></li>
+            <li><a href="#3-线上诊断工具">3. 线上诊断工具</a></li>
+            <li><a href="#4-内存分析工具">4. 内存分析工具</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#5-高级主题与实战">5. 高级主题与实战</a>
+      <ul>
+        <li><a href="#1-锁升级">1. 锁升级</a></li>
+        <li><a href="#2-实战案例">2. 实战案例</a>
+          <ul>
+            <li><a href="#1-内存泄漏排查mat-分析堆转储">1. 内存泄漏排查（MAT 分析堆转储）</a></li>
+            <li><a href="#2-gc-调优实战优化-full-gc-频率">2. GC 调优实战（优化 Full GC 频率）</a></li>
+            <li><a href="#3-高并发场景下的锁竞争优化">3. 高并发场景下的锁竞争优化</a></li>
+            <li><a href="#4-jit-编译日志分析-xxprintcompilation">4. JIT 编译日志分析（<code>-XX:+PrintCompilation</code>）</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-现代-jvm-发展">3. 现代 JVM 发展</a>
+          <ul>
+            <li><a href="#1-graalvm-特性与多语言支持">1. GraalVM 特性与多语言支持</a></li>
+            <li><a href="#2-project-loom虚拟线程与协程">2. Project Loom（虚拟线程与协程）</a></li>
+            <li><a href="#3-zgcshenandoah-低延迟-gc-原理">3. ZGC/Shenandoah 低延迟 GC 原理</a></li>
+            <li><a href="#4-动态-cdsclass-data-sharing与-aot-编译">4. 动态 CDS（Class Data Sharing）与 AOT 编译</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#6-实践项目">6. 实践项目</a>
+      <ul>
+        <li><a href="#1-自定义类加载器实现热部署">1. 自定义类加载器实现热部署</a></li>
+        <li><a href="#2-通过字节码增强技术asmjavassist实现简单-aop">2. 通过字节码增强技术（ASM/Javassist）实现简单 AOP</a></li>
+        <li><a href="#3-模拟内存泄漏并利用工具定位">3. 模拟内存泄漏并利用工具定位</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -3431,125 +3533,6 @@ Grandparent ClassLoader: null (Bootstrap 是 C++ 实现的)
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#文章概览">文章概览</a></li>
-    <li><a href="#jvm">JVM</a></li>
-    <li><a href="#1-jvm-基础与架构">1. JVM 基础与架构</a>
-      <ul>
-        <li><a href="#1-jvm-概述">1. JVM 概述</a></li>
-        <li><a href="#2-jvm-内存模型jmm">2. JVM 内存模型（JMM）</a>
-          <ul>
-            <li><a href="#1-主内存与工作内存">1. 主内存与工作内存</a></li>
-            <li><a href="#2-内存间交互操作">2. 内存间交互操作</a></li>
-            <li><a href="#3-volatile-关键字与内存可见性">3. <code>volatile</code> 关键字与内存可见性</a></li>
-            <li><a href="#4-原子性可见性有序性">4. 原子性、可见性、有序性</a></li>
-            <li><a href="#5-jmm-的-happens-before-原则">5. JMM 的 <code>happens-before</code> 原则</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#2-jvm-内存区域与垃圾回收">2. JVM 内存区域与垃圾回收</a>
-      <ul>
-        <li><a href="#1-运行时数据区">1. 运行时数据区</a>
-          <ul>
-            <li><a href="#1-程序计数器">1. 程序计数器</a></li>
-            <li><a href="#2-java-虚拟机栈与栈帧结构">2. Java 虚拟机栈与栈帧结构</a></li>
-            <li><a href="#3-本地方法栈">3. 本地方法栈</a></li>
-            <li><a href="#4-堆的分代模型">4. 堆的分代模型</a></li>
-            <li><a href="#5-方法区与元空间">5. 方法区与元空间</a></li>
-            <li><a href="#6-常量池与运行时常量池">6. 常量池与运行时常量池</a></li>
-          </ul>
-        </li>
-        <li><a href="#2-垃圾回收gc">2. 垃圾回收（GC）</a>
-          <ul>
-            <li><a href="#1-对象存活性判断">1. 对象存活性判断</a></li>
-            <li><a href="#2-gc-算法">2. GC 算法</a></li>
-            <li><a href="#3-分代收集理论与-gc-触发条件">3. 分代收集理论与 GC 触发条件</a></li>
-            <li><a href="#4-垃圾收集器对比">4. 垃圾收集器对比</a></li>
-            <li><a href="#5-gc-日志分析与调优参数">5. GC 日志分析与调优参数</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#3-类加载机制">3. 类加载机制</a>
-      <ul>
-        <li><a href="#1-类加载过程">1. 类加载过程</a>
-          <ul>
-            <li><a href="#1-类加载过程-1">1. 类加载过程</a></li>
-            <li><a href="#2-类加载器层次结构">2. 类加载器层次结构</a></li>
-            <li><a href="#3-双亲委派模型">3. 双亲委派模型</a></li>
-            <li><a href="#4-破坏双亲委派模型的场景">4. 破坏双亲委派模型的场景</a></li>
-          </ul>
-        </li>
-        <li><a href="#2-字节码与执行引擎">2. 字节码与执行引擎</a>
-          <ul>
-            <li><a href="#1-class-文件结构">1. Class 文件结构</a></li>
-            <li><a href="#2-字节码指令集">2. 字节码指令集</a></li>
-            <li><a href="#3-解释器interpreter与-jit-编译器">3. 解释器（Interpreter）与 JIT 编译器</a></li>
-            <li><a href="#4-jit-优化技术">4. JIT 优化技术</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#4-jvm-性能调优">4. JVM 性能调优</a>
-      <ul>
-        <li><a href="#1-调优方法论">1. 调优方法论</a>
-          <ul>
-            <li><a href="#1-性能监控指标">1. 性能监控指标</a></li>
-            <li><a href="#2-常见性能问题定位">2. 常见性能问题定位</a></li>
-            <li><a href="#3-jvm-参数分类与调优">3. JVM 参数分类与调优</a></li>
-          </ul>
-        </li>
-        <li><a href="#2-工具使用">2. 工具使用</a>
-          <ul>
-            <li><a href="#1-命令行工具">1. 命令行工具</a></li>
-            <li><a href="#2-图形化工具">2. 图形化工具</a></li>
-            <li><a href="#3-线上诊断工具">3. 线上诊断工具</a></li>
-            <li><a href="#4-内存分析工具">4. 内存分析工具</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#5-高级主题与实战">5. 高级主题与实战</a>
-      <ul>
-        <li><a href="#1-锁升级">1. 锁升级</a></li>
-        <li><a href="#2-实战案例">2. 实战案例</a>
-          <ul>
-            <li><a href="#1-内存泄漏排查mat-分析堆转储">1. 内存泄漏排查（MAT 分析堆转储）</a></li>
-            <li><a href="#2-gc-调优实战优化-full-gc-频率">2. GC 调优实战（优化 Full GC 频率）</a></li>
-            <li><a href="#3-高并发场景下的锁竞争优化">3. 高并发场景下的锁竞争优化</a></li>
-            <li><a href="#4-jit-编译日志分析-xxprintcompilation">4. JIT 编译日志分析（<code>-XX:+PrintCompilation</code>）</a></li>
-          </ul>
-        </li>
-        <li><a href="#3-现代-jvm-发展">3. 现代 JVM 发展</a>
-          <ul>
-            <li><a href="#1-graalvm-特性与多语言支持">1. GraalVM 特性与多语言支持</a></li>
-            <li><a href="#2-project-loom虚拟线程与协程">2. Project Loom（虚拟线程与协程）</a></li>
-            <li><a href="#3-zgcshenandoah-低延迟-gc-原理">3. ZGC/Shenandoah 低延迟 GC 原理</a></li>
-            <li><a href="#4-动态-cdsclass-data-sharing与-aot-编译">4. 动态 CDS（Class Data Sharing）与 AOT 编译</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#6-实践项目">6. 实践项目</a>
-      <ul>
-        <li><a href="#1-自定义类加载器实现热部署">1. 自定义类加载器实现热部署</a></li>
-        <li><a href="#2-通过字节码增强技术asmjavassist实现简单-aop">2. 通过字节码增强技术（ASM/Javassist）实现简单 AOP</a></li>
-        <li><a href="#3-模拟内存泄漏并利用工具定位">3. 模拟内存泄漏并利用工具定位</a></li>
-      </ul>
-    </li>
-    <li><a href="#总结">总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

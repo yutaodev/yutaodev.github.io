@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,61 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一sql-是什么">一、SQL 是什么？</a></li>
+    <li><a href="#二sql-基础语法结构">二、SQL 基础语法结构</a></li>
+    <li><a href="#三表连接join">三、表连接（JOIN）</a>
+      <ul>
+        <li><a href="#1-内连接inner-join">1. 内连接（INNER JOIN）</a></li>
+        <li><a href="#2-左连接left-join">2. 左连接（LEFT JOIN）</a></li>
+        <li><a href="#3-右连接right-join">3. 右连接（RIGHT JOIN）</a></li>
+        <li><a href="#4-全连接full-join">4. 全连接（FULL JOIN）</a></li>
+        <li><a href="#5-交叉连接cross-join">5. 交叉连接（CROSS JOIN）</a></li>
+      </ul>
+    </li>
+    <li><a href="#四分组与聚合">四、分组与聚合</a>
+      <ul>
+        <li><a href="#1-group-by--聚合函数">1. GROUP BY + 聚合函数</a></li>
+        <li><a href="#2-使用-having-过滤聚合结果">2. 使用 HAVING 过滤聚合结果</a></li>
+        <li><a href="#3-where-与-having-的区别">3. WHERE 与 HAVING 的区别</a></li>
+        <li><a href="#4-group-by-与-having-区别">4. GROUP BY 与 HAVING 区别</a></li>
+      </ul>
+    </li>
+    <li><a href="#五常见子查询与嵌套查询">五、常见子查询与嵌套查询</a>
+      <ul>
+        <li><a href="#1-子查询">1. 子查询</a></li>
+        <li><a href="#2-子查询的常见形式">2. 子查询的常见形式</a></li>
+        <li><a href="#3-常见关键字与区别">3. 常见关键字与区别</a>
+          <ul>
+            <li><a href="#1-in-示例">1. IN 示例</a></li>
+            <li><a href="#2-exists-示例">2. EXISTS 示例</a></li>
+            <li><a href="#3--any">3. &gt; ANY</a></li>
+            <li><a href="#4--all">4. &gt; ALL</a></li>
+          </ul>
+        </li>
+        <li><a href="#4-相关子查询">4. 相关子查询</a>
+          <ul>
+            <li><a href="#1-相关子查询">1. 相关子查询</a></li>
+            <li><a href="#2-普通子查询-vs-相关子查询的执行顺序">2. 普通子查询 vs 相关子查询的执行顺序</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-总结对比表">5. 总结对比表</a></li>
+      </ul>
+    </li>
+    <li><a href="#六sql-执行顺序">六、SQL 执行顺序</a></li>
+    <li><a href="#七总结">七、总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -1970,60 +2007,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#一sql-是什么">一、SQL 是什么？</a></li>
-    <li><a href="#二sql-基础语法结构">二、SQL 基础语法结构</a></li>
-    <li><a href="#三表连接join">三、表连接（JOIN）</a>
-      <ul>
-        <li><a href="#1-内连接inner-join">1. 内连接（INNER JOIN）</a></li>
-        <li><a href="#2-左连接left-join">2. 左连接（LEFT JOIN）</a></li>
-        <li><a href="#3-右连接right-join">3. 右连接（RIGHT JOIN）</a></li>
-        <li><a href="#4-全连接full-join">4. 全连接（FULL JOIN）</a></li>
-        <li><a href="#5-交叉连接cross-join">5. 交叉连接（CROSS JOIN）</a></li>
-      </ul>
-    </li>
-    <li><a href="#四分组与聚合">四、分组与聚合</a>
-      <ul>
-        <li><a href="#1-group-by--聚合函数">1. GROUP BY + 聚合函数</a></li>
-        <li><a href="#2-使用-having-过滤聚合结果">2. 使用 HAVING 过滤聚合结果</a></li>
-        <li><a href="#3-where-与-having-的区别">3. WHERE 与 HAVING 的区别</a></li>
-        <li><a href="#4-group-by-与-having-区别">4. GROUP BY 与 HAVING 区别</a></li>
-      </ul>
-    </li>
-    <li><a href="#五常见子查询与嵌套查询">五、常见子查询与嵌套查询</a>
-      <ul>
-        <li><a href="#1-子查询">1. 子查询</a></li>
-        <li><a href="#2-子查询的常见形式">2. 子查询的常见形式</a></li>
-        <li><a href="#3-常见关键字与区别">3. 常见关键字与区别</a>
-          <ul>
-            <li><a href="#1-in-示例">1. IN 示例</a></li>
-            <li><a href="#2-exists-示例">2. EXISTS 示例</a></li>
-            <li><a href="#3--any">3. &gt; ANY</a></li>
-            <li><a href="#4--all">4. &gt; ALL</a></li>
-          </ul>
-        </li>
-        <li><a href="#4-相关子查询">4. 相关子查询</a>
-          <ul>
-            <li><a href="#1-相关子查询">1. 相关子查询</a></li>
-            <li><a href="#2-普通子查询-vs-相关子查询的执行顺序">2. 普通子查询 vs 相关子查询的执行顺序</a></li>
-          </ul>
-        </li>
-        <li><a href="#5-总结对比表">5. 总结对比表</a></li>
-      </ul>
-    </li>
-    <li><a href="#六sql-执行顺序">六、SQL 执行顺序</a></li>
-    <li><a href="#七总结">七、总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,86 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#章节概览">章节概览</a></li>
+    <li><a href="#1-集合collection">1. 集合（Collection）</a>
+      <ul>
+        <li><a href="#11-集合框架概述">1.1 集合框架概述</a>
+          <ul>
+            <li><a href="#111-核心底层数据结构哈希表hash-table">1.1.1 核心底层数据结构：哈希表（Hash Table）</a></li>
+          </ul>
+        </li>
+        <li><a href="#12-list-接口">1.2 List 接口</a>
+          <ul>
+            <li><a href="#121-arraylist基于动态数组的列表">1.2.1 ArrayList：基于动态数组的列表</a></li>
+            <li><a href="#122-linkedlist基于双向链表的列表">1.2.2 LinkedList：基于双向链表的列表</a></li>
+            <li><a href="#123-vector线程安全的列表">1.2.3 Vector：线程安全的列表</a></li>
+            <li><a href="#124-list实现类对比">1.2.4 List实现类对比</a></li>
+          </ul>
+        </li>
+        <li><a href="#13-set-接口无序集合元素唯一">1.3 Set 接口（无序集合，元素唯一）</a>
+          <ul>
+            <li><a href="#131-hashset">1.3.1 HashSet</a></li>
+            <li><a href="#132-linkedhashset">1.3.2 LinkedHashSet</a></li>
+            <li><a href="#133-treeset">1.3.3 TreeSet</a></li>
+            <li><a href="#134-set实现类对比">1.3.4 Set实现类对比</a></li>
+          </ul>
+        </li>
+        <li><a href="#14-map-接口键值对集合">1.4 Map 接口（键值对集合）</a>
+          <ul>
+            <li><a href="#141-hashmap">1.4.1 HashMap</a></li>
+            <li><a href="#142-linkedhashmap">1.4.2 LinkedHashMap</a></li>
+            <li><a href="#143-treemap">1.4.3 TreeMap</a></li>
+            <li><a href="#144-hashtable">1.4.4 Hashtable</a></li>
+            <li><a href="#145-map实现类对比">1.4.5 Map实现类对比</a></li>
+          </ul>
+        </li>
+        <li><a href="#15-集合的实际应用示例">1.5 集合的实际应用示例</a>
+          <ul>
+            <li><a href="#151-使用hashset进行数据去重">1.5.1 使用HashSet进行数据去重</a></li>
+            <li><a href="#152-使用linkedhashmap实现lru缓存">1.5.2 使用LinkedHashMap实现LRU缓存</a></li>
+            <li><a href="#153-使用treemap实现区间查询">1.5.3 使用TreeMap实现区间查询</a></li>
+          </ul>
+        </li>
+        <li><a href="#16-集合的常用方法">1.6 集合的常用方法</a>
+          <ul>
+            <li><a href="#161-stream-api-操作">1.6.1 Stream API 操作</a></li>
+            <li><a href="#162-collections-工具类方法">1.6.2 Collections 工具类方法</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#2-队列双端队列queuedeque">2. 队列/双端队列（Queue/Deque）</a>
+      <ul>
+        <li><a href="#21-queue接口">2.1 Queue接口</a></li>
+        <li><a href="#22-priorityqueue优先级队列">2.2 PriorityQueue：优先级队列</a></li>
+        <li><a href="#23-arraydeque数组双端队列">2.3 ArrayDeque：数组双端队列</a></li>
+        <li><a href="#24-linkedlist链表双端队列">2.4 LinkedList：链表双端队列</a></li>
+        <li><a href="#25-队列实现类对比">2.5 队列实现类对比</a></li>
+        <li><a href="#26-队列的实际应用">2.6 队列的实际应用</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-数据结构选择指南">3. 数据结构选择指南</a>
+      <ul>
+        <li><a href="#31-根据操作类型选择">3.1 根据操作类型选择</a></li>
+        <li><a href="#32-根据内存使用选择">3.2 根据内存使用选择</a></li>
+        <li><a href="#33-根据线程安全选择">3.3 根据线程安全选择</a></li>
+        <li><a href="#34-实际应用场景选择">3.4 实际应用场景选择</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -2670,85 +2732,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#章节概览">章节概览</a></li>
-    <li><a href="#1-集合collection">1. 集合（Collection）</a>
-      <ul>
-        <li><a href="#11-集合框架概述">1.1 集合框架概述</a>
-          <ul>
-            <li><a href="#111-核心底层数据结构哈希表hash-table">1.1.1 核心底层数据结构：哈希表（Hash Table）</a></li>
-          </ul>
-        </li>
-        <li><a href="#12-list-接口">1.2 List 接口</a>
-          <ul>
-            <li><a href="#121-arraylist基于动态数组的列表">1.2.1 ArrayList：基于动态数组的列表</a></li>
-            <li><a href="#122-linkedlist基于双向链表的列表">1.2.2 LinkedList：基于双向链表的列表</a></li>
-            <li><a href="#123-vector线程安全的列表">1.2.3 Vector：线程安全的列表</a></li>
-            <li><a href="#124-list实现类对比">1.2.4 List实现类对比</a></li>
-          </ul>
-        </li>
-        <li><a href="#13-set-接口无序集合元素唯一">1.3 Set 接口（无序集合，元素唯一）</a>
-          <ul>
-            <li><a href="#131-hashset">1.3.1 HashSet</a></li>
-            <li><a href="#132-linkedhashset">1.3.2 LinkedHashSet</a></li>
-            <li><a href="#133-treeset">1.3.3 TreeSet</a></li>
-            <li><a href="#134-set实现类对比">1.3.4 Set实现类对比</a></li>
-          </ul>
-        </li>
-        <li><a href="#14-map-接口键值对集合">1.4 Map 接口（键值对集合）</a>
-          <ul>
-            <li><a href="#141-hashmap">1.4.1 HashMap</a></li>
-            <li><a href="#142-linkedhashmap">1.4.2 LinkedHashMap</a></li>
-            <li><a href="#143-treemap">1.4.3 TreeMap</a></li>
-            <li><a href="#144-hashtable">1.4.4 Hashtable</a></li>
-            <li><a href="#145-map实现类对比">1.4.5 Map实现类对比</a></li>
-          </ul>
-        </li>
-        <li><a href="#15-集合的实际应用示例">1.5 集合的实际应用示例</a>
-          <ul>
-            <li><a href="#151-使用hashset进行数据去重">1.5.1 使用HashSet进行数据去重</a></li>
-            <li><a href="#152-使用linkedhashmap实现lru缓存">1.5.2 使用LinkedHashMap实现LRU缓存</a></li>
-            <li><a href="#153-使用treemap实现区间查询">1.5.3 使用TreeMap实现区间查询</a></li>
-          </ul>
-        </li>
-        <li><a href="#16-集合的常用方法">1.6 集合的常用方法</a>
-          <ul>
-            <li><a href="#161-stream-api-操作">1.6.1 Stream API 操作</a></li>
-            <li><a href="#162-collections-工具类方法">1.6.2 Collections 工具类方法</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#2-队列双端队列queuedeque">2. 队列/双端队列（Queue/Deque）</a>
-      <ul>
-        <li><a href="#21-queue接口">2.1 Queue接口</a></li>
-        <li><a href="#22-priorityqueue优先级队列">2.2 PriorityQueue：优先级队列</a></li>
-        <li><a href="#23-arraydeque数组双端队列">2.3 ArrayDeque：数组双端队列</a></li>
-        <li><a href="#24-linkedlist链表双端队列">2.4 LinkedList：链表双端队列</a></li>
-        <li><a href="#25-队列实现类对比">2.5 队列实现类对比</a></li>
-        <li><a href="#26-队列的实际应用">2.6 队列的实际应用</a></li>
-      </ul>
-    </li>
-    <li><a href="#3-数据结构选择指南">3. 数据结构选择指南</a>
-      <ul>
-        <li><a href="#31-根据操作类型选择">3.1 根据操作类型选择</a></li>
-        <li><a href="#32-根据内存使用选择">3.2 根据内存使用选择</a></li>
-        <li><a href="#33-根据线程安全选择">3.3 根据线程安全选择</a></li>
-        <li><a href="#34-实际应用场景选择">3.4 实际应用场景选择</a></li>
-      </ul>
-    </li>
-    <li><a href="#总结">总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,77 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#1-lambda表达式概述">1. Lambda表达式概述</a>
+      <ul>
+        <li><a href="#11-核心特性">1.1 核心特性</a></li>
+        <li><a href="#12-lambda表达式总结">1.2 Lambda表达式总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-lambda表达式语法">2. Lambda表达式语法</a>
+      <ul>
+        <li><a href="#21-基本语法">2.1 基本语法</a></li>
+        <li><a href="#22-语法变体">2.2 语法变体</a></li>
+        <li><a href="#23-语法示例">2.3 语法示例</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-函数式接口">3. 函数式接口</a>
+      <ul>
+        <li><a href="#31-什么是函数式接口">3.1 什么是函数式接口</a></li>
+        <li><a href="#32-内置函数式接口">3.2 内置函数式接口</a></li>
+        <li><a href="#33-自定义函数式接口">3.3 自定义函数式接口</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-lambda表达式的使用技巧">4. Lambda表达式的使用技巧</a>
+      <ul>
+        <li><a href="#41-方法引用method-reference">4.1 方法引用（Method Reference）</a></li>
+        <li><a href="#42-lambda-的变量捕获">4.2 Lambda 的变量捕获</a></li>
+        <li><a href="#43-结合-stream-api">4.3 结合 Stream API</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-lambda表达式的实际应用">5. Lambda表达式的实际应用</a>
+      <ul>
+        <li><a href="#51-替代匿名内部类">5.1 替代匿名内部类</a></li>
+        <li><a href="#52-事件驱动编程">5.2 事件驱动编程</a></li>
+        <li><a href="#53-并行处理">5.3 并行处理</a></li>
+        <li><a href="#54-函数式接口参数">5.4 函数式接口参数</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-lambda表达式的原理">6. Lambda表达式的原理</a>
+      <ul>
+        <li><a href="#61-工作机制">6.1 工作机制</a></li>
+        <li><a href="#62-类型推断">6.2 类型推断</a></li>
+        <li><a href="#63-闭包实现">6.3 闭包实现</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-lambda表达式最佳实践">7. Lambda表达式最佳实践</a>
+      <ul>
+        <li><a href="#71-代码风格">7.1 代码风格</a></li>
+        <li><a href="#72-性能考虑">7.2 性能考虑</a></li>
+        <li><a href="#73-常见模式">7.3 常见模式</a></li>
+      </ul>
+    </li>
+    <li><a href="#8-常见问题与解决方案">8. 常见问题与解决方案</a>
+      <ul>
+        <li><a href="#81-变量捕获问题">8.1 变量捕获问题</a></li>
+        <li><a href="#82-类型推断问题">8.2 类型推断问题</a></li>
+        <li><a href="#83-异常处理问题">8.3 异常处理问题</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -2040,76 +2093,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#文章概览">文章概览</a></li>
-    <li><a href="#1-lambda表达式概述">1. Lambda表达式概述</a>
-      <ul>
-        <li><a href="#11-核心特性">1.1 核心特性</a></li>
-        <li><a href="#12-lambda表达式总结">1.2 Lambda表达式总结</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-lambda表达式语法">2. Lambda表达式语法</a>
-      <ul>
-        <li><a href="#21-基本语法">2.1 基本语法</a></li>
-        <li><a href="#22-语法变体">2.2 语法变体</a></li>
-        <li><a href="#23-语法示例">2.3 语法示例</a></li>
-      </ul>
-    </li>
-    <li><a href="#3-函数式接口">3. 函数式接口</a>
-      <ul>
-        <li><a href="#31-什么是函数式接口">3.1 什么是函数式接口</a></li>
-        <li><a href="#32-内置函数式接口">3.2 内置函数式接口</a></li>
-        <li><a href="#33-自定义函数式接口">3.3 自定义函数式接口</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-lambda表达式的使用技巧">4. Lambda表达式的使用技巧</a>
-      <ul>
-        <li><a href="#41-方法引用method-reference">4.1 方法引用（Method Reference）</a></li>
-        <li><a href="#42-lambda-的变量捕获">4.2 Lambda 的变量捕获</a></li>
-        <li><a href="#43-结合-stream-api">4.3 结合 Stream API</a></li>
-      </ul>
-    </li>
-    <li><a href="#5-lambda表达式的实际应用">5. Lambda表达式的实际应用</a>
-      <ul>
-        <li><a href="#51-替代匿名内部类">5.1 替代匿名内部类</a></li>
-        <li><a href="#52-事件驱动编程">5.2 事件驱动编程</a></li>
-        <li><a href="#53-并行处理">5.3 并行处理</a></li>
-        <li><a href="#54-函数式接口参数">5.4 函数式接口参数</a></li>
-      </ul>
-    </li>
-    <li><a href="#6-lambda表达式的原理">6. Lambda表达式的原理</a>
-      <ul>
-        <li><a href="#61-工作机制">6.1 工作机制</a></li>
-        <li><a href="#62-类型推断">6.2 类型推断</a></li>
-        <li><a href="#63-闭包实现">6.3 闭包实现</a></li>
-      </ul>
-    </li>
-    <li><a href="#7-lambda表达式最佳实践">7. Lambda表达式最佳实践</a>
-      <ul>
-        <li><a href="#71-代码风格">7.1 代码风格</a></li>
-        <li><a href="#72-性能考虑">7.2 性能考虑</a></li>
-        <li><a href="#73-常见模式">7.3 常见模式</a></li>
-      </ul>
-    </li>
-    <li><a href="#8-常见问题与解决方案">8. 常见问题与解决方案</a>
-      <ul>
-        <li><a href="#81-变量捕获问题">8.1 变量捕获问题</a></li>
-        <li><a href="#82-类型推断问题">8.2 类型推断问题</a></li>
-        <li><a href="#83-异常处理问题">8.3 异常处理问题</a></li>
-      </ul>
-    </li>
-    <li><a href="#总结">总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

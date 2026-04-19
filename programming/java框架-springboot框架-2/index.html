@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,58 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#1-spring-boot-配置绑定进阶value-与-configurationproperties">1. Spring Boot 配置绑定进阶：@Value 与 @ConfigurationProperties</a>
+      <ul>
+        <li><a href="#一value-注解">一、@Value 注解</a></li>
+        <li><a href="#二configurationproperties-使用">二、@ConfigurationProperties 使用</a></li>
+        <li><a href="#三优缺点对比">三、优缺点对比</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-spring-boot-中的单元测试与集成测试">2. Spring Boot 中的单元测试与集成测试</a>
+      <ul>
+        <li><a href="#一依赖引入">一、依赖引入</a></li>
+        <li><a href="#二基础测试案例">二、基础测试案例</a></li>
+        <li><a href="#三测试-controller">三、测试 Controller</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-spring-boot-日志体系详解slf4j--logback">3. Spring Boot 日志体系详解（SLF4J + Logback）</a>
+      <ul>
+        <li><a href="#一默认日志实现">一、默认日志实现</a></li>
+        <li><a href="#二配置日志级别">二、配置日志级别</a></li>
+        <li><a href="#三自定义-logback-配置文件">三、自定义 logback 配置文件</a></li>
+        <li><a href="#四常见日志最佳实践">四、常见日志最佳实践</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-spring-boot-集成数据库jdbc-与-datasource-配置">4. Spring Boot 集成数据库：JDBC 与 DataSource 配置</a>
+      <ul>
+        <li><a href="#一引入依赖">一、引入依赖</a></li>
+        <li><a href="#二配置数据源">二、配置数据源</a></li>
+        <li><a href="#三使用-jdbctemplate">三、使用 JdbcTemplate</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-spring-boot-集成-jpa快速实现-crud-操作">5. Spring Boot 集成 JPA：快速实现 CRUD 操作</a>
+      <ul>
+        <li><a href="#一添加依赖">一、添加依赖</a></li>
+        <li><a href="#二实体类定义">二、实体类定义</a></li>
+        <li><a href="#三创建-repository-接口">三、创建 Repository 接口</a></li>
+        <li><a href="#四使用-repository">四、使用 Repository</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -1258,57 +1292,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#文章概览">文章概览</a></li>
-    <li><a href="#1-spring-boot-配置绑定进阶value-与-configurationproperties">1. Spring Boot 配置绑定进阶：@Value 与 @ConfigurationProperties</a>
-      <ul>
-        <li><a href="#一value-注解">一、@Value 注解</a></li>
-        <li><a href="#二configurationproperties-使用">二、@ConfigurationProperties 使用</a></li>
-        <li><a href="#三优缺点对比">三、优缺点对比</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-spring-boot-中的单元测试与集成测试">2. Spring Boot 中的单元测试与集成测试</a>
-      <ul>
-        <li><a href="#一依赖引入">一、依赖引入</a></li>
-        <li><a href="#二基础测试案例">二、基础测试案例</a></li>
-        <li><a href="#三测试-controller">三、测试 Controller</a></li>
-      </ul>
-    </li>
-    <li><a href="#3-spring-boot-日志体系详解slf4j--logback">3. Spring Boot 日志体系详解（SLF4J + Logback）</a>
-      <ul>
-        <li><a href="#一默认日志实现">一、默认日志实现</a></li>
-        <li><a href="#二配置日志级别">二、配置日志级别</a></li>
-        <li><a href="#三自定义-logback-配置文件">三、自定义 logback 配置文件</a></li>
-        <li><a href="#四常见日志最佳实践">四、常见日志最佳实践</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-spring-boot-集成数据库jdbc-与-datasource-配置">4. Spring Boot 集成数据库：JDBC 与 DataSource 配置</a>
-      <ul>
-        <li><a href="#一引入依赖">一、引入依赖</a></li>
-        <li><a href="#二配置数据源">二、配置数据源</a></li>
-        <li><a href="#三使用-jdbctemplate">三、使用 JdbcTemplate</a></li>
-      </ul>
-    </li>
-    <li><a href="#5-spring-boot-集成-jpa快速实现-crud-操作">5. Spring Boot 集成 JPA：快速实现 CRUD 操作</a>
-      <ul>
-        <li><a href="#一添加依赖">一、添加依赖</a></li>
-        <li><a href="#二实体类定义">二、实体类定义</a></li>
-        <li><a href="#三创建-repository-接口">三、创建 Repository 接口</a></li>
-        <li><a href="#四使用-repository">四、使用 Repository</a></li>
-      </ul>
-    </li>
-    <li><a href="#总结">总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

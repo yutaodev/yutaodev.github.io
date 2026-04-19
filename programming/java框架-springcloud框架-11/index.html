@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,55 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#1-环境部署背景与目标">1. 环境部署背景与目标</a></li>
+    <li><a href="#2-jenkins-参数化部署选择-dev--test--prod">2. Jenkins 参数化部署（选择 dev / test / prod）</a>
+      <ul>
+        <li><a href="#21-命名空间作用">2.1 命名空间作用</a></li>
+        <li><a href="#22-创建命名空间">2.2 创建命名空间</a></li>
+        <li><a href="#23-配置应用使用指定命名空间">2.3 配置应用使用指定命名空间</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-多环境配置文件管理方案dataid-命名规范">3. 多环境配置文件管理方案（DataId 命名规范）</a>
+      <ul>
+        <li><a href="#31-命名规则">3.1 命名规则</a></li>
+        <li><a href="#32-应用配置读取逻辑">3.2 应用配置读取逻辑</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-jenkins-中实现多环境部署与参数化控制">4. Jenkins 中实现多环境部署与参数化控制</a>
+      <ul>
+        <li><a href="#41-jenkinsfile-中定义参数">4.1 Jenkinsfile 中定义参数</a></li>
+        <li><a href="#42-使用环境变量注入-nacos-命名空间">4.2 使用环境变量注入 Nacos 命名空间</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-服务之间基于环境自动路由与适配机制">5. 服务之间基于环境自动路由与适配机制</a>
+      <ul>
+        <li><a href="#51-服务注册隔离基于命名空间">5.1 服务注册隔离（基于命名空间）</a></li>
+        <li><a href="#52-gateway-自动路由配置隔离">5.2 Gateway 自动路由配置隔离</a></li>
+        <li><a href="#53-openfeign-自动适配">5.3 OpenFeign 自动适配</a></li>
+      </ul>
+    </li>
+    <li><a href="#六多环境日志链路监控分离与聚合">六、多环境日志、链路、监控分离与聚合</a>
+      <ul>
+        <li><a href="#61-日志隔离">6.1 日志隔离</a></li>
+        <li><a href="#62-链路追踪zipkin">6.2 链路追踪（Zipkin）</a></li>
+        <li><a href="#63-prometheus--grafana">6.3 Prometheus + Grafana</a></li>
+      </ul>
+    </li>
+    <li><a href="#七总结">七、总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -920,54 +951,6 @@ user-service-prod.yaml
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#文章概览">文章概览</a></li>
-    <li><a href="#1-环境部署背景与目标">1. 环境部署背景与目标</a></li>
-    <li><a href="#2-jenkins-参数化部署选择-dev--test--prod">2. Jenkins 参数化部署（选择 dev / test / prod）</a>
-      <ul>
-        <li><a href="#21-命名空间作用">2.1 命名空间作用</a></li>
-        <li><a href="#22-创建命名空间">2.2 创建命名空间</a></li>
-        <li><a href="#23-配置应用使用指定命名空间">2.3 配置应用使用指定命名空间</a></li>
-      </ul>
-    </li>
-    <li><a href="#3-多环境配置文件管理方案dataid-命名规范">3. 多环境配置文件管理方案（DataId 命名规范）</a>
-      <ul>
-        <li><a href="#31-命名规则">3.1 命名规则</a></li>
-        <li><a href="#32-应用配置读取逻辑">3.2 应用配置读取逻辑</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-jenkins-中实现多环境部署与参数化控制">4. Jenkins 中实现多环境部署与参数化控制</a>
-      <ul>
-        <li><a href="#41-jenkinsfile-中定义参数">4.1 Jenkinsfile 中定义参数</a></li>
-        <li><a href="#42-使用环境变量注入-nacos-命名空间">4.2 使用环境变量注入 Nacos 命名空间</a></li>
-      </ul>
-    </li>
-    <li><a href="#5-服务之间基于环境自动路由与适配机制">5. 服务之间基于环境自动路由与适配机制</a>
-      <ul>
-        <li><a href="#51-服务注册隔离基于命名空间">5.1 服务注册隔离（基于命名空间）</a></li>
-        <li><a href="#52-gateway-自动路由配置隔离">5.2 Gateway 自动路由配置隔离</a></li>
-        <li><a href="#53-openfeign-自动适配">5.3 OpenFeign 自动适配</a></li>
-      </ul>
-    </li>
-    <li><a href="#六多环境日志链路监控分离与聚合">六、多环境日志、链路、监控分离与聚合</a>
-      <ul>
-        <li><a href="#61-日志隔离">6.1 日志隔离</a></li>
-        <li><a href="#62-链路追踪zipkin">6.2 链路追踪（Zipkin）</a></li>
-        <li><a href="#63-prometheus--grafana">6.3 Prometheus + Grafana</a></li>
-      </ul>
-    </li>
-    <li><a href="#七总结">七、总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

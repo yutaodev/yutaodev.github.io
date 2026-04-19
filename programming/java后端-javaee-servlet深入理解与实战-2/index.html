@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,174 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#第二篇servlet-深入理解与实战">第二篇：Servlet 深入理解与实战</a></li>
+    <li><a href="#一-servlet-是什么">一、 Servlet 是什么</a></li>
+    <li><a href="#二servlet生命周期">二、Servlet生命周期</a>
+      <ul>
+        <li><a href="#1-周期流程">1. 周期流程</a></li>
+        <li><a href="#2-容器是怎么初始化-servlet-的">2. 容器是怎么初始化 Servlet 的</a></li>
+        <li><a href="#3-加载优先级与多servlet协同">3. 加载优先级与多Servlet协同</a></li>
+        <li><a href="#4-生命周期方法调用">4. 生命周期方法调用</a></li>
+        <li><a href="#5-servlet单例特性与线程安全">5. Servlet单例特性与线程安全</a></li>
+        <li><a href="#6-servletconfig-vs-servletcontext区别">6. ServletConfig vs ServletContext区别</a></li>
+        <li><a href="#7-实战loginservlet完整实现">7. 实战：LoginServlet完整实现</a></li>
+        <li><a href="#8-servlet-与-spring-controller-的关系">8. Servlet 与 Spring Controller 的关系</a></li>
+        <li><a href="#9-小结">9. 小结</a></li>
+      </ul>
+    </li>
+    <li><a href="#三httpservletrequest--httpservletresponse">三、HttpServletRequest / HttpServletResponse</a>
+      <ul>
+        <li><a href="#1-httpservletrequest-请求机制">1. HttpServletRequest 请求机制</a></li>
+        <li><a href="#2-请求分派与转发">2. 请求分派与转发</a></li>
+        <li><a href="#3-httpservletresponse-响应机制">3. HttpServletResponse 响应机制</a></li>
+        <li><a href="#4-请求体读取的坑与解决方案">4. 请求体读取的坑与解决方案</a></li>
+        <li><a href="#5-实战案例">5. 实战案例</a></li>
+        <li><a href="#6-提升思考">6. 提升思考</a></li>
+        <li><a href="#7-小结">7. 小结</a></li>
+      </ul>
+    </li>
+    <li><a href="#四-过滤器-filter-与监听器-listener">四、 过滤器 Filter 与监听器 Listener</a>
+      <ul>
+        <li><a href="#1-filter-链机制">1. Filter 链机制</a></li>
+        <li><a href="#2-listener-分类与触发时机">2. Listener 分类与触发时机</a></li>
+        <li><a href="#3-filter-与-listener-的协同">3. Filter 与 Listener 的协同</a></li>
+        <li><a href="#4-实战案例">4. 实战案例</a></li>
+        <li><a href="#5-提升思考">5. 提升思考</a></li>
+      </ul>
+    </li>
+    <li><a href="#五-servletcontext">五、 ServletContext</a>
+      <ul>
+        <li><a href="#1-全局共享数据与生命周期">1. 全局共享数据与生命周期</a></li>
+        <li><a href="#2-资源访问">2. 资源访问</a></li>
+        <li><a href="#3-应用内通信机制">3. 应用内通信机制</a></li>
+        <li><a href="#4-实战案例-1">4. 实战案例</a></li>
+        <li><a href="#5-提升思考-1">5. 提升思考</a></li>
+        <li><a href="#6-小结">6. 小结</a></li>
+      </ul>
+    </li>
+    <li><a href="#六-异步-servlet">六、 异步 Servlet</a>
+      <ul>
+        <li><a href="#1-servlet-30-异步处理机制">1. Servlet 3.0 异步处理机制</a>
+          <ul>
+            <li><a href="#1-asynccontext-的工作原理">1. <code>AsyncContext</code> 的工作原理</a></li>
+            <li><a href="#2-非阻塞-io-模型nio-connector-支持">2. 非阻塞 I/O 模型（NIO Connector 支持）</a></li>
+            <li><a href="#3-超时机制与异常处理">3. 超时机制与异常处理</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-异步线程模型">2. 异步线程模型</a>
+          <ul>
+            <li><a href="#1-asynccontextstart-与容器线程池">1. AsyncContext.start() 与容器线程池</a></li>
+            <li><a href="#2-容器如何避免线程占用等待-io">2. 容器如何避免线程占用等待 I/O</a></li>
+            <li><a href="#3-与-completablefuture-的集成">3. 与 CompletableFuture 的集成</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-应用场景">3. 应用场景</a></li>
+        <li><a href="#4-实战案例-2">4. 实战案例</a>
+          <ul>
+            <li><a href="#1-异步-servlet-模拟消息推送">1. 异步 Servlet 模拟消息推送</a></li>
+            <li><a href="#2-同步与异步请求性能对比">2. 同步与异步请求性能对比</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-提升思考-2">5. 提升思考</a></li>
+      </ul>
+    </li>
+    <li><a href="#六-session-管理机制">六. Session 管理机制</a>
+      <ul>
+        <li><a href="#1-session-的创建与标识">1. Session 的创建与标识</a>
+          <ul>
+            <li><a href="#1-jsessionid-cookie-与-url-rewriting">1. JSESSIONID Cookie 与 URL Rewriting</a></li>
+            <li><a href="#2-session-的持久化与钝化">2. Session 的持久化与钝化</a></li>
+            <li><a href="#3-超时与销毁机制">3. 超时与销毁机制</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-session-同步与并发安全">2. Session 同步与并发安全</a>
+          <ul>
+            <li><a href="#1-并发访问-session-属性时的线程安全">1. 并发访问 Session 属性时的线程安全</a></li>
+            <li><a href="#2-分布式环境下-session-共享">2. 分布式环境下 Session 共享</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-安全性问题">3. 安全性问题</a>
+          <ul>
+            <li><a href="#1-会话固定攻击session-fixation">1. 会话固定攻击（Session Fixation）</a></li>
+            <li><a href="#2-会话劫持session-hijacking">2. 会话劫持（Session Hijacking）</a></li>
+            <li><a href="#3-session-token--csrf-防护">3. Session Token + CSRF 防护</a></li>
+          </ul>
+        </li>
+        <li><a href="#4-实战建议">4. 实战建议</a>
+          <ul>
+            <li><a href="#1-登录--session-登录态校验">1. 登录 + Session 登录态校验</a></li>
+            <li><a href="#2-session-监听器统计活跃会话">2. Session 监听器统计活跃会话</a></li>
+            <li><a href="#3-redis-实现分布式-session-共享">3. Redis 实现分布式 Session 共享</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-提升思考-3">5. 提升思考</a>
+          <ul>
+            <li><a href="#1-混合方案设计">1. 混合方案设计</a></li>
+            <li><a href="#2-核心优势">2. 核心优势</a></li>
+            <li><a href="#3-代码示例核心逻辑">3. 代码示例（核心逻辑）</a></li>
+          </ul>
+        </li>
+        <li><a href="#6-小结-1">6. 小结</a></li>
+      </ul>
+    </li>
+    <li><a href="#七-tomcat-的工作原理connector--container">七. Tomcat 的工作原理（Connector + Container）</a>
+      <ul>
+        <li><a href="#1-tomcat-架构核心">1. Tomcat 架构核心</a>
+          <ul>
+            <li><a href="#1-核心组件connector-与-container">1. 核心组件：Connector 与 Container</a></li>
+            <li><a href="#2-三层容器模型hierarchical-container">2. 三层容器模型（Hierarchical Container）</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-请求处理流程">2. 请求处理流程</a>
+          <ul>
+            <li><a href="#1-阶段一connector-接收与解析请求">1. 阶段一：Connector 接收与解析请求</a></li>
+            <li><a href="#2-阶段二container-处理与响应">2. 阶段二：Container 处理与响应</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-线程模型">3. 线程模型</a>
+          <ul>
+            <li><a href="#1-executor-线程池">1. Executor 线程池</a></li>
+            <li><a href="#2-io-模型nio--apr">2. I/O 模型（NIO / APR）</a></li>
+            <li><a href="#3-io-多路复用与非阻塞通信">3. I/O 多路复用与非阻塞通信</a></li>
+          </ul>
+        </li>
+        <li><a href="#4-性能优化方向">4. 性能优化方向</a>
+          <ul>
+            <li><a href="#1-connector-线程池参数调优">1. Connector 线程池参数调优</a></li>
+            <li><a href="#2-连接与传输优化">2. 连接与传输优化</a></li>
+            <li><a href="#3-热部署与类加载机制">3. 热部署与类加载机制</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-实战建议">5. 实战建议</a>
+          <ul>
+            <li><a href="#1-tomcat-请求处理流程图">1. Tomcat 请求处理流程图</a></li>
+            <li><a href="#2-调整线程池参数验证性能变化">2. 调整线程池参数验证性能变化</a></li>
+            <li><a href="#3-使用-visualvm-观察请求线程执行">3. 使用 VisualVM 观察请求线程执行</a></li>
+          </ul>
+        </li>
+        <li><a href="#6-提升思考-1">6. 提升思考</a>
+          <ul>
+            <li><a href="#1-connector-设计">1. Connector 设计</a></li>
+            <li><a href="#2-dispatcher-设计">2. Dispatcher 设计</a></li>
+            <li><a href="#3-关键简化点">3. 关键简化点</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -6002,173 +6152,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#第二篇servlet-深入理解与实战">第二篇：Servlet 深入理解与实战</a></li>
-    <li><a href="#一-servlet-是什么">一、 Servlet 是什么</a></li>
-    <li><a href="#二servlet生命周期">二、Servlet生命周期</a>
-      <ul>
-        <li><a href="#1-周期流程">1. 周期流程</a></li>
-        <li><a href="#2-容器是怎么初始化-servlet-的">2. 容器是怎么初始化 Servlet 的</a></li>
-        <li><a href="#3-加载优先级与多servlet协同">3. 加载优先级与多Servlet协同</a></li>
-        <li><a href="#4-生命周期方法调用">4. 生命周期方法调用</a></li>
-        <li><a href="#5-servlet单例特性与线程安全">5. Servlet单例特性与线程安全</a></li>
-        <li><a href="#6-servletconfig-vs-servletcontext区别">6. ServletConfig vs ServletContext区别</a></li>
-        <li><a href="#7-实战loginservlet完整实现">7. 实战：LoginServlet完整实现</a></li>
-        <li><a href="#8-servlet-与-spring-controller-的关系">8. Servlet 与 Spring Controller 的关系</a></li>
-        <li><a href="#9-小结">9. 小结</a></li>
-      </ul>
-    </li>
-    <li><a href="#三httpservletrequest--httpservletresponse">三、HttpServletRequest / HttpServletResponse</a>
-      <ul>
-        <li><a href="#1-httpservletrequest-请求机制">1. HttpServletRequest 请求机制</a></li>
-        <li><a href="#2-请求分派与转发">2. 请求分派与转发</a></li>
-        <li><a href="#3-httpservletresponse-响应机制">3. HttpServletResponse 响应机制</a></li>
-        <li><a href="#4-请求体读取的坑与解决方案">4. 请求体读取的坑与解决方案</a></li>
-        <li><a href="#5-实战案例">5. 实战案例</a></li>
-        <li><a href="#6-提升思考">6. 提升思考</a></li>
-        <li><a href="#7-小结">7. 小结</a></li>
-      </ul>
-    </li>
-    <li><a href="#四-过滤器-filter-与监听器-listener">四、 过滤器 Filter 与监听器 Listener</a>
-      <ul>
-        <li><a href="#1-filter-链机制">1. Filter 链机制</a></li>
-        <li><a href="#2-listener-分类与触发时机">2. Listener 分类与触发时机</a></li>
-        <li><a href="#3-filter-与-listener-的协同">3. Filter 与 Listener 的协同</a></li>
-        <li><a href="#4-实战案例">4. 实战案例</a></li>
-        <li><a href="#5-提升思考">5. 提升思考</a></li>
-      </ul>
-    </li>
-    <li><a href="#五-servletcontext">五、 ServletContext</a>
-      <ul>
-        <li><a href="#1-全局共享数据与生命周期">1. 全局共享数据与生命周期</a></li>
-        <li><a href="#2-资源访问">2. 资源访问</a></li>
-        <li><a href="#3-应用内通信机制">3. 应用内通信机制</a></li>
-        <li><a href="#4-实战案例-1">4. 实战案例</a></li>
-        <li><a href="#5-提升思考-1">5. 提升思考</a></li>
-        <li><a href="#6-小结">6. 小结</a></li>
-      </ul>
-    </li>
-    <li><a href="#六-异步-servlet">六、 异步 Servlet</a>
-      <ul>
-        <li><a href="#1-servlet-30-异步处理机制">1. Servlet 3.0 异步处理机制</a>
-          <ul>
-            <li><a href="#1-asynccontext-的工作原理">1. <code>AsyncContext</code> 的工作原理</a></li>
-            <li><a href="#2-非阻塞-io-模型nio-connector-支持">2. 非阻塞 I/O 模型（NIO Connector 支持）</a></li>
-            <li><a href="#3-超时机制与异常处理">3. 超时机制与异常处理</a></li>
-          </ul>
-        </li>
-        <li><a href="#2-异步线程模型">2. 异步线程模型</a>
-          <ul>
-            <li><a href="#1-asynccontextstart-与容器线程池">1. AsyncContext.start() 与容器线程池</a></li>
-            <li><a href="#2-容器如何避免线程占用等待-io">2. 容器如何避免线程占用等待 I/O</a></li>
-            <li><a href="#3-与-completablefuture-的集成">3. 与 CompletableFuture 的集成</a></li>
-          </ul>
-        </li>
-        <li><a href="#3-应用场景">3. 应用场景</a></li>
-        <li><a href="#4-实战案例-2">4. 实战案例</a>
-          <ul>
-            <li><a href="#1-异步-servlet-模拟消息推送">1. 异步 Servlet 模拟消息推送</a></li>
-            <li><a href="#2-同步与异步请求性能对比">2. 同步与异步请求性能对比</a></li>
-          </ul>
-        </li>
-        <li><a href="#5-提升思考-2">5. 提升思考</a></li>
-      </ul>
-    </li>
-    <li><a href="#六-session-管理机制">六. Session 管理机制</a>
-      <ul>
-        <li><a href="#1-session-的创建与标识">1. Session 的创建与标识</a>
-          <ul>
-            <li><a href="#1-jsessionid-cookie-与-url-rewriting">1. JSESSIONID Cookie 与 URL Rewriting</a></li>
-            <li><a href="#2-session-的持久化与钝化">2. Session 的持久化与钝化</a></li>
-            <li><a href="#3-超时与销毁机制">3. 超时与销毁机制</a></li>
-          </ul>
-        </li>
-        <li><a href="#2-session-同步与并发安全">2. Session 同步与并发安全</a>
-          <ul>
-            <li><a href="#1-并发访问-session-属性时的线程安全">1. 并发访问 Session 属性时的线程安全</a></li>
-            <li><a href="#2-分布式环境下-session-共享">2. 分布式环境下 Session 共享</a></li>
-          </ul>
-        </li>
-        <li><a href="#3-安全性问题">3. 安全性问题</a>
-          <ul>
-            <li><a href="#1-会话固定攻击session-fixation">1. 会话固定攻击（Session Fixation）</a></li>
-            <li><a href="#2-会话劫持session-hijacking">2. 会话劫持（Session Hijacking）</a></li>
-            <li><a href="#3-session-token--csrf-防护">3. Session Token + CSRF 防护</a></li>
-          </ul>
-        </li>
-        <li><a href="#4-实战建议">4. 实战建议</a>
-          <ul>
-            <li><a href="#1-登录--session-登录态校验">1. 登录 + Session 登录态校验</a></li>
-            <li><a href="#2-session-监听器统计活跃会话">2. Session 监听器统计活跃会话</a></li>
-            <li><a href="#3-redis-实现分布式-session-共享">3. Redis 实现分布式 Session 共享</a></li>
-          </ul>
-        </li>
-        <li><a href="#5-提升思考-3">5. 提升思考</a>
-          <ul>
-            <li><a href="#1-混合方案设计">1. 混合方案设计</a></li>
-            <li><a href="#2-核心优势">2. 核心优势</a></li>
-            <li><a href="#3-代码示例核心逻辑">3. 代码示例（核心逻辑）</a></li>
-          </ul>
-        </li>
-        <li><a href="#6-小结-1">6. 小结</a></li>
-      </ul>
-    </li>
-    <li><a href="#七-tomcat-的工作原理connector--container">七. Tomcat 的工作原理（Connector + Container）</a>
-      <ul>
-        <li><a href="#1-tomcat-架构核心">1. Tomcat 架构核心</a>
-          <ul>
-            <li><a href="#1-核心组件connector-与-container">1. 核心组件：Connector 与 Container</a></li>
-            <li><a href="#2-三层容器模型hierarchical-container">2. 三层容器模型（Hierarchical Container）</a></li>
-          </ul>
-        </li>
-        <li><a href="#2-请求处理流程">2. 请求处理流程</a>
-          <ul>
-            <li><a href="#1-阶段一connector-接收与解析请求">1. 阶段一：Connector 接收与解析请求</a></li>
-            <li><a href="#2-阶段二container-处理与响应">2. 阶段二：Container 处理与响应</a></li>
-          </ul>
-        </li>
-        <li><a href="#3-线程模型">3. 线程模型</a>
-          <ul>
-            <li><a href="#1-executor-线程池">1. Executor 线程池</a></li>
-            <li><a href="#2-io-模型nio--apr">2. I/O 模型（NIO / APR）</a></li>
-            <li><a href="#3-io-多路复用与非阻塞通信">3. I/O 多路复用与非阻塞通信</a></li>
-          </ul>
-        </li>
-        <li><a href="#4-性能优化方向">4. 性能优化方向</a>
-          <ul>
-            <li><a href="#1-connector-线程池参数调优">1. Connector 线程池参数调优</a></li>
-            <li><a href="#2-连接与传输优化">2. 连接与传输优化</a></li>
-            <li><a href="#3-热部署与类加载机制">3. 热部署与类加载机制</a></li>
-          </ul>
-        </li>
-        <li><a href="#5-实战建议">5. 实战建议</a>
-          <ul>
-            <li><a href="#1-tomcat-请求处理流程图">1. Tomcat 请求处理流程图</a></li>
-            <li><a href="#2-调整线程池参数验证性能变化">2. 调整线程池参数验证性能变化</a></li>
-            <li><a href="#3-使用-visualvm-观察请求线程执行">3. 使用 VisualVM 观察请求线程执行</a></li>
-          </ul>
-        </li>
-        <li><a href="#6-提升思考-1">6. 提升思考</a>
-          <ul>
-            <li><a href="#1-connector-设计">1. Connector 设计</a></li>
-            <li><a href="#2-dispatcher-设计">2. Dispatcher 设计</a></li>
-            <li><a href="#3-关键简化点">3. 关键简化点</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#总结">总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

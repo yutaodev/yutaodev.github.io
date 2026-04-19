@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,64 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#plsql基础">PL/SQL基础</a></li>
+    <li><a href="#一字符集">一、字符集</a></li>
+    <li><a href="#二词法单元">二、词法单元</a>
+      <ul>
+        <li><a href="#1-分隔符">1. 分隔符</a></li>
+        <li><a href="#2-标识符">2. 标识符</a>
+          <ul>
+            <li><a href="#21-标识符命名规则">2.1 标识符命名规则</a></li>
+            <li><a href="#22-保留关键字">2.2 保留关键字</a></li>
+            <li><a href="#23-预定义标识">2.3 预定义标识</a></li>
+            <li><a href="#24-引用标识符">2.4 引用标识符</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-文字">3. 文字</a>
+          <ul>
+            <li><a href="#31-数字文字">3.1 数字文字</a></li>
+            <li><a href="#32-字符文字">3.2 字符文字</a></li>
+            <li><a href="#33-字符串文字">3.3 字符串文字</a></li>
+            <li><a href="#34-布尔boolean文字">3.4 布尔(Boolean)文字</a></li>
+            <li><a href="#35-日期和时间文字">3.5 日期和时间文字</a></li>
+          </ul>
+        </li>
+        <li><a href="#4-注释">4. 注释</a>
+          <ul>
+            <li><a href="#41-单行注释">4.1 单行注释</a></li>
+            <li><a href="#42-多行注释">4.2 多行注释</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#三声明">三、声明</a>
+      <ul>
+        <li><a href="#1-使用default">1. 使用DEFAULT</a></li>
+        <li><a href="#2-使用not-null">2. 使用NOT NULL</a></li>
+        <li><a href="#3-使用type">3. 使用%TYPE</a></li>
+        <li><a href="#4-使用rowtype">4. 使用%ROWTYPE</a>
+          <ul>
+            <li><a href="#41-聚合赋值">4.1 聚合赋值</a></li>
+            <li><a href="#42-使用别名">4.2 使用别名</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-声明的约束">5. 声明的约束</a></li>
+      </ul>
+    </li>
+    <li><a href="#小结">小结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -1785,63 +1825,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#plsql基础">PL/SQL基础</a></li>
-    <li><a href="#一字符集">一、字符集</a></li>
-    <li><a href="#二词法单元">二、词法单元</a>
-      <ul>
-        <li><a href="#1-分隔符">1. 分隔符</a></li>
-        <li><a href="#2-标识符">2. 标识符</a>
-          <ul>
-            <li><a href="#21-标识符命名规则">2.1 标识符命名规则</a></li>
-            <li><a href="#22-保留关键字">2.2 保留关键字</a></li>
-            <li><a href="#23-预定义标识">2.3 预定义标识</a></li>
-            <li><a href="#24-引用标识符">2.4 引用标识符</a></li>
-          </ul>
-        </li>
-        <li><a href="#3-文字">3. 文字</a>
-          <ul>
-            <li><a href="#31-数字文字">3.1 数字文字</a></li>
-            <li><a href="#32-字符文字">3.2 字符文字</a></li>
-            <li><a href="#33-字符串文字">3.3 字符串文字</a></li>
-            <li><a href="#34-布尔boolean文字">3.4 布尔(Boolean)文字</a></li>
-            <li><a href="#35-日期和时间文字">3.5 日期和时间文字</a></li>
-          </ul>
-        </li>
-        <li><a href="#4-注释">4. 注释</a>
-          <ul>
-            <li><a href="#41-单行注释">4.1 单行注释</a></li>
-            <li><a href="#42-多行注释">4.2 多行注释</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#三声明">三、声明</a>
-      <ul>
-        <li><a href="#1-使用default">1. 使用DEFAULT</a></li>
-        <li><a href="#2-使用not-null">2. 使用NOT NULL</a></li>
-        <li><a href="#3-使用type">3. 使用%TYPE</a></li>
-        <li><a href="#4-使用rowtype">4. 使用%ROWTYPE</a>
-          <ul>
-            <li><a href="#41-聚合赋值">4.1 聚合赋值</a></li>
-            <li><a href="#42-使用别名">4.2 使用别名</a></li>
-          </ul>
-        </li>
-        <li><a href="#5-声明的约束">5. 声明的约束</a></li>
-      </ul>
-    </li>
-    <li><a href="#小结">小结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

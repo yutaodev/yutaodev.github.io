@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,67 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#plsql集合与记录">PL/SQL集合与记录</a></li>
+    <li><a href="#一什么是集合">一、什么是集合</a>
+      <ul>
+        <li><a href="#1-理解嵌套表">1. 理解嵌套表</a></li>
+        <li><a href="#2-理解变长数组">2. 理解变长数组</a></li>
+        <li><a href="#3-理解关联数组索引表">3. 理解关联数组(索引表)</a></li>
+        <li><a href="#4-全球化设置对使用varchar2类型作主键的关联数组的影响">4. 全球化设置对使用VARCHAR2类型作主键的关联数组的影响</a></li>
+      </ul>
+    </li>
+    <li><a href="#二集合类型的选择">二、集合类型的选择</a>
+      <ul>
+        <li><a href="#1-嵌套表与关联数组间的选择">1. 嵌套表与关联数组间的选择</a></li>
+        <li><a href="#2-嵌套表与变长数组间的选择">2. 嵌套表与变长数组间的选择</a></li>
+      </ul>
+    </li>
+    <li><a href="#三定义集合类型">三、定义集合类型</a>
+      <ul>
+        <li><a href="#1-定义与plsql集合类型等价的sql类型">1. 定义与PL/SQL集合类型等价的SQL类型</a></li>
+      </ul>
+    </li>
+    <li><a href="#四声明plsql集合变量">四、声明PL/SQL集合变量</a></li>
+    <li><a href="#五初始化与引用集合">五、初始化与引用集合</a></li>
+    <li><a href="#六引用集合中的元素">六、引用集合中的元素</a></li>
+    <li><a href="#七集合的赋值">七、集合的赋值</a></li>
+    <li><a href="#八比较集合">八、比较集合</a></li>
+    <li><a href="#九在sql语句中使用plsql的集合类型">九、在SQL语句中使用PL/SQL的集合类型</a>
+      <ul>
+        <li><a href="#1-关于嵌套表的例子">1. 关于嵌套表的例子</a></li>
+        <li><a href="#2-变长数组的一些例子">2. 变长数组的一些例子</a></li>
+        <li><a href="#3-使用sql语句操作特定的集合元素">3. 使用SQL语句操作特定的集合元素</a></li>
+      </ul>
+    </li>
+    <li><a href="#十使用多级集合">十、使用多级集合</a></li>
+    <li><a href="#十一集合的方法">十一、集合的方法</a>
+      <ul>
+        <li><a href="#1-检测集合中的元素是否存在exists">1. 检测集合中的元素是否存在(EXISTS)</a></li>
+        <li><a href="#2-计算集合中的元素个数count">2. 计算集合中的元素个数(COUNT)</a></li>
+        <li><a href="#3-检测集合的最大容量limit">3. 检测集合的最大容量(LIMIT)</a></li>
+        <li><a href="#4-查找集合中的首末元素first和last">4. 查找集合中的首末元素(FIRST和LAST)</a></li>
+        <li><a href="#5-循环遍历集合中的元素prior和next">5. 循环遍历集合中的元素(PRIOR和NEXT)</a></li>
+        <li><a href="#6-扩大集合的容量extend">6. 扩大集合的容量(EXTEND)</a></li>
+        <li><a href="#7-缩减集合的空间trim">7. 缩减集合的空间(TRIM)</a></li>
+        <li><a href="#8-删除集合中的元素delete">8. 删除集合中的元素(DELETE)</a></li>
+        <li><a href="#9-使用集合类型参数的方法">9. 使用集合类型参数的方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#十二-避免集合异常">十二、 避免集合异常</a></li>
+    <li><a href="#小结">小结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -4232,66 +4275,6 @@ DELETE</p>
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#plsql集合与记录">PL/SQL集合与记录</a></li>
-    <li><a href="#一什么是集合">一、什么是集合</a>
-      <ul>
-        <li><a href="#1-理解嵌套表">1. 理解嵌套表</a></li>
-        <li><a href="#2-理解变长数组">2. 理解变长数组</a></li>
-        <li><a href="#3-理解关联数组索引表">3. 理解关联数组(索引表)</a></li>
-        <li><a href="#4-全球化设置对使用varchar2类型作主键的关联数组的影响">4. 全球化设置对使用VARCHAR2类型作主键的关联数组的影响</a></li>
-      </ul>
-    </li>
-    <li><a href="#二集合类型的选择">二、集合类型的选择</a>
-      <ul>
-        <li><a href="#1-嵌套表与关联数组间的选择">1. 嵌套表与关联数组间的选择</a></li>
-        <li><a href="#2-嵌套表与变长数组间的选择">2. 嵌套表与变长数组间的选择</a></li>
-      </ul>
-    </li>
-    <li><a href="#三定义集合类型">三、定义集合类型</a>
-      <ul>
-        <li><a href="#1-定义与plsql集合类型等价的sql类型">1. 定义与PL/SQL集合类型等价的SQL类型</a></li>
-      </ul>
-    </li>
-    <li><a href="#四声明plsql集合变量">四、声明PL/SQL集合变量</a></li>
-    <li><a href="#五初始化与引用集合">五、初始化与引用集合</a></li>
-    <li><a href="#六引用集合中的元素">六、引用集合中的元素</a></li>
-    <li><a href="#七集合的赋值">七、集合的赋值</a></li>
-    <li><a href="#八比较集合">八、比较集合</a></li>
-    <li><a href="#九在sql语句中使用plsql的集合类型">九、在SQL语句中使用PL/SQL的集合类型</a>
-      <ul>
-        <li><a href="#1-关于嵌套表的例子">1. 关于嵌套表的例子</a></li>
-        <li><a href="#2-变长数组的一些例子">2. 变长数组的一些例子</a></li>
-        <li><a href="#3-使用sql语句操作特定的集合元素">3. 使用SQL语句操作特定的集合元素</a></li>
-      </ul>
-    </li>
-    <li><a href="#十使用多级集合">十、使用多级集合</a></li>
-    <li><a href="#十一集合的方法">十一、集合的方法</a>
-      <ul>
-        <li><a href="#1-检测集合中的元素是否存在exists">1. 检测集合中的元素是否存在(EXISTS)</a></li>
-        <li><a href="#2-计算集合中的元素个数count">2. 计算集合中的元素个数(COUNT)</a></li>
-        <li><a href="#3-检测集合的最大容量limit">3. 检测集合的最大容量(LIMIT)</a></li>
-        <li><a href="#4-查找集合中的首末元素first和last">4. 查找集合中的首末元素(FIRST和LAST)</a></li>
-        <li><a href="#5-循环遍历集合中的元素prior和next">5. 循环遍历集合中的元素(PRIOR和NEXT)</a></li>
-        <li><a href="#6-扩大集合的容量extend">6. 扩大集合的容量(EXTEND)</a></li>
-        <li><a href="#7-缩减集合的空间trim">7. 缩减集合的空间(TRIM)</a></li>
-        <li><a href="#8-删除集合中的元素delete">8. 删除集合中的元素(DELETE)</a></li>
-        <li><a href="#9-使用集合类型参数的方法">9. 使用集合类型参数的方法</a></li>
-      </ul>
-    </li>
-    <li><a href="#十二-避免集合异常">十二、 避免集合异常</a></li>
-    <li><a href="#小结">小结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,70 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#plsql基础">PL/SQL基础</a></li>
+    <li><a href="#一plsql命名规范">一、PL/SQL命名规范</a>
+      <ul>
+        <li><a href="#1-同义词">1. 同义词</a></li>
+        <li><a href="#2-作用域">2. 作用域</a></li>
+        <li><a href="#3-大小写敏感">3. 大小写敏感</a></li>
+        <li><a href="#4-命名解析">4. 命名解析</a></li>
+      </ul>
+    </li>
+    <li><a href="#二plsql标识符的作用域scope和可见度visiblity">二、PL/SQL标识符的作用域(scope)和可见度(visiblity)</a></li>
+    <li><a href="#三变量赋值">三、变量赋值</a>
+      <ul>
+        <li><a href="#1-布尔型boolean赋值">1. 布尔型(Boolean)赋值</a></li>
+        <li><a href="#2-利用sql查询为plsql变量赋值">2. 利用SQL查询为PL/SQL变量赋值</a></li>
+      </ul>
+    </li>
+    <li><a href="#四plsql表达式与比较">四、PL/SQL表达式与比较</a>
+      <ul>
+        <li><a href="#1-逻辑操作符">1. 逻辑操作符</a>
+          <ul>
+            <li><a href="#11-运算顺序">1.1 运算顺序</a></li>
+            <li><a href="#12-短路计算">1.2 短路计算</a></li>
+            <li><a href="#13-比较操作符">1.3 比较操作符</a></li>
+            <li><a href="#14-关系操作符">1.4 关系操作符</a></li>
+            <li><a href="#15-is-null-操作符">1.5 IS NULL 操作符</a></li>
+            <li><a href="#16-like操作符">1.6 LIKE操作符</a></li>
+            <li><a href="#17-between操作符">1.7 BETWEEN操作符</a></li>
+            <li><a href="#18-in操作符">1.8 IN操作符</a></li>
+            <li><a href="#19-连接操作符">1.9 连接操作符</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-布尔表达式">2. 布尔表达式</a>
+          <ul>
+            <li><a href="#21-布尔算术表达式">2.1 布尔算术表达式</a></li>
+            <li><a href="#22-布尔字符表达式">2.2 布尔字符表达式</a></li>
+            <li><a href="#23-布尔日期表达式">2.3 布尔日期表达式</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-case表达式">3. CASE表达式</a></li>
+        <li><a href="#4-在比较和条件语句中处理null值">4. 在比较和条件语句中处理NULL值</a>
+          <ul>
+            <li><a href="#41-not操作符">4.1 NOT操作符</a></li>
+            <li><a href="#42-零长度字符串">4.2 零长度字符串</a></li>
+            <li><a href="#43-连接操作符">4.3 连接操作符</a></li>
+            <li><a href="#44-函数">4.4 函数</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-内置函数">5. 内置函数</a></li>
+      </ul>
+    </li>
+    <li><a href="#小结">小结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -2021,69 +2067,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#plsql基础">PL/SQL基础</a></li>
-    <li><a href="#一plsql命名规范">一、PL/SQL命名规范</a>
-      <ul>
-        <li><a href="#1-同义词">1. 同义词</a></li>
-        <li><a href="#2-作用域">2. 作用域</a></li>
-        <li><a href="#3-大小写敏感">3. 大小写敏感</a></li>
-        <li><a href="#4-命名解析">4. 命名解析</a></li>
-      </ul>
-    </li>
-    <li><a href="#二plsql标识符的作用域scope和可见度visiblity">二、PL/SQL标识符的作用域(scope)和可见度(visiblity)</a></li>
-    <li><a href="#三变量赋值">三、变量赋值</a>
-      <ul>
-        <li><a href="#1-布尔型boolean赋值">1. 布尔型(Boolean)赋值</a></li>
-        <li><a href="#2-利用sql查询为plsql变量赋值">2. 利用SQL查询为PL/SQL变量赋值</a></li>
-      </ul>
-    </li>
-    <li><a href="#四plsql表达式与比较">四、PL/SQL表达式与比较</a>
-      <ul>
-        <li><a href="#1-逻辑操作符">1. 逻辑操作符</a>
-          <ul>
-            <li><a href="#11-运算顺序">1.1 运算顺序</a></li>
-            <li><a href="#12-短路计算">1.2 短路计算</a></li>
-            <li><a href="#13-比较操作符">1.3 比较操作符</a></li>
-            <li><a href="#14-关系操作符">1.4 关系操作符</a></li>
-            <li><a href="#15-is-null-操作符">1.5 IS NULL 操作符</a></li>
-            <li><a href="#16-like操作符">1.6 LIKE操作符</a></li>
-            <li><a href="#17-between操作符">1.7 BETWEEN操作符</a></li>
-            <li><a href="#18-in操作符">1.8 IN操作符</a></li>
-            <li><a href="#19-连接操作符">1.9 连接操作符</a></li>
-          </ul>
-        </li>
-        <li><a href="#2-布尔表达式">2. 布尔表达式</a>
-          <ul>
-            <li><a href="#21-布尔算术表达式">2.1 布尔算术表达式</a></li>
-            <li><a href="#22-布尔字符表达式">2.2 布尔字符表达式</a></li>
-            <li><a href="#23-布尔日期表达式">2.3 布尔日期表达式</a></li>
-          </ul>
-        </li>
-        <li><a href="#3-case表达式">3. CASE表达式</a></li>
-        <li><a href="#4-在比较和条件语句中处理null值">4. 在比较和条件语句中处理NULL值</a>
-          <ul>
-            <li><a href="#41-not操作符">4.1 NOT操作符</a></li>
-            <li><a href="#42-零长度字符串">4.2 零长度字符串</a></li>
-            <li><a href="#43-连接操作符">4.3 连接操作符</a></li>
-            <li><a href="#44-函数">4.4 函数</a></li>
-          </ul>
-        </li>
-        <li><a href="#5-内置函数">5. 内置函数</a></li>
-      </ul>
-    </li>
-    <li><a href="#小结">小结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

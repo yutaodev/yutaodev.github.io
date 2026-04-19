@@ -18,3 +18,49 @@
     display: flex;
     justify-content: center;
 }
+/* 主页 .posts 容器样式，与 .archive 保持一致 */
+.posts {
+    margin: 0 auto;
+    margin-bottom: 3em;
+    max-width: 50em;
+    background-color: white;
+    padding: 1em 5em 5em 5em;
+}
+
+/* 主页中每个 .post 文章样式，去除原有的 38em 宽度限制 */
+.posts .post {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 2em;
+    background-color: transparent;
+}
+
+/* 关于页面等单独文章页面样式，与归档保持一致 */
+.content-wrapper .post {
+    width: 100%;
+    max-width: 50em;
+    margin: 0 auto;
+}
+
+/* 文章目录样式 - 将目录从右侧移到左侧 */
+nav.toc,
+.toc {
+    margin-left: 0 !important;
+    margin-right: 1em;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 899px) {
+    .posts {
+        margin: 0 auto 1em auto;
+        padding: 1em;
+    }
+    
+    .content-wrapper .post {
+        width: auto;
+        padding: 5%;
+        margin: 0 auto 5% auto;
+    }
+}

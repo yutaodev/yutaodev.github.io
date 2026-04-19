@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,73 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#章节概览">章节概览</a></li>
+    <li><a href="#1-堆heap">1. 堆（Heap）</a>
+      <ul>
+        <li><a href="#11-堆的定义与特性">1.1 堆的定义与特性</a></li>
+        <li><a href="#12-堆的应用场景">1.2 堆的应用场景</a></li>
+        <li><a href="#13-java中的堆实现">1.3 Java中的堆实现</a></li>
+        <li><a href="#14-堆的时间复杂度">1.4 堆的时间复杂度</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-树tree">2. 树（Tree）</a>
+      <ul>
+        <li><a href="#21-树的基本概念">2.1 树的基本概念</a></li>
+        <li><a href="#22-二叉树binary-tree">2.2 二叉树（Binary Tree）</a></li>
+        <li><a href="#23-二叉搜索树binary-search-tree-bst">2.3 二叉搜索树（Binary Search Tree, BST）</a></li>
+        <li><a href="#24-红黑树red-black-tree">2.4 红黑树（Red-Black Tree）</a></li>
+        <li><a href="#25-树的遍历">2.5 树的遍历</a>
+          <ul>
+            <li><a href="#251-深度优先遍历depth-first-search-dfs">2.5.1 深度优先遍历（Depth-First Search, DFS）</a></li>
+            <li><a href="#252-广度优先遍历breadth-first-search-bfs">2.5.2 广度优先遍历（Breadth-First Search, BFS）</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#3-图graph">3. 图（Graph）</a>
+      <ul>
+        <li><a href="#31-图的定义与特性">3.1 图的定义与特性</a></li>
+        <li><a href="#32-图的表示方法">3.2 图的表示方法</a>
+          <ul>
+            <li><a href="#321-邻接矩阵">3.2.1 邻接矩阵</a></li>
+            <li><a href="#322-邻接表">3.2.2 邻接表</a></li>
+          </ul>
+        </li>
+        <li><a href="#33-图的遍历">3.3 图的遍历</a>
+          <ul>
+            <li><a href="#331-深度优先搜索dfs">3.3.1 深度优先搜索（DFS）</a></li>
+            <li><a href="#332-广度优先搜索bfs">3.3.2 广度优先搜索（BFS）</a></li>
+          </ul>
+        </li>
+        <li><a href="#34-图的应用场景">3.4 图的应用场景</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-其他数据结构">4. 其他数据结构</a>
+      <ul>
+        <li><a href="#41-枚举enumeration">4.1 枚举（Enumeration）</a></li>
+        <li><a href="#42-位集合bitset">4.2 位集合（BitSet）</a></li>
+        <li><a href="#43-哈希表hashtable">4.3 哈希表（Hashtable）</a></li>
+        <li><a href="#44-属性properties">4.4 属性（Properties）</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a>
+      <ul>
+        <li><a href="#数据结构选择指南">数据结构选择指南</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -2650,72 +2699,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#章节概览">章节概览</a></li>
-    <li><a href="#1-堆heap">1. 堆（Heap）</a>
-      <ul>
-        <li><a href="#11-堆的定义与特性">1.1 堆的定义与特性</a></li>
-        <li><a href="#12-堆的应用场景">1.2 堆的应用场景</a></li>
-        <li><a href="#13-java中的堆实现">1.3 Java中的堆实现</a></li>
-        <li><a href="#14-堆的时间复杂度">1.4 堆的时间复杂度</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-树tree">2. 树（Tree）</a>
-      <ul>
-        <li><a href="#21-树的基本概念">2.1 树的基本概念</a></li>
-        <li><a href="#22-二叉树binary-tree">2.2 二叉树（Binary Tree）</a></li>
-        <li><a href="#23-二叉搜索树binary-search-tree-bst">2.3 二叉搜索树（Binary Search Tree, BST）</a></li>
-        <li><a href="#24-红黑树red-black-tree">2.4 红黑树（Red-Black Tree）</a></li>
-        <li><a href="#25-树的遍历">2.5 树的遍历</a>
-          <ul>
-            <li><a href="#251-深度优先遍历depth-first-search-dfs">2.5.1 深度优先遍历（Depth-First Search, DFS）</a></li>
-            <li><a href="#252-广度优先遍历breadth-first-search-bfs">2.5.2 广度优先遍历（Breadth-First Search, BFS）</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#3-图graph">3. 图（Graph）</a>
-      <ul>
-        <li><a href="#31-图的定义与特性">3.1 图的定义与特性</a></li>
-        <li><a href="#32-图的表示方法">3.2 图的表示方法</a>
-          <ul>
-            <li><a href="#321-邻接矩阵">3.2.1 邻接矩阵</a></li>
-            <li><a href="#322-邻接表">3.2.2 邻接表</a></li>
-          </ul>
-        </li>
-        <li><a href="#33-图的遍历">3.3 图的遍历</a>
-          <ul>
-            <li><a href="#331-深度优先搜索dfs">3.3.1 深度优先搜索（DFS）</a></li>
-            <li><a href="#332-广度优先搜索bfs">3.3.2 广度优先搜索（BFS）</a></li>
-          </ul>
-        </li>
-        <li><a href="#34-图的应用场景">3.4 图的应用场景</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-其他数据结构">4. 其他数据结构</a>
-      <ul>
-        <li><a href="#41-枚举enumeration">4.1 枚举（Enumeration）</a></li>
-        <li><a href="#42-位集合bitset">4.2 位集合（BitSet）</a></li>
-        <li><a href="#43-哈希表hashtable">4.3 哈希表（Hashtable）</a></li>
-        <li><a href="#44-属性properties">4.4 属性（Properties）</a></li>
-      </ul>
-    </li>
-    <li><a href="#总结">总结</a>
-      <ul>
-        <li><a href="#数据结构选择指南">数据结构选择指南</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

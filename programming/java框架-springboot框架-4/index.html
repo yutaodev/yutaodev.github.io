@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,57 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#1-spring-boot-整合-redis-缓存">1. Spring Boot 整合 Redis 缓存</a>
+      <ul>
+        <li><a href="#一添加依赖">一、添加依赖</a></li>
+        <li><a href="#二配置连接">二、配置连接</a></li>
+        <li><a href="#三使用-redistemplate">三、使用 RedisTemplate</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-spring-boot-中的定时任务-scheduled">2. Spring Boot 中的定时任务 @Scheduled</a>
+      <ul>
+        <li><a href="#一启用定时任务">一、启用定时任务</a></li>
+        <li><a href="#二编写定时任务">二、编写定时任务</a></li>
+        <li><a href="#三配置-cron-表达式">三、配置 cron 表达式</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-spring-boot-集成-rabbitmq-消息队列">3. Spring Boot 集成 RabbitMQ 消息队列</a>
+      <ul>
+        <li><a href="#一添加依赖-1">一、添加依赖</a></li>
+        <li><a href="#二配置连接-1">二、配置连接</a></li>
+        <li><a href="#三定义生产者消费者">三、定义生产者/消费者</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-spring-boot-异步编程-async-实现并发处理">4. Spring Boot 异步编程 @Async 实现并发处理</a>
+      <ul>
+        <li><a href="#一启用异步处理">一、启用异步处理</a></li>
+        <li><a href="#二编写异步方法">二、编写异步方法</a></li>
+        <li><a href="#三调用方式">三、调用方式</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-spring-boot-集成-nacos-配置中心">5. Spring Boot 集成 Nacos 配置中心</a>
+      <ul>
+        <li><a href="#一引入依赖">一、引入依赖</a></li>
+        <li><a href="#二配置-bootstrapyml">二、配置 bootstrap.yml</a></li>
+        <li><a href="#三配置动态刷新">三、配置动态刷新</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-综合上述内容练习">6. 综合上述内容练习</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -2933,56 +2966,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#文章概览">文章概览</a></li>
-    <li><a href="#1-spring-boot-整合-redis-缓存">1. Spring Boot 整合 Redis 缓存</a>
-      <ul>
-        <li><a href="#一添加依赖">一、添加依赖</a></li>
-        <li><a href="#二配置连接">二、配置连接</a></li>
-        <li><a href="#三使用-redistemplate">三、使用 RedisTemplate</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-spring-boot-中的定时任务-scheduled">2. Spring Boot 中的定时任务 @Scheduled</a>
-      <ul>
-        <li><a href="#一启用定时任务">一、启用定时任务</a></li>
-        <li><a href="#二编写定时任务">二、编写定时任务</a></li>
-        <li><a href="#三配置-cron-表达式">三、配置 cron 表达式</a></li>
-      </ul>
-    </li>
-    <li><a href="#3-spring-boot-集成-rabbitmq-消息队列">3. Spring Boot 集成 RabbitMQ 消息队列</a>
-      <ul>
-        <li><a href="#一添加依赖-1">一、添加依赖</a></li>
-        <li><a href="#二配置连接-1">二、配置连接</a></li>
-        <li><a href="#三定义生产者消费者">三、定义生产者/消费者</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-spring-boot-异步编程-async-实现并发处理">4. Spring Boot 异步编程 @Async 实现并发处理</a>
-      <ul>
-        <li><a href="#一启用异步处理">一、启用异步处理</a></li>
-        <li><a href="#二编写异步方法">二、编写异步方法</a></li>
-        <li><a href="#三调用方式">三、调用方式</a></li>
-      </ul>
-    </li>
-    <li><a href="#5-spring-boot-集成-nacos-配置中心">5. Spring Boot 集成 Nacos 配置中心</a>
-      <ul>
-        <li><a href="#一引入依赖">一、引入依赖</a></li>
-        <li><a href="#二配置-bootstrapyml">二、配置 bootstrap.yml</a></li>
-        <li><a href="#三配置动态刷新">三、配置动态刷新</a></li>
-      </ul>
-    </li>
-    <li><a href="#6-综合上述内容练习">6. 综合上述内容练习</a></li>
-    <li><a href="#总结">总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

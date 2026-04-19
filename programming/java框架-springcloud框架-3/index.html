@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,48 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#1-gateway-与-zuul-的对比与选择">1. Gateway 与 Zuul 的对比与选择</a></li>
+    <li><a href="#2-静态路由--动态路由机制详解">2. 静态路由 / 动态路由机制详解</a>
+      <ul>
+        <li><a href="#21-静态路由配置推荐开发阶段">2.1 静态路由配置（推荐开发阶段）</a></li>
+        <li><a href="#22-动态路由配置企业实战常见">2.2 动态路由配置（企业实战常见）</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-自定义全局过滤器统一-token-校验">3. 自定义全局过滤器：统一 Token 校验</a>
+      <ul>
+        <li><a href="#31-自定义-tokenfilter-实现">3.1 自定义 TokenFilter 实现</a></li>
+        <li><a href="#32-启用顺序说明">3.2 启用顺序说明</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-请求增强请求头修改--日志埋点">4. 请求增强：请求头修改 / 日志埋点</a>
+      <ul>
+        <li><a href="#41-请求头增强">4.1 请求头增强</a></li>
+        <li><a href="#42-自定义日志埋点-filter">4.2 自定义日志埋点 Filter</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-限流熔断重试机制接入结合-resilience4j">5. 限流、熔断、重试机制接入（结合 Resilience4j）</a>
+      <ul>
+        <li><a href="#51-限流过滤器基于令牌桶">5.1 限流过滤器（基于令牌桶）</a></li>
+        <li><a href="#52-熔断器集成-resilience4j">5.2 熔断器集成 Resilience4j</a></li>
+        <li><a href="#53-重试机制">5.3 重试机制</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-搭建第二个微服务-gateway-service">6. 搭建第二个微服务 gateway-service</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -1685,47 +1709,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#文章概览">文章概览</a></li>
-    <li><a href="#1-gateway-与-zuul-的对比与选择">1. Gateway 与 Zuul 的对比与选择</a></li>
-    <li><a href="#2-静态路由--动态路由机制详解">2. 静态路由 / 动态路由机制详解</a>
-      <ul>
-        <li><a href="#21-静态路由配置推荐开发阶段">2.1 静态路由配置（推荐开发阶段）</a></li>
-        <li><a href="#22-动态路由配置企业实战常见">2.2 动态路由配置（企业实战常见）</a></li>
-      </ul>
-    </li>
-    <li><a href="#3-自定义全局过滤器统一-token-校验">3. 自定义全局过滤器：统一 Token 校验</a>
-      <ul>
-        <li><a href="#31-自定义-tokenfilter-实现">3.1 自定义 TokenFilter 实现</a></li>
-        <li><a href="#32-启用顺序说明">3.2 启用顺序说明</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-请求增强请求头修改--日志埋点">4. 请求增强：请求头修改 / 日志埋点</a>
-      <ul>
-        <li><a href="#41-请求头增强">4.1 请求头增强</a></li>
-        <li><a href="#42-自定义日志埋点-filter">4.2 自定义日志埋点 Filter</a></li>
-      </ul>
-    </li>
-    <li><a href="#5-限流熔断重试机制接入结合-resilience4j">5. 限流、熔断、重试机制接入（结合 Resilience4j）</a>
-      <ul>
-        <li><a href="#51-限流过滤器基于令牌桶">5.1 限流过滤器（基于令牌桶）</a></li>
-        <li><a href="#52-熔断器集成-resilience4j">5.2 熔断器集成 Resilience4j</a></li>
-        <li><a href="#53-重试机制">5.3 重试机制</a></li>
-      </ul>
-    </li>
-    <li><a href="#6-搭建第二个微服务-gateway-service">6. 搭建第二个微服务 gateway-service</a></li>
-    <li><a href="#总结">总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

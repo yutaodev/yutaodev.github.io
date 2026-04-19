@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,54 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文章概览">文章概览</a></li>
+    <li><a href="#1-spring-boot-集成-spring-security-实现登录认证">1. Spring Boot 集成 Spring Security 实现登录认证</a>
+      <ul>
+        <li><a href="#一引入依赖">一、引入依赖</a></li>
+        <li><a href="#二定义配置类">二、定义配置类</a></li>
+        <li><a href="#三自定义用户信息">三、自定义用户信息</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-spring-boot-项目持续集成jenkins--git">2. Spring Boot 项目持续集成（Jenkins + Git）</a>
+      <ul>
+        <li><a href="#一jenkins-job-基本配置">一、Jenkins Job 基本配置：</a></li>
+        <li><a href="#二构建步骤">二、构建步骤：</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-链路追踪sleuth--zipkin实现服务调用监控">3. 链路追踪（Sleuth + Zipkin）实现服务调用监控</a>
+      <ul>
+        <li><a href="#一引入依赖-1">一、引入依赖</a></li>
+        <li><a href="#二配置-zipkin-地址">二、配置 Zipkin 地址</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-开发一个自定义-spring-boot-starter">4. 开发一个自定义 Spring Boot Starter</a>
+      <ul>
+        <li><a href="#一创建模块并定义-autoconfiguration-类">一、创建模块并定义 AutoConfiguration 类</a></li>
+        <li><a href="#二添加-springfactories">二、添加 <code>spring.factories</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#5-spring-boot-总结与进阶指引">5. Spring Boot 总结与进阶指引</a>
+      <ul>
+        <li><a href="#一核心知识体系回顾">一、核心知识体系回顾</a></li>
+        <li><a href="#二开发经验要点">二、开发经验要点</a></li>
+        <li><a href="#三为学习-spring-cloud-做准备">三、为学习 Spring Cloud 做准备</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-综合上述内容练习">6. 综合上述内容练习</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -5774,53 +5804,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#文章概览">文章概览</a></li>
-    <li><a href="#1-spring-boot-集成-spring-security-实现登录认证">1. Spring Boot 集成 Spring Security 实现登录认证</a>
-      <ul>
-        <li><a href="#一引入依赖">一、引入依赖</a></li>
-        <li><a href="#二定义配置类">二、定义配置类</a></li>
-        <li><a href="#三自定义用户信息">三、自定义用户信息</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-spring-boot-项目持续集成jenkins--git">2. Spring Boot 项目持续集成（Jenkins + Git）</a>
-      <ul>
-        <li><a href="#一jenkins-job-基本配置">一、Jenkins Job 基本配置：</a></li>
-        <li><a href="#二构建步骤">二、构建步骤：</a></li>
-      </ul>
-    </li>
-    <li><a href="#3-链路追踪sleuth--zipkin实现服务调用监控">3. 链路追踪（Sleuth + Zipkin）实现服务调用监控</a>
-      <ul>
-        <li><a href="#一引入依赖-1">一、引入依赖</a></li>
-        <li><a href="#二配置-zipkin-地址">二、配置 Zipkin 地址</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-开发一个自定义-spring-boot-starter">4. 开发一个自定义 Spring Boot Starter</a>
-      <ul>
-        <li><a href="#一创建模块并定义-autoconfiguration-类">一、创建模块并定义 AutoConfiguration 类</a></li>
-        <li><a href="#二添加-springfactories">二、添加 <code>spring.factories</code></a></li>
-      </ul>
-    </li>
-    <li><a href="#5-spring-boot-总结与进阶指引">5. Spring Boot 总结与进阶指引</a>
-      <ul>
-        <li><a href="#一核心知识体系回顾">一、核心知识体系回顾</a></li>
-        <li><a href="#二开发经验要点">二、开发经验要点</a></li>
-        <li><a href="#三为学习-spring-cloud-做准备">三、为学习 Spring Cloud 做准备</a></li>
-      </ul>
-    </li>
-    <li><a href="#6-综合上述内容练习">6. 综合上述内容练习</a></li>
-    <li><a href="#总结">总结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 

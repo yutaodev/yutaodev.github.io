@@ -176,13 +176,6 @@
         
           
           
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-          
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
           
         
@@ -343,17 +336,6 @@
             
             
             
-            <a class="menu-item-link" href="https://yutao.org/archives/">归档</a>
-            
-
-            
-
-        </li>
-        
-        <li class="menu-item">
-            
-            
-            
             <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
             
 
@@ -435,6 +417,74 @@
     <div id="mobile-panel">
       <main id="main" class="main bg-llight wallpaper">
         <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一理解plsql的主要特性">一、理解PL/SQL的主要特性</a></li>
+    <li><a href="#1-plsql简介">1. PL/SQL简介</a></li>
+    <li><a href="#2-plsql结构">2. PLSQL结构</a>
+      <ul>
+        <li><a href="#21-plsql完整结构">2.1 PLSQL完整结构</a></li>
+        <li><a href="#22-块结构">2.2 块结构</a></li>
+      </ul>
+    </li>
+    <li><a href="#3变量与常量">3.变量与常量</a>
+      <ul>
+        <li><a href="#31-变量声明">3.1 变量声明</a></li>
+        <li><a href="#32-变量赋值">3.2 变量赋值</a></li>
+        <li><a href="#33-声明常量">3.3 声明常量</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-游标">4. 游标</a>
+      <ul>
+        <li><a href="#41-游标循环结构">4.1 游标循环结构</a></li>
+        <li><a href="#42-游标变量">4.2 游标变量</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-属性">5. 属性</a>
+      <ul>
+        <li><a href="#51-type">5.1 %TYPE</a></li>
+        <li><a href="#52-rowtype">5.2 %ROWTYPE</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-控制结构">6. 控制结构</a>
+      <ul>
+        <li><a href="#61-条件控制">6.1 条件控制</a></li>
+        <li><a href="#62-循环控制">6.2 循环控制</a></li>
+        <li><a href="#63-顺序控制">6.3 顺序控制</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-模块化">7. 模块化</a>
+      <ul>
+        <li><a href="#71-子程序">7.1 子程序</a></li>
+        <li><a href="#72-包">7.2 包</a></li>
+      </ul>
+    </li>
+    <li><a href="#8-数据抽象">8. 数据抽象</a>
+      <ul>
+        <li><a href="#81-集合">8.1 集合</a></li>
+        <li><a href="#82-记录">8.2 记录</a></li>
+        <li><a href="#83-对象类型">8.3 对象类型</a></li>
+      </ul>
+    </li>
+    <li><a href="#9-信息隐藏">9. 信息隐藏</a>
+      <ul>
+        <li><a href="#91-算法">9.1 算法</a></li>
+        <li><a href="#92-数据结构">9.2 数据结构</a></li>
+      </ul>
+    </li>
+    <li><a href="#10-错误控制">10. 错误控制</a></li>
+    <li><a href="#小结">小结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
     <div id="content" class="content">
 
         
@@ -2395,73 +2445,6 @@
   
 
     </div>
-
-    
-    <nav class="toc" id="toc">
-    <div class="toc-title">文章目录</div>
-    <div class="toc-content custom-scrollbar">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#一理解plsql的主要特性">一、理解PL/SQL的主要特性</a></li>
-    <li><a href="#1-plsql简介">1. PL/SQL简介</a></li>
-    <li><a href="#2-plsql结构">2. PLSQL结构</a>
-      <ul>
-        <li><a href="#21-plsql完整结构">2.1 PLSQL完整结构</a></li>
-        <li><a href="#22-块结构">2.2 块结构</a></li>
-      </ul>
-    </li>
-    <li><a href="#3变量与常量">3.变量与常量</a>
-      <ul>
-        <li><a href="#31-变量声明">3.1 变量声明</a></li>
-        <li><a href="#32-变量赋值">3.2 变量赋值</a></li>
-        <li><a href="#33-声明常量">3.3 声明常量</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-游标">4. 游标</a>
-      <ul>
-        <li><a href="#41-游标循环结构">4.1 游标循环结构</a></li>
-        <li><a href="#42-游标变量">4.2 游标变量</a></li>
-      </ul>
-    </li>
-    <li><a href="#5-属性">5. 属性</a>
-      <ul>
-        <li><a href="#51-type">5.1 %TYPE</a></li>
-        <li><a href="#52-rowtype">5.2 %ROWTYPE</a></li>
-      </ul>
-    </li>
-    <li><a href="#6-控制结构">6. 控制结构</a>
-      <ul>
-        <li><a href="#61-条件控制">6.1 条件控制</a></li>
-        <li><a href="#62-循环控制">6.2 循环控制</a></li>
-        <li><a href="#63-顺序控制">6.3 顺序控制</a></li>
-      </ul>
-    </li>
-    <li><a href="#7-模块化">7. 模块化</a>
-      <ul>
-        <li><a href="#71-子程序">7.1 子程序</a></li>
-        <li><a href="#72-包">7.2 包</a></li>
-      </ul>
-    </li>
-    <li><a href="#8-数据抽象">8. 数据抽象</a>
-      <ul>
-        <li><a href="#81-集合">8.1 集合</a></li>
-        <li><a href="#82-记录">8.2 记录</a></li>
-        <li><a href="#83-对象类型">8.3 对象类型</a></li>
-      </ul>
-    </li>
-    <li><a href="#9-信息隐藏">9. 信息隐藏</a>
-      <ul>
-        <li><a href="#91-算法">9.1 算法</a></li>
-        <li><a href="#92-数据结构">9.2 数据结构</a></li>
-      </ul>
-    </li>
-    <li><a href="#10-错误控制">10. 错误控制</a></li>
-    <li><a href="#小结">小结</a></li>
-  </ul>
-</nav>
-    </div>
-  </nav>
-
 
     
 
