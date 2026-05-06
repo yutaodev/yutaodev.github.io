@@ -18,6 +18,7 @@
     display: flex;
     justify-content: center;
 }
+
 /* 主页 .posts 容器样式，与 .archive 保持一致 */
 .posts {
     margin: 0 auto;
@@ -57,10 +58,23 @@ nav.toc,
         margin: 0 auto 1em auto;
         padding: 1em;
     }
-    
+
     .content-wrapper .post {
         width: auto;
         padding: 5%;
         margin: 0 auto 5% auto;
     }
+}
+
+/* Utterances 评论框宽度调整，与文章宽度保持一致 */
+.content div.post div.utterances {
+    max-width: 50em !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.content div.post div.utterances iframe.utterances-frame {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
 }
