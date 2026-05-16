@@ -85,7 +85,7 @@
   <meta itemprop="description" content="Java后端从小白到大神修仙">
   <meta itemprop="datePublished" content="2018-06-02T21:31:32+08:00">
   <meta itemprop="dateModified" content="2018-06-02T21:31:32+08:00">
-  <meta itemprop="wordCount" content="6351">
+  <meta itemprop="wordCount" content="6580">
   <meta itemprop="keywords" content="java后端">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Java后端-基础-面向对象-1">
@@ -539,8 +539,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 6351 字 -
-        预计阅读 13 分钟
+        约 6580 字 -
+        预计阅读 14 分钟
       </span>
 
     <div class="post-meta-category">
@@ -930,19 +930,72 @@
 </ul>
 <p><strong>多态的特点</strong>：</p>
 <ul>
-<li><strong>继承实现多态</strong>：基于&quot;父类引用指向子类对象&quot;的运行时多态，如 <code>Animal animal = new Cat()</code></li>
+<li><strong>继承实现多态</strong>：基于「父类引用指向子类对象」的运行时多态，如 <code>Animal animal = new Cat()</code></li>
 <li><strong>接口实现多态</strong>：通过接口定义行为契约，不同实现类提供不同实现</li>
 <li><strong>方法重载</strong>：同一个方法名，不同参数列表，编译时多态</li>
 <li><strong>参数传递</strong>：使用父类或接口作为方法参数，接收不同的子类对象</li>
 </ul>
+<p>无论<strong>外部直接调用</strong>、还是<strong>父类自身方法内部</strong>，调用被重写 / 抽象方法，<br>
+只要：<strong>父类引用 指向 子类对象 + 子类重写了方法</strong><br>
+<strong>一律跑子类的实现</strong>，规则是统一的，不是两种逻辑。</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3">3</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Animal<span style="color:#bbb"> </span>animal<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Dog();<span style="color:#bbb">
-</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>animal.<span style="color:#4070a0">eat</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 执行Dog的行为（多态表现）</span><span style="color:#bbb">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 常规多态</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>Animal<span style="color:#bbb"> </span>animal<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>Dog();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>animal.<span style="color:#4070a0">eat</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 执行Dog的行为</span><span style="color:#bbb">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-21">21</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 多态，一律跑子类的实现</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">abstract</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">PhoneFactory</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 工厂方法：造手机（由子类决定造哪种手机）</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">abstract</span><span style="color:#bbb"> </span>Phone<span style="color:#bbb"> </span><span style="color:#06287e">createPhone</span>();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#60a0b0;font-style:italic">// 业务方法：使用手机（不用管手机是谁造的，拿到就能用）</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">usePhone</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>Phone<span style="color:#bbb"> </span>phone<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>createPhone();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 工厂造手机</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span>phone.<span style="color:#4070a0">makeCall</span>();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 使用手机</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">HuaweiFactory</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">extends</span><span style="color:#bbb"> </span>PhoneFactory<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#555;font-weight:bold">@Override</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#007020;font-weight:bold">public</span><span style="color:#bbb"> </span>Phone<span style="color:#bbb"> </span><span style="color:#06287e">createPhone</span>()<span style="color:#bbb"> </span>{<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">return</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>HuaweiPhone();<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 华为工厂只造华为手机</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>}<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>PhoneFactory<span style="color:#bbb"> </span>huaweiFactory<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">new</span><span style="color:#bbb"> </span>HuaweiFactory();<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>huaweiFactory.<span style="color:#4070a0">usePhone</span>();<span style="color:#bbb">  </span><span style="color:#60a0b0;font-style:italic">// 输出 &#34;用华为手机打电话&#34;</span><span style="color:#bbb">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="34-抽象提取共性">3.4 抽象（提取共性）</h4>
@@ -962,14 +1015,14 @@
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5">5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6">6</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7">7</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-8">8</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-8">8</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">abstract</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -999,14 +1052,14 @@
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-5">5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-6">6</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-7">7</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-8">8</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-8">8</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">interface</span> <span style="color:#0e84b5;font-weight:bold">Run</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -1059,10 +1112,10 @@
 <p>父类的 <code>private</code> 成员变量，子类<strong>无权直接赋值</strong>：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-4">4</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-4">4</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 父类</span><span style="color:#bbb">
@@ -1074,7 +1127,7 @@
 </div><p>子类不能写：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1">1</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1">1</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">this</span>.<span style="color:#4070a0">orderId</span><span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>orderId;<span style="color:#bbb"> </span><span style="color:#60a0b0;font-style:italic">// 编译报错</span><span style="color:#bbb">
@@ -1085,12 +1138,12 @@
 <strong>必须调用父类的构造函数，让父类自己给自己的字段赋值</strong>。</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-5">5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-6">6</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-6">6</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">TakeawayOrder</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">extends</span><span style="color:#bbb"> </span>Order<span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -1111,14 +1164,14 @@
 <p>当子类<strong>有自己的新字段</strong>时：</p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-5">5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-6">6</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-7">7</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-8">8</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-8">8</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">TakeawayOrder</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">extends</span><span style="color:#bbb"> </span>Order<span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -1150,11 +1203,11 @@
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-5">5</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-5">5</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 好的设计：Book 只存数据</span><span style="color:#bbb">
@@ -1172,11 +1225,11 @@
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-5">5</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-5">5</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">abstract</span><span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Shape</span><span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#007020;font-weight:bold">abstract</span><span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">draw</span>();<span style="color:#bbb"> </span>}<span style="color:#bbb">
@@ -1194,11 +1247,11 @@
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-5">5</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-5">5</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Bird</span><span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">fly</span>()<span style="color:#bbb"> </span>{}<span style="color:#bbb"> </span>}<span style="color:#bbb">
@@ -1216,13 +1269,13 @@
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-5">5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-6">6</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-7">7</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-7">7</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 坏的设计：接口太大</span><span style="color:#bbb">
@@ -1243,16 +1296,16 @@
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-1"> 1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-2"> 2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-3"> 3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-4"> 4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-5"> 5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-6"> 6</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-7"> 7</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-8"> 8</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-9"> 9</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-10">10</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-10">10</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">interface</span> <span style="color:#0e84b5;font-weight:bold">OrderDao</span><span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">save</span>();<span style="color:#bbb"> </span>}<span style="color:#bbb">
@@ -1276,12 +1329,12 @@
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-5">5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-6">6</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-6">6</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Student</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -1302,12 +1355,12 @@
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-5">5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-6">6</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-6">6</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">OrderService</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -1327,17 +1380,17 @@
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-1"> 1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-2"> 2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-3"> 3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-4"> 4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-5"> 5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-6"> 6</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-7"> 7</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-8"> 8</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-9"> 9</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-10">10</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-11">11</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-11">11</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">interface</span> <span style="color:#0e84b5;font-weight:bold">Payable</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -1362,15 +1415,15 @@
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-5">5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-6">6</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-7">7</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-8">8</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-9">9</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-19-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-19-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-19-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-19-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-19-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-19-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-19-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-19-8">8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-19-9">9</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Computer</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -1393,8 +1446,8 @@
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-19-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-19-2">2</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-2">2</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">Animal</span><span style="color:#bbb"> </span>{<span style="color:#bbb"> </span><span style="color:#902000">void</span><span style="color:#bbb"> </span><span style="color:#06287e">eat</span>()<span style="color:#bbb"> </span>{}<span style="color:#bbb"> </span>}<span style="color:#bbb">
@@ -1411,23 +1464,23 @@
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-1"> 1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-2"> 2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-3"> 3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-4"> 4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-5"> 5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-6"> 6</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-7"> 7</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-8"> 8</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-9"> 9</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-10">10</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-11">11</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-12">12</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-13">13</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-14">14</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-15">15</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-16">16</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-17">17</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-17">17</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">// 观察者 = 粉丝 = 接收消息的人</span><span style="color:#bbb">
@@ -1458,14 +1511,14 @@
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-1">1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-2">2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-3">3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-4">4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-5">5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-6">6</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-7">7</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-8">8</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-8">8</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">UserService</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
@@ -1486,18 +1539,18 @@
 </ul>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-1"> 1</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-2"> 2</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-3"> 3</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-4"> 4</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-5"> 5</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-6"> 6</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-7"> 7</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-8"> 8</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-9"> 9</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-10">10</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-11">11</a>
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-12">12</a>
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-23-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-23-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-23-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-23-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-23-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-23-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-23-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-23-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-23-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-23-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-23-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-23-12">12</a>
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">class</span> <span style="color:#0e84b5;font-weight:bold">OrderService</span><span style="color:#bbb"> </span>{<span style="color:#bbb">
