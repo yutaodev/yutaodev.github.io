@@ -8,8 +8,15 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Tue, 12 May 2026 08:18:32 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 21:25:04 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/tags/%E4%BA%BA%E7%94%9F%E6%99%BA%E6%85%A7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI时代学习方法</title>
+      <link>https://yutao.org/philosophy/ai%E6%97%B6%E4%BB%A3%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Fri, 22 May 2026 21:25:04 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/ai%E6%97%B6%E4%BB%A3%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/</guid>
+      <description>AI时代学习方法 在网上刷到一个MIT学霸的两天速成秘诀，视频内容和我自己脑子里想的差不多，就像类似我现在写博客，也是这个道理，所以特意整理一</description>
+    </item>
     <item>
       <title>为什么相信自己</title>
       <link>https://yutao.org/philosophy/%E4%B8%BA%E4%BB%80%E4%B9%88%E7%9B%B8%E4%BF%A1%E8%87%AA%E5%B7%B1/</link>
@@ -142,13 +149,6 @@
       <pubDate>Mon, 19 May 2025 08:54:13 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/philosophy/%E9%81%93%E5%AE%B6%E5%A4%84%E4%B8%96%E5%93%B2%E5%AD%A6/</guid>
       <description>道家处世十八字真言 道家智慧凝练的处世箴言，九大修身要诀揭示人生至理： 处世九诫 藏锋，则无敌 收敛锋芒，不争而胜 隐智，则保身 大智若愚，明哲存身 省身</description>
-    </item>
-    <item>
-      <title>价值观自信</title>
-      <link>https://yutao.org/philosophy/%E4%BB%B7%E5%80%BC%E8%A7%82%E8%87%AA%E4%BF%A1/</link>
-      <pubDate>Sun, 23 Mar 2025 16:25:50 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/philosophy/%E4%BB%B7%E5%80%BC%E8%A7%82%E8%87%AA%E4%BF%A1/</guid>
-      <description>我看短视频时，刷到曹德旺说企业家要有政治自信。这不禁让我想到，做人也要有价值观自信，只要价值观是正确的，就不应怀疑，而要坚定信念，勇往直前。</description>
     </item>
   </channel>
 </rss>
