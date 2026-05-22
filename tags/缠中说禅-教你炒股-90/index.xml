@@ -2,20 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>缠中说禅-教你炒股-90 on 会写代码的小郎中</title>
-    <link>https://yutao.org/tags/%E7%BC%A0%E4%B8%AD%E8%AF%B4%E7%A6%85-%E6%95%99%E4%BD%A0%E7%82%92%E8%82%A1-90/</link>
+    <link>http://localhost:1313/tags/%E7%BC%A0%E4%B8%AD%E8%AF%B4%E7%A6%85-%E6%95%99%E4%BD%A0%E7%82%92%E8%82%A1-90/</link>
     <description>Recent content in 缠中说禅-教你炒股-90 on 会写代码的小郎中</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Sun, 29 May 2022 17:51:24 +0800</lastBuildDate>
-    <atom:link href="https://yutao.org/tags/%E7%BC%A0%E4%B8%AD%E8%AF%B4%E7%A6%85-%E6%95%99%E4%BD%A0%E7%82%92%E8%82%A1-90/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>缠中说禅-教你炒股-90</title>
-      <link>https://yutao.org/philosophy/%E7%BC%A0%E4%B8%AD%E8%AF%B4%E7%A6%85-%E6%95%99%E4%BD%A0%E7%82%92%E8%82%A1-90/</link>
-      <pubDate>Sun, 29 May 2022 17:51:24 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/philosophy/%E7%BC%A0%E4%B8%AD%E8%AF%B4%E7%A6%85-%E6%95%99%E4%BD%A0%E7%82%92%E8%82%A1-90/</guid>
-      <description>教你炒股票90：中阴阶段结束时间的辅助判断 (2007-12-03 22:33:08) 注意，这里给出的是中阴阶段结束时间的辅助判断，并不是一个绝对性的判断，如同用MACD判断背驰一</description>
-    </item>
+    <atom:link href="http://localhost:1313/tags/%E7%BC%A0%E4%B8%AD%E8%AF%B4%E7%A6%85-%E6%95%99%E4%BD%A0%E7%82%92%E8%82%A1-90/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
