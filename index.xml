@@ -57,6 +57,7 @@
 &lt;p&gt;总结最近交易所犯的错误，大众公共很早预判会有主升，并且也提前买入，但在小盈就走了；航天长峰判断是底部，买入就阴跌，不做止损；盈利小幅上涨就急于止盈离场，亏损下跌却心存侥幸死扛，不执行止损。&lt;/p&gt;
 &lt;p&gt;二、止盈无规则&lt;/p&gt;
 &lt;p&gt;不判断题材、资金与趋势，仅凭情绪落袋，频繁卖飞行情。小幅阴跌时心态麻痹，任由亏损放大，最终被迫深亏割肉。单纯以股价下跌判断安全，盲目低吸弱势标的。单次盈利少、亏损大，形成恶性循环。&lt;/p&gt;
+&lt;p&gt;错误逻辑&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;graph LR
 A[尾盘低吸买入] --&amp;gt; B{行情分化}
 B --&amp;gt;|小幅盈利| C[恐惧利润回吐]
@@ -67,6 +68,24 @@ F --&amp;gt; G[亏损持续扩大]
 G --&amp;gt; H[大幅亏损后割肉]
 H --&amp;gt; I[割后反弹踏空]
 E &amp;amp; I --&amp;gt; J[赚小亏大，持续亏损]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;正确逻辑&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;graph LR
+A[尾盘选股] --&amp;gt; B{甄别标的}
+B -- 连续阴跌/重心下移/无题材 --&amp;gt; C[剔除不交易]
+B -- 低位企稳/资金回流/板块共振 --&amp;gt; D[尾盘建仓&amp;lt;br/&amp;gt;预设-5%硬性止损]
+D --&amp;gt; E[隔日盯盘]
+E --&amp;gt; F{走势判断}
+F -- 盈利2%-4%/走势平淡 --&amp;gt; G[规则止盈离场]
+F -- 触及-5%止损线 --&amp;gt; H[无条件止损离场]
+F -- 高开拉升/资金抢筹/题材强势 --&amp;gt; I[持股格局]
+I --&amp;gt; J{浮盈&amp;gt;6%?}
+J -- 是 --&amp;gt; K[设置动态止盈位]
+J -- 否 --&amp;gt; I
+K --&amp;gt; L{跌破止盈位?}
+L -- 是 --&amp;gt; M[止盈离场]
+L -- 否 --&amp;gt; I
+G &amp;amp; H &amp;amp; M --&amp;gt; N[简短复盘]
+N --&amp;gt; A
 &lt;/code&gt;&lt;/pre&gt;</description>
       
     </item>

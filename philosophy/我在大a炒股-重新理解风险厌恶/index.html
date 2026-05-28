@@ -85,7 +85,7 @@
   <meta itemprop="description" content="我在大A炒股-阅读缠论总结">
   <meta itemprop="datePublished" content="2026-05-28T22:27:12+08:00">
   <meta itemprop="dateModified" content="2026-05-28T22:27:12+08:00">
-  <meta itemprop="wordCount" content="827">
+  <meta itemprop="wordCount" content="1083">
   <meta itemprop="keywords" content="阅读缠论总结">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="我在大A炒股-重新理解风险厌恶">
@@ -495,8 +495,8 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 827 字 -
-        预计阅读 2 分钟
+        约 1083 字 -
+        预计阅读 3 分钟
       </span>
 
     <div class="post-meta-category">
@@ -558,6 +558,7 @@
 <p>总结最近交易所犯的错误，大众公共很早预判会有主升，并且也提前买入，但在小盈就走了；航天长峰判断是底部，买入就阴跌，不做止损；盈利小幅上涨就急于止盈离场，亏损下跌却心存侥幸死扛，不执行止损。</p>
 <p>二、止盈无规则</p>
 <p>不判断题材、资金与趋势，仅凭情绪落袋，频繁卖飞行情。小幅阴跌时心态麻痹，任由亏损放大，最终被迫深亏割肉。单纯以股价下跌判断安全，盲目低吸弱势标的。单次盈利少、亏损大，形成恶性循环。</p>
+<p>错误逻辑</p>
 <pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph LR
 A[尾盘低吸买入] --&gt; B{行情分化}
 B --&gt;|小幅盈利| C[恐惧利润回吐]
@@ -568,6 +569,24 @@ F --&gt; G[亏损持续扩大]
 G --&gt; H[大幅亏损后割肉]
 H --&gt; I[割后反弹踏空]
 E &amp; I --&gt; J[赚小亏大，持续亏损]
+</code></pre><p>正确逻辑</p>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph LR
+A[尾盘选股] --&gt; B{甄别标的}
+B -- 连续阴跌/重心下移/无题材 --&gt; C[剔除不交易]
+B -- 低位企稳/资金回流/板块共振 --&gt; D[尾盘建仓&lt;br/&gt;预设-5%硬性止损]
+D --&gt; E[隔日盯盘]
+E --&gt; F{走势判断}
+F -- 盈利2%-4%/走势平淡 --&gt; G[规则止盈离场]
+F -- 触及-5%止损线 --&gt; H[无条件止损离场]
+F -- 高开拉升/资金抢筹/题材强势 --&gt; I[持股格局]
+I --&gt; J{浮盈&gt;6%?}
+J -- 是 --&gt; K[设置动态止盈位]
+J -- 否 --&gt; I
+K --&gt; L{跌破止盈位?}
+L -- 是 --&gt; M[止盈离场]
+L -- 否 --&gt; I
+G &amp; H &amp; M --&gt; N[简短复盘]
+N --&gt; A
 </code></pre>
             </div>
 
