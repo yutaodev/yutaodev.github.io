@@ -30,14 +30,14 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/</loc>
+    <loc>https://yutao.org/categories/%E4%BA%BA%E7%94%9F%E6%99%BA%E6%85%A7/</loc>
     <lastmod>2026-05-31T22:40:07+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/categories/%E5%93%B2%E5%AD%A6/</loc>
+    <loc>https://yutao.org/</loc>
     <lastmod>2026-05-31T22:40:07+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -114,15 +114,15 @@
   </url>
   
   <url>
-    <loc>https://yutao.org/philosophy/%E6%88%91%E5%9C%A8%E5%A4%A7a%E7%82%92%E8%82%A1-%E6%9D%BF%E5%9D%97%E8%BD%AE%E5%8A%A8/</loc>
-    <lastmod>2026-05-13T20:53:25+08:00</lastmod>
+    <loc>https://yutao.org/categories/%E5%93%B2%E5%AD%A6/</loc>
+    <lastmod>2026-05-15T09:13:36+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://yutao.org/categories/%E4%BA%BA%E7%94%9F%E6%99%BA%E6%85%A7/</loc>
-    <lastmod>2026-05-12T08:18:32+08:00</lastmod>
+    <loc>https://yutao.org/philosophy/%E6%88%91%E5%9C%A8%E5%A4%A7a%E7%82%92%E8%82%A1-%E6%9D%BF%E5%9D%97%E8%BD%AE%E5%8A%A8/</loc>
+    <lastmod>2026-05-13T20:53:25+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
