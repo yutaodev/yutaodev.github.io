@@ -8,20 +8,20 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Wed, 10 Jun 2026 19:25:51 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 08:54:09 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>人生智慧</title>
+      <link>https://yutao.org/categories/%E4%BA%BA%E7%94%9F%E6%99%BA%E6%85%A7/</link>
+      <pubDate>Thu, 11 Jun 2026 08:54:09 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/categories/%E4%BA%BA%E7%94%9F%E6%99%BA%E6%85%A7/</guid>
+      <description></description>
+    </item>
     <item>
       <title>金融笔记</title>
       <link>https://yutao.org/categories/%E9%87%91%E8%9E%8D%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Wed, 10 Jun 2026 19:25:51 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/categories/%E9%87%91%E8%9E%8D%E7%AC%94%E8%AE%B0/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>人生智慧</title>
-      <link>https://yutao.org/categories/%E4%BA%BA%E7%94%9F%E6%99%BA%E6%85%A7/</link>
-      <pubDate>Sun, 31 May 2026 22:40:07 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/categories/%E4%BA%BA%E7%94%9F%E6%99%BA%E6%85%A7/</guid>
       <description></description>
     </item>
     <item>
@@ -74,6 +74,13 @@
       <description></description>
     </item>
     <item>
+      <title>中诊</title>
+      <link>https://yutao.org/categories/%E4%B8%AD%E8%AF%8A/</link>
+      <pubDate>Sat, 19 Apr 2025 10:26:13 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/categories/%E4%B8%AD%E8%AF%8A/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>方剂</title>
       <link>https://yutao.org/categories/%E6%96%B9%E5%89%82/</link>
       <pubDate>Tue, 15 Apr 2025 17:22:41 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
@@ -85,13 +92,6 @@
       <link>https://yutao.org/categories/%E4%B8%AD%E8%8D%AF/</link>
       <pubDate>Sat, 05 Apr 2025 09:34:16 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/categories/%E4%B8%AD%E8%8D%AF/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>中医诊断</title>
-      <link>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E8%AF%8A%E6%96%AD/</link>
-      <pubDate>Wed, 02 Apr 2025 10:26:13 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/categories/%E4%B8%AD%E5%8C%BB%E8%AF%8A%E6%96%AD/</guid>
       <description></description>
     </item>
     <item>
