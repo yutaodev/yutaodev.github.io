@@ -8,10 +8,98 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Fri, 19 Jun 2026 10:24:52 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2026 10:15:27 +0800</lastBuildDate>
     
         <atom:link href="https://yutao.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>我在大A炒股-自己体系总结</title>
+      <link>https://yutao.org/philosophy/%E6%88%91%E5%9C%A8%E5%A4%A7a%E7%82%92%E8%82%A1-%E8%87%AA%E5%B7%B1%E4%BD%93%E7%B3%BB%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Thu, 09 Jul 2026 10:15:27 +0800</pubDate>
+      <author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E6%88%91%E5%9C%A8%E5%A4%A7a%E7%82%92%E8%82%A1-%E8%87%AA%E5%B7%B1%E4%BD%93%E7%B3%BB%E6%80%BB%E7%BB%93/</guid>
+      
+        <description>&lt;p&gt;&lt;em&gt;笔记日期：2026-07-09&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;记录人：会写代码的小郎中，一个不喜欢麻烦、所以决定赚钱的人&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;心法来源：内心感悟&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“7000万是我的目标。&lt;br&gt;
+但你得先做到：&lt;strong&gt;在赚到7000万之前，先学会做好每一笔交易，何时买入、卖出，控制好每笔交易的回撤。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;其实我这人不看中钱，因为我是一个重情义的人。&lt;/p&gt;
+&lt;p&gt;但后来生活中才发现：&lt;strong&gt;有钱真的能解决很多麻烦，而我这个人又不喜欢麻烦。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;所以，决定在A股淘金，实现发财梦想。&lt;/p&gt;
+&lt;h2 id=&#34;我的炒股理念&#34;&gt;我的炒股理念&lt;/h2&gt;
+&lt;p&gt;一、炒股理念&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;赌博你不一定能赢，但必须控制输。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;账户里的浮盈，仅仅是数字，&lt;strong&gt;只有落袋为安的利润才是真的&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;想从A股捞钱，必须投机，&lt;strong&gt;投机的本质是：在不确定的情况下，做出一个正确的决策。&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;二、肌肉记忆&lt;/p&gt;
+&lt;p&gt;股市最难的地方，是很难量化（影响股票的因素非常多，特别是一些细节），并且没有唯一答案（这次操作有效，下次就不灵了），吾之蜜饯，彼之砒霜。&lt;/p&gt;
+&lt;p&gt;我认为肌肉记忆是最好的风控，因为只有在严格的纪律下才能形成，&lt;strong&gt;任何一笔交易，做好两种操作：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;止盈线：根据情绪，在认为的高点，必须止盈&lt;/li&gt;
+&lt;li&gt;止损线：根据情绪，在认为的低点，必须止损&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不仅炒股，很多事练到别人以为你生来就会，练到你出手瞬间就是标准答案，所以肌肉记忆是完美的，无它。&lt;/p&gt;
+&lt;h2 id=&#34;总体思路&#34;&gt;总体思路&lt;/h2&gt;
+&lt;p&gt;一、先看情绪&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;flowchart TD
+    %% 第一层：前置情绪
+    A[1.判断当下市场整体情绪] --&amp;gt; B[2.个股位置区分]
+    B --&amp;gt; B1[股价高位区间]
+    B --&amp;gt; B2[股价低位区间]
+    
+    %% 第二层：个股地位
+    B1 --&amp;gt; C[3.确认是否板块核心标的]
+    B2 --&amp;gt; C
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;二、技术面&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;flowchart LR
+    subgraph 技术分析维度
+        D1[成交量：放量/缩量/倍量]
+        D2[K线价格：阳线阴线、趋势]
+        D3[压力位支撑位]
+        D4[筹码峰：成本集中区]
+        D5[日内分时走势]
+        D6[换手率高低]
+        D7[MACD金叉死叉背离]
+    end
+    D1 &amp;amp; D2 &amp;amp; D3 &amp;amp; D4 &amp;amp; D5 &amp;amp; D6 &amp;amp; D7 --&amp;gt; E[汇总全部条件，制定交易操作]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;三、看集合竞价&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;flowchart TD
+    Start[观察集合竞价盘口] --&amp;gt; Split[拆分上下两个区域]
+
+    subgraph 上区未匹配挂单 9:15-9:20可撤单
+        U1[展示红绿柱]
+        U2[红=未匹配买单 绿=未匹配卖单]
+        U3[观察柱变化判断多空转换]
+        U3 --&amp;gt; U31[绿变短红变长：由弱转强]
+        U3 --&amp;gt; U32[红变短绿变长：由强转弱]
+    end
+
+    subgraph 下区已匹配撮合成交
+        D1[无红绿区分]
+        D2[仅看柱高度判断成交量]
+        D3[配合竞价分时判断承接]
+    end
+
+    Split --&amp;gt; U1
+    Split --&amp;gt; D1
+    U3 &amp;amp; D3 --&amp;gt; Judge[综合多空力量与竞价量能]
+    Judge --&amp;gt; Result[竞价操作决策]
+&lt;/code&gt;&lt;/pre&gt;</description>
+      
+    </item>
     
     <item>
       <title>我在大A炒股-近期感悟</title>
@@ -1245,52 +1333,6 @@ N --&amp;gt; A
 &lt;h2 id=&#34;信念的力量&#34;&gt;信念的力量&lt;/h2&gt;
 &lt;p&gt;就像“左眼跳财，右眼跳灾”的说法，因众人的共同信念而拥有了影响人心的力量。正确的信念可以保护我们，错误的信念会伤害我们。&lt;/p&gt;
 &lt;p&gt;人这一生，需要建立正向的系统。日复一日地重复美好、正确、向上的信念，形成正向的思维系统，在我们的生命中自动运转。&lt;/p&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>为什么你看透一起却不成功</title>
-      <link>https://yutao.org/philosophy/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E7%9C%8B%E9%80%8F%E4%B8%80%E8%B5%B7%E5%8D%B4%E4%B8%8D%E6%88%90%E5%8A%9F/</link>
-      <pubDate>Tue, 18 Nov 2025 18:32:25 +0800</pubDate>
-      <author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/philosophy/%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E7%9C%8B%E9%80%8F%E4%B8%80%E8%B5%B7%E5%8D%B4%E4%B8%8D%E6%88%90%E5%8A%9F/</guid>
-      
-        <description>&lt;p&gt;为什么你能看透一切，但就是成不了事？你是不是经常觉得自己像个局外的高手？看一个项目，你一眼就能看出他的盈利模式和潜在风险，看一个同事，你瞬间能看透他的职场心机，看这世界的运行规则，你觉得自己早就拿到了底层的剧本，别人在埋头苦干，你在冷眼旁观，甚至心里还有点儿优越感，觉得他们太笨，都在做无用功。&lt;/p&gt;
-&lt;p&gt;但午夜梦回，你看着自己止步不前的存款，毫无起色的事业，以及那颗间歇性热血，持续性萎靡的心，你难道不恐慌吗？为什么你总能看透一切，却唯独搞不定自己的生活？今天我要撕开这个让你舒服了很久的假象，如果你不把这套全知全能的傲慢打碎，你这辈子都只能做一个聪明的失败者。&lt;/p&gt;
-&lt;h2 id=&#34;第一看透往往是弱者最体面的挡箭牌&#34;&gt;第一，看透往往是弱者最体面的挡箭牌&lt;/h2&gt;
-&lt;p&gt;很多人所谓的看透，其实是为了逃避入局后的狼狈。在场外点评，你永远是裁判，永远立于不败之地。你说这个项目不行，结果他真黄了，你觉得你神机妙算。如果他火了，你会说那是运气好，赶上了红利。这种上帝视角会给你一种虚假的掌控感。&lt;/p&gt;
-&lt;p&gt;大脑极其狡猾，他分不清逻辑上的闭环和现实中的结果。当你分析完一件事，大脑分泌的多巴胺和真正做成一件事是一样的，于是你陷入了一种认知毒瘾，通过不断的思考分析看透来获得廉价的成就感，从而逃避现实中那些琐碎肮脏充满挫败感的执行过程。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;记住，所有的全知全能本质上都是一种深度懒惰。&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第二你以为的懂其实只是信息的搬运&#34;&gt;第二，你以为的懂，其实只是信息的搬运&lt;/h2&gt;
-&lt;p&gt;现在的互联网环境造成了严重的认知肥胖，你每天刷几十个认知博主，听各种底层逻辑，你觉得自己进化了，但真相是你只是在脑子里堆满了别人的结论。真正的认知不是记住一个公式，而是在泥潭里摸爬滚打出来的体感。&lt;/p&gt;
-&lt;p&gt;就像游泳，你在岸上看了1万遍教学视频，分析了水的浮力和各种泳姿的优劣，你觉得自己看透了游泳的本质，但只要你一下水，你照样会呛水。没有实操过的信息，只是脑子里的脂肪。&lt;/p&gt;
-&lt;p&gt;那些真正成事的人往往没你那么通透，他们甚至有点迟钝，有点笨，但他们敢于在不确定中开火，在烂摊子里摸索。你的看透，让你因为恐惧风险而止步不前，而他们的无知反而给了他们入局的勇气。&lt;/p&gt;
-&lt;h2 id=&#34;第三真正的认知是行动后的回想&#34;&gt;第三，真正的认知是行动后的回想&lt;/h2&gt;
-&lt;p&gt;我们要重新定义知道这两个字。王阳明讲知行合一，很多人理解为我知道了，然后我去执行，错大错特错。王阳明的意思是，知是行的主意，行是知的功夫。知而不行，只是未知。&lt;/p&gt;
-&lt;p&gt;你觉得自己看透了人性，却搞不定人际关系，你觉得自己看透了财富，却赚不到钱，这说明你根本就不知道，你对赚钱的认知只停留在概念层面，而没有进入到细胞层面。&lt;/p&gt;
-&lt;p&gt;只有当你真正去推销过一个产品，被拒绝过100次，为了一个点被人争得面红耳赤时，你产生的那个认知才叫真知。&lt;strong&gt;在这个世界上，没有先于行动的认知，所有的真理都在事儿上面。&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;第四如何破局从认知过剩转向精准输出&#34;&gt;第四，如何破局？从认知过剩转向精准输出&lt;/h2&gt;
-&lt;p&gt;如果你想改变现状，我给你三个具体的行动指令：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;关闭你的上帝视角&lt;/strong&gt;&lt;br&gt;
-停止对宏大叙事的迷恋，别再讨论什么行业风口、世界局势，去关注你手边最具体的一个小问题，哪怕是把你的办公桌收拾干净，或者给客户打一个回访电话。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;建立反馈闭环&lt;/strong&gt;&lt;br&gt;
-哪怕你的认知只有1分，也要把它转化成0.1分的行动。看透了没用，做出了结果才有用。哪怕做错了，那个错误的反馈，也比你脑子里10个完美的计划值钱。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;主动迎接认知阵痛&lt;/strong&gt;&lt;br&gt;
-当你感到迷茫、挫败、被现实打脸时，别躲回你的聪明壳子里，那是你认知的边界在扩张，那是你从知道迈向做到的唯一路径。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;很多人这辈子最大的悲剧就是读了太多的书，听了太多的道理，把自己修成了一个思想上的巨人，行动上的矮子。&lt;/p&gt;
-&lt;p&gt;如果你也正处于这种想得通透，动弹不得的内耗中，我建议你读一读王阳明的知行合一。这不是一本教你成功学的书，它是一把手术刀，它会精准的切开你的拖延，你的内耗，你的虚伪的聪明。王阳明的一生，就是在最极端的环境里去验证如何把心里的念头变成现实的功勋。&lt;/p&gt;
-&lt;p&gt;这本书会告诉你为什么你懂得那么多道理却过不好这一生，因为他会教你如何打破知与行之间那道巨大的鸿沟。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;不要再用你的看透来掩盖你的无能了。从今天起，做一个钝感的行动者，而不是一个通透的旁观者。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;记住，这个世界从不奖励聪明的人，他只奖励那些拿到结果的。&lt;/p&gt;
 </description>
       
     </item>
