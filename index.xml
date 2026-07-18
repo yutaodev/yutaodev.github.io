@@ -195,7 +195,7 @@
     end
     D1 &amp;amp; D2 &amp;amp; D3 &amp;amp; D4 &amp;amp; D5 &amp;amp; D6 &amp;amp; D7 --&amp;gt; E[汇总全部条件，制定交易操作]
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;三、看集合竞价&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;flowchart TD
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;flowchart LR
     Start[观察集合竞价盘口] --&amp;gt; Split[拆分上下两个区域]
 
     subgraph 上区未匹配挂单 9:15-9:20可撤单
@@ -216,7 +216,8 @@
     Split --&amp;gt; D1
     U3 &amp;amp; D3 --&amp;gt; Judge[综合多空力量与竞价量能]
     Judge --&amp;gt; Result[竞价操作决策]
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上的模型需要通过无数次买卖、不断修正无效交易，最后自己找到一个适合自己的模型，你就成功了。&lt;/p&gt;
+</description>
       
     </item>
     
