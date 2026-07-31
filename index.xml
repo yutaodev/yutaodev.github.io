@@ -216,7 +216,18 @@
     Split --&amp;gt; D1
     U3 &amp;amp; D3 --&amp;gt; Judge[综合多空力量与竞价量能]
     Judge --&amp;gt; Result[竞价操作决策]
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上的模型需要通过无数次买卖、不断修正无效交易，最后自己找到一个适合自己的模型，你就成功了。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;四、总体逻辑&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-mermaid&#34; data-lang=&#34;mermaid&#34;&gt;flowchart LR
+    A[标的] --&amp;gt; B[看趋势]
+    A --&amp;gt; C[看价格]
+    A --&amp;gt; D[看逻辑]
+    
+    B --&amp;gt; E[不确定]
+    C --&amp;gt; E
+    D --&amp;gt; E
+    
+    E --&amp;gt; F[不下单]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上的模式是我无数次买卖，不断剔除无效交易后的总结，当你有了自己的稳定盈利模式，成功就离你不远了。&lt;/p&gt;
 </description>
       
     </item>

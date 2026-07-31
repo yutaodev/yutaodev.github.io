@@ -74,6 +74,13 @@
       <description></description>
     </item>
     <item>
+      <title>灵枢</title>
+      <link>https://yutao.org/categories/%E7%81%B5%E6%9E%A2/</link>
+      <pubDate>Tue, 20 May 2025 11:02:32 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/categories/%E7%81%B5%E6%9E%A2/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>素问</title>
       <link>https://yutao.org/categories/%E7%B4%A0%E9%97%AE/</link>
       <pubDate>Sat, 17 May 2025 13:36:32 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
@@ -141,13 +148,6 @@
       <link>https://yutao.org/categories/plsql/</link>
       <pubDate>Thu, 21 Sep 2017 14:00:10 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/categories/plsql/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>技术语法</title>
-      <link>https://yutao.org/categories/%E6%8A%80%E6%9C%AF%E8%AF%AD%E6%B3%95/</link>
-      <pubDate>Wed, 13 Sep 2017 20:30:00 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/categories/%E6%8A%80%E6%9C%AF%E8%AF%AD%E6%B3%95/</guid>
       <description></description>
     </item>
   </channel>
