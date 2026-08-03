@@ -420,7 +420,77 @@
       "summary": "背景 使用 Visual Studio Code 作为 IDE 时，需要掌握创建 Maven/Gradle 项目的流程（需提前安装对应插件）。 创建 Maven 项目 步骤指南 开启新窗口 文件 → 新窗口 显示命令面板 在搜索栏输入 显示"
     },
     {
-      "title": "中医内科 第十一章 肢体经络病证",
+      "title": "中医外科-第十四章-其他外科疾病",
+      "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91-%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0-%E5%85%B6%E4%BB%96%E5%A4%96%E7%A7%91%E7%96%BE%E7%97%85/",
+      "summary": "第十四章 其他外科疾病 一、本章总览框架 mindmap root((第十四章 其他外科疾病)) 一、七类疾病分论 冻疮（局部/全身性冻伤） 烧伤（热力/化学/电击伤）"
+    },
+    {
+      "title": "中医外科-第十三章-周围血管及淋巴管疾病",
+      "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91-%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E5%91%A8%E5%9B%B4%E8%A1%80%E7%AE%A1%E5%8F%8A%E6%B7%8B%E5%B7%B4%E7%AE%A1%E7%96%BE%E7%97%85/",
+      "summary": "第十三章 周围血管及淋巴管疾病 一、本章总览框架 mindmap root((第十三章 周围血管及淋巴管疾病)) 一、总论基础 常见症状体征（疼痛/温度异常/颜色异常"
+    },
+    {
+      "title": "中医外科-第十二章-泌尿男性生殖系统疾病",
+      "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E6%B3%8C%E5%B0%BF%E7%94%B7%E6%80%A7%E7%94%9F%E6%AE%96%E7%B3%BB%E7%BB%9F%E7%96%BE%E7%97%85/",
+      "summary": "第十二章 泌尿男性生殖系统疾病 一、本章总览框架 mindmap root((第十二章 泌尿男性生殖系统疾病)) 一、总论基础 脏腑归属（玉茎属肝/马口属小肠/阴囊属"
+    },
+    {
+      "title": "中医外科-第十一章-肛肠疾病",
+      "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E8%82%9B%E8%82%A0%E7%96%BE%E7%97%85/",
+      "summary": "第十一章 肛肠疾病 一、本章总览框架 mindmap root((第十一章 肛肠疾病)) 一、肛肠疾病总论基础 解剖生理要点 七大致病因素 肛肠辨证要点 临床检查手段 内治八"
+    },
+    {
+      "title": "中医外科-第十章-皮肤及性传播疾病",
+      "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91-%E7%AC%AC%E5%8D%81%E7%AB%A0-%E7%9A%AE%E8%82%A4%E5%8F%8A%E6%80%A7%E4%BC%A0%E6%92%AD%E7%96%BE%E7%97%85/",
+      "summary": "第十章 皮肤及性传播疾病 一、本章总览框架 mindmap root((第十章 皮肤及性传播疾病)) 一、皮肤性病总论基础 病因病机（风/湿/热/虫/毒/血瘀/血虚风"
+    },
+    {
+      "title": "中医外科-第九章-瘤、岩",
+      "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91-%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E7%98%A4%E5%B2%A9/",
+      "summary": "第九章 瘤、岩 一、本章总览框架 mindmap root((第九章 瘤、岩)) 一、瘤岩总论基础 瘤与岩的定义及鉴别（良性/恶性） 核心病机：本虚标实（正虚为本，气滞"
+    },
+    {
+      "title": "中医外科-第八章-瘿",
+      "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91-%E7%AC%AC%E5%85%AB%E7%AB%A0-%E7%98%BF/",
+      "summary": "第八章 瘿 一、本章总览框架 mindmap root((第八章 瘿)) 一、瘿总论基础 病名定义与五瘿分类 脏腑经络归属（任督肝肾） 五大核心病因病机（气滞/痰凝/血瘀"
+    },
+    {
+      "title": "中医外科-第七章-乳房疾病",
+      "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91-%E7%AC%AC%E4%B8%83%E7%AB%A0-%E4%B9%B3%E6%88%BF%E7%96%BE%E7%97%85/",
+      "summary": "第七章 乳房疾病 一、本章总览框架 mindmap root((第七章 乳房疾病)) 一、乳房基础总论 乳房脏腑经络关系（肝胃肾、冲任） 总病因病机（化脓/肿块两类） 辨"
+    },
+    {
+      "title": "中医外科-第六章-疮疡",
+      "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91-%E7%AC%AC%E5%85%AD%E7%AB%A0-%E7%96%AE%E7%96%A1/",
+      "summary": "第六章 疮疡 一、本章总览框架 mindmap root((第六章 疮疡)) 一、疮疡总论 定义（广义/狭义） 病因（外因火毒为主、内因虚损） 病机：气血凝滞、三期演变（"
+    },
+    {
+      "title": "中医外科-第五章-中医外科疾病治法",
+      "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91%E7%96%BE%E7%97%85%E6%B2%BB%E6%B3%95/",
+      "summary": "第五章 中医外科疾病治法 一、本章总览框架 mindmap root((第五章 外科疾病治法)) 第一节 内治法 三大总治则：消法/托法/补法（对应疮疡初/中/后期） 1"
+    },
+    {
+      "title": "中医外科-第四章-中医外科疾病辨证",
+      "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91-%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91%E7%96%BE%E7%97%85%E8%BE%A8%E8%AF%81/",
+      "summary": "第四章 中医外科疾病辨证 一、本章总览框架 mindmap root((第四章 外科疾病辨证)) 第一节 辨病 外科辨证三大特点：辨病辨证结合、局部全身结合、分期辨证 完"
+    },
+    {
+      "title": "中医外科-第三章-中医外科疾病的病因病机",
+      "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91%E7%96%BE%E7%97%85%E7%9A%84%E7%97%85%E5%9B%A0%E7%97%85%E6%9C%BA/",
+      "summary": "第三章 中医外科疾病的病因病机 一、本章总览框架 mindmap root((第三章 外科病因病机)) 第一节 七大致病因素 外感六淫（风/寒/暑/湿/燥/火，火毒为疮"
+    },
+    {
+      "title": "中医外科-第二章-外科范围、疾病命名及基本术语",
+      "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%A4%96%E7%A7%91%E8%8C%83%E5%9B%B4%E7%96%BE%E7%97%85%E5%91%BD%E5%90%8D%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD/",
+      "summary": "第二章 外科范围、疾病命名及基本术语 一、本章总览框架 mindmap root((第二章 外科范围、命名、基本术语)) 第一节 中医外科范围 传统外科范围 历代分科演变"
+    },
+    {
+      "title": "中医外科-第一章-中医外科学发展概况",
+      "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91-%E7%AC%AC%E4%B8%80%E7%AB%A0-%E4%B8%AD%E5%8C%BB%E5%A4%96%E7%A7%91%E5%AD%A6%E5%8F%91%E5%B1%95%E6%A6%82%E5%86%B5/",
+      "summary": "第一章 中医外科学发展概况 一、本章总览框架 mindmap root((第一章 中医外科学发展概况)) 1.学科定义与范围 指导理论：中医药理论 研究内容：外科疾病发"
+    },
+    {
+      "title": "中医内科-第十一章-肢体经络病证",
       "permalink": "https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%86%85%E7%A7%91-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E8%82%A2%E4%BD%93%E7%BB%8F%E7%BB%9C%E7%97%85%E8%AF%81/",
       "summary": "第十一章 肢体经络病证 肢体经络病证总述 肢体、筋骨、肌肉依靠经络输送气血津液，经络内联五脏六腑，外络四肢百骸，核心功能濡养筋骨、滑利关节。本病总"
     },
