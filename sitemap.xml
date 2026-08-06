@@ -3,7 +3,35 @@
   
   <url>
     <loc>https://yutao.org/categories/</loc>
-    <lastmod>2026-07-18T09:44:46+08:00</lastmod>
+    <lastmod>2026-08-06T08:13:55+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/%E5%8D%81%E4%BA%8C%E7%94%9F%E8%82%96%E4%B8%8E%E5%8D%81%E4%BA%8C%E6%97%B6%E8%BE%B0%E7%9A%84%E5%A4%A9%E5%9C%B0%E5%AF%86%E7%A0%81/</loc>
+    <lastmod>2026-08-06T08:13:55+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/</loc>
+    <lastmod>2026-08-06T08:13:55+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/categories/%E5%93%B2%E5%AD%A6/</loc>
+    <lastmod>2026-08-06T08:13:55+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://yutao.org/philosophy/</loc>
+    <lastmod>2026-08-06T08:13:55+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -31,20 +59,6 @@
   
   <url>
     <loc>https://yutao.org/categories/%E4%BA%BA%E7%94%9F%E6%99%BA%E6%85%A7/</loc>
-    <lastmod>2026-07-18T09:44:46+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.org/</loc>
-    <lastmod>2026-07-18T09:44:46+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.org/philosophy/</loc>
     <lastmod>2026-07-18T09:44:46+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -150,13 +164,6 @@
   
   <url>
     <loc>https://yutao.org/philosophy/%E7%90%86%E6%80%A7%E4%B8%8E%E6%84%9F%E6%80%A7%E7%9A%84%E5%8D%9A%E5%BC%88/</loc>
-    <lastmod>2026-05-15T09:13:36+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://yutao.org/categories/%E5%93%B2%E5%AD%A6/</loc>
     <lastmod>2026-05-15T09:13:36+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
