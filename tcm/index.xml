@@ -8,8 +8,15 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Thu, 12 Jun 2025 11:00:32 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 13 Jun 2025 11:00:32 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/tcm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>针灸学-穴位歌诀总结</title>
+      <link>https://yutao.org/tcm/%E9%92%88%E7%81%B8%E5%AD%A6-%E7%A9%B4%E4%BD%8D%E6%AD%8C%E8%AF%80%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Fri, 13 Jun 2025 11:00:32 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/tcm/%E9%92%88%E7%81%B8%E5%AD%A6-%E7%A9%B4%E4%BD%8D%E6%AD%8C%E8%AF%80%E6%80%BB%E7%BB%93/</guid>
+      <description>一、常用歌诀整理 1. 五腧穴 1. 五输穴歌诀 阴（肺）：少商鱼际与太渊，经渠尺泽肺相连； 阳（大肠）：商阳二三间合，阳溪曲池大肠牵； 阳（胃）：厉兑内庭陷</description>
+    </item>
     <item>
       <title>针灸学-第十一章-针灸歌赋选</title>
       <link>https://yutao.org/tcm/%E9%92%88%E7%81%B8%E5%AD%A6-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E9%92%88%E7%81%B8%E6%AD%8C%E8%B5%8B%E9%80%89/</link>
@@ -142,13 +149,6 @@
       <pubDate>Tue, 27 May 2025 11:00:32 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%84%BF%E7%A7%91-%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E8%82%BA%E7%B3%BB%E7%97%85%E8%AF%81/</guid>
       <description>中医儿科学-第四章-肺系病证 一、本章总览框架 mindmap root((第四章 肺系病证)) 总论 肺系病证特点（热证多/兼证多/变证多/易耗气伤阴） 治疗原则（</description>
-    </item>
-    <item>
-      <title>中医儿科-第三章-新生儿疾病</title>
-      <link>https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%84%BF%E7%A7%91-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%96%B0%E7%94%9F%E5%84%BF%E7%96%BE%E7%97%85/</link>
-      <pubDate>Mon, 26 May 2025 11:00:32 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/tcm/%E4%B8%AD%E5%8C%BB%E5%84%BF%E7%A7%91-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%96%B0%E7%94%9F%E5%84%BF%E7%96%BE%E7%97%85/</guid>
-      <description>中医儿科学-第三章-新生儿疾病 一、本章总览框架 mindmap root((第三章 新生儿疾病)) 总论 新生儿期特点（发病率高/死亡率高） 病因（先天禀赋/后天调</description>
     </item>
   </channel>
 </rss>

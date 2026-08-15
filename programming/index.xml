@@ -15,14 +15,14 @@
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-3/</link>
       <pubDate>Wed, 10 Sep 2025 15:53:53 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-3/</guid>
-      <description>Kafka与微服务架构集成 1.0 事件驱动架构（EDA）设计 1.1 微服务通信模式 同步调用：REST/gRPC（适用于强依赖场景） 异步通信：Kafka事</description>
+      <description>Kafka与微服务架构集成 一、事件驱动架构（EDA）设计 1.1 微服务通信模式 同步调用：REST/gRPC（适用于强依赖场景） 异步通信：Kafka</description>
     </item>
     <item>
       <title>Java后端-中间件-Kafka-2</title>
       <link>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-2/</link>
       <pubDate>Tue, 09 Sep 2025 15:49:38 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
       <guid>https://yutao.org/programming/java%E5%90%8E%E7%AB%AF-%E4%B8%AD%E9%97%B4%E4%BB%B6-kafka-2/</guid>
-      <description>Kafka高级特性与企业级实践 1. 幂等性与事务机制 1.1 生产者幂等性 配置enable.idempotence=true（默认false），Kafk</description>
+      <description>Kafka高级特性与企业级实践 一、幂等性与事务机制 1.1 生产者幂等性 配置enable.idempotence=true（默认false），Kaf</description>
     </item>
     <item>
       <title>Java后端-中间件-Kafka-1</title>
