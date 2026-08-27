@@ -2245,6 +2245,161 @@
       "summary": "近日思悟二则：从“编程之法”到“破相之心” 最近几日，于工作与生活中偶有所得，如静夜闻钟，清音绕梁。记录于此，既是梳理，亦是分享。 一、 编程之悟"
     },
     {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第三十一章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%80%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第三十一章 方法论、策略与政治 1. 核心转变：从“变化最小化”到“DevOps” 旧模式 DevOp"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第三十章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%B8%89%E5%8D%81%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第三十章 数据中心基础 1. 数据中心概述 概念 说明 能做什么 数据中心 放置服务器、网络设备、存储设备的"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第二十九章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B9%9D%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第二十九章 性能分析 1. 性能调校哲学与原则 1.1 核心观点 观点 说明 性能调校是科学+艺术 科学：定量测量"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第二十八章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第二十八章 监控 1. 监控概述 1.1 什么是监控 概念 说明 能做什么 监控 持续采集基础设施状态数据，评估是否"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第二十七章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第二十七章 安全 1. 安全三要素（CIA三元组） 要素 说明 破坏示例 机密性（Confidential"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第二十六章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AD%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第二十六章 持续集成与交付（CI/CD） 1. CI/CD概述 1.1 三个核心概念 概念 说明 能做什么 持续集"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第二十五章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第二十五章 容器 1. 容器概述 1.1 什么是容器 概念 说明 能做什么 容器 一组独立的进程，被限制在私有根文件"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第二十四章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9B%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第二十四章 虚拟化 1. 虚拟化概述 1.1 什么是虚拟化 概念 说明 能做什么 虚拟化 在同一物理硬件上同时运行多"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第二十三章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%89%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第二十三章 配置管理 1. 配置管理概述 1.1 什么是配置管理 概念 说明 能做什么 配置管理（CM） 以代码形式"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第二十二章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%8C%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第二十二章 SMB 1. SMB概述 1.1 什么是SMB 概念 说明 能做什么 SMB（Server Message Block） 微"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第二十一章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%80%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第二十一章 网络文件系统（NFS） 1. NFS概述 1.1 NFS是什么 概念 说明 能做什么 NFS（网络文件"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第二十章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第二十章 存储 1. 存储硬件 1.1 机械硬盘 vs 固态盘（SSD） 对比维度 机械硬盘（HDD） 固态盘（SSD"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第十九章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第十九章 Web托管 1. HTTP协议核心 1.1 URL结构 scheme://[username:password@]hostname[:port][/path][?query][#anchor] 组成部分 说明 示例 scheme 协议类型 http、ht"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第十八章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第十八章 电子邮件 1. 邮件系统架构 组件 说明 能做什么 MUA（用户代理） 用户读写邮件的客户端（Th"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第十七章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第十七章 单点登录 1. SSO概述 1.1 核心概念 概念 说明 能做什么 单点登录（SSO） 用户使用一套凭证登"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第十六章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第十六章 DNS：域名系统 1. DNS概述 1.1 什么是DNS 概念 说明 能做什么 DNS（域名系统） 分布式"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第十五章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第十五章 IP路由选择 1. 分组转发详解（路由表如何工作） 1.1 核心原则 原则 说明 下一跳路由 每个系统只"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第十四章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第十四章 物理连网 1. 以太网概述 概念 说明 能做什么 以太网 全球95%以上局域网采用的链路层技术 连接"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第十三章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第十三章 TCP/IP连网 1. TCP/IP与Internet基础 1.1 核心管理组织 组织 职责 ICANN Int"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第十二章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第十二章 打印 1. 打印系统概述 概念 说明 能做什么 CUPS（Common UNIX Printing System） Linu"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第十一章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第十一章 驱动程序与内核 1. 内核概述 1.1 内核职责 功能 说明 硬件管理 通过驱动程序抽象硬件细节 进程/线"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第十章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第十章 日志 1. 日志概述 概念 说明 能做什么 日志消息 时间戳+事件类型+严重程度+进程名/PID+消"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第九章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%B9%9D%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第九章 云计算 1. 云计算概述 1.1 什么是云计算 概念 说明 能做什么 云计算 从共享资源池中租借计算资源，按"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第八章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%85%AB%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第八章 用户管理 1. 账户机制核心概念 概念 说明 能做什么 UID（用户ID） 32位无符号整数，内核识"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第七章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%B8%83%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第七章 脚本编程与shell 1. 脚本化的哲学 原则 说明 能做什么 编写微型脚本（scriptlet）"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第六章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%85%AD%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第六章 软件的安装与管理 1. 操作系统安装（自动化部署） 1.1 交互式安装 vs 网络自动化安装 方式 适用场景"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第五章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%94%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第五章 1. 文件系统概述 组成部分 说明 名字空间 为对象命名并按层次化组织（目录树） API 系统调用集（o"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第四章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%9B%9B%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第四章 1. 进程的组成与关键属性 概念 说明 能做什么 地址空间 内存页集合（代码、库、变量、栈） 进程运"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第三章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%B8%89%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第三章 1. 标准UNIX访问控制模型 1.1 核心原则 原则 说明 决策依据 执行操作的用户身份及组成员关系 对"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第二章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第二章 1. 引导过程总览 知识内容 作用/任务 引导（booting）：计算机“自己把自己启动起来”"
+    },
+    {
+      "title": "UNIX/Linux系统管理技术手册-读书笔记-第一章",
+      "permalink": "https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%B8%80%E7%AB%A0/",
+      "summary": "《UNIX/Linux系统管理技术手册-读书笔记-第一章 1. 本书定位与管理员角色总览 知识内容 作用/任务 指南手册：讲解主要管理系统、差异、协作方"
+    },
+    {
       "title": "饥饿",
       "permalink": "https://yutao.org/philosophy/%E9%A5%A5%E9%A5%BF/",
       "summary": "这段记忆，我反复写过很多次，又删了很多次。有些东西刻在骨头里，不写出来是块心病，写出来又怕人看了觉得矫情。 那年冬天，上海的风能钻进骨头缝里。"

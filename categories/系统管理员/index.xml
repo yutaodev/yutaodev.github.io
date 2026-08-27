@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>系统管理员 on 会写代码的小郎中</title>
+    <link>https://yutao.org/categories/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/</link>
+    <description>Recent content in 系统管理员 on 会写代码的小郎中</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
+    <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
+    <lastBuildDate>Tue, 12 Jul 2011 08:43:35 +0800</lastBuildDate>
+    <atom:link href="https://yutao.org/categories/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第三十一章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%80%E7%AB%A0/</link>
+      <pubDate>Tue, 12 Jul 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%80%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第三十一章 方法论、策略与政治 1. 核心转变：从“变化最小化”到“DevOps” 旧模式 DevOp</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第三十章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%B8%89%E5%8D%81%E7%AB%A0/</link>
+      <pubDate>Mon, 11 Jul 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%B8%89%E5%8D%81%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第三十章 数据中心基础 1. 数据中心概述 概念 说明 能做什么 数据中心 放置服务器、网络设备、存储设备的</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第二十九章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B9%9D%E7%AB%A0/</link>
+      <pubDate>Sun, 10 Jul 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B9%9D%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第二十九章 性能分析 1. 性能调校哲学与原则 1.1 核心观点 观点 说明 性能调校是科学+艺术 科学：定量测量</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第二十八章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%AB%A0/</link>
+      <pubDate>Sat, 09 Jul 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AB%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第二十八章 监控 1. 监控概述 1.1 什么是监控 概念 说明 能做什么 监控 持续采集基础设施状态数据，评估是否</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第二十七章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E7%AB%A0/</link>
+      <pubDate>Fri, 08 Jul 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%83%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第二十七章 安全 1. 安全三要素（CIA三元组） 要素 说明 破坏示例 机密性（Confidential</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第二十六章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AD%E7%AB%A0/</link>
+      <pubDate>Thu, 07 Jul 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AD%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第二十六章 持续集成与交付（CI/CD） 1. CI/CD概述 1.1 三个核心概念 概念 说明 能做什么 持续集</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第二十五章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E7%AB%A0/</link>
+      <pubDate>Wed, 06 Jul 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第二十五章 容器 1. 容器概述 1.1 什么是容器 概念 说明 能做什么 容器 一组独立的进程，被限制在私有根文件</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第二十四章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9B%E7%AB%A0/</link>
+      <pubDate>Tue, 05 Jul 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9B%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第二十四章 虚拟化 1. 虚拟化概述 1.1 什么是虚拟化 概念 说明 能做什么 虚拟化 在同一物理硬件上同时运行多</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第二十三章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%89%E7%AB%A0/</link>
+      <pubDate>Mon, 04 Jul 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%89%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第二十三章 配置管理 1. 配置管理概述 1.1 什么是配置管理 概念 说明 能做什么 配置管理（CM） 以代码形式</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第二十二章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%8C%E7%AB%A0/</link>
+      <pubDate>Sun, 03 Jul 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%8C%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第二十二章 SMB 1. SMB概述 1.1 什么是SMB 概念 说明 能做什么 SMB（Server Message Block） 微</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第二十一章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%80%E7%AB%A0/</link>
+      <pubDate>Sat, 02 Jul 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%80%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第二十一章 网络文件系统（NFS） 1. NFS概述 1.1 NFS是什么 概念 说明 能做什么 NFS（网络文件</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第二十章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0/</link>
+      <pubDate>Fri, 01 Jul 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第二十章 存储 1. 存储硬件 1.1 机械硬盘 vs 固态盘（SSD） 对比维度 机械硬盘（HDD） 固态盘（SSD</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第十九章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0/</link>
+      <pubDate>Thu, 30 Jun 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第十九章 Web托管 1. HTTP协议核心 1.1 URL结构 scheme://[username:password@]hostname[:port][/path][?query][#anchor] 组成部分 说明 示例 scheme 协议类型 http、ht</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第十八章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0/</link>
+      <pubDate>Wed, 29 Jun 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E5%85%AB%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第十八章 电子邮件 1. 邮件系统架构 组件 说明 能做什么 MUA（用户代理） 用户读写邮件的客户端（Th</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第十七章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0/</link>
+      <pubDate>Tue, 28 Jun 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%B8%83%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第十七章 单点登录 1. SSO概述 1.1 核心概念 概念 说明 能做什么 单点登录（SSO） 用户使用一套凭证登</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第十六章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/</link>
+      <pubDate>Mon, 27 Jun 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E5%85%AD%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第十六章 DNS：域名系统 1. DNS概述 1.1 什么是DNS 概念 说明 能做什么 DNS（域名系统） 分布式</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第十五章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0/</link>
+      <pubDate>Sun, 26 Jun 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第十五章 IP路由选择 1. 分组转发详解（路由表如何工作） 1.1 核心原则 原则 说明 下一跳路由 每个系统只</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第十四章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0/</link>
+      <pubDate>Sat, 25 Jun 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第十四章 物理连网 1. 以太网概述 概念 说明 能做什么 以太网 全球95%以上局域网采用的链路层技术 连接</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第十三章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/</link>
+      <pubDate>Fri, 24 Jun 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第十三章 TCP/IP连网 1. TCP/IP与Internet基础 1.1 核心管理组织 组织 职责 ICANN Int</description>
+    </item>
+    <item>
+      <title>UNIX/Linux系统管理技术手册-读书笔记-第十二章</title>
+      <link>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/</link>
+      <pubDate>Wed, 22 Jun 2011 08:43:35 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/</guid>
+      <description>《UNIX/Linux系统管理技术手册-读书笔记-第十二章 打印 1. 打印系统概述 概念 说明 能做什么 CUPS（Common UNIX Printing System） Linu</description>
+    </item>
+  </channel>
+</rss>

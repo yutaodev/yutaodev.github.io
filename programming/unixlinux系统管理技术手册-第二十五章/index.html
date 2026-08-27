@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  itemscope
+  itemtype="http://schema.org/WebPage"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+          UNIX/Linux系统管理技术手册-读书笔记-第二十五章 - 会写代码的小郎中
+        </title>
+    
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="会写代码的小郎中" /><meta name="description" content="UNIX/Linux系统管理技术手册-第二十五章" />
+<meta name="keywords" content="系统管理员" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.128.2" />
+
+
+<link rel="canonical" href="https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E7%AB%A0/" />
+
+
+
+
+
+<link rel="icon" href="https://yutao.org/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://yutao.org/sass/jane.min.e826e860368147e5a6685e686355e4d7789023c18c9ea2e78b35f6786ce92736.css" integrity="sha256-6CboYDaBR&#43;WmaF5oY1Xk13iQI8GMnqLnizX2eGzpJzY=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://yutao.org/css/custom.css">
+
+<link rel="stylesheet" href="https://yutao.org/css/copy-to-clipboard.css">
+
+
+<meta property="og:url" content="https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E7%AB%A0/">
+  <meta property="og:site_name" content="会写代码的小郎中">
+  <meta property="og:title" content="UNIX/Linux系统管理技术手册-读书笔记-第二十五章">
+  <meta property="og:description" content="UNIX/Linux系统管理技术手册-第二十五章">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="programming">
+    <meta property="article:published_time" content="2011-07-06T08:43:35+08:00">
+    <meta property="article:modified_time" content="2011-07-06T08:43:35+08:00">
+    <meta property="article:tag" content="系统管理员">
+
+  <meta itemprop="name" content="UNIX/Linux系统管理技术手册-读书笔记-第二十五章">
+  <meta itemprop="description" content="UNIX/Linux系统管理技术手册-第二十五章">
+  <meta itemprop="datePublished" content="2011-07-06T08:43:35+08:00">
+  <meta itemprop="dateModified" content="2011-07-06T08:43:35+08:00">
+  <meta itemprop="wordCount" content="4513">
+  <meta itemprop="keywords" content="系统管理员">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="UNIX/Linux系统管理技术手册-读书笔记-第二十五章">
+  <meta name="twitter:description" content="UNIX/Linux系统管理技术手册-第二十五章">
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZM2P746RY"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-HZM2P746RY');
+        }
+      </script>
+    
+  
+
+
+
+
+
+
+
+
+
+  </head>
+  <body>
+    <div id="back-to-top"></div>
+
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://yutao.org/" class="logo">会写代码的小郎中</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/programming/">编程</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/tcm/">中医</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/philosophy/">哲学</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/finance/">金融</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+          
+        
+      </li>
+    
+
+      <li class="mobile-menu-item">
+        <a id="openSearchMobile" class="mobile-menu-item-link menu-item-search" href="#">
+          <i class="iconfont">
+            <svg version="1.1" viewBox="0 0 1024 1024"
+  xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M973.81454219 973.81454219a91.78207815 91.78207815 0 0 1-129.80999631 0l-161.97482118-161.97482118a425.48527711 425.48527711 0 0 1-230.35931791 68.16531768 428.3346319 428.3346319 0 1 1 428.3346319-428.3346319 425.48527711 425.48527711 0 0 1-68.16531768 230.35931791l162.02961656 161.97482118a91.83687354 91.83687354 0 0 1-0.05479538 129.80999631zM451.67040679 145.69361559a305.97679241 305.97679241 0 1 0 0 611.95358361 305.97679241 305.97679241 0 0 0 0-611.95358361z">
+  </path>
+</svg>
+
+          </i>
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+    
+      
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://yutao.org/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="https://yutao.org/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+    
+
+    
+
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+    <a href="https://yutao.org/" class="logo">
+        
+        会写代码的小郎中
+        
+    </a>
+</div>
+
+<nav class="site-navbar">
+    <ul id="menu" class="menu">
+        
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/programming/">编程</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/tcm/">中医</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/philosophy/">哲学</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/finance/">金融</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+            
+
+            
+
+        </li>
+        
+
+        
+        
+
+        <li class="menu-item">
+            <a id="openSearch" class="menu-item-link menu-item-search" href="#">
+                <i class="iconfont">
+                    <svg version="1.1" viewBox="0 0 1024 1024"
+  xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M973.81454219 973.81454219a91.78207815 91.78207815 0 0 1-129.80999631 0l-161.97482118-161.97482118a425.48527711 425.48527711 0 0 1-230.35931791 68.16531768 428.3346319 428.3346319 0 1 1 428.3346319-428.3346319 425.48527711 425.48527711 0 0 1-68.16531768 230.35931791l162.02961656 161.97482118a91.83687354 91.83687354 0 0 1-0.05479538 129.80999631zM451.67040679 145.69361559a305.97679241 305.97679241 0 1 0 0 611.95358361 305.97679241 305.97679241 0 0 0 0-611.95358361z">
+  </path>
+</svg>
+
+                </i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+<div id="searchDialog" class="search-dialog" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;">
+  <div class="search-dialog-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 8px; width: 90%; max-width: 600px; box-sizing: border-box;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <h3 style="margin: 0;">搜索</h3>
+      <button id="closeSearch" style="background: none; border: none; font-size: 24px; cursor: pointer; padding: 0; margin: 0;">&times;</button>
+    </div>
+    <input type="text" id="search-input" placeholder="请输入关键词..." style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 15px; box-sizing: border-box;" />
+    <ul id="search-results" style="list-style: none; padding: 0; margin: 10px 0 0 0; max-height: 300px; overflow-y: auto;">
+      <style>
+        #search-results li {
+          padding: 8px 0;
+          border-bottom: 1px solid #f0f0f0;
+        }
+        #search-results li a {
+          display: block;
+          padding: 8px 12px;
+          text-decoration: none;
+          color: #333;
+        }
+        #search-results li a:hover {
+          background-color: #f5f5f5;
+        }
+      </style>
+    </ul>
+  </div>
+</div>
+    </header>
+
+    <div id="mobile-panel">
+      <main id="main" class="main bg-llight wallpaper">
+        <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#容器">容器</a></li>
+    <li><a href="#1-容器概述">1. 容器概述</a>
+      <ul>
+        <li><a href="#11-什么是容器">1.1 什么是容器</a></li>
+        <li><a href="#12-容器-vs-虚拟机">1.2 容器 vs 虚拟机</a></li>
+        <li><a href="#13-容器背后的内核技术">1.3 容器背后的内核技术</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-docker核心架构">2. Docker核心架构</a>
+      <ul>
+        <li><a href="#21-组件">2.1 组件</a></li>
+        <li><a href="#22-镜像分层写时复制">2.2 镜像分层（写时复制）</a></li>
+        <li><a href="#23-安装与配置">2.3 安装与配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-docker核心命令速查">3. Docker核心命令速查</a></li>
+    <li><a href="#4-dockerfile镜像构建">4. Dockerfile（镜像构建）</a>
+      <ul>
+        <li><a href="#41-常用指令">4.1 常用指令</a></li>
+        <li><a href="#42-dockerfile示例nginx官方镜像简化版">4.2 Dockerfile示例（Nginx官方镜像简化版）</a></li>
+        <li><a href="#43-构建自定义镜像">4.3 构建自定义镜像</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-卷数据持久化">5. 卷（数据持久化）</a>
+      <ul>
+        <li><a href="#51-卷类型">5.1 卷类型</a></li>
+        <li><a href="#52-绑定挂载示例">5.2 绑定挂载示例</a></li>
+        <li><a href="#53-数据卷容器模式">5.3 数据卷容器模式</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-docker网络">6. Docker网络</a>
+      <ul>
+        <li><a href="#61-网络模式">6.1 网络模式</a></li>
+        <li><a href="#62-端口映射">6.2 端口映射</a></li>
+        <li><a href="#63-自定义网络">6.3 自定义网络</a></li>
+      </ul>
+    </li>
+    <li><a href="#7-存储驱动程序storage-driver">7. 存储驱动程序（Storage Driver）</a></li>
+    <li><a href="#8-日志管理">8. 日志管理</a>
+      <ul>
+        <li><a href="#81-容器日志惯例">8.1 容器日志惯例</a></li>
+        <li><a href="#82-日志驱动">8.2 日志驱动</a></li>
+      </ul>
+    </li>
+    <li><a href="#9-安全最佳实践">9. 安全最佳实践</a></li>
+    <li><a href="#10-registry镜像仓库">10. Registry（镜像仓库）</a>
+      <ul>
+        <li><a href="#101-docker-hub">10.1 Docker Hub</a></li>
+        <li><a href="#102-私有registry">10.2 私有Registry</a></li>
+      </ul>
+    </li>
+    <li><a href="#11-容器集群管理编排">11. 容器集群管理（编排）</a>
+      <ul>
+        <li><a href="#111-为什么需要编排">11.1 为什么需要编排</a></li>
+        <li><a href="#112-主流编排系统对比">11.2 主流编排系统对比</a></li>
+        <li><a href="#113-kubernetes核心概念">11.3 Kubernetes核心概念</a></li>
+        <li><a href="#114-docker-swarm">11.4 Docker Swarm</a></li>
+      </ul>
+    </li>
+    <li><a href="#12-容器实践建议运维视角">12. 容器实践建议（运维视角）</a></li>
+    <li><a href="#13-本章核心命令速查表">13. 本章核心命令速查表</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
+    <div id="content" class="content">
+
+        
+        
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/yutao.org\/programming\/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%BA%94%E7%AB%A0\/"
+          },
+          "headline": "UNIX\/Linux系统管理技术手册-读书笔记-第二十五章",
+          "description": "UNIX\/Linux系统管理技术手册-第二十五章",
+          "datePublished": "2011-07-06T08:43:35\u002b08:00",
+          "dateModified": "2011-07-06T08:43:35\u002b08:00",
+          "author": {
+            "@type": "Person",
+            "name": "会写代码的小郎中"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "会写代码的小郎中",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https:\/\/yutao.org\/favicon.ico"
+            }
+          }
+        }
+        </script>
+        
+        
+
+        <article class="post">
+            
+            <header class="post-header">
+                <h1 class="post-title">UNIX/Linux系统管理技术手册-读书笔记-第二十五章</h1>
+                
+
+                <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      <a href="https://yutao.org/about">
+        <span class="post-meta-author-name">
+          会写代码的小郎中
+        </span>
+      </a>
+    
+  </div>
+
+  <div class="post-meta-time">
+        <time datetime=" 2011-07-06">
+      2011-07-06
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 4513 字 -
+        预计阅读 10 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="https://yutao.org/categories/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/"> 系统管理员 </a>
+          
+      </div>
+
+
+    
+        
+      <span id="busuanzi_container_page_pv">
+        | 阅读 <span id="busuanzi_value_page_pv"></span>
+      </span>
+    
+
+
+    
+        
+  </div>
+</div>
+            </header>
+
+            
+            <div class="post-content">
+                <!-- markdownlint-disable-file MD029 -->
+<!-- markdownlint-disable-file MD024 -->
+<!-- markdownlint-disable-file MD052 -->
+<h1 id="unixlinux系统管理技术手册-读书笔记-第二十五章">《UNIX/Linux系统管理技术手册-读书笔记-第二十五章</h1>
+<h2 id="容器">容器</h2>
+<h2 id="1-容器概述">1. 容器概述</h2>
+<h3 id="11-什么是容器">1.1 什么是容器</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+<th>能做什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>容器</strong></td>
+<td>一组独立的进程，被限制在私有根文件系统和进程名称空间中</td>
+<td>将应用及其依赖打包成<strong>标准可移植单元</strong>，在任何兼容环境中运行</td>
+</tr>
+<tr>
+<td><strong>容器镜像</strong></td>
+<td>容器的模板，包含应用代码、库、运行时、配置文件</td>
+<td>一次构建，到处运行（Build Once, Run Anywhere）</td>
+</tr>
+<tr>
+<td><strong>容器运行时引擎</strong></td>
+<td>管理容器生命周期的软件（如Docker）</td>
+<td>创建、启动、停止、删除容器，管理镜像和卷</td>
+</tr>
+</tbody>
+</table>
+<h3 id="12-容器-vs-虚拟机">1.2 容器 vs 虚拟机</h3>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>容器</th>
+<th>虚拟机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>启动时间</strong></td>
+<td>&lt;1秒</td>
+<td>1~2分钟</td>
+</tr>
+<tr>
+<td><strong>资源开销</strong></td>
+<td>轻量（MB级镜像）</td>
+<td>重量（GB级镜像）</td>
+</tr>
+<tr>
+<td><strong>隔离级别</strong></td>
+<td>进程级（共享宿主机内核）</td>
+<td>系统级（独立内核）</td>
+</tr>
+<tr>
+<td><strong>密度</strong></td>
+<td>每主机数百个</td>
+<td>每主机数十个</td>
+</tr>
+<tr>
+<td><strong>OS兼容性</strong></td>
+<td>必须与宿主机内核一致</td>
+<td>可运行不同OS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="13-容器背后的内核技术">1.3 容器背后的内核技术</h3>
+<table>
+<thead>
+<tr>
+<th>技术</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>名称空间（Namespace）</strong></td>
+<td>隔离进程视图（PID、挂载点、网络、用户、UTS、IPC）</td>
+</tr>
+<tr>
+<td><strong>控制组（Cgroup）</strong></td>
+<td>限制资源使用（CPU、内存、磁盘I/O）</td>
+</tr>
+<tr>
+<td><strong>能力（Capability）</strong></td>
+<td>细粒度root权限划分（约40种）</td>
+</tr>
+<tr>
+<td><strong>Seccomp</strong></td>
+<td>限制系统调用访问</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 容器本质上就是利用这些内核特性<strong>隔离进程</strong>，没有任何魔法——这也是Docker之前LXC等工具已存在多年的原因。</p>
+</blockquote>
+<h2 id="2-docker核心架构">2. Docker核心架构</h2>
+<h3 id="21-组件">2.1 组件</h3>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>dockerd</strong></td>
+<td>持续运行的守护进程，负责所有容器和镜像操作</td>
+</tr>
+<tr>
+<td><strong>docker客户端</strong></td>
+<td>命令行工具，通过UNIX套接字或TCP与dockerd通信</td>
+</tr>
+<tr>
+<td><strong>镜像（Image）</strong></td>
+<td>只读模板，包含文件系统+应用+配置</td>
+</tr>
+<tr>
+<td><strong>容器（Container）</strong></td>
+<td>镜像的运行实例，拥有独立的可写层</td>
+</tr>
+<tr>
+<td><strong>Registry</strong></td>
+<td>镜像仓库（默认Docker Hub）</td>
+</tr>
+<tr>
+<td><strong>联合文件系统（UnionFS）</strong></td>
+<td>多层叠加，写时复制（CoW）机制</td>
+</tr>
+</tbody>
+</table>
+<p><strong>架构图</strong>：docker客户端 ↔ docker守护进程 ↔ 镜像/容器存储 ↔ Registry</p>
+<h3 id="22-镜像分层写时复制">2.2 镜像分层（写时复制）</h3>
+<pre tabindex="0"><code>容器运行层（可写）
+─────────────
+Layer 3（只读）
+Layer 2（只读）
+Layer 1（只读）  ← 基础镜像（如debian:jessie）
+</code></pre><ul>
+<li>多个容器共享相同的基础层 → <strong>节省存储、快速启动</strong></li>
+<li>容器修改写入<strong>可写层</strong>，不影响基础镜像</li>
+</ul>
+<h3 id="23-安装与配置">2.3 安装与配置</h3>
+<table>
+<thead>
+<tr>
+<th>系统</th>
+<th>安装方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux</td>
+<td>Docker官网提供针对各发行版的仓库</td>
+</tr>
+<tr>
+<td>FreeBSD</td>
+<td>实验性支持</td>
+</tr>
+<tr>
+<td>macOS/Windows</td>
+<td>Docker Desktop</td>
+</tr>
+</tbody>
+</table>
+<p><strong>守护进程配置覆盖</strong>（systemd）：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl edit docker
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 写入覆盖配置</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">[</span>Service<span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">ExecStart</span><span style="color:#666">=</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">ExecStart</span><span style="color:#666">=</span>/usr/bin/dockerd --storage-driver overlay --dns 8.8.8.8 --bip 172.18.0.0/19
+</span></span><span style="display:flex;"><span>systemctl restart docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>安全警告</strong>：<code>docker</code>组用户相当于拥有root权限！建议通过<code>sudo</code>控制访问，而非将用户加入docker组。</p>
+<h2 id="3-docker核心命令速查">3. Docker核心命令速查</h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker pull image</code></td>
+<td>从registry下载镜像</td>
+<td><code>docker pull debian:jessie</code></td>
+</tr>
+<tr>
+<td><code>docker images</code></td>
+<td>列出本地镜像</td>
+<td></td>
+</tr>
+<tr>
+<td><code>docker run</code></td>
+<td>创建并启动容器</td>
+<td><code>docker run -it --rm debian bash</code></td>
+</tr>
+<tr>
+<td><code>docker ps</code></td>
+<td>列出运行中容器</td>
+<td><code>docker ps -a</code>（含停止的）</td>
+</tr>
+<tr>
+<td><code>docker stop/start</code></td>
+<td>停止/启动容器</td>
+<td></td>
+</tr>
+<tr>
+<td><code>docker rm</code></td>
+<td>删除容器</td>
+<td><code>docker rm container_name</code></td>
+</tr>
+<tr>
+<td><code>docker rmi</code></td>
+<td>删除镜像</td>
+<td><code>docker rmi image_name</code></td>
+</tr>
+<tr>
+<td><code>docker exec</code></td>
+<td>在运行容器中执行命令</td>
+<td><code>docker exec -it nginx bash</code></td>
+</tr>
+<tr>
+<td><code>docker logs</code></td>
+<td>查看容器日志</td>
+<td><code>docker logs -f nginx</code></td>
+</tr>
+<tr>
+<td><code>docker inspect</code></td>
+<td>查看容器/镜像详细配置（JSON）</td>
+<td></td>
+</tr>
+<tr>
+<td><code>docker build -t tag .</code></td>
+<td>从Dockerfile构建镜像</td>
+<td></td>
+</tr>
+<tr>
+<td><code>docker push/pull</code></td>
+<td>上传/下载镜像到registry</td>
+<td></td>
+</tr>
+<tr>
+<td><code>docker volume ls</code></td>
+<td>列出卷</td>
+<td></td>
+</tr>
+<tr>
+<td><code>docker system prune</code></td>
+<td>清理未使用的资源</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>快速体验</strong>：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-8">8</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 运行交互式Debian容器</span>
+</span></span><span style="display:flex;"><span>docker run --hostname debian -it debian /bin/bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 后台运行Nginx，映射端口80</span>
+</span></span><span style="display:flex;"><span>docker run -p 80:80 --name nginx -d nginx
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 查看Nginx访问日志</span>
+</span></span><span style="display:flex;"><span>docker logs nginx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="4-dockerfile镜像构建">4. Dockerfile（镜像构建）</h2>
+<h3 id="41-常用指令">4.1 常用指令</h3>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FROM</code></td>
+<td><strong>第一条</strong>，指定基础镜像</td>
+</tr>
+<tr>
+<td><code>RUN</code></td>
+<td>构建时执行命令（如安装软件包）</td>
+</tr>
+<tr>
+<td><code>COPY</code> / <code>ADD</code></td>
+<td>将文件复制到镜像中（ADD支持URL和自动解压）</td>
+</tr>
+<tr>
+<td><code>ENV</code></td>
+<td>设置环境变量</td>
+</tr>
+<tr>
+<td><code>EXPOSE</code></td>
+<td>声明容器监听端口（文档性）</td>
+</tr>
+<tr>
+<td><code>CMD</code></td>
+<td>容器启动时执行的默认命令（<strong>可被覆盖</strong>）</td>
+</tr>
+<tr>
+<td><code>ENTRYPOINT</code></td>
+<td>容器启动时执行的<strong>固定</strong>命令（不易被覆盖）</td>
+</tr>
+<tr>
+<td><code>WORKDIR</code></td>
+<td>设置后续指令的工作目录</td>
+</tr>
+<tr>
+<td><code>USER</code></td>
+<td>切换运行用户（<strong>安全实践</strong>）</td>
+</tr>
+<tr>
+<td><code>VOLUME</code></td>
+<td>声明持久化存储卷</td>
+</tr>
+<tr>
+<td><code>ARG</code></td>
+<td>构建时变量（非敏感）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-dockerfile示例nginx官方镜像简化版">4.2 Dockerfile示例（Nginx官方镜像简化版）</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-8">8</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">FROM</span><span style="color:#4070a0"> debian:jessie</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">ENV</span> NGINX_VERSION 1.10.3-1-jessie<span style="">
+</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">RUN</span> apt-get update <span style="color:#666">&amp;&amp;</span> apt-get install -y <span style="color:#bb60d5">nginx</span><span style="color:#666">=</span><span style="color:#70a0d0">${</span><span style="color:#bb60d5">NGINX_VERSION</span><span style="color:#70a0d0">}</span> <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#666">&amp;&amp;</span> rm -rf /var/lib/apt/lists/*<span style="">
+</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">RUN</span> ln -sf /dev/stdout /var/log/nginx/access.log <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>    <span style="color:#666">&amp;&amp;</span> ln -sf /dev/stderr /var/log/nginx/error.log<span style="">
+</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">EXPOSE</span><span style="color:#4070a0"> 80 443</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style=""></span><span style="color:#007020;font-weight:bold">CMD</span> [<span style="color:#4070a0">&#34;nginx&#34;</span>, <span style="color:#4070a0">&#34;-g&#34;</span>, <span style="color:#4070a0">&#34;daemon off;&#34;</span>]<span style="">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>关键实践</strong>：</p>
+<ul>
+<li>日志重定向到<code>/dev/stdout</code>和<code>/dev/stderr</code> → 由Docker日志驱动收集</li>
+<li>前台运行（<code>daemon off;</code>）→ 容器不会因进程退出而终止</li>
+<li>一条RUN安装+清理 → 减少层数，减小镜像大小</li>
+</ul>
+<h3 id="43-构建自定义镜像">4.3 构建自定义镜像</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-8">8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-9">9</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># Dockerfile</span>
+</span></span><span style="display:flex;"><span>FROM nginx
+</span></span><span style="display:flex;"><span>ADD index.html /usr/share/nginx/html/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 构建</span>
+</span></span><span style="display:flex;"><span>docker build -t nginx:ulshar .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 运行</span>
+</span></span><span style="display:flex;"><span>docker run -p 80:80 --name nginx-ulshar -d nginx:ulshar
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="5-卷数据持久化">5. 卷（数据持久化）</h2>
+<h3 id="51-卷类型">5.1 卷类型</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>创建方式</th>
+<th>特点</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>匿名卷</strong></td>
+<td><code>docker run -v /data</code></td>
+<td>自动命名，保存在<code>/var/lib/docker/volumes/</code></td>
+<td>临时数据</td>
+</tr>
+<tr>
+<td><strong>命名卷</strong></td>
+<td><code>docker volume create mydata</code></td>
+<td>可管理，持久化</td>
+<td>生产数据</td>
+</tr>
+<tr>
+<td><strong>绑定挂载</strong></td>
+<td><code>docker run -v /host/path:/container/path</code></td>
+<td>主机目录直接挂载</td>
+<td>开发、配置共享</td>
+</tr>
+<tr>
+<td><strong>数据卷容器</strong></td>
+<td><code>docker create -v /data --name data-container ...</code></td>
+<td>专用于持有卷配置</td>
+<td>容器间共享卷</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-绑定挂载示例">5.2 绑定挂载示例</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 主机目录挂载到容器</span>
+</span></span><span style="display:flex;"><span>docker run -v /mnt/data:/data --name web -d nginx
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 容器写入/data → 主机/mnt/data可见</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="53-数据卷容器模式">5.3 数据卷容器模式</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 创建纯数据容器</span>
+</span></span><span style="display:flex;"><span>docker create -v /data --name nginx-data nginx
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 其他容器使用该卷</span>
+</span></span><span style="display:flex;"><span>docker run --volumes-from nginx-data -p 80:80 --name web -d nginx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><strong>注意</strong>：数据卷容器使容器与特定主机绑定，违背容器“短暂性”理念。需要持久状态的应用，认真评估此模式是否适合。</p>
+</blockquote>
+<h2 id="6-docker网络">6. Docker网络</h2>
+<h3 id="61-网络模式">6.1 网络模式</h3>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>说明</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>bridge</strong>（默认）</td>
+<td>容器在私有网段，主机通过NAT暴露端口</td>
+<td>大多数场景</td>
+</tr>
+<tr>
+<td><strong>host</strong></td>
+<td>容器共享主机网络栈（无隔离）</td>
+<td>需要高性能网络的应用</td>
+</tr>
+<tr>
+<td><strong>none</strong></td>
+<td>无网络配置</td>
+<td>高级自定义</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -p 80:80 --net host nginx   <span style="color:#60a0b0;font-style:italic"># host模式</span>
+</span></span><span style="display:flex;"><span>docker network ls                       <span style="color:#60a0b0;font-style:italic"># 查看网络</span>
+</span></span><span style="display:flex;"><span>docker inspect -f <span style="color:#4070a0">&#39;{{json .NetworkSettings.Networks.bridge}}&#39;</span> container
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="62-端口映射">6.2 端口映射</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -p 80:80 nginx           <span style="color:#60a0b0;font-style:italic"># 主机80→容器80</span>
+</span></span><span style="display:flex;"><span>docker run -p 8080:80 nginx         <span style="color:#60a0b0;font-style:italic"># 主机8080→容器80</span>
+</span></span><span style="display:flex;"><span>docker run -P nginx                 <span style="color:#60a0b0;font-style:italic"># 随机映射EXPOSE的端口</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="63-自定义网络">6.3 自定义网络</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker network create --driver bridge mynet
+</span></span><span style="display:flex;"><span>docker run --net mynet --name web1 -d nginx
+</span></span><span style="display:flex;"><span>docker run --net mynet --name web2 -d nginx
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># web1可通过容器名直接访问web2（内置DNS）</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="7-存储驱动程序storage-driver">7. 存储驱动程序（Storage Driver）</h2>
+<table>
+<thead>
+<tr>
+<th>驱动</th>
+<th>特点</th>
+<th>默认平台</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>overlay</strong></td>
+<td>OverlayFS，稳定的现代UnionFS</td>
+<td>CentOS 7+</td>
+</tr>
+<tr>
+<td><strong>overlay2</strong></td>
+<td>overlay改进版，更高效</td>
+<td>推荐生产使用</td>
+</tr>
+<tr>
+<td><strong>aufs</strong></td>
+<td>原始Docker驱动，非内核主线</td>
+<td>Debian/Ubuntu（历史）</td>
+</tr>
+<tr>
+<td><strong>devicemapper</strong></td>
+<td>需直接LVM模式配置，否则性能差</td>
+<td>RHEL/CentOS 6</td>
+</tr>
+<tr>
+<td><strong>zfs</strong> / <strong>btrfs</strong></td>
+<td>原生CoW文件系统驱动</td>
+<td>对应系统</td>
+</tr>
+<tr>
+<td><strong>vfs</strong></td>
+<td>无联合文件系统（完整复制），稳定但慢</td>
+<td>测试环境</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>推荐</strong>：Linux优先选择<code>overlay2</code>，性能与稳定性最佳。</p>
+</blockquote>
+<h2 id="8-日志管理">8. 日志管理</h2>
+<h3 id="81-容器日志惯例">8.1 容器日志惯例</h3>
+<ul>
+<li>应用将日志写入<strong>STDOUT</strong>（正常输出）和<strong>STDERR</strong>（错误）</li>
+<li>Docker收集并转发到可配置的日志驱动</li>
+</ul>
+<h3 id="82-日志驱动">8.2 日志驱动</h3>
+<table>
+<thead>
+<tr>
+<th>驱动</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>json-file</code></td>
+<td><strong>默认</strong>，JSON格式保存到<code>/var/lib/docker/containers/</code></td>
+</tr>
+<tr>
+<td><code>syslog</code></td>
+<td>转发到系统syslog</td>
+</tr>
+<tr>
+<td><code>journald</code></td>
+<td>转发到systemd日志</td>
+</tr>
+<tr>
+<td><code>awslogs</code></td>
+<td>直接写入AWS CloudWatch</td>
+</tr>
+<tr>
+<td><code>gelf</code></td>
+<td>Graylog扩展日志格式</td>
+</tr>
+<tr>
+<td><code>none</code></td>
+<td>禁用日志收集</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 运行时指定日志驱动</span>
+</span></span><span style="display:flex;"><span>docker run --log-driver syslog --log-opt syslog-address<span style="color:#666">=</span>udp://logs.example.com:514 nginx
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 配置json-file轮替</span>
+</span></span><span style="display:flex;"><span>docker run --log-driver json-file --log-opt max-size<span style="color:#666">=</span>10m --log-opt max-file<span style="color:#666">=</span><span style="color:#40a070">3</span> nginx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="9-安全最佳实践">9. 安全最佳实践</h2>
+<table>
+<thead>
+<tr>
+<th>实践</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>限制守护进程访问</strong></td>
+<td>使用<code>sudo</code>而非加入<code>docker</code>组（docker组=root）</td>
+</tr>
+<tr>
+<td><strong>使用TLS远程通信</strong></td>
+<td><code>dockerd -H tcp://0.0.0.0:2376 --tlsverify</code></td>
+</tr>
+<tr>
+<td><strong>非root用户运行</strong></td>
+<td>Dockerfile中使用<code>USER nobody</code></td>
+</tr>
+<tr>
+<td><strong>只读根文件系统</strong></td>
+<td><code>docker run --read-only</code></td>
+</tr>
+<tr>
+<td><strong>最小能力集</strong></td>
+<td><code>docker run --cap-drop ALL --cap-add NET_RAW</code></td>
+</tr>
+<tr>
+<td><strong>内容信任</strong></td>
+<td><code>export DOCKER_CONTENT_TRUST=1</code>（验证镜像签名）</td>
+</tr>
+<tr>
+<td><strong>镜像漏洞扫描</strong></td>
+<td>使用<code>docker scan</code>或Clair等工具扫描基础镜像</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 安全运行示例</span>
+</span></span><span style="display:flex;"><span>docker run --read-only --cap-drop ALL --cap-add NET_BIND_SERVICE <span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>  -v /tmp:/tmp -p 80:80 -d nginx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="10-registry镜像仓库">10. Registry（镜像仓库）</h2>
+<h3 id="101-docker-hub">10.1 Docker Hub</h3>
+<ul>
+<li><strong>公共镜像仓库</strong>，大量官方镜像（debian、ubuntu、nginx、mysql等）</li>
+<li>付费账户支持私有仓库</li>
+<li>内容信任验证部分官方镜像</li>
+</ul>
+<h3 id="102-私有registry">10.2 私有Registry</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 运行简单registry容器</span>
+</span></span><span style="display:flex;"><span>docker run -d -p 5000:5000 --name registry registry:2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 推送镜像到私有registry</span>
+</span></span><span style="display:flex;"><span>docker tag nginx localhost:5000/nginx
+</span></span><span style="display:flex;"><span>docker push localhost:5000/nginx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>生产registry注意事项</strong>：</p>
+<ul>
+<li>必须启用TLS加密通信</li>
+<li>配置认证（token或htpasswd）</li>
+<li>考虑存储后端（S3/GCS）和清理策略</li>
+<li>云托管registry（AWS ECR、GCR）是更省心的选择</li>
+</ul>
+<h2 id="11-容器集群管理编排">11. 容器集群管理（编排）</h2>
+<h3 id="111-为什么需要编排">11.1 为什么需要编排</h3>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>编排的解决方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>容器部署在哪台服务器？</td>
+<td>调度算法自动选择合适节点</td>
+</tr>
+<tr>
+<td>节点故障怎么办？</td>
+<td>自动重新调度容器到健康节点</td>
+</tr>
+<tr>
+<td>如何发现服务？</td>
+<td>内置服务发现 + DNS</td>
+</tr>
+<tr>
+<td>如何负载均衡？</td>
+<td>集成负载均衡器</td>
+</tr>
+<tr>
+<td>如何滚动更新？</td>
+<td>零停机部署策略</td>
+</tr>
+</tbody>
+</table>
+<h3 id="112-主流编排系统对比">11.2 主流编排系统对比</h3>
+<table>
+<thead>
+<tr>
+<th>系统</th>
+<th>来源</th>
+<th>特点</th>
+<th>学习曲线</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kubernetes（k8s）</strong></td>
+<td>Google</td>
+<td><strong>功能最全</strong>，社区最大，生产级</td>
+<td>陡峭</td>
+<td>复杂微服务架构</td>
+</tr>
+<tr>
+<td><strong>Docker Swarm</strong></td>
+<td>Docker, Inc.</td>
+<td><strong>最简单</strong>，与Docker原生集成</td>
+<td>低</td>
+<td>中小规模，已有Docker环境</td>
+</tr>
+<tr>
+<td><strong>Mesos + Marathon</strong></td>
+<td>Apache</td>
+<td>通用集群管理，支持多种framework</td>
+<td>中</td>
+<td>大数据+容器混合环境</td>
+</tr>
+<tr>
+<td><strong>AWS ECS</strong></td>
+<td>Amazon</td>
+<td>托管服务，与AWS深度集成</td>
+<td>低</td>
+<td>AWS云环境，不想自建管理面</td>
+</tr>
+</tbody>
+</table>
+<h3 id="113-kubernetes核心概念">11.3 Kubernetes核心概念</h3>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pod</strong></td>
+<td>一个或多个容器的组合，共享网络和存储（<strong>最小调度单元</strong>）</td>
+</tr>
+<tr>
+<td><strong>Service</strong></td>
+<td>一组Pod的稳定网络入口（<strong>地址不变</strong>）</td>
+</tr>
+<tr>
+<td><strong>Deployment</strong></td>
+<td>声明式管理Pod副本数、滚动更新、回滚</td>
+</tr>
+<tr>
+<td><strong>Node</strong></td>
+<td>集群中的一个工作节点</td>
+</tr>
+<tr>
+<td><strong>Kubelet</strong></td>
+<td>每个节点上的代理，管理Pod生命周期</td>
+</tr>
+<tr>
+<td><strong>kubectl</strong></td>
+<td>Kubernetes命令行工具</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-8">8</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 部署应用</span>
+</span></span><span style="display:flex;"><span>kubectl create deployment nginx --image<span style="color:#666">=</span>nginx
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 暴露服务</span>
+</span></span><span style="display:flex;"><span>kubectl expose deployment nginx --port<span style="color:#666">=</span><span style="color:#40a070">80</span> --type<span style="color:#666">=</span>LoadBalancer
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 滚动更新</span>
+</span></span><span style="display:flex;"><span>kubectl <span style="color:#007020">set</span> image deployment/nginx <span style="color:#bb60d5">nginx</span><span style="color:#666">=</span>nginx:1.17
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 回滚</span>
+</span></span><span style="display:flex;"><span>kubectl rollout undo deployment/nginx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="114-docker-swarm">11.4 Docker Swarm</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker swarm init                          <span style="color:#60a0b0;font-style:italic"># 初始化集群</span>
+</span></span><span style="display:flex;"><span>docker node ls                             <span style="color:#60a0b0;font-style:italic"># 查看节点</span>
+</span></span><span style="display:flex;"><span>docker service create --replicas <span style="color:#40a070">3</span> -p 80:80 --name web nginx   <span style="color:#60a0b0;font-style:italic"># 部署服务</span>
+</span></span><span style="display:flex;"><span>docker service scale <span style="color:#bb60d5">web</span><span style="color:#666">=</span><span style="color:#40a070">5</span>                 <span style="color:#60a0b0;font-style:italic"># 扩展副本数</span>
+</span></span><span style="display:flex;"><span>docker service update --image nginx:1.17 web   <span style="color:#60a0b0;font-style:italic"># 更新</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>Swarm优势：学习成本最低，命令与单机Docker几乎一致，TLS加密开箱即用。</p>
+</blockquote>
+<h2 id="12-容器实践建议运维视角">12. 容器实践建议（运维视角）</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>调度任务（cron）</strong></td>
+<td>在<strong>主机</strong>上运行cron，调度一次性容器</td>
+</tr>
+<tr>
+<td><strong>远程登录调试</strong></td>
+<td>不要sshd进容器！登录主机后用<code>docker exec -it</code></td>
+</tr>
+<tr>
+<td><strong>配置管理</strong></td>
+<td>用环境变量传入配置</td>
+</tr>
+<tr>
+<td><strong>容器升级</strong></td>
+<td><strong>替换容器</strong>，而非原地更新</td>
+</tr>
+<tr>
+<td><strong>日志收集</strong></td>
+<td>容器日志通过Docker日志驱动收集</td>
+</tr>
+<tr>
+<td><strong>容器维护</strong></td>
+<td>避免手动访问容器“修复”问题</td>
+</tr>
+<tr>
+<td><strong>数据持久化</strong></td>
+<td>状态化应用使用<strong>卷（Volume）</strong></td>
+</tr>
+<tr>
+<td><strong>资源限制</strong></td>
+<td>使用<code>--memory</code>和<code>--cpus</code>限制容器资源</td>
+</tr>
+<tr>
+<td><strong>清理</strong></td>
+<td>定期清理停止的容器、悬空镜像和卷</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-本章核心命令速查表">13. 本章核心命令速查表</h2>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker pull ubuntu:22.04</code></td>
+<td>下载镜像</td>
+</tr>
+<tr>
+<td><code>docker run -it --rm ubuntu bash</code></td>
+<td>运行临时交互式容器</td>
+</tr>
+<tr>
+<td><code>docker run -d -p 80:80 --name web nginx</code></td>
+<td>后台运行Nginx</td>
+</tr>
+<tr>
+<td><code>docker exec -it web bash</code></td>
+<td>进入运行中容器</td>
+</tr>
+<tr>
+<td><code>docker logs -f web</code></td>
+<td>查看实时日志</td>
+</tr>
+<tr>
+<td><code>docker stop web &amp;&amp; docker rm web</code></td>
+<td>停止并删除</td>
+</tr>
+<tr>
+<td><code>docker build -t myapp:v1 .</code></td>
+<td>从Dockerfile构建镜像</td>
+</tr>
+<tr>
+<td><code>docker tag myapp:v1 myregistry/myapp:v1</code></td>
+<td>标记镜像</td>
+</tr>
+<tr>
+<td><code>docker push myregistry/myapp:v1</code></td>
+<td>推送到私有registry</td>
+</tr>
+<tr>
+<td><code>docker volume create mydata</code></td>
+<td>创建命名卷</td>
+</tr>
+<tr>
+<td><code>docker run -v mydata:/data -d nginx</code></td>
+<td>使用命名卷</td>
+</tr>
+<tr>
+<td><code>docker system prune -f</code></td>
+<td>清理未使用资源</td>
+</tr>
+<tr>
+<td><code>kubectl get pods</code></td>
+<td>查看Kubernetes Pod</td>
+</tr>
+<tr>
+<td><code>docker service ls</code></td>
+<td>查看Swarm服务</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>DBA视角补充</strong>：</p>
+<ul>
+<li><strong>数据库容器化需谨慎</strong>：数据库是<strong>状态化应用</strong>，容器化意味着管理数据卷、备份、恢复、网络等复杂性。生产环境建议将<strong>数据库部署在虚拟机/裸机</strong>上，将<strong>无状态应用层</strong>容器化。开发/测试环境可容器化数据库以快速拉起环境。</li>
+<li><strong>如果必须容器化数据库</strong>：
+<ul>
+<li>使用<strong>命名卷</strong>或<strong>绑定挂载</strong>持久化数据（<strong>绝不能</strong>用容器可写层存数据）</li>
+<li>配置<strong>资源限制</strong>（<code>--memory</code>、<code>--cpus</code>）防止数据库容器耗尽宿主机资源</li>
+<li>使用<code>--restart=always</code>确保崩溃后自动重启</li>
+<li>数据库配置通过<strong>环境变量</strong>或配置文件挂载传入</li>
+<li>备份通过主机侧卷数据备份，而非<code>docker exec</code>执行备份（避免额外负载）</li>
+</ul>
+</li>
+<li><strong>官方数据库镜像</strong>：Docker Hub有官方MySQL/PostgreSQL镜像，适合快速测试，<strong>使用前仔细阅读镜像文档</strong>，理解初始化机制（如<code>/docker-entrypoint-initdb.d/</code>）。</li>
+<li><strong>网络性能</strong>：容器网络（bridge模式）有NAT开销，数据库高吞吐场景可考虑<code>--net=host</code>模式，但需权衡安全与端口冲突。</li>
+<li><strong>编排与数据库</strong>：Kubernetes StatefulSet + PersistentVolume可实现有状态数据库容器编排，但复杂度高。建议优先使用云托管数据库服务（AWS RDS、GCP Cloud SQL）替代自建容器化数据库。</li>
+</ul>
+</blockquote>
+
+            </div>
+
+            
+            
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">会写代码的小郎中</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2011-07-06
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">CC BY-NC-ND 4.0</span>
+  </p>
+</div>
+
+
+
+            
+            
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://yutao.org/image/ds/wechat-qr-code.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://yutao.org/image/ds/alipay-qr-code.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+
+            <footer class="post-footer">
+                <div class="post-tags">
+                    <a href="https://yutao.org/tags/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98/">系统管理员</a>
+                    
+                </div>
+
+
+                
+                <nav class="post-nav">
+                    
+                    <a class="prev" href="https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%85%AD%E7%AB%A0/">
+                        
+                        <i class="iconfont">
+                            <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+                        </i>
+                        <span class="prev-text nav-default">UNIX/Linux系统管理技术手册-读书笔记-第二十六章</span>
+                        <span class="prev-text nav-mobile">上一篇</span>
+                    </a>
+                    
+                    <a class="next" href="https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%9B%9B%E7%AB%A0/">
+                        <span class="next-text nav-default">UNIX/Linux系统管理技术手册-读书笔记-第二十四章</span>
+                        <span class="prev-text nav-mobile">下一篇</span>
+                        
+                        <i class="iconfont">
+                            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+                        </i>
+                    </a>
+                </nav>
+            </footer>
+        </article>
+
+        
+        
+
+
+        
+        
+
+  
+
+  
+  
+
+  
+  
+    <div class="post">
+  <script src="https://utteranc.es/client.js"
+        repo= "yutaodev/comments-for-yutaodev.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+    </div>
+
+    
+
+
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });  
+</script>
+<script>
+    
+    Array.from(document.getElementsByClassName("language-mermaid")).forEach(
+        (el) => {
+            el.parentElement.outerHTML = `<div class="mermaid">${el.innerHTML}</div>`;
+        }
+    );  
+</script>
+<style>
+     
+    .mermaid svg {
+        display: block;
+        margin: auto;
+    }
+</style>
+</div>
+
+      </main>
+
+      <footer id="footer" class="footer">
+        <div class="icon-links">
+    
+  
+    <a href="mailto:yutao.z@qq.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://space.bilibili.com/304380559" rel="me noopener" class="iconfont"
+      title="bilibili"  target="_blank"
+      >
+      <svg
+  class="icon" style="" viewBox="0 0 1024 1024" version="1.1" width="36"
+  height="36" id="svg8">
+  <path
+      style=""
+      d="M 744.60599,0.00486267 A 41.779915,41.779915 0 0 0 710.4184,18.673394 L 548.5048,255.32642 h -11.70046 a 41.779915,41.779915 0 0 0 -10.80295,-7.84928 L 235.66,97.084498 a 41.779915,41.779915 0 0 0 -20.07193,-4.960864 41.779915,41.779915 0 0 0 -18.3748,79.145436 L 359.4859,255.32642 H 128.16909 c -49.458302,0 -89.27932,39.82105 -89.27932,89.27932 v 508.65224 c 0,49.4583 39.821018,89.27934 89.27932,89.27934 h 19.48445 C 149.12802,984.5043 179.92773,1024 224.79179,1024 c 44.86407,0 75.66379,-39.4957 77.13826,-81.46268 H 719.98116 C 721.45559,984.5043 752.25533,1024 797.1194,1024 c 44.86406,0 75.6638,-39.4957 77.13824,-81.46268 h 21.57323 c 49.45831,0 89.27936,-39.82104 89.27936,-89.27934 V 344.60574 c 0,-49.45827 -39.82105,-89.27932 -89.27936,-89.27932 H 649.74567 L 779.38103,65.866924 A 41.779915,41.779915 0 0 0 744.60599,0.00486267 Z M 644.49108,418.70871 c 6.29985,0.21538 12.44451,2.01107 17.86888,5.22196 l 171.36218,98.10771 c 18.23417,10.21935 24.63334,33.34627 14.24614,51.48533 -10.38726,18.13909 -33.57344,24.32718 -51.61587,13.77296 L 624.9903,489.18895 c -15.21356,-8.41858 -22.66871,-26.1765 -18.03211,-42.93436 4.63664,-16.75784 20.15573,-28.14465 37.53289,-27.54588 z M 350.2006,432.31846 c 16.89952,0.0317 31.69582,11.33328 36.17844,27.62747 4.48262,16.2942 -2.44981,33.57765 -16.95507,42.24898 l -140.7157,86.91312 c -17.68528,11.18244 -41.09629,5.77692 -52.08912,-12.02686 -10.99282,-17.80373 -5.33855,-41.15658 12.58167,-51.95857 L 329.9002,438.2095 c 6.0643,-3.86439 13.10951,-5.90891 20.3004,-5.89104 z M 501.605,641.53985 c 3.75002,-0.15248 7.48645,0.53903 10.93349,2.0235 0.15842,0.0637 0.31618,0.12888 0.47325,0.19582 0.59328,0.27092 1.17574,0.56489 1.74609,0.88121 0.15868,0.0854 0.31643,0.17233 0.47325,0.2611 0.55694,0.32165 1.10131,0.66458 1.63185,1.02807 0.16455,0.1123 0.32777,0.2265 0.48956,0.34269 0.50382,0.36781 0.99371,0.75428 1.46868,1.15864 0.18724,0.15504 0.37218,0.31282 0.55484,0.47323 0.43271,0.38784 0.8518,0.79061 1.25653,1.20756 0.15449,0.16114 0.30679,0.32437 0.45693,0.48959 0.40798,0.44266 0.79989,0.89988 1.17494,1.37076 0.17799,0.22544 0.35205,0.45395 0.5222,0.68538 0.25932,0.34701 0.50964,0.70071 0.75064,1.06071 0.26712,0.39516 0.52286,0.79784 0.76699,1.20757 0.16907,0.29043 0.33231,0.58424 0.48957,0.88123 0.21836,0.41297 0.42513,0.83199 0.62009,1.25653 0.14836,0.32333 0.28983,0.64976 0.42429,0.97911 0.21319,0.51552 0.40915,1.03801 0.58747,1.5666 0.0677,0.19499 0.13296,0.39085 0.19582,0.58748 0.18652,0.60823 0.34984,1.22334 0.48957,1.84399 0.0397,0.16277 0.0779,0.32601 0.11423,0.48957 0.1436,0.69112 0.25788,1.38801 0.34269,2.08877 0.005,0.0381 0.0111,0.0761 0.0163,0.11424 0.0857,0.78056 0.13474,1.56471 0.14687,2.34988 0.005,0.0543 0.0111,0.10879 0.0163,0.1632 0,0 -0.008,1.12132 0,1.45234 0,0 -0.14697,17.84761 5.89102,34.12231 3.01902,8.13734 7.33278,15.10615 12.61433,19.61501 5.28157,4.50889 11.42894,7.62081 23.64572,7.62081 12.2168,0 18.36416,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.5953,-11.47767 12.6143,-19.61501 6.03799,-16.2747 5.89103,-34.12231 5.89103,-34.12231 -0.44885,-13.87045 10.45922,-25.46302 24.3311,-25.86506 13.87189,-0.40201 25.42828,10.53953 25.78348,24.41272 0,0 1.11929,25.7226 -9.00791,53.01927 -5.06359,13.64832 -13.1986,28.46036 -27.05631,40.29073 -13.85772,11.83039 -33.5454,19.63135 -56.20142,19.63135 -22.65603,0 -42.34371,-7.80096 -56.20141,-19.63135 -4.1801,-3.56856 -7.78733,-7.42433 -10.99878,-11.42303 -3.21235,4.00037 -6.81703,7.85309 -10.99876,11.42303 -13.85773,11.83039 -33.5454,19.63135 -56.20144,19.63135 -22.65601,0 -42.3437,-7.80096 -56.2014,-19.63135 -13.85775,-11.83037 -21.99272,-26.64241 -27.05632,-40.29073 -10.12725,-27.29667 -9.00789,-53.01928 -9.00789,-53.01927 0.20714,-13.83687 11.58744,-24.88848 25.42444,-24.69013 14.1263,0.19991 25.2971,12.0278 24.69011,26.14247 0,0 -0.14697,17.84761 5.89103,34.12231 3.01902,8.13734 7.31646,15.10615 12.598,19.61501 5.28155,4.50889 11.44526,7.62081 23.66203,7.62081 12.21681,0 18.36418,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.57899,-11.47767 12.598,-19.61501 5.76352,-15.53489 5.89112,-32.05691 5.89103,-33.56746 0.006,-0.37466 0.0111,-1.05336 0.0163,-1.20759 -0.0117,-0.74583 0.0105,-1.49177 0.0652,-2.23565 0.009,-0.15784 0.0204,-0.31561 0.0327,-0.47324 0.14204,-1.56859 0.43163,-3.12027 0.86487,-4.63449 0.0213,-0.0763 0.0433,-0.15244 0.0652,-0.22848 3.0335,-10.25748 12.24157,-17.46007 22.92769,-17.93417 z"
+      id="rect824"/>
+</svg>
+
+    </a>
+  
+    <a href="https://weibo.com/u/2557216280" rel="me noopener" class="iconfont"
+      title="weibo"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M385.714286 733.714286q12-19.428571 6.285714-39.428571t-25.714286-28.571429q-19.428571-8-41.714286-0.571429t-34.285714 26.285714q-12.571429 19.428571-7.428571 39.142857t24.571429 28.857143 42.571429 1.428571 35.714286-27.142857zm53.714286-69.142857q4.571429-7.428571 2-15.142857t-10-10.571429q-8-2.857143-16.285714 2.857143t-12.285714 10.571429q-9.714286 17.714286 7.428571 25.714286 8 2.857143 16.571429 2.857143t12.571429-10.571429zm99.428571 61.142857q-25.714286 58.285714-90.285714 85.714286t-128 6.857143q-61.142857-19.428571-84.285714-72.285714t3.714286-107.142857q26.857143-53.142857 86.571429-79.428571t120.285714-10.857143q63.428571 16.571429 90.571429 68.285714t1.428571 108.857143zm178.285714-91.428571q-5.142857-54.857143-50.857143-97.142857t-119.142857-62.285714-156.857143-12q-127.428571 13.142857-211.142857 80.857143t-75.714286 151.142857q5.142857 54.857143 50.857143 97.142857t119.142857 62.285714 156.857143 12q127.428571-13.142857 211.142857-80.857143t75.714286-151.142857zm176 2.285714q0 38.857143-21.142857 79.714286t-62.285714 78.285714-96.285714 67.142857-129.142857 47.428571-154.571429 17.714286-157.142857-19.142857-137.428571-53.142857-98-86.285714-37.142857-114q0-65.714286 39.714286-140t112.857143-147.428571q96.571429-96.571429 195.142857-134.857143t140.857143 4q37.142857 36.571429 11.428571 119.428571-2.285714 8-0.571429 11.428571t5.714286 4 8.285714 2.857143 7.714286-2l3.428571-1.142857q79.428571-33.714286 140.571429-33.714286t87.428571 34.857143q25.714286 36 0 101.714286-1.142857 7.428571-2.571429 11.428571t2.571429 7.142857 6.857143 4.285714 9.714286 3.428571q32.571429 10.285714 58.857143 26.857143t45.714286 46.571429 19.428571 66.571429zm-42.285714-356.571429q24 26.857143 31.142857 62t-3.714286 67.142857q-4.571429 13.142857-16.857143 19.428571t-25.428571 2.285714q-13.142857-4.571429-19.428571-16.857143t-2.285714-25.428571q11.428571-36-13.714286-63.428571t-61.142857-20q-13.714286 2.857143-25.714286-4.571429t-14.285714-21.142857q-2.857143-13.714286 4.571429-25.428571t21.142857-14.571429q34.285714-7.428571 68 3.142857t57.714286 37.428571zm103.428571-93.142857q49.714286 54.857143 64.285714 127.142857t-7.714286 138q-5.142857 15.428571-19.428571 22.857143t-29.714286 2.285714-22.857143-19.428571-2.857143-29.714286q16-46.857143 5.714286-98.285714t-45.714286-90.285714q-35.428571-39.428571-84.571429-54.571429t-98.857143-4.857143q-16 3.428571-29.714286-5.428571t-17.142857-24.857143 5.428571-29.428571 24.857143-16.857143q70.285714-14.857143 139.428571 6.571429t118.857143 76.857143z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.toutiao.com/c/user/token/MS4wLjABAAAA1TxeVNQbqL6Lg7CJRoNwNHYDpIB5qKGh24pQ0AvIjmfeczyo5zxipIgPtGJr-mUI/?source=m_redirect" rel="me noopener" class="iconfont"
+      title="toutiao"  target="_blank"
+      >
+      <svg t="1731818671552" class="icon" viewBox="0 0 1024 1024" version="1.1"
+    xmlns="http://www.w3.org/2000/svg" p-id="4390" width="32" height="32">
+    <path
+        d="M828.745763 0H195.254237C86.779661 0 0 86.779661 0 195.254237v633.491526c0 108.474576 86.779661 190.915254 195.254237 195.254237h633.491526c108.474576 0 190.915254-86.779661 195.254237-195.254237V195.254237c0-108.474576-86.779661-195.254237-195.254237-195.254237z m138.847457 828.745763c0 78.101695-60.745763 138.847458-138.847457 138.847457H195.254237c-78.101695 0-138.847458-60.745763-138.847457-138.847457V195.254237c0-78.101695 60.745763-138.847458 138.847457-138.847457h633.491526c78.101695 0 138.847458 60.745763 138.847457 138.847457v633.491526z"
+        fill="#525252" p-id="4391"></path>
+    <path
+        d="M0 221.288136v620.474576c0 4.338983 4.338983 8.677966 8.677966 13.016949l1015.322034-56.40678V182.237288c0-4.338983-4.338983-8.677966-8.677966-13.016949L0 221.288136z"
+        fill="#525252" p-id="4392"></path>
+    <path
+        d="M906.847458 581.423729v-47.728814l-151.864407 8.677966V520.677966h-69.423729v30.372881l-151.864407 8.677967V607.457627l151.864407-8.677966v108.474576l69.423729-8.677966v-108.474576l151.864407-8.677966z"
+        fill="#FFFFFF" p-id="4393"></path>
+    <path
+        d="M538.033898 490.305085v47.728813h47.728814l138.847457-69.423729 130.169492 47.728814H911.186441v-47.728814h-34.711865l-91.118644-26.033898 117.152543-60.745763V299.389831l-65.084746 4.338983-173.559322 8.677966-56.40678-30.372882-78.101695 117.152543 60.745763 21.694915 43.38983-60.745763 199.593221-8.677966v8.677966l-108.474577 56.40678-91.118644-34.711865-26.033898 47.728814 47.728814 21.694915-82.440678 43.389831-34.711865-4.338983z m334.101695 104.135593l-69.423729 8.677966 47.728814 91.118644 78.101695-8.677966-56.40678-91.118644z m-334.101695 108.474576H607.457627l47.728814-95.457627-69.423729 8.677966-47.728814 86.779661z m-169.220339-99.79661l56.40678 108.474576h82.440678l-60.745763-117.152542-78.101695 8.677966z m-78.101695-86.779661l-60.745762-78.101695-82.440678 8.677966 60.745762 69.423729h82.440678z m0-95.457627L229.966102 351.457627H147.525424l60.745762 78.101695 82.440678-8.677966z"
+        fill="#FFFFFF" p-id="4394"></path>
+    <path
+        d="M351.457627 585.762712l130.169492-8.677966v-47.728814l-91.118644 8.677966v-216.949152l-65.084746 8.677966v208.271186l-216.949153 13.016949v47.728814l147.525424-8.677966-60.745763 82.440678-82.440678 8.677966v47.728814l138.847458-8.677967 99.79661-134.508474z"
+        fill="#FFFFFF" p-id="4395"></path>
+</svg>
+    </a>
+
+
+<a href="https://yutao.org/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+    </span>
+    <span class="division">|</span>
+    <span class="theme-info">
+        Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+    </span>
+
+    <span class="copyright-year">
+        &copy;
+        
+        2011 -
+        2026
+        <span class="heart">
+            
+            <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+            </i>
+        </span><span class="author">
+            会写代码的小郎中
+            
+        </span></span>
+
+    
+    
+    <span id="busuanzi_container">
+        访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+    
+
+    
+    
+
+    
+</div>
+      </footer>
+
+      <div class="button__back-to-top">
+        <a href="#back-to-top">
+          <i class="iconfont">
+            
+            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+          </i>
+        </a>
+      </div>
+    </div>
+    
+<script type="text/javascript" src="https://yutao.org/lib/jquery/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="https://yutao.org/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="https://yutao.org/js/main.0812a6f15b5585e323289457bbef147ebb2e5111f2924b072bc6acf7eabe95b1.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="https://yutao.org/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="https://yutao.org/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://yutao.org/js/copy-to-clipboard.js"></script>
+
+  <script src="https://yutao.org/js/search.js"></script>
+
+
+  </body>
+</html>
