@@ -1,5 +1,10 @@
 [
     {
+      "title": "八卦取象歌",
+      "permalink": "https://yutao.org/philosophy/%E5%85%AB%E5%8D%A6%E5%8F%96%E8%B1%A1%E6%AD%8C/",
+      "summary": "八卦符号记忆原理 基础符号： 阳爻 ⚊：完整长横，代表刚、实、主动； 阴爻 ⚋：中间断开两短横，代表柔、虚、被动。 每个八卦都是三根爻叠起来，书写顺序："
+    },
+    {
       "title": "十二生肖与十二时辰的天地密码",
       "permalink": "https://yutao.org/philosophy/%E5%8D%81%E4%BA%8C%E7%94%9F%E8%82%96%E4%B8%8E%E5%8D%81%E4%BA%8C%E6%97%B6%E8%BE%B0%E7%9A%84%E5%A4%A9%E5%9C%B0%E5%AF%86%E7%A0%81/",
       "summary": "子丑寅卯，辰巳午未，申酉戌亥：十二生肖与十二时辰的天地密码 古人仰观天象，俯察万物，将一日划分为十二个时辰，又以十二种动物的习性与之对应。这并"
@@ -2243,6 +2248,56 @@
       "title": "从代码基础到心灵基石",
       "permalink": "https://yutao.org/philosophy/%E4%BB%8E%E4%BB%A3%E7%A0%81%E5%9F%BA%E7%A1%80%E5%88%B0%E5%BF%83%E7%81%B5%E5%9F%BA%E7%9F%B3/",
       "summary": "近日思悟二则：从“编程之法”到“破相之心” 最近几日，于工作与生活中偶有所得，如静夜闻钟，清音绕梁。记录于此，既是梳理，亦是分享。 一、 编程之悟"
+    },
+    {
+      "title": "Shell脚本学习指南-第十章-文件处理",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E7%AB%A0/",
+      "summary": "第10章 文件处理 本章目标：掌握UNIX/Linux下文件、目录常用工具：查看文件列表、修改时间戳、临时文件、查找文件、xargs、磁盘空间、"
+    },
+    {
+      "title": "Shell脚本学习指南-第九章-awk的惊人表现",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E4%B9%9D%E7%AB%A0/",
+      "summary": "第9章 awk的惊人表现 本章定位：shell脚本中awk工具完整学习。awk专门做文本处理，POSIX标准工具，各UNIX/Linux都自带；"
+    },
+    {
+      "title": "Shell脚本学习指南-第八章-产生脚本",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%85%AB%E7%AB%A0/",
+      "summary": "第8章 产生脚本 《Shell脚本学习指南》第8章 整理笔记 本章主题：实战编写完整shell工具脚本，两个大型示例程序：pathfind、buil"
+    },
+    {
+      "title": "Shell脚本学习指南-第七章-输入/输出、文件与命令执行",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E4%B8%83%E7%AB%A0/",
+      "summary": "第7章 输入/输出、文件与命令执行 7.1 标准IO基础 进程打开一个文件、管道、终端之后，内核会给它分配一个小整数编号，这个数字就叫文件描述符。进程通"
+    },
+    {
+      "title": "Shell脚本学习指南-第六章-变量、判断、重复动作",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%85%AD%E7%AB%A0/",
+      "summary": "第6章 变量、判断、重复动作 6.1 变量与算术 6.1.1 变量赋值与环境 普通赋值：变量=值，等号两边不能有空格 readonly：设置只读变量，不能修改、不能重"
+    },
+    {
+      "title": "Shell脚本学习指南-第五章-管道的神奇魔力",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E4%BA%94%E7%AB%A0/",
+      "summary": "第5章 管道的神奇魔力 5.1 从结构化文本文件提取数据 背景：/etc/passwd 用户密码文件 每行代表一个用户，冒号:作为字段分隔符，一共7个字段 1"
+    },
+    {
+      "title": "Shell脚本学习指南-第四章-文本处理工具",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%9B%9B%E7%AB%A0/",
+      "summary": "第4章 文本处理工具 4.1 sort 排序文本 sort：按行对文本排序；把每行当作记录，空白/指定字符切分成字段。 ⚠重点坑：排序结果受 locale（语言区域"
+    },
+    {
+      "title": "Shell脚本学习指南-第三章-查找与替换",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E4%B8%89%E7%AB%A0/",
+      "summary": "第3章 查找与替换 3.1 grep 查找文本 三个历史版本 旧命令 等价POSIX写法 说明 grep grep BRE基础正则 egrep grep -E ERE扩展正则 fgrep grep -F 纯字面字符串，不解析正则 PO"
+    },
+    {
+      "title": "Shell脚本学习指南-第二章-入门",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E4%BA%8C%E7%AB%A0/",
+      "summary": "第2章 入门 2.1 脚本语言 vs 编译型语言 类型 代表语言 特点 编译型 C/C++、Java、Pascal 源码编译成机器码；执行速度快；偏向底层字节、数字处理"
+    },
+    {
+      "title": "Shell脚本学习指南-第一章",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E4%B8%80%E7%AB%A0/",
+      "summary": "第1章 背景知识 本章将简述UNIX系统的发展史。了解UNIX在何处开发、如何开发，以及它的设计动机。这有助于用户善加利用UNIX所提供的工具。"
     },
     {
       "title": "UNIX/Linux系统管理技术手册-读书笔记-第三十一章",

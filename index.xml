@@ -8,10 +8,255 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Thu, 06 Aug 2026 08:13:55 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 07:28:24 +0800</lastBuildDate>
     
         <atom:link href="https://yutao.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>八卦取象歌</title>
+      <link>https://yutao.org/philosophy/%E5%85%AB%E5%8D%A6%E5%8F%96%E8%B1%A1%E6%AD%8C/</link>
+      <pubDate>Sun, 06 Sep 2026 07:28:24 +0800</pubDate>
+      <author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/philosophy/%E5%85%AB%E5%8D%A6%E5%8F%96%E8%B1%A1%E6%AD%8C/</guid>
+      
+        <description>&lt;!-- markdownlint-disable-file MD029 --&gt;
+&lt;!-- markdownlint-disable-file MD024 --&gt;
+&lt;!-- markdownlint-disable-file MD052 --&gt;
+&lt;h1 id=&#34;八卦符号记忆原理&#34;&gt;八卦符号记忆原理&lt;/h1&gt;
+&lt;p&gt;基础符号：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;阳爻 ⚊&lt;/strong&gt;：完整长横，代表刚、实、主动；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;阴爻 ⚋&lt;/strong&gt;：中间断开两短横，代表柔、虚、被动。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;每个八卦都是&lt;strong&gt;三根爻叠起来，书写顺序：从下往上画&lt;/strong&gt;。
+古人不是凭空分配符号，是&lt;strong&gt;看自然现象做象形类比&lt;/strong&gt;，有一首流传千年的《八卦取象歌》，把图形和物象绑定，理解之后根本不用死记硬背：
+&lt;strong&gt;乾三连，坤六断；震仰盂，艮覆碗；离中虚，坎中满；兑上缺，巽下断&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;1-乾-乾三连--天&#34;&gt;1. 乾 ☰｜乾三连 → 天&lt;/h3&gt;
+&lt;p&gt;三根全部是完整阳爻。
+天空完整连成一片，没有断裂；天属性纯阳、刚健运行不息。所以三横代表天。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-0-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-2&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-0-2&#34;&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-0-3&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-0-3&#34;&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚊
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚊
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚊
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;2-坤-坤六断--地&#34;&gt;2. 坤 ☷｜坤六断 → 地&lt;/h3&gt;
+&lt;p&gt;三根全部是断开的阴爻。
+大地有沟壑、裂缝、山河分割，处处是断开；大地是纯阴，承载万物。三根断横代表地。三爻，每爻两断，一共六处断开，故称“坤六断”。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-2&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-2&#34;&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-1-3&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-1-3&#34;&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚋
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚋
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚋
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;3-震-震仰盂yú--雷&#34;&gt;3. 震 ☳｜震仰盂(yú) → 雷&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;盂：古代一种开口朝上的钵子。
+&lt;strong&gt;底下一根阳爻，上面两根阴爻&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-2&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-2&#34;&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-2-3&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-2-3&#34;&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚋
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚋
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚊
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;原理：雷是&lt;strong&gt;大地底下阳气爆发往上冲&lt;/strong&gt;。地下（下爻）一股阳气（实线），冲破上面厚重阴云（上面两道断爻），就是打雷。图形看上去像一个开口朝上的钵盂，叫“震仰盂”。&lt;/p&gt;
+&lt;h3 id=&#34;4-艮-艮覆碗--山&#34;&gt;4. 艮 ☶｜艮覆碗 → 山&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;覆碗：倒扣过来的碗。
+&lt;strong&gt;顶上一根阳爻，下面两根阴爻&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-3-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-3-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-3-2&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-3-2&#34;&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-3-3&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-3-3&#34;&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚊
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚋
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚋
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;原理：山是大地往上隆起，地表顶部坚实凸起（最上面阳爻实线），底下还是泥土（两道阴爻）。就像把碗倒扣过来，叫“艮覆碗”，艮=停止、阻挡，山就是阻挡之物。&lt;/p&gt;
+&lt;h3 id=&#34;5-离-离中虚--火&#34;&gt;5. 离 ☲｜离中虚 → 火&lt;/h3&gt;
+&lt;p&gt;上下阳爻，中间阴爻。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-4-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-4-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-4-2&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-4-2&#34;&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-4-3&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-4-3&#34;&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚊
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚋
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚊
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;原理：火焰！火苗外面明亮灼热（上下实线阳），&lt;strong&gt;火焰中间是空的，没有实体&lt;/strong&gt;（中间断开阴爻）。所以叫“离中虚”，离为火、为太阳。&lt;/p&gt;
+&lt;h3 id=&#34;6-坎-坎中满--水&#34;&gt;6. 坎 ☵｜坎中满 → 水&lt;/h3&gt;
+&lt;p&gt;上下阴爻，中间阳爻。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;⚋
+⚊
+⚋
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;原理：水，外表是虚柔流动的，但是水内部有实体；水流中间是充实的。两道虚的在外，中间一实，叫“坎中满”。坎还有陷阱、坑的意思，水常常汇聚在低洼坑里。&lt;/p&gt;
+&lt;h3 id=&#34;7-兑-兑上缺--泽湖泊沼泽&#34;&gt;7. 兑 ☱｜兑上缺 → 泽（湖泊、沼泽）&lt;/h3&gt;
+&lt;p&gt;下面两根阳爻，&lt;strong&gt;最上面是阴爻（断开缺口）&lt;/strong&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-6-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-6-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-6-2&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-6-2&#34;&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-6-3&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-6-3&#34;&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚋
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚊
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚊
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;原理：泽是地上的湖泊。大地本来是坚实的（下面两道实线），&lt;strong&gt;地表上面开了一个缺口，积水形成湖泽&lt;/strong&gt;。“兑上缺”——缺口出现在最顶上那一爻。&lt;/p&gt;
+&lt;h3 id=&#34;8-巽-巽下断--风&#34;&gt;8. 巽 ☴｜巽下断 → 风&lt;/h3&gt;
+&lt;p&gt;最底下一根阴爻（断开），上面两根阳爻。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-7-1&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-7-1&#34;&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-7-2&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-7-2&#34;&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34; id=&#34;hl-7-3&#34;&gt;&lt;a style=&#34;outline:none;text-decoration:none;color:inherit&#34; href=&#34;#hl-7-3&#34;&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚊
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚊
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;⚋
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;就是你提问的：2横1个中断的横代表风。
+原理：风的特点是&lt;strong&gt;无孔不入，从底下缝隙钻进来&lt;/strong&gt;。地面之下有缝隙断开（最下面一爻断开），上面天地是完整的，风就从下方缝隙窜出来。所以叫“巽下断”，缺口在最下面那一爻。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;汇总表格从下往上看爻&#34;&gt;汇总表格（从下往上看爻）&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;卦名&lt;/th&gt;
+&lt;th&gt;自然&lt;/th&gt;
+&lt;th&gt;爻（下→上）&lt;/th&gt;
+&lt;th&gt;口诀&lt;/th&gt;
+&lt;th&gt;核心象形理解&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;乾&lt;/td&gt;
+&lt;td&gt;天&lt;/td&gt;
+&lt;td&gt;阳、阳、阳&lt;/td&gt;
+&lt;td&gt;乾三连&lt;/td&gt;
+&lt;td&gt;全部实线，完整苍穹&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;坤&lt;/td&gt;
+&lt;td&gt;地&lt;/td&gt;
+&lt;td&gt;阴、阴、阴&lt;/td&gt;
+&lt;td&gt;坤六断&lt;/td&gt;
+&lt;td&gt;全部断开，大地多裂痕&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;震&lt;/td&gt;
+&lt;td&gt;雷&lt;/td&gt;
+&lt;td&gt;阳、阴、阴&lt;/td&gt;
+&lt;td&gt;震仰盂&lt;/td&gt;
+&lt;td&gt;地下阳气往上冲，打雷&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;艮&lt;/td&gt;
+&lt;td&gt;山&lt;/td&gt;
+&lt;td&gt;阴、阴、阳&lt;/td&gt;
+&lt;td&gt;艮覆碗&lt;/td&gt;
+&lt;td&gt;地表向上凸起成山&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;离&lt;/td&gt;
+&lt;td&gt;火&lt;/td&gt;
+&lt;td&gt;阳、阴、阳&lt;/td&gt;
+&lt;td&gt;离中虚&lt;/td&gt;
+&lt;td&gt;火苗中间虚空&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;坎&lt;/td&gt;
+&lt;td&gt;水&lt;/td&gt;
+&lt;td&gt;阴、阳、阴&lt;/td&gt;
+&lt;td&gt;坎中满&lt;/td&gt;
+&lt;td&gt;水流内部充实&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;兑&lt;/td&gt;
+&lt;td&gt;泽&lt;/td&gt;
+&lt;td&gt;阳、阳、阴&lt;/td&gt;
+&lt;td&gt;兑上缺&lt;/td&gt;
+&lt;td&gt;地表顶端开缺口成湖&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;巽&lt;/td&gt;
+&lt;td&gt;风&lt;/td&gt;
+&lt;td&gt;阴、阳、阳&lt;/td&gt;
+&lt;td&gt;巽下断&lt;/td&gt;
+&lt;td&gt;地下有缝隙，风钻出来&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;记忆技巧&#34;&gt;记忆技巧&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;一个缺口类（只有一处阴爻）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;缺口在&lt;strong&gt;最下面&lt;/strong&gt;：巽 = 风（巽下断）&lt;/li&gt;
+&lt;li&gt;缺口在&lt;strong&gt;最上面&lt;/strong&gt;：兑 = 泽（兑上缺）&lt;/li&gt;
+&lt;li&gt;缺口在&lt;strong&gt;中间&lt;/strong&gt;：离 = 火（离中虚）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;一个实心类（只有一处阳爻）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;实心在&lt;strong&gt;最底下&lt;/strong&gt;：震 = 雷（地下阳气爆发）&lt;/li&gt;
+&lt;li&gt;实心在&lt;strong&gt;最上面&lt;/strong&gt;：艮 = 山（地表凸起）&lt;/li&gt;
+&lt;li&gt;实心在&lt;strong&gt;中间&lt;/strong&gt;：坎 = 水（水内部充实）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;全实：乾天；全虚：坤地。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;只要分清：缺口（阴爻）在哪一个位置，直接对应物象，不需要死背符号。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;快速自检&#34;&gt;快速自检&lt;/h3&gt;
+&lt;p&gt;问：缺口在最下面那一爻？→巽，风。&lt;br&gt;
+问：只有中间是实线？→坎，水。&lt;br&gt;
+问：只有最顶上是实线？→艮，山。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;补充：八卦这些取象来自《说卦传》，是古人观察自然做类比，不是严格科学，属于传统哲学符号系统。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      
+    </item>
     
     <item>
       <title>十二生肖与十二时辰的天地密码</title>
@@ -180,6 +425,72 @@
     F --&amp;gt;|否| H[&amp;#34;❌ 平年&amp;lt;br&amp;gt;例：2026年、2027年&amp;#34;]
 &lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;一句话总结&lt;/strong&gt;：&lt;strong&gt;四年一闰，百年不闰，四百年再闰。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>横盘‑拉升的交易逻辑</title>
+      <link>https://yutao.org/finance/%E6%A8%AA%E7%9B%98%E6%8B%89%E5%8D%87%E7%9A%84%E4%BA%A4%E6%98%93%E9%80%BB%E8%BE%91/</link>
+      <pubDate>Fri, 10 Jul 2026 17:51:24 +0800</pubDate>
+      <author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/finance/%E6%A8%AA%E7%9B%98%E6%8B%89%E5%8D%87%E7%9A%84%E4%BA%A4%E6%98%93%E9%80%BB%E8%BE%91/</guid>
+      
+        <description>&lt;!-- markdownlint-disable-file MD029 --&gt;
+&lt;!-- markdownlint-disable-file MD024 --&gt;
+&lt;!-- markdownlint-disable-file MD052 --&gt;
+&lt;h1 id=&#34;打板与低吸横盘拉升的交易逻辑&#34;&gt;打板与低吸，横盘‑拉升的交易逻辑&lt;/h1&gt;
+&lt;p&gt;市场上游资主流可验证的操作路径，大致分为两类：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;游资打板：核心逻辑——强者恒强&lt;/strong&gt;
+依托市场情绪，资金合力推动强势标的继续走强。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;前提条件：需要读懂盘面情绪，对市场情绪有判断能力，是打板模式的核心基础。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;游资低吸：核心逻辑——题材热度未退，博弈二波行情&lt;/strong&gt;
+不是随便下跌就去抄底。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;前提条件：该题材前期已经有过一轮上涨，题材热度没有完全消散，存在走出二波的可能性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;共性底层无论打板还是低吸都绕不开横盘与拉升&#34;&gt;共性底层：无论打板还是低吸，都绕不开横盘与拉升&lt;/h2&gt;
+&lt;p&gt;不管选择打板还是低吸，持仓阶段几乎都会经历&lt;strong&gt;横盘震荡 → 拉升&lt;/strong&gt;这个过程。
+根据盘面节奏，分为两种场景：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;节奏偏急的盘面&lt;/strong&gt;
+横盘时间短，次日或者隔少数几个交易日就迎来拉升。只需要耐心持有等待兑现。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;节奏很慢的盘面&lt;/strong&gt;
+横盘周期极长，可能长达数月才会启动拉升。
+这种情况，就算没有产生亏损，也属于这笔交易选择出错。不必死扛，条件不对直接离场。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不是不亏钱就可以一直拿着，时间成本也是成本。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;模式总框架&#34;&gt;模式总框架&lt;/h2&gt;
+&lt;p&gt;我的交易模式简化概括：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在横盘区间寻找合适买点，优先选择节奏偏急的标的，缩短等待周期；等待拉升之后择机卖出。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;该策略，目前有唯一个缺点，就是我持票盘时间短，错过大肉，后续改进。其他方面已经验证，没有问题。&lt;/p&gt;
+&lt;h2 id=&#34;压轴关键控制回撤&#34;&gt;压轴关键：控制回撤&lt;/h2&gt;
+&lt;p&gt;整套模式能活下来最重要的一环，不是怎么赚钱，而是怎么控制回撤。
+一旦买入之后盘面走坏，形势不及预期，必须果断割肉离场，不硬扛。&lt;/p&gt;
+&lt;h2 id=&#34;简短总结&#34;&gt;简短总结&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;打板看情绪；低吸看题材余热博弈二波。&lt;/li&gt;
+&lt;li&gt;买点放在横盘阶段，优先选启动快的标的，减少无效等待。&lt;/li&gt;
+&lt;li&gt;横盘太久不启动，即便不亏，也要考虑离场。&lt;/li&gt;
+&lt;li&gt;做错要果断止损，用止损控制整体回撤。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;笔记用途：自我复盘学习，记录自己的交易思考，后续实盘持续对照修正。&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
       
@@ -1283,128 +1594,6 @@ N --&amp;gt; A
     style TL3 fill:#c62828,stroke:#000,color:#fff
     style 结果 fill:#ff9800,stroke:#000,stroke-width:2px
 &lt;/code&gt;&lt;/pre&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>好运来临之际，请闭口如哑巴</title>
-      <link>https://yutao.org/philosophy/%E5%A5%BD%E8%BF%90%E6%9D%A5%E4%B8%B4%E4%B9%8B%E9%99%85%E8%AF%B7%E9%97%AD%E5%8F%A3%E5%A6%82%E5%93%91%E5%B7%B4/</link>
-      <pubDate>Tue, 25 Nov 2025 15:58:06 +0800</pubDate>
-      <author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/philosophy/%E5%A5%BD%E8%BF%90%E6%9D%A5%E4%B8%B4%E4%B9%8B%E9%99%85%E8%AF%B7%E9%97%AD%E5%8F%A3%E5%A6%82%E5%93%91%E5%B7%B4/</guid>
-      
-        <description>&lt;h2 id=&#34;开篇黎明前的沉默&#34;&gt;开篇：黎明前的沉默&lt;/h2&gt;
-&lt;p&gt;当好运真正降临到你身上的时候，请你把嘴巴闭得严严实实，像一个死守终身秘密的哑巴，半个字都不要对外透露。&lt;/p&gt;
-&lt;p&gt;古往今来，有太多人死在了黎明到来的前一刻。不是他们命数不好、运气不济，而是他们根本不懂一个核心道理：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;人生要成大事，首要本事就是“藏”。&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;一福祸生于动&#34;&gt;一、福祸生于动&lt;/h2&gt;
-&lt;p&gt;《易经》中有一句至关重要的话：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;“吉凶悔吝，生乎动者也。”&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这句话的意思是：人生的福祸吉凶，全都产生于言行变动之中。你的嘴巴一旦乱动，口中的话一旦说出去，自身的气运就会彻底泄露，灾祸也就跟着找上门来。&lt;/p&gt;
-&lt;p&gt;请你牢牢记住一条用无数人血泪换来的教训：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;当你开始起运、即将翻身的时候，必须像幽灵一样独处蛰伏，像离世的人一样闭口不言。&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;二为什么不能四处报喜&#34;&gt;二、为什么不能四处报喜？&lt;/h2&gt;
-&lt;p&gt;现实中，太多人刚有一点起色、刚抓住一点机会，就犯了四处报喜、到处炫耀的大忌。他们天真地以为这是在和身边人分享喜悦、分享好运。&lt;/p&gt;
-&lt;p&gt;可在天道规律和人性规则里，这叫&lt;strong&gt;泄露天机、招惹杀气&lt;/strong&gt;，是亲手毁掉自己运势的愚蠢行为。&lt;/p&gt;
-&lt;p&gt;为什么天大的喜事绝对不能随意对外宣扬？&lt;/p&gt;
-&lt;p&gt;因为这世间始终运行着三条看不见的绞杀铁律，但凡触犯一条，到手的好运也会瞬间溜走。&lt;/p&gt;
-&lt;h3 id=&#34;铁律一喜运如胎气泄则必死&#34;&gt;铁律一：喜运如胎，气泄则必死&lt;/h3&gt;
-&lt;p&gt;《易经》乾卦初九明确告诫：&lt;strong&gt;“潜龙勿用。”&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;这句话是什么意思？就是说一个人的好运刚刚萌芽、刚刚起步的时候，就像还没有坐稳胎位的子嗣，脆弱到了极点，经不起半点风吹草动。&lt;/p&gt;
-&lt;p&gt;你若在这个时候四处炫耀、逢人就说自己要转运、要成事，就会直接破掉自身那股混沌的先天真气，让好不容易聚集起来的气运彻底消散一空。&lt;/p&gt;
-&lt;p&gt;古人练功修行，反复强调 &lt;strong&gt;“闭口藏舌，舌抵上颚”&lt;/strong&gt;，核心目的就是为了锁住这口先天真气，守住自身的能量与运势。&lt;/p&gt;
-&lt;p&gt;你刚拿到一个机会，刚迎来一点转机，就迫不及待发朋友圈、跟亲友炫耀——这就好比胎儿还未稳固就大摆宴席、大肆宣扬，引来的只会是阴邪之气，直接吹灭你那点微弱的元神，毁掉刚刚起步的好运。&lt;/p&gt;
-&lt;h3 id=&#34;铁律二熟人记仇寇人性见不得你好&#34;&gt;铁律二：熟人记仇寇，人性见不得你好&lt;/h3&gt;
-&lt;p&gt;人性本就有阴暗的一面：&lt;strong&gt;绝大多数人都无法忍受身边的人比自己过得好。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;就像战国时期的庞涓与孙膑。二人本是同门学艺的挚友，关系亲如兄弟。可仅仅因为孙膑的才华略高于庞涓，庞涓就心生嫉妒、心生恶念，不惜挖掉孙膑的膝盖骨，在孙膑脸上刺字，非要置孙膑于死地。&lt;/p&gt;
-&lt;p&gt;现实就是这么残酷：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;伤害你最深、阻碍你最狠的人，从来都不是素不相识的陌生人，而是你身边知根知底、朝夕相处的亲友、同事、同窗。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;当你兴高采烈地向身边人透露自己的野心、炫耀自己的好运时，你激发出来的根本不是真心的祝福，而是庞涓式的嫉妒与嫉恨。&lt;/p&gt;
-&lt;p&gt;这股来自身边人的恶意念，会形成一股强大的阻碍力量，死死拖住你前进的脚步，把你重新拉回平庸的泥潭里，让你再也无法翻身。&lt;/p&gt;
-&lt;h3 id=&#34;铁律三时空已错位解释即内耗&#34;&gt;铁律三：时空已错位，解释即内耗&lt;/h3&gt;
-&lt;p&gt;庄子曾经说过：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;“井蛙不可以语于海，夏虫不可以语于冰。”&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;当你开始悟道升级、运势上升、格局打开的时候，你旧圈子里的人还在痴迷红尘琐事、纠结鸡毛蒜皮。这就是典型的&lt;strong&gt;时空错位、认知不同频&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;你想和他们谈星辰大海、谈人生理想、谈运势成事，他们只想和你聊家长里短、聊八卦是非、聊眼前小利。&lt;/p&gt;
-&lt;p&gt;你为了强行合群，向他们解释自己的志向、诉说自己的好运，不仅是对牛弹琴毫无意义，更是一种剧烈的精神内耗。这种无效的沟通、强行的同频，会一点点耗干你的精气神，耗散你的好运气，最终让你被旧圈子同化，再度沦为碌碌无为的庸众。&lt;/p&gt;
-&lt;h2 id=&#34;三真正成事者的姿态&#34;&gt;三、真正成事者的姿态&lt;/h2&gt;
-&lt;p&gt;真正能成大事、能接住泼天富贵的狠人，在迎来喜运、走上好运的时候，都是&lt;strong&gt;看似六亲不认、沉默寡言的&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;他们深深懂得一个道理：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;“君不密则失臣，臣不密则失身，几事不密则害成。”&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;凡事不保密，言行不收敛，最终一定会失去所有。&lt;/p&gt;
-&lt;p&gt;他们会把自己关进全封闭的能量屏蔽仓，断绝无效社交，闭嘴蛰伏，默默蓄力。等到自身势能积攒到像刘邦入关、帝王登基那般不可撼动的时候，再出来对平庸之人降维打击。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;在运势稳固之前，守口如瓶就是守住自己破天富贵的唯一法门。&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;四两种境界&#34;&gt;四、两种境界&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;在人生泥潭里&lt;/strong&gt;：闭嘴沉默是一种基本修养&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;在运势巅峰上&lt;/strong&gt;：低调隐身才是真正的杀伐果断&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;五从守到攻&#34;&gt;五、从“守”到“攻”&lt;/h2&gt;
-&lt;p&gt;守住运势只是第一步——守字诀。真正的顶级狠人还要学会从蛰伏的幽灵状态，进化到成事的收割状态，彻底锁死自身运势，让好运只增不减。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;需要锁住先天真气、积攒运势的时候&lt;/strong&gt;：建立全封闭的能量屏蔽仓，不炫耀、不倾诉、不外漏&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;当运气积攒到临界点、即将爆发的时候&lt;/strong&gt;：像王者一样，不动则已，一动必成，对目标降维打击&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;从这一刻起，记住：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;潜龙在渊，蓄力蛰伏；一腔藏运，终有一飞冲天。&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;结语好运不说福气不散&#34;&gt;结语：好运不说，福气不散&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;永远记住：&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;好运不说，福气不散。&lt;/strong&gt;
-&lt;strong&gt;闭口藏心，万事皆成。&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-      
-    </item>
-    
-    <item>
-      <title>不入局：修心、修己、修格局</title>
-      <link>https://yutao.org/philosophy/%E4%B8%8D%E5%85%A5%E5%B1%80%E4%BF%AE%E5%BF%83%E4%BF%AE%E5%B7%B1%E4%BF%AE%E6%A0%BC%E5%B1%80/</link>
-      <pubDate>Sun, 23 Nov 2025 15:43:34 +0800</pubDate>
-      <author>yutao.z@qq.com (会写代码的小郎中)</author>
-      <guid>https://yutao.org/philosophy/%E4%B8%8D%E5%85%A5%E5%B1%80%E4%BF%AE%E5%BF%83%E4%BF%AE%E5%B7%B1%E4%BF%AE%E6%A0%BC%E5%B1%80/</guid>
-      
-        <description>&lt;h1 id=&#34;人生修行修心修己修格局&#34;&gt;人生修行：修心、修己、修格局&lt;/h1&gt;
-&lt;h2 id=&#34;一修好自己的局外之力&#34;&gt;一、修好自己的“局外之力”&lt;/h2&gt;
-&lt;p&gt;你要把自己修道，躺平时没有负罪感，努力时没有牛马感。你要把自己修道，无论谁找你，你都能预判他暗藏的私心与目的。你要把自己修道，仅凭他人言行举止，便能一眼看透其一生宿命轨迹。你要把自己修道，拥有提前规避所有风险的远见，而非只懂事后收拾残局、解决麻烦。&lt;/p&gt;
-&lt;p&gt;内心强大的人，自有三条底线：自己笃定正确的事便坚定去坚持，不必在意旁人的闲言碎语。想尽办法整合身边所有资源，为自己铺路借力，搭建四通八达的人脉格局。心中更要守住底线，明晰此生绝对不可触碰、不可逾越的红线。&lt;/p&gt;
-&lt;p&gt;一生只需牢牢看重三件事：手里的事，康健的身体，心底留存的安宁。守住快乐的秘诀，无非九个字：无所谓，没必要，不至于。内心一旦稳住平静，外界纷扰便会悄然静音；本心倘若不曾慌乱，世间风雨便很难将你撼动。别轻信压力能化作动力，现实里，无端压力只会慢慢熬成病根，消耗身心。&lt;/p&gt;
-&lt;h2 id=&#34;二处世智慧筛选接纳与远离&#34;&gt;二、处世智慧：筛选、接纳与远离&lt;/h2&gt;
-&lt;p&gt;成年人的相处法则：只筛选，不教育；只选择，不改变。你有你的立场，我守我的底线，分寸得体，互不越界。永远别想着教人做人，妄图改变他人，终会深陷内耗。潜心修正自己，方能通透豁达。&lt;/p&gt;
-&lt;p&gt;远离消耗你的人与事。人生大半烦恼与苦楚，皆缘于错交的人与无用的羁绊。非必要的人脉不必深交，无意义的社交果断远离。懂得屏蔽消耗，便是好好爱自己最简单的方式。&lt;/p&gt;
-&lt;p&gt;永远谨记：位置不同，少言为贵；认知不同，不必争辩；三观不合，浪费口舌。心宽则万事皆轻，心窄则琐事皆重。看清世事，不如看透人心；看透人心，不如看淡浮沉。&lt;/p&gt;
-&lt;p&gt;待人处世，凡事留一线，切莫轻易撕破脸面。江湖路远，山水总有重逢之日。此刻逞一时口舌之快，日后求人之时，便要受万般卑微之苦。&lt;/p&gt;
-&lt;h2 id=&#34;三心念与格局不较真不动怒&#34;&gt;三、心念与格局：不较真，不动怒&lt;/h2&gt;
-&lt;p&gt;心念聚焦什么，便会主动吸引什么。整日抱怨满腹、满心不甘，眼底便只剩生活的坎坷与阴霾。常怀感恩之心，珍惜当下拥有，方能接住世间更多幸运与馈赠。切记：抱怨从解决不了任何难题，只会滋生烦恼，困住自己，徒增内耗。&lt;/p&gt;
-&lt;p&gt;心中藏事依旧从容淡然，是格局；心中有憾刻意不露声色，是阅历。&lt;/p&gt;
-&lt;p&gt;活着本就是一场体验、一场试错。成长的底气全源于：认知、野心、勇气、执行力。四点相辅相成，一处突破，便能带动全身成长。&lt;/p&gt;
-&lt;p&gt;修心三字：不当真。虚妄念头不当真，过往经历不当真，爱恨情仇不当真。心无执念，便无牵绊；放下较真，便无烦恼。&lt;/p&gt;
-&lt;p&gt;不动怒。细看身边之人，动辄易怒、满心戾气的，从来都不是通透智者，生活也必定一地狼藉。做人永远别轻易动怒，情绪化的偏激皆是愚昧。高手遇事满心只有解决办法：能化解便用心化解，化解不了便另寻出路，永远不被情绪裹挟跑偏。&lt;/p&gt;
-&lt;h2 id=&#34;四低谷与高处的姿态&#34;&gt;四、低谷与高处的姿态&lt;/h2&gt;
-&lt;p&gt;低谷落魄时，千万别对外展露清贫，张扬示弱只会让处境愈发艰难。风生水起时坦然，谈及过往贫寒反倒更显胸襟气度。没钱的时候过分要脸面，旁人不会善待你；有钱的时候放得下虚荣，走到哪里都能赢得尊重。&lt;/p&gt;
-&lt;p&gt;允许一切发生。允许所有事顺势发生，好坏皆是命中注定的考验。把顺遂当成努力的奖赏，把坎坷视作破财消灾的成全。真正的强大，从不是执拗对抗，而是坦然接纳。允许人生留有遗憾，接纳世事无常多变，包容意外频频发生，方能卸下重担，轻装前行。&lt;/p&gt;
-&lt;p&gt;世间万般执念，终有放下之事，不必耿耿于怀。相逢未必是开端，离别亦未必是终点。那些默默不联系你的人，或许藏着旁人不懂的牵挂与在意。看淡所有得失，接纳一切意外。世间万物皆有因果，看似偶然的相逢与变故，实则都是宿命里的必然。真正的缘分拆不散，能轻易走散的从来都不是正缘。&lt;/p&gt;
-&lt;h2 id=&#34;五渡己先爱己再爱人&#34;&gt;五、渡己：先爱己，再爱人&lt;/h2&gt;
-&lt;p&gt;切莫轻易同情任何人，哪怕是至亲之人。你心生怜悯，潜意识便会背负对方的命运与因果，无端加重自身负担。看似心地善良，实则愚钝内耗。这一生，最该用心疼爱、悉心守护的，从来只有自己。先养好羽翼、稳住心，有余力再帮扶他人，切莫自身深陷泥潭，还要强行渡人。&lt;/p&gt;
-&lt;p&gt;人生本就是一场沉浸式体验，不必强行演绎完美人生。慢慢包容自己心底的灰暗角落，原谅自己的迟钝、平庸与笨拙。允许犯错，允许事与愿违。接纳世事艰难、命运无常，带着遗憾努力绽放，才是与自己和解的终极答案。&lt;/p&gt;
-&lt;p&gt;当自身能量日渐丰盈，你终会读懂身边所有人：每个人都活在专属的认知频率里，没有绝对的好坏对错，只是立场与选择各异。往后余生，允许自己做自己，也成全别人成为别人。让花归花，让树归树。&lt;/p&gt;
-&lt;h2 id=&#34;六看透人性守住自己&#34;&gt;六、看透人性，守住自己&lt;/h2&gt;
-&lt;p&gt;不必过度窥探伴侣的心意。人性从来经不起深究考验，哪怕相伴一生的挚爱，细细揣摩，也难寻完美无瑕。&lt;/p&gt;
-&lt;p&gt;别对人性抱有过高期待。巅峰之时万人追捧，低谷之日众人疏离。别高估所谓人脉友情，破产落魄一次，便知人心冷暖；别依赖所谓身后靠山，身陷绝境一回，便懂世态炎凉。放下期待，便无失望。这一生，唯有两样东西最靠谱：康健无恙的身体，独当一面的赚钱能力。&lt;/p&gt;
-&lt;p&gt;所有关系走到尽头，不过是萍水相逢一场。用情至深便满心疲惫，无心牵绊便淡然自在。情出自愿，不谈亏欠。世间难得事事皆能将心比心，过分在意他人感受，终究委屈自己。一念起，天涯亦是咫尺；一念灭，咫尺形同陌路。&lt;/p&gt;
-&lt;p&gt;事已落幕，不必追问。你执着想要答案，不过是难以释怀、无力接纳。他人愿意倾诉缘由，自会主动坦言；不愿多说，便懂得沉默留白。管住口舌，收敛心绪，精力方能高度集中，自身气场才会愈发强大。&lt;/p&gt;
-&lt;h2 id=&#34;七终极心法钝感力与屏蔽力&#34;&gt;七、终极心法：钝感力与屏蔽力&lt;/h2&gt;
-&lt;p&gt;拥有钝感力，守住屏蔽力，这一生便能所向无敌。他强任他强，清风拂山岗。每个人都有专属人生节奏，不必刻意活成他人期待的模样。不窥探旁人生活，不揣测旁人心思。该走的弯路、该撞的南墙、该遇的坎坷，一步都躲不开。凡是消耗你的人与事，多看一眼都是内耗。归根到底，记住两句真言：&lt;strong&gt;关我屁事，关你屁事&lt;/strong&gt;，便是安稳幸福。&lt;/p&gt;
-&lt;p&gt;这世间，真正相伴一生的，从来只有你自己。你在，世界便鲜活；你退，繁华便落幕。无论风雨坎坷，无论满心执念难放，都交给顺其自然。人生本就是一场短暂旅途，没有永恒的生命，没有不老的青春，我们终究只是时光匆匆过客。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;人生修行，终究是修心、修己、修格局。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;不入局，不内耗，不执念，守本心，知进退，懂接纳，方能于浮尘世事中稳住心神，自在余生。&lt;/strong&gt;&lt;/p&gt;
-</description>
       
     </item>
     

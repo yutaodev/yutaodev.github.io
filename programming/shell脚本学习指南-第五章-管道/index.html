@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  itemscope
+  itemtype="http://schema.org/WebPage"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+          Shell脚本学习指南-第五章 - 会写代码的小郎中
+        </title>
+    
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="会写代码的小郎中" /><meta name="description" content="Shell脚本学习指南-第五章" />
+<meta name="keywords" content="Shell脚本学习指南" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.128.2" />
+
+
+<link rel="canonical" href="http://localhost:1313/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E7%AE%A1%E9%81%93/" />
+
+
+
+
+
+<link rel="icon" href="http://localhost:1313/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/sass/jane.min.e826e860368147e5a6685e686355e4d7789023c18c9ea2e78b35f6786ce92736.css" integrity="sha256-6CboYDaBR&#43;WmaF5oY1Xk13iQI8GMnqLnizX2eGzpJzY=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+
+<link rel="stylesheet" href="http://localhost:1313/css/copy-to-clipboard.css">
+
+
+<meta property="og:url" content="http://localhost:1313/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E7%AE%A1%E9%81%93/">
+  <meta property="og:site_name" content="会写代码的小郎中">
+  <meta property="og:title" content="Shell脚本学习指南-第五章">
+  <meta property="og:description" content="Shell脚本学习指南-第五章">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="programming">
+    <meta property="article:published_time" content="2011-07-18T22:29:27+08:00">
+    <meta property="article:modified_time" content="2011-07-18T22:29:27+08:00">
+    <meta property="article:tag" content="Shell脚本">
+
+  <meta itemprop="name" content="Shell脚本学习指南-第五章">
+  <meta itemprop="description" content="Shell脚本学习指南-第五章">
+  <meta itemprop="datePublished" content="2011-07-18T22:29:27+08:00">
+  <meta itemprop="dateModified" content="2011-07-18T22:29:27+08:00">
+  <meta itemprop="wordCount" content="3148">
+  <meta itemprop="keywords" content="Shell脚本学习指南">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Shell脚本学习指南-第五章">
+  <meta name="twitter:description" content="Shell脚本学习指南-第五章">
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+
+
+  </head>
+  <body>
+    <div id="back-to-top"></div>
+
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="http://localhost:1313/" class="logo">会写代码的小郎中</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/programming/">编程</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/tcm/">中医</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/philosophy/">哲学</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/finance/">金融</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="http://localhost:1313/about/">关于</a>
+          
+        
+      </li>
+    
+
+      <li class="mobile-menu-item">
+        <a id="openSearchMobile" class="mobile-menu-item-link menu-item-search" href="#">
+          <i class="iconfont">
+            <svg version="1.1" viewBox="0 0 1024 1024"
+  xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M973.81454219 973.81454219a91.78207815 91.78207815 0 0 1-129.80999631 0l-161.97482118-161.97482118a425.48527711 425.48527711 0 0 1-230.35931791 68.16531768 428.3346319 428.3346319 0 1 1 428.3346319-428.3346319 425.48527711 425.48527711 0 0 1-68.16531768 230.35931791l162.02961656 161.97482118a91.83687354 91.83687354 0 0 1-0.05479538 129.80999631zM451.67040679 145.69361559a305.97679241 305.97679241 0 1 0 0 611.95358361 305.97679241 305.97679241 0 0 0 0-611.95358361z">
+  </path>
+</svg>
+
+          </i>
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+    
+      
+
+
+
+
+
+
+  <link rel="stylesheet" href="http://localhost:1313/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="http://localhost:1313/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+    
+
+    
+
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+    <a href="http://localhost:1313/" class="logo">
+        
+        会写代码的小郎中
+        
+    </a>
+</div>
+
+<nav class="site-navbar">
+    <ul id="menu" class="menu">
+        
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="http://localhost:1313/">主页</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="http://localhost:1313/programming/">编程</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="http://localhost:1313/tcm/">中医</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="http://localhost:1313/philosophy/">哲学</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="http://localhost:1313/finance/">金融</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="http://localhost:1313/categories/">分类</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="http://localhost:1313/tags/">标签</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="http://localhost:1313/about/">关于</a>
+            
+
+            
+
+        </li>
+        
+
+        
+        
+
+        <li class="menu-item">
+            <a id="openSearch" class="menu-item-link menu-item-search" href="#">
+                <i class="iconfont">
+                    <svg version="1.1" viewBox="0 0 1024 1024"
+  xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M973.81454219 973.81454219a91.78207815 91.78207815 0 0 1-129.80999631 0l-161.97482118-161.97482118a425.48527711 425.48527711 0 0 1-230.35931791 68.16531768 428.3346319 428.3346319 0 1 1 428.3346319-428.3346319 425.48527711 425.48527711 0 0 1-68.16531768 230.35931791l162.02961656 161.97482118a91.83687354 91.83687354 0 0 1-0.05479538 129.80999631zM451.67040679 145.69361559a305.97679241 305.97679241 0 1 0 0 611.95358361 305.97679241 305.97679241 0 0 0 0-611.95358361z">
+  </path>
+</svg>
+
+                </i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+<div id="searchDialog" class="search-dialog" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;">
+  <div class="search-dialog-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 8px; width: 90%; max-width: 600px; box-sizing: border-box;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <h3 style="margin: 0;">搜索</h3>
+      <button id="closeSearch" style="background: none; border: none; font-size: 24px; cursor: pointer; padding: 0; margin: 0;">&times;</button>
+    </div>
+    <input type="text" id="search-input" placeholder="请输入关键词..." style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 15px; box-sizing: border-box;" />
+    <ul id="search-results" style="list-style: none; padding: 0; margin: 10px 0 0 0; max-height: 300px; overflow-y: auto;">
+      <style>
+        #search-results li {
+          padding: 8px 0;
+          border-bottom: 1px solid #f0f0f0;
+        }
+        #search-results li a {
+          display: block;
+          padding: 8px 12px;
+          text-decoration: none;
+          color: #333;
+        }
+        #search-results li a:hover {
+          background-color: #f5f5f5;
+        }
+      </style>
+    </ul>
+  </div>
+</div>
+    </header>
+
+    <div id="mobile-panel">
+      <main id="main" class="main bg-llight wallpaper">
+        <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#51-从结构化文本文件提取数据">5.1 从结构化文本文件提取数据</a>
+      <ul>
+        <li><a href="#核心工具回顾">核心工具回顾</a></li>
+        <li><a href="#完整管道逻辑">完整管道逻辑</a>
+          <ul>
+            <li><a href="#例51-办公室名录脚本关键点">例5‑1 办公室名录脚本关键点</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#52-结构化数据输出html网页">5.2 结构化数据输出HTML网页</a>
+      <ul>
+        <li><a href="#知识点heredocument-eof">知识点：here‑document <code>&lt;&lt;EOF</code></a></li>
+        <li><a href="#html转义特殊字符">HTML转义特殊字符</a></li>
+        <li><a href="#例52-tsvtohtml脚本功能">例5‑2 tsv‑to‑html脚本功能</a></li>
+        <li><a href="#字符编码转换思路例53">字符编码转换思路（例5‑3）</a></li>
+      </ul>
+    </li>
+    <li><a href="#53-文字解谜利用系统单词词典">5.3 文字解谜：利用系统单词词典</a></li>
+    <li><a href="#54-单词频率统计-wf脚本经典mcilroy六步管道">5.4 单词频率统计 wf脚本（经典McIlroy六步管道）</a>
+      <ul>
+        <li><a href="#例55-wf脚本完整拆解">例5‑5 wf脚本完整拆解</a></li>
+      </ul>
+    </li>
+    <li><a href="#55-taglist提取xmlhtml标签内容">5.5 taglist：提取XML/HTML标签内容</a>
+      <ul>
+        <li><a href="#例56-taglist脚本管道步骤">例5‑6 taglist脚本管道步骤</a></li>
+      </ul>
+    </li>
+    <li><a href="#56-本章小结">5.6 本章小结</a>
+      <ul>
+        <li><a href="#本章重点命令速查表">本章重点命令速查表</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
+    <div id="content" class="content">
+
+        
+        
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/programming\/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E7%AE%A1%E9%81%93\/"
+          },
+          "headline": "Shell脚本学习指南-第五章",
+          "description": "Shell脚本学习指南-第五章",
+          "datePublished": "2011-07-18T22:29:27\u002b08:00",
+          "dateModified": "2011-07-18T22:29:27\u002b08:00",
+          "author": {
+            "@type": "Person",
+            "name": "会写代码的小郎中"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "会写代码的小郎中",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "http:\/\/localhost:1313\/favicon.ico"
+            }
+          }
+        }
+        </script>
+        
+        
+
+        <article class="post">
+            
+            <header class="post-header">
+                <h1 class="post-title">Shell脚本学习指南-第五章</h1>
+                
+
+                <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      <a href="http://localhost:1313/about">
+        <span class="post-meta-author-name">
+          会写代码的小郎中
+        </span>
+      </a>
+    
+  </div>
+
+  <div class="post-meta-time">
+        <time datetime=" 2011-07-18">
+      2011-07-18
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 3148 字 -
+        预计阅读 7 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="http://localhost:1313/categories/shell%E8%84%9A%E6%9C%AC/"> Shell脚本 </a>
+          
+      </div>
+
+
+    
+        
+      <span id="busuanzi_container_page_pv">
+        | 阅读 <span id="busuanzi_value_page_pv"></span>
+      </span>
+    
+
+
+    
+        
+  </div>
+</div>
+            </header>
+
+            
+            <div class="post-content">
+                <!-- markdownlint-disable-file MD029 -->
+<!-- markdownlint-disable-file MD024 -->
+<!-- markdownlint-disable-file MD052 -->
+<h1 id="第5章-管道的神奇魔力">第5章 管道的神奇魔力</h1>
+<h2 id="51-从结构化文本文件提取数据">5.1 从结构化文本文件提取数据</h2>
+<p>背景：/etc/passwd 用户密码文件</p>
+<p>每行代表一个用户，<strong>冒号<code>:</code>作为字段分隔符</strong>，一共7个字段</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-8">8</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>jones:*:32713:899:Adrian W. Jones/0SD211/555-0123:/home/jones:/bin/ksh
+</span></span><span style="display:flex;"><span>dorothy:*:123:30:Dorothy Gale/KNS321/555-0044:/home/dorothy:/bin/bash
+</span></span><span style="display:flex;"><span>toto:*:1027:18:Toto Gale/KNS322/555-0045:/home/toto:/bin/tcsh
+</span></span><span style="display:flex;"><span>ben:*:301:10:Ben Franklin/OSD212/555-0022:/home/ben:/bin/bash
+</span></span><span style="display:flex;"><span>jhancock:*:1457:57:John Hancock/SIG435/555-0099:/home/jhancock:/bin/bash
+</span></span><span style="display:flex;"><span>betsy:*:110:20:Betsy Ross/BMD17/555-0033:/home/betsy:/bin/ksh
+</span></span><span style="display:flex;"><span>tj:*:60:33:Thomas Jefferson/BMD19/555-0095:/home/tj:/bin/bash
+</span></span><span style="display:flex;"><span>george:*:692:42:George Washington/BST999/555-0001:/home/george:/bin/tcsh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>用户名</li>
+<li>加密密码占位</li>
+<li>UID 用户ID</li>
+<li>GID 用户组ID</li>
+<li>GECOS字段：用户姓名、办公室、电话（本例内部用<code>/</code>再次分隔子字段）</li>
+<li>用户家目录</li>
+<li>登录Shell</li>
+</ol>
+<blockquote>
+<p>查看帮助：<code>man 5 passwd</code>，<code>5</code>代表配置文件格式手册。</p>
+</blockquote>
+<p>需求示例：从passwd生成办公室通讯录。</p>
+<ul>
+<li>原始GECOS：<code>Adrian W. Jones/OSD211/555‑0123</code></li>
+<li>需要拆分为：姓名、办公室编号、电话号码。</li>
+</ul>
+<h3 id="核心工具回顾">核心工具回顾</h3>
+<ol>
+<li><code>cut -d: -f5</code>：按冒号分隔，提取第5字段</li>
+<li><code>awk -F: '{print $5}'</code>：冒号做分隔符，打印第5字段</li>
+<li><code>join</code>：<strong>类似数据库join，把多个文件按照共同key（键）合并</strong></li>
+</ol>
+<blockquote>
+<p>前提：待合并文件必须以key排序；用<code>‑t:</code>指定分隔符为冒号；<code>-</code>代表读取标准输入。</p>
+</blockquote>
+<p>处理思路：</p>
+<ol>
+<li>从passwd提取数据，生成3个临时文件，格式为 <code>key:value</code>，key为用户名
+<ul>
+<li><code>pd.key.person.$$</code>：用户名:格式化后的姓名</li>
+<li><code>pd.key.office.$$</code>：用户名:办公室编号</li>
+<li><code>pd.key.telephone.$$</code>：用户名:电话号码</li>
+</ul>
+<blockquote>
+<p><code>$$</code>：shell PID，用来生成唯一临时文件名。</p>
+</blockquote>
+</li>
+<li>使用<code>join</code>多次合并这三份文件</li>
+<li><code>cut</code>删掉不再需要的key字段</li>
+<li><code>sort</code>排序</li>
+<li><code>awk printf</code>格式化输出，制表符<code>\t</code>分隔列</li>
+</ol>
+<h3 id="完整管道逻辑">完整管道逻辑</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>join -t: <span style="color:#bb60d5">$PERSON</span> <span style="color:#bb60d5">$OFFICE</span> |
+</span></span><span style="display:flex;"><span>join -t: - <span style="color:#bb60d5">$TELEPHONE</span> |   <span style="color:#60a0b0;font-style:italic"># &#34;-&#34;代表读取上一段管道输出</span>
+</span></span><span style="display:flex;"><span>cut -d: -f2- |            <span style="color:#60a0b0;font-style:italic"># 丢弃第1列key，保留从第2列往后全部字段</span>
+</span></span><span style="display:flex;"><span>sort -t: -k1,1 -k2,2 -k3,3 |
+</span></span><span style="display:flex;"><span>awk -F: <span style="color:#4070a0">&#39;{ printf(&#34;%-39s\t%s\t%s\n&#34;, $1, $2, $3) }&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="例51-办公室名录脚本关键点">例5‑1 办公室名录脚本关键点</h4>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-8">8</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#007020">umask</span> <span style="color:#40a070">077</span>   <span style="color:#60a0b0;font-style:italic"># 设置临时文件权限，其他用户不可读</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 临时文件，$$是进程ID</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">PERSON</span><span style="color:#666">=</span>/tmp/pd.key.person.<span style="color:#bb60d5">$$</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">OFFICE</span><span style="color:#666">=</span>/tmp/pd.key.office.<span style="color:#bb60d5">$$</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">TELEPHONE</span><span style="color:#666">=</span>/tmp/pd.key.telephone.<span style="color:#bb60d5">$$</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># trap：脚本退出时自动清理临时文件，防止残留垃圾文件</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">trap</span> <span style="color:#4070a0">&#34;rm -f </span><span style="color:#bb60d5">$PERSON</span><span style="color:#4070a0"> </span><span style="color:#bb60d5">$OFFICE</span><span style="color:#4070a0"> </span><span style="color:#bb60d5">$TELEPHONE</span><span style="color:#4070a0">&#34;</span> EXIT
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>trap信号处理：收到退出信号，执行rm删除临时文件。</p>
+</blockquote>
+<blockquote>
+<p>设计思想：</p>
+<ul>
+<li>脚本从标准输入读数据，输出到标准输出。支持管道重定向：<code>passwd‑to‑directory &lt; /etc/passwd &gt; out.txt</code></li>
+<li>后续想要增加字段（例如职位）：只需要新增一个key文件，多加一条join，修改sort、awk格式化即可。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>类比关系数据库：</p>
+<ul>
+<li>key=主键；<code>join</code>等价SQL JOIN；文本文件相当于数据表。</li>
+</ul>
+</blockquote>
+<h2 id="52-结构化数据输出html网页">5.2 结构化数据输出HTML网页</h2>
+<p>目标：把制表符分隔的通讯录文本，转换成HTML表格。</p>
+<h3 id="知识点heredocument-eof">知识点：here‑document <code>&lt;&lt;EOF</code></h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cat <span style="color:#4070a0">&lt;&lt;EOFILE
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">&lt;!DOCTYPE HTML ...&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">&lt;TABLE&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">EOFILE</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>&lt;&lt;标记&gt;&gt; </code>：here文档，shell读取直到标记行之前所有内容，交给cat作为标准输入。</li>
+<li>内部会做<strong>变量、命令替换</strong>。</li>
+</ul>
+<h3 id="html转义特殊字符">HTML转义特殊字符</h3>
+<p><code>&amp;</code> <code>&lt;</code> <code>&gt;</code> 在HTML有特殊含义，必须替换成实体：</p>
+<ul>
+<li><code>&amp;</code> → <code>&amp;amp;</code></li>
+<li><code>&lt;</code> → <code>&amp;lt;</code></li>
+<li><code>&gt;</code> → <code>&amp;gt;</code></li>
+</ul>
+<p>sed批量替换示例：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sed -e <span style="color:#4070a0">&#39;s/&amp;/&amp;amp;/g&#39;</span> -e <span style="color:#4070a0">&#39;s/&lt;/&amp;lt;/g&#39;</span> -e <span style="color:#4070a0">&#39;s/&gt;/&amp;gt;/g&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="例52-tsvtohtml脚本功能">例5‑2 tsv‑to‑html脚本功能</h3>
+<p>输入：Tab分隔的文本；输出：HTML表格
+流程：</p>
+<ol>
+<li>here‑document输出HTML头部样板</li>
+<li>sed完成特殊字符转义、把Tab替换成<code>&lt;/TD&gt;&lt;TD&gt;</code>，每行包上<code>&lt;TR&gt;&lt;TD&gt;...&lt;/TD&gt;&lt;/TR&gt;</code></li>
+<li>here‑document输出HTML尾部样板</li>
+</ol>
+<blockquote>
+<p>好处：不写死列数，任意Tab分隔文件都可以转HTML表格。</p>
+</blockquote>
+<h3 id="字符编码转换思路例53">字符编码转换思路（例5‑3）</h3>
+<p>ISO‑8859‑1特殊字符（é å等）替换成HTML实体，思路就是一堆sed替换规则。实际项目一般交给专门工具处理。</p>
+<h2 id="53-文字解谜利用系统单词词典">5.3 文字解谜：利用系统单词词典</h2>
+<p>系统词典文件，每行一个英文单词：</p>
+<ul>
+<li><code>/usr/share/dict/words</code>、<code>/usr/dict/words</code></li>
+</ul>
+<p>例5‑4 puzzle‑help脚本：用正则在词典文件搜索单词</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>egrep -h -i <span style="color:#4070a0">&#34;</span><span style="color:#bb60d5">$pattern</span><span style="color:#4070a0">&#34;</span> <span style="color:#bb60d5">$FILES</span> 2&gt; /dev/null | sort -u -f
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>-h</code>：不输出文件名</li>
+<li><code>-i</code>：忽略大小写</li>
+<li><code>2&gt; /dev/null</code>：丢弃错误（文件不存在、无权限的报错）</li>
+<li><code>sort -u -f</code>：去重，忽略大小写排序</li>
+</ul>
+<p>示例：查找10位，第7位是x/z的单词</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>puzzle-help <span style="color:#4070a0">&#39;^b....[xz]...$&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>正则小提示：<code>[^aeiouy]</code> 方括号内部开头的<code>^</code>代表取反；和行首<code>^</code>不是同一个含义。</p>
+</blockquote>
+<h2 id="54-单词频率统计-wf脚本经典mcilroy六步管道">5.4 单词频率统计 wf脚本（经典McIlroy六步管道）</h2>
+<p>需求：统计文本里每个单词出现次数，输出频率最高的N个单词。</p>
+<h3 id="例55-wf脚本完整拆解">例5‑5 wf脚本完整拆解</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>tr -cs A-Za-z<span style="color:#4070a0;font-weight:bold">\&#39;</span> <span style="color:#4070a0">&#39;\n&#39;</span>  |    <span style="color:#60a0b0;font-style:italic"># 把非字母/撇号字符替换成换行；每个单词单独一行</span>
+</span></span><span style="display:flex;"><span>tr A-Z a-z            |    <span style="color:#60a0b0;font-style:italic"># 大写全部转为小写</span>
+</span></span><span style="display:flex;"><span>sort                  |    <span style="color:#60a0b0;font-style:italic"># 把相同单词排到相邻行</span>
+</span></span><span style="display:flex;"><span>uniq -c               |    <span style="color:#60a0b0;font-style:italic"># 相邻重复行计数，输出【计数 单词】</span>
+</span></span><span style="display:flex;"><span>sort -k1,1nr -k2      |    <span style="color:#60a0b0;font-style:italic"># 第一列数字逆序（频率从高到低）；第二列单词正序</span>
+</span></span><span style="display:flex;"><span>sed <span style="color:#70a0d0">${</span><span style="color:#bb60d5">1</span><span style="color:#007020;font-weight:bold">:-</span><span style="color:#bb60d5">25</span><span style="color:#70a0d0">}</span>q              <span style="color:#60a0b0;font-style:italic"># 默认输出前25行；传参数n就输出前n行</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li><code>tr -cs SET1 SET2</code>
+<ul>
+<li><code>-c</code>：取反，不在SET1里面的字符</li>
+<li><code>-s</code>：压缩连续重复字符</li>
+</ul>
+</li>
+<li><code>uniq -c</code>：<strong>只对相邻重复行计数，所以前面必须sort</strong></li>
+<li><code>sort -k1,1nr</code>：<code>n</code>数字排序，<code>r</code>逆序从大到小</li>
+<li><code>${1:-25}</code> 参数展开：如果$1没有传入，默认值25</li>
+</ol>
+<blockquote>
+<p>性能：大部分耗时消耗在<code>sort</code>排序；其余步骤是线性处理。</p>
+</blockquote>
+<p>使用示例：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>wf <span style="color:#40a070">12</span> &lt; hamlet   <span style="color:#60a0b0;font-style:italic">#统计哈姆雷特，输出前12高频词</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="55-taglist提取xmlhtml标签内容">5.5 taglist：提取XML/HTML标签内容</h2>
+<p>需求：解析xml，提取 <code>&lt;tag&gt;内容&lt;/tag&gt;</code>，输出：计数、文本、标签名、文件名。</p>
+<h3 id="例56-taglist脚本管道步骤">例5‑6 taglist脚本管道步骤</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-8">8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-9">9</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cat <span style="color:#4070a0">&#34;</span><span style="color:#bb60d5">$1</span><span style="color:#4070a0">&#34;</span> |
+</span></span><span style="display:flex;"><span>sed -e <span style="color:#4070a0">&#39;s#systemitem *role=&#34;url&#34;#URL#g&#39;</span> -e <span style="color:#4070a0">&#39;s#/systemitem#/URL#&#39;</span> |
+</span></span><span style="display:flex;"><span>tr <span style="color:#4070a0">&#39;(){}[]&#39;</span> <span style="color:#4070a0">&#39;\n\n\n\n\n\n&#39;</span> |      <span style="color:#60a0b0;font-style:italic"># 括号全部换成换行</span>
+</span></span><span style="display:flex;"><span>egrep <span style="color:#4070a0">&#39;&gt;[^&lt;&gt;]+&lt;/&#39;</span> |              <span style="color:#60a0b0;font-style:italic"># 筛选匹配 &lt;xxx&gt;word&lt;/xxx&gt; 的行</span>
+</span></span><span style="display:flex;"><span>awk -F<span style="color:#4070a0">&#39;[&lt;&gt;]&#39;</span> -v <span style="color:#bb60d5">FILE</span><span style="color:#666">=</span><span style="color:#4070a0">&#34;</span><span style="color:#bb60d5">$1</span><span style="color:#4070a0">&#34;</span> <span style="color:#4070a0">&#39;{ printf(&#34;%-31s\t%-15s\t%s\n&#34;, $3, $2, FILE) }&#39;</span> |
+</span></span><span style="display:flex;"><span>sort |
+</span></span><span style="display:flex;"><span>uniq -c |
+</span></span><span style="display:flex;"><span>sort -k2,2 -k3,3 |
+</span></span><span style="display:flex;"><span>awk <span style="color:#4070a0">&#39;{ print ($2 == Last) ? ($0 &#34; &lt;---&#34;) : $0 } { Last = $2 }&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>sed：简化特定标签</li>
+<li>tr：把各类括号转为换行，打散文本</li>
+<li>egrep：只保留带闭合标签的行</li>
+<li>awk以<code>&lt;&gt;</code>做分隔符，提取标签内文字、标签名称，附带文件名</li>
+<li>sort + uniq‑c：统计出现次数</li>
+<li>sort：按单词、标签排序</li>
+<li>awk记忆上一行单词，相同单词标记<code>&lt;---</code>提示，方便人工校对文档标签是否混用。</li>
+</ol>
+<h2 id="56-本章小结">5.6 本章小结</h2>
+<ol>
+<li><strong>结构化文本处理思路</strong>：使用简单分隔符（冒号、Tab），方便管道工具处理，输出继续作为下一个工具输入。</li>
+<li>工具组合：<code>cut</code>/<code>awk</code>提取字段；<code>join</code>做多文件按键合并；<code>tr</code>字符转换；<code>sort</code>排序；<code>uniq</code>统计去重；<code>sed</code>文本替换。</li>
+<li>临时文件管理：使用<code>$$</code>生成唯一名字，<code>trap EXIT</code>脚本退出自动清理，避免残留垃圾。</li>
+<li>here‑document <code>&lt;&lt;EOF</code>：批量输出大段文本（HTML模板等）。</li>
+<li>文本可以转换成HTML表格，Tab分隔格式是电子表格/脚本之间很好的交换格式。</li>
+<li>复杂任务：不要写大程序；拆分成简单过滤器，管道串联，UNIX工具优先。</li>
+</ol>
+<h3 id="本章重点命令速查表">本章重点命令速查表</h3>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+<th>使用示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cut -d分隔符 -f字段</code></td>
+<td>按分隔符提取指定字段</td>
+<td><code>cut -d: -f1 /etc/passwd</code>    按冒号分隔，提取第1列（所有用户名）</td>
+</tr>
+<tr>
+<td><code>join -t: file1 file2</code></td>
+<td>按键合并<strong>两个已经排序</strong>的文件，类似数据库join</td>
+<td><code>join -t: user.txt phone.txt</code>    以冒号为分隔符，根据第一列key合并两个文件</td>
+</tr>
+<tr>
+<td><code>tr -cs A‑Za‑z '\n'</code></td>
+<td>字符集替换、<code>‑c</code>取反、<code>‑s</code>压缩连续重复字符</td>
+<td><code>tr -cs A-Za-z\' '\n' &lt; test.txt</code>    把所有非字母非撇号的字符替换成换行，每个单词一行</td>
+</tr>
+<tr>
+<td><code>uniq -c</code></td>
+<td>统计<strong>相邻重复行</strong>出现次数；⚠前面必须先sort，否则统计不全</td>
+<td><code>sort words.txt  uniq -c</code> 排序之后统计每行重复出现多少次</td>
+</tr>
+<tr>
+<td><code>sort -k1,1nr</code></td>
+<td>按指定字段数字逆序（从大到小）排序</td>
+<td><code>sort -k1,1nr -k2 file.txt</code>    第1列按数字降序，第2列按文本升序</td>
+</tr>
+<tr>
+<td><code>trap &quot;rm xxx&quot; EXIT</code></td>
+<td>脚本退出（正常/异常退出）时，自动执行清理命令</td>
+<td><code>trap &quot;rm -f /tmp/tmp.$$&quot; EXIT</code>    脚本结束自动删除临时文件，避免残留垃圾</td>
+</tr>
+<tr>
+<td><code>&lt;&lt;EOF</code></td>
+<td>here‑document，在脚本里输出一大段多行文本给命令（常见给cat）</td>
+<td>cat &lt;&lt;EOF <br>hello <br>world <br>EOF                                                           <br>输出两行文字 hello、world</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><code>join</code>：<strong>输入文件必须按key提前排序，否则结果错乱</strong>。</li>
+<li><code>uniq -c</code> 只识别<strong>挨在一起</strong>的重复行，分散的重复不会统计，所以管道里一定先<code>sort</code>再<code>uniq -c</code>。</li>
+<li><code>trap EXIT</code>：不管脚本是正常结束，还是被Ctrl‑C中断，都会执行trap里面的清理命令。</li>
+<li><code>&lt;&lt;EOF</code>：结束标记<code>EOF</code>顶格写，前面<strong>不能有空格</strong>；如果写成<code>&lt;&lt;‑EOF</code>，可以允许行首tab缩进。</li>
+</ol>
+
+            </div>
+
+            
+            
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">会写代码的小郎中</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2011-07-18
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">CC BY-NC-ND 4.0</span>
+  </p>
+</div>
+
+
+
+            
+            
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="http://localhost:1313/image/ds/wechat-qr-code.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="http://localhost:1313/image/ds/alipay-qr-code.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+
+            <footer class="post-footer">
+                <div class="post-tags">
+                    <a href="http://localhost:1313/tags/shell%E8%84%9A%E6%9C%AC/">Shell脚本</a>
+                    
+                </div>
+
+
+                
+                <nav class="post-nav">
+                    
+                    <a class="prev" href="http://localhost:1313/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%85%AD%E7%AB%A0/">
+                        
+                        <i class="iconfont">
+                            <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+                        </i>
+                        <span class="prev-text nav-default">Shell脚本学习指南-第六章</span>
+                        <span class="prev-text nav-mobile">上一篇</span>
+                    </a>
+                    
+                    <a class="next" href="http://localhost:1313/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%9B%9B%E7%AB%A0/">
+                        <span class="next-text nav-default">Shell脚本学习指南-第四章</span>
+                        <span class="prev-text nav-mobile">下一篇</span>
+                        
+                        <i class="iconfont">
+                            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+                        </i>
+                    </a>
+                </nav>
+            </footer>
+        </article>
+
+        
+        
+
+
+        
+        
+
+  
+
+  
+  
+
+  
+  
+    <div class="post">
+  <script src="https://utteranc.es/client.js"
+        repo= "yutaodev/comments-for-yutaodev.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+    </div>
+
+    
+
+
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });  
+</script>
+<script>
+    
+    Array.from(document.getElementsByClassName("language-mermaid")).forEach(
+        (el) => {
+            el.parentElement.outerHTML = `<div class="mermaid">${el.innerHTML}</div>`;
+        }
+    );  
+</script>
+<style>
+     
+    .mermaid svg {
+        display: block;
+        margin: auto;
+    }
+</style>
+</div>
+
+      </main>
+
+      <footer id="footer" class="footer">
+        <div class="icon-links">
+    
+  
+    <a href="mailto:yutao.z@qq.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://space.bilibili.com/304380559" rel="me noopener" class="iconfont"
+      title="bilibili"  target="_blank"
+      >
+      <svg
+  class="icon" style="" viewBox="0 0 1024 1024" version="1.1" width="36"
+  height="36" id="svg8">
+  <path
+      style=""
+      d="M 744.60599,0.00486267 A 41.779915,41.779915 0 0 0 710.4184,18.673394 L 548.5048,255.32642 h -11.70046 a 41.779915,41.779915 0 0 0 -10.80295,-7.84928 L 235.66,97.084498 a 41.779915,41.779915 0 0 0 -20.07193,-4.960864 41.779915,41.779915 0 0 0 -18.3748,79.145436 L 359.4859,255.32642 H 128.16909 c -49.458302,0 -89.27932,39.82105 -89.27932,89.27932 v 508.65224 c 0,49.4583 39.821018,89.27934 89.27932,89.27934 h 19.48445 C 149.12802,984.5043 179.92773,1024 224.79179,1024 c 44.86407,0 75.66379,-39.4957 77.13826,-81.46268 H 719.98116 C 721.45559,984.5043 752.25533,1024 797.1194,1024 c 44.86406,0 75.6638,-39.4957 77.13824,-81.46268 h 21.57323 c 49.45831,0 89.27936,-39.82104 89.27936,-89.27934 V 344.60574 c 0,-49.45827 -39.82105,-89.27932 -89.27936,-89.27932 H 649.74567 L 779.38103,65.866924 A 41.779915,41.779915 0 0 0 744.60599,0.00486267 Z M 644.49108,418.70871 c 6.29985,0.21538 12.44451,2.01107 17.86888,5.22196 l 171.36218,98.10771 c 18.23417,10.21935 24.63334,33.34627 14.24614,51.48533 -10.38726,18.13909 -33.57344,24.32718 -51.61587,13.77296 L 624.9903,489.18895 c -15.21356,-8.41858 -22.66871,-26.1765 -18.03211,-42.93436 4.63664,-16.75784 20.15573,-28.14465 37.53289,-27.54588 z M 350.2006,432.31846 c 16.89952,0.0317 31.69582,11.33328 36.17844,27.62747 4.48262,16.2942 -2.44981,33.57765 -16.95507,42.24898 l -140.7157,86.91312 c -17.68528,11.18244 -41.09629,5.77692 -52.08912,-12.02686 -10.99282,-17.80373 -5.33855,-41.15658 12.58167,-51.95857 L 329.9002,438.2095 c 6.0643,-3.86439 13.10951,-5.90891 20.3004,-5.89104 z M 501.605,641.53985 c 3.75002,-0.15248 7.48645,0.53903 10.93349,2.0235 0.15842,0.0637 0.31618,0.12888 0.47325,0.19582 0.59328,0.27092 1.17574,0.56489 1.74609,0.88121 0.15868,0.0854 0.31643,0.17233 0.47325,0.2611 0.55694,0.32165 1.10131,0.66458 1.63185,1.02807 0.16455,0.1123 0.32777,0.2265 0.48956,0.34269 0.50382,0.36781 0.99371,0.75428 1.46868,1.15864 0.18724,0.15504 0.37218,0.31282 0.55484,0.47323 0.43271,0.38784 0.8518,0.79061 1.25653,1.20756 0.15449,0.16114 0.30679,0.32437 0.45693,0.48959 0.40798,0.44266 0.79989,0.89988 1.17494,1.37076 0.17799,0.22544 0.35205,0.45395 0.5222,0.68538 0.25932,0.34701 0.50964,0.70071 0.75064,1.06071 0.26712,0.39516 0.52286,0.79784 0.76699,1.20757 0.16907,0.29043 0.33231,0.58424 0.48957,0.88123 0.21836,0.41297 0.42513,0.83199 0.62009,1.25653 0.14836,0.32333 0.28983,0.64976 0.42429,0.97911 0.21319,0.51552 0.40915,1.03801 0.58747,1.5666 0.0677,0.19499 0.13296,0.39085 0.19582,0.58748 0.18652,0.60823 0.34984,1.22334 0.48957,1.84399 0.0397,0.16277 0.0779,0.32601 0.11423,0.48957 0.1436,0.69112 0.25788,1.38801 0.34269,2.08877 0.005,0.0381 0.0111,0.0761 0.0163,0.11424 0.0857,0.78056 0.13474,1.56471 0.14687,2.34988 0.005,0.0543 0.0111,0.10879 0.0163,0.1632 0,0 -0.008,1.12132 0,1.45234 0,0 -0.14697,17.84761 5.89102,34.12231 3.01902,8.13734 7.33278,15.10615 12.61433,19.61501 5.28157,4.50889 11.42894,7.62081 23.64572,7.62081 12.2168,0 18.36416,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.5953,-11.47767 12.6143,-19.61501 6.03799,-16.2747 5.89103,-34.12231 5.89103,-34.12231 -0.44885,-13.87045 10.45922,-25.46302 24.3311,-25.86506 13.87189,-0.40201 25.42828,10.53953 25.78348,24.41272 0,0 1.11929,25.7226 -9.00791,53.01927 -5.06359,13.64832 -13.1986,28.46036 -27.05631,40.29073 -13.85772,11.83039 -33.5454,19.63135 -56.20142,19.63135 -22.65603,0 -42.34371,-7.80096 -56.20141,-19.63135 -4.1801,-3.56856 -7.78733,-7.42433 -10.99878,-11.42303 -3.21235,4.00037 -6.81703,7.85309 -10.99876,11.42303 -13.85773,11.83039 -33.5454,19.63135 -56.20144,19.63135 -22.65601,0 -42.3437,-7.80096 -56.2014,-19.63135 -13.85775,-11.83037 -21.99272,-26.64241 -27.05632,-40.29073 -10.12725,-27.29667 -9.00789,-53.01928 -9.00789,-53.01927 0.20714,-13.83687 11.58744,-24.88848 25.42444,-24.69013 14.1263,0.19991 25.2971,12.0278 24.69011,26.14247 0,0 -0.14697,17.84761 5.89103,34.12231 3.01902,8.13734 7.31646,15.10615 12.598,19.61501 5.28155,4.50889 11.44526,7.62081 23.66203,7.62081 12.21681,0 18.36418,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.57899,-11.47767 12.598,-19.61501 5.76352,-15.53489 5.89112,-32.05691 5.89103,-33.56746 0.006,-0.37466 0.0111,-1.05336 0.0163,-1.20759 -0.0117,-0.74583 0.0105,-1.49177 0.0652,-2.23565 0.009,-0.15784 0.0204,-0.31561 0.0327,-0.47324 0.14204,-1.56859 0.43163,-3.12027 0.86487,-4.63449 0.0213,-0.0763 0.0433,-0.15244 0.0652,-0.22848 3.0335,-10.25748 12.24157,-17.46007 22.92769,-17.93417 z"
+      id="rect824"/>
+</svg>
+
+    </a>
+  
+    <a href="https://weibo.com/u/2557216280" rel="me noopener" class="iconfont"
+      title="weibo"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M385.714286 733.714286q12-19.428571 6.285714-39.428571t-25.714286-28.571429q-19.428571-8-41.714286-0.571429t-34.285714 26.285714q-12.571429 19.428571-7.428571 39.142857t24.571429 28.857143 42.571429 1.428571 35.714286-27.142857zm53.714286-69.142857q4.571429-7.428571 2-15.142857t-10-10.571429q-8-2.857143-16.285714 2.857143t-12.285714 10.571429q-9.714286 17.714286 7.428571 25.714286 8 2.857143 16.571429 2.857143t12.571429-10.571429zm99.428571 61.142857q-25.714286 58.285714-90.285714 85.714286t-128 6.857143q-61.142857-19.428571-84.285714-72.285714t3.714286-107.142857q26.857143-53.142857 86.571429-79.428571t120.285714-10.857143q63.428571 16.571429 90.571429 68.285714t1.428571 108.857143zm178.285714-91.428571q-5.142857-54.857143-50.857143-97.142857t-119.142857-62.285714-156.857143-12q-127.428571 13.142857-211.142857 80.857143t-75.714286 151.142857q5.142857 54.857143 50.857143 97.142857t119.142857 62.285714 156.857143 12q127.428571-13.142857 211.142857-80.857143t75.714286-151.142857zm176 2.285714q0 38.857143-21.142857 79.714286t-62.285714 78.285714-96.285714 67.142857-129.142857 47.428571-154.571429 17.714286-157.142857-19.142857-137.428571-53.142857-98-86.285714-37.142857-114q0-65.714286 39.714286-140t112.857143-147.428571q96.571429-96.571429 195.142857-134.857143t140.857143 4q37.142857 36.571429 11.428571 119.428571-2.285714 8-0.571429 11.428571t5.714286 4 8.285714 2.857143 7.714286-2l3.428571-1.142857q79.428571-33.714286 140.571429-33.714286t87.428571 34.857143q25.714286 36 0 101.714286-1.142857 7.428571-2.571429 11.428571t2.571429 7.142857 6.857143 4.285714 9.714286 3.428571q32.571429 10.285714 58.857143 26.857143t45.714286 46.571429 19.428571 66.571429zm-42.285714-356.571429q24 26.857143 31.142857 62t-3.714286 67.142857q-4.571429 13.142857-16.857143 19.428571t-25.428571 2.285714q-13.142857-4.571429-19.428571-16.857143t-2.285714-25.428571q11.428571-36-13.714286-63.428571t-61.142857-20q-13.714286 2.857143-25.714286-4.571429t-14.285714-21.142857q-2.857143-13.714286 4.571429-25.428571t21.142857-14.571429q34.285714-7.428571 68 3.142857t57.714286 37.428571zm103.428571-93.142857q49.714286 54.857143 64.285714 127.142857t-7.714286 138q-5.142857 15.428571-19.428571 22.857143t-29.714286 2.285714-22.857143-19.428571-2.857143-29.714286q16-46.857143 5.714286-98.285714t-45.714286-90.285714q-35.428571-39.428571-84.571429-54.571429t-98.857143-4.857143q-16 3.428571-29.714286-5.428571t-17.142857-24.857143 5.428571-29.428571 24.857143-16.857143q70.285714-14.857143 139.428571 6.571429t118.857143 76.857143z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.toutiao.com/c/user/token/MS4wLjABAAAA1TxeVNQbqL6Lg7CJRoNwNHYDpIB5qKGh24pQ0AvIjmfeczyo5zxipIgPtGJr-mUI/?source=m_redirect" rel="me noopener" class="iconfont"
+      title="toutiao"  target="_blank"
+      >
+      <svg t="1731818671552" class="icon" viewBox="0 0 1024 1024" version="1.1"
+    xmlns="http://www.w3.org/2000/svg" p-id="4390" width="32" height="32">
+    <path
+        d="M828.745763 0H195.254237C86.779661 0 0 86.779661 0 195.254237v633.491526c0 108.474576 86.779661 190.915254 195.254237 195.254237h633.491526c108.474576 0 190.915254-86.779661 195.254237-195.254237V195.254237c0-108.474576-86.779661-195.254237-195.254237-195.254237z m138.847457 828.745763c0 78.101695-60.745763 138.847458-138.847457 138.847457H195.254237c-78.101695 0-138.847458-60.745763-138.847457-138.847457V195.254237c0-78.101695 60.745763-138.847458 138.847457-138.847457h633.491526c78.101695 0 138.847458 60.745763 138.847457 138.847457v633.491526z"
+        fill="#525252" p-id="4391"></path>
+    <path
+        d="M0 221.288136v620.474576c0 4.338983 4.338983 8.677966 8.677966 13.016949l1015.322034-56.40678V182.237288c0-4.338983-4.338983-8.677966-8.677966-13.016949L0 221.288136z"
+        fill="#525252" p-id="4392"></path>
+    <path
+        d="M906.847458 581.423729v-47.728814l-151.864407 8.677966V520.677966h-69.423729v30.372881l-151.864407 8.677967V607.457627l151.864407-8.677966v108.474576l69.423729-8.677966v-108.474576l151.864407-8.677966z"
+        fill="#FFFFFF" p-id="4393"></path>
+    <path
+        d="M538.033898 490.305085v47.728813h47.728814l138.847457-69.423729 130.169492 47.728814H911.186441v-47.728814h-34.711865l-91.118644-26.033898 117.152543-60.745763V299.389831l-65.084746 4.338983-173.559322 8.677966-56.40678-30.372882-78.101695 117.152543 60.745763 21.694915 43.38983-60.745763 199.593221-8.677966v8.677966l-108.474577 56.40678-91.118644-34.711865-26.033898 47.728814 47.728814 21.694915-82.440678 43.389831-34.711865-4.338983z m334.101695 104.135593l-69.423729 8.677966 47.728814 91.118644 78.101695-8.677966-56.40678-91.118644z m-334.101695 108.474576H607.457627l47.728814-95.457627-69.423729 8.677966-47.728814 86.779661z m-169.220339-99.79661l56.40678 108.474576h82.440678l-60.745763-117.152542-78.101695 8.677966z m-78.101695-86.779661l-60.745762-78.101695-82.440678 8.677966 60.745762 69.423729h82.440678z m0-95.457627L229.966102 351.457627H147.525424l60.745762 78.101695 82.440678-8.677966z"
+        fill="#FFFFFF" p-id="4394"></path>
+    <path
+        d="M351.457627 585.762712l130.169492-8.677966v-47.728814l-91.118644 8.677966v-216.949152l-65.084746 8.677966v208.271186l-216.949153 13.016949v47.728814l147.525424-8.677966-60.745763 82.440678-82.440678 8.677966v47.728814l138.847458-8.677967 99.79661-134.508474z"
+        fill="#FFFFFF" p-id="4395"></path>
+</svg>
+    </a>
+
+
+<a href="http://localhost:1313/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+    </span>
+    <span class="division">|</span>
+    <span class="theme-info">
+        Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+    </span>
+
+    <span class="copyright-year">
+        &copy;
+        
+        2011 -
+        2026
+        <span class="heart">
+            
+            <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+            </i>
+        </span><span class="author">
+            会写代码的小郎中
+            
+        </span></span>
+
+    
+    
+    <span id="busuanzi_container">
+        访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+    
+
+    
+    
+
+    
+</div>
+      </footer>
+
+      <div class="button__back-to-top">
+        <a href="#back-to-top">
+          <i class="iconfont">
+            
+            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+          </i>
+        </a>
+      </div>
+    </div>
+    
+<script type="text/javascript" src="http://localhost:1313/lib/jquery/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="http://localhost:1313/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="http://localhost:1313/js/main.0812a6f15b5585e323289457bbef147ebb2e5111f2924b072bc6acf7eabe95b1.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="http://localhost:1313/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="http://localhost:1313/js/copy-to-clipboard.js"></script>
+
+  <script src="http://localhost:1313/js/search.js"></script>
+
+
+  </body>
+</html>

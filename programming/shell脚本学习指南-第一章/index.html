@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  itemscope
+  itemtype="http://schema.org/WebPage"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+          Shell脚本学习指南-第一章 - 会写代码的小郎中
+        </title>
+    
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="会写代码的小郎中" /><meta name="description" content="Shell脚本学习指南-第一章" />
+<meta name="keywords" content="Shell脚本学习指南" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.128.2" />
+
+
+<link rel="canonical" href="https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E4%B8%80%E7%AB%A0/" />
+
+
+
+
+
+<link rel="icon" href="https://yutao.org/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://yutao.org/sass/jane.min.e826e860368147e5a6685e686355e4d7789023c18c9ea2e78b35f6786ce92736.css" integrity="sha256-6CboYDaBR&#43;WmaF5oY1Xk13iQI8GMnqLnizX2eGzpJzY=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://yutao.org/css/custom.css">
+
+<link rel="stylesheet" href="https://yutao.org/css/copy-to-clipboard.css">
+
+
+<meta property="og:url" content="https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E4%B8%80%E7%AB%A0/">
+  <meta property="og:site_name" content="会写代码的小郎中">
+  <meta property="og:title" content="Shell脚本学习指南-第一章">
+  <meta property="og:description" content="Shell脚本学习指南-第一章">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="programming">
+    <meta property="article:published_time" content="2011-07-14T22:29:27+08:00">
+    <meta property="article:modified_time" content="2011-07-14T22:29:27+08:00">
+    <meta property="article:tag" content="Shell脚本">
+
+  <meta itemprop="name" content="Shell脚本学习指南-第一章">
+  <meta itemprop="description" content="Shell脚本学习指南-第一章">
+  <meta itemprop="datePublished" content="2011-07-14T22:29:27+08:00">
+  <meta itemprop="dateModified" content="2011-07-14T22:29:27+08:00">
+  <meta itemprop="wordCount" content="5069">
+  <meta itemprop="keywords" content="Shell脚本学习指南">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Shell脚本学习指南-第一章">
+  <meta name="twitter:description" content="Shell脚本学习指南-第一章">
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZM2P746RY"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-HZM2P746RY');
+        }
+      </script>
+    
+  
+
+
+
+
+
+
+
+
+
+  </head>
+  <body>
+    <div id="back-to-top"></div>
+
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://yutao.org/" class="logo">会写代码的小郎中</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/programming/">编程</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/tcm/">中医</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/philosophy/">哲学</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/finance/">金融</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+          
+        
+      </li>
+    
+
+      <li class="mobile-menu-item">
+        <a id="openSearchMobile" class="mobile-menu-item-link menu-item-search" href="#">
+          <i class="iconfont">
+            <svg version="1.1" viewBox="0 0 1024 1024"
+  xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M973.81454219 973.81454219a91.78207815 91.78207815 0 0 1-129.80999631 0l-161.97482118-161.97482118a425.48527711 425.48527711 0 0 1-230.35931791 68.16531768 428.3346319 428.3346319 0 1 1 428.3346319-428.3346319 425.48527711 425.48527711 0 0 1-68.16531768 230.35931791l162.02961656 161.97482118a91.83687354 91.83687354 0 0 1-0.05479538 129.80999631zM451.67040679 145.69361559a305.97679241 305.97679241 0 1 0 0 611.95358361 305.97679241 305.97679241 0 0 0 0-611.95358361z">
+  </path>
+</svg>
+
+          </i>
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+    
+      
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://yutao.org/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="https://yutao.org/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+    
+
+    
+
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+    <a href="https://yutao.org/" class="logo">
+        
+        会写代码的小郎中
+        
+    </a>
+</div>
+
+<nav class="site-navbar">
+    <ul id="menu" class="menu">
+        
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/programming/">编程</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/tcm/">中医</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/philosophy/">哲学</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/finance/">金融</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+            
+
+            
+
+        </li>
+        
+
+        
+        
+
+        <li class="menu-item">
+            <a id="openSearch" class="menu-item-link menu-item-search" href="#">
+                <i class="iconfont">
+                    <svg version="1.1" viewBox="0 0 1024 1024"
+  xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M973.81454219 973.81454219a91.78207815 91.78207815 0 0 1-129.80999631 0l-161.97482118-161.97482118a425.48527711 425.48527711 0 0 1-230.35931791 68.16531768 428.3346319 428.3346319 0 1 1 428.3346319-428.3346319 425.48527711 425.48527711 0 0 1-68.16531768 230.35931791l162.02961656 161.97482118a91.83687354 91.83687354 0 0 1-0.05479538 129.80999631zM451.67040679 145.69361559a305.97679241 305.97679241 0 1 0 0 611.95358361 305.97679241 305.97679241 0 0 0 0-611.95358361z">
+  </path>
+</svg>
+
+                </i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+<div id="searchDialog" class="search-dialog" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;">
+  <div class="search-dialog-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 8px; width: 90%; max-width: 600px; box-sizing: border-box;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <h3 style="margin: 0;">搜索</h3>
+      <button id="closeSearch" style="background: none; border: none; font-size: 24px; cursor: pointer; padding: 0; margin: 0;">&times;</button>
+    </div>
+    <input type="text" id="search-input" placeholder="请输入关键词..." style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 15px; box-sizing: border-box;" />
+    <ul id="search-results" style="list-style: none; padding: 0; margin: 10px 0 0 0; max-height: 300px; overflow-y: auto;">
+      <style>
+        #search-results li {
+          padding: 8px 0;
+          border-bottom: 1px solid #f0f0f0;
+        }
+        #search-results li a {
+          display: block;
+          padding: 8px 12px;
+          text-decoration: none;
+          color: #333;
+        }
+        #search-results li a:hover {
+          background-color: #f5f5f5;
+        }
+      </style>
+    </ul>
+  </div>
+</div>
+    </header>
+
+    <div id="mobile-panel">
+      <main id="main" class="main bg-llight wallpaper">
+        <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#11-unix简史">1.1 UNIX简史</a></li>
+    <li><a href="#12-软件工具的原则">1.2 软件工具的原则</a>
+      <ul>
+        <li><a href="#一次做好一件事">一次做好一件事</a></li>
+        <li><a href="#处理文本行不要处理二进制数据">处理文本行，不要处理二进制数据</a></li>
+        <li><a href="#使用正则表达式">使用正则表达式</a></li>
+        <li><a href="#默认使用标准输入输出">默认使用标准输入/输出</a></li>
+        <li><a href="#避免噪噪不休">避免噪噪不休</a></li>
+        <li><a href="#输出格式必须与可接受的输入格式一致">输出格式必须与可接受的输入格式一致</a></li>
+        <li><a href="#让工具去做困难的部分">让工具去做困难的部分</a></li>
+        <li><a href="#构建特定工具前先想想">构建特定工具前，先想想</a></li>
+      </ul>
+    </li>
+    <li><a href="#13-小结">1.3 小结</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
+    <div id="content" class="content">
+
+        
+        
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/yutao.org\/programming\/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E4%B8%80%E7%AB%A0\/"
+          },
+          "headline": "Shell脚本学习指南-第一章",
+          "description": "Shell脚本学习指南-第一章",
+          "datePublished": "2011-07-14T22:29:27\u002b08:00",
+          "dateModified": "2011-07-14T22:29:27\u002b08:00",
+          "author": {
+            "@type": "Person",
+            "name": "会写代码的小郎中"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "会写代码的小郎中",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https:\/\/yutao.org\/favicon.ico"
+            }
+          }
+        }
+        </script>
+        
+        
+
+        <article class="post">
+            
+            <header class="post-header">
+                <h1 class="post-title">Shell脚本学习指南-第一章</h1>
+                
+
+                <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      <a href="https://yutao.org/about">
+        <span class="post-meta-author-name">
+          会写代码的小郎中
+        </span>
+      </a>
+    
+  </div>
+
+  <div class="post-meta-time">
+        <time datetime=" 2011-07-14">
+      2011-07-14
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 5069 字 -
+        预计阅读 11 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="https://yutao.org/categories/shell%E8%84%9A%E6%9C%AC/"> Shell脚本 </a>
+          
+      </div>
+
+
+    
+        
+      <span id="busuanzi_container_page_pv">
+        | 阅读 <span id="busuanzi_value_page_pv"></span>
+      </span>
+    
+
+
+    
+        
+  </div>
+</div>
+            </header>
+
+            
+            <div class="post-content">
+                <!-- markdownlint-disable-file MD029 -->
+<!-- markdownlint-disable-file MD024 -->
+<!-- markdownlint-disable-file MD052 -->
+<p><img alt="系统管理员" src="https://yutao.org/image/%E8%AF%BB%E4%B9%A6%E6%B8%85%E5%8D%95/Shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97.jpg"></p>
+<h1 id="第1章-背景知识">第1章 背景知识</h1>
+<p>本章将简述UNIX系统的发展史。了解UNIX在何处开发、如何开发，以及它的设计动机。这有助于用户善加利用UNIX所提供的工具。此外，本章将介绍软件工具的设计原则。</p>
+<h2 id="11-unix简史">1.1 UNIX简史</h2>
+<p>或许你对于UNIX的发展史已有些了解，并且已经有很多介绍UNIX完整发展历史的资料。这里，我们只想让你知道：UNIX是在何种环境下诞生的，以及它如何影响软件工具的设计。</p>
+<p>UNIX最初是由贝尔电话实验室（Bell Telephone Laboratories，注1）的计算机科学研究中心（Computing Sciences Research Center）开发的。第一版诞生于1970年——也就是在贝尔实验室（Bell Labs）退出Multics项目不久。在UNIX广受欢迎的功能中，有许多便是来自Multics操作系统。其中最著名的有：将设备视为文件，以及特意不将命令解释器（command interpreter）或Shell整合到操作系统中。更完整的历史信息可在http://www.bell-labs.com/history/unix找到。</p>
+<p>由于UNIX是在面向研究的环境下开发的，因而没有必须生产或销售成品的盈利压力。这使其具有下列优势：</p>
+<ul>
+<li>
+<p>系统由用户自行开发。他们使用这套系统来解决每天所遇到的计算问题。</p>
+</li>
+<li>
+<p>研究人员可以不受拘束地进行实验，必要时也可任意变换程序。由于用户群不大，若程序有必要整个重写，多半也不会太难。由于用户即为开发人员，发现问题时便能随即修正，有地方需要加强时，也可以马上就做。</p>
+</li>
+</ul>
+<p>UNIX 已历经数个版本，各个版本以字母 V 加上数字作为简称，如 V6、V7，等等。（正式名称则是遵循发行的使用手册的修订次数编号来命名，例如 First Edition、Second Edition，等等。这两种名称的对应其实很直接：V6 = Sixth Edition 、 V7 = Seventh Edition 。和大多数有经验的 UNIX 程序员一样，这两种命名方式我们都会用到）。影响最深远的 UNIX 系统是 1979 年所发行的第 7 版（Seventh Edition），但是在最初的几年，它仅应用于学术教育机构领域。值得一提的是：第 7 版的系统同时提出了 awk 与 Bourne Shell，这二者是 POSIX Shell 的基础，同时，第一本讨论 UNIX 的书也在此诞生。</p>
+<p>贝尔实验室的研究人员都是计算机科学家。他们所设计的系统不单单是自己使用，还要分享给同事——这些人一样也是计算机科学家。因此，衍生出&quot;务实&quot;（nononsense）的设计模式：程序会执行你所赋予的任务，但不会跟你对话，也不会问一堆&quot;你确定吗？&ldquo;之类的问题。</p>
+<p>除了精益求精，在设计与问题解决上，他们也不断地追求&quot;优雅&rdquo;（elegance）。关于&quot;优雅&quot;有一个贴切的定义：简单就是力量（power cloaked in simplicity，注2）。贝尔实验室自由的环境，所造就的不仅是一个可用的系统，也是一个优雅的系统。</p>
+<p>当然，自由同样也带来了一些缺点。当 UNIX 流传至开发环境以外的地方，这些问题也逐渐浮现：</p>
+<ul>
+<li>
+<p>工具程序之间存在许多不一致的地方。例如，同样的选项字母，在不同程序之间有完全不一样的定义，或是相同的工作却需要指定不同的选项字母。此外，正则表达式的语法在不同程序之间用法类似，却又不完全一致，易产生混淆——这种情况其实可以避免。（直至正则表达式的重要性受到认可，其模式匹配机制才得以收录在标准程序库中。）</p>
+</li>
+<li>
+<p>诸多工具程序具有缺陷，例如输入行（input lines）的长度，或是可打开的文件个数，等等。（现行的系统多半已经修正这些缺陷。）</p>
+</li>
+<li>
+<p>有时程序并未经过彻底测试，这使得它们在执行的时候一不小心就会遭到破坏。这可能会导致核心转储（core dumps，译注1），令用户不知所措。幸好，现行的 UNIX 系统极少会面临这样的问题。</p>
+</li>
+<li>
+<p>系统的文档尽管大致上内容完备，但通常极为简单。使得用户在学习时很难找到所需要的信息（注3）。</p>
+</li>
+</ul>
+<p>本书之所以将重点放在文本（而非二进制）数据的处理与运用上，是由于 UNIX 早期的发展都源自于对文本处理的强烈需求，不过除此之外还有另外的重要理由（马上会讨论到）。事实上，贝尔实验室专利部门（Bell Labs Patent Department）在 UNIX 系统上所使用的第一套产品，就是进行文本处理和编排工作的。</p>
+<p>最初的 UNIX 机器（Digital Equipment Corporation PDP-11s）不能运行大型程序。要完成复杂的工作，得先将它分割成更小的工作，再用程序来完成这些更小的工作。某些常见的工作（从数据行中取出某些字段、替换文本，等等）也常见于许多大型项目，最后就成了标准工具。人们认为这种自然而生的结果是件好事：由于缺乏大型的解决空间，因而产生了更小、更简单、更专用的程序。</p>
+<p>许多人在 UNIX 的使用上采用半独立的工作方式，重复套用彼此间的程序。由于版本之间的差异，而且不需要标准化，导致许多日常工具程序的发展日渐分歧。举例来说，grep 在某系统里使用 - i 来表示&quot;查找时忽略大小写&quot;，但在另一个系统中，却使用 - y 来代表同样的事！无独有偶，这种怪事也发生在许多工具程序上。还有，一些常用的小程序可能会取相同的名字，针对某个 UNIX 版本所编写的 Shell 程序，不经修改可能无法在另一个版本上执行。</p>
+<p>最后，对常用标准工具组与选项的需求终于明朗化，POSIX 标准即为最后的结果。现行标准 IEEE Std. 1003.1-2004 包含了 C 的库层级的主题，还有 Shell 语言与系统工具及其选项。</p>
+<p>好消息是，在这些标准上所做的努力有了回报。现在的商用 UNIX 系统，以及可免费使用的同类型产品，例如 GNU/Linux与BSD衍生系统，都兼容POSIX。这样一来，学习 UNIX变得更容易，编写可移植的Shell脚本也成为可能（详见第14章）。</p>
+<p>值得注意的是：POSIX并非UNIX标准化的唯一成果，POSIX之外仍有其他标准。例如，欧洲计算机制造商协会自行发起了一套名为X/Open的标准。其中最受欢迎的是1988年首度出现的XPG4（X/Open Portability Guide, Fourth Edition）。另外还有XPG5，其更广为人知的名称为UNIX98标准，或Single UNIX Specification。XPG5很大程度上把POSIX纳入为一个子集，同样深具影响力（注4）。</p>
+<p>XPG标准在措辞上可能不够严谨，但其内容却较为广泛，其目标是将现存于UNIX系统上实际用到的各种功能正式生成文档。（POSIX的目的在于建立一套正式的标准，让从头开始的实践者有指导方针可以套用——即便是在非UNIX的平台上。因此，许多UNIX系统上常见的功能，一开始就排除在POSIX标准之外）。2001 POSIX标准由于纳入了X/Open System Interface Extension（XSI）而有了双重身份，也叫做XPG6，这是它首度正式扩张POSIX版图。此文档的特色在于：让系统不只兼容POSIX，也兼容于XSI。所以，当你在编写工具或应用程序时，必须参考的正式文件只有一份（就叫做Single UNIX Standard）。</p>
+<p>本书自始至终都把重点放在根据POSIX标准所定义的Shell语言与UNIX工具程序。重点部分也会加入XSI定义的说明，因为你很可能会用得到。</p>
+<h2 id="12-软件工具的原则">1.2 软件工具的原则</h2>
+<p>随着时间的推移，人们开发出了一套设计与编写软件工具的原则。在本书用来解决问题的程序中，你将会看到这些原则的应用示例。好的软件工具应该具备下列特点：</p>
+<h3 id="一次做好一件事">一次做好一件事</h3>
+<p>在很多方面，这都是最重要的原则。若程序只做一件事，那么无论是设计、编写、调试、维护，以及生成文件都会容易得多。举例来说，对于用来查找文件中是否有符合样式的grep程序，不应该指望用它来执行算术运算。</p>
+<p>这个原则的结果，自然就是会不断产生出更小、更专用于特定功能的程序，就像专业木匠的工具箱里，永远会有一堆专为特定用途所设计的工具。</p>
+<h3 id="处理文本行不要处理二进制数据">处理文本行，不要处理二进制数据</h3>
+<p>文本行是UNIX的通用格式。当你在编写自己的工具程序时便会发现，内含文本行的数据文件很好处理，你可以用任何唾手可得的文本编辑器来编辑它，也可以让这些数据在网络与各种机器架构之间传输。使用文本文件更有助于任何自定义工具与现存的UNIX程序之间的结合。</p>
+<h3 id="使用正则表达式">使用正则表达式</h3>
+<p>正则表达式（regular expression）是很强的文本处理机制。了解它的运作模式并加以使用，可适度简化编写命令脚本（script）的工作。</p>
+<p>此外，虽然正则表达式多年来在工具与UNIX版本上不断在变化，但POSIX标准仅提供两种正则表达式。你可以利用标准的库程序进行模式匹配的工作。这样就可以编写出专用的工具程序，用于与grep一致的正则表达式（POSIX称之为基本型正则表达式，Basic Regular Expressions，BRE），或是用于与egrep一致的正则表达式（POSIX称之为扩展型正则表达式，Extended Regular Expressions，ERE）。</p>
+<h3 id="默认使用标准输入输出">默认使用标准输入/输出</h3>
+<p>在未明确指定文件名的情况下，程序默认会从它的标准输入读取数据，将数据写到它的标准输出，至于错误信息则会传送到标准错误输出（这部分将于第2章讨论）。以这样的方式来编写程序，可以轻松地让它们成为数据过滤器（filter），例如，组成部分的规模越大，越需要复杂的管道（pipeline）或脚本来处理。</p>
+<h3 id="避免噪噪不休">避免噪噪不休</h3>
+<p>软件工具的执行过程不该像在&quot;聊天&quot;（chatty）。不要将&quot;开始处理&quot;（starting processing）、&ldquo;即将完成&rdquo;（almost done）或是&quot;处理完成&quot;（finished processing）这类信息放进程序的标准输出（至少这不该是默认状态）。</p>
+<p>当你有意将一些工具串成一条管道时，例如：</p>
+<p>tool_1 &lt; datafile | tool_2 | tool_3 | tool_4 &gt; resultfile</p>
+<p>若每个工具都会产生&quot;正处理中&quot;（yes I&rsquo;m working）这样的信息并送往管道，那么别指望执行结果会像预期的一样。此外，若每个工具都将自己的信息传送至标准错误输出，那么整个屏幕画面就会布满一堆无用的过程信息。在工具程序的世界里，没有消息就是好消息。</p>
+<p>这个原则其实还有另外一个含义。一般来说，UNIX工具程序一向遵循&quot;你叫它做什么，你就会得到什么&quot;的设计哲学。它们不会问&quot;你确定吗？&quot;（are you sure?）这种问题，当用户键入rm somefile，UNIX的设计人员会认为用户知道自己在做什么，然后毫无疑问地rm删除掉要删除的文件（注5）。</p>
+<h3 id="输出格式必须与可接受的输入格式一致">输出格式必须与可接受的输入格式一致</h3>
+<p>专业的工具程序认为遵循某种格式的输入数据，例如标题行之后接着数据行，或在行上使用某种字段分隔符等，所产生的输出也应遵循与输入一致的规则。这么做的好处是，容易将一个程序的执行结果交给另一个程序处理。</p>
+<p>举例来说，netpbm程序集（注5）是用来处理以Portable BitMap（PBM）格式保存的图像文件（注6）。这些文件内含bitmapped图像，并使用定义明确的格式加以绘制。每个读取PBM文件的工具程序，都会先以某种格式来处理文件内的图像，然后再以PBM的格式写回文件。这么一来，便可以组合简单的管道来执行复杂的图像处理，例如先缩放影像后，再旋转方向，最后再把颜色调淡。</p>
+<h3 id="让工具去做困难的部分">让工具去做困难的部分</h3>
+<p>虽然UNIX程序并非完全符合你的需求，但是现有的工具或许已经可以为你完成90%的工作。接下来，若有需要，你可以编写一个功能特定的小型程序来完成剩下的工作。与每次都从头开始来解决各个问题相比，这已经让你省去许多工作了。</p>
+<h3 id="构建特定工具前先想想">构建特定工具前，先想想</h3>
+<p>如前所述，若现存系统里就是没有需要的程序，可以花点时间构建满足所需的小工具。然而，动手编写一个能够解决问题的程序前，请先停下来想几分钟。你所要做的事，是否有其他人也需要做？这个特殊的工作是否有可能是某个一般问题的一个特例？如果是的话，请针对一般问题来编写程序。当然，这么做的时侯，无论是在程序的设计或编写上，都应该遵循前面所提到的几项原则。</p>
+<h2 id="13-小结">1.3 小结</h2>
+<p>UNIX原为贝尔实验室的计算机科学家所开发的产品。由于没有盈利上的压力，再加上PDP-11小型计算机的能力有限，因而程序都以小型、优雅为圭臬。也因为没有盈利上的压力，系统之间并非完全一致，学习上也不太容易。</p>
+<p>随着UNIX持续地流行，各种版本陆续开发出来（尤其是衍生自System V和BSD的版本），Shell脚本层次的可移植性也日益困难。幸好，POSIX标准成熟后，几乎所有商用UNIX系统与免费的UNIX版本都兼容POSIX。</p>
+<p>之所以会在这里指出软件工具的设计原则，主要是为了提供开发与使用UNIX工具集的指导方针。让软件工具的设计原则成为思考习惯，将有助于编写简洁的Shell程序和正确使用UNIX工具。</p>
+
+            </div>
+
+            
+            
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">会写代码的小郎中</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2011-07-14
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">CC BY-NC-ND 4.0</span>
+  </p>
+</div>
+
+
+
+            
+            
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://yutao.org/image/ds/wechat-qr-code.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://yutao.org/image/ds/alipay-qr-code.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+
+            <footer class="post-footer">
+                <div class="post-tags">
+                    <a href="https://yutao.org/tags/shell%E8%84%9A%E6%9C%AC/">Shell脚本</a>
+                    
+                </div>
+
+
+                
+                <nav class="post-nav">
+                    
+                    <a class="prev" href="https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E4%BA%8C%E7%AB%A0/">
+                        
+                        <i class="iconfont">
+                            <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+                        </i>
+                        <span class="prev-text nav-default">Shell脚本学习指南-第二章-入门</span>
+                        <span class="prev-text nav-mobile">上一篇</span>
+                    </a>
+                    
+                    <a class="next" href="https://yutao.org/programming/unixlinux%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%8A%80%E6%9C%AF%E6%89%8B%E5%86%8C-%E7%AC%AC%E4%B8%89%E5%8D%81%E4%B8%80%E7%AB%A0/">
+                        <span class="next-text nav-default">UNIX/Linux系统管理技术手册-读书笔记-第三十一章</span>
+                        <span class="prev-text nav-mobile">下一篇</span>
+                        
+                        <i class="iconfont">
+                            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+                        </i>
+                    </a>
+                </nav>
+            </footer>
+        </article>
+
+        
+        
+
+
+        
+        
+
+  
+
+  
+  
+
+  
+  
+    <div class="post">
+  <script src="https://utteranc.es/client.js"
+        repo= "yutaodev/comments-for-yutaodev.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+    </div>
+
+    
+
+
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });  
+</script>
+<script>
+    
+    Array.from(document.getElementsByClassName("language-mermaid")).forEach(
+        (el) => {
+            el.parentElement.outerHTML = `<div class="mermaid">${el.innerHTML}</div>`;
+        }
+    );  
+</script>
+<style>
+     
+    .mermaid svg {
+        display: block;
+        margin: auto;
+    }
+</style>
+</div>
+
+      </main>
+
+      <footer id="footer" class="footer">
+        <div class="icon-links">
+    
+  
+    <a href="mailto:yutao.z@qq.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://space.bilibili.com/304380559" rel="me noopener" class="iconfont"
+      title="bilibili"  target="_blank"
+      >
+      <svg
+  class="icon" style="" viewBox="0 0 1024 1024" version="1.1" width="36"
+  height="36" id="svg8">
+  <path
+      style=""
+      d="M 744.60599,0.00486267 A 41.779915,41.779915 0 0 0 710.4184,18.673394 L 548.5048,255.32642 h -11.70046 a 41.779915,41.779915 0 0 0 -10.80295,-7.84928 L 235.66,97.084498 a 41.779915,41.779915 0 0 0 -20.07193,-4.960864 41.779915,41.779915 0 0 0 -18.3748,79.145436 L 359.4859,255.32642 H 128.16909 c -49.458302,0 -89.27932,39.82105 -89.27932,89.27932 v 508.65224 c 0,49.4583 39.821018,89.27934 89.27932,89.27934 h 19.48445 C 149.12802,984.5043 179.92773,1024 224.79179,1024 c 44.86407,0 75.66379,-39.4957 77.13826,-81.46268 H 719.98116 C 721.45559,984.5043 752.25533,1024 797.1194,1024 c 44.86406,0 75.6638,-39.4957 77.13824,-81.46268 h 21.57323 c 49.45831,0 89.27936,-39.82104 89.27936,-89.27934 V 344.60574 c 0,-49.45827 -39.82105,-89.27932 -89.27936,-89.27932 H 649.74567 L 779.38103,65.866924 A 41.779915,41.779915 0 0 0 744.60599,0.00486267 Z M 644.49108,418.70871 c 6.29985,0.21538 12.44451,2.01107 17.86888,5.22196 l 171.36218,98.10771 c 18.23417,10.21935 24.63334,33.34627 14.24614,51.48533 -10.38726,18.13909 -33.57344,24.32718 -51.61587,13.77296 L 624.9903,489.18895 c -15.21356,-8.41858 -22.66871,-26.1765 -18.03211,-42.93436 4.63664,-16.75784 20.15573,-28.14465 37.53289,-27.54588 z M 350.2006,432.31846 c 16.89952,0.0317 31.69582,11.33328 36.17844,27.62747 4.48262,16.2942 -2.44981,33.57765 -16.95507,42.24898 l -140.7157,86.91312 c -17.68528,11.18244 -41.09629,5.77692 -52.08912,-12.02686 -10.99282,-17.80373 -5.33855,-41.15658 12.58167,-51.95857 L 329.9002,438.2095 c 6.0643,-3.86439 13.10951,-5.90891 20.3004,-5.89104 z M 501.605,641.53985 c 3.75002,-0.15248 7.48645,0.53903 10.93349,2.0235 0.15842,0.0637 0.31618,0.12888 0.47325,0.19582 0.59328,0.27092 1.17574,0.56489 1.74609,0.88121 0.15868,0.0854 0.31643,0.17233 0.47325,0.2611 0.55694,0.32165 1.10131,0.66458 1.63185,1.02807 0.16455,0.1123 0.32777,0.2265 0.48956,0.34269 0.50382,0.36781 0.99371,0.75428 1.46868,1.15864 0.18724,0.15504 0.37218,0.31282 0.55484,0.47323 0.43271,0.38784 0.8518,0.79061 1.25653,1.20756 0.15449,0.16114 0.30679,0.32437 0.45693,0.48959 0.40798,0.44266 0.79989,0.89988 1.17494,1.37076 0.17799,0.22544 0.35205,0.45395 0.5222,0.68538 0.25932,0.34701 0.50964,0.70071 0.75064,1.06071 0.26712,0.39516 0.52286,0.79784 0.76699,1.20757 0.16907,0.29043 0.33231,0.58424 0.48957,0.88123 0.21836,0.41297 0.42513,0.83199 0.62009,1.25653 0.14836,0.32333 0.28983,0.64976 0.42429,0.97911 0.21319,0.51552 0.40915,1.03801 0.58747,1.5666 0.0677,0.19499 0.13296,0.39085 0.19582,0.58748 0.18652,0.60823 0.34984,1.22334 0.48957,1.84399 0.0397,0.16277 0.0779,0.32601 0.11423,0.48957 0.1436,0.69112 0.25788,1.38801 0.34269,2.08877 0.005,0.0381 0.0111,0.0761 0.0163,0.11424 0.0857,0.78056 0.13474,1.56471 0.14687,2.34988 0.005,0.0543 0.0111,0.10879 0.0163,0.1632 0,0 -0.008,1.12132 0,1.45234 0,0 -0.14697,17.84761 5.89102,34.12231 3.01902,8.13734 7.33278,15.10615 12.61433,19.61501 5.28157,4.50889 11.42894,7.62081 23.64572,7.62081 12.2168,0 18.36416,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.5953,-11.47767 12.6143,-19.61501 6.03799,-16.2747 5.89103,-34.12231 5.89103,-34.12231 -0.44885,-13.87045 10.45922,-25.46302 24.3311,-25.86506 13.87189,-0.40201 25.42828,10.53953 25.78348,24.41272 0,0 1.11929,25.7226 -9.00791,53.01927 -5.06359,13.64832 -13.1986,28.46036 -27.05631,40.29073 -13.85772,11.83039 -33.5454,19.63135 -56.20142,19.63135 -22.65603,0 -42.34371,-7.80096 -56.20141,-19.63135 -4.1801,-3.56856 -7.78733,-7.42433 -10.99878,-11.42303 -3.21235,4.00037 -6.81703,7.85309 -10.99876,11.42303 -13.85773,11.83039 -33.5454,19.63135 -56.20144,19.63135 -22.65601,0 -42.3437,-7.80096 -56.2014,-19.63135 -13.85775,-11.83037 -21.99272,-26.64241 -27.05632,-40.29073 -10.12725,-27.29667 -9.00789,-53.01928 -9.00789,-53.01927 0.20714,-13.83687 11.58744,-24.88848 25.42444,-24.69013 14.1263,0.19991 25.2971,12.0278 24.69011,26.14247 0,0 -0.14697,17.84761 5.89103,34.12231 3.01902,8.13734 7.31646,15.10615 12.598,19.61501 5.28155,4.50889 11.44526,7.62081 23.66203,7.62081 12.21681,0 18.36418,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.57899,-11.47767 12.598,-19.61501 5.76352,-15.53489 5.89112,-32.05691 5.89103,-33.56746 0.006,-0.37466 0.0111,-1.05336 0.0163,-1.20759 -0.0117,-0.74583 0.0105,-1.49177 0.0652,-2.23565 0.009,-0.15784 0.0204,-0.31561 0.0327,-0.47324 0.14204,-1.56859 0.43163,-3.12027 0.86487,-4.63449 0.0213,-0.0763 0.0433,-0.15244 0.0652,-0.22848 3.0335,-10.25748 12.24157,-17.46007 22.92769,-17.93417 z"
+      id="rect824"/>
+</svg>
+
+    </a>
+  
+    <a href="https://weibo.com/u/2557216280" rel="me noopener" class="iconfont"
+      title="weibo"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M385.714286 733.714286q12-19.428571 6.285714-39.428571t-25.714286-28.571429q-19.428571-8-41.714286-0.571429t-34.285714 26.285714q-12.571429 19.428571-7.428571 39.142857t24.571429 28.857143 42.571429 1.428571 35.714286-27.142857zm53.714286-69.142857q4.571429-7.428571 2-15.142857t-10-10.571429q-8-2.857143-16.285714 2.857143t-12.285714 10.571429q-9.714286 17.714286 7.428571 25.714286 8 2.857143 16.571429 2.857143t12.571429-10.571429zm99.428571 61.142857q-25.714286 58.285714-90.285714 85.714286t-128 6.857143q-61.142857-19.428571-84.285714-72.285714t3.714286-107.142857q26.857143-53.142857 86.571429-79.428571t120.285714-10.857143q63.428571 16.571429 90.571429 68.285714t1.428571 108.857143zm178.285714-91.428571q-5.142857-54.857143-50.857143-97.142857t-119.142857-62.285714-156.857143-12q-127.428571 13.142857-211.142857 80.857143t-75.714286 151.142857q5.142857 54.857143 50.857143 97.142857t119.142857 62.285714 156.857143 12q127.428571-13.142857 211.142857-80.857143t75.714286-151.142857zm176 2.285714q0 38.857143-21.142857 79.714286t-62.285714 78.285714-96.285714 67.142857-129.142857 47.428571-154.571429 17.714286-157.142857-19.142857-137.428571-53.142857-98-86.285714-37.142857-114q0-65.714286 39.714286-140t112.857143-147.428571q96.571429-96.571429 195.142857-134.857143t140.857143 4q37.142857 36.571429 11.428571 119.428571-2.285714 8-0.571429 11.428571t5.714286 4 8.285714 2.857143 7.714286-2l3.428571-1.142857q79.428571-33.714286 140.571429-33.714286t87.428571 34.857143q25.714286 36 0 101.714286-1.142857 7.428571-2.571429 11.428571t2.571429 7.142857 6.857143 4.285714 9.714286 3.428571q32.571429 10.285714 58.857143 26.857143t45.714286 46.571429 19.428571 66.571429zm-42.285714-356.571429q24 26.857143 31.142857 62t-3.714286 67.142857q-4.571429 13.142857-16.857143 19.428571t-25.428571 2.285714q-13.142857-4.571429-19.428571-16.857143t-2.285714-25.428571q11.428571-36-13.714286-63.428571t-61.142857-20q-13.714286 2.857143-25.714286-4.571429t-14.285714-21.142857q-2.857143-13.714286 4.571429-25.428571t21.142857-14.571429q34.285714-7.428571 68 3.142857t57.714286 37.428571zm103.428571-93.142857q49.714286 54.857143 64.285714 127.142857t-7.714286 138q-5.142857 15.428571-19.428571 22.857143t-29.714286 2.285714-22.857143-19.428571-2.857143-29.714286q16-46.857143 5.714286-98.285714t-45.714286-90.285714q-35.428571-39.428571-84.571429-54.571429t-98.857143-4.857143q-16 3.428571-29.714286-5.428571t-17.142857-24.857143 5.428571-29.428571 24.857143-16.857143q70.285714-14.857143 139.428571 6.571429t118.857143 76.857143z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.toutiao.com/c/user/token/MS4wLjABAAAA1TxeVNQbqL6Lg7CJRoNwNHYDpIB5qKGh24pQ0AvIjmfeczyo5zxipIgPtGJr-mUI/?source=m_redirect" rel="me noopener" class="iconfont"
+      title="toutiao"  target="_blank"
+      >
+      <svg t="1731818671552" class="icon" viewBox="0 0 1024 1024" version="1.1"
+    xmlns="http://www.w3.org/2000/svg" p-id="4390" width="32" height="32">
+    <path
+        d="M828.745763 0H195.254237C86.779661 0 0 86.779661 0 195.254237v633.491526c0 108.474576 86.779661 190.915254 195.254237 195.254237h633.491526c108.474576 0 190.915254-86.779661 195.254237-195.254237V195.254237c0-108.474576-86.779661-195.254237-195.254237-195.254237z m138.847457 828.745763c0 78.101695-60.745763 138.847458-138.847457 138.847457H195.254237c-78.101695 0-138.847458-60.745763-138.847457-138.847457V195.254237c0-78.101695 60.745763-138.847458 138.847457-138.847457h633.491526c78.101695 0 138.847458 60.745763 138.847457 138.847457v633.491526z"
+        fill="#525252" p-id="4391"></path>
+    <path
+        d="M0 221.288136v620.474576c0 4.338983 4.338983 8.677966 8.677966 13.016949l1015.322034-56.40678V182.237288c0-4.338983-4.338983-8.677966-8.677966-13.016949L0 221.288136z"
+        fill="#525252" p-id="4392"></path>
+    <path
+        d="M906.847458 581.423729v-47.728814l-151.864407 8.677966V520.677966h-69.423729v30.372881l-151.864407 8.677967V607.457627l151.864407-8.677966v108.474576l69.423729-8.677966v-108.474576l151.864407-8.677966z"
+        fill="#FFFFFF" p-id="4393"></path>
+    <path
+        d="M538.033898 490.305085v47.728813h47.728814l138.847457-69.423729 130.169492 47.728814H911.186441v-47.728814h-34.711865l-91.118644-26.033898 117.152543-60.745763V299.389831l-65.084746 4.338983-173.559322 8.677966-56.40678-30.372882-78.101695 117.152543 60.745763 21.694915 43.38983-60.745763 199.593221-8.677966v8.677966l-108.474577 56.40678-91.118644-34.711865-26.033898 47.728814 47.728814 21.694915-82.440678 43.389831-34.711865-4.338983z m334.101695 104.135593l-69.423729 8.677966 47.728814 91.118644 78.101695-8.677966-56.40678-91.118644z m-334.101695 108.474576H607.457627l47.728814-95.457627-69.423729 8.677966-47.728814 86.779661z m-169.220339-99.79661l56.40678 108.474576h82.440678l-60.745763-117.152542-78.101695 8.677966z m-78.101695-86.779661l-60.745762-78.101695-82.440678 8.677966 60.745762 69.423729h82.440678z m0-95.457627L229.966102 351.457627H147.525424l60.745762 78.101695 82.440678-8.677966z"
+        fill="#FFFFFF" p-id="4394"></path>
+    <path
+        d="M351.457627 585.762712l130.169492-8.677966v-47.728814l-91.118644 8.677966v-216.949152l-65.084746 8.677966v208.271186l-216.949153 13.016949v47.728814l147.525424-8.677966-60.745763 82.440678-82.440678 8.677966v47.728814l138.847458-8.677967 99.79661-134.508474z"
+        fill="#FFFFFF" p-id="4395"></path>
+</svg>
+    </a>
+
+
+<a href="https://yutao.org/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+    </span>
+    <span class="division">|</span>
+    <span class="theme-info">
+        Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+    </span>
+
+    <span class="copyright-year">
+        &copy;
+        
+        2011 -
+        2026
+        <span class="heart">
+            
+            <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+            </i>
+        </span><span class="author">
+            会写代码的小郎中
+            
+        </span></span>
+
+    
+    
+    <span id="busuanzi_container">
+        访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+    
+
+    
+    
+
+    
+</div>
+      </footer>
+
+      <div class="button__back-to-top">
+        <a href="#back-to-top">
+          <i class="iconfont">
+            
+            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+          </i>
+        </a>
+      </div>
+    </div>
+    
+<script type="text/javascript" src="https://yutao.org/lib/jquery/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="https://yutao.org/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="https://yutao.org/js/main.0812a6f15b5585e323289457bbef147ebb2e5111f2924b072bc6acf7eabe95b1.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="https://yutao.org/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="https://yutao.org/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://yutao.org/js/copy-to-clipboard.js"></script>
+
+  <script src="https://yutao.org/js/search.js"></script>
+
+
+  </body>
+</html>
