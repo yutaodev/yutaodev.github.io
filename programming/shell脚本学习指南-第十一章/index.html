@@ -1,0 +1,2273 @@
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  itemscope
+  itemtype="http://schema.org/WebPage"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+          Shell脚本学习指南-第十一章-合并用户数据库 - 会写代码的小郎中
+        </title>
+    
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="会写代码的小郎中" /><meta name="description" content="Shell脚本学习指南-第十一章" />
+<meta name="keywords" content="Shell脚本学习指南" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.128.2" />
+
+
+<link rel="canonical" href="https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/" />
+
+
+
+
+
+<link rel="icon" href="https://yutao.org/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://yutao.org/sass/jane.min.e826e860368147e5a6685e686355e4d7789023c18c9ea2e78b35f6786ce92736.css" integrity="sha256-6CboYDaBR&#43;WmaF5oY1Xk13iQI8GMnqLnizX2eGzpJzY=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://yutao.org/css/custom.css">
+
+<link rel="stylesheet" href="https://yutao.org/css/copy-to-clipboard.css">
+
+
+<meta property="og:url" content="https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/">
+  <meta property="og:site_name" content="会写代码的小郎中">
+  <meta property="og:title" content="Shell脚本学习指南-第十一章-合并用户数据库">
+  <meta property="og:description" content="Shell脚本学习指南-第十一章">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="programming">
+    <meta property="article:published_time" content="2011-07-24T22:29:27+08:00">
+    <meta property="article:modified_time" content="2011-07-24T22:29:27+08:00">
+    <meta property="article:tag" content="Shell脚本">
+
+  <meta itemprop="name" content="Shell脚本学习指南-第十一章-合并用户数据库">
+  <meta itemprop="description" content="Shell脚本学习指南-第十一章">
+  <meta itemprop="datePublished" content="2011-07-24T22:29:27+08:00">
+  <meta itemprop="dateModified" content="2011-07-24T22:29:27+08:00">
+  <meta itemprop="wordCount" content="8174">
+  <meta itemprop="keywords" content="Shell脚本学习指南">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Shell脚本学习指南-第十一章-合并用户数据库">
+  <meta name="twitter:description" content="Shell脚本学习指南-第十一章">
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZM2P746RY"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-HZM2P746RY');
+        }
+      </script>
+    
+  
+
+
+
+
+
+
+
+
+
+  </head>
+  <body>
+    <div id="back-to-top"></div>
+
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://yutao.org/" class="logo">会写代码的小郎中</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/programming/">编程</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/tcm/">中医</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/philosophy/">哲学</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/finance/">金融</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+          
+        
+      </li>
+    
+
+      <li class="mobile-menu-item">
+        <a id="openSearchMobile" class="mobile-menu-item-link menu-item-search" href="#">
+          <i class="iconfont">
+            <svg version="1.1" viewBox="0 0 1024 1024"
+  xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M973.81454219 973.81454219a91.78207815 91.78207815 0 0 1-129.80999631 0l-161.97482118-161.97482118a425.48527711 425.48527711 0 0 1-230.35931791 68.16531768 428.3346319 428.3346319 0 1 1 428.3346319-428.3346319 425.48527711 425.48527711 0 0 1-68.16531768 230.35931791l162.02961656 161.97482118a91.83687354 91.83687354 0 0 1-0.05479538 129.80999631zM451.67040679 145.69361559a305.97679241 305.97679241 0 1 0 0 611.95358361 305.97679241 305.97679241 0 0 0 0-611.95358361z">
+  </path>
+</svg>
+
+          </i>
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+    
+      
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://yutao.org/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="https://yutao.org/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+    
+
+    
+
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+    <a href="https://yutao.org/" class="logo">
+        
+        会写代码的小郎中
+        
+    </a>
+</div>
+
+<nav class="site-navbar">
+    <ul id="menu" class="menu">
+        
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/programming/">编程</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/tcm/">中医</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/philosophy/">哲学</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/finance/">金融</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+            
+
+            
+
+        </li>
+        
+
+        
+        
+
+        <li class="menu-item">
+            <a id="openSearch" class="menu-item-link menu-item-search" href="#">
+                <i class="iconfont">
+                    <svg version="1.1" viewBox="0 0 1024 1024"
+  xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M973.81454219 973.81454219a91.78207815 91.78207815 0 0 1-129.80999631 0l-161.97482118-161.97482118a425.48527711 425.48527711 0 0 1-230.35931791 68.16531768 428.3346319 428.3346319 0 1 1 428.3346319-428.3346319 425.48527711 425.48527711 0 0 1-68.16531768 230.35931791l162.02961656 161.97482118a91.83687354 91.83687354 0 0 1-0.05479538 129.80999631zM451.67040679 145.69361559a305.97679241 305.97679241 0 1 0 0 611.95358361 305.97679241 305.97679241 0 0 0 0-611.95358361z">
+  </path>
+</svg>
+
+                </i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+<div id="searchDialog" class="search-dialog" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;">
+  <div class="search-dialog-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 8px; width: 90%; max-width: 600px; box-sizing: border-box;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <h3 style="margin: 0;">搜索</h3>
+      <button id="closeSearch" style="background: none; border: none; font-size: 24px; cursor: pointer; padding: 0; margin: 0;">&times;</button>
+    </div>
+    <input type="text" id="search-input" placeholder="请输入关键词..." style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 15px; box-sizing: border-box;" />
+    <ul id="search-results" style="list-style: none; padding: 0; margin: 10px 0 0 0; max-height: 300px; overflow-y: auto;">
+      <style>
+        #search-results li {
+          padding: 8px 0;
+          border-bottom: 1px solid #f0f0f0;
+        }
+        #search-results li a {
+          display: block;
+          padding: 8px 12px;
+          text-decoration: none;
+          color: #333;
+        }
+        #search-results li a:hover {
+          background-color: #f5f5f5;
+        }
+      </style>
+    </ul>
+  </div>
+</div>
+    </header>
+
+    <div id="mobile-panel">
+      <main id="main" class="main bg-llight wallpaper">
+        <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#111-问题描述">11.1 问题描述</a>
+      <ul>
+        <li><a href="#etcpasswd-密码文件格式">/etc/passwd 密码文件格式</a></li>
+        <li><a href="#两台机器样例密码文件">两台机器样例密码文件</a></li>
+        <li><a href="#四类冲突场景">四类冲突场景</a></li>
+      </ul>
+    </li>
+    <li><a href="#112-密码文件">11.2 密码文件</a></li>
+    <li><a href="#113-合并密码文件">11.3 合并密码文件</a>
+      <ul>
+        <li><a href="#1131-根据管理性切分用户">11.3.1 根据管理性切分用户</a>
+          <ul>
+            <li><a href="#步骤1合并排序">步骤1：合并+排序</a></li>
+            <li><a href="#步骤2-splitoutawk-分类脚本">步骤2 splitout.awk 分类脚本</a></li>
+          </ul>
+        </li>
+        <li><a href="#1132-管理uid">11.3.2 管理UID</a>
+          <ul>
+            <li><a href="#newuidssh获取空闲未使用uid">newuids.sh：获取空闲未使用UID</a></li>
+          </ul>
+        </li>
+        <li><a href="#1133-用户旧uid新uid映射表">11.3.3 用户‑旧UID‑新UID映射表</a>
+          <ul>
+            <li><a href="#处理dupusers用户名相同uid不同">处理dupusers（用户名相同UID不同）</a></li>
+            <li><a href="#处理dupidsuid相同用户名不同">处理dupids（UID相同用户名不同）</a></li>
+            <li><a href="#生成最终完整passwd文件">生成最终完整passwd文件</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#114-改变文件所有权">11.4 改变文件所有权</a>
+      <ul>
+        <li><a href="#正确思路">正确思路</a></li>
+        <li><a href="#生成批量脚本不直接执行安全先人工检查">生成批量脚本，不直接执行（安全！先人工检查）</a></li>
+      </ul>
+    </li>
+    <li><a href="#115-其他真实世界议题">11.5 其他真实世界议题</a></li>
+    <li><a href="#116-小结">11.6 小结</a>
+      <ul>
+        <li><a href="#本章学到的shell实战知识点">本章学到的shell实战知识点</a></li>
+        <li><a href="#完整工作流回顾">完整工作流回顾</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
+    <div id="content" class="content">
+
+        
+        
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/yutao.org\/programming\/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0\/"
+          },
+          "headline": "Shell脚本学习指南-第十一章-合并用户数据库",
+          "description": "Shell脚本学习指南-第十一章",
+          "datePublished": "2011-07-24T22:29:27\u002b08:00",
+          "dateModified": "2011-07-24T22:29:27\u002b08:00",
+          "author": {
+            "@type": "Person",
+            "name": "会写代码的小郎中"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "会写代码的小郎中",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https:\/\/yutao.org\/favicon.ico"
+            }
+          }
+        }
+        </script>
+        
+        
+
+        <article class="post">
+            
+            <header class="post-header">
+                <h1 class="post-title">Shell脚本学习指南-第十一章-合并用户数据库</h1>
+                
+
+                <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      <a href="https://yutao.org/about">
+        <span class="post-meta-author-name">
+          会写代码的小郎中
+        </span>
+      </a>
+    
+  </div>
+
+  <div class="post-meta-time">
+        <time datetime=" 2011-07-24">
+      2011-07-24
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 8174 字 -
+        预计阅读 17 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="https://yutao.org/categories/shell%E8%84%9A%E6%9C%AC/"> Shell脚本 </a>
+          
+      </div>
+
+
+    
+        
+      <span id="busuanzi_container_page_pv">
+        | 阅读 <span id="busuanzi_value_page_pv"></span>
+      </span>
+    
+
+
+    
+        
+  </div>
+</div>
+            </header>
+
+            
+            <div class="post-content">
+                <!-- markdownlint-disable-file MD029 -->
+<!-- markdownlint-disable-file MD024 -->
+<!-- markdownlint-disable-file MD052 -->
+<h1 id="第11章-扩展实例-合并用户数据库">第11章 扩展实例: 合并用户数据库</h1>
+<blockquote>
+<p>本章背景：真实系统管理场景，两台服务器要开启NFS文件共享。NFS依靠<strong>UID识别文件归属</strong>，如果两台机器同名用户UID不一样，或者同UID不同用户名，访问文件就会权限错乱。
+目标：合并两台机器 <code>/etc/passwd</code> 用户密码文件，保证全局UID唯一，并且修改磁盘上所有文件的属主。
+用到工具：<code>sort</code>、<code>awk</code>（自定义函数、关联数组）、<code>while read</code>、<code>getopts</code>、<code>find</code>、<code>xargs</code>、<code>tsort</code>。</p>
+</blockquote>
+<h2 id="111-问题描述">11.1 问题描述</h2>
+<h3 id="etcpasswd-密码文件格式">/etc/passwd 密码文件格式</h3>
+<p>一行7个字段，冒号<code>:</code>分隔</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>tolstoy:x:2076:10:Leo Tolstoy:/home/tolstoy:/bin/bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$1</td>
+<td>用户名username</td>
+</tr>
+<tr>
+<td>$2</td>
+<td>加密密码占位(x)</td>
+</tr>
+<tr>
+<td>$3</td>
+<td>UID 用户ID</td>
+</tr>
+<tr>
+<td>$4</td>
+<td>GID 组ID</td>
+</tr>
+<tr>
+<td>$5</td>
+<td>用户全名注释</td>
+</tr>
+<tr>
+<td>$6</td>
+<td>家目录home</td>
+</tr>
+<tr>
+<td>$7</td>
+<td>登录shell</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>重要背景：UNIX识别文件权限<strong>看UID，不看用户名</strong>。
+两台主机做NFS共享：同样UID必须对应同一个人，否则文件权限完全错乱。</p>
+</blockquote>
+<h3 id="两台机器样例密码文件">两台机器样例密码文件</h3>
+<p>u1.passwd（机器1）</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>root:x:0:0:root:/root:/bin/bash
+</span></span><span style="display:flex;"><span>bin:x:1:1:bin:/bin:/sbin/nologin
+</span></span><span style="display:flex;"><span>jhancock:x:200:10:John Hancock:/home/jhancock:/bin/bash
+</span></span><span style="display:flex;"><span>ben:x:201:10:Ben Franklin:/home/ben:/bin/bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>u2.passwd（机器2）</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>root:x:0:0:root:/root:/bin/bash
+</span></span><span style="display:flex;"><span>bin:x:1:1:bin:/bin:/sbin/nologin
+</span></span><span style="display:flex;"><span>jhancock:x:300:10:John Hancock:/home/jhancock:/bin/bash
+</span></span><span style="display:flex;"><span>ben:x:301:10:Ben Franklin:/home/ben:/bin/bash
+</span></span><span style="display:flex;"><span>abe:x:105:10:Honest Abe Lincoln:/home/abe:/bin/bash
+</span></span><span style="display:flex;"><span>tj:x:105:10:Thomas Jefferson:/home/tj:/bin/bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="四类冲突场景">四类冲突场景</h3>
+<ol>
+<li>用户名、UID全部相同：系统账号root/bin，无需处理</li>
+<li>账号只存在其中一台机器：直接保留</li>
+<li>⚠<strong>用户名相同，UID不一样</strong>：比如jhancock，u1是200，u2是300 → dupusers</li>
+<li>⚠<strong>UID相同，用户名不一样</strong>：abe(105)、tj(105) → dupids</li>
+</ol>
+<blockquote>
+<p>本章任务：</p>
+<ol>
+<li>合并passwd，消除UID冲突，产出最终密码文件</li>
+<li>生成命令，修改全磁盘所有文件属主UID</li>
+</ol>
+</blockquote>
+<h2 id="112-密码文件">11.2 密码文件</h2>
+<p>见上面样例。</p>
+<h2 id="113-合并密码文件">11.3 合并密码文件</h2>
+<p>整体7大步</p>
+<ol>
+<li>物理合并两个passwd，按用户名排序</li>
+<li>awk脚本分类输出3个文件：<code>unique1</code>无冲突；<code>dupusers</code>同名不同UID；<code>dupids</code>同UID不同名</li>
+<li>提取全部已经占用UID列表</li>
+<li>脚本生成<strong>未被占用的空闲UID</strong></li>
+<li>处理冲突，生成映射表：<code>用户名 旧UID 新UID</code>，同时生成新passwd片段<code>unique2 unique3</code></li>
+<li>合并unique1/2/3排序得到最终<code>final.password</code></li>
+<li>批量生成修改文件属主的shell脚本</li>
+</ol>
+<h3 id="1131-根据管理性切分用户">11.3.1 根据管理性切分用户</h3>
+<h4 id="步骤1合并排序">步骤1：合并+排序</h4>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sort u1.passwd u2.passwd | tee merge1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>sort：<strong>同时读取两个文件</strong>，把所有行全部放到一起，<strong>按整行字典序排序</strong>（从行首字符开始比，passwd 行首就是用户名，等价按用户名排序）。sort 默认<strong>不会去重</strong>，完全一模一样的行会保留两份。</li>
+<li>tee 做两件事：① 把内容写入磁盘文件 <code>merge1</code>；② <strong>原样输出到标准输出（屏幕）</strong>。</li>
+</ul>
+<p>输入结果：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-14">14</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>abe:x:105:10:Honest Abe Lincoln:/home/abe:/bin/bash
+</span></span><span style="display:flex;"><span>ben:x:201:10:Ben Franklin:/home/ben:/bin/bash
+</span></span><span style="display:flex;"><span>ben:x:301:10:Ben Franklin:/home/ben:/bin/bash
+</span></span><span style="display:flex;"><span>betsy:x:1110:10:Betsy Ross:/home/betsy:/bin/bash
+</span></span><span style="display:flex;"><span>bin:x:1:1:bin:/bin:/sbin/nologin
+</span></span><span style="display:flex;"><span>bin:x:1:1:bin:/bin:/sbin/nologin
+</span></span><span style="display:flex;"><span>dorothy:x:110:10:Dorothy Gale:/home/dorothy:/bin/bash
+</span></span><span style="display:flex;"><span>george:x:1100:10:George Washington:/home/george:/bin/bash
+</span></span><span style="display:flex;"><span>jhancock:x:200:10:John Hancock:/home/jhancock:/bin/bash
+</span></span><span style="display:flex;"><span>jhancock:x:300:10:John Hancock:/home/jhancock:/bin/bash
+</span></span><span style="display:flex;"><span>root:x:0:0:root:/root:/bin/bash
+</span></span><span style="display:flex;"><span>root:x:0:0:root:/root:/bin/bash
+</span></span><span style="display:flex;"><span>tj:x:105:10:Thomas Jefferson:/home/tj:/bin/bash
+</span></span><span style="display:flex;"><span>toto:x:110:10:Toto Gale:/home/toto:/bin/bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="步骤2-splitoutawk-分类脚本">步骤2 splitout.awk 分类脚本</h4>
+<blockquote>
+<p>作用：读取merge1，把记录分到3个输出文件</p>
+<ul>
+<li>unique：无冲突账号</li>
+<li>dupusers：用户名相同UID不同</li>
+<li>dupids：UID相同用户名不同</li>
+</ul>
+</blockquote>
+<p>逻辑核心：</p>
+<ol>
+<li><code>FS=&quot;:&quot;</code> 冒号做字段分隔</li>
+<li>两个关联数组
+<ul>
+<li><code>name[$1]</code>：key=用户名，value=整行passwd记录</li>
+<li><code>uid[$3]</code>：key=UID，value=整行passwd记录</li>
+</ul>
+</li>
+<li>遍历每一行：
+<ul>
+<li>①用户名已经在name数组：说明用户名重复；如果UID不一样，两条记录写入<code>dupusers</code>，清理数组旧记录</li>
+<li>②UID已经在uid数组：说明UID重复；两条记录写入<code>dupids</code>，清理数组旧记录</li>
+<li>否则：第一次见到该用户，存入两个数组</li>
+</ul>
+</li>
+<li>END块：数组剩余没有冲突的记录写入<code>unique</code></li>
+<li>两个自定义函数<code>remove_uid_by_name / remove_name_by_uid</code>：遍历数组删除旧条目</li>
+</ol>
+<p>splitout.awk</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-25">25</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-26">26</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-27">27</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-28">28</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-29"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-29">29</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-30"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-30">30</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-31"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-31">31</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-32"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-32">32</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-33"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-33">33</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-34"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-34">34</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-35"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-35">35</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-36"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-36">36</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-37"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-37">37</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-38"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-38">38</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-39"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-39">39</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-40"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-40">40</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-41"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-41">41</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-42"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-42">42</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-43"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-43">43</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-44"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-44">44</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-45"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-45">45</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-46"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-46">46</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-47"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-47">47</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-awk" data-lang="awk"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#! /bin/awk -f</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">BEGIN</span> {<span style="color:#007020">FS</span> <span style="color:#666">=</span> <span style="color:#4070a0">&#34;:&#34;</span>}
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#666">$</span><span style="color:#40a070">1</span> <span style="color:#666">in</span> name) {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#666">$</span><span style="color:#40a070">3</span> <span style="color:#666">in</span> uid)
+</span></span><span style="display:flex;"><span>            ; <span style="color:#60a0b0;font-style:italic"># 名称与uid完全一致，啥事不做</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">print</span> name[<span style="color:#666">$</span><span style="color:#40a070">1</span>] <span style="color:#666">&gt;</span> <span style="color:#4070a0">&#34;dupusers&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">print</span> <span style="color:#666">$</span><span style="color:#40a070">0</span> <span style="color:#666">&gt;</span> <span style="color:#4070a0">&#34;dupusers&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">delete</span> name[<span style="color:#666">$</span><span style="color:#40a070">1</span>]
+</span></span><span style="display:flex;"><span>            remove_uid_by_name(<span style="color:#666">$</span><span style="color:#40a070">1</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    } <span style="color:#007020;font-weight:bold">else</span> <span style="color:#007020;font-weight:bold">if</span> (<span style="color:#666">$</span><span style="color:#40a070">3</span> <span style="color:#666">in</span> uid) {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">print</span> uid[<span style="color:#666">$</span><span style="color:#40a070">3</span>] <span style="color:#666">&gt;</span> <span style="color:#4070a0">&#34;dupids&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">print</span> <span style="color:#666">$</span><span style="color:#40a070">0</span> <span style="color:#666">&gt;</span> <span style="color:#4070a0">&#34;dupids&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">delete</span> uid[<span style="color:#666">$</span><span style="color:#40a070">3</span>]
+</span></span><span style="display:flex;"><span>        remove_name_by_uid(<span style="color:#666">$</span><span style="color:#40a070">3</span>)
+</span></span><span style="display:flex;"><span>    } <span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>        name[<span style="color:#666">$</span><span style="color:#40a070">1</span>] <span style="color:#666">=</span> uid[<span style="color:#666">$</span><span style="color:#40a070">3</span>] <span style="color:#666">=</span> <span style="color:#666">$</span><span style="color:#40a070">0</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#007020">END</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">for</span> (i <span style="color:#666">in</span> name)
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">print</span> name[i] <span style="color:#666">&gt;</span> <span style="color:#4070a0">&#34;unique1&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">close</span>(<span style="color:#4070a0">&#34;unique1&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">close</span>(<span style="color:#4070a0">&#34;dupusers&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">close</span>(<span style="color:#4070a0">&#34;dupids&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> remove_uid_by_name(n, i, f)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">for</span> (i <span style="color:#666">in</span> uid) {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">split</span>(uid[i], f, <span style="color:#4070a0">&#34;:&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">if</span> (f[<span style="color:#40a070">1</span>] <span style="color:#666">==</span> n) {
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">delete</span> uid[i]
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">break</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> remove_name_by_uid(id, i, f)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">for</span> (i <span style="color:#666">in</span> name) {
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">split</span>(name[i], f, <span style="color:#4070a0">&#34;:&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">if</span> (f[<span style="color:#40a070">3</span>] <span style="color:#666">==</span> id) {
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">delete</span> name[i]
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">break</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>运行：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>awk -f splitout.awk merge1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>运行后磁盘生成3个文件</p>
+<ul>
+<li><code>unique1</code>：无冲突账号</li>
+<li><code>dupusers</code>：同名不同UID</li>
+<li><code>dupids</code>：同UID不同用户名</li>
+</ul>
+<h3 id="1132-管理uid">11.3.2 管理UID</h3>
+<p>提取所有已经占用UID，去重、数字排序</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>awk -F: <span style="color:#4070a0">&#39;{ print $3 }&#39;</span> merge1 | sort -n -u &gt; unique‑ids
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>-n</code>数字排序；<code>-u</code>去重。</li>
+</ul>
+<h4 id="newuidssh获取空闲未使用uid">newuids.sh：获取空闲未使用UID</h4>
+<blockquote>
+<p>作用：读取已占用UID列表，找出中间空缺、没被占用的UID；支持<code>‑c N</code>取N个空闲UID。</p>
+</blockquote>
+<p>原理：</p>
+<ol>
+<li>awk把全部已占用UID读到数组<code>uidlist[]</code></li>
+<li>循环对比相邻两个UID，如果两者不是连续数字，中间数字就是空闲UID。</li>
+<li>输出指定count个空闲ID就直接exit。</li>
+</ol>
+<p>newuids.sh</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-25">25</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-26">26</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#007020">#! /bin/sh -
+</span></span></span><span style="display:flex;"><span><span style="color:#007020"></span><span style="color:#60a0b0;font-style:italic"># newuids.sh [-c N] id‑file</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">count</span><span style="color:#666">=</span><span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020">getopts</span> <span style="color:#4070a0">&#34;c:&#34;</span> opt
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">case</span> <span style="color:#bb60d5">$opt</span> in
+</span></span><span style="display:flex;"><span>    c<span style="color:#666">)</span> <span style="color:#bb60d5">count</span><span style="color:#666">=</span><span style="color:#bb60d5">$OPTARG</span> ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">esac</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">shift</span> <span style="color:#007020;font-weight:bold">$((</span><span style="color:#bb60d5">$OPTIND</span> <span style="color:#666">-</span> <span style="color:#40a070">1</span><span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">IDFILE</span><span style="color:#666">=</span><span style="color:#bb60d5">$1</span>
+</span></span><span style="display:flex;"><span>awk -v <span style="color:#bb60d5">count</span><span style="color:#666">=</span><span style="color:#bb60d5">$count</span> <span style="color:#4070a0">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">BEGIN {
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    for (i = 1; getline id &gt; 0; i++)
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">        uidlist[i] = id
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    totalids = i
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    for (i = 2; i &lt;= totalids; i++) {
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">        if (uidlist[i-1] != uidlist[i]) {
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">            for (j = uidlist[i-1]+1; j &lt; uidlist[i]; j++) {
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">                print j
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">                if (--count == 0)
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">                    exit
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">            }
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">}&#39;</span> <span style="color:#bb60d5">$IDFILE</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><details>
+  <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    newuids.sh 逐段讲解
+    
+  </summary>
+  <p>脚本作用：读取已经占用UID的文件，输出<strong>空闲未被使用的UID</strong>
+调用示例：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 输出1个空闲UID（默认count=1）</span>
+</span></span><span style="display:flex;"><span>sh newuids.sh unique‑ids
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 输出4个空闲UID</span>
+</span></span><span style="display:flex;"><span>sh newuids.sh -c <span style="color:#40a070">4</span> unique‑ids
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>第一部分 shell 部分：getopts 解析命令行参数</strong></p>
+<ol>
+<li><code>getopts</code> 是什么</li>
+</ol>
+<p><code>getopts</code> 是 <strong>shell内置命令</strong>，专门用来解析短选项，例如 <code>-c 4</code>、<code>-a</code>、<code>-h</code>。</p>
+<p>语法格式：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020">getopts</span> <span style="color:#4070a0">&#34;c:&#34;</span> opt
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">case</span> <span style="color:#bb60d5">$opt</span> in
+</span></span><span style="display:flex;"><span>        c<span style="color:#666">)</span> <span style="color:#bb60d5">count</span><span style="color:#666">=</span><span style="color:#bb60d5">$OPTARG</span> ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">esac</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>&quot;c:&quot;</code>：选项字符串。<code>c</code>代表识别 <code>-c</code>；<strong>冒号<code>:</code>代表 <code>-c</code>后面必须跟参数（值）</strong>，比如 <code>-c 4</code>。</li>
+<li><code>opt</code> 变量：循环每次拿到<strong>选项名</strong>，这里拿到字符串 <code>c</code>。</li>
+<li><code>$OPTARG</code>：<strong>shell内置特殊变量</strong>。如果选项需要参数，<code>$OPTARG</code> 就保存这个参数的值。&gt;</li>
+</ul>
+<blockquote>
+<p>例子：命令行 <code>-c 4</code>，<code>opt=&quot;c&quot;</code>，<code>OPTARG=&quot;4&quot;</code>。</p>
+</blockquote>
+<p><strong>代码片段拆解</strong></p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-7">7</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#bb60d5">count</span><span style="color:#666">=</span><span style="color:#40a070">1</span>                     <span style="color:#60a0b0;font-style:italic"># 默认输出1个空闲UID</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020">getopts</span> <span style="color:#4070a0">&#34;c:&#34;</span> opt
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">case</span> <span style="color:#bb60d5">$opt</span> in
+</span></span><span style="display:flex;"><span>c<span style="color:#666">)</span> <span style="color:#bb60d5">count</span><span style="color:#666">=</span><span style="color:#bb60d5">$OPTARG</span> ;;         <span style="color:#60a0b0;font-style:italic"># 把 -c 后面数字赋值给count变量</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">esac</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>场景：执行脚本：<code>newuids.sh -c 4 unique‑ids</code></p>
+<ol>
+<li>getopts读到 <code>-c</code>，<code>opt=c</code>，<code>OPTARG=4</code></li>
+<li>case匹配<code>c</code>分支，执行 <code>count=4</code></li>
+</ol>
+<blockquote>
+<p>如果不写 <code>-c</code>，<code>count</code> 保持初始值 <code>1</code>。</p>
+</blockquote>
+<p><code>shift $(($OPTIND - 1))</code></p>
+<p><code>$OPTIND</code>：也是shell内置变量。记录<strong>处理完的参数位置下标</strong>。</p>
+<p>示例：<code>newuids.sh -c 4 unique‑ids</code></p>
+<ul>
+<li>参数列表：<code>$1=-c</code>，<code>$2=4</code>，<code>$3=unique‑ids</code></li>
+<li>getopts处理完 <code>-c 4</code> 之后，<code>OPTIND=3</code>。</li>
+<li><code>$OPTIND‑1 = 2</code> → <code>shift 2</code>：把前2个参数踢掉。
+shift之后，原来的<code>$3</code>移动变成新的<code>$1</code>。</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#bb60d5">IDFILE</span><span style="color:#666">=</span><span style="color:#bb60d5">$1</span>   <span style="color:#60a0b0;font-style:italic"># 此时 $1 就是文件名 unique‑ids</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>目的：把选项 <code>-c 4</code> 消耗掉，剩下**位置参数（文件名）**交给 <code>$1</code>。</p>
+</blockquote>
+<p>第二部分 awk 脚本</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-19">19</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>awk -v <span style="color:#bb60d5">count</span><span style="color:#666">=</span><span style="color:#bb60d5">$count</span> <span style="color:#4070a0">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">BEGIN {
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    # getline 读取文件每一行
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    for (i = 1; getline id &gt; 0; i++)
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">        uidlist[i] = id
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    totalids = i
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    # 遍历排序好的UID数组，找空隙
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    for (i = 2; i &lt;= totalids; i++) {
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">        if (uidlist[i-1] != uidlist[i]) {
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">            # 两个UID之间的数字，就是空闲UID
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">            for (j = uidlist[i-1]+1; j &lt; uidlist[i]; j++) {
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">                print j
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">                if (--count == 0)
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">                    exit
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">            }
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">}&#39;</span> <span style="color:#bb60d5">$IDFILE</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong><code>awk -v count=$count</code></strong></p>
+<p><code>‑v</code>：awk用来<strong>把shell变量传入awk内部变量</strong>。</p>
+<blockquote>
+<p>shell变量<code>count</code>（比如4）赋值给awk里面的变量<code>count</code>。</p>
+</blockquote>
+<p><strong><code>getline id &gt;0</code></strong></p>
+<p><code>getline</code>：awk读取文件的一行，存入变量<code>id</code>；读取成功返回&gt;0；读到文件末尾返回0，循环结束。</p>
+<p>假设 <code>unique‑ids</code> 文件内容（已经数字排序、去重）</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-14">14</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>0
+</span></span><span style="display:flex;"><span>1
+</span></span><span style="display:flex;"><span>2
+</span></span><span style="display:flex;"><span>3
+</span></span><span style="display:flex;"><span>105
+</span></span><span style="display:flex;"><span>110
+</span></span><span style="display:flex;"><span>112
+</span></span><span style="display:flex;"><span>200
+</span></span><span style="display:flex;"><span>201
+</span></span><span style="display:flex;"><span>300
+</span></span><span style="display:flex;"><span>301
+</span></span><span style="display:flex;"><span>1100
+</span></span><span style="display:flex;"><span>1110
+</span></span><span style="display:flex;"><span>2076
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>循环：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span><span style="color:#bb60d5">i</span> <span style="color:#666">=</span> 1; getline id &gt; 0; i++<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>    uidlist<span style="color:#666">[</span>i<span style="color:#666">]</span> <span style="color:#666">=</span> id
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>把全部UID读到数组：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-7">7</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>uidlist[1]=0
+</span></span><span style="display:flex;"><span>uidlist[2]=1
+</span></span><span style="display:flex;"><span>uidlist[3]=2
+</span></span><span style="display:flex;"><span>uidlist[4]=3
+</span></span><span style="display:flex;"><span>uidlist[5]=105
+</span></span><span style="display:flex;"><span>……
+</span></span><span style="display:flex;"><span>totalids = i  # 一共多少条UID
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>找空闲UID核心逻辑</strong></p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-8">8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-9">9</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span><span style="color:#bb60d5">i</span> <span style="color:#666">=</span> 2; i &lt;<span style="color:#666">=</span> totalids; i++<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>uidlist<span style="color:#666">[</span>i-1<span style="color:#666">]</span> !<span style="color:#666">=</span> uidlist<span style="color:#666">[</span>i<span style="color:#666">])</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span><span style="color:#bb60d5">j</span> <span style="color:#666">=</span> uidlist<span style="color:#666">[</span>i-1<span style="color:#666">]</span>+1; j &lt; uidlist<span style="color:#666">[</span>i<span style="color:#666">]</span>; j++<span style="color:#666">)</span> <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>            print j
+</span></span><span style="display:flex;"><span>            <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">(</span>--count <span style="color:#666">==</span> 0<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#007020">exit</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>拿相邻两个UID对比：</p>
+<ul>
+<li><code>uidlist[4]=3</code>，下一个<code>uidlist[5]=105</code></li>
+<li><code>3 !=105</code>，中间全部数字 <code>4,5,6 ... 104</code> 都是空闲UID。</li>
+<li>j从4开始输出。</li>
+<li><code>--count ==0</code>：每输出一个，count自减；count到0，直接exit，不再输出。</li>
+</ul>
+<blockquote>
+<p>如果调用 <code>-c 4</code>，就输出 <code>4 5 6 7</code>，然后退出。正好给dupids冲突用户做新UID。</p>
+</blockquote>
+<p><strong>完整示例跑一遍</strong></p>
+<p><code>unique‑ids</code>里面已占用UID：<code>0,1,2,3,105,110...</code></p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sh newuids.sh -c <span style="color:#40a070">4</span> unique‑ids
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输出：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>4
+</span></span><span style="display:flex;"><span>5
+</span></span><span style="display:flex;"><span>6
+</span></span><span style="display:flex;"><span>7
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>知识点总结表格</strong></p>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>getopts</code></td>
+<td>shell内置命令</td>
+<td>解析短选项 <code>-c</code> <code>-a</code></td>
+</tr>
+<tr>
+<td><code>opt</code></td>
+<td>自定义变量</td>
+<td>保存当前解析到的选项名字，如<code>c</code></td>
+</tr>
+<tr>
+<td><code>OPTARG</code></td>
+<td>shell内置变量</td>
+<td>保存选项后面跟的参数，<code>‑c 4</code> → <code>OPTARG=4</code></td>
+</tr>
+<tr>
+<td><code>OPTIND</code></td>
+<td>shell内置变量</td>
+<td>下一个待解析参数的下标，配合shift去掉已经解析的选项</td>
+</tr>
+<tr>
+<td><code>shift N</code></td>
+<td>shell内置</td>
+<td>丢弃前N个位置参数，后面参数往前移动</td>
+</tr>
+<tr>
+<td><code>awk -v var=xxx</code></td>
+<td>awk参数</td>
+<td>把shell变量传递进awk脚本内部</td>
+</tr>
+<tr>
+<td><code>getline</code></td>
+<td>awk内置函数</td>
+<td>读取文件一行存入变量，成功返回大于0</td>
+</tr>
+</tbody>
+</table>
+
+</details>
+
+<details>
+  <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    getopts &#34;c:&#34; opt 解析
+    
+  </summary>
+  <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#007020">getopts</span> <span style="color:#4070a0">&#34;c:&#34;</span> opt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>&quot;c:&quot;</code> <strong>不是命令行要敲 <code>c:</code></strong>，它是<strong>getopts 的配置字符串（元描述）</strong>，告诉 getopts：</p>
+<blockquote>
+<p>我程序支持 <code>-c</code> 这个选项，并且 <code>-c</code> <strong>后面必须附带一个参数值</strong>。
+冒号 <code>:</code> 是给 getopts 看的标记符号，<strong>不要写到命令行</strong>。</p>
+</blockquote>
+<p>语法规则拆解</p>
+<table>
+<thead>
+<tr>
+<th>配置串字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c</code></td>
+<td>识别命令行的 <code>-c</code> 选项</td>
+</tr>
+<tr>
+<td><code>:</code>紧跟在字母后面</td>
+<td>代表：<strong>该选项需要带参数</strong>（必须跟一个值）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>命令行正确写法（减号不能丢）</strong></p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sh newuids.sh -c <span style="color:#40a070">4</span> unique‑ids
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>-c</code>：命令行选项（要有减号 <code>-</code>）</li>
+<li><code>4</code>：就是 <code>-c</code> 的参数，存入内置变量 <code>$OPTARG</code></li>
+</ul>
+<p>错误写法</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sh newuids.sh c: <span style="color:#40a070">4</span> unique‑ids   <span style="color:#60a0b0;font-style:italic"># 错！不要写冒号，也不能丢掉减号</span>
+</span></span><span style="display:flex;"><span>sh newuids.sh c <span style="color:#40a070">4</span> unique‑ids    <span style="color:#60a0b0;font-style:italic"># 错！少减号，c被当成普通位置参数，不是选项</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>举多选项例子加深理解</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-8">8</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020">getopts</span> <span style="color:#4070a0">&#34;ab:c:&#34;</span> opt
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">case</span> <span style="color:#bb60d5">$opt</span> in
+</span></span><span style="display:flex;"><span>        a<span style="color:#666">)</span> <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;拿到 -a&#34;</span> ;;
+</span></span><span style="display:flex;"><span>        b<span style="color:#666">)</span> <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;拿到 -b，参数=</span><span style="color:#bb60d5">$OPTARG</span><span style="color:#4070a0">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>        c<span style="color:#666">)</span> <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;拿到 -c，参数=</span><span style="color:#bb60d5">$OPTARG</span><span style="color:#4070a0">&#34;</span> ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">esac</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置串 <code>&quot;ab:c:&quot;</code> 含义：</p>
+<ol>
+<li><code>-a</code>：不需要参数（后面没有冒号）</li>
+<li><code>-b</code>：<strong>必须带参数</strong>（b后面紧跟<code>:</code>）</li>
+<li><code>-c</code>：<strong>必须带参数</strong>（c后面紧跟<code>:</code>）</li>
+</ol>
+<p>正确调用：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sh test.sh -a -b hello -c world file.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>记住口诀：<br>
+<strong>配置字符串里的冒号是给 getopts 的说明书标记，只写在脚本内部，命令行不写冒号。</strong><br>
+命令行写 <code>-字母</code>，冒号不出现在命令行。</p>
+</blockquote>
+<p>回到 newuids.sh 的执行流程：<code>sh newuids.sh -c 4 unique‑ids</code></p>
+<ol>
+<li>getopts读取命令行参数，看到 <code>-c</code>，匹配配置串的<code>c</code>；因为<code>c后面有:</code>，它就把下一个参数<code>4</code>抓出来放进<code>$OPTARG</code>。</li>
+<li><code>opt</code>变量赋值为字符串<code>c</code>，进入case <code>c)</code>分支：<code>count=$OPTARG</code> → <code>count=4</code>。</li>
+<li>处理完，<code>OPTIND</code> 变成3。执行 <code>shift $((OPTIND‑1))</code>，把 <code>-c</code> 和 <code>4</code> 这两个参数移走。</li>
+<li>剩下的 <code>unique‑ids</code> 落到 <code>$1</code>。</li>
+</ol>
+<p>思考题</p>
+<p>如果脚本写 <code>getopts &quot;c&quot; opt</code>（c后面<strong>没有冒号</strong>），执行：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sh newuids.sh -c <span style="color:#40a070">4</span> unique‑ids
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>会发生什么？</p>
+<p>答案
+配置串没有冒号，代表 <code>-c</code> 不接收参数。
+<code>$OPTARG</code> 为空，<code>4</code> 会被当成普通位置参数，而不是 <code>-c</code> 的值。</p>
+<h2 id="小结">小结</h2>
+<ol>
+<li>脚本内：<code>getopts &quot;c:&quot; opt</code> → <code>c</code>是选项名，<code>:</code>是标记，代表该选项需要参数。</li>
+<li>命令行：<strong>写 <code>-c</code>，不要写冒号</strong>，后面跟数字。</li>
+<li><code>$OPTARG</code>：只有选项配置带<code>:</code>时，才会保存选项后面的值。</li>
+<li>命令行的选项<strong>必须带减号<code>‑</code></strong>，<code>‑c</code>，不能直接写<code>c</code>。</li>
+</ol>
+
+</details>
+
+<details>
+  <summary style="background-color:#f5f5f5;border:1px solid #ccc;padding:5px;">
+    $OPTIND 详细讲清楚
+    
+  </summary>
+  <blockquote>
+<p><code>$OPTIND</code>：shell内置变量，<strong>下一次 getopts 要去处理的参数的下标</strong>，不是已经处理完的最后一个下标。</p>
+</blockquote>
+<p>示例命令：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sh newuids.sh -c <span style="color:#40a070">4</span> unique‑ids
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>脚本启动时，位置参数：</p>
+<table>
+<thead>
+<tr>
+<th>下标</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$1</td>
+<td><code>-c</code></td>
+</tr>
+<tr>
+<td>$2</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td>$3</td>
+<td><code>unique‑ids</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>shell数组下标从<strong>1开始</strong>。
+脚本刚启动，还没跑<code>getopts</code>的时候：<code>OPTIND=1</code>，代表：<strong>下一次getopts要去拿第1号参数处理</strong>。</p>
+</blockquote>
+<p><strong>跟着while循环走一遍</strong></p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020">getopts</span> <span style="color:#4070a0">&#34;c:&#34;</span> opt
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">case</span> <span style="color:#bb60d5">$opt</span> in
+</span></span><span style="display:flex;"><span>        c<span style="color:#666">)</span> <span style="color:#bb60d5">count</span><span style="color:#666">=</span><span style="color:#bb60d5">$OPTARG</span> ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">esac</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>第一次执行<code>getopts &quot;c:&quot; opt</code></li>
+</ol>
+<ul>
+<li>当前<code>OPTIND=1</code>，读取<code>$1</code>也就是<code>‑c</code></li>
+<li><code>-c</code>在配置串里带<code>:</code>，说明这个选项需要参数，于是把<strong>下一个参数$2（值4）拿进<code>$OPTARG</code></strong>。</li>
+<li>处理完<code>‑c</code>以及它的参数<code>4</code>。
+getopts把<code>OPTIND</code>设置为 <strong>3</strong>。</li>
+</ul>
+<blockquote>
+<p><code>OPTIND=3</code>含义：<strong>下一轮循环，我准备去读取第3号参数</strong>。</p>
+</blockquote>
+<ol>
+<li>回到while，再次调用<code>getopts</code><br>
+现在OPTIND=3，读取<code>$3</code>的值是<code>unique‑ids</code>，它<strong>不以减号<code>-</code>开头，不是选项</strong>。<br>
+getopts知道没有更多选项可以解析，返回false，<strong>while循环直接结束</strong>。</li>
+</ol>
+<p>循环结束之后：<code>OPTIND=3</code>。</p>
+<blockquote>
+<p>不是“已经处理完第3个参数”；
+含义：<strong>下一个待处理的参数位置是3号</strong>。
+而3号这个<code>unique‑ids</code>根本没有被getopts处理过，它是留给我们脚本自己用的文件名。</p>
+</blockquote>
+<p><strong>为什么写 <code>shift $((OPTIND - 1))</code></strong></p>
+<p>现在 <code>OPTIND=3</code><br>
+<code>OPTIND‑1 = 2</code> → <code>shift 2</code></p>
+<p><code>shift N</code>：丢掉最前面 N 个位置参数，后面参数向前移动。</p>
+<ul>
+<li>shift 2 扔掉 <code>$1(-c)</code>、<code>$2(4)</code>。</li>
+<li>原来的<code>$3</code>（unique‑ids）往前挪，变成新的<code>$1</code>。</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#bb60d5">IDFILE</span><span style="color:#666">=</span><span style="color:#bb60d5">$1</span>   <span style="color:#60a0b0;font-style:italic"># 拿到文件名</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>形象记忆</p>
+<ul>
+<li><code>OPTIND</code> 像数组的<strong>指针、光标</strong>，指向下一个要读取的位置。</li>
+<li>每处理完一个选项（连同它附带的参数），光标OPTIND就往后移动。</li>
+</ul>
+<p>再测试另外一种场景：不带 <code>-c</code></p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sh newuids.sh unique‑ids
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>参数列表：</p>
+<ul>
+<li>$1 = <code>unique‑ids</code></li>
+</ul>
+<ol>
+<li>脚本启动 <code>OPTIND=1</code></li>
+<li>第一次调用getopts，读取$1，内容<code>unique‑ids</code>没有<code>-</code>，不是选项，getopts返回false，while一次都不进入直接结束。</li>
+<li>此时<code>OPTIND=1</code>。</li>
+<li><code>shift $((1‑1))</code> → <code>shift 0</code></li>
+</ol>
+<blockquote>
+<p>shift 0 什么都不干，参数保持原样。$1依旧是unique‑ids。完美。</p>
+</blockquote>
+<p>这就是为什么不管加不加<code>‑c</code>，这一行代码都可以通用。</p>
+<p><strong>易错点澄清你的疑问</strong></p>
+<blockquote>
+<p>问题：参数一共3个，OPTIND是不是就等于3？
+不是。OPTIND是<strong>光标位置</strong>，不是总参数个数。</p>
+</blockquote>
+<ul>
+<li>处理完<code>‑c 4</code>，光标指向3，OPTIND=3；但第3号参数根本没被getopts碰过。</li>
+</ul>
+<blockquote>
+<p>问题：optind是处理到哪个参数，optind就是几？
+不完全准确：
+OPTIND = <strong>下一次要处理的参数下标</strong>，不是刚刚处理完的那个下标。</p>
+</blockquote>
+<p>举个小例子，简单脚本测试，可以复制运行看输出：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-8">8</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#007020">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#007020"></span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020">getopts</span> <span style="color:#4070a0">&#34;c:&#34;</span> opt
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;opt=</span><span style="color:#bb60d5">$opt</span><span style="color:#4070a0">, OPTARG=</span><span style="color:#bb60d5">$OPTARG</span><span style="color:#4070a0">, OPTIND=</span><span style="color:#bb60d5">$OPTIND</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;循环结束 OPTIND=</span><span style="color:#bb60d5">$OPTIND</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">shift</span> <span style="color:#007020;font-weight:bold">$((</span>OPTIND-1<span style="color:#007020;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;shift之后 \$1=</span><span style="color:#bb60d5">$1</span><span style="color:#4070a0">&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>调用：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sh test.sh -c <span style="color:#40a070">4</span> myfile.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输出：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>opt=c, OPTARG=4, OPTIND=3
+</span></span><span style="display:flex;"><span>循环结束 OPTIND=3
+</span></span><span style="display:flex;"><span>shift之后 $1=myfile.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="总结">总结</h2>
+<ol>
+<li><code>OPTIND</code> 是光标，代表<strong>下一个getopts将要读取的参数位置（下标）</strong>，初始值永远等于1。</li>
+<li>getopts每消耗一个选项+它的参数，OPTIND就向后跳。</li>
+<li>遇到不是<code>‑</code>开头的普通参数，getopts停止解析，while退出；OPTIND停留在这个普通参数的下标。</li>
+<li><code>shift $((OPTIND‑1))</code>：把<strong>已经解析完毕的选项全部shift扔掉</strong>，剩下的普通位置参数，就落到<code>$1 $2...</code>供脚本自己使用。</li>
+<li>如果没有任何选项，OPTIND=1 → shift 0，不改动参数，兼容无选项调用。</li>
+</ol>
+<blockquote>
+<p>重点：<code>getopts只管解析</code>-x`这种带减号的选项；不带减号的文件名一类参数不归它处理，留给shift之后用$1获取。</p>
+</blockquote>
+
+</details>
+
+<p>示例：取4个空闲UID</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>newuids.sh -c <span style="color:#40a070">4</span> unique‑ids
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="1133-用户旧uid新uid映射表">11.3.3 用户‑旧UID‑新UID映射表</h3>
+<h4 id="处理dupusers用户名相同uid不同">处理dupusers（用户名相同UID不同）</h4>
+<p>文件 <code>dupusers</code> 的内容特点：<strong>冲突用户是两行一组挨在一起存储</strong></p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>ben:x:201:10:Ben Franklin:/home/ben:/bin/bash     #组内第1行
+</span></span><span style="display:flex;"><span>ben:x:301:10:Ben Franklin:/home/ben:/bin/bash     #组内第2行
+</span></span><span style="display:flex;"><span>jhancock:x:200:10:John Hancock:/home/jhancock:/bin/bash  #下一组第1行
+</span></span><span style="display:flex;"><span>jhancock:x:300:10:John Hancock:/home/jhancock:/bin/bash  #下一组第2行
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>关键点：</p>
+<ul>
+<li>修改<code>IFS=:</code>，让<code>read</code>直接按冒号分割passwd字段</li>
+<li>dupusers文件是两行一组：同一个用户两条不同UID记录</li>
+<li>循环一次read读取两行；输出新passwd记录到<code>unique2</code>；输出映射关系 <code>用户名 旧UID 新UID</code> 追加写入<code>old‑new‑list</code></li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-24">24</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-25"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-25">25</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-26"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-26">26</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-27"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-27">27</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-28"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-28">28</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-29"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-29">29</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-30"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-30">30</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>rm -f old-new-list          <span style="color:#60a0b0;font-style:italic"># 先删除旧的映射文件，避免旧数据追加</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">old_ifs</span><span style="color:#666">=</span><span style="color:#bb60d5">$IFS</span>                <span style="color:#60a0b0;font-style:italic"># 备份shell原始分隔符</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">IFS</span><span style="color:#666">=</span>:                       <span style="color:#60a0b0;font-style:italic"># 设置shell分隔符为冒号，read按冒号切割passwd字段</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 从dupusers文件读取，循环输出定向到 unique2</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020">read</span> user passwd uid gid fullname homedir Shell
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#60a0b0;font-style:italic"># 重点：继续从同一个dupusers文件，再读下一行！</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span> <span style="color:#007020">read</span> user2 passwd2 uid2 gid2 fullname2 homedir2 Shell2
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#60a0b0;font-style:italic"># 读到了第二行，判断两行用户名必须完全一样</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">if</span> <span style="color:#666">[</span> <span style="color:#bb60d5">$user</span> <span style="color:#666">=</span> <span style="color:#bb60d5">$user2</span> <span style="color:#666">]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#60a0b0;font-style:italic"># 输出：用户名 旧UID 新UID &gt;&gt;追加写入映射表 old‑new‑list</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#007020">printf</span> <span style="color:#4070a0">&#34;%s\t%s\t%s\n&#34;</span> <span style="color:#bb60d5">$user</span> <span style="color:#bb60d5">$uid</span> <span style="color:#bb60d5">$uid2</span> &gt;&gt; old-new-list
+</span></span><span style="display:flex;"><span>            <span style="color:#60a0b0;font-style:italic"># 输出组装好的新passwd记录，输出重定向到 unique2</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;</span><span style="color:#bb60d5">$user</span><span style="color:#4070a0">:</span><span style="color:#bb60d5">$passwd</span><span style="color:#4070a0">:</span><span style="color:#bb60d5">$uid2</span><span style="color:#4070a0">:</span><span style="color:#bb60d5">$gid</span><span style="color:#4070a0">:</span><span style="color:#bb60d5">$fullname</span><span style="color:#4070a0">:</span><span style="color:#bb60d5">$homedir</span><span style="color:#4070a0">:</span><span style="color:#bb60d5">$Shell</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#60a0b0;font-style:italic"># 两行用户名不一样，文件错乱，报错到标准错误，退出脚本</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#007020">echo</span> <span style="color:#bb60d5">$0</span>: out of sync: <span style="color:#bb60d5">$user</span> and <span style="color:#bb60d5">$user2</span> &gt;&amp;<span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#007020">exit</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#60a0b0;font-style:italic"># 想读第二行，但是读到文件末尾读不到数据了，说明dupusers文件格式损坏（只有孤零零一行，没有配对）</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">echo</span> <span style="color:#bb60d5">$0</span>: no duplicate <span style="color:#007020;font-weight:bold">for</span> <span style="color:#bb60d5">$user</span> &gt;&amp;<span style="color:#40a070">2</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020">exit</span> <span style="color:#40a070">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">done</span> &lt; dupusers &gt; unique2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">IFS</span><span style="color:#666">=</span><span style="color:#bb60d5">$old_ifs</span>    <span style="color:#60a0b0;font-style:italic"># 恢复原来的IFS，还原shell环境</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>unique2内容：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>ben:x:301:10:Ben Franklin:/home/ben:/bin/bash
+</span></span><span style="display:flex;"><span>jhancock:x:300:10:John Hancock:/home/jhancock:/bin/bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="处理dupidsuid相同用户名不同">处理dupids（UID相同用户名不同）</h4>
+<ol>
+<li>统计dupids行数，就是需要分配新UID的账号数量</li>
+<li><code>set -- $(newuids.sh -c $count unique‑ids)</code>：把所有空闲UID放到shell位置参数 <code>$1 $2 $3 …</code></li>
+<li>while循环读取dupids每一行；每次<code>shift</code>取出下一个空闲UID，分配给用户</li>
+<li>输出新passwd记录<code>unique3</code>；追加映射到<code>old‑new‑list</code></li>
+</ol>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-16">16</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#bb60d5">count</span><span style="color:#666">=</span><span style="color:#007020;font-weight:bold">$(</span>wc -l &lt; dupids<span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># set -- arg1 arg2 arg3 …</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 直接改写 shell 的位置参数 $1 $2 $3 $4 …，把原来的位置参数全部替换成后面给出的值。</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># set -- 4 5 6 7</span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># $(...) 命令替换，老式使用反引号 `cmd`，现代推荐写法：$(命令)，执行括号内部的 shell 命令，捕获这个命令打印到标准输出的全部内容且换行被shell换成空格，得到字符串：&#34;4 5 6 7&#34;，把输出结果替换到脚本当前位置。</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020">set</span> -- <span style="color:#007020;font-weight:bold">$(</span>newuids.sh -c <span style="color:#bb60d5">$count</span> unique-ids<span style="color:#007020;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">IFS</span><span style="color:#666">=</span>:
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020">read</span> user passwd uid gid fullname homedir Shell
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#bb60d5">newuid</span><span style="color:#666">=</span><span style="color:#bb60d5">$1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">shift</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;</span><span style="color:#bb60d5">$user</span><span style="color:#4070a0">:</span><span style="color:#bb60d5">$passwd</span><span style="color:#4070a0">:</span><span style="color:#bb60d5">$newuid</span><span style="color:#4070a0">:</span><span style="color:#bb60d5">$gid</span><span style="color:#4070a0">:</span><span style="color:#bb60d5">$fullname</span><span style="color:#4070a0">:</span><span style="color:#bb60d5">$homedir</span><span style="color:#4070a0">:</span><span style="color:#bb60d5">$Shell</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">printf</span> <span style="color:#4070a0">&#34;%s\t%s\t%s\n&#34;</span> <span style="color:#bb60d5">$user</span> <span style="color:#bb60d5">$uid</span> <span style="color:#bb60d5">$newuid</span> &gt;&gt; old-new-list
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">done</span> &lt; dupids &gt; unique3
+</span></span><span style="display:flex;"><span><span style="color:#bb60d5">IFS</span><span style="color:#666">=</span><span style="color:#bb60d5">$old_ifs</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此时产出：</p>
+<ul>
+<li><code>unique2</code>：同名冲突用户新passwd记录</li>
+<li><code>unique3</code>：同UID冲突用户新passwd记录</li>
+<li><code>old‑new‑list</code>：映射表，格式：<code>用户名 旧UID 新UID</code></li>
+</ul>
+<p>unique3 文件</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>abe:x:4:10:Honest Abe Lincoln:/home/abe:/bin/bash
+</span></span><span style="display:flex;"><span>tj:x:5:10:Thomas Jefferson:/home/tj:/bin/bash
+</span></span><span style="display:flex;"><span>dorothy:x:6:10:Dorothy Gale:/home/dorothy:/bin/bash
+</span></span><span style="display:flex;"><span>toto:x:7:10:Toto Gale:/home/toto:/bin/bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="生成最终完整passwd文件">生成最终完整passwd文件</h4>
+<p>按第3字段(UID)数字排序，合并unique1 unique2 unique3</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sort -k <span style="color:#40a070">3</span> -t : -n unique<span style="color:#666">[</span>123<span style="color:#666">]</span> &gt; final.password
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><code>-t :</code>分隔符冒号；<code>‑k 3</code>按第3列；<code>‑n</code>数字排序。</p>
+</blockquote>
+<h2 id="114-改变文件所有权">11.4 改变文件所有权</h2>
+<blockquote>
+<p>坑点1：用户文件不只是在家目录，还散落在 <code>/tmp</code>、项目目录等任意位置。只改家目录会漏掉大量文件。<br>
+坑点2：UID替换顺序风险：A要改成UID=10，B原来UID=10要改成别的；如果先把A改成10，原来B的文件会被错误归属给A。<br>
+本章规避方案：给冲突用户全部分配<strong>全新从来没有使用过的UID</strong>，不存在顺序问题。</p>
+</blockquote>
+<h3 id="正确思路">正确思路</h3>
+<p>扫描整个根文件系统，找到所有属于该旧用户的全部文件，修改UID。
+<code>find + xargs</code>，不要<code>find -exec</code>（会大量fork进程，性能差）</p>
+<p>普通版本</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>find / -user <span style="color:#bb60d5">$user</span> -print | xargs chown <span style="color:#bb60d5">$newuid</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>GNU安全版本（兼容带换行/空格文件名）</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>find / -user <span style="color:#bb60d5">$user</span> -print0 | xargs -0 chown <span style="color:#bb60d5">$newuid</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="生成批量脚本不直接执行安全先人工检查">生成批量脚本，不直接执行（安全！先人工检查）</h3>
+<p>读取映射表<code>old‑new‑list</code>，把find+xargs命令写入脚本文件<code>chown‑files</code></p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020">read</span> user old new
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020">echo</span> <span style="color:#4070a0">&#34;find / -user </span><span style="color:#bb60d5">$user</span><span style="color:#4070a0"> -print | xargs chown </span><span style="color:#bb60d5">$new</span><span style="color:#4070a0">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">done</span> &lt; old-new-list &gt; chown-files
+</span></span><span style="display:flex;"><span>chmod +x chown-files
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>重点：<strong>先生成脚本文件，人看确认没问题再执行，不直接现场执行高危操作</strong>。</p>
+</blockquote>
+<blockquote>
+<p>重要前提：<code>chown‑files</code>脚本<strong>必须分别在u1、u2两台机器本地执行</strong>。
+u1上不存在的用户，<code>find -user</code>直接报错，不会误处理；u2同理。避免跨机器混淆。</p>
+</blockquote>
+<h2 id="115-其他真实世界议题">11.5 其他真实世界议题</h2>
+<ol>
+<li>
+<p><strong>/etc/group组文件也要合并</strong></p>
+<ul>
+<li>GID也要全局唯一；同一个组的成员列表要合并。</li>
+<li>处理逻辑几乎和passwd一致。</li>
+</ul>
+</li>
+<li>
+<p>孤儿文件：文件的UID/GID在passwd/group找不到任何账号</p>
+</li>
+</ol>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-19-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>find / -nouser -o -nogroup -ls
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>需要人工确认，要么分配给现有用户，要么新建账号。</p>
+<ol start="3">
+<li>
+<p>⚠操作环境要求：系统进入<strong>单用户模式</strong>。防止业务运行过程中新产生文件，造成漏改。</p>
+</li>
+<li>
+<p>性能问题：上面写法每变更一个用户就要全盘find一遍。上千用户会很慢。
+优化方案：只全盘find一次，输出所有文件，awk读取新旧UID映射表，一次性批量生成全部chown命令。</p>
+</li>
+</ol>
+<h2 id="116-小结">11.6 小结</h2>
+<h3 id="本章学到的shell实战知识点">本章学到的shell实战知识点</h3>
+<ol>
+<li><code>/etc/passwd</code>字段结构，UID决定文件权限，NFS共享的UID唯一性要求。</li>
+<li>sort合并排序文本；awk关联数组做数据分类，awk自定义函数。</li>
+<li>shell修改<code>IFS</code>变量，让<code>read</code>按冒号分割密码文件字段；用完恢复旧IFS。</li>
+<li><code>getopts</code>解析脚本命令行选项。</li>
+<li><code>set --</code>把命令输出放到shell位置参数；<code>shift</code>逐个取出参数。</li>
+<li>工程安全思想：<strong>不直接执行高危操作；先输出脚本文件，人工审核再运行</strong>。</li>
+<li>find+xargs批量处理文件；理解<code>‑print0 / ‑0</code>安全处理特殊文件名。</li>
+<li>真实运维的边界条件：孤儿文件、单用户模式、性能优化。</li>
+</ol>
+<h3 id="完整工作流回顾">完整工作流回顾</h3>
+<p>合并passwd → awk分类冲突账号 → 提取已占用UID → 脚本生成空闲UID → 构建旧UID→新UID映射 → 生成最终passwd → 生成chown脚本，人工审核后执行。</p>
+<blockquote>
+<p>整套脚本全部由UNIX小工具组合完成，170行以内，替代复杂C程序。</p>
+</blockquote>
+
+            </div>
+
+            
+            
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">会写代码的小郎中</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2011-07-24
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">CC BY-NC-ND 4.0</span>
+  </p>
+</div>
+
+
+
+            
+            
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://yutao.org/image/ds/%e6%94%b6%e6%ac%be%e7%a0%811.jpg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://yutao.org/image/ds/%e6%94%b6%e6%ac%be%e7%a0%812.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+
+            <footer class="post-footer">
+                <div class="post-tags">
+                    <a href="https://yutao.org/tags/shell%E8%84%9A%E6%9C%AC/">Shell脚本</a>
+                    
+                </div>
+
+
+                
+                <nav class="post-nav">
+                    
+                    <a class="prev" href="https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/">
+                        
+                        <i class="iconfont">
+                            <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+                        </i>
+                        <span class="prev-text nav-default">Shell脚本学习指南-第十二章-拼写检查</span>
+                        <span class="prev-text nav-mobile">上一篇</span>
+                    </a>
+                    
+                    <a class="next" href="https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E7%AB%A0/">
+                        <span class="next-text nav-default">Shell脚本学习指南-第十章-文件处理</span>
+                        <span class="prev-text nav-mobile">下一篇</span>
+                        
+                        <i class="iconfont">
+                            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+                        </i>
+                    </a>
+                </nav>
+            </footer>
+        </article>
+
+        
+        
+
+
+        
+        
+
+  
+
+  
+  
+
+  
+  
+    <div class="post">
+  <script src="https://utteranc.es/client.js"
+        repo= "yutaodev/comments-for-yutaodev.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+    </div>
+
+    
+
+
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });  
+</script>
+<script>
+    
+    Array.from(document.getElementsByClassName("language-mermaid")).forEach(
+        (el) => {
+            el.parentElement.outerHTML = `<div class="mermaid">${el.innerHTML}</div>`;
+        }
+    );  
+</script>
+<style>
+     
+    .mermaid svg {
+        display: block;
+        margin: auto;
+    }
+</style>
+</div>
+
+      </main>
+
+      <footer id="footer" class="footer">
+        <div class="icon-links">
+    
+  
+    <a href="mailto:yutao.z@qq.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://space.bilibili.com/304380559" rel="me noopener" class="iconfont"
+      title="bilibili"  target="_blank"
+      >
+      <svg
+  class="icon" style="" viewBox="0 0 1024 1024" version="1.1" width="36"
+  height="36" id="svg8">
+  <path
+      style=""
+      d="M 744.60599,0.00486267 A 41.779915,41.779915 0 0 0 710.4184,18.673394 L 548.5048,255.32642 h -11.70046 a 41.779915,41.779915 0 0 0 -10.80295,-7.84928 L 235.66,97.084498 a 41.779915,41.779915 0 0 0 -20.07193,-4.960864 41.779915,41.779915 0 0 0 -18.3748,79.145436 L 359.4859,255.32642 H 128.16909 c -49.458302,0 -89.27932,39.82105 -89.27932,89.27932 v 508.65224 c 0,49.4583 39.821018,89.27934 89.27932,89.27934 h 19.48445 C 149.12802,984.5043 179.92773,1024 224.79179,1024 c 44.86407,0 75.66379,-39.4957 77.13826,-81.46268 H 719.98116 C 721.45559,984.5043 752.25533,1024 797.1194,1024 c 44.86406,0 75.6638,-39.4957 77.13824,-81.46268 h 21.57323 c 49.45831,0 89.27936,-39.82104 89.27936,-89.27934 V 344.60574 c 0,-49.45827 -39.82105,-89.27932 -89.27936,-89.27932 H 649.74567 L 779.38103,65.866924 A 41.779915,41.779915 0 0 0 744.60599,0.00486267 Z M 644.49108,418.70871 c 6.29985,0.21538 12.44451,2.01107 17.86888,5.22196 l 171.36218,98.10771 c 18.23417,10.21935 24.63334,33.34627 14.24614,51.48533 -10.38726,18.13909 -33.57344,24.32718 -51.61587,13.77296 L 624.9903,489.18895 c -15.21356,-8.41858 -22.66871,-26.1765 -18.03211,-42.93436 4.63664,-16.75784 20.15573,-28.14465 37.53289,-27.54588 z M 350.2006,432.31846 c 16.89952,0.0317 31.69582,11.33328 36.17844,27.62747 4.48262,16.2942 -2.44981,33.57765 -16.95507,42.24898 l -140.7157,86.91312 c -17.68528,11.18244 -41.09629,5.77692 -52.08912,-12.02686 -10.99282,-17.80373 -5.33855,-41.15658 12.58167,-51.95857 L 329.9002,438.2095 c 6.0643,-3.86439 13.10951,-5.90891 20.3004,-5.89104 z M 501.605,641.53985 c 3.75002,-0.15248 7.48645,0.53903 10.93349,2.0235 0.15842,0.0637 0.31618,0.12888 0.47325,0.19582 0.59328,0.27092 1.17574,0.56489 1.74609,0.88121 0.15868,0.0854 0.31643,0.17233 0.47325,0.2611 0.55694,0.32165 1.10131,0.66458 1.63185,1.02807 0.16455,0.1123 0.32777,0.2265 0.48956,0.34269 0.50382,0.36781 0.99371,0.75428 1.46868,1.15864 0.18724,0.15504 0.37218,0.31282 0.55484,0.47323 0.43271,0.38784 0.8518,0.79061 1.25653,1.20756 0.15449,0.16114 0.30679,0.32437 0.45693,0.48959 0.40798,0.44266 0.79989,0.89988 1.17494,1.37076 0.17799,0.22544 0.35205,0.45395 0.5222,0.68538 0.25932,0.34701 0.50964,0.70071 0.75064,1.06071 0.26712,0.39516 0.52286,0.79784 0.76699,1.20757 0.16907,0.29043 0.33231,0.58424 0.48957,0.88123 0.21836,0.41297 0.42513,0.83199 0.62009,1.25653 0.14836,0.32333 0.28983,0.64976 0.42429,0.97911 0.21319,0.51552 0.40915,1.03801 0.58747,1.5666 0.0677,0.19499 0.13296,0.39085 0.19582,0.58748 0.18652,0.60823 0.34984,1.22334 0.48957,1.84399 0.0397,0.16277 0.0779,0.32601 0.11423,0.48957 0.1436,0.69112 0.25788,1.38801 0.34269,2.08877 0.005,0.0381 0.0111,0.0761 0.0163,0.11424 0.0857,0.78056 0.13474,1.56471 0.14687,2.34988 0.005,0.0543 0.0111,0.10879 0.0163,0.1632 0,0 -0.008,1.12132 0,1.45234 0,0 -0.14697,17.84761 5.89102,34.12231 3.01902,8.13734 7.33278,15.10615 12.61433,19.61501 5.28157,4.50889 11.42894,7.62081 23.64572,7.62081 12.2168,0 18.36416,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.5953,-11.47767 12.6143,-19.61501 6.03799,-16.2747 5.89103,-34.12231 5.89103,-34.12231 -0.44885,-13.87045 10.45922,-25.46302 24.3311,-25.86506 13.87189,-0.40201 25.42828,10.53953 25.78348,24.41272 0,0 1.11929,25.7226 -9.00791,53.01927 -5.06359,13.64832 -13.1986,28.46036 -27.05631,40.29073 -13.85772,11.83039 -33.5454,19.63135 -56.20142,19.63135 -22.65603,0 -42.34371,-7.80096 -56.20141,-19.63135 -4.1801,-3.56856 -7.78733,-7.42433 -10.99878,-11.42303 -3.21235,4.00037 -6.81703,7.85309 -10.99876,11.42303 -13.85773,11.83039 -33.5454,19.63135 -56.20144,19.63135 -22.65601,0 -42.3437,-7.80096 -56.2014,-19.63135 -13.85775,-11.83037 -21.99272,-26.64241 -27.05632,-40.29073 -10.12725,-27.29667 -9.00789,-53.01928 -9.00789,-53.01927 0.20714,-13.83687 11.58744,-24.88848 25.42444,-24.69013 14.1263,0.19991 25.2971,12.0278 24.69011,26.14247 0,0 -0.14697,17.84761 5.89103,34.12231 3.01902,8.13734 7.31646,15.10615 12.598,19.61501 5.28155,4.50889 11.44526,7.62081 23.66203,7.62081 12.21681,0 18.36418,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.57899,-11.47767 12.598,-19.61501 5.76352,-15.53489 5.89112,-32.05691 5.89103,-33.56746 0.006,-0.37466 0.0111,-1.05336 0.0163,-1.20759 -0.0117,-0.74583 0.0105,-1.49177 0.0652,-2.23565 0.009,-0.15784 0.0204,-0.31561 0.0327,-0.47324 0.14204,-1.56859 0.43163,-3.12027 0.86487,-4.63449 0.0213,-0.0763 0.0433,-0.15244 0.0652,-0.22848 3.0335,-10.25748 12.24157,-17.46007 22.92769,-17.93417 z"
+      id="rect824"/>
+</svg>
+
+    </a>
+  
+    <a href="https://weibo.com/u/2557216280" rel="me noopener" class="iconfont"
+      title="weibo"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M385.714286 733.714286q12-19.428571 6.285714-39.428571t-25.714286-28.571429q-19.428571-8-41.714286-0.571429t-34.285714 26.285714q-12.571429 19.428571-7.428571 39.142857t24.571429 28.857143 42.571429 1.428571 35.714286-27.142857zm53.714286-69.142857q4.571429-7.428571 2-15.142857t-10-10.571429q-8-2.857143-16.285714 2.857143t-12.285714 10.571429q-9.714286 17.714286 7.428571 25.714286 8 2.857143 16.571429 2.857143t12.571429-10.571429zm99.428571 61.142857q-25.714286 58.285714-90.285714 85.714286t-128 6.857143q-61.142857-19.428571-84.285714-72.285714t3.714286-107.142857q26.857143-53.142857 86.571429-79.428571t120.285714-10.857143q63.428571 16.571429 90.571429 68.285714t1.428571 108.857143zm178.285714-91.428571q-5.142857-54.857143-50.857143-97.142857t-119.142857-62.285714-156.857143-12q-127.428571 13.142857-211.142857 80.857143t-75.714286 151.142857q5.142857 54.857143 50.857143 97.142857t119.142857 62.285714 156.857143 12q127.428571-13.142857 211.142857-80.857143t75.714286-151.142857zm176 2.285714q0 38.857143-21.142857 79.714286t-62.285714 78.285714-96.285714 67.142857-129.142857 47.428571-154.571429 17.714286-157.142857-19.142857-137.428571-53.142857-98-86.285714-37.142857-114q0-65.714286 39.714286-140t112.857143-147.428571q96.571429-96.571429 195.142857-134.857143t140.857143 4q37.142857 36.571429 11.428571 119.428571-2.285714 8-0.571429 11.428571t5.714286 4 8.285714 2.857143 7.714286-2l3.428571-1.142857q79.428571-33.714286 140.571429-33.714286t87.428571 34.857143q25.714286 36 0 101.714286-1.142857 7.428571-2.571429 11.428571t2.571429 7.142857 6.857143 4.285714 9.714286 3.428571q32.571429 10.285714 58.857143 26.857143t45.714286 46.571429 19.428571 66.571429zm-42.285714-356.571429q24 26.857143 31.142857 62t-3.714286 67.142857q-4.571429 13.142857-16.857143 19.428571t-25.428571 2.285714q-13.142857-4.571429-19.428571-16.857143t-2.285714-25.428571q11.428571-36-13.714286-63.428571t-61.142857-20q-13.714286 2.857143-25.714286-4.571429t-14.285714-21.142857q-2.857143-13.714286 4.571429-25.428571t21.142857-14.571429q34.285714-7.428571 68 3.142857t57.714286 37.428571zm103.428571-93.142857q49.714286 54.857143 64.285714 127.142857t-7.714286 138q-5.142857 15.428571-19.428571 22.857143t-29.714286 2.285714-22.857143-19.428571-2.857143-29.714286q16-46.857143 5.714286-98.285714t-45.714286-90.285714q-35.428571-39.428571-84.571429-54.571429t-98.857143-4.857143q-16 3.428571-29.714286-5.428571t-17.142857-24.857143 5.428571-29.428571 24.857143-16.857143q70.285714-14.857143 139.428571 6.571429t118.857143 76.857143z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.toutiao.com/c/user/token/MS4wLjABAAAA1TxeVNQbqL6Lg7CJRoNwNHYDpIB5qKGh24pQ0AvIjmfeczyo5zxipIgPtGJr-mUI/?source=m_redirect" rel="me noopener" class="iconfont"
+      title="toutiao"  target="_blank"
+      >
+      <svg t="1731818671552" class="icon" viewBox="0 0 1024 1024" version="1.1"
+    xmlns="http://www.w3.org/2000/svg" p-id="4390" width="32" height="32">
+    <path
+        d="M828.745763 0H195.254237C86.779661 0 0 86.779661 0 195.254237v633.491526c0 108.474576 86.779661 190.915254 195.254237 195.254237h633.491526c108.474576 0 190.915254-86.779661 195.254237-195.254237V195.254237c0-108.474576-86.779661-195.254237-195.254237-195.254237z m138.847457 828.745763c0 78.101695-60.745763 138.847458-138.847457 138.847457H195.254237c-78.101695 0-138.847458-60.745763-138.847457-138.847457V195.254237c0-78.101695 60.745763-138.847458 138.847457-138.847457h633.491526c78.101695 0 138.847458 60.745763 138.847457 138.847457v633.491526z"
+        fill="#525252" p-id="4391"></path>
+    <path
+        d="M0 221.288136v620.474576c0 4.338983 4.338983 8.677966 8.677966 13.016949l1015.322034-56.40678V182.237288c0-4.338983-4.338983-8.677966-8.677966-13.016949L0 221.288136z"
+        fill="#525252" p-id="4392"></path>
+    <path
+        d="M906.847458 581.423729v-47.728814l-151.864407 8.677966V520.677966h-69.423729v30.372881l-151.864407 8.677967V607.457627l151.864407-8.677966v108.474576l69.423729-8.677966v-108.474576l151.864407-8.677966z"
+        fill="#FFFFFF" p-id="4393"></path>
+    <path
+        d="M538.033898 490.305085v47.728813h47.728814l138.847457-69.423729 130.169492 47.728814H911.186441v-47.728814h-34.711865l-91.118644-26.033898 117.152543-60.745763V299.389831l-65.084746 4.338983-173.559322 8.677966-56.40678-30.372882-78.101695 117.152543 60.745763 21.694915 43.38983-60.745763 199.593221-8.677966v8.677966l-108.474577 56.40678-91.118644-34.711865-26.033898 47.728814 47.728814 21.694915-82.440678 43.389831-34.711865-4.338983z m334.101695 104.135593l-69.423729 8.677966 47.728814 91.118644 78.101695-8.677966-56.40678-91.118644z m-334.101695 108.474576H607.457627l47.728814-95.457627-69.423729 8.677966-47.728814 86.779661z m-169.220339-99.79661l56.40678 108.474576h82.440678l-60.745763-117.152542-78.101695 8.677966z m-78.101695-86.779661l-60.745762-78.101695-82.440678 8.677966 60.745762 69.423729h82.440678z m0-95.457627L229.966102 351.457627H147.525424l60.745762 78.101695 82.440678-8.677966z"
+        fill="#FFFFFF" p-id="4394"></path>
+    <path
+        d="M351.457627 585.762712l130.169492-8.677966v-47.728814l-91.118644 8.677966v-216.949152l-65.084746 8.677966v208.271186l-216.949153 13.016949v47.728814l147.525424-8.677966-60.745763 82.440678-82.440678 8.677966v47.728814l138.847458-8.677967 99.79661-134.508474z"
+        fill="#FFFFFF" p-id="4395"></path>
+</svg>
+    </a>
+
+
+<a href="https://yutao.org/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+    </span>
+    <span class="division">|</span>
+    <span class="theme-info">
+        Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+    </span>
+
+    <span class="copyright-year">
+        &copy;
+        
+        2011 -
+        2026
+        <span class="heart">
+            
+            <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+            </i>
+        </span><span class="author">
+            会写代码的小郎中
+            
+        </span></span>
+
+    
+    
+    <span id="busuanzi_container">
+        访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+    
+
+    
+    
+
+    
+</div>
+      </footer>
+
+      <div class="button__back-to-top">
+        <a href="#back-to-top">
+          <i class="iconfont">
+            
+            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+          </i>
+        </a>
+      </div>
+    </div>
+    
+<script type="text/javascript" src="https://yutao.org/lib/jquery/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="https://yutao.org/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="https://yutao.org/js/main.0812a6f15b5585e323289457bbef147ebb2e5111f2924b072bc6acf7eabe95b1.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="https://yutao.org/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="https://yutao.org/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://yutao.org/js/copy-to-clipboard.js"></script>
+
+  <script src="https://yutao.org/js/search.js"></script>
+
+
+  </body>
+</html>

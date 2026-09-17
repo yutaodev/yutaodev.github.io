@@ -2250,6 +2250,16 @@
       "summary": "近日思悟二则：从“编程之法”到“破相之心” 最近几日，于工作与生活中偶有所得，如静夜闻钟，清音绕梁。记录于此，既是梳理，亦是分享。 一、 编程之悟"
     },
     {
+      "title": "Shell脚本学习指南-第十二章-拼写检查",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/",
+      "summary": "第12章 拼写检查 本章利用拼写检查，呈现各种 Shell 脚本的不同方面。介绍完 spell 程序后，我们会告诉你如何构建一个简单又好用的拼写检查程序。紧接着再介绍如"
+    },
+    {
+      "title": "Shell脚本学习指南-第十一章-合并用户数据库",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/",
+      "summary": "第11章 扩展实例: 合并用户数据库 本章背景：真实系统管理场景，两台服务器要开启NFS文件共享。NFS依靠UID识别文件归属，如果两台机器同名用"
+    },
+    {
       "title": "Shell脚本学习指南-第十章-文件处理",
       "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E7%AB%A0/",
       "summary": "第10章 文件处理 本章目标：掌握UNIX/Linux下文件、目录常用工具：查看文件列表、修改时间戳、临时文件、查找文件、xargs、磁盘空间、"

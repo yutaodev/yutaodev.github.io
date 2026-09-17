@@ -8,8 +8,22 @@
     <language>zh-cn</language>
     <managingEditor>yutao.z@qq.com (会写代码的小郎中)</managingEditor>
     <webMaster>yutao.z@qq.com (会写代码的小郎中)</webMaster>
-    <lastBuildDate>Sat, 23 Jul 2011 22:29:27 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 25 Jul 2011 22:29:27 +0800</lastBuildDate>
     <atom:link href="https://yutao.org/tags/shell%E8%84%9A%E6%9C%AC/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shell脚本学习指南-第十二章-拼写检查</title>
+      <link>https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/</link>
+      <pubDate>Mon, 25 Jul 2011 22:29:27 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/</guid>
+      <description>第12章 拼写检查 本章利用拼写检查，呈现各种 Shell 脚本的不同方面。介绍完 spell 程序后，我们会告诉你如何构建一个简单又好用的拼写检查程序。紧接着再介绍如</description>
+    </item>
+    <item>
+      <title>Shell脚本学习指南-第十一章-合并用户数据库</title>
+      <link>https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/</link>
+      <pubDate>Sun, 24 Jul 2011 22:29:27 +0800</pubDate><author>yutao.z@qq.com (会写代码的小郎中)</author>
+      <guid>https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0/</guid>
+      <description>第11章 扩展实例: 合并用户数据库 本章背景：真实系统管理场景，两台服务器要开启NFS文件共享。NFS依靠UID识别文件归属，如果两台机器同名用</description>
+    </item>
     <item>
       <title>Shell脚本学习指南-第十章-文件处理</title>
       <link>https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E7%AB%A0/</link>
