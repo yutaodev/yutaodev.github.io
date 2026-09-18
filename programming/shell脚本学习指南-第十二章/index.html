@@ -85,7 +85,7 @@
   <meta itemprop="description" content="Shell脚本学习指南-第十二章">
   <meta itemprop="datePublished" content="2011-07-25T22:29:27+08:00">
   <meta itemprop="dateModified" content="2011-07-25T22:29:27+08:00">
-  <meta itemprop="wordCount" content="14070">
+  <meta itemprop="wordCount" content="14079">
   <meta itemprop="keywords" content="Shell脚本学习指南">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Shell脚本学习指南-第十二章-拼写检查">
@@ -537,7 +537,7 @@
 
   <div class="post-meta__right">
     <span class="post-meta-more">
-        约 14070 字 -
+        约 14079 字 -
         预计阅读 29 分钟
       </span>
 
@@ -1140,16 +1140,31 @@
 </div>
 </div><h3 id="1246-load_dictionaries">12.4.6 load_dictionaries()</h3>
 <p>这个函数很简单：以 getline 读取每个字典文件的每一行，并将小写形式的单词存储在全局的 Dictionary 数组里。请注意，如果 Dictionary 数组已经包含某个单词，则它的计数会递增。但我们并不需要计数，我们只用它作为存在性的标记。</p>
-<pre tabindex="0"><code>function load_dictionaries(    file, word)
-{
-    for (file in DictionaryFiles)
-    {
-        while ((getline word &lt; file) &gt; 0)
-            Dictionary[tolower(word)]++
-        close(file)
-    }
-}
-</code></pre><h3 id="1247-load_suffixes">12.4.7 load_suffixes()</h3>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-8">8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-9">9</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#007020;font-weight:bold">function</span> load_dictionaries<span style="color:#666">(</span>    file, word<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">for</span> <span style="color:#666">(</span>file in DictionaryFiles<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">while</span> <span style="color:#666">((</span>getline word &lt; file<span style="color:#666">)</span> &gt; 0<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>            Dictionary<span style="color:#666">[</span>tolower<span style="color:#666">(</span>word<span style="color:#666">)]</span>++
+</span></span><span style="display:flex;"><span>        close<span style="color:#666">(</span>file<span style="color:#666">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="1247-load_suffixes">12.4.7 load_suffixes()</h3>
 <p>后缀规则会带有解释，且为了说明，我们呈现的是传统的英文规则，见例 12-3。我们以正则表达式匹配后缀，每一个单词末端都带有 $ 锚点（anchor）。当后缀被截断时，则必须提供一个替换后缀，例如把 tr + ied 缩短成 tr + y，且时常会有数种可能的替换。</p>
 <p><strong>例 12-3：英文的后缀规则：english.sfx</strong></p>
 <div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
@@ -2007,12 +2022,12 @@
     
     
       <label class="qr-code-image" for="reward">
-        <img class="image" src="https://yutao.org/image/ds/%e6%94%b6%e6%ac%be%e7%a0%811.jpg">
+        <img class="image" src="https://yutao.org/image/ds/%e6%94%b6%e6%ac%be%e7%a0%811.png">
         <span>微信打赏</span>
       </label>
     
       <label class="qr-code-image" for="reward">
-        <img class="image" src="https://yutao.org/image/ds/%e6%94%b6%e6%ac%be%e7%a0%812.jpg">
+        <img class="image" src="https://yutao.org/image/ds/%e6%94%b6%e6%ac%be%e7%a0%812.png">
         <span>支付宝打赏</span>
       </label>
   </div>
