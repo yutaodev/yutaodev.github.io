@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  itemscope
+  itemtype="http://schema.org/WebPage"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+          sed与awk-第三章-了解正则表达式语法 - 会写代码的小郎中
+        </title>
+    
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="会写代码的小郎中" /><meta name="description" content="sed与awk-第三章-了解正则表达式语法" />
+<meta name="keywords" content="sed与awk第二版" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.128.2" />
+
+
+<link rel="canonical" href="https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E4%BA%86%E8%A7%A3%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95/" />
+
+
+
+
+
+<link rel="icon" href="https://yutao.org/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://yutao.org/sass/jane.min.e826e860368147e5a6685e686355e4d7789023c18c9ea2e78b35f6786ce92736.css" integrity="sha256-6CboYDaBR&#43;WmaF5oY1Xk13iQI8GMnqLnizX2eGzpJzY=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://yutao.org/css/custom.css">
+
+<link rel="stylesheet" href="https://yutao.org/css/copy-to-clipboard.css">
+
+
+<meta property="og:url" content="https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E4%BA%86%E8%A7%A3%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95/">
+  <meta property="og:site_name" content="会写代码的小郎中">
+  <meta property="og:title" content="sed与awk-第三章-了解正则表达式语法">
+  <meta property="og:description" content="sed与awk-第三章-了解正则表达式语法">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="programming">
+    <meta property="article:published_time" content="2011-08-02T22:29:27+08:00">
+    <meta property="article:modified_time" content="2011-08-02T22:29:27+08:00">
+    <meta property="article:tag" content="Shell脚本">
+
+  <meta itemprop="name" content="sed与awk-第三章-了解正则表达式语法">
+  <meta itemprop="description" content="sed与awk-第三章-了解正则表达式语法">
+  <meta itemprop="datePublished" content="2011-08-02T22:29:27+08:00">
+  <meta itemprop="dateModified" content="2011-08-02T22:29:27+08:00">
+  <meta itemprop="wordCount" content="5944">
+  <meta itemprop="keywords" content="sed与awk第二版">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="sed与awk-第三章-了解正则表达式语法">
+  <meta name="twitter:description" content="sed与awk-第三章-了解正则表达式语法">
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZM2P746RY"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-HZM2P746RY');
+        }
+      </script>
+    
+  
+
+
+
+
+
+
+
+
+
+  </head>
+  <body>
+    <div id="back-to-top"></div>
+
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://yutao.org/" class="logo">会写代码的小郎中</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/programming/">编程</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/tcm/">中医</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/philosophy/">哲学</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/finance/">金融</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+          
+        
+      </li>
+    
+
+      <li class="mobile-menu-item">
+        <a id="openSearchMobile" class="mobile-menu-item-link menu-item-search" href="#">
+          <i class="iconfont">
+            <svg version="1.1" viewBox="0 0 1024 1024"
+  xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M973.81454219 973.81454219a91.78207815 91.78207815 0 0 1-129.80999631 0l-161.97482118-161.97482118a425.48527711 425.48527711 0 0 1-230.35931791 68.16531768 428.3346319 428.3346319 0 1 1 428.3346319-428.3346319 425.48527711 425.48527711 0 0 1-68.16531768 230.35931791l162.02961656 161.97482118a91.83687354 91.83687354 0 0 1-0.05479538 129.80999631zM451.67040679 145.69361559a305.97679241 305.97679241 0 1 0 0 611.95358361 305.97679241 305.97679241 0 0 0 0-611.95358361z">
+  </path>
+</svg>
+
+          </i>
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+    
+      
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://yutao.org/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="https://yutao.org/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+    
+
+    
+
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+    <a href="https://yutao.org/" class="logo">
+        
+        会写代码的小郎中
+        
+    </a>
+</div>
+
+<nav class="site-navbar">
+    <ul id="menu" class="menu">
+        
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/programming/">编程</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/tcm/">中医</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/philosophy/">哲学</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/finance/">金融</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+            
+
+            
+
+        </li>
+        
+
+        
+        
+
+        <li class="menu-item">
+            <a id="openSearch" class="menu-item-link menu-item-search" href="#">
+                <i class="iconfont">
+                    <svg version="1.1" viewBox="0 0 1024 1024"
+  xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M973.81454219 973.81454219a91.78207815 91.78207815 0 0 1-129.80999631 0l-161.97482118-161.97482118a425.48527711 425.48527711 0 0 1-230.35931791 68.16531768 428.3346319 428.3346319 0 1 1 428.3346319-428.3346319 425.48527711 425.48527711 0 0 1-68.16531768 230.35931791l162.02961656 161.97482118a91.83687354 91.83687354 0 0 1-0.05479538 129.80999631zM451.67040679 145.69361559a305.97679241 305.97679241 0 1 0 0 611.95358361 305.97679241 305.97679241 0 0 0 0-611.95358361z">
+  </path>
+</svg>
+
+                </i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+<div id="searchDialog" class="search-dialog" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;">
+  <div class="search-dialog-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 8px; width: 90%; max-width: 600px; box-sizing: border-box;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <h3 style="margin: 0;">搜索</h3>
+      <button id="closeSearch" style="background: none; border: none; font-size: 24px; cursor: pointer; padding: 0; margin: 0;">&times;</button>
+    </div>
+    <input type="text" id="search-input" placeholder="请输入关键词..." style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 15px; box-sizing: border-box;" />
+    <ul id="search-results" style="list-style: none; padding: 0; margin: 10px 0 0 0; max-height: 300px; overflow-y: auto;">
+      <style>
+        #search-results li {
+          padding: 8px 0;
+          border-bottom: 1px solid #f0f0f0;
+        }
+        #search-results li a {
+          display: block;
+          padding: 8px 12px;
+          text-decoration: none;
+          color: #333;
+        }
+        #search-results li a:hover {
+          background-color: #f5f5f5;
+        }
+      </style>
+    </ul>
+  </div>
+</div>
+    </header>
+
+    <div id="mobile-panel">
+      <main id="main" class="main bg-llight wallpaper">
+        <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#表达式">表达式</a></li>
+    <li><a href="#成排的字符">成排的字符</a>
+      <ul>
+        <li><a href="#表31元字符汇总">表3‑1：元字符汇总</a></li>
+      </ul>
+    </li>
+    <li><a href="#普遍存在的反斜杠-">普遍存在的反斜杠 <code>\</code></a></li>
+    <li><a href="#通配符-">通配符 <code>.</code></a></li>
+    <li><a href="#编写正则表达式">编写正则表达式</a>
+      <ul>
+        <li><a href="#编写正则三步法">编写正则三步法</a></li>
+        <li><a href="#测试结果四类情况">测试结果四类情况</a></li>
+      </ul>
+    </li>
+    <li><a href="#字符类-">字符类 <code>[]</code></a>
+      <ul>
+        <li><a href="#表32-字符类内部特殊字符">表3‑2 字符类内部特殊字符</a></li>
+      </ul>
+    </li>
+    <li><a href="#字符的范围">字符的范围</a></li>
+    <li><a href="#排除字符类-">排除字符类 <code>[^...]</code></a></li>
+    <li><a href="#posix字符类补充">POSIX字符类补充</a>
+      <ul>
+        <li><a href="#表33-posix字符类">表3‑3 POSIX字符类</a></li>
+      </ul>
+    </li>
+    <li><a href="#重复出现的字符量词">重复出现的字符（量词）</a>
+      <ul>
+        <li><a href="#bre基础正则sedgrep">BRE基础正则（sed/grep）</a></li>
+        <li><a href="#ere扩展正则egrep--awk">ERE扩展正则（egrep / awk）</a></li>
+      </ul>
+    </li>
+    <li><a href="#单词是什么第一部分">单词是什么?第一部分</a></li>
+    <li><a href="#定位元字符锚点-">定位元字符（锚点）<code>^</code> <code>$</code></a></li>
+    <li><a href="#短语">短语</a></li>
+    <li><a href="#字符的跨度次数限定大括号">字符的跨度（次数限定大括号）</a></li>
+    <li><a href="#选择性操作-竖线-ere扩展正则-egrepawk">选择性操作 竖线 <code>|</code>（ERE扩展正则 egrep/awk）</a></li>
+    <li><a href="#分组操作-ere扩展正则-egrepawk">分组操作 <code>()</code>（ERE扩展正则 egrep/awk）</a></li>
+    <li><a href="#单词是什么第二部分真正匹配完整单词">单词是什么?第二部分：真正匹配完整单词</a>
+      <ul>
+        <li><a href="#方案思路">方案思路</a></li>
+      </ul>
+    </li>
+    <li><a href="#在这里替换匹配范围贪婪匹配">在这里替换（匹配范围，贪婪匹配）</a>
+      <ul>
+        <li><a href="#贪婪匹配正则默认行为">贪婪匹配（正则默认行为）</a></li>
+      </ul>
+    </li>
+    <li><a href="#限制范围解决贪婪匹配">限制范围（解决贪婪匹配）</a></li>
+    <li><a href="#使用喜欢的元字符表34-常用正则速查表">使用喜欢的元字符：表3‑4 常用正则速查表</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
+    <div id="content" class="content">
+
+        
+        
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/yutao.org\/programming\/sed%E4%B8%8Eawk-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E4%BA%86%E8%A7%A3%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95\/"
+          },
+          "headline": "sed与awk-第三章-了解正则表达式语法",
+          "description": "sed与awk-第三章-了解正则表达式语法",
+          "datePublished": "2011-08-02T22:29:27\u002b08:00",
+          "dateModified": "2011-08-02T22:29:27\u002b08:00",
+          "author": {
+            "@type": "Person",
+            "name": "会写代码的小郎中"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "会写代码的小郎中",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https:\/\/yutao.org\/favicon.ico"
+            }
+          }
+        }
+        </script>
+        
+        
+
+        <article class="post">
+            
+            <header class="post-header">
+                <h1 class="post-title">sed与awk-第三章-了解正则表达式语法</h1>
+                
+
+                <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      <a href="https://yutao.org/about">
+        <span class="post-meta-author-name">
+          会写代码的小郎中
+        </span>
+      </a>
+    
+  </div>
+
+  <div class="post-meta-time">
+        <time datetime=" 2011-08-02">
+      2011-08-02
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 5944 字 -
+        预计阅读 12 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="https://yutao.org/categories/shell%E8%84%9A%E6%9C%AC/"> Shell脚本 </a>
+          
+      </div>
+
+
+    
+        
+      <span id="busuanzi_container_page_pv">
+        | 阅读 <span id="busuanzi_value_page_pv"></span>
+      </span>
+    
+
+
+    
+        
+  </div>
+</div>
+            </header>
+
+            
+            <div class="post-content">
+                <!-- markdownlint-disable-file MD029 -->
+<!-- markdownlint-disable-file MD024 -->
+<!-- markdownlint-disable-file MD052 -->
+<h1 id="第三章了解正则表达式语法">第三章了解正则表达式语法</h1>
+<h2 id="表达式">表达式</h2>
+<p>正则表达式和算术表达式思想类似：</p>
+<ol>
+<li><strong>算术表达式</strong>：字面量+运算符，有运算优先级，算出数值结果。例：<code>2+3*4</code>，乘法优先级高于加法；括号<code>()</code>改变计算顺序。</li>
+<li><strong>正则表达式</strong>：字面字符+元字符（特殊操作符号），描述<strong>文本模式</strong>，不是字面字符串。</li>
+</ol>
+<blockquote>
+<p><strong>字面量：写出来是什么，它的值就是什么，不需要再解析、计算。</strong><br>
+<strong>字面字符：字符写出来是什么，就去文本中匹配一模一样的这个字符。没有特殊功能，不做任何特殊处理。</strong></p>
+</blockquote>
+<ul>
+<li>基础操作：<strong>字符拼接</strong>，字符依次相邻匹配。<code>ABE</code> 只匹配连续字符串<code>ABE</code>；区分大小写，<code>A</code>不等于<code>a</code>。</li>
+<li>程序工作流程：grep/sed/awk读取每一行文本，拿正则模式和该行做匹配；匹配失败就向后移动字符重新尝试匹配。</li>
+</ul>
+<blockquote>
+<p>简单元字符举例</p>
+</blockquote>
+<ul>
+<li><code>.</code>（点）：通配符，匹配<strong>任意1个字符（换行除外；awk可以匹配换行）</strong>；<code>A.E</code> 匹配 <code>ACE</code>、<code>ABE</code>、<code>ALE</code>。</li>
+<li><code>*</code>（星号）：<strong>修饰前面那一个单元</strong>，匹配前面单元出现0次或多次；<code>A.*E</code>：A后面任意数量字符，最后E。</li>
+</ul>
+<blockquote>
+<p>重点区分：shell里<code>*</code>本身代表任意字符；正则里<code>*</code>不独立工作，只修饰它<strong>前面的表达式</strong>。</p>
+</blockquote>
+<blockquote>
+<p>两类元字符：</p>
+</blockquote>
+<ol>
+<li>占位类元字符：自身代表一个字符，例如 <code>.</code></li>
+<li>修饰量词元字符：不匹配字符，只修改前面的匹配规则，例如 <code>*</code></li>
+</ol>
+<h2 id="成排的字符">成排的字符</h2>
+<p>除元字符以外的所有字符，都是字面量，匹配自身。</p>
+<h3 id="表31元字符汇总">表3‑1：元字符汇总</h3>
+<blockquote>
+<p>BRE基础正则（grep、sed使用）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>特殊字符</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.</code></td>
+<td>匹配除换行以外任意单个字符；awk中可以匹配换行</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>匹配它前面单元0次或多次</td>
+</tr>
+<tr>
+<td><code>[...]</code></td>
+<td>字符类，匹配括号内任意1个字符；开头写<code>^</code>表示否定排除；<code>-</code>表示范围；<code>]</code>放第一个位置代表字面<code>]</code>；括号内元字符失去特殊含义</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>正则开头：匹配<strong>行首</strong>；awk匹配字符串开头</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>正则末尾：匹配<strong>行尾</strong>；awk匹配字符串结尾</td>
+</tr>
+<tr>
+<td><code>\{n,m\}</code></td>
+<td>次数限定。<code>\{n\}</code>恰好n次；<code>\{n,\}</code>至少n次；<code>\{n,m\}</code>n~m次</td>
+</tr>
+<tr>
+<td><code>\</code></td>
+<td>转义，把元字符变为普通字符，或者把普通字符变为元字符</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>ERE扩展正则（egrep、awk使用，不需要反斜杠转义<code>+ ? | () {}</code>）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>特殊字符</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>前面单元出现<strong>1次或多次</strong></td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>前面单元出现<strong>0次或1次</strong></td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>多选“或”，匹配左边或者右边模式</td>
+</tr>
+<tr>
+<td><code>()</code></td>
+<td>分组，把一组字符当成一个整体</td>
+</tr>
+<tr>
+<td><code>{n,m}</code></td>
+<td>次数限定，不需要反斜杠</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>备注：传统awk对<code>{n,m}</code>支持不好；GNU awk/sed完整支持。</p>
+</blockquote>
+<h2 id="普遍存在的反斜杠-">普遍存在的反斜杠 <code>\</code></h2>
+<p>反斜杠两大作用：</p>
+<ol>
+<li><strong>转义元字符→普通字符</strong>：如果你要匹配符号本身，加<code>\</code>。
+<ul>
+<li>匹配字面小数点：<code>\.</code></li>
+<li>匹配反斜杠本身：<code>\\</code></li>
+<li>示例：匹配troff宏<code>.nf</code>：<code>\.nf</code></li>
+</ul>
+</li>
+<li><strong>sed中，把普通字符变成元字符</strong>：<code>\( \) 、\{ \} 、\n</code>；sed必须写反斜杠，否则没有特殊含义。
+<ul>
+<li><code>\1‑ \9</code>：反向引用，第五章sed详细讲解。</li>
+</ul>
+</li>
+</ol>
+<h2 id="通配符-">通配符 <code>.</code></h2>
+<p><code>.</code> = 匹配<strong>任意单个字符，换行除外（awk除外）</strong>。</p>
+<ul>
+<li>示例：<code>80.86</code>，匹配<code>80286</code>、<code>80386</code>；注意也会匹配错误文本，不是只匹配数字。</li>
+<li>示例：<code>Chapter.</code>，匹配Chapter后面紧跟任意1个字符；
+<ul>
+<li>❗<strong>行尾的Chapter不会被匹配</strong>：<code>.</code>不能匹配换行；直接写<code>Chapter</code>可以匹配行尾。</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>grep <span style="color:#4070a0">&#39;Chapter.&#39;</span> sample
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="编写正则表达式">编写正则表达式</h2>
+<p>正则写出来不生效，大多不是工具bug，而是<strong>模式描述不符合真实文本情况</strong>。</p>
+<h3 id="编写正则三步法">编写正则三步法</h3>
+<ol>
+<li>明确：我要匹配什么？文本中这些内容长什么样，会出现在什么上下文？</li>
+<li>写模式，描述目标文本。</li>
+<li><strong>一定要测试模式</strong>，核对输出结果。</li>
+</ol>
+<h3 id="测试结果四类情况">测试结果四类情况</h3>
+<ol>
+<li><strong>Hits（击中）</strong>：成功匹配，正是我想要的行</li>
+<li><strong>Misses（未击中）</strong>：完全无关，没有匹配，正确。</li>
+<li><strong>Omissions（遗漏）</strong>：我想要匹配，但是没匹配到，需要扩大匹配范围。</li>
+<li><strong>False alarms（假警报）</strong>：不该匹配，却匹配到了，需要增加条件缩小范围。</li>
+</ol>
+<blockquote>
+<p>调优思路：出现假警报 → 增加限制条件缩小匹配；出现遗漏 → 扩展模式捕获更多情况。</p>
+</blockquote>
+<blockquote>
+<p>经验：固定字符串去掉字符，匹配范围变大；增加字符，匹配范围变小；元字符用来灵活平衡范围。</p>
+</blockquote>
+<h2 id="字符类-">字符类 <code>[]</code></h2>
+<blockquote>
+<p><strong>“类” = 一组字符的集合</strong>，
+作用：指定<strong>某一个位置可以允许哪些字符</strong>，<code>[]</code>整体只匹配1个字符。</p>
+</blockquote>
+<p>示例：</p>
+<ol>
+<li><code>[Ww]hat</code>：首字符大写W或者小写w；匹配<code>what</code> / <code>What</code>；注意也会匹配<code>Whatever</code>、<code>somewhat</code>。</li>
+<li><code>\.H[12345]</code>：匹配troff宏<code>.H1</code>、<code>.H2</code>…<code>.H5</code>。</li>
+</ol>
+<blockquote>
+<p>shell也支持<code>[]</code>语法，<strong>shell会解析方括号，命令行写正则必须用单引号包裹模式，交给grep处理，不让shell提前解析</strong>。</p>
+</blockquote>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>grep <span style="color:#4070a0">&#39;\.H[123]&#39;</span> ch0<span style="color:#666">[</span>12<span style="color:#666">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>重要规则：<strong>在<code>[]</code>方括号内部，大部分元字符丧失特殊含义</strong>，<code>.</code>就是普通点号。</p>
+</blockquote>
+<h3 id="表32-字符类内部特殊字符">表3‑2 字符类内部特殊字符</h3>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\</code></td>
+<td>仅awk内有效，用来转义字符</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>不在首尾位置，代表字符范围；放在最前/最后，就是字面连字符</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td><strong>必须写在方括号第一个</strong>，代表排除（否定）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="字符的范围">字符的范围</h2>
+<p>用<code>-</code>简写连续字符：</p>
+<ul>
+<li><code>[A‑Z]</code>全部大写字母</li>
+<li><code>[0‑9]</code>全部数字</li>
+<li><code>[a‑zA‑Z]</code>大小写字母</li>
+</ul>
+<p>示例：</p>
+<ol>
+<li><code>[cC]hapter[1‑9]</code>匹配chapter后接1位数字；会误匹配<code>chapter 12</code>（假警报，因为只匹配第一位数字）。</li>
+<li>可以同时写多个范围，混合普通字符：<code>[0‑9a‑z?,.;:'&quot;]</code></li>
+<li><code>-</code>想要作为字面符号，放到方括号第一个位置：<code>[-+*/]</code>匹配加减乘除符号。</li>
+<li><code>]</code>右括号，放到方括号第一个位置代表字面<code>]</code>。</li>
+</ol>
+<blockquote>
+<p>日期简单示例（不会校验日期合法性，只管格式）</p>
+</blockquote>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>[0‑1][0‑9][-/][0‑3][0‑9][-/][0‑9][0‑9]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="排除字符类-">排除字符类 <code>[^...]</code></h2>
+<p><code>^</code>写在方括号的<strong>第一个字符</strong>，代表：匹配所有不在括号内的字符（换行除外，awk可以匹配换行）。</p>
+<p>示例：</p>
+<ol>
+<li><code>[^0‑9]</code>匹配任意非数字字符</li>
+<li><code>[^aeiou]</code>匹配非元音字符（包含辅音、标点、大写字母）</li>
+<li><code>\.DS &quot;[^1]&quot;</code>：匹配<code>.DS &quot;X&quot;</code>，X不能是数字1；用来避开<code>.DS &quot;1&quot;</code>这一行。</li>
+</ol>
+<blockquote>
+<p>shell中<code>^</code>有特殊含义，命令中模式务必使用单引号包裹。</p>
+</blockquote>
+<h2 id="posix字符类补充">POSIX字符类补充</h2>
+<blockquote>
+<p>背景：<code>[a‑z]</code>只支持英文字母；POSIX为多语言设计标准字符类；GNU sed、grep、awk支持。
+POSIX概念：我们说的<code>[]</code>字符类，标准名称叫<strong>括号表达式</strong>；POSIX三种括号内部标记：</p>
+</blockquote>
+<ol>
+<li>POSIX字符类：<code>[:关键字:]</code>，必须写在<code>[]</code>内部，例 <code>[[:alpha:]]</code></li>
+<li>整理符号 <code>[.ch.]</code>：GNU工具大多不支持</li>
+<li>等价类 <code>[=e=]</code>：处理重音字符，GNU工具大多不支持</li>
+</ol>
+<h3 id="表33-posix字符类">表3‑3 POSIX字符类</h3>
+<table>
+<thead>
+<tr>
+<th>类</th>
+<th>匹配字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[:alnum:]</code></td>
+<td>字母+数字</td>
+</tr>
+<tr>
+<td><code>[:alpha:]</code></td>
+<td>字母字符（大小写）</td>
+</tr>
+<tr>
+<td><code>[:blank:]</code></td>
+<td>空格、制表符tab</td>
+</tr>
+<tr>
+<td><code>[:cntrl:]</code></td>
+<td>控制字符</td>
+</tr>
+<tr>
+<td><code>[:digit:]</code></td>
+<td>数字0‑9</td>
+</tr>
+<tr>
+<td><code>[:graph:]</code></td>
+<td>可见可打印非空白字符</td>
+</tr>
+<tr>
+<td><code>[:lower:]</code></td>
+<td>小写字母</td>
+</tr>
+<tr>
+<td><code>[:print:]</code></td>
+<td>全部可打印字符，含空格</td>
+</tr>
+<tr>
+<td><code>[:punct:]</code></td>
+<td>标点符号</td>
+</tr>
+<tr>
+<td><code>[:space:]</code></td>
+<td>全部空白字符</td>
+</tr>
+<tr>
+<td><code>[:upper:]</code></td>
+<td>大写字母</td>
+</tr>
+<tr>
+<td><code>[:xdigit:]</code></td>
+<td>十六进制字符</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>原书提示：本书脚本不依赖POSIX字符类，兼容性考虑。</p>
+</blockquote>
+<h2 id="重复出现的字符量词">重复出现的字符（量词）</h2>
+<h3 id="bre基础正则sedgrep">BRE基础正则（sed/grep）</h3>
+<ul>
+<li><code>*</code>：前面单元<strong>0次或多次</strong>。
+<ul>
+<li><code>[15]0*</code>：匹配1或者5，后面0可以出现0次或者多次。</li>
+<li>匹配1个或多个空格：<code>*</code>（空格+星号）</li>
+<li><code>&quot;.*&quot;</code>：匹配双引号之间尽可能多字符，<strong>贪婪匹配，匹配到行末尾最后一个引号</strong>。</li>
+</ul>
+</li>
+</ul>
+<h3 id="ere扩展正则egrep--awk">ERE扩展正则（egrep / awk）</h3>
+<ul>
+<li><code>+</code>：前面单元<strong>1次或多次</strong>；匹配1个及以上空格直接写 <code>+</code></li>
+<li><code>?</code>：前面单元<strong>0次或者1次</strong>，可有可无。
+<ul>
+<li><code>80[234]?86</code>：匹配<code>8086</code>、<code>80286</code>、<code>80386</code>、<code>80486</code>。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>区分shell的<code>?</code>：shell问号代表任意单个字符，等价正则的<code>.</code>。</p>
+</blockquote>
+<blockquote>
+<p>易错示例对比</p>
+</blockquote>
+<ul>
+<li><code>can [no']*t</code>：can和t之间，n/o/&lsquo;任意字符，任意次数；可以匹配cannot / can&rsquo;t / cant。</li>
+<li><code>can.*t</code>：can和t之间任意字符；会把肯定句<code>I can do it</code>也错误匹配。</li>
+</ul>
+<blockquote>
+<p>术语：closure（闭合）描述“0次或多次重复”。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>BRE (grep/sed 默认)</th>
+<th>ERE(egrep/awk/grep‑E)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>或</td>
+<td><code>|</code></td>
+<td>`</td>
+<td>`</td>
+</tr>
+<tr>
+<td>分组</td>
+<td><code>\( \)</code></td>
+<td><code>()</code></td>
+<td></td>
+</tr>
+<tr>
+<td>一次或多次</td>
+<td><code>\+</code></td>
+<td><code>+</code></td>
+<td></td>
+</tr>
+<tr>
+<td>0 或 1 次</td>
+<td><code>\?</code></td>
+<td><code>?</code></td>
+<td></td>
+</tr>
+<tr>
+<td>次数范围</td>
+<td><code>\{n,m\}</code></td>
+<td><code>{n,m}</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>只有 <code>.* ^ $ []</code> 在两种模式下行为一样。</p>
+</blockquote>
+<ul>
+<li><strong>BRE（Basic 基础）</strong>：sed、grep 默认；<code>+ ? | () {}</code> 要写反斜杠 <code>\+ \? \| \( \) \{ \}</code></li>
+<li><strong>ERE（Extended 扩展）</strong>：awk、egrep、<code>grep‑E</code>；<code>+ ? | () {}</code> 直接写，不加反斜杠。</li>
+</ul>
+<h2 id="单词是什么第一部分">单词是什么?第一部分</h2>
+<p>直接写 <code>book</code>（前后空格）匹配完整单词会遇到很多问题：</p>
+<ol>
+<li>匹配不到行开头、行结尾的book。</li>
+<li>单词后跟标点（<code>.</code> <code>,</code> <code>?</code>），空格不存在，匹配失败。</li>
+<li><code>book.*</code>会匹配<code>bookish</code>、<code>bookworm</code>这类包含book的长单词（假警报）。</li>
+</ol>
+<ul>
+<li>egrep可用<code>book.?</code>：book后面最多跟一个字符；可以匹配book / books；但还会匹配booky。</li>
+<li>sed没有<code>?</code>，只能靠字符类来约束。</li>
+</ul>
+<blockquote>
+<p>小结：简单空格包裹方式只能处理一小部分场景，后面第二部分给出完整方案。</p>
+</blockquote>
+<h2 id="定位元字符锚点-">定位元字符（锚点）<code>^</code> <code>$</code></h2>
+<blockquote>
+<p>定位符：不匹配实际字符，匹配文本的<strong>位置</strong>。</p>
+</blockquote>
+<ol>
+<li>
+<p><code>^</code>：写正则<strong>最开头</strong>，匹配行首。</p>
+<ul>
+<li><code>^ </code>：匹配以tab制表符开头的行。</li>
+</ul>
+</li>
+<li>
+<p><code>$</code>：写正则<strong>末尾</strong>，匹配行尾。</p>
+<ul>
+<li><code>*$</code>：匹配行末尾有若干空格的行。</li>
+</ul>
+</li>
+<li>
+<p><code>^$</code>：匹配<strong>空行</strong>（一行里面完全没有任何字符）</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>grep -c <span style="color:#4070a0">&#39;^$&#39;</span> ch04 <span style="color:#60a0b0;font-style:italic">#统计文件空行数量</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p><code>^ *$</code>：匹配只有空格的“伪空行”。</p>
+</li>
+<li>
+<p><code>^.*$</code>：匹配整行全部内容。</p>
+</li>
+</ol>
+<blockquote>
+<p>重要差异：</p>
+</blockquote>
+<ul>
+<li>sed/grep（BRE）：<code>^</code>只在开头特殊；<code>$</code>只在结尾特殊；中间出现<code>^</code>/<code>$</code>就只是普通字符。</li>
+<li>awk：<code>^</code>和<code>$</code>无论出现在哪里都有锚点含义；想匹配字面<code>^ $</code>，必须反斜杠转义 <code>\^</code> <code>\$</code>。</li>
+</ul>
+<h2 id="短语">短语</h2>
+<blockquote>
+<p>这里的短语，不是正则语法术语！是自然语言概念：指由多个单词组成的一段文字，例如 <code>Almond Joy</code>，两个单词构成一个短语。</p>
+</blockquote>
+<p>grep/sed默认<strong>按行处理；模式不能跨换行匹配</strong>。
+如果目标短语被换行拆分到两行，单行正则很难直接捕获。</p>
+<blockquote>
+<p>后面sed章节会讲解多行模式，还有shell脚本处理跨行短语。</p>
+</blockquote>
+<h2 id="字符的跨度次数限定大括号">字符的跨度（次数限定大括号）</h2>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>语法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sed/grep(BRE)</td>
+<td><code>\{n,m\}</code></td>
+<td>必须带反斜杠</td>
+</tr>
+<tr>
+<td>egrep/awk(ERE)</td>
+<td><code>{n,m}</code></td>
+<td>不用反斜杠</td>
+</tr>
+</tbody>
+</table>
+<p>参数规则：</p>
+<ol>
+<li><code>\{n\}</code>：严格匹配前面单元n次</li>
+<li><code>\{n,\}</code>：至少n次，无上限</li>
+<li><code>\{n,m\}</code>：n次～m次之间</li>
+</ol>
+<p>等价对照：</p>
+<ul>
+<li><code>*</code> 等价 <code>\{0,\}</code></li>
+<li><code>+</code> 等价 <code>\{1,\}</code></li>
+<li><code>?</code> 等价 <code>\{0,1\}</code></li>
+</ul>
+<p>示例：</p>
+<ol>
+<li><code>10\{2,4\}1</code>：匹配1后面2‑4个0再跟1，匹配<code>1001</code>、<code>10001</code>，不匹配<code>101</code>。</li>
+<li>美国社保号：<code>[0‑9]\{3\}-[0‑9]\{2\}-[0‑9]\{4\}</code></li>
+<li>电话号码：<code>[0‑9]\{3\}-[0‑9]\{4\}</code></li>
+</ol>
+<blockquote>
+<p>老版本awk不支持大括号，只能手动重复字符类写多次。</p>
+</blockquote>
+<h2 id="选择性操作-竖线-ere扩展正则-egrepawk">选择性操作 竖线 <code>|</code>（ERE扩展正则 egrep/awk）</h2>
+<p><code>|</code> 代表<strong>或</strong>，两边整个模式二选一匹配。</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>UNIX|LINUX
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>匹配包含UNIX，或者LINUX的行。可以写多个 <code>A|B|C</code>。</p>
+<blockquote>
+<p>sed基础正则BRE没有<code>|</code>，要实现或逻辑，需要写多个模式。</p>
+</blockquote>
+<h2 id="分组操作-ere扩展正则-egrepawk">分组操作 <code>()</code>（ERE扩展正则 egrep/awk）</h2>
+<p>圆括号<code>()</code>，把一组字符打包成一个整体，量词、<code>|</code>可以对整组生效。</p>
+<p>示例1：<code>BigOne( Computer)?</code>
+匹配<code>BigOne</code> 或者 <code>BigOne Computer</code>；括号内整体出现0次或1次。</p>
+<p>示例2：<code>Lab(oratorie)?s</code>
+匹配<code>Labs</code>、<code>Laboratories</code></p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>egrep <span style="color:#4070a0">&#34;Lab(oratorie)?s&#34;</span> mail.list
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>示例3：<code>compan(y|ies)</code>
+匹配company / companies。</p>
+<blockquote>
+<p>注意：传统sed(grep BRE)不能直接用<code>()</code>分组；sed要用<code>\( \)</code>。</p>
+</blockquote>
+<h2 id="单词是什么第二部分真正匹配完整单词">单词是什么?第二部分：真正匹配完整单词</h2>
+<p>直接空格包裹的缺陷：处理不了：行首、行尾、单词前后标点符号 <code>&quot; ( ) ? . ,</code>。</p>
+<h3 id="方案思路">方案思路</h3>
+<ol>
+<li>单词前后可能出现：空格、行开头<code>^</code>、行结尾<code>$</code>；</li>
+<li>单词左右可能附着标点符号：引号、括号、问号逗号句号等；</li>
+<li>使用egrep的分组+或<code>(^| )</code>，代表：<strong>行开头 或者 空格</strong>。</li>
+</ol>
+<p>完整模式：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>(^| )[\&#34;[{(]*book[]})\&#34;?!.,;:&#39;s]*( |$)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>(^| )</code>：book前面，要么是行开头，要么空格</li>
+<li><code>[\&quot;[{(]*</code>：book前面可以有若干左引号、左方括号、左括号</li>
+</ul>
+<blockquote>
+<p>重点语法规则：<strong>字符类 <code>[</code> 之后，如果第一个字符写的是 <code>]</code>，这个<code>]</code>就被当成字面右方括号，不会关闭字符类！</strong></p>
+</blockquote>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>[ ] } ) \&#34; ? ! . , ; : &#39; s ] *
+</span></span><span style="display:flex;"><span>↑第一个字符是 ]，是字面右方括号，不结束字符类！
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>book</code>：目标单词</li>
+<li><code>[]})\&quot;?!.,;:'s]*</code>：book后面可以有若干右括号、引号、标点、复数s</li>
+<li><code>( |$)</code>：book后面，要么空格，要么行结尾</li>
+</ul>
+<p>执行命令：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>egrep <span style="color:#4070a0">&#34;(^| )[\&#34;[{(]*book[]})\&#34;?!.,;:&#39;s]*( |</span>$<span style="color:#4070a0">)&#34;</span> bookwords
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>vi/ex编辑器提供专门单词边界元字符：<code>\&lt;</code>单词开头，<code>\&gt;</code>单词结尾；grep/sed不一定支持。</p>
+</blockquote>
+<h2 id="在这里替换匹配范围贪婪匹配">在这里替换（匹配范围，贪婪匹配）</h2>
+<blockquote>
+<p>grep只关心“整行是否匹配”；做替换的时候，要搞清楚<strong>到底哪一段文本被正则捕获</strong>。</p>
+</blockquote>
+<h3 id="贪婪匹配正则默认行为">贪婪匹配（正则默认行为）</h3>
+<p><code>A.*Z</code>
+<code>.*</code>会尽可能吃最多字符，<strong>从第一个A，匹配到这一行最后一个Z</strong>，而不是最近的Z。
+示例行：
+<code>All of us, including Zippy and Ziggy and Zelda</code>
+<code>A.*Z</code>会匹配从A一直到最后的Zelda的Z。</p>
+<blockquote>
+<p>工具gres（非标准unix，简化sed，书中用来演示替换逻辑），脚本实现放在原文，等价sed替换。</p>
+</blockquote>
+<h2 id="限制范围解决贪婪匹配">限制范围（解决贪婪匹配）</h2>
+<p>问题场景：引号内文本。
+文本：<code>.Se &quot;Appendix&quot; &quot;Full Program Listings&quot;</code></p>
+<ul>
+<li>正则 <code>&quot;.*&quot;</code> 贪婪，会匹配从第一个引号一直到<strong>本行最后一个引号</strong>，把两个参数全部吞掉。</li>
+<li>非贪婪思路：<strong>排除引号的字符类</strong> <code>[^&quot;]</code>：匹配任意非引号字符。</li>
+<li>正确模式 <code>&quot;[^&quot;]*&quot;</code>：匹配一对引号内部最短内容。</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>gres <span style="color:#4070a0">&#39;&#34;[^&#34;]*&#34;&#39;</span> <span style="color:#4070a0">&#39;00&#39;</span> sampleLine
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>另外案例：匹配至少5个点做引导符：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>[0‑9][0‑9]*\.\{5,\}[0‑9][0‑9]*
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>sed替换命令示例：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sed <span style="color:#4070a0">&#39;s/\([0‑9][0‑9]*\)\.\{5,\}\([0‑9][0‑9]*\)/\1‑\2/&#39;</span> sample
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><code>\( \)</code>分组捕获，<code>\1 \2</code>反向引用分组内容，第五章详细讲解。</p>
+</blockquote>
+<h2 id="使用喜欢的元字符表34-常用正则速查表">使用喜欢的元字符：表3‑4 常用正则速查表</h2>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>正则表达式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>州邮政缩写</td>
+<td><code>[A‑Z][A‑Z]</code></td>
+</tr>
+<tr>
+<td>城市，州</td>
+<td><code>^.*, [A‑Z][A‑Z]</code></td>
+</tr>
+<tr>
+<td>城市、州、邮编（egrep）</td>
+<td><code>^.*, [A‑Z][A‑Z] [0‑9]{5}(-[0‑9]{4})?</code></td>
+</tr>
+<tr>
+<td>月 日 年</td>
+<td><code>[A‑Z][a‑z]\{3,9\} [0‑9]\{1,2\}, [0‑9]\{4\}</code></td>
+</tr>
+<tr>
+<td>美国社保号</td>
+<td><code>[0‑9]\{3\}-[0‑9]\{2\}-[0‑9]\{4\}</code></td>
+</tr>
+<tr>
+<td>北美电话号码</td>
+<td><code>[0‑9]\{3\}-[0‑9]\{4\}</code></td>
+</tr>
+<tr>
+<td>美元金额</td>
+<td><code>\$[ 0‑9]*\.[0‑9][0‑9]</code></td>
+</tr>
+<tr>
+<td>troff字体请求</td>
+<td><code>\\f([BIRP]C*[BW]*)</code></td>
+</tr>
+<tr>
+<td>troff请求</td>
+<td><code>^\.[a‑z]\{2\}</code></td>
+</tr>
+<tr>
+<td>troff宏</td>
+<td><code>^\.[A‑Z]\{2\}</code></td>
+</tr>
+<tr>
+<td>带参数troff宏</td>
+<td><code>^\.[A‑Z]\{2\} .*&quot;.*&quot;</code></td>
+</tr>
+<tr>
+<td>HTML标签</td>
+<td><code>&lt;[^&gt;]*&gt;</code></td>
+</tr>
+<tr>
+<td>Ventura样式代码</td>
+<td><code>^@.* = .*</code></td>
+</tr>
+<tr>
+<td>空行</td>
+<td><code>^$</code></td>
+</tr>
+<tr>
+<td>匹配整行</td>
+<td><code>^.*$</code></td>
+</tr>
+<tr>
+<td>1个或多个空格</td>
+<td><code>*</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="本章核心要点总结">本章核心要点总结</h1>
+<ol>
+<li><strong>两套正则语法分清</strong>
+<ul>
+<li>BRE基础正则：sed/grep；<code>+ ? | () {}</code> 需要加反斜杠转义。</li>
+<li>ERE扩展正则：egrep/awk；直接写<code>+ ? | () {}</code>不用反斜杠。</li>
+</ul>
+</li>
+<li><code>*</code>不独立，只修饰前面单元；<code>.*</code>贪婪匹配，尽量匹配最长文本；想要最短匹配用<strong>否定字符类 <code>[^xxx]</code></strong>。</li>
+<li><code>[]</code>字符类只匹配<strong>单个字符</strong>；<code>^</code>放方括号第一个才是排除；<code>-</code>放首尾代表字面减号。</li>
+<li>锚点<code>^</code>行首、<code>$</code>行尾；不匹配字符，匹配位置；awk中<code>^ $</code>任何位置都是特殊符号。</li>
+<li>反斜杠<code>\</code>：转义元字符；sed里面分组、次数大括号必须带<code>\</code>。</li>
+<li>写正则三步：明确文本特征 → 写模式 → <strong>必须测试</strong>；区分击中、遗漏、假警报。</li>
+<li>默认按行匹配，正则不能直接跨换行；跨行需要sed高级多行功能。</li>
+<li>POSIX字符类<code>[:digit:]</code>这类，必须嵌套在<code>[]</code>中，例如<code>[[:digit:]]</code>。</li>
+</ol>
+
+            </div>
+
+            
+            
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">会写代码的小郎中</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2011-08-02
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">CC BY-NC-ND 4.0</span>
+  </p>
+</div>
+
+
+
+            
+            
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://yutao.org/image/ds/%e6%94%b6%e6%ac%be%e7%a0%811.png">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://yutao.org/image/ds/%e6%94%b6%e6%ac%be%e7%a0%812.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+
+            <footer class="post-footer">
+                <div class="post-tags">
+                    <a href="https://yutao.org/tags/shell%E8%84%9A%E6%9C%AC/">Shell脚本</a>
+                    
+                </div>
+
+
+                
+                <nav class="post-nav">
+                    
+                    <a class="prev" href="https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%BC%96%E5%86%99sed%E8%84%9A%E6%9C%AC/">
+                        
+                        <i class="iconfont">
+                            <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+                        </i>
+                        <span class="prev-text nav-default">sed与awk-第四章-编写sed脚本</span>
+                        <span class="prev-text nav-mobile">上一篇</span>
+                    </a>
+                    
+                    <a class="next" href="https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E4%BA%86%E8%A7%A3%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
+                        <span class="next-text nav-default">sed与awk-第二章-了解基本操作</span>
+                        <span class="prev-text nav-mobile">下一篇</span>
+                        
+                        <i class="iconfont">
+                            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+                        </i>
+                    </a>
+                </nav>
+            </footer>
+        </article>
+
+        
+        
+
+
+        
+        
+
+  
+
+  
+  
+
+  
+  
+    <div class="post">
+  <script src="https://utteranc.es/client.js"
+        repo= "yutaodev/comments-for-yutaodev.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+    </div>
+
+    
+
+
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });  
+</script>
+<script>
+    
+    Array.from(document.getElementsByClassName("language-mermaid")).forEach(
+        (el) => {
+            el.parentElement.outerHTML = `<div class="mermaid">${el.innerHTML}</div>`;
+        }
+    );  
+</script>
+<style>
+     
+    .mermaid svg {
+        display: block;
+        margin: auto;
+    }
+</style>
+</div>
+
+      </main>
+
+      <footer id="footer" class="footer">
+        <div class="icon-links">
+    
+  
+    <a href="mailto:yutao.z@qq.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://space.bilibili.com/304380559" rel="me noopener" class="iconfont"
+      title="bilibili"  target="_blank"
+      >
+      <svg
+  class="icon" style="" viewBox="0 0 1024 1024" version="1.1" width="36"
+  height="36" id="svg8">
+  <path
+      style=""
+      d="M 744.60599,0.00486267 A 41.779915,41.779915 0 0 0 710.4184,18.673394 L 548.5048,255.32642 h -11.70046 a 41.779915,41.779915 0 0 0 -10.80295,-7.84928 L 235.66,97.084498 a 41.779915,41.779915 0 0 0 -20.07193,-4.960864 41.779915,41.779915 0 0 0 -18.3748,79.145436 L 359.4859,255.32642 H 128.16909 c -49.458302,0 -89.27932,39.82105 -89.27932,89.27932 v 508.65224 c 0,49.4583 39.821018,89.27934 89.27932,89.27934 h 19.48445 C 149.12802,984.5043 179.92773,1024 224.79179,1024 c 44.86407,0 75.66379,-39.4957 77.13826,-81.46268 H 719.98116 C 721.45559,984.5043 752.25533,1024 797.1194,1024 c 44.86406,0 75.6638,-39.4957 77.13824,-81.46268 h 21.57323 c 49.45831,0 89.27936,-39.82104 89.27936,-89.27934 V 344.60574 c 0,-49.45827 -39.82105,-89.27932 -89.27936,-89.27932 H 649.74567 L 779.38103,65.866924 A 41.779915,41.779915 0 0 0 744.60599,0.00486267 Z M 644.49108,418.70871 c 6.29985,0.21538 12.44451,2.01107 17.86888,5.22196 l 171.36218,98.10771 c 18.23417,10.21935 24.63334,33.34627 14.24614,51.48533 -10.38726,18.13909 -33.57344,24.32718 -51.61587,13.77296 L 624.9903,489.18895 c -15.21356,-8.41858 -22.66871,-26.1765 -18.03211,-42.93436 4.63664,-16.75784 20.15573,-28.14465 37.53289,-27.54588 z M 350.2006,432.31846 c 16.89952,0.0317 31.69582,11.33328 36.17844,27.62747 4.48262,16.2942 -2.44981,33.57765 -16.95507,42.24898 l -140.7157,86.91312 c -17.68528,11.18244 -41.09629,5.77692 -52.08912,-12.02686 -10.99282,-17.80373 -5.33855,-41.15658 12.58167,-51.95857 L 329.9002,438.2095 c 6.0643,-3.86439 13.10951,-5.90891 20.3004,-5.89104 z M 501.605,641.53985 c 3.75002,-0.15248 7.48645,0.53903 10.93349,2.0235 0.15842,0.0637 0.31618,0.12888 0.47325,0.19582 0.59328,0.27092 1.17574,0.56489 1.74609,0.88121 0.15868,0.0854 0.31643,0.17233 0.47325,0.2611 0.55694,0.32165 1.10131,0.66458 1.63185,1.02807 0.16455,0.1123 0.32777,0.2265 0.48956,0.34269 0.50382,0.36781 0.99371,0.75428 1.46868,1.15864 0.18724,0.15504 0.37218,0.31282 0.55484,0.47323 0.43271,0.38784 0.8518,0.79061 1.25653,1.20756 0.15449,0.16114 0.30679,0.32437 0.45693,0.48959 0.40798,0.44266 0.79989,0.89988 1.17494,1.37076 0.17799,0.22544 0.35205,0.45395 0.5222,0.68538 0.25932,0.34701 0.50964,0.70071 0.75064,1.06071 0.26712,0.39516 0.52286,0.79784 0.76699,1.20757 0.16907,0.29043 0.33231,0.58424 0.48957,0.88123 0.21836,0.41297 0.42513,0.83199 0.62009,1.25653 0.14836,0.32333 0.28983,0.64976 0.42429,0.97911 0.21319,0.51552 0.40915,1.03801 0.58747,1.5666 0.0677,0.19499 0.13296,0.39085 0.19582,0.58748 0.18652,0.60823 0.34984,1.22334 0.48957,1.84399 0.0397,0.16277 0.0779,0.32601 0.11423,0.48957 0.1436,0.69112 0.25788,1.38801 0.34269,2.08877 0.005,0.0381 0.0111,0.0761 0.0163,0.11424 0.0857,0.78056 0.13474,1.56471 0.14687,2.34988 0.005,0.0543 0.0111,0.10879 0.0163,0.1632 0,0 -0.008,1.12132 0,1.45234 0,0 -0.14697,17.84761 5.89102,34.12231 3.01902,8.13734 7.33278,15.10615 12.61433,19.61501 5.28157,4.50889 11.42894,7.62081 23.64572,7.62081 12.2168,0 18.36416,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.5953,-11.47767 12.6143,-19.61501 6.03799,-16.2747 5.89103,-34.12231 5.89103,-34.12231 -0.44885,-13.87045 10.45922,-25.46302 24.3311,-25.86506 13.87189,-0.40201 25.42828,10.53953 25.78348,24.41272 0,0 1.11929,25.7226 -9.00791,53.01927 -5.06359,13.64832 -13.1986,28.46036 -27.05631,40.29073 -13.85772,11.83039 -33.5454,19.63135 -56.20142,19.63135 -22.65603,0 -42.34371,-7.80096 -56.20141,-19.63135 -4.1801,-3.56856 -7.78733,-7.42433 -10.99878,-11.42303 -3.21235,4.00037 -6.81703,7.85309 -10.99876,11.42303 -13.85773,11.83039 -33.5454,19.63135 -56.20144,19.63135 -22.65601,0 -42.3437,-7.80096 -56.2014,-19.63135 -13.85775,-11.83037 -21.99272,-26.64241 -27.05632,-40.29073 -10.12725,-27.29667 -9.00789,-53.01928 -9.00789,-53.01927 0.20714,-13.83687 11.58744,-24.88848 25.42444,-24.69013 14.1263,0.19991 25.2971,12.0278 24.69011,26.14247 0,0 -0.14697,17.84761 5.89103,34.12231 3.01902,8.13734 7.31646,15.10615 12.598,19.61501 5.28155,4.50889 11.44526,7.62081 23.66203,7.62081 12.21681,0 18.36418,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.57899,-11.47767 12.598,-19.61501 5.76352,-15.53489 5.89112,-32.05691 5.89103,-33.56746 0.006,-0.37466 0.0111,-1.05336 0.0163,-1.20759 -0.0117,-0.74583 0.0105,-1.49177 0.0652,-2.23565 0.009,-0.15784 0.0204,-0.31561 0.0327,-0.47324 0.14204,-1.56859 0.43163,-3.12027 0.86487,-4.63449 0.0213,-0.0763 0.0433,-0.15244 0.0652,-0.22848 3.0335,-10.25748 12.24157,-17.46007 22.92769,-17.93417 z"
+      id="rect824"/>
+</svg>
+
+    </a>
+  
+    <a href="https://weibo.com/u/2557216280" rel="me noopener" class="iconfont"
+      title="weibo"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M385.714286 733.714286q12-19.428571 6.285714-39.428571t-25.714286-28.571429q-19.428571-8-41.714286-0.571429t-34.285714 26.285714q-12.571429 19.428571-7.428571 39.142857t24.571429 28.857143 42.571429 1.428571 35.714286-27.142857zm53.714286-69.142857q4.571429-7.428571 2-15.142857t-10-10.571429q-8-2.857143-16.285714 2.857143t-12.285714 10.571429q-9.714286 17.714286 7.428571 25.714286 8 2.857143 16.571429 2.857143t12.571429-10.571429zm99.428571 61.142857q-25.714286 58.285714-90.285714 85.714286t-128 6.857143q-61.142857-19.428571-84.285714-72.285714t3.714286-107.142857q26.857143-53.142857 86.571429-79.428571t120.285714-10.857143q63.428571 16.571429 90.571429 68.285714t1.428571 108.857143zm178.285714-91.428571q-5.142857-54.857143-50.857143-97.142857t-119.142857-62.285714-156.857143-12q-127.428571 13.142857-211.142857 80.857143t-75.714286 151.142857q5.142857 54.857143 50.857143 97.142857t119.142857 62.285714 156.857143 12q127.428571-13.142857 211.142857-80.857143t75.714286-151.142857zm176 2.285714q0 38.857143-21.142857 79.714286t-62.285714 78.285714-96.285714 67.142857-129.142857 47.428571-154.571429 17.714286-157.142857-19.142857-137.428571-53.142857-98-86.285714-37.142857-114q0-65.714286 39.714286-140t112.857143-147.428571q96.571429-96.571429 195.142857-134.857143t140.857143 4q37.142857 36.571429 11.428571 119.428571-2.285714 8-0.571429 11.428571t5.714286 4 8.285714 2.857143 7.714286-2l3.428571-1.142857q79.428571-33.714286 140.571429-33.714286t87.428571 34.857143q25.714286 36 0 101.714286-1.142857 7.428571-2.571429 11.428571t2.571429 7.142857 6.857143 4.285714 9.714286 3.428571q32.571429 10.285714 58.857143 26.857143t45.714286 46.571429 19.428571 66.571429zm-42.285714-356.571429q24 26.857143 31.142857 62t-3.714286 67.142857q-4.571429 13.142857-16.857143 19.428571t-25.428571 2.285714q-13.142857-4.571429-19.428571-16.857143t-2.285714-25.428571q11.428571-36-13.714286-63.428571t-61.142857-20q-13.714286 2.857143-25.714286-4.571429t-14.285714-21.142857q-2.857143-13.714286 4.571429-25.428571t21.142857-14.571429q34.285714-7.428571 68 3.142857t57.714286 37.428571zm103.428571-93.142857q49.714286 54.857143 64.285714 127.142857t-7.714286 138q-5.142857 15.428571-19.428571 22.857143t-29.714286 2.285714-22.857143-19.428571-2.857143-29.714286q16-46.857143 5.714286-98.285714t-45.714286-90.285714q-35.428571-39.428571-84.571429-54.571429t-98.857143-4.857143q-16 3.428571-29.714286-5.428571t-17.142857-24.857143 5.428571-29.428571 24.857143-16.857143q70.285714-14.857143 139.428571 6.571429t118.857143 76.857143z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.toutiao.com/c/user/token/MS4wLjABAAAA1TxeVNQbqL6Lg7CJRoNwNHYDpIB5qKGh24pQ0AvIjmfeczyo5zxipIgPtGJr-mUI/?source=m_redirect" rel="me noopener" class="iconfont"
+      title="toutiao"  target="_blank"
+      >
+      <svg t="1731818671552" class="icon" viewBox="0 0 1024 1024" version="1.1"
+    xmlns="http://www.w3.org/2000/svg" p-id="4390" width="32" height="32">
+    <path
+        d="M828.745763 0H195.254237C86.779661 0 0 86.779661 0 195.254237v633.491526c0 108.474576 86.779661 190.915254 195.254237 195.254237h633.491526c108.474576 0 190.915254-86.779661 195.254237-195.254237V195.254237c0-108.474576-86.779661-195.254237-195.254237-195.254237z m138.847457 828.745763c0 78.101695-60.745763 138.847458-138.847457 138.847457H195.254237c-78.101695 0-138.847458-60.745763-138.847457-138.847457V195.254237c0-78.101695 60.745763-138.847458 138.847457-138.847457h633.491526c78.101695 0 138.847458 60.745763 138.847457 138.847457v633.491526z"
+        fill="#525252" p-id="4391"></path>
+    <path
+        d="M0 221.288136v620.474576c0 4.338983 4.338983 8.677966 8.677966 13.016949l1015.322034-56.40678V182.237288c0-4.338983-4.338983-8.677966-8.677966-13.016949L0 221.288136z"
+        fill="#525252" p-id="4392"></path>
+    <path
+        d="M906.847458 581.423729v-47.728814l-151.864407 8.677966V520.677966h-69.423729v30.372881l-151.864407 8.677967V607.457627l151.864407-8.677966v108.474576l69.423729-8.677966v-108.474576l151.864407-8.677966z"
+        fill="#FFFFFF" p-id="4393"></path>
+    <path
+        d="M538.033898 490.305085v47.728813h47.728814l138.847457-69.423729 130.169492 47.728814H911.186441v-47.728814h-34.711865l-91.118644-26.033898 117.152543-60.745763V299.389831l-65.084746 4.338983-173.559322 8.677966-56.40678-30.372882-78.101695 117.152543 60.745763 21.694915 43.38983-60.745763 199.593221-8.677966v8.677966l-108.474577 56.40678-91.118644-34.711865-26.033898 47.728814 47.728814 21.694915-82.440678 43.389831-34.711865-4.338983z m334.101695 104.135593l-69.423729 8.677966 47.728814 91.118644 78.101695-8.677966-56.40678-91.118644z m-334.101695 108.474576H607.457627l47.728814-95.457627-69.423729 8.677966-47.728814 86.779661z m-169.220339-99.79661l56.40678 108.474576h82.440678l-60.745763-117.152542-78.101695 8.677966z m-78.101695-86.779661l-60.745762-78.101695-82.440678 8.677966 60.745762 69.423729h82.440678z m0-95.457627L229.966102 351.457627H147.525424l60.745762 78.101695 82.440678-8.677966z"
+        fill="#FFFFFF" p-id="4394"></path>
+    <path
+        d="M351.457627 585.762712l130.169492-8.677966v-47.728814l-91.118644 8.677966v-216.949152l-65.084746 8.677966v208.271186l-216.949153 13.016949v47.728814l147.525424-8.677966-60.745763 82.440678-82.440678 8.677966v47.728814l138.847458-8.677967 99.79661-134.508474z"
+        fill="#FFFFFF" p-id="4395"></path>
+</svg>
+    </a>
+
+
+<a href="https://yutao.org/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+    </span>
+    <span class="division">|</span>
+    <span class="theme-info">
+        Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+    </span>
+
+    <span class="copyright-year">
+        &copy;
+        
+        2011 -
+        2026
+        <span class="heart">
+            
+            <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+            </i>
+        </span><span class="author">
+            会写代码的小郎中
+            
+        </span></span>
+
+    
+    
+    <span id="busuanzi_container">
+        访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+    
+
+    
+    
+
+    
+</div>
+      </footer>
+
+      <div class="button__back-to-top">
+        <a href="#back-to-top">
+          <i class="iconfont">
+            
+            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+          </i>
+        </a>
+      </div>
+    </div>
+    
+<script type="text/javascript" src="https://yutao.org/lib/jquery/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="https://yutao.org/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="https://yutao.org/js/main.0812a6f15b5585e323289457bbef147ebb2e5111f2924b072bc6acf7eabe95b1.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="https://yutao.org/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="https://yutao.org/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://yutao.org/js/copy-to-clipboard.js"></script>
+
+  <script src="https://yutao.org/js/search.js"></script>
+
+
+  </body>
+</html>

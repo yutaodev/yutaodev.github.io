@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html
+  lang="zh-cn"
+  itemscope
+  itemtype="http://schema.org/WebPage"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+          sed与awk-第五章-基本sed命令 - 会写代码的小郎中
+        </title>
+    
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="会写代码的小郎中" /><meta name="description" content="sed与awk-第五章-基本sed命令" />
+<meta name="keywords" content="sed与awk第二版" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.128.2" />
+
+
+<link rel="canonical" href="https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%9F%BA%E6%9C%ACsed%E5%91%BD%E4%BB%A4/" />
+
+
+
+
+
+<link rel="icon" href="https://yutao.org/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://yutao.org/sass/jane.min.e826e860368147e5a6685e686355e4d7789023c18c9ea2e78b35f6786ce92736.css" integrity="sha256-6CboYDaBR&#43;WmaF5oY1Xk13iQI8GMnqLnizX2eGzpJzY=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://yutao.org/css/custom.css">
+
+<link rel="stylesheet" href="https://yutao.org/css/copy-to-clipboard.css">
+
+
+<meta property="og:url" content="https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%9F%BA%E6%9C%ACsed%E5%91%BD%E4%BB%A4/">
+  <meta property="og:site_name" content="会写代码的小郎中">
+  <meta property="og:title" content="sed与awk-第五章-基本sed命令">
+  <meta property="og:description" content="sed与awk-第五章-基本sed命令">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="programming">
+    <meta property="article:published_time" content="2011-08-04T22:29:27+08:00">
+    <meta property="article:modified_time" content="2011-08-04T22:29:27+08:00">
+    <meta property="article:tag" content="Shell脚本">
+
+  <meta itemprop="name" content="sed与awk-第五章-基本sed命令">
+  <meta itemprop="description" content="sed与awk-第五章-基本sed命令">
+  <meta itemprop="datePublished" content="2011-08-04T22:29:27+08:00">
+  <meta itemprop="dateModified" content="2011-08-04T22:29:27+08:00">
+  <meta itemprop="wordCount" content="4904">
+  <meta itemprop="keywords" content="sed与awk第二版">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="sed与awk-第五章-基本sed命令">
+  <meta name="twitter:description" content="sed与awk-第五章-基本sed命令">
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZM2P746RY"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-HZM2P746RY');
+        }
+      </script>
+    
+  
+
+
+
+
+
+
+
+
+
+  </head>
+  <body>
+    <div id="back-to-top"></div>
+
+    <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://yutao.org/" class="logo">会写代码的小郎中</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/programming/">编程</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/tcm/">中医</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/philosophy/">哲学</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/finance/">金融</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+          
+        
+      </li>
+    
+
+      <li class="mobile-menu-item">
+        <a id="openSearchMobile" class="mobile-menu-item-link menu-item-search" href="#">
+          <i class="iconfont">
+            <svg version="1.1" viewBox="0 0 1024 1024"
+  xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M973.81454219 973.81454219a91.78207815 91.78207815 0 0 1-129.80999631 0l-161.97482118-161.97482118a425.48527711 425.48527711 0 0 1-230.35931791 68.16531768 428.3346319 428.3346319 0 1 1 428.3346319-428.3346319 425.48527711 425.48527711 0 0 1-68.16531768 230.35931791l162.02961656 161.97482118a91.83687354 91.83687354 0 0 1-0.05479538 129.80999631zM451.67040679 145.69361559a305.97679241 305.97679241 0 1 0 0 611.95358361 305.97679241 305.97679241 0 0 0 0-611.95358361z">
+  </path>
+</svg>
+
+          </i>
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+    
+      
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://yutao.org/lib/photoswipe/photoswipe.min.css" />
+  <link rel="stylesheet" href="https://yutao.org/lib/photoswipe/default-skin/default-skin.min.css" />
+
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+    
+
+    
+
+    <header id="header" class="header">
+      <div class="logo-wrapper">
+    <a href="https://yutao.org/" class="logo">
+        
+        会写代码的小郎中
+        
+    </a>
+</div>
+
+<nav class="site-navbar">
+    <ul id="menu" class="menu">
+        
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/">主页</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/programming/">编程</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/tcm/">中医</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/philosophy/">哲学</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/finance/">金融</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/categories/">分类</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/tags/">标签</a>
+            
+
+            
+
+        </li>
+        
+        <li class="menu-item">
+            
+            
+            
+            <a class="menu-item-link" href="https://yutao.org/about/">关于</a>
+            
+
+            
+
+        </li>
+        
+
+        
+        
+
+        <li class="menu-item">
+            <a id="openSearch" class="menu-item-link menu-item-search" href="#">
+                <i class="iconfont">
+                    <svg version="1.1" viewBox="0 0 1024 1024"
+  xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M973.81454219 973.81454219a91.78207815 91.78207815 0 0 1-129.80999631 0l-161.97482118-161.97482118a425.48527711 425.48527711 0 0 1-230.35931791 68.16531768 428.3346319 428.3346319 0 1 1 428.3346319-428.3346319 425.48527711 425.48527711 0 0 1-68.16531768 230.35931791l162.02961656 161.97482118a91.83687354 91.83687354 0 0 1-0.05479538 129.80999631zM451.67040679 145.69361559a305.97679241 305.97679241 0 1 0 0 611.95358361 305.97679241 305.97679241 0 0 0 0-611.95358361z">
+  </path>
+</svg>
+
+                </i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+<div id="searchDialog" class="search-dialog" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;">
+  <div class="search-dialog-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 8px; width: 90%; max-width: 600px; box-sizing: border-box;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <h3 style="margin: 0;">搜索</h3>
+      <button id="closeSearch" style="background: none; border: none; font-size: 24px; cursor: pointer; padding: 0; margin: 0;">&times;</button>
+    </div>
+    <input type="text" id="search-input" placeholder="请输入关键词..." style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 15px; box-sizing: border-box;" />
+    <ul id="search-results" style="list-style: none; padding: 0; margin: 10px 0 0 0; max-height: 300px; overflow-y: auto;">
+      <style>
+        #search-results li {
+          padding: 8px 0;
+          border-bottom: 1px solid #f0f0f0;
+        }
+        #search-results li a {
+          display: block;
+          padding: 8px 12px;
+          text-decoration: none;
+          color: #333;
+        }
+        #search-results li a:hover {
+          background-color: #f5f5f5;
+        }
+      </style>
+    </ul>
+  </div>
+</div>
+    </header>
+
+    <div id="mobile-panel">
+      <main id="main" class="main bg-llight wallpaper">
+        <div class="content-wrapper">
+
+    
+    <nav class="toc" id="toc">
+    <div class="toc-title">文章目录</div>
+    <div class="toc-content custom-scrollbar">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#sed-命令的语法">sed 命令的语法</a>
+      <ul>
+        <li><a href="#命令分组大括号--">命令分组大括号 <code>{ }</code></a></li>
+        <li><a href="#同一行写多条命令分号">同一行写多条命令（分号<code>;</code>）</a></li>
+      </ul>
+    </li>
+    <li><a href="#注释">注释</a></li>
+    <li><a href="#替换">替换</a>
+      <ul>
+        <li><a href="#flags标志">flags标志</a></li>
+        <li><a href="#替换分隔符可以自定义">替换分隔符可以自定义</a></li>
+        <li><a href="#replacement替换部分特殊元字符">replacement（替换部分）特殊元字符</a></li>
+        <li><a href="#数字n标志示例">数字n标志示例</a></li>
+      </ul>
+    </li>
+    <li><a href="#替换元字符">替换元字符</a>
+      <ul>
+        <li><a href="#1--使用示例">1. <code>&amp;</code> 使用示例</a></li>
+        <li><a href="#2-捕获分组---和回调-1-2">2. 捕获分组 <code>\( \)</code> 和回调 <code>\1 \2</code></a></li>
+        <li><a href="#3-替换域中转义符号">3. 替换域中转义&amp;符号</a></li>
+      </ul>
+    </li>
+    <li><a href="#校正索引条目">校正索引条目</a></li>
+    <li><a href="#删除-d-命令">删除 d 命令</a></li>
+    <li><a href="#追加a插入i更改c">追加a、插入i、更改c</a>
+      <ul>
+        <li><a href="#i-插入示例">i 插入示例</a></li>
+        <li><a href="#a追加示例">a追加示例</a></li>
+        <li><a href="#c更改示例">c更改示例</a></li>
+      </ul>
+    </li>
+    <li><a href="#列表-l-命令">列表 l 命令</a>
+      <ul>
+        <li><a href="#案例清除nroff输出的退格格式">案例：清除nroff输出的退格格式</a></li>
+      </ul>
+    </li>
+    <li><a href="#转换-y-命令">转换 y 命令</a></li>
+    <li><a href="#打印-p-命令">打印 p 命令</a></li>
+    <li><a href="#打印行号-">打印行号 =</a></li>
+    <li><a href="#next-n-命令">next n 命令</a></li>
+    <li><a href="#读-r写-w-文件">读 r、写 w 文件</a>
+      <ul>
+        <li><a href="#r读文件lineaddressr-filename">r读文件：<code>[line‑address]r filename</code></a></li>
+        <li><a href="#w写文件addressw-filename">w写文件：<code>[address]w filename</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#退出-q-命令">退出 q 命令</a></li>
+    <li><a href="#检查参考页">检查参考页</a></li>
+  </ul>
+</nav>
+    </div>
+  </nav>
+
+
+    <div id="content" class="content">
+
+        
+        
+        
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/yutao.org\/programming\/sed%E4%B8%8Eawk-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%9F%BA%E6%9C%ACsed%E5%91%BD%E4%BB%A4\/"
+          },
+          "headline": "sed与awk-第五章-基本sed命令",
+          "description": "sed与awk-第五章-基本sed命令",
+          "datePublished": "2011-08-04T22:29:27\u002b08:00",
+          "dateModified": "2011-08-04T22:29:27\u002b08:00",
+          "author": {
+            "@type": "Person",
+            "name": "会写代码的小郎中"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "会写代码的小郎中",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https:\/\/yutao.org\/favicon.ico"
+            }
+          }
+        }
+        </script>
+        
+        
+
+        <article class="post">
+            
+            <header class="post-header">
+                <h1 class="post-title">sed与awk-第五章-基本sed命令</h1>
+                
+
+                <div class="post-meta">
+  <div class="post-meta-author">
+    by
+      <a href="https://yutao.org/about">
+        <span class="post-meta-author-name">
+          会写代码的小郎中
+        </span>
+      </a>
+    
+  </div>
+
+  <div class="post-meta-time">
+        <time datetime=" 2011-08-04">
+      2011-08-04
+    </time>
+  </div>
+
+  
+
+
+  <div class="post-meta__right">
+    <span class="post-meta-more">
+        约 4904 字 -
+        预计阅读 10 分钟
+      </span>
+
+    <div class="post-meta-category">
+        <a href="https://yutao.org/categories/shell%E8%84%9A%E6%9C%AC/"> Shell脚本 </a>
+          
+      </div>
+
+
+    
+        
+      <span id="busuanzi_container_page_pv">
+        | 阅读 <span id="busuanzi_value_page_pv"></span>
+      </span>
+    
+
+
+    
+        
+  </div>
+</div>
+            </header>
+
+            
+            <div class="post-content">
+                <!-- markdownlint-disable-file MD029 -->
+<!-- markdownlint-disable-file MD024 -->
+<!-- markdownlint-disable-file MD052 -->
+<h1 id="第五章-基本-sed-命令">第五章 基本 sed 命令</h1>
+<h2 id="sed-命令的语法">sed 命令的语法</h2>
+<p>sed通用语法：</p>
+<ol>
+<li>大部分命令：可以接受<strong>0个、1个、2个地址</strong>（行号/正则模式），支持行范围</li>
+</ol>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-0-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-0-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#666">[</span>address<span style="color:#666">]</span> <span style="color:#007020">command</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>少数命令<strong>只接受单个行地址</strong>，不能用于行范围</li>
+</ol>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-1-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-1-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#666">[</span>line‑address<span style="color:#666">]</span> <span style="color:#007020">command</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-2-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-2-14">14</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 0地址，删除所有行，所有行生效</span>
+</span></span><span style="display:flex;"><span>d          
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 删除第2行(banana)</span>
+</span></span><span style="display:flex;"><span>2d         
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 删除包含cat的行</span>
+</span></span><span style="display:flex;"><span>/cat/d     
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 删除2~4行 banana cat dog</span>
+</span></span><span style="display:flex;"><span>2,4d       
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 从匹配banana的行开始，到匹配dog的行结束，整块删除</span>
+</span></span><span style="display:flex;"><span>/^banana/,/^dog/d
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="命令分组大括号--">命令分组大括号 <code>{ }</code></h3>
+<blockquote>
+<p>对同一个地址，执行多条命令；支持多层嵌套分组。</p>
+</blockquote>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-3-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-3-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>address<span style="color:#666">{</span> 
+</span></span><span style="display:flex;"><span>command1 
+</span></span><span style="display:flex;"><span>command2 
+</span></span><span style="display:flex;"><span>command3 
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>规则：</p>
+<ul>
+<li>左大括号 <code>{</code> 放在地址行末尾；</li>
+<li><strong>右大括号 <code>}</code> 必须独占一整行</strong>；</li>
+<li>大括号内部命令行开头可以加空格、制表符做缩进；</li>
+<li>大括号内每一条命令还可以自带自己的地址，可以多层嵌套。</li>
+</ul>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-1"> 1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-2"> 2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-3"> 3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-4"> 4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-5"> 5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-6"> 6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-7"> 7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-8"> 8</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-9"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-9"> 9</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-10"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-10">10</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-11"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-11">11</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-12"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-12">12</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-13"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-13">13</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-14"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-14">14</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-15"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-15">15</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-16"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-16">16</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-17"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-17">17</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-18"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-18">18</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-19"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-19">19</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-20"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-20">20</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-21"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-21">21</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-22"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-22">22</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-23"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-23">23</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-4-24"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-4-24">24</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 规则：左{跟在地址末尾；右}必须独占一行；内部可以缩进；内部命令可自带地址，支持嵌套</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 同一个地址，执行多条命令</span>
+</span></span><span style="display:flex;"><span> /^banana/<span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#666">=</span>                   <span style="color:#60a0b0;font-style:italic"># 打印匹配行的行号</span>
+</span></span><span style="display:flex;"><span>     s/banana/BANANA/    <span style="color:#60a0b0;font-style:italic"># 替换文本</span>
+</span></span><span style="display:flex;"><span> <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 外层是行范围地址，大括号内多条命令</span>
+</span></span><span style="display:flex;"><span> 2,4<span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>     y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/
+</span></span><span style="display:flex;"><span> <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 外层范围，内部命令自带独立过滤地址</span>
+</span></span><span style="display:flex;"><span> 2,5<span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>     /^dog/s/dog/DOG/
+</span></span><span style="display:flex;"><span> <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 多层嵌套大括号</span>
+</span></span><span style="display:flex;"><span>2,5<span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    /^cat/,/^dog/<span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>        s/<span style="color:#666">[</span>a-z<span style="color:#666">]</span>/<span style="color:#4070a0;font-weight:bold">\U</span>&amp;/g
+</span></span><span style="display:flex;"><span>    <span style="color:#666">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="同一行写多条命令分号">同一行写多条命令（分号<code>;</code>）</h3>
+<blockquote>
+<p>不推荐日常写脚本，可读性差。</p>
+</blockquote>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-5-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-5-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>n;d
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>坑：<code>n ; d</code> n后面加空格会报语法错误；d前面允许空格。</p>
+<blockquote>
+<p>注意：<code>a i c</code>（追加、插入、更改）<strong>不能用分号放同一行</strong>，必须多行书写。</p>
+</blockquote>
+<h2 id="注释">注释</h2>
+<p>sed脚本注释行以 <code>#</code> 开头。</p>
+<ol>
+<li>System V sed限制：<strong>注释只能写在脚本第一行</strong>；GNU sed可以脚本任意位置写注释。本书示例遵循兼容写法，注释放第一行。</li>
+</ol>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-6-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-6-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># wstar.sed: conver WordStar files</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>特殊：脚本文件开头 <code>#n</code>&gt;</li>
+</ol>
+<blockquote>
+<p>如果<code>#</code>后面紧跟字符<code>n</code>（必须是文件前两个字符），等价于命令行参数 <code>-n</code>，关闭sed默认输出，后面内容依旧作为注释。</p>
+</blockquote>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-7-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-7-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#n 脚本，关闭自动输出</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="替换">替换</h2>
+<p>替换命令完整语法</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-8-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-8-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#666">[</span>address<span style="color:#666">]</span>s/pattern/replacement/flags
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="flags标志">flags标志</h3>
+<table>
+<thead>
+<tr>
+<th>标志</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数字n</td>
+<td>只替换一行中<strong>第n次</strong>匹配，n取值1‑512；默认1（只替换第一次）</td>
+</tr>
+<tr>
+<td>g</td>
+<td>全局，一行内<strong>全部匹配项都替换</strong></td>
+</tr>
+<tr>
+<td>p</td>
+<td>替换成功后，打印模式空间内容；只有替换成功才打印</td>
+</tr>
+<tr>
+<td>w file</td>
+<td>替换成功后，把模式空间写入指定文件file；替换成功才写文件</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>重点：<code>p</code>、<code>w</code>标志和独立<code>p/w</code>命令区别：<strong>标志只在替换成功才执行动作</strong>；独立p命令无条件执行。多个替换作用同一行，带p标志会多次打印该行。</p>
+</blockquote>
+<h3 id="替换分隔符可以自定义">替换分隔符可以自定义</h3>
+<p>默认用<code>/</code>做分隔符；如果模式里面大量出现斜杠<code>/</code>，可以换成别的字符（<code>!</code> <code>#</code>等，不能换行）。</p>
+<blockquote>
+<p>规则：分隔符一共出现3处；如果分隔符本身出现在模式/替换文本中，需要<code>\</code>转义。</p>
+</blockquote>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-9-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-9-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 把 /usr/mail 替换成 /usr2/mail，改用 ! 作为分隔符</span>
+</span></span><span style="display:flex;"><span>s!/usr/mail!/usr2/mail!
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="replacement替换部分特殊元字符">replacement（替换部分）特殊元字符</h3>
+<blockquote>
+<p>注意：正则元字符（<code>. * []</code>）在替换域<strong>失去特殊含义</strong>；只有下面3类符号在替换域有特殊作用。</p>
+</blockquote>
+<ol>
+<li><code>&amp;</code> 代表<strong>整个正则匹配到的全部内容</strong></li>
+<li><code>\1 \2 … \9</code> 回调正则中<code>\( \)</code>捕获的分组子串，最多9组</li>
+<li><code>\</code> 反斜杠：转义<code>&amp;</code>、分隔符、反斜杠本身；还可以转义换行，实现多行替换文本。</li>
+</ol>
+<p>示例：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-10-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-10-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># &amp; 引用全部匹配内容，给UNIX加上troff字体控制</span>
+</span></span><span style="display:flex;"><span>s/UNIX/<span style="color:#4070a0;font-weight:bold">\\</span>s-2&amp;<span style="color:#4070a0;font-weight:bold">\\</span>s0/g
+</span></span><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 捕获两组，交换顺序</span>
+</span></span><span style="display:flex;"><span>s/<span style="color:#4070a0;font-weight:bold">\(</span>.*<span style="color:#4070a0;font-weight:bold">\)</span>:<span style="color:#4070a0;font-weight:bold">\(</span>.*<span style="color:#4070a0;font-weight:bold">\)</span>/<span style="color:#4070a0;font-weight:bold">\2</span>:<span style="color:#4070a0;font-weight:bold">\1</span>/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="数字n标志示例">数字n标志示例</h3>
+<blockquote>
+<p>把一行中<strong>第二个制表符</strong>替换成<code>&gt;</code></p>
+</blockquote>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-11-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-11-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>s/· /&gt;/2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>·</code>代表制表符tab。</p>
+<h2 id="替换元字符">替换元字符</h2>
+<p><strong>替换部分（<code>s/xxx/这里是替换字符串/g</code>）</strong>：这一块不是正则！绝大多数正则元字符在这里失效，<strong>只有少数几个符号还有特殊魔力</strong>，这少数几个就叫 <strong>替换元字符</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>替换元字符</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;</code></td>
+<td>代表：<strong>正则匹配到的完整全部内容</strong></td>
+</tr>
+<tr>
+<td><code>\1 \2 …\9</code></td>
+<td>捕获分组回调，取<code>\( \)</code>括号里捕获到的子内容</td>
+</tr>
+<tr>
+<td><code>\</code> 反斜杠</td>
+<td>转义：转义 <code>&amp;</code>、反斜杠本身、分隔符；还可以换行实现多行替换</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1--使用示例">1. <code>&amp;</code> 使用示例</h3>
+<p>输入：<code>on the UNIX Operating System.</code></p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-12-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-12-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>s/UNIX/<span style="color:#4070a0;font-weight:bold">\\</span>s-2&amp;<span style="color:#4070a0;font-weight:bold">\\</span>s0/g
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>拆解例子：</strong></p>
+<p><strong>正则部分：<code>UNIX</code></strong>
+简单字面匹配，找到单词 <code>UNIX</code>。</p>
+<blockquote>
+<p>这里正则匹配到的完整内容就是字符串：<code>UNIX</code></p>
+</blockquote>
+<p><strong>替换文本：<code>\\s-2&amp;\\s0</code></strong><br>
+这里面 <code>&amp;</code> 就是<strong>替换元字符</strong>，<code>&amp;</code> = 刚刚匹配到的 <code>UNIX</code></p>
+<p>所以替换字符串 <code>\\s-2&amp;\\s0</code> 展开：</p>
+<ul>
+<li><code>\\s-2</code> → <code>\s-2</code></li>
+<li><code>&amp;</code> → <code>UNIX</code></li>
+<li><code>\\s0</code> → <code>\s0</code></li>
+</ul>
+<p>拼接在一起输出：<code>\s-2UNIX\s0</code></p>
+<p>这<strong>不是 sed 语法！是 troff 排版语言的命令</strong>。</p>
+<ul>
+<li><code>\s-2</code>：把后面的字体缩小 2 号</li>
+<li><code>\s0</code>：恢复原来字号</li>
+</ul>
+<p>输出：<code>on the \s‑2UNIX\s0 Operating System.</code></p>
+<h3 id="2-捕获分组---和回调-1-2">2. 捕获分组 <code>\( \)</code> 和回调 <code>\1 \2</code></h3>
+<p>正则中用<code>\(内容\)</code>捕获片段；替换域用<code>\1</code>、<code>\2</code>取出对应片段。
+示例：交叉引用，把<code>See Section 1.4</code>变成粗体</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-13-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-13-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>s/<span style="color:#4070a0;font-weight:bold">\(</span>See Section <span style="color:#4070a0;font-weight:bold">\)\(</span><span style="color:#666">[</span>1-9<span style="color:#666">][</span>0-9<span style="color:#666">]</span>*<span style="color:#4070a0;font-weight:bold">\.</span><span style="color:#666">[</span>1-9<span style="color:#666">][</span>0-9<span style="color:#666">]</span>*<span style="color:#4070a0;font-weight:bold">\)</span>/<span style="color:#4070a0;font-weight:bold">\1\\</span>fB<span style="color:#4070a0;font-weight:bold">\2\\</span>fP/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>\1</code>：<code>See Section</code></li>
+<li><code>\2</code>：版本号<code>1.4</code></li>
+</ul>
+<p>交换冒号前后两段文本：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-14-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-14-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>s/<span style="color:#4070a0;font-weight:bold">\(</span>.*<span style="color:#4070a0;font-weight:bold">\)</span>:<span style="color:#4070a0;font-weight:bold">\(</span>.*<span style="color:#4070a0;font-weight:bold">\)</span>/<span style="color:#4070a0;font-weight:bold">\2</span>:<span style="color:#4070a0;font-weight:bold">\1</span>/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输入<code>first:second</code> →输出<code>second:first</code></p>
+<h3 id="3-替换域中转义符号">3. 替换域中转义&amp;符号</h3>
+<p>如果想输出字面<code>&amp;</code>，必须写<code>\&amp;</code></p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-15-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-15-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>s/ORA/O<span style="">&#39;</span>Reilly <span style="color:#4070a0;font-weight:bold">\&amp;</span> Associates, Inc./g
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="校正索引条目">校正索引条目</h2>
+<p>业务场景：troff索引宏<code>.XX &quot;xxx&quot;</code>，只修改<code>.XX</code>开头的索引行，不要改动正文。
+示例：只修改索引行内单词，地址限制行范围</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-16-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-16-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/^<span style="color:#4070a0;font-weight:bold">\.</span>XX /s/sed, substitution command/sed, substitute command/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>进阶shell脚本<code>index.edit</code>：批量提取索引条目，自动生成sed替换脚本。
+核心思路：grep提取所有<code>.XX</code>行，交给sed动态拼接生成sed替换命令，输出保存成脚本文件，再批量修改源文件。
+坑：如果索引条目包含<code>* .</code>等正则元字符，脚本不会自动转义，会出错，高级处理放在第六章。</p>
+</blockquote>
+<h2 id="删除-d-命令">删除 d 命令</h2>
+<p>语法：<code>[address]d</code></p>
+<ol>
+<li>d删除<strong>整个模式空间的一行</strong>，不是只删除部分字符；只删部分字符要用替换、替换为空字符串。</li>
+<li>执行d之后：<strong>清空模式空间，直接读取下一行输入，本脚本后续命令不再对本行执行</strong>（改变控制流）。</li>
+</ol>
+<p>示例：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-17-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-17-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/^$/d          <span style="color:#60a0b0;font-style:italic"># 删除全部空行</span>
+</span></span><span style="display:flex;"><span>/^<span style="color:#4070a0;font-weight:bold">\.</span>sp/d       <span style="color:#60a0b0;font-style:italic"># 删除 .sp 开头整行，删除troff空格请求</span>
+</span></span><span style="display:flex;"><span>/^<span style="color:#4070a0;font-weight:bold">\.</span>TS/,/^<span style="color:#4070a0;font-weight:bold">\.</span>TE/d <span style="color:#60a0b0;font-style:italic"># 删除从.TS到.TE整块行</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>注意区分：大写<code>D</code>是高级多行删除命令，第六章讲解。</p>
+</blockquote>
+<h2 id="追加a插入i更改c">追加a、插入i、更改c</h2>
+<blockquote>
+<p>三者语法特殊，<strong>必须多行书写，不能用分号压缩到一行</strong>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>语法</th>
+<th>行为</th>
+<th>地址限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i 插入</td>
+<td><code>[line‑address]i\</code>    文本内容</td>
+<td><strong>输出到当前行的前面</strong></td>
+<td>只能单个行地址，不能行范围</td>
+</tr>
+<tr>
+<td>a 追加</td>
+<td><code>[line‑address]a\</code>    文本内容</td>
+<td><strong>输出到当前行的后面</strong></td>
+<td>只能单个行地址，不能行范围</td>
+</tr>
+<tr>
+<td>c 更改</td>
+<td><code>[address]c\</code>    文本内容</td>
+<td><strong>清除模式空间，用新文本替换原行内容</strong></td>
+<td>支持行范围</td>
+</tr>
+</tbody>
+</table>
+<p>语法硬性规则：</p>
+<ul>
+<li>命令后面写反斜杠<code>\</code>，然后换行；真正文本写在下一行；</li>
+<li>多行文本：除最后一行外，每一行末尾都加<code>\</code>；</li>
+<li>a/i输出的新增文本<strong>不会进入模式空间</strong>，后续sed命令不会处理新增出来的文本。</li>
+</ul>
+<h3 id="i-插入示例">i 插入示例</h3>
+<p>匹配<code>.Ls</code>行，行前面插入两行troff指令</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-18-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-18-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/^<span style="color:#4070a0;font-weight:bold">\.</span>Ls/i<span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>.in 5n<span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>.sp .3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="a追加示例">a追加示例</h3>
+<p>匹配<code>.Le</code>行，行后面追加两行</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-19-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-19-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-19-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-19-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/^<span style="color:#4070a0;font-weight:bold">\.</span>Le/a<span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>.in 0<span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>.sp .3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="c更改示例">c更改示例</h3>
+<blockquote>
+<p>行范围：把从<code>^From</code>到第一个空行之间<strong>全部多行，替换成一行<code>&lt;Mail Header Removed&gt;</code></strong>。</p>
+</blockquote>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-20-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-20-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/^From /,/^$/c<span style="color:#4070a0;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0;font-weight:bold"></span>&lt;Mail Header Removed&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>坑：如果c写在大括号内部，对范围中<strong>每一行都会输出替换文本</strong>，会重复输出多次。</p>
+<blockquote>
+<p>c命令执行后清空模式空间，本行后续脚本命令不会执行。</p>
+</blockquote>
+<h2 id="列表-l-命令">列表 l 命令</h2>
+<p>语法：<code>[address]l</code></p>
+<p><code>l</code>，就是<strong>sed 的 list 命令（字母小写 L）</strong></p>
+<blockquote>
+<p>命令 <code>l</code>（list）：打印模式空间内容；<strong>看不见的控制字符会转成八进制转义输出</strong>，用来排查看不见的隐藏字符（<code>\r</code>回车、<code>^A</code>、<code>^M</code>退格等）。
+一般搭配<code>‑n</code>使用，否则一行输出两遍。</p>
+</blockquote>
+<p>示例：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-21-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-21-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sed -n -e <span style="color:#4070a0">&#34;l&#34;</span> test/spchar
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>拆解整条命令：</p>
+<ol>
+<li><code>sed</code>：程序</li>
+<li><code>-n</code>：命令行选项，关闭默认输出</li>
+<li><code>-e &quot;l&quot;</code>：<code>‑e</code> 代表：<strong>后面引号里面内容是 sed 脚本片段</strong>
+<ul>
+<li><code>&quot;l&quot;</code> 引号内部：<code>l</code>，就是<strong>sed 的 list 命令（字母小写 L）</strong></li>
+</ul>
+</li>
+<li><code>test/spchar</code>：输入文件名</li>
+</ol>
+<p>作用：查看文本里面隐藏的<code>^A</code> <code>^M</code> <code>^G</code>等看不见的控制字符。</p>
+<blockquote>
+<p>小技巧vi中输入特殊控制字符：<code>Ctrl‑V</code>再按控制键。</p>
+</blockquote>
+<h3 id="案例清除nroff输出的退格格式">案例：清除nroff输出的退格格式</h3>
+<p>nroff为实现粗体，生成类似<code>N^HN^H</code>序列。</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-22-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-22-2">2</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic"># 删除 任意字符+退格符 ^H</span>
+</span></span><span style="display:flex;"><span>s/.<span style="color:#4070a0;font-weight:bold">\^</span>H//g
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>可以清除man手册输出里粗体、下划线特殊格式。</p>
+</blockquote>
+<h2 id="转换-y-命令">转换 y 命令</h2>
+<p>语法：<code>[address]y/源字符集/目标字符集/</code></p>
+<blockquote>
+<p><strong>按字符位置一一对应转换，不是正则匹配！</strong> 源字符第1个→目标第1个；源第2个→目标第2个。没有元字符概念。</p>
+</blockquote>
+<p>示例全部小写转大写：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-23-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-23-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>注意：y不能只转换单词，会处理整行全部字符；只转换部分内容，需要第六章保持空间hold space。</p>
+</blockquote>
+<h2 id="打印-p-命令">打印 p 命令</h2>
+<p>语法：<code>[address]p</code></p>
+<blockquote>
+<p>输出模式空间内容；<strong>不修改模式空间，不改变脚本流程</strong>。
+不加<code>‑n</code>的情况下，sed默认还要输出一遍，会造成重复打印。</p>
+</blockquote>
+<blockquote>
+<p>区分：</p>
+<ul>
+<li><code>s///p</code>：替换<strong>成功才打印</strong>（替换标志）</li>
+<li><code>p</code>独立命令：无条件打印模式空间。</li>
+</ul>
+</blockquote>
+<p>调试示例：匹配<code>.Ah</code>行，打印原始行，替换后再打印。</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-24-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-24-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-24-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-24-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-24-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-24-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-24-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-24-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-24-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-24-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-24-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-24-6">6</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#n</span>
+</span></span><span style="display:flex;"><span>/^<span style="color:#4070a0;font-weight:bold">\.</span>Ah/<span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>p
+</span></span><span style="display:flex;"><span>s/<span style="color:#4070a0">&#34;//g
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">s/^\.Ah //p
+</span></span></span><span style="display:flex;"><span><span style="color:#4070a0">}
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="打印行号-">打印行号 =</h2>
+<p>语法：<code>[line‑address]=</code></p>
+<blockquote>
+<p><strong>只接受单个行地址，不能写行范围 <code>1,3=</code>，语法错误</strong><br>
+<code>=</code> 只会输出<strong>行号</strong>，<strong>不会输出那一行本身的文本</strong><br>
+通常配合 <code>-n</code>（或者脚本开头 <code>#n</code>）抑制默认输出；想要同时看到行号 + 行内容，就再加 <code>p</code> 打印命令。</p>
+</blockquote>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-25-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-25-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-25-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-25-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-25-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-25-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-25-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-25-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-25-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-25-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#60a0b0;font-style:italic">#n 打印具有if 语句的行号和行</span>
+</span></span><span style="display:flex;"><span>/       <span style="color:#007020;font-weight:bold">if</span>/<span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#666">=</span>
+</span></span><span style="display:flex;"><span>p
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>测试文件：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-26-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-26-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-26-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-26-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-26-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-26-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-26-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-26-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-26-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-26-5">5</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-26-6"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-26-6">6</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-26-7"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-26-7">7</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-26-8"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-26-8">8</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#902000">int</span> <span style="color:#06287e">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span>(<span style="color:#40a070">1</span><span style="color:#666">&gt;</span><span style="color:#40a070">0</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">1</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#007020;font-weight:bold">if</span>(<span style="color:#40a070">2</span><span style="color:#666">&gt;</span><span style="color:#40a070">1</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">0</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输出：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-27-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-27-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-27-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-27-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-27-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-27-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-27-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-27-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>2
+</span></span><span style="display:flex;"><span>    if(1&gt;0){
+</span></span><span style="display:flex;"><span>4
+</span></span><span style="display:flex;"><span>    if(2&gt;1){
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>只打印匹配 if 的那些行：先输出行号，再输出源代码文本。</p>
+</blockquote>
+<h2 id="next-n-命令">next n 命令</h2>
+<p>语法：<code>[address]n</code></p>
+<blockquote>
+<p>next命令流程：</p>
+<ol>
+<li>输出当前模式空间内容；</li>
+<li>读取下一行输入，覆盖替换模式空间；</li>
+<li>脚本<strong>不从脚本开头重新跑，继续执行n后面的命令</strong>。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>坑：n前面的命令作用旧行；n后面命令作用新读入的行。</p>
+</blockquote>
+<p>示例：<code>.H1</code>标题行之后，如果紧跟着空行就删除这个空行</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-28-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-28-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-28-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-28-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-28-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-28-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-28-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-28-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/^<span style="color:#4070a0;font-weight:bold">\.</span>H1/<span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>n
+</span></span><span style="display:flex;"><span>/^$/d
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>逻辑：匹配<code>.H1</code>，输出当前行，读入下一行；如果新行是空行，执行d删除。</p>
+<blockquote>
+<p>普通是「脚本跑完才换内容」；<code>n</code>是「脚本执行半路，强行换掉模式空间里面的内容」。<br>
+大写<code>N</code>是高级多行next，第六章。</p>
+</blockquote>
+<p>测试文件：</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-29-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-29-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-29-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-29-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-29-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-29-3">3</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>AAA
+</span></span><span style="display:flex;"><span>BBB
+</span></span><span style="display:flex;"><span>CCC
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>脚本</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-30-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-30-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-30-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-30-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-30-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-30-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-30-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-30-4">4</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-30-5"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-30-5">5</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/^AAA/<span style="color:#666">{</span>
+</span></span><span style="display:flex;"><span>    s/AAA/AAA改/
+</span></span><span style="display:flex;"><span>    n
+</span></span><span style="display:flex;"><span>    s/BBB/BBB改/
+</span></span><span style="display:flex;"><span><span style="color:#666">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>一步步拆解执行</strong></p>
+<ol>
+<li>sed 读取 <code>AAA</code>，放入模式空间</li>
+</ol>
+<blockquote>
+<p>模式空间：<code>AAA</code></p>
+</blockquote>
+<ol start="2">
+<li>匹配 <code>/^AAA/</code>，进入大括号</li>
+<li><code>s/AAA/AAA改/</code></li>
+</ol>
+<blockquote>
+<p>模式空间现在变成：<code>AAA改</code></p>
+</blockquote>
+<p>现在执行<code>n</code>命令，做两件事：<br>
+① <strong>输出模式空间当前内容</strong> → 打印<code>AAA改</code><br>
+② <strong>立刻读取文件的下一行<code>BBB</code>，把<code>BBB</code>写入模式空间</strong></p>
+<blockquote>
+<p>重点：模式空间原来存的<code>AAA改</code>直接消失！被新读进来的<code>BBB</code>顶替掉，这就叫<strong>覆盖模式空间</strong>。</p>
+</blockquote>
+<blockquote>
+<p>此时模式空间：<code>BBB</code>，旧的<code>AAA改</code>已经不在缓冲区里面了，已经输出完事。</p>
+</blockquote>
+<p><strong>不会跳回脚本开头！继续运行 n 后面的命令</strong>：<code>s/BBB/BBB改/</code></p>
+<blockquote>
+<p>修改现在模式空间里面的<code>BBB</code> → <code>BBB改</code></p>
+</blockquote>
+<p>大括号全部执行完毕，脚本这一轮结束，输出模式空间内容 →打印<code>BBB改</code><br>
+进入主循环，读取下一行<code>CCC</code>放入模式空间，跑脚本，输出<code>CCC</code></p>
+<h2 id="读-r写-w-文件">读 r、写 w 文件</h2>
+<h3 id="r读文件lineaddressr-filename">r读文件：<code>[line‑address]r filename</code></h3>
+<blockquote>
+<p>只接受单行地址；匹配行输出完成之后，<strong>把外部文件全部内容追加输出</strong>；读进来的文本不会进入模式空间，后续sed命令不能修改读入的内容。
+文件不存在不会报错。</p>
+</blockquote>
+<p>示例：文件最后一行后面插入<code>closing</code>文件全部内容</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-31-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-31-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#bb60d5">$r</span> closing
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="w写文件addressw-filename">w写文件：<code>[address]w filename</code></h3>
+<blockquote>
+<p>将<strong>当前模式空间的内容写入指定文件</strong>；匹配就写，不等脚本结束。
+文件不存在则创建；多次写同一个文件，是<strong>追加内容</strong>。sed脚本最多同时打开10个文件。</p>
+</blockquote>
+<p>示例：把按地区把人员分别写入4个文件</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-32-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-32-1">1</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-32-2"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-32-2">2</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-32-3"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-32-3">3</a>
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-32-4"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-32-4">4</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>/Northeast$/w region.northeast
+</span></span><span style="display:flex;"><span>/South$/w region.south
+</span></span><span style="display:flex;"><span>/Midwest$/w region.midwest
+</span></span><span style="display:flex;"><span>/West$/w region.west
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="退出-q-命令">退出 q 命令</h2>
+<p>语法：<code>[line‑address]q</code></p>
+<blockquote>
+<p>只接受单行地址。一旦执行q：<strong>立刻终止整个sed程序，不再读取任何新输入行</strong>。</p>
+</blockquote>
+<p>示例：输出文件前100行，读到100行直接退出，类似head。</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f" id="hl-33-1"><a style="outline:none;text-decoration:none;color:inherit" href="#hl-33-1">1</a>
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sed <span style="color:#4070a0">&#39;100q&#39;</span> test.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>性能优势：处理超大文件，找到目标就q退出，不用扫描全部剩余内容。</p>
+</blockquote>
+<h2 id="检查参考页">检查参考页</h2>
+<p>实战完整综合案例：把纯文本命令参考页，自动加上troff格式化宏。</p>
+<blockquote>
+<p>设计思路：逐行分析输入文本，设计地址与命令；优先处理特殊情况；最后清理通用空行、制表符。
+关键点：<code>c</code>更改命令替换大块标签；大括号分组；范围地址；处理各种边界不一致输入。
+完整脚本参考书中<code>refsed</code>，运行方式：<code>sed -f refsed refpage</code>输出到屏幕/重定向新文件，<strong>不修改原始文件</strong>。</p>
+</blockquote>
+<h1 id="本章核心速记卡片复习">本章核心速记卡片（复习）</h1>
+<ol>
+<li>语法：<code>[地址]命令</code>；<code>{}</code>分组，<code>}</code>必须独占一行；<code>a/i/c</code>必须多行书写。</li>
+<li>替换<code>s</code>：可以自定义分隔符；替换域元字符只有<code>&amp; \1‑\9 \</code>。</li>
+<li><code>d</code>删除整行；执行d直接读下一行，后续命令不再执行本行。</li>
+<li><code>i</code>前插、<code>a</code>后追加：只能单行地址；<code>c</code>更改支持范围；a/i输出文本不进模式空间。</li>
+<li><code>l</code>查看看不见的控制字符；<code>y</code>字符一一映射转换。</li>
+<li><code>p</code>打印模式空间；<code>=</code>打印行号；<code>n</code>读取下一行，继续执行后续命令。</li>
+<li><code>r</code>读取外部文件追加输出；<code>w</code>把模式空间写入文件。</li>
+<li><code>q</code>找到行直接退出程序，适合大文件提升速度。</li>
+<li>注意区分：标志<code>p/w</code>（替换成功才执行）和独立命令<code>p/w</code>（无条件执行）。</li>
+</ol>
+
+            </div>
+
+            
+            
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">会写代码的小郎中</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2011-08-04
+      
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content">CC BY-NC-ND 4.0</span>
+  </p>
+</div>
+
+
+
+            
+            
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://yutao.org/image/ds/%e6%94%b6%e6%ac%be%e7%a0%811.png">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="https://yutao.org/image/ds/%e6%94%b6%e6%ac%be%e7%a0%812.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+
+            <footer class="post-footer">
+                <div class="post-tags">
+                    <a href="https://yutao.org/tags/shell%E8%84%9A%E6%9C%AC/">Shell脚本</a>
+                    
+                </div>
+
+
+                
+                <nav class="post-nav">
+                    
+                    <a class="prev" href="https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E5%85%AD%E7%AB%A0-%E9%AB%98%E7%BA%A7sed%E5%91%BD%E4%BB%A4/">
+                        
+                        <i class="iconfont">
+                            <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+                        </i>
+                        <span class="prev-text nav-default">sed与awk-第六章-高级sed命令</span>
+                        <span class="prev-text nav-mobile">上一篇</span>
+                    </a>
+                    
+                    <a class="next" href="https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%BC%96%E5%86%99sed%E8%84%9A%E6%9C%AC/">
+                        <span class="next-text nav-default">sed与awk-第四章-编写sed脚本</span>
+                        <span class="prev-text nav-mobile">下一篇</span>
+                        
+                        <i class="iconfont">
+                            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+                        </i>
+                    </a>
+                </nav>
+            </footer>
+        </article>
+
+        
+        
+
+
+        
+        
+
+  
+
+  
+  
+
+  
+  
+    <div class="post">
+  <script src="https://utteranc.es/client.js"
+        repo= "yutaodev/comments-for-yutaodev.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+    </div>
+
+    
+
+
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });  
+</script>
+<script>
+    
+    Array.from(document.getElementsByClassName("language-mermaid")).forEach(
+        (el) => {
+            el.parentElement.outerHTML = `<div class="mermaid">${el.innerHTML}</div>`;
+        }
+    );  
+</script>
+<style>
+     
+    .mermaid svg {
+        display: block;
+        margin: auto;
+    }
+</style>
+</div>
+
+      </main>
+
+      <footer id="footer" class="footer">
+        <div class="icon-links">
+    
+  
+    <a href="mailto:yutao.z@qq.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://space.bilibili.com/304380559" rel="me noopener" class="iconfont"
+      title="bilibili"  target="_blank"
+      >
+      <svg
+  class="icon" style="" viewBox="0 0 1024 1024" version="1.1" width="36"
+  height="36" id="svg8">
+  <path
+      style=""
+      d="M 744.60599,0.00486267 A 41.779915,41.779915 0 0 0 710.4184,18.673394 L 548.5048,255.32642 h -11.70046 a 41.779915,41.779915 0 0 0 -10.80295,-7.84928 L 235.66,97.084498 a 41.779915,41.779915 0 0 0 -20.07193,-4.960864 41.779915,41.779915 0 0 0 -18.3748,79.145436 L 359.4859,255.32642 H 128.16909 c -49.458302,0 -89.27932,39.82105 -89.27932,89.27932 v 508.65224 c 0,49.4583 39.821018,89.27934 89.27932,89.27934 h 19.48445 C 149.12802,984.5043 179.92773,1024 224.79179,1024 c 44.86407,0 75.66379,-39.4957 77.13826,-81.46268 H 719.98116 C 721.45559,984.5043 752.25533,1024 797.1194,1024 c 44.86406,0 75.6638,-39.4957 77.13824,-81.46268 h 21.57323 c 49.45831,0 89.27936,-39.82104 89.27936,-89.27934 V 344.60574 c 0,-49.45827 -39.82105,-89.27932 -89.27936,-89.27932 H 649.74567 L 779.38103,65.866924 A 41.779915,41.779915 0 0 0 744.60599,0.00486267 Z M 644.49108,418.70871 c 6.29985,0.21538 12.44451,2.01107 17.86888,5.22196 l 171.36218,98.10771 c 18.23417,10.21935 24.63334,33.34627 14.24614,51.48533 -10.38726,18.13909 -33.57344,24.32718 -51.61587,13.77296 L 624.9903,489.18895 c -15.21356,-8.41858 -22.66871,-26.1765 -18.03211,-42.93436 4.63664,-16.75784 20.15573,-28.14465 37.53289,-27.54588 z M 350.2006,432.31846 c 16.89952,0.0317 31.69582,11.33328 36.17844,27.62747 4.48262,16.2942 -2.44981,33.57765 -16.95507,42.24898 l -140.7157,86.91312 c -17.68528,11.18244 -41.09629,5.77692 -52.08912,-12.02686 -10.99282,-17.80373 -5.33855,-41.15658 12.58167,-51.95857 L 329.9002,438.2095 c 6.0643,-3.86439 13.10951,-5.90891 20.3004,-5.89104 z M 501.605,641.53985 c 3.75002,-0.15248 7.48645,0.53903 10.93349,2.0235 0.15842,0.0637 0.31618,0.12888 0.47325,0.19582 0.59328,0.27092 1.17574,0.56489 1.74609,0.88121 0.15868,0.0854 0.31643,0.17233 0.47325,0.2611 0.55694,0.32165 1.10131,0.66458 1.63185,1.02807 0.16455,0.1123 0.32777,0.2265 0.48956,0.34269 0.50382,0.36781 0.99371,0.75428 1.46868,1.15864 0.18724,0.15504 0.37218,0.31282 0.55484,0.47323 0.43271,0.38784 0.8518,0.79061 1.25653,1.20756 0.15449,0.16114 0.30679,0.32437 0.45693,0.48959 0.40798,0.44266 0.79989,0.89988 1.17494,1.37076 0.17799,0.22544 0.35205,0.45395 0.5222,0.68538 0.25932,0.34701 0.50964,0.70071 0.75064,1.06071 0.26712,0.39516 0.52286,0.79784 0.76699,1.20757 0.16907,0.29043 0.33231,0.58424 0.48957,0.88123 0.21836,0.41297 0.42513,0.83199 0.62009,1.25653 0.14836,0.32333 0.28983,0.64976 0.42429,0.97911 0.21319,0.51552 0.40915,1.03801 0.58747,1.5666 0.0677,0.19499 0.13296,0.39085 0.19582,0.58748 0.18652,0.60823 0.34984,1.22334 0.48957,1.84399 0.0397,0.16277 0.0779,0.32601 0.11423,0.48957 0.1436,0.69112 0.25788,1.38801 0.34269,2.08877 0.005,0.0381 0.0111,0.0761 0.0163,0.11424 0.0857,0.78056 0.13474,1.56471 0.14687,2.34988 0.005,0.0543 0.0111,0.10879 0.0163,0.1632 0,0 -0.008,1.12132 0,1.45234 0,0 -0.14697,17.84761 5.89102,34.12231 3.01902,8.13734 7.33278,15.10615 12.61433,19.61501 5.28157,4.50889 11.42894,7.62081 23.64572,7.62081 12.2168,0 18.36416,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.5953,-11.47767 12.6143,-19.61501 6.03799,-16.2747 5.89103,-34.12231 5.89103,-34.12231 -0.44885,-13.87045 10.45922,-25.46302 24.3311,-25.86506 13.87189,-0.40201 25.42828,10.53953 25.78348,24.41272 0,0 1.11929,25.7226 -9.00791,53.01927 -5.06359,13.64832 -13.1986,28.46036 -27.05631,40.29073 -13.85772,11.83039 -33.5454,19.63135 -56.20142,19.63135 -22.65603,0 -42.34371,-7.80096 -56.20141,-19.63135 -4.1801,-3.56856 -7.78733,-7.42433 -10.99878,-11.42303 -3.21235,4.00037 -6.81703,7.85309 -10.99876,11.42303 -13.85773,11.83039 -33.5454,19.63135 -56.20144,19.63135 -22.65601,0 -42.3437,-7.80096 -56.2014,-19.63135 -13.85775,-11.83037 -21.99272,-26.64241 -27.05632,-40.29073 -10.12725,-27.29667 -9.00789,-53.01928 -9.00789,-53.01927 0.20714,-13.83687 11.58744,-24.88848 25.42444,-24.69013 14.1263,0.19991 25.2971,12.0278 24.69011,26.14247 0,0 -0.14697,17.84761 5.89103,34.12231 3.01902,8.13734 7.31646,15.10615 12.598,19.61501 5.28155,4.50889 11.44526,7.62081 23.66203,7.62081 12.21681,0 18.36418,-3.11192 23.64573,-7.62081 5.28154,-4.50886 9.57899,-11.47767 12.598,-19.61501 5.76352,-15.53489 5.89112,-32.05691 5.89103,-33.56746 0.006,-0.37466 0.0111,-1.05336 0.0163,-1.20759 -0.0117,-0.74583 0.0105,-1.49177 0.0652,-2.23565 0.009,-0.15784 0.0204,-0.31561 0.0327,-0.47324 0.14204,-1.56859 0.43163,-3.12027 0.86487,-4.63449 0.0213,-0.0763 0.0433,-0.15244 0.0652,-0.22848 3.0335,-10.25748 12.24157,-17.46007 22.92769,-17.93417 z"
+      id="rect824"/>
+</svg>
+
+    </a>
+  
+    <a href="https://weibo.com/u/2557216280" rel="me noopener" class="iconfont"
+      title="weibo"  target="_blank"
+      >
+      <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M385.714286 733.714286q12-19.428571 6.285714-39.428571t-25.714286-28.571429q-19.428571-8-41.714286-0.571429t-34.285714 26.285714q-12.571429 19.428571-7.428571 39.142857t24.571429 28.857143 42.571429 1.428571 35.714286-27.142857zm53.714286-69.142857q4.571429-7.428571 2-15.142857t-10-10.571429q-8-2.857143-16.285714 2.857143t-12.285714 10.571429q-9.714286 17.714286 7.428571 25.714286 8 2.857143 16.571429 2.857143t12.571429-10.571429zm99.428571 61.142857q-25.714286 58.285714-90.285714 85.714286t-128 6.857143q-61.142857-19.428571-84.285714-72.285714t3.714286-107.142857q26.857143-53.142857 86.571429-79.428571t120.285714-10.857143q63.428571 16.571429 90.571429 68.285714t1.428571 108.857143zm178.285714-91.428571q-5.142857-54.857143-50.857143-97.142857t-119.142857-62.285714-156.857143-12q-127.428571 13.142857-211.142857 80.857143t-75.714286 151.142857q5.142857 54.857143 50.857143 97.142857t119.142857 62.285714 156.857143 12q127.428571-13.142857 211.142857-80.857143t75.714286-151.142857zm176 2.285714q0 38.857143-21.142857 79.714286t-62.285714 78.285714-96.285714 67.142857-129.142857 47.428571-154.571429 17.714286-157.142857-19.142857-137.428571-53.142857-98-86.285714-37.142857-114q0-65.714286 39.714286-140t112.857143-147.428571q96.571429-96.571429 195.142857-134.857143t140.857143 4q37.142857 36.571429 11.428571 119.428571-2.285714 8-0.571429 11.428571t5.714286 4 8.285714 2.857143 7.714286-2l3.428571-1.142857q79.428571-33.714286 140.571429-33.714286t87.428571 34.857143q25.714286 36 0 101.714286-1.142857 7.428571-2.571429 11.428571t2.571429 7.142857 6.857143 4.285714 9.714286 3.428571q32.571429 10.285714 58.857143 26.857143t45.714286 46.571429 19.428571 66.571429zm-42.285714-356.571429q24 26.857143 31.142857 62t-3.714286 67.142857q-4.571429 13.142857-16.857143 19.428571t-25.428571 2.285714q-13.142857-4.571429-19.428571-16.857143t-2.285714-25.428571q11.428571-36-13.714286-63.428571t-61.142857-20q-13.714286 2.857143-25.714286-4.571429t-14.285714-21.142857q-2.857143-13.714286 4.571429-25.428571t21.142857-14.571429q34.285714-7.428571 68 3.142857t57.714286 37.428571zm103.428571-93.142857q49.714286 54.857143 64.285714 127.142857t-7.714286 138q-5.142857 15.428571-19.428571 22.857143t-29.714286 2.285714-22.857143-19.428571-2.857143-29.714286q16-46.857143 5.714286-98.285714t-45.714286-90.285714q-35.428571-39.428571-84.571429-54.571429t-98.857143-4.857143q-16 3.428571-29.714286-5.428571t-17.142857-24.857143 5.428571-29.428571 24.857143-16.857143q70.285714-14.857143 139.428571 6.571429t118.857143 76.857143z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://www.toutiao.com/c/user/token/MS4wLjABAAAA1TxeVNQbqL6Lg7CJRoNwNHYDpIB5qKGh24pQ0AvIjmfeczyo5zxipIgPtGJr-mUI/?source=m_redirect" rel="me noopener" class="iconfont"
+      title="toutiao"  target="_blank"
+      >
+      <svg t="1731818671552" class="icon" viewBox="0 0 1024 1024" version="1.1"
+    xmlns="http://www.w3.org/2000/svg" p-id="4390" width="32" height="32">
+    <path
+        d="M828.745763 0H195.254237C86.779661 0 0 86.779661 0 195.254237v633.491526c0 108.474576 86.779661 190.915254 195.254237 195.254237h633.491526c108.474576 0 190.915254-86.779661 195.254237-195.254237V195.254237c0-108.474576-86.779661-195.254237-195.254237-195.254237z m138.847457 828.745763c0 78.101695-60.745763 138.847458-138.847457 138.847457H195.254237c-78.101695 0-138.847458-60.745763-138.847457-138.847457V195.254237c0-78.101695 60.745763-138.847458 138.847457-138.847457h633.491526c78.101695 0 138.847458 60.745763 138.847457 138.847457v633.491526z"
+        fill="#525252" p-id="4391"></path>
+    <path
+        d="M0 221.288136v620.474576c0 4.338983 4.338983 8.677966 8.677966 13.016949l1015.322034-56.40678V182.237288c0-4.338983-4.338983-8.677966-8.677966-13.016949L0 221.288136z"
+        fill="#525252" p-id="4392"></path>
+    <path
+        d="M906.847458 581.423729v-47.728814l-151.864407 8.677966V520.677966h-69.423729v30.372881l-151.864407 8.677967V607.457627l151.864407-8.677966v108.474576l69.423729-8.677966v-108.474576l151.864407-8.677966z"
+        fill="#FFFFFF" p-id="4393"></path>
+    <path
+        d="M538.033898 490.305085v47.728813h47.728814l138.847457-69.423729 130.169492 47.728814H911.186441v-47.728814h-34.711865l-91.118644-26.033898 117.152543-60.745763V299.389831l-65.084746 4.338983-173.559322 8.677966-56.40678-30.372882-78.101695 117.152543 60.745763 21.694915 43.38983-60.745763 199.593221-8.677966v8.677966l-108.474577 56.40678-91.118644-34.711865-26.033898 47.728814 47.728814 21.694915-82.440678 43.389831-34.711865-4.338983z m334.101695 104.135593l-69.423729 8.677966 47.728814 91.118644 78.101695-8.677966-56.40678-91.118644z m-334.101695 108.474576H607.457627l47.728814-95.457627-69.423729 8.677966-47.728814 86.779661z m-169.220339-99.79661l56.40678 108.474576h82.440678l-60.745763-117.152542-78.101695 8.677966z m-78.101695-86.779661l-60.745762-78.101695-82.440678 8.677966 60.745762 69.423729h82.440678z m0-95.457627L229.966102 351.457627H147.525424l60.745762 78.101695 82.440678-8.677966z"
+        fill="#FFFFFF" p-id="4394"></path>
+    <path
+        d="M351.457627 585.762712l130.169492-8.677966v-47.728814l-91.118644 8.677966v-216.949152l-65.084746 8.677966v208.271186l-216.949153 13.016949v47.728814l147.525424-8.677966-60.745763 82.440678-82.440678 8.677966v47.728814l138.847458-8.677967 99.79661-134.508474z"
+        fill="#FFFFFF" p-id="4395"></path>
+</svg>
+    </a>
+
+
+<a href="https://yutao.org/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+  
+</div>
+
+<div class="copyright">
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+    </span>
+    <span class="division">|</span>
+    <span class="theme-info">
+        Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+    </span>
+
+    <span class="copyright-year">
+        &copy;
+        
+        2011 -
+        2026
+        <span class="heart">
+            
+            <i class="iconfont">
+                <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+            </i>
+        </span><span class="author">
+            会写代码的小郎中
+            
+        </span></span>
+
+    
+    
+    <span id="busuanzi_container">
+        访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
+    </span>
+    
+
+    
+    
+
+    
+</div>
+      </footer>
+
+      <div class="button__back-to-top">
+        <a href="#back-to-top">
+          <i class="iconfont">
+            
+            <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+          </i>
+        </a>
+      </div>
+    </div>
+    
+<script type="text/javascript" src="https://yutao.org/lib/jquery/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="https://yutao.org/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="https://yutao.org/js/main.0812a6f15b5585e323289457bbef147ebb2e5111f2924b072bc6acf7eabe95b1.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="https://yutao.org/lib/photoswipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="https://yutao.org/lib/photoswipe/photoswipe-ui-default.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://yutao.org/js/copy-to-clipboard.js"></script>
+
+  <script src="https://yutao.org/js/search.js"></script>
+
+
+  </body>
+</html>

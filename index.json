@@ -2250,9 +2250,99 @@
       "summary": "近日思悟二则：从“编程之法”到“破相之心” 最近几日，于工作与生活中偶有所得，如静夜闻钟，清音绕梁。记录于此，既是梳理，亦是分享。 一、 编程之悟"
     },
     {
+      "title": "sed与awk-第十三章-附录2awk快速参考",
+      "permalink": "https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E9%99%84%E5%BD%952awk%E5%BF%AB%E9%80%9F%E5%8F%82%E8%80%83/",
+      "summary": "附录二 awk的快速参考 命令行语法 awk两种调用形式 1 2 3 4 5 # 形式1：命令行直接写脚本 awk [-v var=value] [-Fre] [--] \u0026#39;pattern{action}\u0026#39; var=value datafile(s) # 形式2：从脚本文件读取awk代码 awk [-v"
+    },
+    {
+      "title": "sed与awk-第十二章-附录1sed快速参考",
+      "permalink": "https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E9%99%84%E5%BD%951sed%E5%BF%AB%E9%80%9F%E5%8F%82%E8%80%83/",
+      "summary": "第十二章 附录1 sed 的快速参考 sed核心模型：模式空间（pattern space），读入一行放到模式空间，执行一系列编辑指令，最后输出；还有一块"
+    },
+    {
+      "title": "sed与awk-第十一章-awk系列产品",
+      "permalink": "https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-awk%E7%B3%BB%E5%88%97%E4%BA%A7%E5%93%81/",
+      "summary": "第十一章 awk的系列产品 原始的awk（V7 最早版本，功能残缺） 七十年代第七版UNIX自带最老awk，大量现代awk特性没有。 转义序列 仅支持："
+    },
+    {
+      "title": "sed与awk-第十章-底部抽屉",
+      "permalink": "https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E5%8D%81%E7%AB%A0-%E5%BA%95%E9%83%A8%E6%8A%BD%E5%B1%89/",
+      "summary": "第十章 底部抽屉 getline 函数 getline：手动读取下一行输入。对比next： next：读完下一行，直接跳回脚本开头，不再执行本行剩余代码。 getl"
+    },
+    {
+      "title": "sed与awk-第九章-函数",
+      "permalink": "https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E5%87%BD%E6%95%B0/",
+      "summary": "第九章 函数 算术函数 表9‑1 awk内置算术函数 awk函数 描述 cos(x) 返回x的余弦，x单位是弧度 exp(x) 返回自然常数 e 的 x 次幂 int(x) 截取整数部分，直接丢掉小数，"
+    },
+    {
+      "title": "sed与awk-第八章-条件、循环、数组",
+      "permalink": "https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E5%85%AB%E7%AB%A0-%E6%9D%A1%E4%BB%B6%E5%BE%AA%E7%8E%AF%E6%95%B0%E7%BB%84/",
+      "summary": "第八章 条件、循环、数组 条件语句 if‑else写在awk动作大括号{}内部（区别于第七章直接写在主循环外的模式匹配）。 语法： 1 2 3 4 if(表达"
+    },
+    {
+      "title": "sed与awk-第七章-编写awk脚本",
+      "permalink": "https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E4%B8%83%E7%AB%A0-%E7%BC%96%E5%86%99awk%E8%84%9A%E6%9C%AC/",
+      "summary": "第七章 编写awk脚本 本章讲 POSIX‑awk（标准awk，不是gawk特有扩展）。 遵守规则 awk有完整语法规则，参考附录二快速参考。 学习方式"
+    },
+    {
+      "title": "sed与awk-第六章-高级sed命令",
+      "permalink": "https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E5%85%AD%E7%AB%A0-%E9%AB%98%E7%BA%A7sed%E5%91%BD%E4%BB%A4/",
+      "summary": "第六章高级sed命令 本章的高级sed命令分为三大类： 多行模式空间命令：N、D、P（大写） 保持空间缓冲区命令：H/h、G/g、x 流程控制（分支"
+    },
+    {
+      "title": "sed与awk-第五章-基本sed命令",
+      "permalink": "https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%9F%BA%E6%9C%ACsed%E5%91%BD%E4%BB%A4/",
+      "summary": "第五章 基本 sed 命令 sed 命令的语法 sed通用语法： 大部分命令：可以接受0个、1个、2个地址（行号/正则模式），支持行范围 1 [address] command 少数命令只接受单个行"
+    },
+    {
+      "title": "sed与awk-第四章-编写sed脚本",
+      "permalink": "https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%BC%96%E5%86%99sed%E8%84%9A%E6%9C%AC/",
+      "summary": "第四章 编写sed脚本 编写sed脚本 sed脚本就是一组编辑命令的集合，运行在输入文件上实现批量文本修改。 手动编辑器 vs sed脚本 vi交互式编辑器"
+    },
+    {
+      "title": "sed与awk-第三章-了解正则表达式语法",
+      "permalink": "https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E4%BA%86%E8%A7%A3%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AF%AD%E6%B3%95/",
+      "summary": "第三章了解正则表达式语法 表达式 正则表达式和算术表达式思想类似： 算术表达式：字面量+运算符，有运算优先级，算出数值结果。例：2+3*4，乘法优"
+    },
+    {
+      "title": "sed与awk-第二章-了解基本操作",
+      "permalink": "https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E4%BA%86%E8%A7%A3%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/",
+      "summary": "第二章了解基本操作 如果你正要开始学习sed和awk，最好从了解它们的共同点入手: 它们都使用相似的语法来调用。 它们都是面向字符流的，都是从文本"
+    },
+    {
+      "title": "sed与awk-第一章-强大的编辑工具",
+      "permalink": "https://yutao.org/programming/sed%E4%B8%8Eawk-%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%BC%BA%E5%A4%A7%E7%9A%84%E7%BC%96%E8%BE%91%E5%B7%A5%E5%85%B7/",
+      "summary": "第一章 强大的编辑工具 我的妻子不让我买动力锯，她怕我用时会发生意外。所以我依靠手锯进行类似搭架子这样的周末工程。然而，如果我从事木工工作，那么"
+    },
+    {
+      "title": "Shell脚本学习指南-附录B-重要的UNIX命令",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E9%99%84%E5%BD%95-unix%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/",
+      "summary": "附录 B 附录B 重要的UNIX命令 聚焦脚本开发高频命令；区分：Shell内置命令、文本处理、文件、进程、其他程序。 内置命令标记「🔹内置」；外部普"
+    },
+    {
+      "title": "Shell脚本学习指南-附录A-文件与文件系统",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E9%99%84%E5%BD%95-%E6%96%87%E4%BB%B6%E4%B8%8E%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/",
+      "summary": "附录A 文件与文件系统 什么是文件 知识点：UNIX中文件是字节流，一串0或多个字节，不区分二进制/文本的内部格式。 作用：设备、管道、普通文件全部"
+    },
+    {
+      "title": "Shell脚本学习指南-第十五章-安全的Shell脚本起点",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E4%BA%94%E7%AB%A0/",
+      "summary": "第15章 安全的Shell脚本:起点 背景 Shell脚本很容易引入安全漏洞；本章讲解写安全脚本的原则、限制性shell、特洛伊木马、setuid"
+    },
+    {
+      "title": "Shell脚本学习指南-第十四章-Shell可移植性议题与扩展",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0/",
+      "summary": "第14章 Shell 可移植性议题与扩展 背景 POSIX Shell是标准基准；bash、ksh93 在POSIX之上增加大量扩展语法。二者功能大量重叠，但不完全兼容"
+    },
+    {
+      "title": "Shell脚本学习指南-第十三章-进程",
+      "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0/",
+      "summary": "第13章 进程 背景：进程是正在运行程序的实例；内核通过时间片轮转实现多进程假象，调度器负责调度。本章聚焦 shell 脚本日常实操：查看进程、信号控制、t"
+    },
+    {
       "title": "Shell脚本学习指南-第十二章-拼写检查",
       "permalink": "https://yutao.org/programming/shell%E8%84%9A%E6%9C%AC%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97-%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0/",
-      "summary": "第12章 拼写检查 本章利用拼写检查，呈现各种 Shell 脚本的不同方面。介绍完 spell 程序后，我们会告诉你如何构建一个简单又好用的拼写检查程序。紧接着再介绍如"
+      "summary": "第12章 拼写检查 本章背景：讲解UNIX拼写检查工具的演变：从最早管道原型 → spell → ispell/aspell → 完整的awk实现拼写检查器。 核心思想：UNIX工具哲学，用"
     },
     {
       "title": "Shell脚本学习指南-第十一章-合并用户数据库",
