@@ -1,0 +1,392 @@
+/* ==========================================================
+   内页风格统一（列表页 / 分类标签页 / 文章页）
+   与首页共用 :root 变量（定义在 home.css）
+   ========================================================== */
+
+/* ---------- 全局底色 ---------- */
+
+body {
+    background: var(--home-bg);
+}
+
+.main {
+    padding: 2.5rem 0 3.5rem;
+    background: var(--home-bg);
+}
+
+/* ---------- 通用卡片 ---------- */
+
+.archive,
+.tag-cloud {
+    max-width: 50em;
+    margin: 0 auto 2.5rem;
+    padding: 2rem 2.5rem 2.5rem;
+    background: var(--home-card);
+    border: 1px solid var(--home-border);
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(60, 40, 20, 0.04);
+    box-sizing: border-box;
+}
+
+.tag-cloud {
+    margin: 2rem auto 2.5rem;
+    font-family: inherit;
+    text-align: center;
+}
+
+/* ---------- 列表 / 归档 ---------- */
+
+.archive .archive-title .archive-name,
+.archive .collection-title .archive-year {
+    font-family: inherit;
+    font-weight: 700;
+    color: var(--home-text);
+}
+
+.archive .archive-title .archive-name {
+    font-size: 1.6rem;
+}
+
+.archive .archive-title.tag,
+.archive .archive-title.category,
+.archive .archive-title.author {
+    margin: 0 0 1rem;
+}
+
+.archive .collection-title .archive-year {
+    margin: 1.6em 0 0.4em;
+    font-size: 1.25rem;
+}
+
+.archive .collection-title .archive-year a {
+    color: var(--home-text);
+}
+
+.archive .collection-title .archive-year a:hover {
+    color: var(--home-accent);
+}
+
+.archive .archive-post {
+    padding: 0.85rem 0.9rem;
+    border-bottom: 1px solid #f2ece4;
+    font-size: 1rem;
+    border-radius: 10px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.archive .archive-post:hover {
+    background: #fbf6f0;
+    transform: translateX(4px);
+}
+
+.archive .archive-post .archive-post-time {
+    color: var(--home-muted);
+    font-size: 0.9rem;
+}
+
+.archive .archive-post .archive-post-title .archive-post-link {
+    color: var(--home-text);
+}
+
+.archive .archive-post:hover .archive-post-title .archive-post-link {
+    color: var(--home-accent);
+}
+
+.archive .more-post .more-post-link {
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--home-accent);
+}
+
+/* ---------- 标签云 / 分类胶囊 ---------- */
+
+.tag-cloud .tag-cloud-title,
+.categories .categories-title {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--home-text);
+    border-bottom: 2px solid var(--home-accent);
+    padding-bottom: 0.3rem;
+}
+
+.tag-cloud .tag-cloud-tags a,
+.categories .categories-tags .category-link {
+    padding: 0.2em 0.7em;
+    border-radius: 999px;
+    color: var(--home-text);
+    background: #fbf6f0;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.tag-cloud .tag-cloud-tags a:hover,
+.categories .categories-tags .category-link:hover {
+    color: var(--home-accent);
+    background: var(--home-accent-soft);
+}
+
+.tag-cloud .tag-cloud-tags a .tag-count,
+.categories .categories-tags .category-link .category-count {
+    color: var(--home-accent);
+}
+
+/* ---------- 文章卡片 ---------- */
+
+.post {
+    padding: 3em 5em;
+    background: var(--home-card);
+    border: 1px solid var(--home-border);
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(60, 40, 20, 0.04);
+}
+
+.post .post-header {
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--home-border);
+}
+
+.post .post-header .post-title {
+    font-family: inherit;
+    font-weight: 700;
+    color: var(--home-text);
+}
+
+.post .post-header .post-meta {
+    color: var(--home-muted);
+    font-size: 0.9rem;
+}
+
+.post .post-header .post-meta a {
+    color: var(--home-muted);
+}
+
+.post .post-header .post-meta a:hover {
+    color: var(--home-accent);
+}
+
+.post .post-header .post-meta .post-meta-category a {
+    color: var(--home-accent);
+}
+
+/* ---------- 正文 ---------- */
+
+.post .post-content {
+    font-size: 1rem;
+}
+
+.post .post-content h1,
+.post .post-content h2,
+.post .post-content h3,
+.post .post-content h4,
+.post .post-content h5,
+.post .post-content h6 {
+    font-family: inherit;
+    font-weight: 600;
+    color: var(--home-text);
+}
+
+.post .post-content a {
+    color: var(--home-accent);
+}
+
+.post .post-content a:hover {
+    text-decoration: underline;
+}
+
+.post .post-content blockquote {
+    margin: 1.2em 0;
+    padding: 0.9em 1.2em;
+    background: #fbf6f0;
+    border-left: 3px solid var(--home-accent);
+    border-radius: 0 10px 10px 0;
+}
+
+.post .post-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.post .post-content hr {
+    border: 0;
+    border-top: 1px solid var(--home-border);
+}
+
+.post .post-content table {
+    border-color: var(--home-border);
+}
+
+.post .post-content table th {
+    background: #fbf6f0;
+}
+
+.post .post-content code {
+    background: #f7f1ea;
+}
+
+/* ---------- 文章目录 ---------- */
+
+.post-toc {
+    background: transparent;
+}
+
+.post-toc .post-toc-title {
+    color: var(--home-accent);
+    font-weight: 600;
+}
+
+.post-toc .post-toc-content ul ul li>a {
+    color: var(--home-text);
+}
+
+.post-toc .post-toc-content ul ul li>a:hover {
+    color: var(--home-accent);
+}
+
+@media screen and (max-width: 1080px) {
+    .post-toc {
+        border-bottom: 1px solid var(--home-border);
+    }
+}
+
+/* ---------- 文末标签 / 上下篇 ---------- */
+
+.post .post-footer {
+    border-top: 1px solid var(--home-border);
+}
+
+.post .post-footer .post-tags a {
+    padding: 0.15em 0.6em;
+    margin: 0.2em 0.3em 0.2em 0;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: var(--home-accent);
+    background: var(--home-accent-soft);
+}
+
+.post .post-footer .post-tags a:hover {
+    color: #fff;
+    background: var(--home-accent);
+}
+
+.post .post-footer .post-nav a {
+    color: var(--home-muted);
+}
+
+.post .post-footer .post-nav a:hover {
+    color: var(--home-accent);
+}
+
+/* ---------- 分页 ---------- */
+
+.pagination {
+    max-width: 50em;
+    margin: 0 auto 2.5rem;
+    padding: 0;
+}
+
+.pagination ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pagination li {
+    display: inline-block;
+    float: none;
+}
+
+.pagination li a {
+    float: none;
+    margin: 0;
+    padding: 0.4rem 0.85rem;
+    background: var(--home-card);
+    border: 1px solid var(--home-border);
+    border-radius: 10px;
+    color: var(--home-text);
+    font-size: 0.95rem;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.pagination li a:hover {
+    color: var(--home-accent);
+    border-color: var(--home-accent);
+    background: #fbf6f0;
+}
+
+.pagination .active a {
+    color: #fff;
+    background: var(--home-accent);
+    border-color: var(--home-accent);
+}
+
+.pagination .prev,
+.pagination .next {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.pagination .prev,
+.pagination .next {
+    float: none;
+}
+
+/* ---------- 页脚 / 返回顶部 ---------- */
+
+.footer {
+    background: transparent;
+}
+
+.footer .copyright {
+    color: var(--home-muted);
+    font-family: inherit;
+}
+
+.footer .copyright .hexo-link,
+.footer .copyright .theme-link {
+    color: var(--home-accent);
+}
+
+.button__back-to-top svg {
+    fill: var(--home-accent);
+}
+
+/* ---------- 移动端 ---------- */
+
+@media screen and (max-width: 899px) {
+    .main {
+        padding: 1rem 0 2rem;
+    }
+
+    .archive,
+    .tag-cloud {
+        padding: 1.25rem 1rem 1.5rem;
+        border-radius: 16px;
+        margin-bottom: 1.2rem;
+    }
+
+    .post {
+        padding: 5%;
+        border-radius: 16px;
+    }
+
+    .archive .archive-post {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .archive .archive-post .archive-post-time {
+        display: block;
+        width: auto;
+    }
+
+    .archive .archive-post .archive-post-title {
+        display: block;
+    }
+
+    .pagination {
+        padding: 0 1rem;
+    }
+}

@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
             // 添加"更多..."选项
             const moreLi = document.createElement("li");
-            moreLi.innerHTML = `<a href="#" id="show-more-results" style="color: red;">更多...</a>`;
+            moreLi.innerHTML = `<a href="#" id="show-more-results" class="search-more">更多...</a>`;
             resultsList.appendChild(moreLi);
 
             // 点击"更多..."显示全部结果
