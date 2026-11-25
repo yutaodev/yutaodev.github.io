@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let indexData = [];
 
-    // 加载搜索数据（加时间戳绕过浏览器缓存）
-    fetch("/index.json?t=" + Date.now())
+    // 加载搜索数据（使用固定 URL，保证 Cloudflare / 浏览器缓存可以命中）
+    fetch("/index.json")
         .then(res => res.json())
         .then(data => indexData = data);
 
