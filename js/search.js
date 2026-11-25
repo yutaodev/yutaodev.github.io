@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let indexData = [];
 
-    // 加载搜索数据
-    fetch("/index.json")
+    // 加载搜索数据（加时间戳绕过浏览器缓存）
+    fetch("/index.json?t=" + Date.now())
         .then(res => res.json())
         .then(data => indexData = data);
 
@@ -64,7 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const results = indexData.filter(item =>
             item.title.toLowerCase().includes(keyword) ||
-            (item.summary && item.summary.toLowerCase().includes(keyword))
+            (item.summary && item.summary.toLowerCase().includes(keyword)) ||
+            (item.content && item.content.toLowerCase().includes(keyword))
         );
 
         console.log("搜索关键词:", keyword);
