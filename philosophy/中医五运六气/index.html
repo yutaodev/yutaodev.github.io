@@ -1263,6 +1263,33 @@ H[客气] --&gt; I(司天-上半年&lt;br&gt;在泉-下半年&lt;br&gt;间气-�
     <span id="busuanzi_container">
         访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
     </span>
+    <script>
+    (function () {
+        var container = document.getElementById("busuanzi_container");
+        if (!container) return;
+        function hasValue() {
+            var uv = document.getElementById("busuanzi_value_site_uv");
+            var pv = document.getElementById("busuanzi_value_site_pv");
+            return !!(uv && uv.textContent.trim()) || !!(pv && pv.textContent.trim());
+        }
+        function fill(data) {
+            if (typeof bszTag === "undefined") return;
+            bszTag.texts(data);
+            bszTag.shows();
+            if (hasValue()) container.style.display = "inline";
+        }
+        
+        setTimeout(function () {
+            if (hasValue()) return;
+            if (typeof bszCaller !== "undefined") {
+                bszCaller.fetch("https://busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", fill);
+            }
+            setTimeout(function () {
+                if (!hasValue()) container.style.display = "none";
+            }, 6000);
+        }, 5000);
+    })();
+    </script>
     
 
     
@@ -1314,7 +1341,7 @@ H[客气] --&gt; I(司天-上半年&lt;br&gt;在泉-下半年&lt;br&gt;间气-�
 
 
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="/js/busuanzi.pure.mini.js"></script>
 
 
 

@@ -1007,6 +1007,33 @@ LZ:请问在1F的图中顶部有两K线高点一样，两边的笔已成型，�
     <span id="busuanzi_container">
         访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
     </span>
+    <script>
+    (function () {
+        var container = document.getElementById("busuanzi_container");
+        if (!container) return;
+        function hasValue() {
+            var uv = document.getElementById("busuanzi_value_site_uv");
+            var pv = document.getElementById("busuanzi_value_site_pv");
+            return !!(uv && uv.textContent.trim()) || !!(pv && pv.textContent.trim());
+        }
+        function fill(data) {
+            if (typeof bszTag === "undefined") return;
+            bszTag.texts(data);
+            bszTag.shows();
+            if (hasValue()) container.style.display = "inline";
+        }
+        
+        setTimeout(function () {
+            if (hasValue()) return;
+            if (typeof bszCaller !== "undefined") {
+                bszCaller.fetch("https://busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", fill);
+            }
+            setTimeout(function () {
+                if (!hasValue()) container.style.display = "none";
+            }, 6000);
+        }, 5000);
+    })();
+    </script>
     
 
     
@@ -1058,7 +1085,7 @@ LZ:请问在1F的图中顶部有两K线高点一样，两边的笔已成型，�
 
 
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="/js/busuanzi.pure.mini.js"></script>
 
 
 

@@ -903,6 +903,33 @@ g0g5= g0d1+{（d1g1+g1d2+d2g2）+（g2d3+d3g3+g3d4）+（d4g4+g4d5+d5g5）}三�
     <span id="busuanzi_container">
         访客数/访问量：<span id="busuanzi_value_site_uv"></span>/<span id="busuanzi_value_site_pv"></span>
     </span>
+    <script>
+    (function () {
+        var container = document.getElementById("busuanzi_container");
+        if (!container) return;
+        function hasValue() {
+            var uv = document.getElementById("busuanzi_value_site_uv");
+            var pv = document.getElementById("busuanzi_value_site_pv");
+            return !!(uv && uv.textContent.trim()) || !!(pv && pv.textContent.trim());
+        }
+        function fill(data) {
+            if (typeof bszTag === "undefined") return;
+            bszTag.texts(data);
+            bszTag.shows();
+            if (hasValue()) container.style.display = "inline";
+        }
+        
+        setTimeout(function () {
+            if (hasValue()) return;
+            if (typeof bszCaller !== "undefined") {
+                bszCaller.fetch("https://busuanzi.ibruce.info/busuanzi?jsonpCallback=BusuanziCallback", fill);
+            }
+            setTimeout(function () {
+                if (!hasValue()) container.style.display = "none";
+            }, 6000);
+        }, 5000);
+    })();
+    </script>
     
 
     
@@ -954,7 +981,7 @@ g0g5= g0d1+{（d1g1+g1d2+d2g2）+（g2d3+d3g3+g3d4）+（d4g4+g4d5+d5g5）}三�
 
 
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="/js/busuanzi.pure.mini.js"></script>
 
 
 
